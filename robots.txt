@@ -1,0 +1,100 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# robots.txt — dalemcmanus.dev
+# ──────────────────────────────────────────────────────────────────────────────
+
+# === Поисковые краулеры ======================================================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# === AI-краулеры (GEO) =======================================================
+
+# OpenAI — ChatGPT Search, Browsing, Shopping
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic — Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Google — Gemini, AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Meta — Llama / Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Mistral
+User-agent: MistralBot
+Allow: /
+
+# Common crawler (используется для обучения многих LLM)
+User-agent: CCBot
+Allow: /
+
+# === Все остальные ===========================================================
+
+User-agent: *
+Allow: /
+
+# === Sitemap =================================================================
+
+Sitemap: https://dalemcmanus.dev/sitemap.xml
