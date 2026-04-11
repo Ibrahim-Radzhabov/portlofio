@@ -171,6 +171,14 @@
         },
         {
           "@type": "Question",
+          "name": "Как производится оплата?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обычно частями: часть до старта, часть после сдачи. Конкретные условия обсуждаем под задачу."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Сколько времени занимает работа?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -183,6 +191,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Рабочий цикл правок входит в процесс. Если меняется объём, обсудим отдельно."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Оказываете ли вы техподдержку после сдачи?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Зависит от договорённости. Мелкие правки после сдачи обычно входят в процесс. Если нужна постоянная поддержка — обсудим отдельно."
           }
         }
       ]
@@ -1295,8 +1311,15 @@ section {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .contact-heading {
@@ -1310,97 +1333,11 @@ section {
 
 .contact-heading span { color: var(--accent); }
 
-.contact-text {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-weight: 300;
-  margin-bottom: 28px;
-}
-
-.contact-checklist {
-  display: grid;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.contact-check {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-primary);
-}
-
-.contact-check::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  margin-top: 8px;
-  flex-shrink: 0;
-  background: var(--accent);
-  box-shadow: 0 0 0 6px rgba(232, 197, 114, 0.08);
-}
-
-.contact-response {
-  margin: 30px 0 32px;
-  padding: 24px 24px 22px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(232, 197, 114, 0.05), transparent 80%), var(--bg-card);
-}
-
-.contact-response-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.contact-response-title::before {
-  content: '';
-  width: 14px;
-  height: 1px;
-  background: rgba(232, 197, 114, 0.72);
-}
-
-.contact-response-list {
-  display: grid;
-  gap: 12px;
-}
-
-.contact-response-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text-primary);
-}
-
-.contact-response-item::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  margin-top: 8px;
-  flex-shrink: 0;
-  background: var(--accent);
-  box-shadow: 0 0 0 6px rgba(232, 197, 114, 0.08);
-}
-
 .contact-info-item {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .contact-info-icon {
@@ -1738,7 +1675,6 @@ footer .footer-inner {
     max-width: none;
     font-size: 18px;
   }
-  .contact-response,
   .contact-form {
     padding: 22px 18px 20px;
     border-radius: 18px;
@@ -2914,6 +2850,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       </details>
       <details class="faq-item">
         <summary>
+          <span>Как производится оплата?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>Обычно частями: часть до старта, часть после сдачи. Конкретные условия обсуждаем под задачу.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>
           <span>Сколько времени занимает работа?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
@@ -2930,6 +2875,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <p>Рабочий цикл правок входит в процесс. Если меняется объём, обсудим отдельно.</p>
         </div>
       </details>
+      <details class="faq-item">
+        <summary>
+          <span>Оказываете ли вы техподдержку после сдачи?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>Зависит от договорённости. Мелкие правки после сдачи обычно входят в процесс. Если нужна постоянная поддержка — обсудим отдельно.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -2938,25 +2892,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <section id="contact" class="contact-section">
   <div class="container">
     <div class="contact-grid">
-      <div class="reveal">
+      <div class="contact-copy reveal">
         <div class="section-tag">Показать задачу</div>
         <h2 class="contact-heading">Можно начать<br>с короткого <span>описания задачи.</span></h2>
-        <p class="contact-text">
-          Не нужен большой бриф или готовое ТЗ. Обычно для старта хватает ссылки на сайт, макета или нескольких предложений о том, что сейчас не так и что вы хотите получить на выходе.
-        </p>
-        <div class="contact-checklist">
-          <div class="contact-check">Ссылку на сайт, Figma или черновик, если они уже есть</div>
-          <div class="contact-check">Пару слов о том, что сейчас мешает, не устраивает или требует сборки с нуля</div>
-          <div class="contact-check">Желаемый результат: правки, новая страница, пересборка или запуск</div>
-        </div>
-        <div class="contact-response">
-          <div class="contact-response-title">Что вы получите в ответ</div>
-          <div class="contact-response-list">
-            <div class="contact-response-item">короткий разбор: что это за задача на самом деле и какой у неё нормальный масштаб</div>
-            <div class="contact-response-item">понятный следующий шаг: набор правок, новая страница или более заметная пересборка</div>
-            <div class="contact-response-item">честный ответ, если задача сейчас лучше решается проще или вообще не требует лишней сложности</div>
-          </div>
-        </div>
         <div class="contact-info-item">
           <div class="contact-info-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
