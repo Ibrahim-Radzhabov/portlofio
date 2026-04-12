@@ -3112,33 +3112,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     }
 
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var introKey = 'daleIntroPlayed';
     var minVisibleMs = 1550;
     var revealDelay = 720;
     var exitFallbackMs = 3600;
     var startTime = performance.now();
     var exitQueued = false;
     var exitStarted = false;
-    var introSeen = false;
-
-    try {
-      introSeen = window.sessionStorage.getItem(introKey) === '1';
-    } catch (err) {
-      introSeen = false;
-    }
 
     function markComplete() {
       document.body.classList.remove('intro-active');
       document.body.classList.add('intro-complete');
       preloader.classList.add('is-complete');
-      try {
-        window.sessionStorage.setItem(introKey, '1');
-      } catch (err) {
-        /* sessionStorage may be blocked */
-      }
     }
 
-    if (reducedMotion || introSeen) {
+    if (reducedMotion) {
       markComplete();
       return;
     }
