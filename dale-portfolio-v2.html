@@ -247,6 +247,10 @@ body {
   overflow-x: hidden;
 }
 
+body.intro-active {
+  overflow: hidden;
+}
+
 /* === NOISE OVERLAY === */
 body::before {
   content: '';
@@ -536,8 +540,8 @@ nav .container {
 .hero .hero-anim {
   opacity: 0;
   transform: translateY(30px);
-  animation: heroStagger 0.9s var(--ease-out-expo) forwards;
 }
+body.intro-complete .hero .hero-anim { animation: heroStagger 0.9s var(--ease-out-expo) forwards; }
 .hero-anim-1 { animation-delay: 0.1s !important; }
 .hero-anim-2 { animation-delay: 0.25s !important; }
 .hero-anim-3 { animation-delay: 0.4s !important; }
@@ -2141,49 +2145,145 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-radius: 4px;
 }
 
-/* PRELOADER */
-.preloader {
+/* INTRO */
+.intro {
   position: fixed;
   inset: 0;
-  background: var(--bg-primary);
   z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.8s var(--ease-out-expo), visibility 0.8s;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transform: translateY(0);
+  transition: transform 0.9s var(--ease-out-expo), opacity 0.6s ease, visibility 0.6s ease;
 }
-.preloader.hidden {
+.intro.is-complete {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
-.preloader-logo {
-  font-family: var(--font-body);
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--text-primary);
-  letter-spacing: -0.04em;
-  text-transform: lowercase;
+.intro.is-revealing {
+  transform: translateY(-100%);
 }
-.preloader-progress {
-  width: 100px;
-  height: 2px;
-  background: var(--border);
-  margin-top: 20px;
+.intro-stage,
+.intro-curtain {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 56px);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(232, 197, 114, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+    var(--bg-primary);
+}
+.intro-stage {
+  transition: transform 0.78s var(--ease-out-expo);
+  will-change: transform;
+}
+.intro.is-exiting .intro-stage {
+  transform: translateY(-100%);
+}
+.intro-curtain {
+  transform: translateY(100%);
+  transition: transform 0.82s var(--ease-out-expo);
+  will-change: transform;
+}
+.intro.is-exiting .intro-curtain {
+  transform: translateY(0);
+}
+.intro-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.8vw, 24px);
+  padding: 0 clamp(22px, 5vw, 56px);
+  pointer-events: none;
+}
+.intro-grid span {
   position: relative;
-  overflow: hidden;
-  border-radius: 2px;
 }
-.preloader-progress::after {
+.intro-grid span::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; bottom: 0;
-  width: 0%;
-  background: var(--accent);
-  animation: preloaderFill 1.5s var(--ease-out-expo) forwards;
+  inset: 0 0 0 auto;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(232, 197, 114, 0.42) 14%, rgba(232, 197, 114, 0.2) 86%, transparent 100%);
+  transform: scaleY(0.28);
+  transform-origin: top;
+  opacity: 0.35;
+  transition: transform 1.05s var(--ease-out-expo), opacity 1.05s var(--ease-out-expo);
 }
-@keyframes preloaderFill { 100% { width: 100%; } }
+.intro-grid span:last-child::after {
+  display: none;
+}
+.intro.is-entered .intro-grid span::after {
+  transform: scaleY(1);
+  opacity: 0.9;
+}
+.intro-brand {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  display: grid;
+  justify-items: center;
+  gap: clamp(12px, 2vh, 22px);
+  text-align: center;
+}
+.intro-reveal {
+  overflow: hidden;
+}
+.intro-mark,
+.intro-word,
+.intro-meta {
+  transform: translateY(118%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.intro-mark {
+  width: clamp(76px, 10vw, 118px);
+  color: var(--accent);
+  filter: drop-shadow(0 0 28px rgba(232, 197, 114, 0.18));
+  transition: transform 0.95s var(--ease-out-expo) 0.06s, opacity 0.5s ease 0.06s;
+}
+.intro-mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.intro-word {
+  font-size: clamp(40px, 9vw, 104px);
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -0.08em;
+  text-transform: lowercase;
+  transition: transform 0.95s var(--ease-out-expo) 0.14s, opacity 0.5s ease 0.14s;
+}
+.intro-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 1.5vw, 13px);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: transform 0.95s var(--ease-out-expo) 0.24s, opacity 0.5s ease 0.24s;
+}
+.intro-meta::before,
+.intro-meta::after {
+  content: '';
+  width: clamp(26px, 5vw, 42px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 197, 114, 0.72), transparent);
+}
+.intro.is-entered .intro-mark,
+.intro.is-entered .intro-word,
+.intro.is-entered .intro-meta {
+  transform: translateY(0);
+  opacity: 1;
+}
 
 /* MARQUEE */
 .marquee-section {
@@ -2346,6 +2446,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  #preloader { display: none !important; }
   .hero .hero-anim { opacity: 1; transform: none; animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .cursor-glow, .cursor-follower { display: none; }
@@ -2357,6 +2458,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 @media (max-width: 968px) {
+  .intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .intro-brand {
+    width: min(100%, 420px);
+  }
+  .intro-meta {
+    letter-spacing: 0.22em;
+  }
   .testimonials-track { grid-template-columns: 1fr; gap: 16px; }
 }
 </style>
@@ -2386,9 +2497,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 </button>
 
 <!-- PRELOADER -->
-<div id="preloader" class="preloader">
-  <div class="preloader-logo">i. radzhabov</div>
-  <div class="preloader-progress"></div>
+<div id="preloader" class="intro" aria-hidden="true">
+  <div class="intro-stage">
+    <div class="intro-grid" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="intro-brand">
+      <div class="intro-reveal">
+        <div class="intro-mark">
+          <svg viewBox="0 0 40 60" fill="none" aria-hidden="true">
+            <rect x="4" y="0" width="11" height="60" fill="currentColor"/>
+            <rect x="18" y="0" width="12" height="28" fill="currentColor"/>
+            <rect x="21" y="32" width="12" height="28" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+      <div class="intro-reveal">
+        <div class="intro-word">i. radzhabov</div>
+      </div>
+      <div class="intro-reveal">
+        <div class="intro-meta">frontend / websites</div>
+      </div>
+    </div>
+  </div>
+  <div class="intro-curtain" aria-hidden="true">
+    <div class="intro-grid" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
 </div>
 <canvas class="dot-grid-canvas" id="dotGrid" aria-hidden="true"></canvas>
 <div class="cursor-glow" id="cursorGlow"></div>
@@ -2988,13 +3124,83 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     };
   }
 
-  // === PRELOADER ===
-  window.addEventListener('load', function() {
+  // === INTRO ===
+  (function() {
     var preloader = document.getElementById('preloader');
-    if (preloader) {
-      setTimeout(function() { preloader.classList.add('hidden'); }, 1500);
+    if (!preloader) {
+      document.body.classList.add('intro-complete');
+      return;
     }
-  });
+
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var introKey = 'daleIntroPlayed';
+    var minVisibleMs = 1550;
+    var stageSwapDelay = 430;
+    var revealDelay = 560;
+    var exitFallbackMs = 3600;
+    var startTime = performance.now();
+    var exitQueued = false;
+    var exitStarted = false;
+    var introSeen = false;
+
+    try {
+      introSeen = window.sessionStorage.getItem(introKey) === '1';
+    } catch (err) {
+      introSeen = false;
+    }
+
+    function markComplete() {
+      document.body.classList.remove('intro-active');
+      document.body.classList.add('intro-complete');
+      preloader.classList.add('is-complete');
+      try {
+        window.sessionStorage.setItem(introKey, '1');
+      } catch (err) {
+        /* sessionStorage may be blocked */
+      }
+    }
+
+    if (reducedMotion || introSeen) {
+      markComplete();
+      return;
+    }
+
+    document.body.classList.add('intro-active');
+
+    requestAnimationFrame(function() {
+      preloader.classList.add('is-entered');
+    });
+
+    function startExit() {
+      if (exitStarted) return;
+      exitStarted = true;
+      preloader.classList.add('is-exiting');
+
+      setTimeout(function() {
+        preloader.classList.add('is-revealing');
+      }, stageSwapDelay);
+
+      setTimeout(function() {
+        markComplete();
+      }, stageSwapDelay + revealDelay);
+    }
+
+    function queueExit() {
+      if (exitQueued) return;
+      exitQueued = true;
+      var elapsed = performance.now() - startTime;
+      var wait = Math.max(0, minVisibleMs - elapsed);
+      setTimeout(startExit, wait);
+    }
+
+    if (document.readyState === 'complete') {
+      queueExit();
+    } else {
+      window.addEventListener('load', queueExit, { once: true });
+    }
+
+    setTimeout(queueExit, exitFallbackMs);
+  })();
 
   // === TEXT DECODE ANIMATION ===
   var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789!@#$%^&*()";
