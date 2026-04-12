@@ -2164,8 +2164,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .intro.is-revealing {
   transform: translateY(-100%);
 }
-.intro-stage,
-.intro-curtain {
+.intro-stage {
   position: absolute;
   inset: 0;
   display: flex;
@@ -2176,21 +2175,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     radial-gradient(circle at 50% 42%, rgba(232, 197, 114, 0.12), transparent 26%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
     var(--bg-primary);
-}
-.intro-stage {
-  transition: transform 0.78s var(--ease-out-expo);
-  will-change: transform;
-}
-.intro.is-exiting .intro-stage {
-  transform: translateY(-100%);
-}
-.intro-curtain {
-  transform: translateY(100%);
-  transition: transform 0.82s var(--ease-out-expo);
-  will-change: transform;
-}
-.intro.is-exiting .intro-curtain {
-  transform: translateY(0);
 }
 .intro-grid {
   position: absolute;
@@ -2518,11 +2502,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div class="intro-reveal">
         <div class="intro-meta">frontend / websites</div>
       </div>
-    </div>
-  </div>
-  <div class="intro-curtain" aria-hidden="true">
-    <div class="intro-grid" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
     </div>
   </div>
 </div>
@@ -3135,8 +3114,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var introKey = 'daleIntroPlayed';
     var minVisibleMs = 1550;
-    var stageSwapDelay = 430;
-    var revealDelay = 560;
+    var revealDelay = 720;
     var exitFallbackMs = 3600;
     var startTime = performance.now();
     var exitQueued = false;
@@ -3174,15 +3152,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     function startExit() {
       if (exitStarted) return;
       exitStarted = true;
-      preloader.classList.add('is-exiting');
-
-      setTimeout(function() {
-        preloader.classList.add('is-revealing');
-      }, stageSwapDelay);
+      preloader.classList.add('is-revealing');
 
       setTimeout(function() {
         markComplete();
-      }, stageSwapDelay + revealDelay);
+      }, revealDelay);
     }
 
     function queueExit() {
