@@ -609,12 +609,24 @@ body.intro-complete .hero .hero-anim { animation: heroStagger 0.9s var(--ease-ou
   min-height: 272px;
 }
 
-.hero-copy.is-swapping h1,
-.hero-copy.is-swapping .hero-description {
-  animation: heroSwapUp 0.32s var(--ease-out-expo);
+.hero-copy h1,
+.hero-copy .hero-description {
+  will-change: transform, opacity;
 }
 
-@keyframes heroSwapUp {
+.hero-copy.is-swapping-out h1,
+.hero-copy.is-swapping-out .hero-description {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.16s ease, transform 0.16s var(--ease-out-expo);
+}
+
+.hero-copy.is-swapping-in h1,
+.hero-copy.is-swapping-in .hero-description {
+  animation: heroSwapIn 0.24s var(--ease-out-expo);
+}
+
+@keyframes heroSwapIn {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -3470,22 +3482,52 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         description: 'Есть идея, структура или понятная цель — соберу страницу или небольшой сайт под запуск. Без агентской схемы и лишних согласований.'
       }
     };
+    var heroScenarioSwapTimer = null;
+    var heroScenarioInTimer = null;
+    var currentHeroScenario = null;
 
-    function setHeroScenario(key) {
-      if (!heroScenarios[key]) return;
-
+    function updateHeroScenarioButtons(key) {
       heroScenarioButtons.forEach(function(btn) {
         var isActive = btn.getAttribute('data-scenario') === key;
         btn.classList.toggle('is-active', isActive);
         btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
+    }
 
+    function applyHeroScenarioContent(key) {
       heroScenarioTitle.innerHTML = heroScenarios[key].title;
       heroScenarioDescription.textContent = heroScenarios[key].description;
+    }
 
-      heroScenarioCopy.classList.remove('is-swapping');
-      void heroScenarioCopy.offsetWidth;
-      heroScenarioCopy.classList.add('is-swapping');
+    function setHeroScenario(key, immediate) {
+      if (!heroScenarios[key]) return;
+      if (currentHeroScenario === key && !immediate) return;
+
+      updateHeroScenarioButtons(key);
+
+      if (heroScenarioSwapTimer) clearTimeout(heroScenarioSwapTimer);
+      if (heroScenarioInTimer) clearTimeout(heroScenarioInTimer);
+
+      if (immediate) {
+        heroScenarioCopy.classList.remove('is-swapping-out', 'is-swapping-in');
+        applyHeroScenarioContent(key);
+        currentHeroScenario = key;
+        return;
+      }
+
+      heroScenarioCopy.classList.remove('is-swapping-in');
+      heroScenarioCopy.classList.add('is-swapping-out');
+
+      heroScenarioSwapTimer = setTimeout(function() {
+        applyHeroScenarioContent(key);
+        currentHeroScenario = key;
+        heroScenarioCopy.classList.remove('is-swapping-out');
+        void heroScenarioCopy.offsetWidth;
+        heroScenarioCopy.classList.add('is-swapping-in');
+        heroScenarioInTimer = setTimeout(function() {
+          heroScenarioCopy.classList.remove('is-swapping-in');
+        }, 260);
+      }, 150);
     }
 
     heroScenarioButtons.forEach(function(btn) {
@@ -3495,7 +3537,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     });
 
     var initialHeroScenario = document.querySelector('.hero-scenario.is-active');
-    setHeroScenario(initialHeroScenario ? initialHeroScenario.getAttribute('data-scenario') : 'task');
+    setHeroScenario(initialHeroScenario ? initialHeroScenario.getAttribute('data-scenario') : 'task', true);
   }
 
   // === FORM VALIDATION ===
