@@ -3485,6 +3485,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     var heroScenarioSwapTimer = null;
     var heroScenarioInTimer = null;
     var currentHeroScenario = null;
+    var heroScenarioResizeTimer = null;
 
     function updateHeroScenarioButtons(key) {
       heroScenarioButtons.forEach(function(btn) {
@@ -3497,6 +3498,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     function applyHeroScenarioContent(key) {
       heroScenarioTitle.innerHTML = heroScenarios[key].title;
       heroScenarioDescription.textContent = heroScenarios[key].description;
+    }
+
+    function measureHeroScenarioHeight() {
+      var savedTitle = heroScenarioTitle.innerHTML;
+      var savedDescription = heroScenarioDescription.textContent;
+      var maxHeight = 0;
+
+      heroScenarioCopy.classList.remove('is-swapping-out', 'is-swapping-in');
+      heroScenarioCopy.style.minHeight = '0px';
+
+      Object.keys(heroScenarios).forEach(function(scenarioKey) {
+        applyHeroScenarioContent(scenarioKey);
+        maxHeight = Math.max(maxHeight, heroScenarioCopy.offsetHeight);
+      });
+
+      heroScenarioTitle.innerHTML = savedTitle;
+      heroScenarioDescription.textContent = savedDescription;
+
+      if (maxHeight > 0) {
+        heroScenarioCopy.style.minHeight = maxHeight + 'px';
+      }
     }
 
     function setHeroScenario(key, immediate) {
@@ -3538,6 +3560,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
     var initialHeroScenario = document.querySelector('.hero-scenario.is-active');
     setHeroScenario(initialHeroScenario ? initialHeroScenario.getAttribute('data-scenario') : 'task', true);
+
+    requestAnimationFrame(measureHeroScenarioHeight);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(measureHeroScenarioHeight);
+    }
+    window.addEventListener('resize', function() {
+      clearTimeout(heroScenarioResizeTimer);
+      heroScenarioResizeTimer = setTimeout(measureHeroScenarioHeight, 120);
+    });
   }
 
   // === FORM VALIDATION ===
