@@ -1,0 +1,47 @@
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+<section class="page-hero article-hero">
+  <div class="container">
+    {% include "partials/breadcrumbs.njk" %}
+    <div class="page-hero-copy article-hero-copy">
+      {% if tag %}<div class="section-tag">{{ tag }}</div>{% endif %}
+      <h1>{{ h1 or title }}</h1>
+      {% if summary %}<p class="page-summary">{{ summary }}</p>{% endif %}
+      <div class="meta-line">
+        <span>{{ datePublished or "2026-04-05" }}</span>
+        <span>Информационный материал</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container article-shell">
+    <article class="rich-content article-content">
+      {{ content | safe }}
+    </article>
+  </div>
+</section>
+
+{% if relatedLinks and relatedLinks.length %}
+<section class="related-section">
+  <div class="container">
+    <div class="section-header section-header-compact">
+      <div class="section-tag">Связанные материалы</div>
+      <h2>Что открыть дальше.</h2>
+    </div>
+    <div class="card-grid card-grid-compact">
+      {% for item in relatedLinks %}
+      <a class="card-link" href="{{ item.url }}">
+        <div class="card-link-title">{{ item.label }}</div>
+        <div class="card-link-meta">{{ item.description }}</div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/contact-cta.njk" %}
+{% endblock %}

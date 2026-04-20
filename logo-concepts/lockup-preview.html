@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lockup Preview</title>
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-soft: #141417;
+      --bg-light: #f5f5f7;
+      --text: #ededef;
+      --muted: #8a8a8e;
+      --dark: #111113;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(17, 17, 19, 0.08);
+      --accent: #e8c572;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Outfit, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 48px 0 96px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--bg-soft);
+    }
+
+    .card.light {
+      background: var(--bg-light);
+      color: var(--dark);
+      border-color: var(--border-light);
+    }
+
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card.light p,
+    .card.light .meta {
+      color: rgba(17, 17, 19, 0.56);
+    }
+
+    .stage {
+      min-height: 160px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #050506;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card.light .stage {
+      background: #ffffff;
+      border-color: var(--border-light);
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #050506;
+    }
+
+    .bar.light {
+      background: #ffffff;
+      border-color: var(--border-light);
+      color: var(--dark);
+    }
+
+    .nav-meta {
+      display: flex;
+      gap: 18px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.34);
+    }
+
+    .bar.light .nav-meta {
+      color: rgba(17, 17, 19, 0.38);
+    }
+
+    .lockup {
+      display: inline-flex;
+      align-items: center;
+      color: currentColor;
+    }
+
+    .lockup.primary {
+      gap: 18px;
+    }
+
+    .lockup.compact {
+      gap: 14px;
+    }
+
+    .lockup.stacked {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .mark {
+      flex: 0 0 auto;
+      display: block;
+      color: currentColor;
+    }
+
+    .mark.mark-24 {
+      width: 18px;
+      height: 27px;
+    }
+
+    .mark.mark-32 {
+      width: 24px;
+      height: 36px;
+    }
+
+    .mark.mark-48 {
+      width: 32px;
+      height: 48px;
+    }
+
+    .mark.mark-64 {
+      width: 42px;
+      height: 63px;
+    }
+
+    .word {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .word-main {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-transform: lowercase;
+      white-space: nowrap;
+    }
+
+    .word-main.small {
+      font-size: 15px;
+    }
+
+    .word-main.large {
+      font-size: 25px;
+    }
+
+    .word-sub {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.42);
+      white-space: nowrap;
+    }
+
+    .card.light .word-sub,
+    .bar.light .word-sub {
+      color: rgba(17, 17, 19, 0.45);
+    }
+
+    .stack-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .chip {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #050506;
+      display: grid;
+      place-items: center;
+    }
+
+    .chip.light {
+      background: #ffffff;
+      border-color: var(--border-light);
+      color: var(--dark);
+    }
+
+    .meta {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    code {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 32px, 1180px);
+        padding: 32px 0 72px;
+      }
+
+      .bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .nav-meta {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .stage {
+        min-height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="mark-balanced-v2-optical" viewBox="0 0 40 60">
+      <rect x="4" y="0" width="11" height="60" fill="currentColor"/>
+      <rect x="18" y="0" width="12" height="28" fill="currentColor"/>
+      <rect x="21" y="32" width="12" height="28" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <main class="wrap">
+    <h1>Lockup Preview</h1>
+    <p class="intro">
+      Реальные lockup-варианты для <code>balanced-v2-optical</code>: primary, compact, stacked и symbol-only.
+      Здесь можно смотреть не только на красоту, но и на иерархию, читаемость и поведение в интерфейсных контекстах.
+    </p>
+
+    <section class="section">
+      <h2 class="section-title">Primary</h2>
+      <div class="grid">
+        <article class="card">
+          <h2>Dark / Horizontal</h2>
+          <p>Базовый вариант для navbar, footer и desktop header.</p>
+          <div class="stage">
+            <div class="lockup primary">
+              <svg class="mark mark-48" viewBox="0 0 40 60" aria-hidden="true">
+                <use href="#mark-balanced-v2-optical"></use>
+              </svg>
+              <div class="word">
+                <div class="word-main">i. radzhabov</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card light">
+          <h2>Light / Horizontal</h2>
+          <p>Проверка инверсии на светлом фоне без потери характера.</p>
+          <div class="stage">
+            <div class="lockup primary">
+              <svg class="mark mark-48" viewBox="0 0 40 60" aria-hidden="true">
+                <use href="#mark-balanced-v2-optical"></use>
+              </svg>
+              <div class="word">
+                <div class="word-main">i. radzhabov</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Context</h2>
+      <div class="grid">
+        <article class="card">
+          <h2>Navbar</h2>
+          <p>Наиболее вероятный реальный сценарий для сайта.</p>
+          <div class="bar">
+            <div class="lockup compact">
+              <svg class="mark mark-32" viewBox="0 0 40 60" aria-hidden="true">
+                <use href="#mark-balanced-v2-optical"></use>
+              </svg>
+              <div class="word">
+                <div class="word-main small">i. radzhabov</div>
+              </div>
+            </div>
+            <div class="nav-meta">
+              <span>projects</span>
+              <span>about</span>
+              <span>contact</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card light">
+          <h2>Compact</h2>
+          <p>Для узких контейнеров, mobile nav и подписи без descriptor.</p>
+          <div class="stage">
+            <div class="lockup compact">
+              <svg class="mark mark-32" viewBox="0 0 40 60" aria-hidden="true">
+                <use href="#mark-balanced-v2-optical"></use>
+              </svg>
+              <div class="word">
+                <div class="word-main small">i. radzhabov</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Editorial</h2>
+      <div class="grid">
+        <article class="card">
+          <h2>Stacked</h2>
+          <p>Для hero-brand board, презентационных листов и внешней бренд-подачи.</p>
+          <div class="stage" style="justify-content:flex-start;">
+            <div class="lockup stacked">
+              <svg class="mark mark-64" viewBox="0 0 40 60" aria-hidden="true">
+                <use href="#mark-balanced-v2-optical"></use>
+              </svg>
+              <div class="stack-block">
+                <div class="word-main large">i. radzhabov</div>
+                <div class="word-sub">builds for launch</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card light">
+          <h2>Symbol Only</h2>
+          <p>Знак отдельно для avatar, watermark, favicon и app icon.</p>
+          <div class="stage">
+            <svg class="mark mark-64" viewBox="0 0 40 60" aria-hidden="true">
+              <use href="#mark-balanced-v2-optical"></use>
+            </svg>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Small Sizes</h2>
+      <div class="card">
+        <h2>Favicon / Avatar Check</h2>
+        <p>Проверка знака в типичных мелких режимах. Здесь важен не только силуэт, но и то, не распадается ли смещение в шум.</p>
+        <div class="sizes">
+          <div class="chip">
+            <svg class="mark mark-24" viewBox="0 0 40 60" aria-hidden="true">
+              <use href="#mark-balanced-v2-optical"></use>
+            </svg>
+          </div>
+          <div class="chip">
+            <svg class="mark mark-32" viewBox="0 0 40 60" aria-hidden="true">
+              <use href="#mark-balanced-v2-optical"></use>
+            </svg>
+          </div>
+          <div class="chip">
+            <svg class="mark mark-48" viewBox="0 0 40 60" aria-hidden="true">
+              <use href="#mark-balanced-v2-optical"></use>
+            </svg>
+          </div>
+          <div class="chip light">
+            <svg class="mark mark-24" viewBox="0 0 40 60" aria-hidden="true">
+              <use href="#mark-balanced-v2-optical"></use>
+            </svg>
+          </div>
+          <div class="chip light">
+            <svg class="mark mark-32" viewBox="0 0 40 60" aria-hidden="true">
+              <use href="#mark-balanced-v2-optical"></use>
+            </svg>
+          </div>
+          <div class="chip light">
+            <svg class="mark mark-48" viewBox="0 0 40 60" aria-hidden="true">
+              <use href="#mark-balanced-v2-optical"></use>
+            </svg>
+          </div>
+        </div>
+        <p class="meta">
+          Если выбирать один основной lockup для сайта, мой текущий фаворит: <code>primary horizontal + i. radzhabov</code>.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

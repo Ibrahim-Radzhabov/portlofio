@@ -1,0 +1,15 @@
+<section class="contact-cta">
+  <div class="container">
+    <div class="contact-cta-card">
+      <div>
+        <div class="section-tag">{{ ctaTag or "Следующий шаг" }}</div>
+        <h2 class="contact-cta-title">{{ ctaTitle or "Если задача уже сформулирована, обсудим её предметно." }}</h2>
+        <p class="contact-cta-text">{{ ctaText or "Опишите контекст, продукт и текущую точку задачи. Дальше будет понятно, нужен ли разбор, точечная переработка или полноценная пересборка страницы или сайта." }}</p>
+      </div>
+      <div class="contact-cta-actions">
+        <a class="button button-primary" href="{{ ctaUrl or '/#contact' }}">{{ ctaButtonLabel or "Обсудить проект" }}</a>
+        <a class="button button-secondary" href="mailto:{{ site.authorEmail }}">Написать на email</a>
+      </div>
+    </div>
+  </div>
+</section>

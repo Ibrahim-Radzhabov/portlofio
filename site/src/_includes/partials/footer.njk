@@ -1,0 +1,24 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <div class="footer-text">&copy; {{ site.currentYear }} {{ site.authorName }}. Написано кодом, а не по шаблону.</div>
+      <div class="footer-credit">Дизайн и разработка: {{ site.authorName }}</div>
+    </div>
+    <div class="footer-right">
+      <ul class="footer-nav" aria-label="Навигация в футере">
+        {% for item in navigation.footer %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+      {% if social.items[0].url or social.items[1].url or social.items[2].url %}
+      <div class="footer-links">
+        {% for item in social.items %}
+          {% if item.url %}
+          <a href="{{ item.url }}" rel="noopener noreferrer">{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,316 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 0;
+  padding: 16px 32px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: 600 15px/1.2 var(--font-body);
+  transition:
+    transform 0.3s var(--ease-out-expo),
+    border-color 0.3s var(--ease-out-expo),
+    background-color 0.3s var(--ease-out-expo),
+    color 0.3s var(--ease-out-expo),
+    box-shadow 0.3s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.button-primary:hover {
+  box-shadow: 0 8px 30px var(--accent-glow-strong);
+}
+
+.button-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.button-secondary {
+  border-color: var(--border);
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.button-secondary:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card);
+}
+
+.card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid-compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-link,
+.panel-card,
+.related-links-card,
+.contact-cta-card,
+.proof-strip,
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.018));
+  box-shadow: var(--shadow-soft);
+}
+
+.card-link,
+.panel-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    border-color 0.35s var(--ease-out-expo),
+    background 0.35s var(--ease-out-expo),
+    box-shadow 0.35s var(--ease-out-expo);
+}
+
+.card-link:hover,
+.panel-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.34);
+}
+
+.card-link::after,
+.panel-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(560px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.06), transparent 40%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.card-link:hover::after,
+.panel-card:hover::after {
+  opacity: 1;
+}
+
+.card-link-title {
+  font: 700 24px/1.08 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.card-link-meta {
+  margin-top: 12px;
+  color: var(--text-secondary);
+}
+
+.panel-card .panel-tag {
+  color: var(--accent);
+  font: 500 12px/1.3 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.panel-card h3 {
+  margin: 14px 0 12px;
+  font: 800 30px/1 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.panel-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  max-width: 38ch;
+}
+
+.panel-card .panel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 28px;
+  overflow: hidden;
+}
+
+.proof-item {
+  padding: 24px;
+}
+
+.proof-item + .proof-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proof-value {
+  color: var(--accent);
+  font: 800 40px/1 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.proof-value-compact {
+  font-size: 30px;
+}
+
+.proof-label {
+  margin-top: 10px;
+  color: var(--text-secondary);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: var(--text-tertiary);
+  font: 500 12px/1.4 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.breadcrumbs a:hover {
+  color: var(--text-primary);
+}
+
+.related-links-card {
+  padding: 24px;
+  position: sticky;
+  top: 104px;
+  background: var(--bg-card);
+}
+
+.related-links {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.related-links a {
+  color: var(--text-secondary);
+}
+
+.related-links a:hover {
+  color: var(--text-primary);
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: border-color 0.3s var(--ease-out-expo);
+}
+
+.faq-item[open] {
+  border-color: var(--border-hover);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  font: 600 16px/1.4 var(--font-display);
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-answer {
+  padding: 0 24px 24px;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.contact-cta-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.8fr);
+  gap: 24px;
+  padding: 30px;
+  border-radius: 24px;
+}
+
+.contact-cta-title {
+  margin: 0;
+  font: 800 clamp(30px, 4vw, 54px)/0.98 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.contact-cta-text {
+  max-width: 760px;
+  margin: 16px 0 0;
+  color: var(--text-secondary);
+}
+
+.contact-cta-actions {
+  display: grid;
+  gap: 12px;
+  align-content: center;
+}
+
+.note-box {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(232, 197, 114, 0.06);
+  border: 1px solid rgba(232, 197, 114, 0.12);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 968px) {
+  .card-grid,
+  .card-grid-compact,
+  .proof-strip,
+  .contact-cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-item + .proof-item {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .related-links-card {
+    position: static;
+  }
+}

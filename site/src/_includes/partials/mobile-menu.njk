@@ -1,0 +1,7 @@
+<div class="mobile-menu" id="mobileMenu" aria-label="Мобильное меню" hidden>
+  <div class="mobile-menu-inner">
+    {% for item in navigation.primary %}
+    <a href="{{ item.url }}">{{ item.label }}</a>
+    {% endfor %}
+  </div>
+</div>

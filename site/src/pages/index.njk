@@ -1,0 +1,237 @@
+---
+layout: "layouts/home.njk"
+pageKind: "home"
+permalink: /
+title: "Дейл Макманус — сайты и веб-продукты для SaaS и B2B"
+metaTitle: "Дейл Макманус — сайты и веб-продукты для SaaS и B2B"
+metaDescription: "Проектирую и разрабатываю сайты и продуктовые интерфейсы для стартапов, SaaS и B2B-команд: аудит, пересборка и страницы, которые усиливают доверие и заявки."
+h1: "Когда сайт не убеждает, трафик сгорает."
+summary: "Проектирую и разрабатываю сайты и продуктовые интерфейсы для команд, которым важно не просто выглядеть аккуратно, а быстрее объяснять ценность продукта, усиливать доверие и вести к заявке."
+ogImage: "/og-image.png"
+---
+<section class="home-hero">
+  <div class="container home-hero-layout">
+    <div class="home-hero-copy">
+      <div class="section-tag">Для стартапов, SaaS и B2B</div>
+      <h1>Когда сайт не убеждает,<br><span class="accent">трафик сгорает.</span></h1>
+      <p>Проектирую и разрабатываю сайты и продуктовые интерфейсы для команд, которым важно не просто выглядеть аккуратно, а быстрее объяснять ценность продукта, усиливать доверие и вести к следующему шагу.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/uslugi/audit-i-redizain-saita-na-konversiyu/">Запросить разбор сайта</a>
+        <a class="button button-secondary" href="/uslugi/razrabotka-b2b-saitov-i-veb-interfeisov/">Посмотреть B2B-направление</a>
+      </div>
+      <p class="hero-helper">15 минут, конкретные рекомендации и понятный следующий шаг: точечные правки, пересборка страницы или более глубокая работа.</p>
+    </div>
+    <div class="home-proof-card">
+      <div class="panel-tag">Что важно на старте</div>
+      <h2>Сначала понять, где теряется заявка. Только потом менять дизайн.</h2>
+      <p class="home-proof-lead">Если проблема в оффере, структуре, слое доверия или призыве к действию, это видно раньше, чем в пикселях. Поэтому первый шаг здесь не “сделать красиво”, а собрать диагноз и масштаб работ.</p>
+      {% set proofs = [
+        { "value": "15+", "label": "лет в веб-разработке полного цикла" },
+        { "value": "50+", "label": "запусков для продуктовых команд и брендов" },
+        { "value": "14 дней", "label": "в среднем до первого прототипа", "compact": true }
+      ] %}
+      {% include "partials/proof-strip.njk" %}
+      <p class="home-proof-note">Разбор обычно быстро показывает, что действительно мешает заявкам: слабый первый экран, неясный сценарий страницы, нехватка доверия или перегруженная подача.</p>
+    </div>
+  </div>
+</section>
+
+<section class="teaser-section" id="work">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">С чего можно начать</div>
+      <h2>Три входа в работу, если сайт уже не дотягивает до задачи бизнеса.</h2>
+    </div>
+    <div class="card-grid home-entry-grid">
+      <a class="panel-card panel-card-featured" href="/uslugi/audit-i-redizain-saita-na-konversiyu/">
+        <div class="panel-tag">Разбор и диагностика</div>
+        <h3>Аудит и редизайн сайта на конверсию</h3>
+        <p>Если трафик уже есть, но путь к заявке выглядит слабым, сначала нужен диагноз: где теряется внимание, доверие и действие.</p>
+        <div class="panel-link">Разобрать сайт</div>
+      </a>
+      <a class="panel-card" href="/blog/pochemu-sait-ne-konvertiruet/">
+        <div class="panel-tag">Материал для самопроверки</div>
+        <h3>Почему сайт не конвертирует</h3>
+        <p>12 типичных причин, из-за которых даже сильный продукт теряет заявки: от слабого оффера до перегруженного сценария страницы.</p>
+        <div class="panel-link">Открыть материал</div>
+      </a>
+      <a class="panel-card" href="/cases/kova-technology-ecommerce/">
+        <div class="panel-tag">Кейс</div>
+        <h3>Kova Technology</h3>
+        <p>Пример проекта, где эффект дали не декоративные улучшения, а пересборка структуры, сценария оформления и логики пути к действию.</p>
+        <div class="panel-link">Посмотреть кейс</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="overview-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Где я помогаю</div>
+      <h2>Не просто “сделать сайт”, а собрать рабочий цифровой актив под ваш контекст.</h2>
+    </div>
+    <div class="overview-grid">
+      <a class="panel-card" href="/uslugi/audit-i-redizain-saita-na-konversiyu/">
+        <div class="panel-tag">Аудит / конверсия</div>
+        <h3>Разбор, диагностика и пересборка</h3>
+        <p>Когда сайт получает внимание, но не переводит его в заявку, нужен разбор структуры, доказательств, призывов к действию и сценария чтения.</p>
+      </a>
+      <a class="panel-card" href="/uslugi/razrabotka-b2b-saitov-i-veb-interfeisov/">
+        <div class="panel-tag">B2B</div>
+        <h3>Сложный оффер, который читается быстрее</h3>
+        <p>Сайты и веб-интерфейсы для B2B-команд, которым нужно яснее объяснять продукт, быстрее создавать доверие и поддерживать цикл сделки.</p>
+      </a>
+      <a class="panel-card" href="/cases/kova-technology-ecommerce/">
+        <div class="panel-tag">Доказательства</div>
+        <h3>Кейсы и сценарии, а не общие обещания</h3>
+        <p>Если задача уже сформулирована, лучше всего её проясняют реальные проекты: что мешало, что было сделано и за счёт чего появился результат.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="overview-section home-materials-section">
+  <div class="container">
+    <div class="section-header section-header-compact">
+      <div class="section-tag">Полезно до созвона</div>
+      <h2>Материалы, которые помогают быстрее понять задачу и не идти в работу вслепую.</h2>
+    </div>
+    <div class="card-grid home-materials-grid">
+      <a class="panel-card" href="/blog/pochemu-sait-ne-konvertiruet/">
+        <div class="panel-tag">Статья</div>
+        <h3>Почему сайт не конвертирует</h3>
+        <p>Подходит, если у вас уже есть трафик, но неясно, где именно ломается путь к действию и почему страница не доводит до заявки.</p>
+        <div class="panel-link">Открыть статью</div>
+      </a>
+      <a class="panel-card" href="/blog/chto-dolzhno-byt-na-b2b-sajte/">
+        <div class="panel-tag">B2B-материал</div>
+        <h3>Что должно быть на B2B-сайте</h3>
+        <p>Материал для команд со сложным оффером: какие блоки реально помогают объяснять продукт, снижать сомнение и поддерживать следующий шаг.</p>
+        <div class="panel-link">Открыть материал</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="overview-section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Процесс</div>
+      <h2>Сначала смысл и структура, потом интерфейс и реализация.</h2>
+    </div>
+    <p class="process-lead">Главная задача на старте — не ускорить производство макетов, а понять, что именно мешает странице или сайту работать сильнее. Поэтому процесс начинается с диагноза, а не с декоративных решений.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">Шаг 01</div>
+        <h3>Диагностика</h3>
+        <p>Разбираем оффер, контекст страницы и места, где пользователь теряет понимание, доверие или готовность идти дальше.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">Шаг 02</div>
+        <h3>Приоритеты</h3>
+        <p>Отделяем точечные фиксы от системных проблем и понимаем, нужен ли локальный апдейт, пересборка страницы или новая архитектура.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">Шаг 03</div>
+        <h3>Проектирование</h3>
+        <p>Собираем структуру, ритм экрана, слой доверия и сценарий чтения так, чтобы страница объясняла продукт быстрее и чище.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">Шаг 04</div>
+        <h3>Реализация</h3>
+        <p>Доводим решение до рабочего состояния: адаптив, поведение, перформанс, финальная подача и техническая аккуратность.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="overview-section">
+  <div class="container home-about">
+    <div class="home-about-portrait">
+      <div class="about-mark">DM</div>
+      <p class="about-portrait-text">Стратегия страницы, интерфейс и реализация в одних руках. Без потери смысла между дизайнером, маркетингом и разработкой.</p>
+      <div class="about-portrait-meta">Фаундеры / продакт-команды / B2B / SaaS</div>
+    </div>
+    <div class="home-about-copy">
+      <div class="section-tag">Обо мне</div>
+      <h2>Я соединяю смысл, интерфейс и реализацию в одном процессе.</h2>
+      <p>Меня зовут Дейл. Я работаю с командами, которым нужно не просто “обновить сайт”, а сделать его понятнее, убедительнее и сильнее как точку первого цифрового касания.</p>
+      <p>Мой фокус — страницы и интерфейсы, которые быстрее объясняют продукт, уменьшают сомнение и помогают клиенту дойти до следующего шага без лишнего шума.</p>
+      <ul class="about-points">
+        <li>Не продаю редизайн по умолчанию: сначала определяю, где именно страница теряет силу.</li>
+        <li>Работаю на стыке UX, визуальной подачи, frontend-реализации и продуктовой логики.</li>
+        <li>Собираю не просто красивый экран, а рабочий цифровой актив под реальный бизнес-сценарий.</li>
+      </ul>
+      <div class="stack-list">
+        <span>UX-структура</span>
+        <span>Логика конверсии</span>
+        <span>React</span>
+        <span>Next.js</span>
+        <span>TypeScript</span>
+        <span>Node.js</span>
+        <span>Реализация дизайна</span>
+        <span>Python</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">FAQ</div>
+      <h2>Частые вопросы перед стартом работы.</h2>
+    </div>
+    {% set faq = [
+      {
+        "question": "Когда нужен аудит, а когда уже полноценный редизайн?",
+        "answer": "Если проблема локальная, иногда хватает разбора и точечных правок. Если сайт системно не объясняет продукт, не создаёт доверие и не ведёт к действию, нужен более глубокий редизайн."
+      },
+      {
+        "question": "Что нужно прислать для первого разбора?",
+        "answer": "Обычно достаточно ссылки на сайт или конкретную страницу, короткого описания задачи и нескольких слов о том, что именно сейчас не устраивает."
+      },
+      {
+        "question": "Можно ли прийти с уже существующим сайтом?",
+        "answer": "Да. Во многих случаях задача не в создании нового сайта с нуля, а в пересборке ключевых страниц, логики подачи и пути к следующему действию."
+      },
+      {
+        "question": "Вы работаете только с маркетинговыми страницами?",
+        "answer": "Нет. Помимо продуктовых и маркетинговых страниц я работаю с B2B-сайтами и веб-интерфейсами, если задача выходит за рамки обычной витрины."
+      }
+    ] %}
+    {% include "partials/faq.njk" %}
+  </div>
+</section>
+
+<section class="overview-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Контакты</div>
+      <h2>Если хотите предметный ответ, пришлите контекст задачи.</h2>
+    </div>
+    <div class="contact-block">
+      <div class="contact-card">
+        <div class="contact-eyebrow">Что прислать</div>
+        <h3>Чтобы следующий шаг был понятным уже после первого контакта.</h3>
+        <ul class="contact-list">
+          <li>Ссылку на текущий сайт, страницу или продукт.</li>
+          <li>Короткое описание задачи и цели: заявки, демо, доверие, запуск нового оффера.</li>
+          <li>Если есть, источник трафика и то, что сейчас кажется самым слабым местом.</li>
+        </ul>
+        <p class="contact-note">В ответ можно быстро понять, что имеет смысл делать дальше: точечные правки, аудит, пересборку ключевой страницы или более глубокий проект.</p>
+        <p>Email: <a href="mailto:hello@dalemcmanus.dev">hello@dalemcmanus.dev</a></p>
+      </div>
+      <div class="contact-card">
+        <form data-demo-form novalidate>
+          <input type="text" name="name" placeholder="Ваше имя">
+          <input type="email" name="email" placeholder="Рабочий email">
+          <textarea name="message" placeholder="Ссылка на сайт и короткое описание задачи"></textarea>
+          <button class="button button-primary" type="submit">Запросить разбор</button>
+          <div class="form-status" data-form-status></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

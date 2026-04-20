@@ -1,0 +1,10 @@
+{% if proofs and proofs.length %}
+<div class="proof-strip">
+  {% for item in proofs %}
+  <div class="proof-item">
+    <div class="proof-value{% if item.compact %} proof-value-compact{% endif %}">{{ item.value }}</div>
+    <div class="proof-label">{{ item.label }}</div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

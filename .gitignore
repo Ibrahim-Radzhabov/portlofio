@@ -2,3 +2,5 @@
 .claude/
 .playwright-cli/
 output/
+site/node_modules/
+site/dist/

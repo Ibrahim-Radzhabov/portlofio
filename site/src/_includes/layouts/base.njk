@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body class="page page-{{ pageKind or 'default' }}">
+  <a href="#main-content" class="skip-nav">Перейти к содержимому</a>
+  {% include "partials/nav.njk" %}
+  {% include "partials/mobile-menu.njk" %}
+  <main id="main-content">
+    {% block body %}{{ content | safe }}{% endblock %}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/global.js" defer></script>
+  {% if pageKind == "home" %}
+  <script src="/assets/js/home.js" defer></script>
+  {% endif %}
+</body>
+</html>

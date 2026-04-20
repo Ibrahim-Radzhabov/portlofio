@@ -1,0 +1,19 @@
+.article-hero {
+  padding-top: 92px;
+}
+
+.article-hero-copy h1 {
+  max-width: 920px;
+}
+
+.article-content {
+  padding: 40px;
+}
+
+.article-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.article-content p + p {
+  margin-top: 1em;
+}

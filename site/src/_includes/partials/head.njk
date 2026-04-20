@@ -1,0 +1,176 @@
+{% set pageTitle = metaTitle or title or site.siteTitle %}
+{% set pageDescription = metaDescription or summary or site.siteTitle %}
+{% set pagePath = page.url or "/" %}
+{% set canonicalUrl = site.siteUrl + pagePath %}
+{% set ogImagePath = ogImage or site.defaultOgImage %}
+{% set ogImageUrl = site.siteUrl + ogImagePath %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription }}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="{{ site.authorName }}">
+<meta name="theme-color" content="{{ site.themeColor }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDescription }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ ogImageUrl }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ pageTitle }}">
+<meta property="og:url" content="{{ canonicalUrl }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:site_name" content="{{ site.siteTitle }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ pageDescription }}">
+<meta name="twitter:image" content="{{ ogImageUrl }}">
+<meta name="twitter:image:alt" content="{{ pageTitle }}">
+<link rel="canonical" href="{{ canonicalUrl }}">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/global.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+{% if pageKind == "home" %}
+<link rel="stylesheet" href="/assets/css/page-home.css">
+{% endif %}
+{% if pageKind == "service" %}
+<link rel="stylesheet" href="/assets/css/page-service.css">
+{% endif %}
+{% if pageKind == "article" %}
+<link rel="stylesheet" href="/assets/css/page-article.css">
+{% endif %}
+{% if pageKind == "case" %}
+<link rel="stylesheet" href="/assets/css/page-case.css">
+{% endif %}
+{% if pageKind == "home" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "dateModified": "2026-04-05",
+      "inLanguage": "ru",
+      "mainEntity": { "@id": "{{ schema.person.id }}" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ schema.person.id }}",
+      "name": "{{ schema.person.name }}",
+      "alternateName": "{{ schema.person.altName }}",
+      "jobTitle": "{{ schema.person.jobTitle }}",
+      "description": "{{ schema.person.description }}",
+      "url": "{{ site.siteUrl }}/",
+      "email": "{{ schema.person.email }}",
+      "image": "{{ schema.person.image }}"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ schema.website.id }}",
+      "url": "{{ site.siteUrl }}/",
+      "name": "{{ schema.website.name }}",
+      "description": "{{ schema.website.description }}",
+      "inLanguage": "ru",
+      "author": { "@id": "{{ schema.person.id }}" }
+    }
+  ]
+}
+</script>
+{% endif %}
+{% if pageKind == "service" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "{{ title }}",
+      "description": "{{ pageDescription }}",
+      "serviceType": "{{ title }}",
+      "provider": { "@id": "{{ schema.person.id }}" },
+      "url": "{{ canonicalUrl }}"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {% for crumb in breadcrumbs %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "name": "{{ crumb.label }}",
+          "item": "{{ site.siteUrl }}{{ crumb.url }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+{% endif %}
+{% if pageKind == "article" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "{{ h1 or title }}",
+      "description": "{{ pageDescription }}",
+      "author": { "@id": "{{ schema.person.id }}" },
+      "datePublished": "{{ datePublished or '2026-04-05' }}",
+      "dateModified": "{{ dateModified or '2026-04-05' }}",
+      "mainEntityOfPage": "{{ canonicalUrl }}"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {% for crumb in breadcrumbs %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "name": "{{ crumb.label }}",
+          "item": "{{ site.siteUrl }}{{ crumb.url }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+{% endif %}
+{% if pageKind == "case" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "name": "{{ h1 or title }}",
+      "description": "{{ pageDescription }}",
+      "author": { "@id": "{{ schema.person.id }}" },
+      "url": "{{ canonicalUrl }}"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {% for crumb in breadcrumbs %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "name": "{{ crumb.label }}",
+          "item": "{{ site.siteUrl }}{{ crumb.url }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+{% endif %}

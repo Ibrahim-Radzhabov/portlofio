@@ -1,0 +1,37 @@
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+<section class="page-hero case-hero">
+  <div class="container">
+    {% include "partials/breadcrumbs.njk" %}
+    <div class="page-hero-copy">
+      {% if tag %}<div class="section-tag">{{ tag }}</div>{% endif %}
+      <h1>{{ h1 or title }}</h1>
+      {% if summary %}<p class="page-summary">{{ summary }}</p>{% endif %}
+    </div>
+    {% include "partials/proof-strip.njk" %}
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-shell">
+      <article class="rich-content case-content">
+        {{ content | safe }}
+      </article>
+      {% if relatedLinks and relatedLinks.length %}
+      <aside class="related-links-card">
+        <div class="section-tag">Связанные материалы</div>
+        <ul class="related-links">
+          {% for item in relatedLinks %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </aside>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/contact-cta.njk" %}
+{% endblock %}

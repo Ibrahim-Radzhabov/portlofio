@@ -1,0 +1,12 @@
+{% if faq and faq.length %}
+<div class="faq-list">
+  {% for item in faq %}
+  <details class="faq-item">
+    <summary>{{ item.question }}</summary>
+    <div class="faq-answer">
+      <p>{{ item.answer }}</p>
+    </div>
+  </details>
+  {% endfor %}
+</div>
+{% endif %}

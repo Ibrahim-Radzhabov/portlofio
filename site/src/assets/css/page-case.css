@@ -1,0 +1,36 @@
+.case-hero {
+  padding-top: 92px;
+}
+
+.case-content .result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.case-content .result-card {
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.case-content .result-card strong {
+  display: block;
+  color: var(--accent);
+  font: 800 28px/1 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.case-content .result-card span {
+  display: block;
+  margin-top: 8px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 968px) {
+  .case-content .result-grid {
+    grid-template-columns: 1fr;
+  }
+}

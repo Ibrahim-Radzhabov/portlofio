@@ -1,0 +1,31 @@
+# Дейл Макманус — V3 multipage scaffold
+
+> RU-first SEO-структура для personal brand сайта. Основные темы первой волны: аудит и редизайн сайта на конверсию, supporting article про причины низкой конверсии, B2B-сайты и trust-driven case pages.
+
+## Основные URL
+
+- https://dalemcmanus.dev/
+- https://dalemcmanus.dev/uslugi/audit-i-redizain-saita-na-konversiyu/
+- https://dalemcmanus.dev/uslugi/razrabotka-b2b-saitov-i-veb-interfeisov/
+- https://dalemcmanus.dev/blog/pochemu-sait-ne-konvertiruet/
+- https://dalemcmanus.dev/blog/chto-dolzhno-byt-na-b2b-sajte/
+- https://dalemcmanus.dev/cases/kova-technology-ecommerce/
+
+## Основные кластеры
+
+- Audit / Conversion
+- B2B
+- Кейсы как trust assets
+
+## Что важно понимать
+
+- Это новая V3-структура, собранная параллельно текущей single-file V2.
+- SEO первой волны строится под русскоязычный рынок.
+- Первый приоритетный коммерческий кластер: аудит и редизайн сайта на конверсию.
+- Второй кластер: B2B-сайты и веб-интерфейсы.
+- SaaS-кластер не является частью первой публикационной волны.
+
+## Контакт
+
+- Сайт: https://dalemcmanus.dev
+- Email: hello@dalemcmanus.dev

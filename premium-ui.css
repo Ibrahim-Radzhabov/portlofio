@@ -1,0 +1,196 @@
+/*
+ * PREMIUM UI TOOLKIT (PUI)
+ * Vanilla CSS for High-End Awwwards-style Web Experiences
+ */
+
+:root {
+  --pui-accent: #e8c572;      /* Golden accent by default */
+  --pui-bg: #0a0a0b;          /* Dark background */
+  --pui-border: rgba(255,255,255,0.1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- NOISE OVERLAY --- */
+.pui-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* --- CUSTOM CURSOR --- */
+body.pui-cursor-enabled { cursor: none; }
+body.pui-cursor-enabled a, 
+body.pui-cursor-enabled button, 
+body.pui-cursor-enabled input,
+body.pui-cursor-enabled textarea,
+body.pui-cursor-enabled .pui-magnetic,
+body.pui-cursor-enabled .pui-glass-card { 
+  cursor: none; 
+}
+
+.pui-cursor-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 197, 114, 0.06) 0%, rgba(147, 112, 219, 0.03) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 99998;
+  margin-top: -300px; /* offset center */
+  margin-left: -300px;
+  transition: opacity 0.3s;
+  will-change: transform;
+}
+
+.pui-cursor-follower {
+  position: fixed;
+  top: 0; left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pui-accent);
+  pointer-events: none;
+  z-index: 99999;
+  margin-top: -6px; /* offset center */
+  margin-left: -6px;
+  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), background 0.3s, mix-blend-mode 0.3s;
+  will-change: transform, width, height;
+  mix-blend-mode: difference;
+  opacity: 0;
+}
+.pui-cursor-follower.active {
+  width: 64px;
+  height: 64px;
+  margin-top: -32px;
+  margin-left: -32px;
+  background: #ffffff;
+}
+
+/* --- GLASSMORPHISM HOVER CARD --- */
+.pui-glass-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(20, 20, 22, 0.6);
+  border: 1px solid var(--pui-border);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+.pui-glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.07), transparent 40%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+}
+.pui-glass-card:hover::after {
+  opacity: 1;
+}
+
+/* --- 3D TILT --- */
+.pui-tilt-card {
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* --- SCROLL REVEAL --- */
+.pui-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+.pui-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.pui-delay-1 { transition-delay: 0.1s; }
+.pui-delay-2 { transition-delay: 0.2s; }
+.pui-delay-3 { transition-delay: 0.3s; }
+
+/* --- INFINITE MARQUEE --- */
+.pui-marquee {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  will-change: transform;
+  background: rgba(0,0,0,0.2);
+  padding: 40px 0;
+  transform: skewY(-2deg);
+}
+.pui-marquee-track {
+  display: flex;
+  gap: 40px;
+  padding-right: 40px;
+  animation: puiMarqueeScroll 20s linear infinite;
+}
+.pui-marquee-item {
+  font-family: sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--pui-border);
+  text-transform: uppercase;
+  transition: color 0.3s, -webkit-text-stroke 0.3s;
+}
+.pui-marquee-item:hover {
+  color: var(--pui-accent);
+  -webkit-text-stroke: 1px var(--pui-accent);
+}
+@keyframes puiMarqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- PRELOADER --- */
+.pui-preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--pui-bg);
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s var(--ease-out-expo), visibility 0.8s;
+}
+.pui-preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.pui-preloader-progress {
+  width: 100px;
+  height: 2px;
+  background: var(--pui-border);
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.pui-preloader-progress::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 0%;
+  background: var(--pui-accent);
+  animation: puiPreloaderFill 1.5s var(--ease-out-expo) forwards;
+}
+@keyframes puiPreloaderFill { 100% { width: 100%; } }
+
+/* --- REDUCED MOTION --- */
+@media (prefers-reduced-motion: reduce) {
+  .pui-reveal { opacity: 1; transform: none; transition: none; }
+  .pui-cursor-glow, .pui-cursor-follower { display: none !important; }
+  body.pui-cursor-enabled, body.pui-cursor-enabled a, body.pui-cursor-enabled button { cursor: auto !important; }
+  .pui-marquee-track { animation: none; }
+}

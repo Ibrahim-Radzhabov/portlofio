@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none">
+  <title>Balanced structural displacement mark</title>
+  <rect x="4" y="0" width="12" height="60" fill="currentColor"/>
+  <rect x="20" y="0" width="12" height="28" fill="currentColor"/>
+  <rect x="24" y="32" width="12" height="28" fill="currentColor"/>
+</svg>

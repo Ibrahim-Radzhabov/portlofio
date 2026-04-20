@@ -1,0 +1,55 @@
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+<section class="page-hero service-hero">
+  <div class="container">
+    {% include "partials/breadcrumbs.njk" %}
+    <div class="page-hero-copy">
+      {% if tag %}<div class="section-tag">{{ tag }}</div>{% endif %}
+      <h1>{{ h1 or title }}</h1>
+      {% if summary %}<p class="page-summary">{{ summary }}</p>{% endif %}
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ ctaUrl or '/#contact' }}">{{ ctaButtonLabel or "Обсудить проект" }}</a>
+        {% if secondaryUrl and secondaryLabel %}
+        <a class="button button-secondary" href="{{ secondaryUrl }}">{{ secondaryLabel }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% include "partials/proof-strip.njk" %}
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-shell">
+      <article class="rich-content">
+        {{ content | safe }}
+      </article>
+      {% if relatedLinks and relatedLinks.length %}
+      <aside class="related-links-card">
+        <div class="section-tag">Связанные материалы</div>
+        <ul class="related-links">
+          {% for item in relatedLinks %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </aside>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if faq and faq.length %}
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">FAQ</div>
+      <h2>Частые вопросы по этой услуге.</h2>
+    </div>
+    {% include "partials/faq.njk" %}
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/contact-cta.njk" %}
+{% endblock %}

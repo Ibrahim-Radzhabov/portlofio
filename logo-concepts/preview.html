@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Concepts Preview</title>
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-card: #151518;
+      --bg-light: #f5f5f7;
+      --text: #ededef;
+      --muted: #8a8a8e;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #e8c572;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 48px 0 80px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 36px;
+      line-height: 1.05;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0 0 32px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--bg-card);
+    }
+
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stage {
+      display: grid;
+      place-items: center;
+      min-height: 220px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #050506;
+      margin-bottom: 14px;
+    }
+
+    .stage.light {
+      background: var(--bg-light);
+      color: #111113;
+      border-color: rgba(17, 17, 19, 0.08);
+    }
+
+    .mark {
+      width: 96px;
+      height: auto;
+      color: currentColor;
+    }
+
+    .mark.square {
+      width: 108px;
+    }
+
+    .sizes {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 36px;
+      min-height: 36px;
+      padding: 8px;
+      border-radius: 10px;
+      background: #050506;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .chip.light {
+      background: var(--bg-light);
+      color: #111113;
+      border-color: rgba(17, 17, 19, 0.08);
+    }
+
+    .chip svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+
+    .meta {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Structural Displacement</h1>
+    <p class="intro">
+      Три SVG-концепта на одной сетке: <code>balanced</code>, <code>readable</code> и <code>radical</code>.
+      Смотрите на силуэт, поведение на тёмном и светлом фоне и то, как знак держится в маленьком размере.
+    </p>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Balanced</h2>
+        <p>Самый взрослый и системный вариант. Главный кандидат на primary mark.</p>
+        <div class="stage">
+          <img class="mark" src="./balanced.svg" alt="Balanced mark">
+        </div>
+        <div class="stage light">
+          <img class="mark" src="./balanced.svg" alt="Balanced mark on light">
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Readable</h2>
+        <p>Более личная и читаемая версия. Подходит, если важнее персональный характер.</p>
+        <div class="stage">
+          <img class="mark" src="./readable.svg" alt="Readable mark">
+        </div>
+        <div class="stage light">
+          <img class="mark" src="./readable.svg" alt="Readable mark on light">
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Radical</h2>
+        <p>Самая холодная и техничная версия. Сильнее как secondary mark, чем как основной личный знак.</p>
+        <div class="stage">
+          <img class="mark" src="./radical.svg" alt="Radical mark">
+        </div>
+        <div class="stage light">
+          <img class="mark" src="./radical.svg" alt="Radical mark on light">
+        </div>
+      </article>
+    </section>
+
+    <section style="margin-top: 28px;">
+      <h1 style="font-size: 28px; margin-bottom: 10px;">Balanced · Round 2</h1>
+      <p class="intro" style="margin-bottom: 20px;">
+        Вторая итерация вокруг <code>balanced</code>: не новый концепт, а оптическая доводка.
+        Сравнивайте не только красоту формы, но и то, как быстро знак собирается в один силуэт.
+      </p>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Optical</h2>
+          <p>Слегка облегчённая левая масса и offset в 3U. Самый вероятный кандидат на финализацию.</p>
+          <div class="stage">
+            <img class="mark" src="./balanced-v2-optical.svg" alt="Balanced v2 optical mark">
+          </div>
+          <div class="stage light">
+            <img class="mark" src="./balanced-v2-optical.svg" alt="Balanced v2 optical mark on light">
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Compact</h2>
+          <p>Более плотная и монолитная версия. Хороша, если нужен сильный силуэт в маленьком размере.</p>
+          <div class="stage">
+            <img class="mark" src="./balanced-v2-compact.svg" alt="Balanced v2 compact mark">
+          </div>
+          <div class="stage light">
+            <img class="mark" src="./balanced-v2-compact.svg" alt="Balanced v2 compact mark on light">
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Axial</h2>
+          <p>Более стройная и дорогая по ритму версия. Меньше массы, больше воздуха, чуть холоднее по характеру.</p>
+          <div class="stage">
+            <img class="mark" src="./balanced-v2-axial.svg" alt="Balanced v2 axial mark">
+          </div>
+          <div class="stage light">
+            <img class="mark" src="./balanced-v2-axial.svg" alt="Balanced v2 axial mark on light">
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <section class="grid" style="margin-top: 20px;">
+      <article class="card">
+        <h2>Square Wrap</h2>
+        <p>Квадратная версия для navbar, social avatar и app icon.</p>
+        <div class="stage">
+          <img class="mark square" src="./balanced-square.svg" alt="Balanced square mark">
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Favicon Micro</h2>
+        <p>Отдельная 16x16-адаптация, а не механическое уменьшение master-версии.</p>
+        <div class="sizes">
+          <span class="chip"><img src="./balanced-favicon-16.svg" alt="Balanced favicon dark"></span>
+          <span class="chip light"><img src="./balanced-favicon-16.svg" alt="Balanced favicon light"></span>
+          <span class="chip"><img src="./balanced-v2-favicon-16.svg" alt="Balanced v2 favicon dark"></span>
+          <span class="chip light"><img src="./balanced-v2-favicon-16.svg" alt="Balanced v2 favicon light"></span>
+          <span>Тестируйте рядом с реальными вкладками и navbar.</span>
+        </div>
+      </article>
+    </section>
+
+    <p class="meta">
+      Файлы лежат в <code>/Users/ibragimibragimov/Documents/Мои проекты/Portfolio_project/logo-concepts</code>.
+    </p>
+  </main>
+</body>
+</html>
