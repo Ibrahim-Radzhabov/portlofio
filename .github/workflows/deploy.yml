@@ -43,8 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Eleventy outputs to _site folder by default
-          path: './site/_site'
+          path: './site/dist'
 
   deploy:
     environment:
