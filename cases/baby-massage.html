@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кейс «Кроха и Я» — лендинг для детского массажа | Ибрагим Раджабов</title>
+  <meta name="description" content="Разбор проекта baby-massage05.ru. Лендинг для специалиста по детскому массажу. Технологии, структура, процесс. Реальный кейс.">
+  <meta name="keywords" content="кейс лендинг, сайт для массажиста, детский массаж сайт, baby-massage05">
+  <link rel="canonical" href="https://radzhabov.dev/cases/baby-massage.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta property="og:title" content="Кейс «Кроха и Я» — лендинг для детского массажа">
+  <meta property="og:description" content="Разбор проекта baby-massage05.ru. Технологии, структура, процесс. Реальный кейс.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://radzhabov.dev/cases/baby-massage.html">
+  <meta property="og:image" content="https://radzhabov.dev/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Кейс «Кроха и Я» — лендинг для детского массажа">
+  <meta name="twitter:description" content="Разбор проекта baby-massage05.ru. Технологии, структура, процесс.">
+  <meta name="twitter:image" content="https://radzhabov.dev/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Кроха и Я — лендинг для детского массажа",
+        "url": "https://radzhabov.dev/cases/baby-massage.html",
+        "creator": {
+          "@type": "Person",
+          "name": "Ибрагим Раджабов",
+          "url": "https://radzhabov.dev/"
+        },
+        "about": "Лендинг для специалиста по детскому массажу",
+        "description": "Разработка лендинга для частного специалиста по детскому массажу. 6 экранов, адаптив, форма записи, SEO.",
+        "dateCreated": "2026-04-01",
+        "inLanguage": "ru"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "Кейсы", "item": "https://radzhabov.dev/cases/baby-massage.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #F5F0E8;
+      --bg-secondary: #EDE8DF;
+      --bg-card: #EDE8DF;
+      --bg-card-hover: #E5E0D6;
+      --border: rgba(20, 18, 16, 0.08);
+      --border-hover: rgba(20, 18, 16, 0.15);
+      --text-primary: #141210;
+      --text-secondary: #7A7570;
+      --text-tertiary: #A39E98;
+      --accent: #1A3A2A;
+      --accent-dim: #2D5A45;
+      --accent-glow: rgba(26, 58, 42, 0.12);
+      --accent-glow-strong: rgba(26, 58, 42, 0.25);
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    body::before {
+      content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.025;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+    .container-sm { max-width:720px; margin:0 auto; padding:0 24px; }
+
+    /* Nav */
+    #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 0; transition:background .4s, backdrop-filter .4s; }
+    #nav.scrolled { background:rgba(245, 240, 232, 0.85); backdrop-filter:blur(20px); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--text-primary); text-decoration:none; letter-spacing:-0.5px; }
+    .nav-logo span { color:var(--accent); }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .3s; position:relative; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text-primary); }
+    .nav-links a.active::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--accent); border-radius:1px; }
+    .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
+    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #mobile-menu.active { opacity:1; pointer-events:all; }
+    #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
+    .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
+
+    /* Hero */
+    .hero { padding:160px 0 80px; position:relative; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; z-index:0; pointer-events:none; }
+    .hero-bg::before { content:''; position:absolute; top:-10%; right:-5%; width:500px; height:500px; background:radial-gradient(circle, rgba(26, 58, 42, 0.08), transparent 70%); border-radius:50%; filter:blur(80px); }
+    .hero .container { position:relative; z-index:1; }
+    .hero-label { display:inline-block; font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:24px; border:1px solid var(--accent-glow-strong); padding:8px 16px; border-radius:8px; background:var(--accent-glow); }
+    .hero h1 { font-family:var(--font-display); font-size:clamp(32px, 4.5vw, 56px); font-weight:800; line-height:1.1; letter-spacing:-2px; margin-bottom:24px; max-width:800px; }
+    .hero h1 .accent { color:var(--accent); }
+    .hero-subtitle { font-size:18px; color:var(--text-secondary); max-width:600px; margin-bottom:32px; line-height:1.7; }
+    .hero-meta { display:flex; gap:40px; margin-top:40px; flex-wrap:wrap; }
+    .hero-meta-item { display:flex; flex-direction:column; gap:4px; }
+    .hero-meta-value { font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--accent); }
+    .hero-meta-label { font-size:13px; color:var(--text-tertiary); }
+    .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#F5F0E8; font-family:var(--font-display); font-weight:700; font-size:15px; padding:16px 32px; border-radius:12px; text-decoration:none; transition:transform .3s, box-shadow .3s; border:none; cursor:pointer; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(26, 58, 42, 0.3); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:10px; background:transparent; color:var(--text-primary); font-family:var(--font-display); font-weight:600; font-size:15px; padding:16px 32px; border-radius:12px; text-decoration:none; border:1px solid var(--border); transition:all .3s; cursor:pointer; }
+    .btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+
+    /* Sections */
+    section { padding:80px 0; position:relative; }
+    .section-header { text-align:center; max-width:640px; margin:0 auto 48px; }
+    .section-header h2 { font-family:var(--font-display); font-size:clamp(28px, 3.5vw, 40px); font-weight:700; line-height:1.2; margin-bottom:16px; }
+    .section-header p { color:var(--text-secondary); font-size:17px; }
+    .section-label { display:inline-block; font-family:var(--font-mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:16px; }
+
+    /* Content */
+    .content-block { max-width:720px; margin:0 auto; }
+    .content-block h3 { font-family:var(--font-display); font-size:22px; font-weight:700; margin:40px 0 16px; }
+    .content-block p { color:var(--text-secondary); margin-bottom:16px; font-size:16px; line-height:1.7; }
+    .content-block ul { list-style:none; margin:16px 0; }
+    .content-block li { padding:8px 0; color:var(--text-secondary); font-size:15px; display:flex; align-items:flex-start; gap:12px; }
+    .content-block li::before { content:'—'; color:var(--accent); font-weight:700; flex-shrink:0; }
+    .content-block a { color:var(--accent); text-decoration:none; }
+    .content-block a:hover { text-decoration:underline; }
+
+    /* Stats row */
+    .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin:40px 0; }
+    .stat-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:24px; text-align:center; }
+    .stat-value { font-family:var(--font-display); font-size:32px; font-weight:800; color:var(--accent); margin-bottom:4px; }
+    .stat-label { font-size:13px; color:var(--text-tertiary); }
+
+    /* Tech stack */
+    .tech-grid { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0; }
+    .tech-tag { display:inline-flex; align-items:center; gap:6px; background:var(--bg-secondary); border:1px solid var(--border); border-radius:8px; padding:8px 14px; font-family:var(--font-mono); font-size:12px; color:var(--text-secondary); }
+    .tech-tag::before { content:'◈'; color:var(--accent); }
+
+    /* Screenshots */
+    .screenshot-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:40px; }
+    .screenshot { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; }
+    .screenshot span { color:var(--text-tertiary); font-family:var(--font-mono); font-size:14px; }
+
+    /* Results */
+    .results-block { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:40px; }
+    .results-block h3 { font-family:var(--font-display); font-size:20px; font-weight:700; margin-bottom:20px; }
+    .results-block ul { list-style:none; }
+    .results-block li { padding:10px 0; color:var(--text-secondary); font-size:15px; display:flex; align-items:flex-start; gap:12px; border-bottom:1px solid var(--border); }
+    .results-block li:last-child { border-bottom:none; }
+    .results-block li::before { content:'✓'; color:var(--accent); font-weight:700; }
+    .results-note { margin-top:20px; padding:16px; background:var(--accent-glow); border:1px solid var(--accent-glow-strong); border-radius:10px; font-size:14px; color:var(--text-secondary); }
+    .results-note strong { color:var(--accent); }
+
+    /* Form */
+    .form-group { margin-bottom:20px; }
+    .form-group label { display:block; font-size:13px; color:var(--text-tertiary); margin-bottom:8px; font-weight:500; }
+    .form-group input, .form-group textarea {
+      width:100%; background:var(--bg-secondary); border:1px solid var(--border); border-radius:10px;
+      padding:14px 16px; color:var(--text-primary); font-family:var(--font-body); font-size:15px;
+      transition:border-color .3s; outline:none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color:var(--accent); }
+    .form-group textarea { min-height:120px; resize:vertical; }
+    .form-note { font-size:12px; color:var(--text-tertiary); margin-top:8px; }
+
+    /* Footer */
+    footer { padding:60px 0 32px; border-top:1px solid var(--border); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; }
+    .footer-brand p { color:var(--text-tertiary); font-size:14px; margin-top:8px; }
+    .footer-links { display:flex; gap:48px; }
+    .footer-links-col h4 { font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; }
+    .footer-links-col ul { list-style:none; }
+    .footer-links-col li { margin-bottom:10px; }
+    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:14px; transition:color .3s; }
+    .footer-links-col a:hover { color:var(--accent); }
+    .footer-bottom { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-bottom p { color:var(--text-tertiary); font-size:13px; }
+    .social-links { display:flex; gap:16px; }
+    .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
+    .social-links a:hover { border-color:var(--accent); color:var(--accent); }
+
+    /* Reveal */
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* Responsive */
+    @media (max-width:968px) {
+      .nav-links { display:none; }
+      .menu-btn { display:block; }
+      .stats-row { grid-template-columns:repeat(2,1fr); }
+      .screenshot-grid { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; }
+      .footer-links { flex-wrap:wrap; }
+    }
+    @media (max-width:640px) {
+      .hero { padding:120px 0 60px; }
+      section { padding:60px 0; }
+      .stats-row { grid-template-columns:1fr; }
+      .results-block { padding:32px 24px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+  </style>
+  <!-- Yandex.Metrika counter — замените YOUR_METRIKA_ID на реальный ID -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(YOUR_METRIKA_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_METRIKA_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</head>
+<body>
+  <nav id="nav" aria-label="Главная навигация">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RD<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/services/landing.html">Услуги</a></li>
+        <li><a href="/cases/baby-massage.html" class="active">Кейсы</a></li>
+        <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+        <li><a href="/#contact">Контакты</a></li>
+      </ul>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu">
+    <button class="close-menu" onclick="toggleMenu()" aria-label="Закрыть меню">×</button>
+    <a href="/" onclick="toggleMenu()">Главная</a>
+    <a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
+    <a href="/cases/baby-massage.html" onclick="toggleMenu()">Кейсы</a>
+    <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Калькулятор</a>
+    <a href="/#contact" onclick="toggleMenu()">Контакты</a>
+  </div>
+
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <span class="hero-label reveal">Кейс</span>
+      <h1 class="reveal">«Кроха и Я» — <span class="accent">лендинг для детского массажа</span></h1>
+      <p class="hero-subtitle reveal">Реальный проект для частного специалиста по детскому массажу. Полный цикл: от структуры до запуска.</p>
+      <div class="hero-cta reveal">
+        <a href="https://baby-massage05.ru/" target="_blank" class="btn-primary">Открыть сайт ↗</a>
+        <a href="/niches/sajt-dlya-massazhista.html" class="btn-secondary">Сайт для массажиста</a>
+      </div>
+      <div class="hero-meta reveal">
+        <div class="hero-meta-item"><span class="hero-meta-value">2026</span><span class="hero-meta-label">год запуска</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-value">6</span><span class="hero-meta-label">экранов</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-value">7 дней</span><span class="hero-meta-label">срок разработки</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-value">HTML/CSS/JS</span><span class="hero-meta-label">стек</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="task">
+    <div class="container container-sm">
+      <div class="section-header reveal">
+        <span class="section-label">Задача</span>
+        <h2>Что нужно было сделать</h2>
+      </div>
+      <div class="content-block reveal">
+        <p>Заказчик — специалист по детскому массажу с частной практикой. Был сайт на конструкторе, который медленно грузился, плохо отображался на телефонах и не индексировался поисковиками. Нужно было создать быстрый, современный лендинг, который будет привлекать клиентов через поиск и соцсети.</p>
+        <h3>Требования:</h3>
+        <ul>
+          <li>Простая и понятная структура — за 10 секунд посетитель понимает, кто, что делает и сколько стоит</li>
+          <li>Форма записи на массаж с уведомлениями в Telegram</li>
+          <li>Адаптивность — 70% клиентов заходят с телефонов</li>
+          <li>Быстрая загрузка — не терять трафик из-за тормозов</li>
+          <li>SEO-база — чтобы сайт находили по запросам «детский массаж [город]»</li>
+          <li>Возможность самостоятельно менять тексты и фото без программиста</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="solution" style="background:var(--bg-secondary);">
+    <div class="container container-sm">
+      <div class="section-header reveal">
+        <span class="section-label">Решение</span>
+        <h2>Как делал</h2>
+      </div>
+      <div class="content-block reveal">
+        <h3>1. Структура и тексты</h3>
+        <p>Сначала спроектировал структуру лендинга. Главный экран с фото специалиста и УТП, блок услуг с ценами, информация о методике, отзывы родителей, форма записи и контакты. Помог заказчику с текстами — сформулировал чёткие заголовки и описания.</p>
+        
+        <h3>2. Дизайн</h3>
+        <p>Выбрал спокойную, доверительную цветовую гамму. Мягкие оттенки, приглушённые акценты, много воздуха. Дизайн должен ассоциироваться с заботой и профессионализмом, а не с навязчивым маркетингом.</p>
+
+        <h3>3. Верстка</h3>
+        <p>Ручная вёрстка HTML/CSS/JS без фреймворков и конструкторов. Mobile-first подход — сначала мобильная версия, потом десктоп. Использовал CSS Grid и Flexbox, CSS-переменные для единообразия.</p>
+
+        <h3>4. Анимации</h3>
+        <p>Плавные появления блоков при скролле, hover-эффекты на кнопках и карточках. Без тяжёлых библиотек — только CSS transitions и лёгкий JS. Сайт работает плавно даже на бюджетных телефонах.</p>
+
+        <h3>5. Форма записи</h3>
+        <p>Простая форма: имя ребёнка, возраст, контакт родителя, выбор услуги. Данные приходят в Telegram-бот и на email. Валидация полей, маска телефона, сообщение об успешной отправке.</p>
+
+        <h3>6. SEO</h3>
+        <p>Правильная структура заголовков (H1-H3), meta description, Open Graph, Schema.org, sitemap.xml. Технически сайт готов к индексации.</p>
+
+        <h3>7. Запуск</h3>
+        <p>Деплой на хостинг, подключение домена baby-massage05.ru, настройка SSL, тестирование на реальных устройствах.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Технологии</span>
+        <h2>Стек проекта</h2>
+      </div>
+      <div class="tech-grid reveal">
+        <span class="tech-tag">HTML5</span>
+        <span class="tech-tag">CSS3</span>
+        <span class="tech-tag">Vanilla JS</span>
+        <span class="tech-tag">Mobile-first</span>
+        <span class="tech-tag">CSS Grid</span>
+        <span class="tech-tag">Flexbox</span>
+        <span class="tech-tag">Formspree</span>
+        <span class="tech-tag">Telegram Bot API</span>
+        <span class="tech-tag">Schema.org</span>
+        <span class="tech-tag">Open Graph</span>
+        <span class="tech-tag">Lazy Loading</span>
+        <span class="tech-tag">SVG-иконки</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Скриншоты</span>
+        <h2>Как выглядит сайт</h2>
+      </div>
+      <div class="screenshot-grid">
+        <div class="screenshot reveal"><span>[ Главный экран ]</span></div>
+        <div class="screenshot reveal"><span>[ Блок услуг ]</span></div>
+        <div class="screenshot reveal"><span>[ Форма записи ]</span></div>
+        <div class="screenshot reveal"><span>[ Мобильная версия ]</span></div>
+      </div>
+      <div style="text-align:center; margin-top:32px;" class="reveal">
+        <a href="https://baby-massage05.ru/" target="_blank" class="btn-secondary">Посмотреть живой сайт ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container container-sm">
+      <div class="section-header reveal">
+        <span class="section-label">Результаты</span>
+        <h2>Что получилось</h2>
+      </div>
+      <div class="results-block reveal">
+        <h3>Технические результаты</h3>
+        <ul>
+          <li>Сайт загружается менее чем за 2 секунды на десктопе</li>
+          <li>Корректное отображение на всех устройствах — от iPhone SE до 27" мониторов</li>
+          <li>Валидная HTML5/CSS3 разметка — проходит валидацию W3C</li>
+          <li>Форма записи работает стабильно, уведомления приходят в Telegram и на email</li>
+          <li>Сайт проиндексирован Google и Яндексом</li>
+          <li>Базовая SEO-оптимизация настроена, sitemap.xml подключён</li>
+        </ul>
+        <div class="results-note">
+          <strong>Примечание:</strong> Проект запущен недавно, коммерческие результаты (количество заявок, конверсия) ещё накапливаются. Технические показатели — корректная индексация, скорость загрузки, мобильная адаптивность — соответствуют заявленным.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:var(--bg-secondary);">
+    <div class="container container-sm">
+      <div class="section-header reveal">
+        <span class="section-label">Контакты</span>
+        <h2>Нужен похожий сайт?</h2>
+        <p>Расскажите о вашем проекте. Оценю сроки и стоимость в течение дня.</p>
+      </div>
+      <form id="contactForm" class="reveal" style="background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:40px;">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email или Telegram</label>
+          <input type="text" id="email" name="email" placeholder="example@mail.ru или @username" required>
+        </div>
+        <div class="form-group">
+          <label for="message">О проекте</label>
+          <textarea id="message" name="message" placeholder="Расскажите, какой сайт вам нужен. Есть ли макет и тексты?" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
+          <span>Отправить заявку</span>
+        </button>
+        <p class="form-note">Или напишите напрямую: <a href="mailto:1cworkac@mail.ru" style="color:var(--accent);">1cworkac@mail.ru</a> / <a href="https://t.me/rdvigm" target="_blank" style="color:var(--accent);">@rdvigm</a></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">RD<span>.</span></a>
+          <p>Соло-разработчик для частных специалистов<br>и малого бизнеса</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-col">
+            <h4>Навигация</h4>
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="/services/landing.html">Услуги</a></li>
+              <li><a href="/cases/baby-massage.html">Кейсы</a></li>
+              <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Ресурсы</h4>
+            <ul>
+              <li><a href="/niches/sajt-dlya-massazhista.html">Сайт для массажиста</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
+              <li><a href="https://t.me/rdvigm" target="_blank">Telegram</a></li>
+              <li><a href="https://github.com/Ibrahim-Radzhabov" target="_blank">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ибрагим Раджабов. Все права защищены.</p>
+        <div class="social-links">
+          <a href="https://github.com/Ibrahim-Radzhabov" target="_blank" aria-label="GitHub">GH</a>
+          <a href="https://t.me/rdvigm" target="_blank" aria-label="Telegram">TG</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      window.toggleMenu = function() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      var form = document.getElementById('contactForm');
+      var btn = document.getElementById('submitBtn');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (!document.getElementById('name').value.trim() || !document.getElementById('email').value.trim() || !document.getElementById('message').value.trim()) return;
+          btn.innerHTML = '<span>Отправлено — свяжусь с вами</span>';
+          btn.style.background = '#4caf7a';
+          setTimeout(function() {
+            btn.innerHTML = '<span>Отправить заявку</span>';
+            btn.style.background = '';
+            form.reset();
+          }, 3000);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

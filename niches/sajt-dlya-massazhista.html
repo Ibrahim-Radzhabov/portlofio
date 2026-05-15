@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт для массажиста — лендинг, который приводит клиентов | Ибрагим Раджабов</title>
+  <meta name="description" content="Разработка сайтов и лендингов для массажистов. Реальный кейс — детский массаж «Кроха и Я». Адаптив, форма записи, SEO. От 25 000 ₽.">
+  <meta name="keywords" content="сайт для массажиста, лендинг для массажиста, сайт для частного специалиста, лендинг для мастера, сайт массажиста">
+  <link rel="canonical" href="https://radzhabov.dev/niches/sajt-dlya-massazhista.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta property="og:title" content="Сайт для массажиста — лендинг, который приводит клиентов">
+  <meta property="og:description" content="Разработка сайтов для массажистов. Реальный кейс — детский массаж «Кроха и Я». Адаптив, форма записи, SEO. От 25 000 ₽.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radzhabov.dev/niches/sajt-dlya-massazhista.html">
+  <meta property="og:image" content="https://radzhabov.dev/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Сайт для массажиста — лендинг, который приводит клиентов">
+  <meta name="twitter:description" content="Разработка сайтов для массажистов. Реальный кейс. От 25 000 ₽.">
+  <meta name="twitter:image" content="https://radzhabov.dev/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": "Сайт для массажиста",
+        "provider": {
+          "@type": "Person",
+          "name": "Ибрагим Раджабов",
+          "url": "https://radzhabov.dev/"
+        },
+        "areaServed": "RU",
+        "priceRange": "25000-60000 RUB",
+        "url": "https://radzhabov.dev/niches/sajt-dlya-massazhista.html",
+        "description": "Разработка лендингов для массажистов. Реальный кейс — детский массаж."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "Ниши", "item": "https://radzhabov.dev/niches/sajt-dlya-massazhista.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #F5F0E8;
+      --bg-secondary: #EDE8DF;
+      --bg-card: #EDE8DF;
+      --bg-card-hover: #E5E0D6;
+      --border: rgba(20, 18, 16, 0.08);
+      --border-hover: rgba(20, 18, 16, 0.15);
+      --text-primary: #141210;
+      --text-secondary: #7A7570;
+      --text-tertiary: #A39E98;
+      --accent: #1A3A2A;
+      --accent-dim: #2D5A45;
+      --accent-glow: rgba(26, 58, 42, 0.12);
+      --accent-glow-strong: rgba(26, 58, 42, 0.25);
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    body::before {
+      content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.025;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+    .container-sm { max-width:720px; margin:0 auto; padding:0 24px; }
+
+    /* Nav */
+    #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 0; transition:background .4s, backdrop-filter .4s; }
+    #nav.scrolled { background:rgba(245, 240, 232, 0.85); backdrop-filter:blur(20px); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--text-primary); text-decoration:none; letter-spacing:-0.5px; }
+    .nav-logo span { color:var(--accent); }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .3s; position:relative; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text-primary); }
+    .nav-links a.active::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--accent); border-radius:1px; }
+    .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
+    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #mobile-menu.active { opacity:1; pointer-events:all; }
+    #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
+    .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
+
+    /* Hero */
+    .hero { padding:160px 0 100px; position:relative; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; z-index:0; pointer-events:none; }
+    .hero-bg::before { content:''; position:absolute; top:-10%; right:-5%; width:500px; height:500px; background:radial-gradient(circle, rgba(26, 58, 42, 0.08), transparent 70%); border-radius:50%; filter:blur(80px); }
+    .hero .container { position:relative; z-index:1; }
+    .hero-label { display:inline-block; font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:24px; border:1px solid var(--accent-glow-strong); padding:8px 16px; border-radius:8px; background:var(--accent-glow); }
+    .hero h1 { font-family:var(--font-display); font-size:clamp(32px, 4.5vw, 56px); font-weight:800; line-height:1.1; letter-spacing:-2px; margin-bottom:24px; max-width:800px; }
+    .hero h1 .accent { color:var(--accent); }
+    .hero-subtitle { font-size:18px; color:var(--text-secondary); max-width:560px; margin-bottom:40px; line-height:1.7; }
+    .hero-cta { display:flex; gap:16px; flex-wrap:wrap; }
+    .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#F5F0E8; font-family:var(--font-display); font-weight:700; font-size:15px; padding:16px 32px; border-radius:12px; text-decoration:none; transition:transform .3s, box-shadow .3s; border:none; cursor:pointer; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(26, 58, 42, 0.3); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:10px; background:transparent; color:var(--text-primary); font-family:var(--font-display); font-weight:600; font-size:15px; padding:16px 32px; border-radius:12px; text-decoration:none; border:1px solid var(--border); transition:all .3s; cursor:pointer; }
+    .btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+    .hero-meta { display:flex; gap:40px; margin-top:60px; flex-wrap:wrap; }
+    .hero-meta-item { display:flex; flex-direction:column; gap:4px; }
+    .hero-meta-value { font-family:var(--font-display); font-size:28px; font-weight:700; color:var(--accent); }
+    .hero-meta-label { font-size:13px; color:var(--text-tertiary); }
+
+    /* Sections */
+    section { padding:100px 0; position:relative; }
+    .section-header { text-align:center; max-width:640px; margin:0 auto 64px; }
+    .section-header h2 { font-family:var(--font-display); font-size:clamp(28px, 3.5vw, 40px); font-weight:700; line-height:1.2; margin-bottom:16px; }
+    .section-header p { color:var(--text-secondary); font-size:17px; }
+    .section-label { display:inline-block; font-family:var(--font-mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:16px; }
+
+    /* Content blocks */
+    .content-block { max-width:720px; margin:0 auto; }
+    .content-block h3 { font-family:var(--font-display); font-size:22px; font-weight:700; margin:48px 0 16px; }
+    .content-block p { color:var(--text-secondary); margin-bottom:16px; font-size:16px; line-height:1.7; }
+    .content-block ul { list-style:none; margin:16px 0; }
+    .content-block li { padding:8px 0; color:var(--text-secondary); font-size:15px; display:flex; align-items:flex-start; gap:12px; }
+    .content-block li::before { content:'—'; color:var(--accent); font-weight:700; flex-shrink:0; }
+
+    /* Features */
+    .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .feature-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; transition:all .4s; }
+    .feature-card:hover { border-color:var(--border-hover); background:var(--bg-card-hover); transform:translateY(-4px); }
+    .feature-icon { width:48px; height:48px; border-radius:12px; background:var(--accent-glow); display:flex; align-items:center; justify-content:center; margin-bottom:20px; color:var(--accent); font-size:20px; }
+    .feature-card h3 { font-family:var(--font-display); font-size:18px; font-weight:600; margin-bottom:10px; }
+    .feature-card p { color:var(--text-secondary); font-size:14px; line-height:1.6; }
+
+    /* Case block */
+    .case-block { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; overflow:hidden; display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:48px; }
+    .case-block-content { padding:48px; display:flex; flex-direction:column; justify-content:center; }
+    .case-block-content .tag { display:inline-block; font-family:var(--font-mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:1px; border:1px solid var(--accent-glow-strong); padding:6px 12px; border-radius:6px; background:var(--accent-glow); margin-bottom:16px; width:fit-content; }
+    .case-block-content h3 { font-family:var(--font-display); font-size:24px; font-weight:700; margin-bottom:12px; }
+    .case-block-content p { color:var(--text-secondary); margin-bottom:24px; line-height:1.6; }
+    .case-block-image { background:var(--bg-secondary); display:flex; align-items:center; justify-content:center; min-height:300px; }
+    .case-placeholder { color:var(--text-tertiary); font-family:var(--font-mono); font-size:14px; }
+
+    /* Pricing */
+    .pricing-card { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:48px; text-align:center; max-width:520px; margin:0 auto; position:relative; overflow:hidden; }
+    .pricing-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
+    .pricing-card .price { font-family:var(--font-display); font-size:48px; font-weight:800; color:var(--accent); margin:16px 0 8px; }
+    .pricing-card .price-note { color:var(--text-tertiary); font-size:14px; margin-bottom:32px; }
+    .pricing-card ul { list-style:none; text-align:left; max-width:320px; margin:0 auto 32px; }
+    .pricing-card li { padding:8px 0; color:var(--text-secondary); font-size:14px; display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--border); }
+    .pricing-card li:last-child { border-bottom:none; }
+    .pricing-card li::before { content:'✓'; color:var(--accent); font-weight:700; }
+
+    /* FAQ */
+    .faq-list { max-width:720px; margin:0 auto; }
+    details { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden; }
+    details[open] { border-color:var(--border-hover); }
+    summary { padding:20px 24px; cursor:pointer; font-weight:500; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:'+'; font-family:var(--font-mono); color:var(--accent); font-size:18px; transition:transform .3s; }
+    details[open] summary::after { transform:rotate(45deg); }
+    details p { padding:0 24px 20px; color:var(--text-secondary); font-size:14px; line-height:1.7; }
+
+    /* Form */
+    .form-group { margin-bottom:20px; }
+    .form-group label { display:block; font-size:13px; color:var(--text-tertiary); margin-bottom:8px; font-weight:500; }
+    .form-group input, .form-group textarea {
+      width:100%; background:var(--bg-secondary); border:1px solid var(--border); border-radius:10px;
+      padding:14px 16px; color:var(--text-primary); font-family:var(--font-body); font-size:15px;
+      transition:border-color .3s; outline:none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color:var(--accent); }
+    .form-group textarea { min-height:120px; resize:vertical; }
+    .form-note { font-size:12px; color:var(--text-tertiary); margin-top:8px; }
+
+    /* Footer */
+    footer { padding:60px 0 32px; border-top:1px solid var(--border); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; }
+    .footer-brand p { color:var(--text-tertiary); font-size:14px; margin-top:8px; }
+    .footer-links { display:flex; gap:48px; }
+    .footer-links-col h4 { font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; color:var(--text-primary); }
+    .footer-links-col ul { list-style:none; }
+    .footer-links-col li { margin-bottom:10px; }
+    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:14px; transition:color .3s; }
+    .footer-links-col a:hover { color:var(--accent); }
+    .footer-bottom { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-bottom p { color:var(--text-tertiary); font-size:13px; }
+    .social-links { display:flex; gap:16px; }
+    .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
+    .social-links a:hover { border-color:var(--accent); color:var(--accent); }
+
+    /* Reveal */
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* Responsive */
+    @media (max-width:968px) {
+      .nav-links { display:none; }
+      .menu-btn { display:block; }
+      .features-grid { grid-template-columns:1fr; }
+      .case-block { grid-template-columns:1fr; }
+      .case-block-image { min-height:200px; }
+      .footer-inner { flex-direction:column; }
+      .footer-links { flex-wrap:wrap; }
+    }
+    @media (max-width:640px) {
+      .hero { padding:120px 0 60px; }
+      section { padding:60px 0; }
+      .case-block-content { padding:32px 24px; }
+      .pricing-card { padding:32px 24px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+  </style>
+  <!-- Yandex.Metrika counter — замените YOUR_METRIKA_ID на реальный ID -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(YOUR_METRIKA_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_METRIKA_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</head>
+<body>
+  <nav id="nav" aria-label="Главная навигация">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RD<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/services/landing.html">Услуги</a></li>
+        <li><a href="/cases/baby-massage.html">Кейсы</a></li>
+        <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+        <li><a href="/#contact">Контакты</a></li>
+      </ul>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu">
+    <button class="close-menu" onclick="toggleMenu()" aria-label="Закрыть меню">×</button>
+    <a href="/" onclick="toggleMenu()">Главная</a>
+    <a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
+    <a href="/cases/baby-massage.html" onclick="toggleMenu()">Кейсы</a>
+    <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Калькулятор</a>
+    <a href="/#contact" onclick="toggleMenu()">Контакты</a>
+  </div>
+
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <span class="hero-label reveal">Нишевое решение</span>
+      <h1 class="reveal">Сайт для массажиста — <span class="accent">лендинг, который приводит клиентов</span></h1>
+      <p class="hero-subtitle reveal">Разработка одностраничных сайтов для массажистов, остеопатов и мануальных терапевтов. С формой записи, адаптивом и SEO. Реальный кейс — детский массаж «Кроха и Я».</p>
+      <div class="hero-cta reveal">
+        <a href="#contact" class="btn-primary">Заказать сайт</a>
+        <a href="/cases/baby-massage.html" class="btn-secondary">Посмотреть кейс</a>
+      </div>
+      <div class="hero-meta reveal">
+        <div class="hero-meta-item"><span class="hero-meta-value">от 25 000 ₽</span><span class="hero-meta-label">базовая стоимость</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-value">7+ дней</span><span class="hero-meta-label">срок запуска</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-value">100%</span><span class="hero-meta-label">ручная верстка</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="why">
+    <div class="container container-sm">
+      <div class="section-header reveal">
+        <span class="section-label">Зачем сайт</span>
+        <h2>Почему массажисту нужен свой сайт</h2>
+      </div>
+      <div class="content-block reveal">
+        <p>Клиенты ищут массажиста в Google и Яндексе. Если у вас нет сайта — они находят конкурентов. Instagram и Avito — это хорошо, но это не заменяет полноценную веб-страницу, которая работает 24/7.</p>
+        <h3>Что даёт лендинг массажисту:</h3>
+        <ul>
+          <li><strong>Профессиональный имидж.</strong> Сайт выглядит серьёзнее, чем пост в соцсетях. Клиент видит, что вы подошли к делу профессионально.</li>
+          <li><strong>Форма записи.</strong> Клиент оставляет заявку прямо на сайте — не нужно писать в Direct и ждать ответа.</li>
+          <li><strong>SEO-трафик.</strong> Сайт индексируется поисковиками. Люди находят вас по запросам «массажист [город]», «детский массаж [район]».</li>
+          <li><strong>Информация о услугах.</strong> Цены, виды массажа, график работы, адрес — всё в одном месте.</li>
+          <li><strong>Отзывы и кейсы.</strong> Размещаете реальные отзывы клиентов, фото до/после, сертификаты.</li>
+          <li><strong>Независимость от площадок.</strong> Instagram может заблокировать, Avito — удалить объявление. Сайт — ваш собственный актив.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="structure" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Структура</span>
+        <h2>Что должно быть на сайте массажиста</h2>
+        <p>Оптимальная структура лендинга, которая конвертирует посетителей в записи</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">1</div>
+          <h3>Главный экран</h3>
+          <p>Фото специалиста, УТП (уникальное торговое предложение), кнопка записи. Первый экран решает — останется ли клиент на сайте.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">2</div>
+          <h3>Услуги и цены</h3>
+          <p>Понятный перечень массажей с ценами. Классический, лечебный, детский, антицеллюлитный — каждый вид с описанием и стоимостью.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">3</div>
+          <h3>О специалисте</h3>
+          <p>Фото, образование, опыт, сертификаты. Люди доверяют людям — покажите, что вы профессионал.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">4</div>
+          <h3>Отзывы клиентов</h3>
+          <p>Реальные отзывы с именами (или инициалами). Видео-отзывы работают лучше текстовых.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">5</div>
+          <h3>Форма записи</h3>
+          <p>Простая форма: имя, телефон, вид массажа, удобное время. Уведомления приходят вам на email или в Telegram.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">6</div>
+          <h3>Контакты и адрес</h3>
+          <p>Телефон, WhatsApp/Telegram, адрес с картой, режим работы. Всё, чтобы клиент дошёл до вас.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="case">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Кейс</span>
+        <h2>Реальный проект — «Кроха и Я»</h2>
+        <p>Лендинг для специалиста по детскому массажу. Запущен и работает.</p>
+      </div>
+      <div class="case-block reveal">
+        <div class="case-block-content">
+          <span class="tag">Детский массаж</span>
+          <h3>«Кроха и Я»</h3>
+          <p>Лендинг для частного специалиста по детскому массажу в Москве. Проект включает 6 информационных экранов, адаптивную вёрстку, форму записи с валидацией, плавные анимации появления и SEO-базу.</p>
+          <p style="font-size:14px; color:var(--text-tertiary); margin-bottom:24px;">Проект недавно запущен, коммерческие результаты фиксируем. Технический результат — корректная индексация, мобильная адаптивность, валидная вёрстка.</p>
+          <a href="/cases/baby-massage.html" class="btn-secondary">Подробнее о проекте</a>
+        </div>
+        <div class="case-block-image">
+          <span class="case-placeholder">[ Скриншот baby-massage05.ru ]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Стоимость</span>
+        <h2>Сколько стоит сайт для массажиста</h2>
+        <p>Базовая версия — всё необходимое для старта. Расширенная — с дополнительными блоками и анимациями.</p>
+      </div>
+      <div class="pricing-card reveal">
+        <span class="section-label">Базовый сайт для массажиста</span>
+        <div class="price">от 25 000 ₽</div>
+        <p class="price-note">Срок: 7–10 дней</p>
+        <ul>
+          <li>До 6 экранов (главная, услуги, о специалисте, отзывы, форма, контакты)</li>
+          <li>Адаптивная вёрстка</li>
+          <li>Форма записи с уведомлениями</li>
+          <li>Базовые анимации появления</li>
+          <li>SEO-оптимизация</li>
+          <li>Подключение домена и хостинга</li>
+        </ul>
+        <a href="/tools/kalkulyator-lendinga.html" class="btn-primary" style="width:100%;justify-content:center;">Рассчитать точную стоимость</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">FAQ</span>
+        <h2>Вопросы о сайтах для массажистов</h2>
+      </div>
+      <div class="faq-list">
+        <details class="reveal">
+          <summary>Сколько стоит сайт для массажиста?</summary>
+          <p>Базовый лендинг — от 25 000 ₽. В стоимость входит вёрстка до 6 экранов, адаптив, форма записи, анимации и SEO-база. Если нужно больше блоков, сложные анимации или интеграции — цена увеличивается. Точную стоимость можно рассчитать в <a href="/tools/kalkulyator-lendinga.html" style="color:var(--accent);">калькуляторе</a>.</p>
+        </details>
+        <details class="reveal">
+          <summary>У меня нет фото и текстов. Что делать?</summary>
+          <p>Помогу с текстами — напишу продающие заголовки и описания услуг. С фото — подскажу, какие кадры нужны (рабочие, с клиентами, сертификаты). Если фото совсем нет — используем качественные стоковые изображения с правильной лицензией.</p>
+        </details>
+        <details class="reveal">
+          <summary>Будет ли сайт виден в Google?</summary>
+          <p>Да. Я настраиваю базовую SEO-оптимизацию: правильные заголовки, мета-теги, Schema.org, sitemap.xml. Сайт будет индексироваться. Но помните: SEO — это долгосрочная игра. Для быстрого результата рекомендую также запустить контекстную рекламу.</p>
+        </details>
+        <details class="reveal">
+          <summary>Можно ли редактировать сайт самостоятельно?</summary>
+          <p>Да, если вы знаете базовый HTML/CSS. Я предоставляю чистый, понятный код с комментариями. Если нужна CMS — могу подключить простую панель управления за доплату. Но для лендинга массажиста это обычно не требуется — тексты меняются редко.</p>
+        </details>
+        <details class="reveal">
+          <summary>Какая гарантия?</summary>
+          <p>Гарантирую: сайт будет работать, формы будут отправлять заявки, вёрстка будет адаптивной. Если в течение 14 дней после запуска найдёте баг — исправлю бесплатно. Правки по дизайну (цвета, шрифты, отступы) — 1 раунд включён в стоимость.</p>
+        </details>
+        <details class="reveal">
+          <summary>Можно ли сделать сайт для нескольких специалистов?</summary>
+          <p>Да. Если вы работаете в команде или салоне — делаю многостраничный сайт с карточками мастеров, расписанием и онлайн-записью. Стоимость обсуждается индивидуально.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:var(--bg-secondary);">
+    <div class="container container-sm">
+      <div class="section-header reveal">
+        <span class="section-label">Контакты</span>
+        <h2>Нужен сайт для массажиста?</h2>
+        <p>Расскажите о вашем проекте. Отвечу в течение дня с оценкой сроков и стоимости.</p>
+      </div>
+      <form id="contactForm" class="reveal" style="background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:40px;">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email или Telegram</label>
+          <input type="text" id="email" name="email" placeholder="example@mail.ru или @username" required>
+        </div>
+        <div class="form-group">
+          <label for="message">О проекте</label>
+          <textarea id="message" name="message" placeholder="Какой массаж вы делаете? Есть ли тексты и фото? Какие сроки?" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
+          <span>Отправить заявку</span>
+        </button>
+        <p class="form-note">Или напишите напрямую: <a href="mailto:1cworkac@mail.ru" style="color:var(--accent);">1cworkac@mail.ru</a> / <a href="https://t.me/rdvigm" target="_blank" style="color:var(--accent);">@rdvigm</a></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">RD<span>.</span></a>
+          <p>Соло-разработчик для частных специалистов<br>и малого бизнеса</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-col">
+            <h4>Навигация</h4>
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="/services/landing.html">Услуги</a></li>
+              <li><a href="/cases/baby-massage.html">Кейсы</a></li>
+              <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Ресурсы</h4>
+            <ul>
+              <li><a href="/niches/sajt-dlya-massazhista.html">Сайт для массажиста</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
+              <li><a href="https://t.me/rdvigm" target="_blank">Telegram</a></li>
+              <li><a href="https://github.com/Ibrahim-Radzhabov" target="_blank">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ибрагим Раджабов. Все права защищены.</p>
+        <div class="social-links">
+          <a href="https://github.com/Ibrahim-Radzhabov" target="_blank" aria-label="GitHub">GH</a>
+          <a href="https://t.me/rdvigm" target="_blank" aria-label="Telegram">TG</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      window.toggleMenu = function() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      var form = document.getElementById('contactForm');
+      var btn = document.getElementById('submitBtn');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (!document.getElementById('name').value.trim() || !document.getElementById('email').value.trim() || !document.getElementById('message').value.trim()) return;
+          btn.innerHTML = '<span>Отправлено — свяжусь с вами</span>';
+          btn.style.background = '#4caf7a';
+          setTimeout(function() {
+            btn.innerHTML = '<span>Отправить заявку</span>';
+            btn.style.background = '';
+            form.reset();
+          }, 3000);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
