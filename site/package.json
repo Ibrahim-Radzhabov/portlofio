@@ -2,7 +2,7 @@
   "name": "dale-portfolio-v3",
   "version": "0.1.0",
   "private": true,
-  "description": "Multipage SEO scaffold for Dale McManus portfolio",
+  "description": "Multipage SEO scaffold for Ibrahim Radzhabov portfolio",
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",

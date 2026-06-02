@@ -79,7 +79,7 @@ document.querySelectorAll("[data-demo-form]").forEach((form) => {
     }
 
     if (status) {
-      status.textContent = "Форма пока не подключена к отправке. Используйте hello@dalemcmanus.dev.";
+      status.textContent = "Форма пока не подключена к отправке. Используйте hello@radzhabov.dev.";
     }
     form.reset();
   });

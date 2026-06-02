@@ -1,24 +1,26 @@
 # AGENTS.md — Project Instructions for AI Agents
 
 ## Project
-Dale McManus Portfolio Redesign (Production V2) — premium, high-conversion single-file HTML portfolio.
+Ibrahim Radzhabov Portfolio (Production V2) — premium, high-conversion portfolio.
 Target audience: startup founders, CEOs, product managers (high-ticket clients).
 Language: Russian (all UI text, meta tags, OG data, JSON-LD).
-Domain: `dalemcmanus.dev`
+Domain: `radzhabov.dev`
 
 ## Architecture
 
-**Single-file only:** everything lives in `dale-portfolio-v2.html` (~2200 lines) — HTML, CSS (`<style>` lines 20–1385), JS (`<script>` lines 1845–2205).
+**Active entrypoint:** `index.html` is the homepage and primary file for the live site. CSS and JS are inline in this file.
 
 ### Hard constraints
 - NO separate CSS or JS files.
 - NO external libraries or frameworks (no React, Vue, GSAP, jQuery, Tailwind, etc.).
 - NO Python generators (previously used `gen_*.py` scripts were deleted).
 - NO CDN links or external dependencies.
-- ALL edits must be direct replacements inside `dale-portfolio-v2.html`.
+- ALL homepage edits must be made in `index.html`. Do not use `dale-portfolio-v2.html` as the source of truth.
 - The ONLY external resource is Google Fonts (Syne, Outfit, JetBrains Mono) via `<link>`.
 
 ### Other files in the directory
+- `index.html` — active homepage and source of truth.
+- `dale-portfolio-v2.html` — legacy/archive copy, do NOT use as the main file.
 - `dale-portfolio-redesign.html` — old prototype, do NOT edit.
 - `premium-ui.css`, `premium-ui.js` — legacy files, not used, do NOT reference.
 - `Codex-final-prompt.md` — reference prompt, not code.
@@ -135,7 +137,7 @@ All JS runs inside a single IIFE — `(function() { 'use strict'; ... })()`.
 ```bash
 # Start local server
 python3 -m http.server 8000
-# Open: http://localhost:8000/dale-portfolio-v2.html
+# Open: http://localhost:8000/
 ```
 
 ## Known TODOs
@@ -149,7 +151,7 @@ python3 -m http.server 8000
 
 2. **Formspree ID для формы** — форма написана и подключена, но письма не уходят. Нужно:
    - Зарегистрироваться на [formspree.io](https://formspree.io)
-   - Создать форму с email `hello@dalemcmanus.dev`
+   - Создать форму с email `hello@radzhabov.dev`
    - Получить ID вида `xpwzabcd`
    - Вставить в JS: найти `var FORMSPREE_ID = 'YOUR_FORM_ID'` и заменить.
 
@@ -184,7 +186,7 @@ python3 -m http.server 8000
 
 ## When Editing
 1. Read the relevant section before making changes.
-2. Keep ALL code inside `dale-portfolio-v2.html`.
+2. Keep homepage code in `index.html`.
 3. Test at mobile (`<640px`), tablet (`<968px`), and desktop widths.
 4. Respect the gold + dark theme. Do not introduce new accent colors without asking.
 5. Add `prefers-reduced-motion` overrides for any new animations.

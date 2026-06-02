@@ -1,4 +1,4 @@
-# ПРОМПТ ДЛЯ CLAUDE CODE — Финализация портфолио Dale McManus
+# ПРОМПТ ДЛЯ CLAUDE CODE — Финализация портфолио Ibrahim Radzhabov
 
 ---
 
@@ -15,7 +15,7 @@
 ```
 # КОНТЕКСТ
 
-Ты финализируешь портфолио-сайт для фулстек-разработчика Dale McManus.
+Ты финализируешь портфолио-сайт для фулстек-разработчика Ibrahim Radzhabov.
 
 Файл: `dale-portfolio-v2.html` — единый HTML-файл с inline CSS и JS.
 Состояние: почти готов к продакшену, остались финальные доработки.
@@ -129,7 +129,7 @@ form.addEventListener('submit', async (e) => {
 <div class="about-image">
   <!-- ЗАМЕНИТЕ: вставьте путь к вашему фото -->
   <!-- Рекомендуемый размер: 600x750px, формат WebP или JPG -->
-  <!-- <img src="your-photo.webp" alt="Dale McManus — фулстек-разработчик" loading="lazy"> -->
+  <!-- <img src="your-photo.webp" alt="Ibrahim Radzhabov — фулстек-разработчик" loading="lazy"> -->
   
   <!-- Временный плейсхолдер (удалите когда вставите фото): -->
   <div class="about-image-placeholder">
@@ -169,7 +169,7 @@ form.addEventListener('submit', async (e) => {
 Сразу после `<!DOCTYPE html>` добавь:
 ```html
 <!--
-  Dale McManus — Portfolio
+  Ibrahim Radzhabov — Portfolio
   
   ПЕРЕД ЗАПУСКОМ:
   1. Зарегистрируйтесь на https://formspree.io

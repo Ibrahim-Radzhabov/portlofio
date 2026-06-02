@@ -1,14 +1,14 @@
 module.exports = {
-  siteName: "Дейл Макманус",
-  siteTitle: "Дейл Макманус — сайты и веб-продукты для SaaS и B2B",
-  siteUrl: "https://dalemcmanus.dev",
+  siteName: "Ибрагим Раджабов",
+  siteTitle: "Ибрагим Раджабов — сайты и 1С-автоматизация для бизнеса",
+  siteUrl: "https://radzhabov.dev",
   language: "ru",
   locale: "ru_RU",
   themeColor: "#0a0a0b",
   defaultOgImage: "/og-image.png",
-  authorName: "Дейл Макманус",
-  authorEmail: "hello@dalemcmanus.dev",
+  authorName: "Ибрагим Раджабов",
+  authorEmail: "hello@radzhabov.dev",
   currentYear: 2026,
-  personId: "https://dalemcmanus.dev/#person",
-  websiteId: "https://dalemcmanus.dev/#website"
+  personId: "https://radzhabov.dev/#person",
+  websiteId: "https://radzhabov.dev/#website"
 };
