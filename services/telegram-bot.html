@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram-бот и mini app для бизнеса | I. Radzhabov</title>
+  <meta name="description" content="Соберу Telegram-бота или mini app для бизнеса: магазин с каталогом и корзиной, приём заказов, поддержка, связка с сайтом и 1С. Пример — магазин GlowDecor.">
+  <meta name="keywords" content="разработка telegram-бота, заказать telegram бота, telegram mini app, бот для магазина, бот для бизнеса, чат-бот telegram, бот приёма заказов, бот поддержки">
+  <link rel="canonical" href="https://radzhabov-dev.ru/services/telegram-bot.html">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta property="og:title" content="Telegram-бот и mini app для бизнеса | I. Radzhabov">
+  <meta property="og:description" content="Магазин в Telegram, приём заказов, поддержка, уведомления, связка с сайтом и 1С, AI-консультант. Реальный пример — GlowDecor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radzhabov-dev.ru/services/telegram-bot.html">
+  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Разработка Telegram-бота и mini app для бизнеса">
+  <meta name="twitter:description" content="Магазин в Telegram, приём заказов, поддержка, связка с 1С, AI-консультант.">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://radzhabov-dev.ru/services/telegram-bot.html#service",
+        "serviceType": "Разработка Telegram-ботов и mini apps",
+        "name": "Telegram-бот и mini app для бизнеса",
+        "provider": {
+          "@type": "Person",
+          "name": "Ибрагим Раджабов",
+          "alternateName": "I. Radzhabov",
+          "url": "https://radzhabov-dev.ru/",
+          "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
+        },
+        "areaServed": "RU",
+        "url": "https://radzhabov-dev.ru/services/telegram-bot.html",
+        "description": "Разработка Telegram-ботов и mini apps для малого бизнеса: магазин с каталогом и корзиной, приём заказов и заявок, поддержка с анонимной переадресацией, уведомления, связка с сайтом и 1С, AI-консультант.",
+        "inLanguage": "ru"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Чем Telegram mini app отличается от обычного бота?", "acceptedAnswer": {"@type": "Answer", "text": "Обычный бот общается сообщениями и кнопками. Mini app — это полноценный интерфейс (витрина, каталог, корзина) прямо внутри Telegram, как мини-сайт. Для магазина удобнее mini app, для уведомлений и поддержки хватает бота. Часто их совмещают."}},
+          {"@type": "Question", "name": "Можно ли принимать оплату в Telegram-боте?", "acceptedAnswer": {"@type": "Answer", "text": "Да, оплату можно подключить (Telegram Payments, ЮKassa и др.). Но не всегда нужно: иногда заказ просто уходит владельцу, а оплата идёт привычным способом. Решаем под задачу."}},
+          {"@type": "Question", "name": "Можно ли связать бота с сайтом или 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Бот может принимать заказы и передавать их в 1С или на сайт, тянуть каталог и остатки, отправлять уведомления. Я делаю и сайты, и связки с 1С, поэтому бот не остаётся отдельным островом."}},
+          {"@type": "Question", "name": "Что такое бот с AI?", "acceptedAnswer": {"@type": "Answer", "text": "Это бот, в который встроен AI-ассистент: он отвечает на вопросы покупателя, помогает выбрать товар по параметрам, ведёт первичную переписку. Снимает часть нагрузки с продавца и помогает клиенту быстрее дойти до заказа."}},
+          {"@type": "Question", "name": "Сколько времени занимает разработка бота?", "acceptedAnswer": {"@type": "Answer", "text": "Простой бот приёма заявок — несколько дней. Магазин-mini app с каталогом и корзиной — обычно 1–2 недели в зависимости от объёма каталога и интеграций. Точный срок назову после вводных."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov-dev.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://radzhabov-dev.ru/#services"},
+          {"@type": "ListItem", "position": 3, "name": "Telegram-бот и mini app", "item": "https://radzhabov-dev.ru/services/telegram-bot.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary:#F5F0E8; --bg-secondary:#EDE8DF; --bg-card:#EDE8DF; --bg-card-hover:#E5E0D6;
+      --border:rgba(20,18,16,0.08); --border-hover:rgba(20,18,16,0.15);
+      --text-primary:#141210; --text-secondary:#7A7570; --text-tertiary:#A39E98;
+      --accent:#1A3A2A; --accent-dim:#2D5A45; --accent-warm:#B5623C;
+      --accent-glow:rgba(26,58,42,0.12); --accent-glow-strong:rgba(26,58,42,0.25); --warm-glow:rgba(181,98,60,0.1);
+      --font-display:'Playfair Display',serif; --font-body:'Outfit',sans-serif; --font-mono:'JetBrains Mono',monospace;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+    .container-sm{max-width:760px;margin:0 auto;padding:0 24px;}
+    a{color:inherit;}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:background .4s,backdrop-filter .4s;}
+    #nav.scrolled{background:rgba(245,240,232,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary);}
+    .nav-logo svg{width:22px;height:22px;}
+    .nav-logo b{font-family:var(--font-display);font-weight:600;font-size:17px;}
+    .nav-back{font-family:var(--font-mono);font-size:13px;color:var(--text-secondary);text-decoration:none;}
+    .nav-back:hover{color:var(--accent);}
+    .hero{padding:140px 0 50px;}
+    .hero-label{display:inline-block;font-family:var(--font-mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:22px;border:1px solid var(--accent-glow-strong);padding:7px 14px;border-radius:8px;background:var(--accent-glow);}
+    .hero h1{font-family:var(--font-display);font-size:clamp(30px,4.4vw,52px);font-weight:600;line-height:1.08;letter-spacing:-1px;margin-bottom:20px;max-width:840px;}
+    .hero h1 .accent{color:var(--accent-warm);}
+    .hero-sub{font-size:18px;color:var(--text-secondary);max-width:660px;line-height:1.65;margin-bottom:30px;}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#F5F0E8;font-family:var(--font-display);font-weight:600;font-size:15px;padding:15px 30px;border-radius:12px;text-decoration:none;transition:transform .3s,box-shadow .3s;}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(26,58,42,0.28);}
+    section{padding:46px 0;}
+    .label{display:inline-block;font-family:var(--font-mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;}
+    h2{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:600;line-height:1.15;margin-bottom:18px;}
+    .content p{color:var(--text-secondary);margin-bottom:14px;font-size:16px;line-height:1.7;}
+    .content strong{color:var(--text-primary);}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;}
+    .card b{display:block;font-family:var(--font-display);font-weight:600;font-size:17px;margin-bottom:6px;}
+    .card span{font-size:14.5px;color:var(--text-secondary);line-height:1.6;}
+    .list{list-style:none;margin-top:8px;}
+    .list li{padding:8px 0;color:var(--text-secondary);font-size:15.5px;display:flex;gap:12px;border-bottom:1px solid var(--border);}
+    .list li:last-child{border-bottom:none;}
+    .list li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;}
+    .example{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:26px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+    .example-body{flex:1;min-width:240px;}
+    .example b{font-family:var(--font-display);font-weight:600;font-size:19px;}
+    .example p{color:var(--text-secondary);font-size:15px;margin:6px 0 12px;}
+    .example a{font-family:var(--font-mono);font-size:13px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-glow-strong);}
+    .steps{display:grid;gap:12px;counter-reset:s;}
+    .step{display:flex;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:15px 18px;}
+    .step-n{counter-increment:s;font-family:var(--font-mono);font-size:13px;color:var(--accent-warm);flex-shrink:0;}
+    .step-n::before{content:'0' counter(s);}
+    .step b{display:block;font-family:var(--font-display);font-weight:600;font-size:16px;margin-bottom:2px;}
+    .step span{font-size:14.5px;color:var(--text-secondary);}
+    .faq details{border-bottom:1px solid var(--border);}
+    .faq summary{font-family:var(--font-display);font-weight:600;font-size:17px;padding:15px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{content:'+';color:var(--accent-warm);font-family:var(--font-mono);}
+    .faq details[open] summary::after{content:'–';}
+    .faq p{color:var(--text-secondary);font-size:15.5px;line-height:1.7;padding:0 0 16px;}
+    .cta{text-align:center;background:var(--bg-card);border:1px solid var(--border);border-radius:22px;padding:46px 24px;}
+    .cta p{color:var(--text-secondary);max-width:520px;margin:12px auto 24px;}
+    footer{padding:46px 0 30px;border-top:1px solid var(--border);margin-top:24px;}
+    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--text-tertiary);}
+    .foot a{color:var(--text-secondary);text-decoration:none;}
+    .foot a:hover{color:var(--accent);}
+    @media(max-width:680px){ .grid{grid-template-columns:1fr;} .hero{padding:120px 0 38px;} }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
+    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/" aria-label="I. Radzhabov — на главную">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg>
+        <b>I. Radzhabov</b>
+      </a>
+      <a class="nav-back" href="/#work">← Все работы</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="hero-label">Услуга · Telegram</span>
+      <h1>Telegram-бот и <span class="accent">mini app</span> для бизнеса</h1>
+      <p class="hero-sub">Магазин с каталогом и корзиной прямо в Telegram, приём заказов и заявок, поддержка, уведомления, связка с сайтом и 1С, AI-консультант. Собираю под задачу — без агентств.</p>
+      <a class="btn" href="/#contact">Обсудить бота →</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Что решает</span>
+      <h2>Зачем бизнесу бот в Telegram</h2>
+      <div class="grid">
+        <div class="card"><b>Магазин в Telegram</b><span>Каталог, категории, корзина — клиент выбирает и оформляет заказ, не выходя из мессенджера.</span></div>
+        <div class="card"><b>Приём заказов и заявок</b><span>Заявка падает вам сразу — в чат, на сайт или в 1С, ничего не теряется.</span></div>
+        <div class="card"><b>Поддержка</b><span>Бот принимает вопросы и переадресует владельцу, можно скрыть личный контакт (анонимная переадресация).</span></div>
+        <div class="card"><b>Уведомления</b><span>Новый заказ, статус, напоминание — приходит автоматически вам или клиенту.</span></div>
+        <div class="card"><b>AI-консультант</b><span>Отвечает покупателю и помогает выбрать товар по параметрам, снимает рутину с продавца.</span></div>
+        <div class="card"><b>Связка с сайтом и 1С</b><span>Бот не отдельный остров: заказы уходят в 1С, каталог и остатки тянутся из учёта.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Пример</span>
+      <h2>Реальный бот</h2>
+      <div class="example">
+        <div class="example-body">
+          <b>GlowDecor — Telegram-магазин (mini app)</b>
+          <p>Магазин декора и свечей внутри Telegram: каталог, категории, корзина и поддержка с анонимной переадресацией — клиент пишет боту, сообщение уходит владельцу, личный контакт скрыт.</p>
+          <a href="https://t.me/DecorApp_bot" target="_blank" rel="noopener">Открыть бота — t.me/DecorApp_bot ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Что входит</span>
+      <h2>Что вы получаете</h2>
+      <ul class="list">
+        <li>Бот или mini app под вашу задачу: магазин, заявки, поддержка или уведомления.</li>
+        <li>Каталог с категориями и корзиной (для магазина) или сценарий диалога (для заявок).</li>
+        <li>Передача заказов туда, где вам удобно: чат, сайт, 1С.</li>
+        <li>Подключение оплаты — по необходимости.</li>
+        <li>AI-консультант — по желанию.</li>
+        <li>Запуск и короткая инструкция, как пользоваться.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Как работаем</span>
+      <h2>Процесс</h2>
+      <div class="steps">
+        <div class="step"><span class="step-n"></span><span><b>Вводные</b><span>Рассказываете задачу: что должен делать бот и для кого.</span></span></div>
+        <div class="step"><span class="step-n"></span><span><b>Сценарий</b><span>Согласуем, как устроен бот: экраны, каталог, куда уходят заказы.</span></span></div>
+        <div class="step"><span class="step-n"></span><span><b>Сборка</b><span>Собираю и показываю по ходу, вношу правки.</span></span></div>
+        <div class="step"><span class="step-n"></span><span><b>Запуск</b><span>Подключаем и запускаем, остаюсь на связи.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container-sm content">
+      <span class="label">Частые вопросы</span>
+      <h2>Про Telegram-ботов</h2>
+      <details><summary>Чем mini app отличается от обычного бота?</summary><p>Обычный бот общается сообщениями и кнопками. Mini app — полноценный интерфейс (витрина, каталог, корзина) прямо внутри Telegram, как мини-сайт. Для магазина удобнее mini app, для уведомлений и поддержки хватает бота. Часто их совмещают.</p></details>
+      <details><summary>Можно ли принимать оплату в боте?</summary><p>Да, оплату можно подключить (Telegram Payments, ЮKassa и др.). Но не всегда нужно: иногда заказ просто уходит владельцу, а оплата идёт привычным способом. Решаем под задачу.</p></details>
+      <details><summary>Можно ли связать бота с сайтом или 1С?</summary><p>Да. Бот может принимать заказы и передавать их в 1С или на сайт, тянуть каталог и остатки, отправлять уведомления. Я делаю и сайты, и связки с 1С, поэтому бот не остаётся отдельным островом.</p></details>
+      <details><summary>Что такое бот с AI?</summary><p>Это бот со встроенным AI-ассистентом: он отвечает на вопросы покупателя, помогает выбрать товар по параметрам, ведёт первичную переписку. Снимает часть нагрузки с продавца.</p></details>
+      <details><summary>Сколько времени занимает разработка?</summary><p>Простой бот приёма заявок — несколько дней. Магазин-mini app с каталогом и корзиной — обычно 1–2 недели в зависимости от объёма каталога и интеграций. Точный срок назову после вводных.</p></details>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm">
+      <div class="cta">
+        <h2>Нужен Telegram-бот?</h2>
+        <p>Опишите задачу — предложу сценарий и сроки. Напрямую, без агентств и лишних согласований.</p>
+        <a class="btn" href="/#contact">Обсудить задачу →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="related" aria-label="Смотрите также">
+    <div class="related-wrap">
+      <span class="related-label">Смотрите также</span>
+      <div class="related-links">
+        <a href="/services/ai-assistant.html">AI-ассистент для бизнеса →</a>
+        <a href="/services/integraciya-1c.html">Интеграция сайта с 1С →</a>
+        <a href="/cases/dag-sport.html">Кейс: сайт + 1С + AI →</a>
+        <a href="/cities/kaspijsk.html">Сайты в Каспийске →</a>
+      </div>
+    </div>
+  </section>
+  <style>
+    .related{padding:8px 0 64px;}
+    .related-wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+    .related-label{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);}
+    .related-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:16px;}
+    .related-links a{font-family:var(--font-mono);font-size:13px;color:var(--text-primary);text-decoration:none;border-bottom:1px solid var(--accent-glow-strong);padding-bottom:3px;transition:border-color .2s,color .2s;}
+    .related-links a:hover{color:var(--accent-warm);border-color:var(--accent-warm);}
+  </style>
+
+  <footer>
+    <div class="container foot">
+      <span>© 2026 · Ибрагим Раджабов — сайты, AI-ассистенты и 1С</span>
+      <span><a href="/">radzhabov-dev.ru</a> · <a href="https://t.me/rdvigm" target="_blank" rel="noopener">Telegram</a></span>
+      <span class="legal-links" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;">Политика конфиденциальности</a> · <a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;">Согласие на обработку ПД</a></span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav=document.getElementById('nav');
+      function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){ a.addEventListener('click', function(){ __reach('telegram_click'); }); });
+      document.querySelectorAll('.btn-primary:not([type=submit]):not(#submitBtn)').forEach(function(a){ a.addEventListener('click', function(){ __reach('cta_click'); }); });
+    }());
+  </script>
+</body>
+</html>

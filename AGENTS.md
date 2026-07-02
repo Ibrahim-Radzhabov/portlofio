@@ -1,195 +1,55 @@
-# AGENTS.md — Project Instructions for AI Agents
+# AGENTS.md — точка входа для ИИ-агентов (radzhabov-dev.ru)
 
-## Project
-Ibrahim Radzhabov Portfolio (Production V2) — premium, high-conversion portfolio.
-Target audience: startup founders, CEOs, product managers (high-ticket clients).
-Language: Russian (all UI text, meta tags, OG data, JSON-LD).
-Domain: `radzhabov.dev`
+> **Старт здесь.** Этот файл — карта проекта и маршрутизатор к остальным докам. Прочитай его целиком, затем документы из раздела «Что читать», затем смотри сами файлы на диске. Обновлён: 2026-07-02 (после Phase 0 + Phase 1 + индексации).
 
-## Architecture
+## Проект в двух строках
+Персональный сайт-портфолио **Ибрагима Раджабова (I. Radzhabov)**: сайты + AI-ассистенты + 1С. Домен **`radzhabov-dev.ru`**. Статичный многостраничный сайт, всё инлайн в каждом `.html`, **без фреймворков/сборки/CDN**. Тема — **светлая кремовая**, тёплый акцент только терракота `#B5623C`, бренд-знак «Излом». Язык интерфейса — русский. Сайт **в проде** (RU-edge, релизы + symlink).
 
-**Active entrypoint:** `index.html` is the homepage and primary file for the live site. CSS and JS are inline in this file.
+## Что читать (в этом порядке)
+1. **`CLAUDE.md`** — канон по архитектуре, дизайн-системе, бренду «Излом», прелоадеру. Если что-то расходится — верить `index.html` на диске.
+2. **`AGENT-HANDOFF.md`** — рабочий хендофф: правила честности, состояние, инструменты верификации.
+3. **`marketing/GROWTH-PLAN-v4-reality-grounded.md`** — актуальная SEO-стратегия и порядок фаз (заменяет любые старые роадмапы).
+4. **`seo-webmaster-setup.md`** — подключение Вебмастера/GSC.
+5. Наряды-история (что и как уже делалось): `marketing/EXECUTOR-BRIEF-Phase0.md`, `EXECUTOR-BRIEF-Phase1.md`, `EXECUTOR-BRIEF-reindex.md`.
 
-### Hard constraints
-- NO separate CSS or JS files.
-- NO external libraries or frameworks (no React, Vue, GSAP, jQuery, Tailwind, etc.).
-- NO Python generators (previously used `gen_*.py` scripts were deleted).
-- NO CDN links or external dependencies.
-- ALL homepage edits must be made in `index.html`. Do not use `dale-portfolio-v2.html` as the source of truth.
-- The ONLY external resource is Google Fonts (Syne, Outfit, JetBrains Mono) via `<link>`.
+## Текущее состояние (2026-07-02)
+**Страницы (16 HTML):** `/` (index) · `/404.html` · услуги `/services/{landing,telegram-bot,ai-assistant,integraciya-1c}.html` · кейсы `/cases/{baby-massage,dag-sport}.html` · ниши `/niches/{sajt-dlya-avtoservisa,sajt-dlya-massazhista,sajt-dlya-barbershopa,sajt-dlya-cvetochnogo-magazina,sajt-dlya-klininga}.html` · инструмент `/tools/kalkulyator-lendinga.html` · legal `/legal/{privacy,soglasie}.html`.
+**Инфра:** `sitemap.xml` (15 URL, `/404.html` не входит) · `robots.txt` (пускает поисковые + AI-краулеры) · `llms.txt` (актуальное позиционирование).
 
-### Other files in the directory
-- `index.html` — active homepage and source of truth.
-- `dale-portfolio-v2.html` — legacy/archive copy, do NOT use as the main file.
-- `dale-portfolio-redesign.html` — old prototype, do NOT edit.
-- `premium-ui.css`, `premium-ui.js` — legacy files, not used, do NOT reference.
-- `Codex-final-prompt.md` — reference prompt, not code.
+**Сделано:**
+- Бренд «Излом» везде (nav+footer всех страниц), фавиконки, og-image (домен исправлен на radzhabov-dev.ru).
+- Легаси Dale-шаблона вынесено в `_archive/` (не деплоить, не ссылаться).
+- Яндекс.Метрика **110282088** на всех страницах + цели `telegram_click`, `cta_click`, `form_submit`, `calculator_open`.
+- Формы: Formspree ID **`mkolvvep`** на всех страницах с формой (главная + landing + baby-massage + 5 ниш + калькулятор), у каждой — чекбокс согласия, гейтящий отправку.
+- Legal: `privacy.html` + `soglasie.html` (оператор — **физлицо**), ссылки в подвале всех страниц.
+- Подтверждение: GSC — через **DNS TXT**; Яндекс.Вебмастер — мета-тег `yandex-verification=1e2895c9cc7530b7`. Sitemap отдан, переобход главной + 5 ниш запрошен.
+- 5 нишевых страниц под **реальные демо** с уникальным (не doorway) текстом.
 
-## Design System
+**Демо-проекты (реальные примеры, на них ссылаются ниши и блок «Работы»):** `pdr / flora / barber / qlean / rihau / fixlab / avtozap`.radzhabov-dev.ru + `baby-massage05.ru`. Это копии боевых клиентских сайтов (напр. barber → throne-barbershop.ru). Хостятся на отдельном Foreign VPS (был сбой, восстановлен — если демо отдают 502, это инфра, не контент).
 
-### CSS Variables (`:root`, line 23)
-| Variable | Value | Usage |
-|---|---|---|
-| `--bg-primary` | `#0a0a0b` | Page background |
-| `--bg-secondary` | `#111113` | Input/alt backgrounds |
-| `--bg-card` | `#161618` | Cards |
-| `--bg-card-hover` | `#1c1c1f` | Card hover |
-| `--border` | `#222225` | Default borders |
-| `--border-hover` | `#333338` | Hover borders |
-| `--text-primary` | `#ededef` | Headings, body text |
-| `--text-secondary` | `#8a8a8e` | Descriptions, muted |
-| `--text-tertiary` | `#5a5a5e` | Labels, captions |
-| `--accent` | `#e8c572` | Gold accent |
-| `--accent-dim` | `#c9a84e` | Darker gold |
-| `--accent-glow` | `rgba(232,197,114,0.12)` | Glow backgrounds |
-| `--accent-glow-strong` | `rgba(232,197,114,0.25)` | Strong glow |
+**Контакты (не выдумывать, не заменять):** email `1cworkac@mail.ru`, Telegram `t.me/rdvigm`, GitHub `github.com/Ibrahim-Radzhabov`.
 
-### Typography
-- Display (headings): `'Syne'` — `var(--font-display)`
-- Body: `'Outfit'` — `var(--font-body)`
-- Mono (tags, labels, code): `'JetBrains Mono'` — `var(--font-mono)`
+## Что открыто (задачи для тебя — «довести SEO-роадмап до совершенства»)
+1. **Регион (решение владельца).** Регион в Вебмастере не задан — намеренно (нельзя выдумывать город/организацию). Это стратегический выбор: пинить домен к городу помогает локальным запросам, но может сузить гео по РФ. Нужен **реальный город владельца**. Пути: (а) таргет города → честная строка в контактах + регион; (б) остаётся по РФ удалённо → регион не пиним, гео закрываем `/cities/` (Phase 2).
+2. **Phase 2 (из GROWTH-PLAN-v4):** `/cities/` по реальному региону (честный формат «работаю удалённо») + блог (3–4 опорные статьи; черновик статьи про dag-sport готов в `marketing/article-dag-sport-habr.md`).
+3. **Бэклинки:** безопасный первый слой — профили (GitHub/Habr/VC/TenChat/Telegram-bio) → сайт; затем статья на Habr/VC; ссылки в подвалах клиентских сайтов.
+4. **Микро-CRO** услуг — точечно, без переспама (см. GROWTH-PLAN-v4 §Phase 1.3).
+5. **Дождаться данных** GSC/Вебмастера (показы/запросы) и масштабировать только то, что даёт клики/заявки.
 
-### Easing
-- `--ease-out-expo`: `cubic-bezier(0.16, 1, 0.3, 1)` — used for most transitions
-- `--ease-out-quart`: `cubic-bezier(0.25, 1, 0.5, 1)`
+## Жёсткие правила (нарушение = брак)
+- **Не выдумывать** отзывы, клиентов, цифры, офисы, регион, гарантии. Ниши — только под реальное демо (стоматология/салон красоты — нет примера, не делать).
+- **dag-sport:** сам сайт делал НЕ он — только интеграция 1С УТ + AI-консультант. Не приписывать разработку сайта.
+- Домен только `radzhabov-dev.ru` (нет `radzhabov.dev`); Telegram только `rdvigm` (нет `radzhabov_dev`).
+- Всё инлайн; без фреймворков/сборки/CDN; внешнее — только Google Fonts + Яндекс.Метрика. Палитра/бренд/позиционирование не менять без подтверждения.
+- `_archive/` не трогать и **не деплоить**. Русский для всего пользовательского текста.
+- Спрашивать до крупной/неоднозначной работы; не «чинить» регрессы вслепую — докладывать.
 
-### Theme
-- Dark only. No light mode. No theme toggle.
-- Noise overlay via `body::before` (SVG feTurbulence, `z-index: 9999`, `opacity: 0.025`).
-- Custom cursor — `body { cursor: none; }` on desktop.
+## Верификация после правок (всегда)
+tag-balance (`html.parser` → 0/0) · JSON-LD `json.loads` валиден · граф внутренних ссылок без сирот/битых · title ≤60, description ≤155 · все ассеты резолвятся · консистентность (`radzhabov-dev.ru`/`rdvigm`/`1cworkac@mail.ru`, нет старого домена) · локально `python3 -m http.server 8000`, проверить 375/768/desktop.
 
-## Sections (in DOM order)
+## Деплой
+Деплоить только боевой сайт: `index.html`, `404.html`, `services/`, `cases/`, `niches/`, `tools/`, `legal/`, `assets/`, фавиконки, `og-image.png`, `robots.txt`, `sitemap.xml`, `llms.txt`. **НЕ деплоить:** `_archive/`, `marketing/`, `output/`, `scripts/`, `tz/`, все `.md`-доки.
 
-| # | Section | id/class | Lines (approx) | Notes |
-|---|---|---|---|---|
-| 0 | Preloader | `#preloader` | 1388–1392 | Animated gold progress bar, fades after 1.5s |
-| 1 | Nav | `#nav` | 1398–1415 | `position: fixed`, blur on scroll, `.scrolled` class |
-| 2 | Mobile Menu | `#mobile-menu` | 1418–1425 | Fullscreen overlay, `toggleMenu()` global fn |
-| 3 | Hero | `<header class="hero">` | 1428–1474 | Mesh blobs + dot grid canvas + staggered animations + scroll indicator |
-| 4 | Marquee | `.marquee-section` | 1477–1492 | Skewed infinite scroll, `-2deg` transform |
-| 5 | Work | `#work` | 1494–1602 | 3 project cards with SVG placeholders, glassmorphism overlays, 3D tilt |
-| 6 | Services | `#services` | 1604–1643 | 3-column bento grid |
-| 7 | Process | `#process` | 1646–1677 | 4-column grid with numbered steps |
-| 8 | Testimonials | `#testimonials` | 1679–1719 | 3-column grid, quote cards |
-| 9 | About | `#about` | 1721–1756 | 2-col grid: photo placeholder + bio + tech stack pills |
-| 10 | Contact | `#contact` | 1758–1810 | 2-col grid: info + form with validation |
-| 11 | Footer | `<footer>` | 1812–1843 | `.footer-inner` flex container, mini-nav, social links |
-
-## JavaScript Features (lines 1845–2205)
-
-All JS runs inside a single IIFE — `(function() { 'use strict'; ... })()`.
-
-| Feature | Lines | Details |
-|---|---|---|
-| Debounce utility | 1850–1856 | Used by scroll handlers |
-| Preloader | 1858–1864 | Hides after `load` event + 1.5s delay |
-| Text decode animation | 1866–1891 | Matrix-style scramble on `.section-title` via IntersectionObserver |
-| Nav scroll | 1893–1898 | Adds `.scrolled` class when `scrollY > 50` |
-| Mobile menu | 1901–1909 | `toggleMenu()` toggles `.active`, locks body scroll |
-| Scroll indicator | 1911–1918 | Hides hero scroll line after 100px scroll |
-| Scroll reveal | 1920–1931 | IntersectionObserver adds `.visible` to `.reveal` elements |
-| Smooth anchor scroll | 1933–1944 | `scrollIntoView` on `a[href^="#"]` |
-| Hero parallax | 1946–1956 | Translates `.hero-mesh` at 0.3x scroll speed |
-| Ripple effect | 1960–1974 | Click creates expanding circle on buttons |
-| **Dot grid** | 1976–2066 | Fullscreen Canvas, gold proximity glow, touch support, scroll parallax offset |
-| Cursor glow + follower | 2068–2150 | Radial gradient glow (600px) + 12px gold dot with `mix-blend-mode: difference` |
-| Glassmorphism cards | 2082–2102 | `--mouse-x/--mouse-y` + 3D tilt on `.project-card`, `.bento-card` |
-| Magnetic elements | 2104–2116 | `.btn-primary`, `.btn-secondary`, `.nav-links a` follow cursor at 0.3x |
-| Cursor `.active` state | 2118–2123 | Expands follower to 64px on interactive elements |
-| Form validation | 2152–2202 | Name, email (regex), message required. 3-stage button: default → loading (animated dots) → success |
-
-## CSS Animations & Keyframes
-
-| Name | Purpose |
-|---|---|
-| `meshFadeIn` | Fades hero blobs in |
-| `meshFloat1/2/3` | Slow floating motion for hero blobs |
-| `heroStagger` | Staggered fade-up for hero content |
-| `rippleAnim` | Button click ripple |
-| `scrollLine` | Scroll indicator pulse |
-| `marqueeScroll` | Infinite horizontal scroll |
-| `loaderDot` | Submit button loading dots bounce |
-| `preloaderFill` | Preloader progress bar fill |
-
-## Responsive Breakpoints
-
-| Breakpoint | Changes |
-|---|---|
-| `≤968px` | Nav collapses → hamburger. Cards single-col. Services/Process/About/Contact reflow to 1-col. Testimonials 1-col. |
-| `≤640px` | Section padding shrinks. Process/form grids go 1-col. Footer centers vertically. Stats font smaller. |
-
-## Accessibility
-- `aria-label` on nav, footer nav, menu button, social links.
-- `aria-expanded` on mobile menu button.
-- `aria-hidden="true"` on decorative elements (mesh, dot grid, scroll indicator, avatars).
-- `focus-visible` outlines on interactive elements.
-- `@media (prefers-reduced-motion: reduce)` — disables all animations, shows static states, hides custom cursor.
-
-## SEO
-- `<title>`: Russian, includes name + role + experience.
-- `<meta name="description">`: Russian, keyword-rich.
-- Open Graph: `og:title`, `og:description`, `og:type`, `og:image`, `og:url`.
-- Twitter Card: `summary_large_image`.
-- JSON-LD: `Person` schema with `name`, `jobTitle`, `url`, `knowsAbout`.
-
-## Development
-
-```bash
-# Start local server
-python3 -m http.server 8000
-# Open: http://localhost:8000/
-```
-
-## Known TODOs
-
-### ⚡ Ждут данных от владельца (без них не доделать)
-1. **Социальные ссылки** — в HTML (`<footer>`) и в JSON-LD (`sameAs: []`) стоят заглушки `#`. Нужны реальные URL:
-   - GitHub: `https://github.com/???`
-   - LinkedIn: `https://linkedin.com/in/???`
-   - Twitter/X: `https://x.com/???`
-   - После получения: заменить `href="#"` в трёх `<a>` тегах footer и заполнить `"sameAs": []` в JSON-LD `<script>` в `<head>`.
-
-2. **Formspree ID для формы** — форма написана и подключена, но письма не уходят. Нужно:
-   - Зарегистрироваться на [formspree.io](https://formspree.io)
-   - Создать форму с email `hello@radzhabov.dev`
-   - Получить ID вида `xpwzabcd`
-   - Вставить в JS: найти `var FORMSPREE_ID = 'YOUR_FORM_ID'` и заменить.
-
-3. **Фото в секции About** — сейчас показывает `[ Ваше фото ]`. Нужно профессиональное портретное фото.
-   - Заменить `.about-image-placeholder` на `<img>` с реальным фото.
-
-4. **Скриншоты проектов** — карточки в Work используют SVG-заглушки. Нужны реальные изображения проектов (Kova Technology, Outdoor Photography Portfolio, SaaS Dashboard).
-
-### ✅ Уже сделано (не трогать)
-- `og-image.png` — сгенерирован (1200×630, Pillow)
-- `robots.txt` — все AI-краулеры разрешены (GPTBot, OAI-SearchBot, anthropic-ai, ClaudeBot, PerplexityBot и др.)
-- `sitemap.xml` — создан
-- `llms.txt` — создан для AI-систем
-- `favicon.svg` / `favicon-32.png` / `favicon.ico` / `apple-touch-icon.png` — созданы
-- JSON-LD расширен до 10 сущностей (`@graph`: ProfilePage, Person, WebSite, 3×CreativeWork, 3×Review, FAQPage)
-- FAQ секция — добавлена между About и Contact (6 вопросов, `<details>/<summary>`, FAQPage schema)
-- Marquee — переведён на русский
-- Кнопка "Наверх" — появляется после 400px скролла
-- Активная ссылка в nav — подсвечивается при скролле
-- Skip-nav + ARIA live region для формы — доступность
-- `noscript` fallback — контент виден без JS
-- Font preload, theme-color meta — перформанс
-
-## Common Pitfalls
-- The footer layout depends on `.footer-inner` for flexbox — do not remove it.
-- Dot grid canvas uses `position: fixed` and `z-index: 0` — all content must have higher z-index.
-- Noise overlay is `z-index: 9999` — do not place content above it.
-- Custom cursor `cursor: none` is set on `body` and all interactive elements — if adding new interactive elements, add `cursor: none` too.
-- The `prefers-reduced-motion` block (line ~1367) must be updated when adding new animations.
-- Hero blob colors: blob 1 = gold, blob 2 = deep purple `rgba(147,112,219,0.06)`, blob 3 = emerald `rgba(46,204,113,0.05)`.
-- `toggleMenu()` is a global function (assigned to `window`) — needed by inline `onclick` on mobile menu links.
-
-## When Editing
-1. Read the relevant section before making changes.
-2. Keep homepage code in `index.html`.
-3. Test at mobile (`<640px`), tablet (`<968px`), and desktop widths.
-4. Respect the gold + dark theme. Do not introduce new accent colors without asking.
-5. Add `prefers-reduced-motion` overrides for any new animations.
-6. Add `cursor: none` to any new interactive elements.
-7. Add `aria-label` to any new interactive elements without visible text.
-8. All user-facing text must be in Russian.
+## Карта доков: актуальные vs устаревшие
+**Актуальные (доверять):** `CLAUDE.md`, `AGENT-HANDOFF.md`, `AGENTS.md` (этот), `marketing/GROWTH-PLAN-v4-reality-grounded.md`, `marketing/EXECUTOR-BRIEF-*.md`, `seo-webmaster-setup.md`, `llms.txt`, `sitemap.xml`, `robots.txt`.
+**Устаревшие / исторические (НЕ использовать как источник истины):** вся серия `seo-*-2026-04-05/06*.md`, `seo-geo-roadmap.md`, `homepage-solo-structure-*.md`, `claude-code-final-prompt.md`, `DEPLOY_AGENT_BRIEF-*.md`, `tz/*`, `preloader-spec-v2.md` (только референс), `marketing/MOCKUP-BRIEF.md`. Это следы более ранних фаз и старого тёмного дизайна — они противоречат текущему состоянию.

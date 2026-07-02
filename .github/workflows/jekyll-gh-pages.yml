@@ -50,7 +50,9 @@ jobs:
           cp -R cases _site/
           cp -R services _site/
           cp -R niches _site/
+          cp -R cities _site/
           cp -R tools _site/
+          cp -R legal _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

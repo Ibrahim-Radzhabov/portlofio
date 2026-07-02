@@ -3,43 +3,147 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://radzhabov.dev/</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://radzhabov-dev.ru/</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/"/>
   </url>
 
   <url>
-    <loc>https://radzhabov.dev/services/landing.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://radzhabov-dev.ru/services/landing.html</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov.dev/services/landing.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/services/landing.html"/>
   </url>
 
   <url>
-    <loc>https://radzhabov.dev/niches/sajt-dlya-massazhista.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://radzhabov-dev.ru/services/telegram-bot.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/services/telegram-bot.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/services/ai-assistant.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/services/ai-assistant.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/services/integraciya-1c.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/services/integraciya-1c.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-avtoservisa.html</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov.dev/niches/sajt-dlya-massazhista.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-avtoservisa.html"/>
   </url>
 
   <url>
-    <loc>https://radzhabov.dev/cases/baby-massage.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-massazhista.html</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov.dev/cases/baby-massage.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-massazhista.html"/>
   </url>
 
   <url>
-    <loc>https://radzhabov.dev/tools/kalkulyator-lendinga.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-barbershopa.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-barbershopa.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-cvetochnogo-magazina.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-cvetochnogo-magazina.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-klininga.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-klininga.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/cities/mahachkala.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cities/mahachkala.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/cities/kaspijsk.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov.dev/tools/kalkulyator-lendinga.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cities/kaspijsk.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/cities/derbent.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cities/derbent.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/cases/baby-massage.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cases/baby-massage.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/cases/dag-sport.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cases/dag-sport.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/legal/privacy.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/legal/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/legal/soglasie.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/legal/soglasie.html"/>
   </url>
 
 </urlset>

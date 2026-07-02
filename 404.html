@@ -6,7 +6,7 @@
   <title>404 — Страница не найдена | Ибрагим Раджабов</title>
   <meta name="description" content="Страница не найдена. Вернитесь на главную или посмотрите услуги и кейсы.">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://radzhabov.dev/404.html">
+  <link rel="canonical" href="https://radzhabov-dev.ru/404.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -106,8 +106,16 @@
     .footer-mini a { color: var(--text-tertiary); text-decoration: none; transition: color .3s; }
     .footer-mini a:hover { color: var(--accent); }
   </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
+    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
+  <a href="/" class="brand-mark" aria-label="I. Radzhabov — на главную" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary);margin-bottom:24px;"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" style="width:32px;height:32px;"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg><b style="font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:-0.3px;">I. Radzhabov</b></a>
   <div class="error-code" aria-hidden="true">404</div>
   <h1 class="error-title">Страница не найдена</h1>
   <p class="error-desc">Возможно, адрес изменился или страница ещё не создана. Вот куда можно пойти:</p>
@@ -117,7 +125,14 @@
     <a href="/cases/baby-massage.html" class="btn-secondary">Кейсы</a>
   </div>
   <div class="footer-mini">
-    <a href="/">radzhabov.dev</a> — Ибрагим Раджабов
+    <a href="/">radzhabov-dev.ru</a> — Ибрагим Раджабов · <a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;">Политика конфиденциальности</a> · <a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;">Согласие на обработку ПД</a>
   </div>
+  <script>
+    (function(){
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){ a.addEventListener('click', function(){ __reach('telegram_click'); }); });
+      document.querySelectorAll('.btn-primary:not([type=submit]):not(#submitBtn)').forEach(function(a){ a.addEventListener('click', function(){ __reach('cta_click'); }); });
+    }());
+  </script>
 </body>
 </html>

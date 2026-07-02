@@ -7,3 +7,26 @@ site/node_modules/
 site/dist/
 site/public/
 _site/
+
+# internal working material — not for the public repo (deploy whitelist ignores them anyway)
+_archive/
+marketing/
+tz/
+scripts/
+AGENT-HANDOFF.md
+DEPLOY_AGENT_BRIEF*.md
+preloader-spec-v2.md
+seo-webmaster-setup.md
+seo-*-2026-04-0*.md
+seo-*-2026-04-0*.csv
+seo-geo-roadmap.md
+seo-draft-*.md
+seo-first-serp-batch-*.md
+seo-keyword-research-sheet-*.csv
+homepage-solo-structure-*.md
+claude-code-final-prompt.md
+premium-ui.css
+premium-ui.js
+Снимок*
+Избранные
+Показать

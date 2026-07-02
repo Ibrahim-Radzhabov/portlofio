@@ -1,195 +1,210 @@
 # CLAUDE.md — Project Instructions for AI Agents
 
+> Source of truth is the **actual `index.html` on disk**. If this file ever
+> disagrees with `index.html`, trust `index.html` and fix this doc.
+> No exact line numbers are used here on purpose (they drift) — search by
+> id / class / string instead.
+
+> **New agent?** Read `AGENT-HANDOFF.md` first — it has the current multi-page state,
+> open TODOs, the honesty constraints, and the verification toolkit for continuing this project.
+
 ## Project
-Ibrahim Radzhabov Portfolio (Production V2) — premium, high-conversion portfolio.
-Target audience: startup founders, CEOs, product managers (high-ticket clients).
-Language: Russian (all UI text, meta tags, OG data, JSON-LD).
-Domain: `radzhabov.dev`
+**I. Radzhabov — personal portfolio** (Ибрагим Раджабов). Premium, high-conversion,
+single-page site. Owner positions as a solo builder of **websites + AI assistants + 1C
+integrations** ("сайты · AI-ассистенты · 1С"). Audience: founders, CEOs, product managers.
+All user-facing text is **Russian**. Domain: `radzhabov-dev.ru`.
+
+- `<title>`: `I. Radzhabov — сайты, AI-ассистенты и 1С для бизнеса`
+- Positioning line: «Системы, которые работают вместе»
 
 ## Architecture
 
-**Active entrypoint:** `index.html` is the homepage and primary file for the live site. CSS and JS are inline in this file.
+**Active entrypoint:** `index.html` — the whole site. **All CSS and JS are inline** in it.
 
 ### Hard constraints
-- NO separate CSS or JS files.
-- NO external libraries or frameworks (no React, Vue, GSAP, jQuery, Tailwind, etc.).
-- NO Python generators (previously used `gen_*.py` scripts were deleted).
-- NO CDN links or external dependencies.
-- ALL homepage edits must be made in `index.html`. Do not use `dale-portfolio-v2.html` as the source of truth.
-- The ONLY external resource is Google Fonts (Syne, Outfit, JetBrains Mono) via `<link>`.
+- NO separate CSS or JS files. NO build step.
+- NO external libraries/frameworks (React, Vue, GSAP, jQuery, Tailwind, …).
+- NO CDN/external dependencies, NO Python generators committed to the repo.
+- The ONLY external resource is **Google Fonts** (Playfair Display, Outfit, JetBrains Mono) via `<link>` (with `preload`).
+- All homepage edits go in `index.html`.
 
-### Other files in the directory
-- `index.html` — active homepage and source of truth.
-- `dale-portfolio-v2.html` — legacy/archive copy, do NOT use as the main file.
-- `dale-portfolio-redesign.html` — old prototype, do NOT edit.
-- `premium-ui.css`, `premium-ui.js` — legacy files, not used, do NOT reference.
-- `claude-code-final-prompt.md` — reference prompt, not code.
+### Files in the directory
+- `index.html` — **the site. Source of truth.**
+- **Sub-pages** (each standalone, same inline pattern, all in `sitemap.xml`): `services/{landing,telegram-bot,ai-assistant,integraciya-1c}.html`, `cases/{baby-massage,dag-sport}.html`, `niches/sajt-dlya-massazhista.html`, `tools/kalkulyator-lendinga.html`.
+- **Agent/owner docs (NOT deployed):** `AGENT-HANDOFF.md` (continuation brief), `seo-webmaster-setup.md` (owner's Вебмастер/GSC guide).
+- `favicon.svg`, `favicon-16/32/48/180.png`, `apple-touch-icon.png`, `favicon.ico`, `og-image.png` — brand icons/share image (see "Brand assets").
+- `robots.txt`, `sitemap.xml`, `llms.txt`, `404.html` — SEO/infra.
+- `preloader-spec-v2.md`, `preloader-demo.html` — reference for the preloader (the live version now **extends** this spec — see below).
+- `_archive/` — **legacy template leftovers + scratch**, moved out of the deploy root (`dale-*.html`, `_site/`, `site/`, `logo-concepts/`, `strateg-seo/`, `preloader-demo.html`, `*.bak`). Forked from a "Dale" template; contains foreign content (Dale McManus / "Kova Technology") and a stale telegram. **Do NOT deploy, use, or reference.**
 
 ## Design System
 
-### CSS Variables (`:root`, line 23)
+### Theme
+**Light / warm ("кремовая") — NOT dark.** No dark mode, no theme toggle.
+Decorative layers that still exist from the template, re-themed:
+- Noise overlay: `body::before`, SVG feTurbulence, `z-index: 9999`, `opacity ~0.025`.
+- Dot-grid canvas (`#dotGrid`), `position: fixed`, `z-index: 0` — all content must sit above it.
+- Custom cursor: `body { cursor: none }` + `.cursor-glow` / `.cursor-follower`. Any new interactive element needs `cursor: none`.
+- Hero mesh blobs (`.hero-mesh-blob`).
+
+### CSS variables (`:root` — search `--bg-primary`)
 | Variable | Value | Usage |
 |---|---|---|
-| `--bg-primary` | `#0a0a0b` | Page background |
-| `--bg-secondary` | `#111113` | Input/alt backgrounds |
-| `--bg-card` | `#161618` | Cards |
-| `--bg-card-hover` | `#1c1c1f` | Card hover |
-| `--border` | `#222225` | Default borders |
-| `--border-hover` | `#333338` | Hover borders |
-| `--text-primary` | `#ededef` | Headings, body text |
-| `--text-secondary` | `#8a8a8e` | Descriptions, muted |
-| `--text-tertiary` | `#5a5a5e` | Labels, captions |
-| `--accent` | `#e8c572` | Gold accent |
-| `--accent-dim` | `#c9a84e` | Darker gold |
-| `--accent-glow` | `rgba(232,197,114,0.12)` | Glow backgrounds |
-| `--accent-glow-strong` | `rgba(232,197,114,0.25)` | Strong glow |
+| `--bg-primary` | `#F5F0E8` | Page background (cream) |
+| `--bg-secondary` | `#EAE4D8` | Alt/sunken surfaces |
+| `--bg-card` | `#FBF8F3` | Cards |
+| `--bg-card-hover` | `#FFFDF9` | Card hover |
+| `--border` | `rgba(36,28,20,0.09)` | Default borders |
+| `--border-hover` | `rgba(36,28,20,0.16)` | Hover borders |
+| `--text-primary` | `#141210` | Headings / body (ink) |
+| `--text-secondary` | `#6B655F` | Muted text |
+| `--text-tertiary` | `#8A847D` | Labels/captions |
+| `--accent` | `#1A3A2A` | Green accent (primary) |
+| `--accent-dim` / `--accent-text` | `#2D5A45` | Darker green |
+| `--accent-warm` | `#B5623C` | **Terracotta** accent (the brand's single warm pop) |
+| `--accent-glow` / `--accent-warm-glow` | rgba greens / `rgba(181,98,60,0.07)` | Glow fills |
+| `--color-error` / `--color-success` | `#A8443B` / `#2D5A45` | Form states |
+
+Do not introduce new accent colors. The palette is **ink + cream + green, with terracotta as the only warm accent.**
 
 ### Typography
-- Display (headings): `'Syne'` — `var(--font-display)`
-- Body: `'Outfit'` — `var(--font-body)`
-- Mono (tags, labels, code): `'JetBrains Mono'` — `var(--font-mono)`
+- Display / headings: `var(--font-display)` = **Playfair Display** (serif).
+- Body: `var(--font-body)` = **Outfit** (sans).
+- Mono (labels, tags, contacts, "tech" voice): `var(--font-mono)` = **JetBrains Mono**.
+- Loaded weights: Playfair 500/600, Outfit 400/500/600, JetBrains 400/500.
 
 ### Easing
-- `--ease-out-expo`: `cubic-bezier(0.16, 1, 0.3, 1)` — used for most transitions
-- `--ease-out-quart`: `cubic-bezier(0.25, 1, 0.5, 1)`
+- `--ease-out-expo`: `cubic-bezier(0.16, 1, 0.3, 1)` — entrances / most transitions.
+- `--ease-out-quart`: `cubic-bezier(0.25, 1, 0.5, 1)` — line draws / exits.
 
-### Theme
-- Dark only. No light mode. No theme toggle.
-- Noise overlay via `body::before` (SVG feTurbulence, `z-index: 9999`, `opacity: 0.025`).
-- Custom cursor — `body { cursor: none; }` on desktop.
+## Brand mark — «Излом» (the node chevron)
 
-## Sections (in DOM order)
+The logo is an abstract **three-node chevron**: two ink nodes + connectors meeting at a
+**terracotta core** (the "AI" node). Concept: сайт → AI → 1С converge into one sign. It is
+also exactly what the preloader chain assembles into.
 
-| # | Section | id/class | Lines (approx) | Notes |
-|---|---|---|---|---|
-| 0 | Preloader | `#preloader` | 1388–1392 | Animated gold progress bar, fades after 1.5s |
-| 1 | Nav | `#nav` | 1398–1415 | `position: fixed`, blur on scroll, `.scrolled` class |
-| 2 | Mobile Menu | `#mobile-menu` | 1418–1425 | Fullscreen overlay, `toggleMenu()` global fn |
-| 3 | Hero | `<header class="hero">` | 1428–1474 | Mesh blobs + dot grid canvas + staggered animations + scroll indicator |
-| 4 | Marquee | `.marquee-section` | 1477–1492 | Skewed infinite scroll, `-2deg` transform |
-| 5 | Work | `#work` | 1494–1602 | 3 project cards with SVG placeholders, glassmorphism overlays, 3D tilt |
-| 6 | Services | `#services` | 1604–1643 | 3-column bento grid |
-| 7 | Process | `#process` | 1646–1677 | 4-column grid with numbered steps |
-| 8 | Testimonials | `#testimonials` | 1679–1719 | 3-column grid, quote cards |
-| 9 | About | `#about` | 1721–1756 | 2-col grid: photo placeholder + bio + tech stack pills |
-| 10 | Contact | `#contact` | 1758–1810 | 2-col grid: info + form with validation |
-| 11 | Footer | `<footer>` | 1812–1843 | `.footer-inner` flex container, mini-nav, social links |
+**Color rule:** strokes + outer nodes use `currentColor` (so they inherit ink, or invert);
+the **core is hardcoded `#B5623C`**. Two contexts:
 
-## JavaScript Features (lines 1845–2205)
+- **Open mark** (on light surfaces — nav, preloader, og): `viewBox="0 0 48 48"`, no background.
+  ```html
+  <path d="M17 12 L31 24" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M31 24 L17 36" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="17" cy="12" r="5.5" fill="currentColor"/>
+  <circle cx="31" cy="24" r="6.6" fill="#B5623C"/>   <!-- core -->
+  <circle cx="17" cy="36" r="5.5" fill="currentColor"/>
+  ```
+- **Filled tile** (favicons / app-icon — reads on any tab bg): ink rounded square + cream mark + terracotta core. This is the content of `favicon.svg`.
 
-All JS runs inside a single IIFE — `(function() { 'use strict'; ... })()`.
+**Where it lives (keep all in sync if the mark ever changes):**
+- Nav: `svg.nav-logo-mark` (`viewBox 0 0 48 48`); inner classes `.nlm-link` ×2, `.nlm-node` ×2, `.nlm-core`. Hover/focus scales the core: `.nav-logo:hover .nlm-core { transform: scale(1.18) }`.
+- Preloader brand block: the same open mark with classes `.pl-mk-link`(+`.pl-mk-link2`), `.pl-mk-na`, `.pl-mk-core`, `.pl-mk-nc` (these drive the assemble animation — see below).
+- `favicon.svg` + raster icons + `og-image.png` (filled-tile / open variants).
 
-| Feature | Lines | Details |
-|---|---|---|
-| Debounce utility | 1850–1856 | Used by scroll handlers |
-| Preloader | 1858–1864 | Hides after `load` event + 1.5s delay |
-| Text decode animation | 1866–1891 | Matrix-style scramble on `.section-title` via IntersectionObserver |
-| Nav scroll | 1893–1898 | Adds `.scrolled` class when `scrollY > 50` |
-| Mobile menu | 1901–1909 | `toggleMenu()` toggles `.active`, locks body scroll |
-| Scroll indicator | 1911–1918 | Hides hero scroll line after 100px scroll |
-| Scroll reveal | 1920–1931 | IntersectionObserver adds `.visible` to `.reveal` elements |
-| Smooth anchor scroll | 1933–1944 | `scrollIntoView` on `a[href^="#"]` |
-| Hero parallax | 1946–1956 | Translates `.hero-mesh` at 0.3x scroll speed |
-| Ripple effect | 1960–1974 | Click creates expanding circle on buttons |
-| **Dot grid** | 1976–2066 | Fullscreen Canvas, gold proximity glow, touch support, scroll parallax offset |
-| Cursor glow + follower | 2068–2150 | Radial gradient glow (600px) + 12px gold dot with `mix-blend-mode: difference` |
-| Glassmorphism cards | 2082–2102 | `--mouse-x/--mouse-y` + 3D tilt on `.project-card`, `.bento-card` |
-| Magnetic elements | 2104–2116 | `.btn-primary`, `.btn-secondary`, `.nav-links a` follow cursor at 0.3x |
-| Cursor `.active` state | 2118–2123 | Expands follower to 64px on interactive elements |
-| Form validation | 2152–2202 | Name, email (regex), message required. 3-stage button: default → loading (animated dots) → success |
+## Preloader — «Pipeline» v2 + assemble morph
 
-## CSS Animations & Keyframes
+A full-screen overlay (`#preloader`) shown on load. The chain `сайт → AI → 1С` builds, then
+**converges to centre and the brand sign draws itself in** (lines → nodes → warm core last),
+then the wordmark/tagline rise. `index.html` is **ahead of `preloader-spec-v2.md`** — it adds:
+terracotta arrowheads, click/Esc skip, brand-only reduced motion, hero hand-off, the «Излом»
+mark, and the assemble morph. Treat the live code as canonical.
 
-| Name | Purpose |
-|---|---|
-| `meshFadeIn` | Fades hero blobs in |
-| `meshFloat1/2/3` | Slow floating motion for hero blobs |
-| `heroStagger` | Staggered fade-up for hero content |
-| `rippleAnim` | Button click ripple |
-| `scrollLine` | Scroll indicator pulse |
-| `marqueeScroll` | Infinite horizontal scroll |
-| `loaderDot` | Submit button loading dots bounce |
-| `preloaderFill` | Preloader progress bar fill |
+**Structure:** `#preloader > .pl-stage > { .pl-chain (.pl-node ×3 + .pl-arrow ×2 with
+.pl-arrow-shaft/.pl-arrow-head), .pl-brand#pl-brand (the mark svg + .pl-wordmark + .pl-tagline) }`.
 
-## Responsive Breakpoints
+**JS** (its own IIFE at the very end of `<body>`, after the main script). Config:
+`SEEN_KEY='plr_seen_v2'`, `FAILSAFE=3000`, `FAST_SHOW=480`, `FULL_END=1950`, `REDUCED`, `IS_IOS`.
 
-| Breakpoint | Changes |
-|---|---|
-| `≤968px` | Nav collapses → hamburger. Cards single-col. Services/Process/About/Contact reflow to 1-col. Testimonials 1-col. |
-| `≤640px` | Section padding shrinks. Process/form grids go 1-col. Footer centers vertically. Stats font smaller. |
+Full first-visit timeline (ms): `200` сайт · `370` arrow1 · `480` AI · `600` arrow2 · `680` 1С ·
+`880` `.pl-chain.pl-collapse` (fade + scale 0.5) · `1040` `.pl-brand` gets `pl-visible` **and**
+`pl-morph` (sign assembles via `@keyframes plDraw/plPop/plRise`) · `1950` `exit()` → 0.35s fade →
+DOM removal (+380ms).
+
+Branches (do NOT break these):
+- **Repeat visit** (`sessionStorage[SEEN_KEY]`): everything shown complete, no morph, exit ~480ms.
+- **Reduced motion**: chain hidden, **only the brand shown static**, exit ~700ms. The mark/text must stay static (reduced block forces `animation:none; stroke-dashoffset:0; transform:none`).
+- **Skip**: `pointerdown/touchstart/wheel/Escape` exit early; armed after a 250ms grace; `exit()` is idempotent (`done` flag).
+- **Failsafe**: 3000ms guaranteed exit + scroll unlock + `body.pl-done`.
+- `pl-morph` is added **only on the full first visit**.
+
+**Hero hand-off:** `exit()` and the failsafe add `body.pl-done`. The hero stagger is gated:
+`@media (prefers-reduced-motion: no-preference){ body.pl-done .hero .hero-anim { animation: heroStagger … } }`
+(reduced-motion users get the static hero rule in the reduced block). Base `.hero .hero-anim` is `opacity:0`.
+
+Other: `#preloader { z-index: 100000 }` (above the noise overlay's 9999); `@media print { #preloader{display:none} }`;
+`<noscript>` hides `#preloader` so no-JS users see content.
+
+## Sections (DOM order — open `index.html` and read the section before editing)
+`#preloader` → `#nav` (+ `#mobile-menu`, `toggleMenu()`) → `header.hero#main-content`
+→ marquee (`.marquee-*`, balanced across сайты/AI/1С) → `#work` (cards + a `data-work-intro`
+"discovery" interaction — separate from the preloader) → `#services` → `#process` → `#format`
+→ `#about` (has `.about-image-placeholder` — photo still a placeholder) → `#faq`
+(`<details>/<summary>`, FAQPage schema) → `#contact` (form, Formspree) → `<footer>` (`.footer-inner`).
+
+## JavaScript
+Two IIFEs, both `'use strict'`:
+1. **Main script** (debounce; section-title stability; nav `.scrolled` on scroll; `toggleMenu()` mobile menu; scroll-reveal `.reveal`→`.visible`; smooth anchor scroll; dot-grid canvas; cursor glow/follower; hero parallax/mesh; marquee; work "discovery" intro; back-to-top `#scrollTopBtn`; **Formspree form**).
+2. **Preloader script** (see above) — last in `<body>`.
+
+`toggleMenu()` is global (`window.toggleMenu`) — used by inline `onclick` in the mobile menu.
+
+## Brand assets / icons
+All regenerated to the «Излом» mark:
+- `favicon.svg` — filled ink tile + cream mark + terracotta core (works on any tab bg). Referenced in `<head>` along with `favicon-32.png`, `favicon-16.png`, `apple-touch-icon.png` (opaque square), `favicon.ico`.
+- `og-image.png` (1200×630) — cream, mark + name + «Системы, которые работают вместе» + domain. **Domain now corrected to `radzhabov-dev.ru`** (patched in place, rest of the bitmap unchanged). Still uses DejaVu as a stand-in for Playfair/Outfit; for pixel-perfect typography, drop `PlayfairDisplay.ttf` + `Outfit.ttf` and re-render.
+- Raster icons are rasterized from the mark (e.g. Pillow/ImageMagick **outside** the repo — do not commit a generator). The canonical geometry is the mark above; keep all icons consistent if it changes.
+
+## Responsive
+Breakpoints around `≤968px` (nav → hamburger, grids → 1-col) and `≤640px` (padding shrinks,
+single-col, smaller type). Preloader also has `≤480px` and `≤340px` rules. Test at 375px, 768px, desktop.
 
 ## Accessibility
-- `aria-label` on nav, footer nav, menu button, social links.
-- `aria-expanded` on mobile menu button.
-- `aria-hidden="true"` on decorative elements (mesh, dot grid, scroll indicator, avatars).
-- `focus-visible` outlines on interactive elements.
-- `@media (prefers-reduced-motion: reduce)` — disables all animations, shows static states, hides custom cursor.
+`aria-label` on nav/footer/menu/social/icon-only controls; `aria-expanded` on the menu button;
+`aria-hidden="true"` on decorative SVG/canvas/overlays; visible `focus-visible` outlines;
+`@media (prefers-reduced-motion: reduce)` static fallbacks (incl. the preloader brand-only state);
+skip-nav + ARIA live region for the form.
 
-## SEO
-- `<title>`: Russian, includes name + role + experience.
-- `<meta name="description">`: Russian, keyword-rich.
-- Open Graph: `og:title`, `og:description`, `og:type`, `og:image`, `og:url`.
-- Twitter Card: `summary_large_image`.
-- JSON-LD: `Person` schema with `name`, `jobTitle`, `url`, `knowsAbout`.
+## SEO / structured data
+- Russian `<title>` + keyword-rich `<meta name="description">`; Open Graph + Twitter `summary_large_image`.
+- JSON-LD `@graph` (Person/ProfilePage/WebSite/services/FAQ). **Already on-brand and three-pillar** —
+  jobTitle «Соло-разработчик сайтов, AI-ассистентов и 1С-связок», 5 `makesOffer` services.
+- **Real contacts already in JSON-LD** (don't invent/replace): email `1cworkac@mail.ru`,
+  `sameAs` = `github.com/Ibrahim-Radzhabov`, `t.me/rdvigm`. Keep on-page text and structured data consistent.
 
 ## Development
-
 ```bash
-# Start local server
-python3 -m http.server 8000
-# Open: http://localhost:8000/
+python3 -m http.server 8000   # then open http://localhost:8000/
 ```
+Quick checks after edits: extract the preloader `<script>` and run `node --check`; run an HTML
+tag-balance parse; verify at 375px for horizontal overflow.
 
-## Known TODOs
+## Known TODOs (need the owner's real data — do NOT fabricate)
+1. **Formspree** — FORMSPREE_ID remains YOUR_FORM_ID; no contact form currently sends data. The homepage and four older subpages now report unavailability instead of showing false success. Configure a real Formspree ID for 1cworkac@mail.ru.
+2. **About photo** — `.about-image-placeholder` is still a placeholder; needs a real portrait.
+3. **Work imagery** — confirm project cards use real assets vs placeholders before claiming "done".
+4. **og-image fonts (optional)** — domain now fixed to `radzhabov-dev.ru` ✓. Bitmap still uses a DejaVu stand-in; provide `PlayfairDisplay.ttf` + `Outfit.ttf` for a pixel-perfect re-render.
+5. **Logo unification** — 4 older sub-pages (`services/landing`, `cases/baby-massage`, `niches/sajt-dlya-massazhista`, `tools/kalkulyator-lendinga`) still use the old **text logo «RD.»** instead of the «Излом» mark. Swap to the hardcoded-ink SVG (core `#B5623C`); some of these pages lack `--accent-warm` — add fallbacks.
+6. **Off-page (owner executes):** Яндекс.Вебмастер + Google Search Console (`seo-webmaster-setup.md`), then backlinks (client footers, Habr/VC article on dag-sport). Full list in `AGENT-HANDOFF.md` §3.
 
-### ⚡ Ждут данных от владельца (без них не доделать)
-1. **Социальные ссылки** — в HTML (`<footer>`) и в JSON-LD (`sameAs: []`) стоят заглушки `#`. Нужны реальные URL:
-   - GitHub: `https://github.com/???`
-   - LinkedIn: `https://linkedin.com/in/???`
-   - Twitter/X: `https://x.com/???`
-   - После получения: заменить `href="#"` в трёх `<a>` тегах footer и заполнить `"sameAs": []` в JSON-LD `<script>` в `<head>`.
+## Done / locked (don't redo without reason)
+Brand «Излом» across nav + preloader + all icons + og; preloader v2 + assemble morph (all branches verified);
+marquee balanced across the three pillars; JSON-LD three-pillar with real links; robots/sitemap/llms/404; FAQ;
+multi-page SEO/GEO build (4 services + 2 cases + niche + calculator, type-matched JSON-LD + internal linking);
+legacy moved to `_archive/`; meta titles/descriptions trimmed to SERP limits.
 
-2. **Formspree ID для формы** — форма написана и подключена, но письма не уходят. Нужно:
-   - Зарегистрироваться на [formspree.io](https://formspree.io)
-   - Создать форму с email `hello@radzhabov.dev`
-   - Получить ID вида `xpwzabcd`
-   - Вставить в JS: найти `var FORMSPREE_ID = 'YOUR_FORM_ID'` и заменить.
+## Common pitfalls
+- Keep the brand mark consistent everywhere (nav `.nlm-*`, preloader `.pl-mk-*`, `favicon.svg`, icons). Core is always terracotta `#B5623C`; rest is `currentColor`/ink.
+- Don't reintroduce a `.pl-brand > svg *` "freeze" rule — it would block the assemble morph. The mark stays static in non-morph branches via resting state + the reduced-motion block.
+- `#preloader` is `z-index: 100000`; noise overlay `body::before` is `9999`; dot grid is `0`. Keep this order.
+- Custom cursor `cursor: none` is global — add it to any new interactive element.
+- Update **both** `@media (prefers-reduced-motion: reduce)` (static fallback) and, for hero/preloader, the `no-preference` gating when adding animations.
+- `.footer-inner` drives the footer flex layout — don't remove it.
+- Marquee has **two identical tracks** for the infinite loop — edit both.
 
-3. **Фото в секции About** — сейчас показывает `[ Ваше фото ]`. Нужно профессиональное портретное фото.
-   - Заменить `.about-image-placeholder` на `<img>` с реальным фото.
-
-4. **Скриншоты проектов** — карточки в Work используют SVG-заглушки. Нужны реальные изображения проектов (Kova Technology, Outdoor Photography Portfolio, SaaS Dashboard).
-
-### ✅ Уже сделано (не трогать)
-- `og-image.png` — сгенерирован (1200×630, Pillow)
-- `robots.txt` — все AI-краулеры разрешены (GPTBot, OAI-SearchBot, anthropic-ai, ClaudeBot, PerplexityBot и др.)
-- `sitemap.xml` — создан
-- `llms.txt` — создан для AI-систем
-- `favicon.svg` / `favicon-32.png` / `favicon.ico` / `apple-touch-icon.png` — созданы
-- JSON-LD расширен до 10 сущностей (`@graph`: ProfilePage, Person, WebSite, 3×CreativeWork, 3×Review, FAQPage)
-- FAQ секция — добавлена между About и Contact (6 вопросов, `<details>/<summary>`, FAQPage schema)
-- Marquee — переведён на русский
-- Кнопка "Наверх" — появляется после 400px скролла
-- Активная ссылка в nav — подсвечивается при скролле
-- Skip-nav + ARIA live region для формы — доступность
-- `noscript` fallback — контент виден без JS
-- Font preload, theme-color meta — перформанс
-
-## Common Pitfalls
-- The footer layout depends on `.footer-inner` for flexbox — do not remove it.
-- Dot grid canvas uses `position: fixed` and `z-index: 0` — all content must have higher z-index.
-- Noise overlay is `z-index: 9999` — do not place content above it.
-- Custom cursor `cursor: none` is set on `body` and all interactive elements — if adding new interactive elements, add `cursor: none` too.
-- The `prefers-reduced-motion` block (line ~1367) must be updated when adding new animations.
-- Hero blob colors: blob 1 = gold, blob 2 = deep purple `rgba(147,112,219,0.06)`, blob 3 = emerald `rgba(46,204,113,0.05)`.
-- `toggleMenu()` is a global function (assigned to `window`) — needed by inline `onclick` on mobile menu links.
-
-## When Editing
-1. Read the relevant section before making changes.
-2. Keep homepage code in `index.html`.
-3. Test at mobile (`<640px`), tablet (`<968px`), and desktop widths.
-4. Respect the gold + dark theme. Do not introduce new accent colors without asking.
-5. Add `prefers-reduced-motion` overrides for any new animations.
-6. Add `cursor: none` to any new interactive elements.
-7. Add `aria-label` to any new interactive elements without visible text.
-8. All user-facing text must be in Russian.
+## When editing
+1. Read the relevant section/markup in `index.html` first.
+2. Keep everything inline in `index.html`; Russian for all user-facing text.
+3. Respect the light/warm palette; terracotta is the only warm accent. No new accent colors without asking.
+4. Add `prefers-reduced-motion` fallbacks + `cursor: none` + `aria-label` for anything new.
+5. Test 375 / 768 / desktop; re-check the preloader branches if you touch it.
+6. Don't fabricate the owner's facts (bio, stack, numbers, links) — ask.

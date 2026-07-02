@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интеграция сайта с 1С: Битрикс и УТ | I. Radzhabov</title>
+  <meta name="description" content="Свяжу сайт с 1С: Управление Торговлей или Розница. Заказы с сайта попадают в 1С автоматически; каталог, цены и остатки синхронизируются. Пример — dag-sport.">
+  <meta name="keywords" content="интеграция сайта с 1С, связать сайт с 1С, обмен сайт 1С, 1С-Битрикс 1С УТ, выгрузка заказов с сайта в 1С, синхронизация остатков сайт 1С, интернет-магазин 1С">
+  <link rel="canonical" href="https://radzhabov-dev.ru/services/integraciya-1c.html">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta property="og:title" content="Интеграция сайта с 1С (Битрикс + УТ) — обмен заказами и остатками | I. Radzhabov">
+  <meta property="og:description" content="Заказы с сайта в 1С автоматически, каталог/цены/остатки из 1С на сайт, уведомления. Пример — dag-sport.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radzhabov-dev.ru/services/integraciya-1c.html">
+  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Интеграция сайта с 1С (Битрикс + УТ)">
+  <meta name="twitter:description" content="Заказы с сайта в 1С автоматически, остатки и цены из 1С на сайт.">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://radzhabov-dev.ru/services/integraciya-1c.html#service",
+        "serviceType": "Интеграция сайтов с 1С",
+        "name": "Интеграция сайта с 1С (Битрикс + УТ)",
+        "provider": {
+          "@type": "Person",
+          "name": "Ибрагим Раджабов",
+          "alternateName": "I. Radzhabov",
+          "url": "https://radzhabov-dev.ru/",
+          "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
+        },
+        "areaServed": "RU",
+        "url": "https://radzhabov-dev.ru/services/integraciya-1c.html",
+        "description": "Интеграция сайтов с 1С: Управление Торговлей и Розница, 1С-Битрикс. Заказы с сайта в 1С автоматически, выгрузка каталога, цен и остатков из 1С на сайт, уведомления о заказах.",
+        "inLanguage": "ru"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Что значит «связать сайт с 1С»?", "acceptedAnswer": {"@type": "Answer", "text": "Это автоматический обмен данными между сайтом и 1С: заказы с сайта попадают в 1С документом, а каталог, цены и остатки выгружаются из 1С на сайт — без ручного копирования."}},
+          {"@type": "Question", "name": "Какие данные синхронизируются?", "acceptedAnswer": {"@type": "Answer", "text": "Заказы с сайта в 1С; каталог и характеристики товаров, цены и остатки из 1С на сайт; статусы заказов. Набор настраивается под ваш процесс."}},
+          {"@type": "Question", "name": "Чем 1С-Битрикс отличается от 1С: Управление Торговлей?", "acceptedAnswer": {"@type": "Answer", "text": "1С-Битрикс — платформа для сайта и интернет-магазина. 1С: Управление Торговлей (УТ) — учётная система для товаров, остатков и документов. Интеграция связывает их между собой."}},
+          {"@type": "Question", "name": "Можно ли подключить к 1С уже готовый сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Если сайт на 1С-Битрикс, к нему настраивается обмен с 1С. Сайт не обязательно переделывать — подключаю интеграцию к существующему."}},
+          {"@type": "Question", "name": "С какими конфигурациями 1С вы работаете?", "acceptedAnswer": {"@type": "Answer", "text": "1С: Розница и 1С: Управление Торговлей (УТ), сайты на 1С-Битрикс. Если у вас другая конфигурация — обсудим, обмен чаще всего настраиваемый."}},
+          {"@type": "Question", "name": "Сколько стоит и сколько занимает?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от того, что синхронизируем и в какую сторону. Простой сценарий «заказы с сайта в 1С» — быстрее, полноценный двусторонний обмен — дольше. Точные сроки и стоимость назову после вводных."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov-dev.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://radzhabov-dev.ru/#services"},
+          {"@type": "ListItem", "position": 3, "name": "Интеграция сайта с 1С", "item": "https://radzhabov-dev.ru/services/integraciya-1c.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary:#F5F0E8; --bg-secondary:#EDE8DF; --bg-card:#EDE8DF; --bg-card-hover:#E5E0D6;
+      --border:rgba(20,18,16,0.08); --border-hover:rgba(20,18,16,0.15);
+      --text-primary:#141210; --text-secondary:#7A7570; --text-tertiary:#A39E98;
+      --accent:#1A3A2A; --accent-dim:#2D5A45; --accent-warm:#B5623C;
+      --accent-glow:rgba(26,58,42,0.12); --accent-glow-strong:rgba(26,58,42,0.25); --warm-glow:rgba(181,98,60,0.1);
+      --font-display:'Playfair Display',serif; --font-body:'Outfit',sans-serif; --font-mono:'JetBrains Mono',monospace;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+    .container-sm{max-width:760px;margin:0 auto;padding:0 24px;}
+    a{color:inherit;}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:background .4s,backdrop-filter .4s;}
+    #nav.scrolled{background:rgba(245,240,232,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary);}
+    .nav-logo svg{width:22px;height:22px;}
+    .nav-logo b{font-family:var(--font-display);font-weight:600;font-size:17px;}
+    .nav-back{font-family:var(--font-mono);font-size:13px;color:var(--text-secondary);text-decoration:none;}
+    .nav-back:hover{color:var(--accent);}
+    .hero{padding:140px 0 50px;}
+    .hero-label{display:inline-block;font-family:var(--font-mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:22px;border:1px solid var(--accent-glow-strong);padding:7px 14px;border-radius:8px;background:var(--accent-glow);}
+    .hero h1{font-family:var(--font-display);font-size:clamp(30px,4.4vw,52px);font-weight:600;line-height:1.08;letter-spacing:-1px;margin-bottom:20px;max-width:840px;}
+    .hero h1 .accent{color:var(--accent-warm);}
+    .hero-sub{font-size:18px;color:var(--text-secondary);max-width:660px;line-height:1.65;margin-bottom:30px;}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#F5F0E8;font-family:var(--font-display);font-weight:600;font-size:15px;padding:15px 30px;border-radius:12px;text-decoration:none;transition:transform .3s,box-shadow .3s;}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(26,58,42,0.28);}
+    section{padding:46px 0;}
+    .label{display:inline-block;font-family:var(--font-mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;}
+    h2{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:600;line-height:1.15;margin-bottom:18px;}
+    .content p{color:var(--text-secondary);margin-bottom:14px;font-size:16px;line-height:1.7;}
+    .content strong{color:var(--text-primary);}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;}
+    .card b{display:block;font-family:var(--font-display);font-weight:600;font-size:17px;margin-bottom:6px;}
+    .card span{font-size:14.5px;color:var(--text-secondary);line-height:1.6;}
+    .list{list-style:none;margin-top:8px;}
+    .list li{padding:8px 0;color:var(--text-secondary);font-size:15.5px;display:flex;gap:12px;border-bottom:1px solid var(--border);}
+    .list li:last-child{border-bottom:none;}
+    .list li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;}
+    .example{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:26px 28px;}
+    .example b{font-family:var(--font-display);font-weight:600;font-size:19px;}
+    .example p{color:var(--text-secondary);font-size:15px;margin:6px 0 12px;}
+    .example a{font-family:var(--font-mono);font-size:13px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-glow-strong);}
+    .steps{display:grid;gap:12px;counter-reset:s;}
+    .step{display:flex;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:15px 18px;}
+    .step-n{counter-increment:s;font-family:var(--font-mono);font-size:13px;color:var(--accent-warm);flex-shrink:0;}
+    .step-n::before{content:'0' counter(s);}
+    .step b{display:block;font-family:var(--font-display);font-weight:600;font-size:16px;margin-bottom:2px;}
+    .step span{font-size:14.5px;color:var(--text-secondary);}
+    .faq details{border-bottom:1px solid var(--border);}
+    .faq summary{font-family:var(--font-display);font-weight:600;font-size:17px;padding:15px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{content:'+';color:var(--accent-warm);font-family:var(--font-mono);}
+    .faq details[open] summary::after{content:'–';}
+    .faq p{color:var(--text-secondary);font-size:15.5px;line-height:1.7;padding:0 0 16px;}
+    .cta{text-align:center;background:var(--bg-card);border:1px solid var(--border);border-radius:22px;padding:46px 24px;}
+    .cta p{color:var(--text-secondary);max-width:520px;margin:12px auto 24px;}
+    footer{padding:46px 0 30px;border-top:1px solid var(--border);margin-top:24px;}
+    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--text-tertiary);}
+    .foot a{color:var(--text-secondary);text-decoration:none;}
+    .foot a:hover{color:var(--accent);}
+    @media(max-width:680px){ .grid{grid-template-columns:1fr;} .hero{padding:120px 0 38px;} }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
+    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/" aria-label="I. Radzhabov — на главную">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg>
+        <b>I. Radzhabov</b>
+      </a>
+      <a class="nav-back" href="/#work">← Все работы</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="hero-label">Услуга · 1С</span>
+      <h1>Интеграция сайта с <span class="accent">1С</span> (Битрикс + УТ)</h1>
+      <p class="hero-sub">Заказы с сайта попадают в 1С автоматически, каталог, цены и остатки выгружаются из 1С на сайт, владелец получает уведомления. Без ручного переноса между сайтом и учётом.</p>
+      <a class="btn" href="/#contact">Обсудить интеграцию →</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Что решает</span>
+      <h2>Сайт и учёт перестают жить отдельно</h2>
+      <div class="grid">
+        <div class="card"><b>Заказы сразу в 1С</b><span>Заказ с сайта становится документом в 1С — без копирования вручную, ничего не теряется.</span></div>
+        <div class="card"><b>Актуальные остатки и цены</b><span>Каталог, цены и наличие тянутся из 1С на сайт — клиент видит то, что есть на складе.</span></div>
+        <div class="card"><b>Уведомления о заказе</b><span>Новый заказ — сразу в Telegram или туда, где вам удобно.</span></div>
+        <div class="card"><b>Статусы клиенту</b><span>Поменяли статус в 1С (собран, отгружен) — клиент узнаёт автоматически.</span></div>
+        <div class="card"><b>Меньше ошибок</b><span>Нет двойного ввода — меньше пересортов, потерянных заказов и расхождений в остатках.</span></div>
+        <div class="card"><b>Единый учёт</b><span>Продажи с сайта и офлайн сходятся в одной системе.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Что синхронизируется</span>
+      <h2>Что и в какую сторону</h2>
+      <ul class="list">
+        <li>Заказы с сайта → документ в 1С (Управление Торговлей / Розница).</li>
+        <li>Каталог и характеристики товаров: 1С → сайт.</li>
+        <li>Цены и остатки: 1С → сайт.</li>
+        <li>Статусы заказов: 1С → клиент.</li>
+        <li>Уведомления о новых заказах: в Telegram.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Пример</span>
+      <h2>Реальная связка</h2>
+      <div class="example">
+        <b>dag-sport.ru — магазин спорттоваров</b>
+        <p>Сайт на 1С-Битрикс связан с 1С: Управление Торговлей: заказ с сайта автоматически создаёт документ в 1С УТ и присылает уведомление в Telegram. Плюс AI-консультант по выбору беговой дорожки.</p>
+        <a href="/cases/dag-sport.html">Разбор кейса — как это устроено ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">С чем работаю</span>
+      <h2>Конфигурации</h2>
+      <ul class="list">
+        <li>1С: Управление Торговлей (УТ).</li>
+        <li>1С: Розница.</li>
+        <li>Сайты на 1С-Битрикс.</li>
+        <li>Другая конфигурация — обсудим, обмен чаще всего настраиваемый.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm content">
+      <span class="label">Как работаем</span>
+      <h2>Процесс</h2>
+      <div class="steps">
+        <div class="step"><span class="step-n"></span><span><b>Вводные</b><span>Что за сайт и 1С, что хотите синхронизировать.</span></span></div>
+        <div class="step"><span class="step-n"></span><span><b>Схема обмена</b><span>Согласуем, какие данные и в какую сторону идут.</span></span></div>
+        <div class="step"><span class="step-n"></span><span><b>Настройка и тест</b><span>Настраиваю обмен, прогоняем реальные заказы.</span></span></div>
+        <div class="step"><span class="step-n"></span><span><b>Запуск</b><span>Включаем, остаюсь на связи и подстраховываю.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container-sm content">
+      <span class="label">Частые вопросы</span>
+      <h2>Про связку сайта и 1С</h2>
+      <details><summary>Что значит «связать сайт с 1С»?</summary><p>Это автоматический обмен данными между сайтом и 1С: заказы с сайта попадают в 1С документом, а каталог, цены и остатки выгружаются из 1С на сайт — без ручного копирования.</p></details>
+      <details><summary>Какие данные синхронизируются?</summary><p>Заказы с сайта в 1С; каталог и характеристики товаров, цены и остатки из 1С на сайт; статусы заказов. Набор настраивается под ваш процесс.</p></details>
+      <details><summary>Чем 1С-Битрикс отличается от 1С: Управление Торговлей?</summary><p>1С-Битрикс — платформа для сайта и интернет-магазина. 1С: Управление Торговлей (УТ) — учётная система для товаров, остатков и документов. Интеграция связывает их между собой.</p></details>
+      <details><summary>Можно ли подключить к 1С уже готовый сайт?</summary><p>Да. Если сайт на 1С-Битрикс, к нему настраивается обмен с 1С. Сайт не обязательно переделывать — подключаю интеграцию к существующему.</p></details>
+      <details><summary>С какими конфигурациями 1С вы работаете?</summary><p>1С: Розница и 1С: Управление Торговлей (УТ), сайты на 1С-Битрикс. Другая конфигурация — обсудим, обмен чаще всего настраиваемый.</p></details>
+      <details><summary>Сколько стоит и сколько занимает?</summary><p>Зависит от того, что синхронизируем и в какую сторону. Простой сценарий «заказы с сайта в 1С» — быстрее, полноценный двусторонний обмен — дольше. Точные сроки и стоимость назову после вводных.</p></details>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sm">
+      <div class="cta">
+        <h2>Нужно связать сайт с 1С?</h2>
+        <p>Опишите, какой у вас сайт и 1С — предложу схему обмена и сроки. Напрямую, без агентств.</p>
+        <a class="btn" href="/#contact">Обсудить задачу →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="related" aria-label="Смотрите также">
+    <div class="related-wrap">
+      <span class="related-label">Смотрите также</span>
+      <div class="related-links">
+        <a href="/services/telegram-bot.html">Telegram-бот и mini app →</a>
+        <a href="/services/ai-assistant.html">AI-ассистент для бизнеса →</a>
+        <a href="/cases/dag-sport.html">Кейс: Битрикс + 1С УТ →</a>
+        <a href="/cities/mahachkala.html">Сайты в Махачкале →</a>
+      </div>
+    </div>
+  </section>
+  <style>
+    .related{padding:8px 0 64px;}
+    .related-wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+    .related-label{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);}
+    .related-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:16px;}
+    .related-links a{font-family:var(--font-mono);font-size:13px;color:var(--text-primary);text-decoration:none;border-bottom:1px solid var(--accent-glow-strong);padding-bottom:3px;transition:border-color .2s,color .2s;}
+    .related-links a:hover{color:var(--accent-warm);border-color:var(--accent-warm);}
+  </style>
+
+  <footer>
+    <div class="container foot">
+      <span>© 2026 · Ибрагим Раджабов — сайты, AI-ассистенты и 1С</span>
+      <span><a href="/">radzhabov-dev.ru</a> · <a href="https://t.me/rdvigm" target="_blank" rel="noopener">Telegram</a></span>
+      <span class="legal-links" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;">Политика конфиденциальности</a> · <a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;">Согласие на обработку ПД</a></span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav=document.getElementById('nav');
+      function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){ a.addEventListener('click', function(){ __reach('telegram_click'); }); });
+      document.querySelectorAll('.btn-primary:not([type=submit]):not(#submitBtn)').forEach(function(a){ a.addEventListener('click', function(){ __reach('cta_click'); }); });
+    }());
+  </script>
+</body>
+</html>
