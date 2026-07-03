@@ -25,7 +25,7 @@ All user-facing text is **Russian**. Domain: `radzhabov-dev.ru`.
 - NO separate CSS or JS files. NO build step.
 - NO external libraries/frameworks (React, Vue, GSAP, jQuery, Tailwind, …).
 - NO CDN/external dependencies, NO Python generators committed to the repo.
-- The ONLY external resource is **Google Fonts** (Playfair Display, Outfit, JetBrains Mono) via `<link>` (with `preload`).
+- On the homepage, **Playfair Display, Outfit and JetBrains Mono are self-hosted** as WOFF2 subsets in `assets/fonts/`; do not restore render-blocking Google Fonts links there. Supporting pages may still use Google Fonts. Yandex Metrika is the only external runtime script.
 - All homepage edits go in `index.html`.
 
 ### Files in the directory
