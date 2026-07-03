@@ -1,6 +1,6 @@
 # AGENTS.md — точка входа для ИИ-агентов (radzhabov-dev.ru)
 
-> **Старт здесь.** Этот файл — карта проекта и маршрутизатор к остальным докам. Прочитай его целиком, затем документы из раздела «Что читать», затем смотри сами файлы на диске. Обновлён: 2026-07-02 (после Phase 0 + Phase 1 + индексации).
+> **Старт здесь.** Этот файл — карта проекта и маршрутизатор к остальным докам. Прочитай его целиком, затем документы из раздела «Что читать», затем смотри сами файлы на диске. Обновлён: 2026-07-02, вечер (после Phase 0 + Phase 1 + индексации + **Phase 2: гео/города/блог**).
 
 ## Проект в двух строках
 Персональный сайт-портфолио **Ибрагима Раджабова (I. Radzhabov)**: сайты + AI-ассистенты + 1С. Домен **`radzhabov-dev.ru`**. Статичный многостраничный сайт, всё инлайн в каждом `.html`, **без фреймворков/сборки/CDN**. Тема — **светлая кремовая**, тёплый акцент только терракота `#B5623C`, бренд-знак «Излом». Язык интерфейса — русский. Сайт **в проде** (RU-edge, релизы + symlink).
@@ -12,9 +12,11 @@
 4. **`seo-webmaster-setup.md`** — подключение Вебмастера/GSC.
 5. Наряды-история (что и как уже делалось): `marketing/EXECUTOR-BRIEF-Phase0.md`, `EXECUTOR-BRIEF-Phase1.md`, `EXECUTOR-BRIEF-reindex.md`.
 
-## Текущее состояние (2026-07-02)
-**Страницы (16 HTML):** `/` (index) · `/404.html` · услуги `/services/{landing,telegram-bot,ai-assistant,integraciya-1c}.html` · кейсы `/cases/{baby-massage,dag-sport}.html` · ниши `/niches/{sajt-dlya-avtoservisa,sajt-dlya-massazhista,sajt-dlya-barbershopa,sajt-dlya-cvetochnogo-magazina,sajt-dlya-klininga}.html` · инструмент `/tools/kalkulyator-lendinga.html` · legal `/legal/{privacy,soglasie}.html`.
-**Инфра:** `sitemap.xml` (15 URL, `/404.html` не входит) · `robots.txt` (пускает поисковые + AI-краулеры) · `llms.txt` (актуальное позиционирование).
+## Текущее состояние (2026-07-03, после Phase 2 + Phase 3)
+**Страницы (29 HTML):** `/` (index) · `/404.html` · услуги `/services/{landing,telegram-bot,ai-assistant,integraciya-1c,nastrojka-1c}.html` · кейсы `/cases/{baby-massage,dag-sport,decorapp}.html` · ниши `/niches/{sajt-dlya-avtoservisa,sajt-dlya-massazhista,sajt-dlya-barbershopa,sajt-dlya-cvetochnogo-magazina,sajt-dlya-klininga,sajt-dlya-okonnoj-kompanii,sajt-dlya-servisnogo-centra,sajt-dlya-magazina-avtozapchastej}.html` · города `/cities/{mahachkala,kaspijsk,derbent}.html` · блог `/blog/` + 4 статьи (`kak-svyazat-sajt-s-1c`, `chto-dolzhno-byt-na-lendinge`, `ai-konsultant-na-sajte`, `telegram-bot-vmesto-sajta`) · инструмент `/tools/kalkulyator-lendinga.html` · legal `/legal/{privacy,soglasie}.html`.
+**Инфра:** `sitemap.xml` (28 URL, `/404.html` не входит) · `robots.txt` (пускает поисковые + AI-краулеры) · `llms.txt` (позиционирование + гео + ниши + статьи + кейсы).
+**Phase 3 (2026-07-03, исполнитель по наряду `marketing/EXECUTOR-BRIEF-Phase3-content.md`, принято ревьюером):** кейс DecorApp/GlowDecor + 3 новые ниши под живые демо (Rihau/FixLab/АвтоМаг) + услуга «Настройка и доработка 1С» (цены на странице НЕТ — только «оценка после разбора») + 4-я статья + карточки организаций в `marketing/backlink-kit.md`.
+**Регион (решено владельцем 2026-07-02):** город — **Махачкала** (подтверждён), стратегия — **гибрид**: регион в Вебмастере = Махачкала + текст «работаю удалённо по всей России» + `/cities/` по Дагестану. Гео-строка на главной (about/контакты/футер), `address` в JSON-LD Person, FAQ-пункт про географию. Географию КЛИЕНТОВ (dag-sport, baby-massage) нигде не утверждаем — не подтверждена.
 
 **Сделано:**
 - Бренд «Излом» везде (nav+footer всех страниц), фавиконки, og-image (домен исправлен на radzhabov-dev.ru).
@@ -29,12 +31,12 @@
 
 **Контакты (не выдумывать, не заменять):** email `1cworkac@mail.ru`, Telegram `t.me/rdvigm`, GitHub `github.com/Ibrahim-Radzhabov`.
 
-## Что открыто (задачи для тебя — «довести SEO-роадмап до совершенства»)
-1. **Регион (решение владельца).** Регион в Вебмастере не задан — намеренно (нельзя выдумывать город/организацию). Это стратегический выбор: пинить домен к городу помогает локальным запросам, но может сузить гео по РФ. Нужен **реальный город владельца**. Пути: (а) таргет города → честная строка в контактах + регион; (б) остаётся по РФ удалённо → регион не пиним, гео закрываем `/cities/` (Phase 2).
-2. **Phase 2 (из GROWTH-PLAN-v4):** `/cities/` по реальному региону (честный формат «работаю удалённо») + блог (3–4 опорные статьи; черновик статьи про dag-sport готов в `marketing/article-dag-sport-habr.md`).
-3. **Бэклинки:** безопасный первый слой — профили (GitHub/Habr/VC/TenChat/Telegram-bio) → сайт; затем статья на Habr/VC; ссылки в подвалах клиентских сайтов.
-4. **Микро-CRO** услуг — точечно, без переспама (см. GROWTH-PLAN-v4 §Phase 1.3).
-5. **Дождаться данных** GSC/Вебмастера (показы/запросы) и масштабировать только то, что даёт клики/заявки.
+## Что открыто (после Phase 2)
+1. **Владелец: задеплоить и включить регион.** (а) Снять stale-локи git и запушить (`find .git -name '*.lock' -delete; find .git/objects -name 'tmp_obj_*' -delete; git add -A && git commit && git push`) — коммит городов `d6ec8a0` уже создан, блог/доки — в рабочем дереве. (б) Вебмастер → Настройки → Региональность → **Махачкала**. (в) Переобход (Вебмастер) + Request indexing (GSC): `/`, 3 города, `/blog/` + 3 статьи.
+2. **Бэклинки (владелец, материалы готовы):** `marketing/backlink-kit.md` — тексты bio для профилей, строка для подвалов клиентов, чек-лист публикации. Habr/VC-статья ждёт 4 реальных факта от владельца (плейсхолдеры в `marketing/article-dag-sport-habr.md`).
+3. **Дождаться данных** GSC/Вебмастера (2–4 недели): смотреть показы по городам/статьям, масштабировать только то, что даёт клики/заявки. Кандидаты на расширение: 4-я статья (Telegram-бот), ниши под остальные демо (rihau/fixlab/avtozap).
+4. **Факт-вопросы владельцу (не блокируют):** dag-sport и baby-massage — клиенты из Дагестана? (если да — можно честно усилить страницу Махачкалы); фото для «Обо мне»; шрифты для og-image.
+5. **Опционально:** вычистить из публичного репо старую апрельскую seo-серию `git rm --cached` (сейчас она видна на GitHub); микро-CRO услуг проверен 2026-07-02 — «для кого/что входит/сроки/CTA» уже есть на всех 4 услугах, ничего добавлять не потребовалось.
 
 ## Жёсткие правила (нарушение = брак)
 - **Не выдумывать** отзывы, клиентов, цифры, офисы, регион, гарантии. Ниши — только под реальное демо (стоматология/салон красоты — нет примера, не делать).
@@ -48,7 +50,8 @@
 tag-balance (`html.parser` → 0/0) · JSON-LD `json.loads` валиден · граф внутренних ссылок без сирот/битых · title ≤60, description ≤155 · все ассеты резолвятся · консистентность (`radzhabov-dev.ru`/`rdvigm`/`1cworkac@mail.ru`, нет старого домена) · локально `python3 -m http.server 8000`, проверить 375/768/desktop.
 
 ## Деплой
-Деплоить только боевой сайт: `index.html`, `404.html`, `services/`, `cases/`, `niches/`, `tools/`, `legal/`, `assets/`, фавиконки, `og-image.png`, `robots.txt`, `sitemap.xml`, `llms.txt`. **НЕ деплоить:** `_archive/`, `marketing/`, `output/`, `scripts/`, `tz/`, все `.md`-доки.
+Деплоить только боевой сайт: `index.html`, `404.html`, `services/`, `cases/`, `niches/`, `cities/`, `blog/`, `tools/`, `legal/`, `assets/`, фавиконки, `og-image.png`, `robots.txt`, `sitemap.xml`, `llms.txt`. **НЕ деплоить:** `_archive/`, `marketing/`, `output/`, `scripts/`, `tz/`, все `.md`-доки.
+GitHub Pages workflow (`.github/workflows/jekyll-gh-pages.yml`) собирает артефакт по этому же whitelist (2026-07-02 добавлены `cities/`, `blog/`, `legal/` — legal раньше отсутствовал в артефакте). Внутренние доки и `marketing/` дополнительно закрыты через `.gitignore` (репозиторий публичный).
 
 ## Карта доков: актуальные vs устаревшие
 **Актуальные (доверять):** `CLAUDE.md`, `AGENT-HANDOFF.md`, `AGENTS.md` (этот), `marketing/GROWTH-PLAN-v4-reality-grounded.md`, `marketing/EXECUTOR-BRIEF-*.md`, `seo-webmaster-setup.md`, `llms.txt`, `sitemap.xml`, `robots.txt`.

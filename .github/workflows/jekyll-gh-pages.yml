@@ -51,6 +51,7 @@ jobs:
           cp -R services _site/
           cp -R niches _site/
           cp -R cities _site/
+          cp -R blog _site/
           cp -R tools _site/
           cp -R legal _site/
 

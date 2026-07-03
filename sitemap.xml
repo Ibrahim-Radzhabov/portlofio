@@ -43,6 +43,14 @@
   </url>
 
   <url>
+    <loc>https://radzhabov-dev.ru/services/nastrojka-1c.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/services/nastrojka-1c.html"/>
+  </url>
+
+  <url>
     <loc>https://radzhabov-dev.ru/niches/sajt-dlya-avtoservisa.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -83,6 +91,30 @@
   </url>
 
   <url>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-okonnoj-kompanii.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-okonnoj-kompanii.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-servisnogo-centra.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-servisnogo-centra.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/niches/sajt-dlya-magazina-avtozapchastej.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/niches/sajt-dlya-magazina-avtozapchastej.html"/>
+  </url>
+
+  <url>
     <loc>https://radzhabov-dev.ru/cities/mahachkala.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -120,6 +152,54 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cases/dag-sport.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/cases/decorapp.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cases/decorapp.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/chto-dolzhno-byt-na-lendinge.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/chto-dolzhno-byt-na-lendinge.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html"/>
   </url>
 
   <url>

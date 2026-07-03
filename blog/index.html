@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог — сайты, AI и 1С на практике | И. Раджабов</title>
+  <meta name="description" content="Статьи о том, как сайты, AI-ассистенты и 1С работают вместе: интеграции, лендинги, автоматизация. Из практики соло-разработчика, без воды.">
+  <link rel="canonical" href="https://radzhabov-dev.ru/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta property="og:title" content="Блог И. Раджабова — сайты, AI и 1С на практике">
+  <meta property="og:description" content="Интеграции с 1С, лендинги под заявки, AI-консультанты — разборы из реальных проектов.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radzhabov-dev.ru/blog/">
+  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Блог — сайты, AI и 1С на практике">
+  <meta name="twitter:description" content="Разборы из реальных проектов: 1С-интеграции, лендинги, AI-консультанты.">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://radzhabov-dev.ru/blog/#blog",
+        "name": "Блог Ибрагима Раджабова — сайты, AI и 1С на практике",
+        "description": "Статьи о том, как сайты, AI-ассистенты и 1С работают вместе: интеграции, лендинги, автоматизация.",
+        "url": "https://radzhabov-dev.ru/blog/",
+        "inLanguage": "ru",
+        "author": {
+          "@type": "Person",
+          "name": "Ибрагим Раджабов",
+          "url": "https://radzhabov-dev.ru/",
+          "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "Как связать интернет-магазин с 1С: Управление Торговлей — и перестать переносить заказы руками",
+            "url": "https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html",
+            "datePublished": "2026-07-02"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Что должно быть на лендинге, который приносит заявки",
+            "url": "https://radzhabov-dev.ru/blog/chto-dolzhno-byt-na-lendinge.html",
+            "datePublished": "2026-07-02"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "AI-консультант на сайте: когда он нужен и что реально умеет",
+            "url": "https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html",
+            "datePublished": "2026-07-02"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Telegram-бот вместо сайта: когда его достаточно, а когда нет",
+            "url": "https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html",
+            "datePublished": "2026-07-02"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov-dev.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://radzhabov-dev.ru/blog/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #F5F0E8;
+      --bg-secondary: #EDE8DF;
+      --bg-card: #EDE8DF;
+      --bg-card-hover: #E5E0D6;
+      --border: rgba(20, 18, 16, 0.08);
+      --border-hover: rgba(20, 18, 16, 0.15);
+      --text-primary: #141210;
+      --text-secondary: #7A7570;
+      --text-tertiary: #A39E98;
+      --accent: #1A3A2A;
+      --accent-dim: #2D5A45;
+      --accent-glow: rgba(26, 58, 42, 0.12);
+      --accent-glow-strong: rgba(26, 58, 42, 0.25);
+      --accent-warm: #B5623C;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:var(--font-body); background:var(--bg-primary); color:var(--text-primary); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    body::before {
+      content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.025;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+    #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 0; transition:background .4s, backdrop-filter .4s; }
+    #nav.scrolled { background:rgba(245, 240, 232, 0.85); backdrop-filter:blur(20px); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:inline-flex; align-items:center; gap:10px; color:var(--text-primary); text-decoration:none; }
+    .nav-logo svg { width:24px; height:24px; flex-shrink:0; }
+    .nav-logo b { font-family:var(--font-display); font-weight:600; font-size:18px; letter-spacing:-0.3px; }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .3s; position:relative; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text-primary); }
+    .nav-links a.active::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--accent); border-radius:1px; }
+    .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
+    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #mobile-menu.active { opacity:1; pointer-events:all; }
+    #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
+    .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
+
+    .hero { padding:160px 0 40px; }
+    .hero-label { display:inline-block; font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:24px; border:1px solid var(--accent-glow-strong); padding:8px 16px; border-radius:8px; background:var(--accent-glow); }
+    h1 { font-family:var(--font-display); font-size:clamp(32px, 4.5vw, 52px); font-weight:800; line-height:1.12; letter-spacing:-1.5px; margin-bottom:20px; max-width:760px; }
+    h1 .accent { color:var(--accent); }
+    .hero-subtitle { font-size:18px; color:var(--text-secondary); max-width:560px; line-height:1.7; }
+
+    .posts { padding:60px 0 80px; }
+    .post-list { display:flex; flex-direction:column; gap:24px; max-width:820px; }
+    .post-card { display:block; background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:36px 40px; text-decoration:none; transition:all .4s; position:relative; }
+    .post-card:hover { border-color:var(--border-hover); background:var(--bg-card-hover); transform:translateY(-3px); }
+    .post-tag { font-family:var(--font-mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; display:flex; gap:14px; margin-bottom:14px; }
+    .post-tag span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
+    .post-card h2 { font-family:var(--font-display); font-size:24px; font-weight:700; line-height:1.3; color:var(--text-primary); margin-bottom:12px; }
+    .post-card p { color:var(--text-secondary); font-size:15px; line-height:1.7; margin-bottom:16px; }
+    .post-more { font-family:var(--font-mono); font-size:13px; color:var(--accent); border-bottom:1px solid var(--accent-glow-strong); padding-bottom:3px; transition:color .2s, border-color .2s; }
+    .post-card:hover .post-more { color:var(--accent-warm); border-color:var(--accent-warm); }
+
+    footer { padding:60px 0 32px; border-top:1px solid var(--border); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; }
+    .footer-brand p { color:var(--text-tertiary); font-size:14px; margin-top:8px; }
+    .footer-links { display:flex; gap:48px; flex-wrap:wrap; }
+    .footer-links-col h4 { font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; color:var(--text-primary); }
+    .footer-links-col ul { list-style:none; }
+    .footer-links-col li { margin-bottom:10px; }
+    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:14px; transition:color .3s; }
+    .footer-links-col a:hover { color:var(--accent); }
+    .footer-bottom { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-bottom p { color:var(--text-tertiary); font-size:13px; }
+    .social-links { display:flex; gap:16px; }
+    .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
+    .social-links a:hover { border-color:var(--accent); color:var(--accent); }
+
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    @media (max-width:968px) {
+      .nav-links { display:none; }
+      .menu-btn { display:block; }
+      .footer-inner { flex-direction:column; }
+    }
+    @media (max-width:640px) {
+      .hero { padding:120px 0 24px; }
+      .post-card { padding:28px 24px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
+    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <nav id="nav" aria-label="Главная навигация">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg><b>I. Radzhabov</b></a>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/services/landing.html">Услуги</a></li>
+        <li><a href="/blog/" class="active">Блог</a></li>
+        <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+        <li><a href="/#contact">Контакты</a></li>
+      </ul>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu">
+    <button class="close-menu" onclick="toggleMenu()" aria-label="Закрыть меню">×</button>
+    <a href="/" onclick="toggleMenu()">Главная</a>
+    <a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
+    <a href="/blog/" onclick="toggleMenu()">Блог</a>
+    <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Калькулятор</a>
+    <a href="/#contact" onclick="toggleMenu()">Контакты</a>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <span class="hero-label reveal">Блог</span>
+      <h1 class="reveal">Сайты, AI и 1С — <span class="accent">на практике</span></h1>
+      <p class="hero-subtitle reveal">Разборы из реальных проектов: как связать сайт с учётом, что должно быть на лендинге, где AI полезен, а где — нет. Без воды и обещаний в процентах.</p>
+    </div>
+  </header>
+
+  <section class="posts">
+    <div class="container">
+      <div class="post-list">
+        <a class="post-card reveal" href="/blog/kak-svyazat-sajt-s-1c.html">
+          <div class="post-tag">1С и интеграции <span>2 июля 2026 · ~7 минут</span></div>
+          <h2>Как связать интернет-магазин с 1С: Управление Торговлей — и перестать переносить заказы руками</h2>
+          <p>Заказ с сайта сам становится документом в 1С, владелец видит его в Telegram сразу. Схема, типовые грабли — номенклатура, статусы, дубли — и с чего начать. На опыте проекта dag-sport.</p>
+          <span class="post-more">Читать →</span>
+        </a>
+        <a class="post-card reveal" href="/blog/chto-dolzhno-byt-na-lendinge.html">
+          <div class="post-tag">Сайты и лендинги <span>2 июля 2026 · ~6 минут</span></div>
+          <h2>Что должно быть на лендинге, который приносит заявки</h2>
+          <p>Первый экран, который отвечает «куда я попал», цена без звонка, форма из трёх полей, доверие конкретикой и техническая база. И отдельно — чего на лендинге быть не должно.</p>
+          <span class="post-more">Читать →</span>
+        </a>
+        <a class="post-card reveal" href="/blog/ai-konsultant-na-sajte.html">
+          <div class="post-tag">AI и автоматизация <span>2 июля 2026 · ~6 минут</span></div>
+          <h2>AI-консультант на сайте: когда он нужен и что реально умеет</h2>
+          <p>Помогает выбрать, отвечает ночью, снимает типовые вопросы — и честные ограничения: что консультант не сделает и когда он вам пока не нужен. Без хайпа, из практики внедрений.</p>
+          <span class="post-more">Читать →</span>
+        </a>
+        <a class="post-card reveal" href="/blog/telegram-bot-vmesto-sajta.html">
+          <div class="post-tag">Telegram и боты <span>2 июля 2026 · ~6 минут</span></div>
+          <h2>Telegram-бот вместо сайта: когда его достаточно, а когда нет</h2>
+          <p>Бот, mini app, сайт или связка — честные критерии выбора без продажи лишнего. Простое правило: бот обслуживает тех, кто вас нашёл, сайт приводит тех, кто ещё не знает. На примере живого магазина GlowDecor.</p>
+          <span class="post-more">Читать →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg><b>I. Radzhabov</b></a>
+          <p>Сайты, AI-ассистенты и 1С.<br>Махачкала · удалённо по всей России</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-col">
+            <h4>Навигация</h4>
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="/services/landing.html">Услуги</a></li>
+              <li><a href="/cases/baby-massage.html">Кейсы</a></li>
+              <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>География</h4>
+            <ul>
+              <li><a href="/cities/mahachkala.html">Сайты в Махачкале</a></li>
+              <li><a href="/cities/kaspijsk.html">Сайты в Каспийске</a></li>
+              <li><a href="/cities/derbent.html">Сайты в Дербенте</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
+              <li><a href="https://t.me/rdvigm" target="_blank" rel="noopener">Telegram</a></li>
+              <li><a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ибрагим Раджабов. Все права защищены.</p>
+        <div class="legal-links" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Политика конфиденциальности</a><span style="color:var(--text-tertiary);">·</span><a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Согласие на обработку ПД</a></div>
+        <div class="social-links">
+          <a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="https://t.me/rdvigm" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      window.toggleMenu = function() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){
+        a.addEventListener('click', function(){ __reach('telegram_click'); });
+      });
+    })();
+  </script>
+</body>
+</html>

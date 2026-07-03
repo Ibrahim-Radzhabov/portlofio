@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram-бот вместо сайта: когда достаточно | Блог</title>
+  <meta name="description" content="Когда бизнесу хватит Telegram-бота или mini app, когда нужен сайт, а когда — связка. Честные критерии выбора на живом примере магазина GlowDecor.">
+  <link rel="canonical" href="https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta property="og:title" content="Telegram-бот вместо сайта: когда его достаточно">
+  <meta property="og:description" content="Критерии выбора между ботом, mini app, сайтом и связкой — без продажи лишнего. На примере живого магазина в Telegram.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html">
+  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Telegram-бот вместо сайта: когда достаточно">
+  <meta name="twitter:description" content="Бот, mini app, сайт или связка — честные критерии выбора.">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html#article",
+        "headline": "Telegram-бот вместо сайта: когда его достаточно, а когда нет",
+        "description": "Когда бизнесу хватает Telegram-бота или mini app, когда без сайта не обойтись и когда работает связка. Критерии выбора на живом примере.",
+        "author": {
+          "@type": "Person",
+          "name": "Ибрагим Раджабов",
+          "url": "https://radzhabov-dev.ru/",
+          "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
+        },
+        "datePublished": "2026-07-02",
+        "dateModified": "2026-07-02",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html",
+        "image": "https://radzhabov-dev.ru/og-image.png",
+        "publisher": {
+          "@type": "Person",
+          "name": "Ибрагим Раджабов",
+          "url": "https://radzhabov-dev.ru/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov-dev.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://radzhabov-dev.ru/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Telegram-бот вместо сайта", "item": "https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #F5F0E8;
+      --bg-secondary: #EDE8DF;
+      --bg-card: #EDE8DF;
+      --bg-card-hover: #E5E0D6;
+      --border: rgba(20, 18, 16, 0.08);
+      --border-hover: rgba(20, 18, 16, 0.15);
+      --text-primary: #141210;
+      --text-secondary: #7A7570;
+      --text-tertiary: #A39E98;
+      --accent: #1A3A2A;
+      --accent-dim: #2D5A45;
+      --accent-glow: rgba(26, 58, 42, 0.12);
+      --accent-glow-strong: rgba(26, 58, 42, 0.25);
+      --accent-warm: #B5623C;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:var(--font-body); background:var(--bg-primary); color:var(--text-primary); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    body::before {
+      content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.025;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+    #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 0; transition:background .4s, backdrop-filter .4s; }
+    #nav.scrolled { background:rgba(245, 240, 232, 0.85); backdrop-filter:blur(20px); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:inline-flex; align-items:center; gap:10px; color:var(--text-primary); text-decoration:none; }
+    .nav-logo svg { width:24px; height:24px; flex-shrink:0; }
+    .nav-logo b { font-family:var(--font-display); font-weight:600; font-size:18px; letter-spacing:-0.3px; }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .3s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text-primary); }
+    .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
+    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #mobile-menu.active { opacity:1; pointer-events:all; }
+    #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
+    .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
+
+    .article-hero { padding:160px 0 40px; }
+    .article-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    .article-meta { font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:20px; display:flex; gap:16px; flex-wrap:wrap; }
+    .article-meta span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
+    h1 { font-family:var(--font-display); font-size:clamp(30px, 4vw, 44px); font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:20px; }
+    .article-lead { font-size:18px; color:var(--text-secondary); line-height:1.7; }
+
+    .article-body { padding:40px 0 80px; }
+    .article-body h2 { font-family:var(--font-display); font-size:26px; font-weight:700; margin:48px 0 16px; line-height:1.25; }
+    .article-body h3 { font-family:var(--font-display); font-size:20px; font-weight:600; margin:36px 0 12px; }
+    .article-body p { color:var(--text-secondary); margin-bottom:16px; font-size:16px; line-height:1.75; }
+    .article-body strong { color:var(--text-primary); font-weight:600; }
+    .article-body a { color:var(--accent); }
+    .article-body ul, .article-body ol { list-style:none; margin:16px 0 24px; }
+    .article-body li { padding:8px 0; color:var(--text-secondary); font-size:15.5px; line-height:1.7; display:flex; align-items:flex-start; gap:12px; }
+    .article-body ul li::before { content:'—'; color:var(--accent); font-weight:700; flex-shrink:0; }
+    .article-body ol { counter-reset:item; }
+    .article-body ol li::before { counter-increment:item; content:counter(item); font-family:var(--font-mono); color:var(--accent); font-weight:700; flex-shrink:0; min-width:20px; }
+    .article-body blockquote { border-left:3px solid var(--accent-warm); padding:12px 20px; margin:24px 0; background:var(--bg-card); border-radius:0 12px 12px 0; color:var(--text-secondary); font-size:15.5px; }
+    .callout { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:24px 28px; margin:32px 0; }
+    .callout .label { font-family:var(--font-mono); font-size:11px; color:var(--accent-warm); text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:10px; }
+    .callout p { margin-bottom:0; }
+
+    .cta-box { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:36px; margin:48px 0 0; text-align:center; position:relative; overflow:hidden; }
+    .cta-box::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
+    .cta-box h2 { font-family:var(--font-display); font-size:24px; font-weight:700; margin-bottom:10px; }
+    .cta-box p { color:var(--text-secondary); margin-bottom:22px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#F5F0E8; font-family:var(--font-display); font-weight:700; font-size:15px; padding:15px 30px; border-radius:12px; text-decoration:none; transition:transform .3s, box-shadow .3s; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(26, 58, 42, 0.3); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:10px; background:transparent; color:var(--text-primary); font-family:var(--font-display); font-weight:600; font-size:15px; padding:15px 30px; border-radius:12px; text-decoration:none; border:1px solid var(--border); transition:all .3s; margin-left:8px; }
+    .btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+
+    .related { padding:8px 0 0; }
+    .related-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    .related-label { font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); }
+    .related-links { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:16px; }
+    .related-links a { font-family:var(--font-mono); font-size:13px; color:var(--text-primary); text-decoration:none; border-bottom:1px solid var(--accent-glow-strong); padding-bottom:3px; transition:border-color .2s, color .2s; }
+    .related-links a:hover { color:var(--accent-warm); border-color:var(--accent-warm); }
+
+    footer { padding:60px 0 32px; border-top:1px solid var(--border); margin-top:60px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; }
+    .footer-brand p { color:var(--text-tertiary); font-size:14px; margin-top:8px; }
+    .footer-links { display:flex; gap:48px; flex-wrap:wrap; }
+    .footer-links-col h4 { font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; color:var(--text-primary); }
+    .footer-links-col ul { list-style:none; }
+    .footer-links-col li { margin-bottom:10px; }
+    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:14px; transition:color .3s; }
+    .footer-links-col a:hover { color:var(--accent); }
+    .footer-bottom { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-bottom p { color:var(--text-tertiary); font-size:13px; }
+    .social-links { display:flex; gap:16px; }
+    .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
+    .social-links a:hover { border-color:var(--accent); color:var(--accent); }
+
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    @media (max-width:968px) {
+      .nav-links { display:none; }
+      .menu-btn { display:block; }
+      .footer-inner { flex-direction:column; }
+    }
+    @media (max-width:640px) {
+      .article-hero { padding:120px 0 24px; }
+      .btn-secondary { margin-left:0; margin-top:10px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
+    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <nav id="nav" aria-label="Главная навигация">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg><b>I. Radzhabov</b></a>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/services/telegram-bot.html">Услуги</a></li>
+        <li><a href="/blog/" class="active">Блог</a></li>
+        <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+        <li><a href="/#contact">Контакты</a></li>
+      </ul>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu">
+    <button class="close-menu" onclick="toggleMenu()" aria-label="Закрыть меню">×</button>
+    <a href="/" onclick="toggleMenu()">Главная</a>
+    <a href="/services/telegram-bot.html" onclick="toggleMenu()">Услуги</a>
+    <a href="/blog/" onclick="toggleMenu()">Блог</a>
+    <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Калькулятор</a>
+    <a href="/#contact" onclick="toggleMenu()">Контакты</a>
+  </div>
+
+  <header class="article-hero">
+    <div class="article-wrap">
+      <div class="article-meta reveal">Блог · Telegram и боты <span>· 2 июля 2026 · ~6 минут</span></div>
+      <h1 class="reveal">Telegram-бот вместо сайта: когда его достаточно, а когда нет</h1>
+      <p class="article-lead reveal">Мне одинаково платят и за ботов, и за сайты, поэтому мне незачем продавать вам лишнее. Разберу честно: в каких случаях бизнесу хватит бота или mini app, когда без сайта никуда, и почему чаще всего лучший ответ — связка.</p>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-wrap">
+      <h2>Три разных инструмента, а не «дешёвый сайт»</h2>
+      <p>Сначала развею путаницу. <strong>Бот</strong> — это диалог: команды, кнопки, ответы. <strong>Mini app</strong> — полноценное приложение внутри Telegram: каталог, корзина, оформление, как в обычном магазине. <strong>Сайт</strong> — ваша страница в открытом интернете, которую находят через Яндекс и Google. Это не «уровни» одного и того же, а разные инструменты с разной работой.</p>
+
+      <h2>Когда Telegram-решения достаточно</h2>
+      <ul>
+        <li><strong>Ваша аудитория уже в Telegram.</strong> Продажи идут из канала, сарафана или переписки — клиенту не нужно вас «находить», он уже рядом. Нужно лишь убрать хаос переписки.</li>
+        <li><strong>Заказы сейчас принимаются в личке.</strong> «Скиньте фото, я выберу» → бот с каталогом превращает это в нормальный заказ с корзиной.</li>
+        <li><strong>Нужна запись или типовые заявки.</strong> Барбершоп, доставка, услуги — бот собирает заявку по шагам без администратора.</li>
+        <li><strong>Бюджет и сроки минимальные.</strong> Никакого хостинга, домена и «кто будет обновлять сайт» — инструмент живёт там же, где аудитория.</li>
+      </ul>
+      <p>Живой пример — <a href="/cases/decorapp.html">кейс GlowDecor</a>: магазин декора и свечей целиком внутри Telegram. Каталог с категориями, корзина, поддержка с анонимной переадресацией — и никакого сайта. Для этого бизнеса это правильный выбор: его покупатель живёт в Telegram.</p>
+
+      <h2>Когда без сайта не обойтись</h2>
+      <ul>
+        <li><strong>Вас должны находить в поиске.</strong> «Ремонт стиральных машин + город» набирают в Яндексе, а не в поиске Telegram. Бот не индексируется — сайт индексируется.</li>
+        <li><strong>Нужна реклама с посадочной.</strong> Директ и таргет ведут на страницу; на неё же ссылаются карты и справочники.</li>
+        <li><strong>Клиент «проверяет» вас перед оплатой.</strong> Для дорогих услуг люди ищут сайт: он работает как паспорт бизнеса — цены, примеры, реквизиты, договор.</li>
+        <li><strong>Не все ваши клиенты в Telegram.</strong> Чем старше или консервативнее аудитория, тем важнее обычная страница в браузере.</li>
+      </ul>
+      <blockquote>Простое правило: бот обслуживает тех, кто вас уже нашёл. Сайт приводит тех, кто вас ещё не знает. Это разные работы.</blockquote>
+
+      <h2>Связка: как это выглядит на практике</h2>
+      <p>Чаще всего зрелый вариант такой: <strong>сайт ловит поиск и рекламу → кнопка «написать в Telegram» → бот доводит до заказа и обслуживает повторные</strong>. Дальше по желанию: заказы падают в 1С без ручного переноса (<a href="/blog/kak-svyazat-sajt-s-1c.html">разбирал здесь</a>), а на сайте отвечает <a href="/blog/ai-konsultant-na-sajte.html">AI-консультант</a>. Каждый инструмент делает свою часть пути клиента.</p>
+      <div class="callout">
+        <span class="label">Как решить за 5 минут</span>
+        <p>Ответьте на один вопрос: <strong>откуда должен приходить новый клиент?</strong> Если «из Telegram-канала и по сарафану» — начинайте с бота или mini app. Если «из поиска и рекламы» — начинайте с сайта. Если «и оттуда, и оттуда» — сайт + бот, но строить можно по очереди, начиная с того канала, где клиенты уже есть.</p>
+      </div>
+
+      <h2>Про деньги и сроки</h2>
+      <p>Бот с типовыми сценариями обычно быстрее и дешевле лендинга; mini app с каталогом — сопоставим с сайтом-витриной; связка — это два инструмента, но строятся они поэтапно, а не разом. Точные цифры зависят от задачи: скажу после короткого разбора, до старта. Что входит и как устроено — на странице <a href="/services/telegram-bot.html">услуги Telegram-ботов и mini apps</a>.</p>
+
+      <div class="cta-box reveal">
+        <h2>Не уверены, что вам нужно?</h2>
+        <p>Опишите, как сейчас приходят клиенты и заказы, — скажу честно: бот, сайт или связка, и с чего начать.</p>
+        <a href="/#contact" class="btn-primary">Описать задачу</a>
+        <a href="https://t.me/rdvigm" target="_blank" rel="noopener" class="btn-secondary">Написать в Telegram</a>
+      </div>
+    </div>
+  </article>
+
+  <section class="related" aria-label="Смотрите также">
+    <div class="related-wrap">
+      <span class="related-label">Смотрите также</span>
+      <div class="related-links">
+        <a href="/services/telegram-bot.html">Услуга: Telegram-бот и mini app →</a>
+        <a href="/cases/decorapp.html">Кейс GlowDecor →</a>
+        <a href="/blog/chto-dolzhno-byt-na-lendinge.html">Что должно быть на лендинге →</a>
+        <a href="/blog/">Все статьи →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg><b>I. Radzhabov</b></a>
+          <p>Сайты, AI-ассистенты и 1С.<br>Махачкала · удалённо по всей России</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-col">
+            <h4>Навигация</h4>
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="/services/landing.html">Услуги</a></li>
+              <li><a href="/blog/">Блог</a></li>
+              <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Статьи</h4>
+            <ul>
+              <li><a href="/blog/kak-svyazat-sajt-s-1c.html">Сайт + 1С: УТ</a></li>
+              <li><a href="/blog/chto-dolzhno-byt-na-lendinge.html">Лендинг под заявки</a></li>
+              <li><a href="/blog/ai-konsultant-na-sajte.html">AI-консультант</a></li>
+              <li><a href="/blog/telegram-bot-vmesto-sajta.html">Бот вместо сайта</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
+              <li><a href="https://t.me/rdvigm" target="_blank" rel="noopener">Telegram</a></li>
+              <li><a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ибрагим Раджабов. Все права защищены.</p>
+        <div class="legal-links" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Политика конфиденциальности</a><span style="color:var(--text-tertiary);">·</span><a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Согласие на обработку ПД</a></div>
+        <div class="social-links">
+          <a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="https://t.me/rdvigm" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      window.toggleMenu = function() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){
+        a.addEventListener('click', function(){ __reach('telegram_click'); });
+      });
+      document.querySelectorAll('.btn-primary').forEach(function(a){
+        a.addEventListener('click', function(){ __reach('cta_click'); });
+      });
+    })();
+  </script>
+</body>
+</html>

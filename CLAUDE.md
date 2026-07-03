@@ -30,7 +30,8 @@ All user-facing text is **Russian**. Domain: `radzhabov-dev.ru`.
 
 ### Files in the directory
 - `index.html` — **the site. Source of truth.**
-- **Sub-pages** (each standalone, same inline pattern, all in `sitemap.xml`): `services/{landing,telegram-bot,ai-assistant,integraciya-1c}.html`, `cases/{baby-massage,dag-sport}.html`, `niches/sajt-dlya-massazhista.html`, `tools/kalkulyator-lendinga.html`.
+- **Sub-pages** (each standalone, same inline pattern, all in `sitemap.xml` — 28 URLs): `services/{landing,telegram-bot,ai-assistant,integraciya-1c,nastrojka-1c}.html`, `cases/{baby-massage,dag-sport,decorapp}.html`, `niches/{sajt-dlya-avtoservisa,sajt-dlya-massazhista,sajt-dlya-barbershopa,sajt-dlya-cvetochnogo-magazina,sajt-dlya-klininga,sajt-dlya-okonnoj-kompanii,sajt-dlya-servisnogo-centra,sajt-dlya-magazina-avtozapchastej}.html`, `cities/{mahachkala,kaspijsk,derbent}.html`, `blog/` (hub + `kak-svyazat-sajt-s-1c`, `chto-dolzhno-byt-na-lendinge`, `ai-konsultant-na-sajte`, `telegram-bot-vmesto-sajta`), `tools/kalkulyator-lendinga.html`, `legal/{privacy,soglasie}.html`. NB: `services/nastrojka-1c.html` deliberately has **no price** («оценка после разбора») — do not add one.
+- **Geo (owner-confirmed 2026-07-02):** city = **Махачкала**; hybrid strategy — Webmaster region + «работаю удалённо по всей России» text + `/cities/`. Homepage Person JSON-LD carries `address` (Махачкала, Дагестан). Never claim CLIENT geography (dag-sport / baby-massage) — it is not confirmed.
 - **Agent/owner docs (NOT deployed):** `AGENT-HANDOFF.md` (continuation brief), `seo-webmaster-setup.md` (owner's Вебмастер/GSC guide).
 - `favicon.svg`, `favicon-16/32/48/180.png`, `apple-touch-icon.png`, `favicon.ico`, `og-image.png` — brand icons/share image (see "Brand assets").
 - `robots.txt`, `sitemap.xml`, `llms.txt`, `404.html` — SEO/infra.
@@ -179,18 +180,20 @@ Quick checks after edits: extract the preloader `<script>` and run `node --check
 tag-balance parse; verify at 375px for horizontal overflow.
 
 ## Known TODOs (need the owner's real data — do NOT fabricate)
-1. **Formspree** — FORMSPREE_ID remains YOUR_FORM_ID; no contact form currently sends data. The homepage and four older subpages now report unavailability instead of showing false success. Configure a real Formspree ID for 1cworkac@mail.ru.
-2. **About photo** — `.about-image-placeholder` is still a placeholder; needs a real portrait.
-3. **Work imagery** — confirm project cards use real assets vs placeholders before claiming "done".
-4. **og-image fonts (optional)** — domain now fixed to `radzhabov-dev.ru` ✓. Bitmap still uses a DejaVu stand-in; provide `PlayfairDisplay.ttf` + `Outfit.ttf` for a pixel-perfect re-render.
-5. **Logo unification** — 4 older sub-pages (`services/landing`, `cases/baby-massage`, `niches/sajt-dlya-massazhista`, `tools/kalkulyator-lendinga`) still use the old **text logo «RD.»** instead of the «Излом» mark. Swap to the hardcoded-ink SVG (core `#B5623C`); some of these pages lack `--accent-warm` — add fallbacks.
-6. **Off-page (owner executes):** Яндекс.Вебмастер + Google Search Console (`seo-webmaster-setup.md`), then backlinks (client footers, Habr/VC article on dag-sport). Full list in `AGENT-HANDOFF.md` §3.
+> Stale items removed 2026-07-02: Formspree is live (`mkolvvep` on all forms + consent checkbox) and the «Излом» mark is unified across all pages — see `AGENTS.md` for the current state.
+1. **About photo** — `.about-image-placeholder` is still a placeholder; needs a real portrait.
+2. **og-image fonts (optional)** — domain fixed to `radzhabov-dev.ru` ✓. Bitmap still uses a DejaVu stand-in; provide `PlayfairDisplay.ttf` + `Outfit.ttf` for a pixel-perfect re-render.
+3. **Client geography** — dag-sport / baby-massage client cities are unconfirmed; ask the owner before adding any «работал с местным бизнесом» claims to `/cities/`.
+4. **Off-page (owner executes):** push + Webmaster region (Махачкала) + reindex; then backlinks per `marketing/backlink-kit.md` (profiles → client footers → Habr/VC article; article placeholders need the owner's real facts). Current open list in `AGENTS.md` §«Что открыто».
 
 ## Done / locked (don't redo without reason)
 Brand «Излом» across nav + preloader + all icons + og; preloader v2 + assemble morph (all branches verified);
 marquee balanced across the three pillars; JSON-LD three-pillar with real links; robots/sitemap/llms/404; FAQ;
-multi-page SEO/GEO build (4 services + 2 cases + niche + calculator, type-matched JSON-LD + internal linking);
-legacy moved to `_archive/`; meta titles/descriptions trimmed to SERP limits.
+multi-page SEO/GEO build (4 services + 2 cases + 5 niches + calculator + legal, type-matched JSON-LD + internal linking);
+legacy moved to `_archive/`; meta titles/descriptions trimmed to SERP limits;
+Phase 0 (legal + consent + Formspree `mkolvvep` + Metrika goals); Phase 1 (5 niches, «Излом» unified);
+Phase 2 (geo line + `/cities/` Махачкала/Каспийск/Дербент + `/blog/` hub + 3 pillar articles, sitemap 22 URLs);
+micro-CRO pass over services verified 2026-07-02 — «для кого / что входит / сроки / CTA» already present, no bloat added.
 
 ## Common pitfalls
 - Keep the brand mark consistent everywhere (nav `.nlm-*`, preloader `.pl-mk-*`, `favicon.svg`, icons). Core is always terracotta `#B5623C`; rest is `currentColor`/ink.
