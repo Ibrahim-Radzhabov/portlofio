@@ -19,14 +19,14 @@ All user-facing text is **Russian**. Domain: `radzhabov-dev.ru`.
 
 ## Architecture
 
-**Active entrypoint:** `index.html` — the whole site. **All CSS and JS are inline** in it.
+**Active entrypoint:** `index.html`. Homepage styles and non-critical interactions live in `assets/css/home.css` and `assets/js/home.js`; JSON-LD, the delayed Metrika loader, and the desktop preloader controller stay inline.
 
 ### Hard constraints
-- NO separate CSS or JS files. NO build step.
+- NO framework or build step. Keep the homepage split into the existing `index.html` + versioned `home.css`/`home.js` assets.
 - NO external libraries/frameworks (React, Vue, GSAP, jQuery, Tailwind, …).
 - NO CDN/external dependencies, NO Python generators committed to the repo.
 - On the homepage, **Playfair Display, Outfit and JetBrains Mono are self-hosted** as WOFF2 subsets in `assets/fonts/`; do not restore render-blocking Google Fonts links there. Supporting pages may still use Google Fonts. Yandex Metrika is the only external runtime script.
-- All homepage edits go in `index.html`.
+- Homepage markup/SEO/preloader edits go in `index.html`; visual styles go in `assets/css/home.css`; general interactions go in `assets/js/home.js`. Bump the asset query version after CSS/JS changes.
 
 ### Files in the directory
 - `index.html` — **the site. Source of truth.**
@@ -104,7 +104,7 @@ the **core is hardcoded `#B5623C`**. Two contexts:
 
 ## Preloader — «Pipeline» v2 + assemble morph
 
-A full-screen overlay (`#preloader`) shown on load. The chain `сайт → AI → 1С` builds, then
+A full-screen overlay (`#preloader`) shown on desktop/tablet load (`>640px`). The chain `сайт → AI → 1С` builds, then
 **converges to centre and the brand sign draws itself in** (lines → nodes → warm core last),
 then the wordmark/tagline rise. `index.html` is **ahead of `preloader-spec-v2.md`** — it adds:
 terracotta arrowheads, click/Esc skip, brand-only reduced motion, hero hand-off, the «Излом»
@@ -122,6 +122,7 @@ Full first-visit timeline (ms): `200` сайт · `370` arrow1 · `480` AI · `6
 DOM removal (+380ms).
 
 Branches (do NOT break these):
+- **Mobile (`≤640px` / coarse pointer):** no preloader and no hero stagger; render the hero immediately for mobile-first LCP.
 - **Repeat visit** (`sessionStorage[SEEN_KEY]`): everything shown complete, no morph, exit ~480ms.
 - **Reduced motion**: chain hidden, **only the brand shown static**, exit ~700ms. The mark/text must stay static (reduced block forces `animation:none; stroke-dashoffset:0; transform:none`).
 - **Skip**: `pointerdown/touchstart/wheel/Escape` exit early; armed after a 250ms grace; `exit()` is idempotent (`done` flag).
@@ -136,7 +137,7 @@ Other: `#preloader { z-index: 100000 }` (above the noise overlay's 9999); `@medi
 `<noscript>` hides `#preloader` so no-JS users see content.
 
 ## Sections (DOM order — open `index.html` and read the section before editing)
-`#preloader` → `#nav` (+ `#mobile-menu`, `toggleMenu()`) → `header.hero#main-content`
+`#preloader` → `#nav` (+ `#mobile-menu`, `toggleMenu()`) → `main#main-content > header.hero`
 → marquee (`.marquee-*`, balanced across сайты/AI/1С) → `#work` (cards + a `data-work-intro`
 "discovery" interaction — separate from the preloader) → `#services` → `#process` → `#format`
 → `#about` (has `.about-image-placeholder` — photo still a placeholder) → `#faq`
@@ -206,7 +207,7 @@ micro-CRO pass over services verified 2026-07-02 — «для кого / что 
 
 ## When editing
 1. Read the relevant section/markup in `index.html` first.
-2. Keep everything inline in `index.html`; Russian for all user-facing text.
+2. Preserve the current homepage split: markup/SEO/preloader in `index.html`, styles in `assets/css/home.css`, general interactions in `assets/js/home.js`; Russian for all user-facing text.
 3. Respect the light/warm palette; terracotta is the only warm accent. No new accent colors without asking.
 4. Add `prefers-reduced-motion` fallbacks + `cursor: none` + `aria-label` for anything new.
 5. Test 375 / 768 / desktop; re-check the preloader branches if you touch it.
