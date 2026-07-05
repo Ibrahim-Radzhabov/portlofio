@@ -321,7 +321,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260704-3">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20260705-wow4">
   <meta name="yandex-verification" content="1e2895c9cc7530b7" />
 </head>
 <body>
@@ -391,7 +391,6 @@
   </svg>
 </button>
 
-<canvas class="dot-grid-canvas" id="dotGrid" aria-hidden="true"></canvas>
 <div class="cursor-glow" id="cursorGlow"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -435,11 +434,6 @@
 <main id="main-content">
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-mesh" aria-hidden="true">
-    <div class="hero-mesh-blob"></div>
-    <div class="hero-mesh-blob"></div>
-    <div class="hero-mesh-blob"></div>
-  </div>
   <div class="container">
     <div class="hero-layout">
       <div class="hero-content">
@@ -455,7 +449,7 @@
         <div class="hero-copy hero-anim hero-anim-3" id="heroScenarioCopy" aria-live="polite">
           <h1 id="heroScenarioTitle">
             Сайт, AI и 1С<br>
-            <span class="highlight">в одной<br>системе.</span>
+            <span class="highlight"><span class="highlight-line">в одной системе.</span></span>
           </h1>
           <p class="hero-description" id="heroScenarioDescription">
             Связываю сайт, AI и 1С: заявка с сайта уходит в ответ клиенту и в 1С — без ручного переноса и потерь.
@@ -470,6 +464,25 @@
               </svg>
             </a>
           </div>
+        </div>
+      </div>
+      <div class="hero-visual hero-anim hero-anim-5" aria-hidden="true">
+        <div class="hero-fracture-stage" data-fracture-stage>
+          <svg class="hero-fracture-poster" viewBox="40 38 160 224" fill="none" aria-hidden="true" focusable="false">
+            <path d="M82 76 L158 150" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-opacity="0.72"/>
+            <path d="M158 150 L82 224" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-opacity="0.72"/>
+            <circle cx="82" cy="76" r="20" fill="currentColor"/>
+            <circle cx="158" cy="150" r="24" fill="#B5623C"/>
+            <circle cx="82" cy="224" r="20" fill="currentColor"/>
+            <circle cx="118" cy="112" r="4" fill="#B5623C" opacity="0.55"/>
+            <circle cx="140" cy="150" r="5" fill="#D1743F" opacity="0.7"/>
+            <circle cx="118" cy="188" r="4" fill="#B5623C" opacity="0.55"/>
+          </svg>
+          <canvas class="hero-fracture-canvas" data-fracture-canvas></canvas>
+          <span class="hero-fracture-label" data-fracture-label="layout">сайт</span>
+          <span class="hero-fracture-label" data-fracture-label="raw">AI</span>
+          <span class="hero-fracture-label" data-fracture-label="task">1С</span>
+          <div class="hero-fracture-hint">выберите узел</div>
         </div>
       </div>
       <aside class="hero-anchor hero-anim hero-anim-5" aria-label="Как проходит работа">
@@ -535,6 +548,28 @@
       <div class="section-tag">Работы</div>
       <h2 class="section-title">Реальные проекты, а не макеты.</h2>
       <p class="section-subtitle">Сайты, AI-ассистенты и связки с 1С — рабочие проекты в разных нишах, которые можно открыть и проверить.</p>
+    </div>
+
+    <div class="request-path reveal" data-request-path aria-label="Путь заявки от сайта через AI в 1С">
+      <div class="request-path-copy">
+        <div class="request-path-kicker">Путь заявки</div>
+        <p>Одна нить соединяет то, что обычно живёт отдельно: первый контакт, быстрый ответ и фиксацию в учёте.</p>
+      </div>
+      <div class="request-path-map" aria-hidden="true">
+        <svg viewBox="0 0 760 140" fill="none" role="img">
+          <path class="request-path-rail-bg" d="M70 74 C220 18 304 126 380 74 S540 18 690 74"/>
+          <path class="request-path-rail" data-request-rail d="M70 74 C220 18 304 126 380 74 S540 18 690 74"/>
+          <circle class="request-path-node request-path-node-a" data-request-node cx="70" cy="74" r="13"/>
+          <circle class="request-path-node request-path-node-b" data-request-node cx="380" cy="74" r="16"/>
+          <circle class="request-path-node request-path-node-c" data-request-node cx="690" cy="74" r="13"/>
+          <circle class="request-path-packet" data-request-packet cx="70" cy="74" r="7"/>
+        </svg>
+        <div class="request-path-labels">
+          <span>Сайт</span>
+          <span>AI</span>
+          <span>1С</span>
+        </div>
+      </div>
     </div>
 
     <div class="work-strand">Сайты</div>
@@ -1178,7 +1213,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/home.js?v=20260704-2" defer></script>
+<script src="/assets/js/home.js?v=20260705-wow4" defer></script>
+<script src="/assets/js/hero3d.js?v=20260705-wow3" defer></script>
 
 
 <!-- WORK lightbox (zoom case screenshots) -->

@@ -101,19 +101,6 @@
     });
   });
 
-  // === HERO PARALLAX ===
-  const heroMesh = document.querySelector('.hero-mesh');
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (heroMesh && !prefersReduced) {
-    const parallaxHandler = debounce(function() {
-      const y = window.scrollY;
-      if (y < window.innerHeight) {
-        heroMesh.style.transform = 'translateY(' + (y * 0.3) + 'px)';
-      }
-    }, 5);
-    window.addEventListener('scroll', parallaxHandler, { passive: true });
-  }
-
   // Magnetic button logic moved to global interaction block
 
   // === WORK DISCOVERY SCROLL ===
@@ -284,88 +271,6 @@
     });
   });
 
-  // === DOT GRID (proximity glow — fullscreen) ===
-  (function() {
-    var canvas = document.getElementById('dotGrid');
-    if (!canvas) return;
-    var finePointer = window.matchMedia('(min-width: 641px) and (hover: hover) and (pointer: fine)').matches;
-    if (!finePointer) {
-      canvas.style.display = 'none';
-      return;
-    }
-    var ctx = canvas.getContext('2d');
-    var gap = 28;
-    var baseRadius = 1;
-    var glowRadius = 160;
-    var mx = -9999, my = -9999;
-    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var frameId = 0;
-
-    function resize() {
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.round(window.innerWidth * dpr);
-      canvas.height = Math.round(window.innerHeight * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      requestDraw();
-    }
-
-    function draw() {
-      var w = window.innerWidth;
-      var h = window.innerHeight;
-      ctx.clearRect(0, 0, w, h);
-
-      var scrollY = window.scrollY;
-      // Only draw dots visible in viewport (perf optimization)
-      var offsetY = scrollY % gap;
-
-      for (var x = gap; x < w; x += gap) {
-        for (var y = gap - offsetY; y < h; y += gap) {
-          var dx = x - mx;
-          var dy = y - my;
-          var dist = Math.sqrt(dx * dx + dy * dy);
-          var t = Math.max(0, 1 - dist / glowRadius);
-          var alpha = 0.12 + t * 0.7;
-          var r = baseRadius + t * 1.5;
-
-          var rr = Math.round(163 + t * (26 - 163));
-          var gg = Math.round(158 + t * (58 - 158));
-          var bb = Math.round(152 + t * (42 - 152));
-
-          ctx.beginPath();
-          ctx.arc(x, y, r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(' + rr + ',' + gg + ',' + bb + ',' + alpha + ')';
-          ctx.fill();
-        }
-      }
-    }
-
-    function requestDraw() {
-      if (frameId) return;
-      frameId = requestAnimationFrame(function() {
-        frameId = 0;
-        draw();
-      });
-    }
-
-    window.addEventListener('resize', resize, { passive: true });
-    window.addEventListener('scroll', requestDraw, { passive: true });
-
-    if (finePointer && !reducedMotion) {
-      document.addEventListener('mousemove', function(e) {
-        mx = e.clientX;
-        my = e.clientY;
-        requestDraw();
-      }, { passive: true });
-      document.addEventListener('mouseleave', function() {
-        mx = -9999;
-        my = -9999;
-        requestDraw();
-      }, { passive: true });
-    }
-
-    resize();
-  })();
-
   // === INTERACTION (CURSOR, MAGNETIC, GLASS) ===
   const cursorGlow = document.getElementById('cursorGlow');
   const cursorFollower = document.getElementById('cursorFollower');
@@ -397,10 +302,16 @@
     });
 
     // Interactive elements trigger .active state
-    var interactiveEls = document.querySelectorAll('a, button, .work-card, input, textarea, select');
+    var interactiveEls = document.querySelectorAll('a, button, .work-card, .hero-fracture-stage, input, textarea, select');
     interactiveEls.forEach(function(el) {
-      el.addEventListener('mouseenter', function() { if (cursorFollower) cursorFollower.classList.add('active'); });
-      el.addEventListener('mouseleave', function() { if (cursorFollower) cursorFollower.classList.remove('active'); });
+      el.addEventListener('mouseenter', function() {
+        if (cursorFollower) cursorFollower.classList.add('active');
+        if (cursorGlow) cursorGlow.classList.add('active');
+      });
+      el.addEventListener('mouseleave', function() {
+        if (cursorFollower) cursorFollower.classList.remove('active');
+        if (cursorGlow) cursorGlow.classList.remove('active');
+      });
     });
 
     function animateCursors() {
@@ -444,7 +355,7 @@
   if (heroScenarioButtons.length && heroScenarioTitle && heroScenarioDescription && heroScenarioCopy) {
     var heroScenarios = {
       layout: {
-        title: 'Сайт или магазин,<br><span class="highlight">который продаёт.</span>',
+        title: 'Сайт или магазин,<br><span class="highlight"><span class="highlight-line">который продаёт.</span></span>',
         description: 'Соберу лендинг, сайт или магазин, понятный клиенту: легко найти нужное и оставить заявку или заказ.',
         process: [
           { num: '01', title: 'Понимаю задачу', desc: 'Смотрю, зачем человек пришёл: оставить заявку, выбрать товар, оформить заказ или задать вопрос.' },
@@ -453,7 +364,7 @@
         ]
       },
       raw: {
-        title: 'AI-ассистент,<br><span class="highlight">всегда на связи.</span>',
+        title: 'AI-ассистент,<br><span class="highlight"><span class="highlight-line">всегда на связи.</span></span>',
         description: 'Настраиваю AI-помощника: отвечает клиентам на частые вопросы и передаёт заявку вам — даже ночью и в выходные.',
         process: [
           { num: '01', title: 'Разбираю вопросы', desc: 'Смотрю, что спрашивают чаще всего, что нужно уточнять и когда подключать человека.' },
@@ -462,7 +373,7 @@
         ]
       },
       task: {
-        title: 'Сайт, AI и 1С<br><span class="highlight">в одной<br>системе.</span>',
+        title: 'Сайт, AI и 1С<br><span class="highlight"><span class="highlight-line">в одной системе.</span></span>',
         description: 'Связываю сайт, AI и 1С: заявка с сайта уходит в ответ клиенту и в 1С — без ручного переноса и потерь.',
         process: [
           { num: '01', title: 'Смотрю путь заявки', desc: 'Разбираю, что происходит от формы или сообщения до ответа клиенту и записи в 1С.' },
@@ -474,6 +385,12 @@
     var heroScenarioSwapTimer = null;
     var currentHeroScenario = null;
     var heroScenarioResizeTimer = null;
+    var heroScenarioMetrics = {
+      title: 0,
+      description: 0,
+      copy: 0,
+      processSteps: []
+    };
 
     function updateHeroScenarioButtons(key) {
       heroScenarioButtons.forEach(function(btn) {
@@ -483,26 +400,94 @@
       });
     }
 
-    function applyHeroScenarioContent(key) {
+    function buildHeroProcessHtml(steps) {
+      var html = '';
+      steps.forEach(function(step) {
+        html += '<div class="hero-proc-step"><div class="hero-proc-num">' + step.num + '</div><div><div class="hero-proc-title">' + step.title + '</div><div class="hero-proc-desc">' + step.desc + '</div></div></div>';
+      });
+      return html;
+    }
+
+    function renderHeroScenarioContent(key) {
       heroScenarioTitle.innerHTML = heroScenarios[key].title;
       heroScenarioDescription.textContent = heroScenarios[key].description;
       if (heroProcess && heroScenarios[key].process) {
-        var steps = heroScenarios[key].process;
-        var html = '';
-        steps.forEach(function(step) {
-          html += '<div class="hero-proc-step"><div class="hero-proc-num">' + step.num + '</div><div><div class="hero-proc-title">' + step.title + '</div><div class="hero-proc-desc">' + step.desc + '</div></div></div>';
-        });
-        heroProcess.innerHTML = html;
+        heroProcess.innerHTML = buildHeroProcessHtml(heroScenarios[key].process);
       }
     }
 
-    function measureHeroScenarioHeight() {
-      heroScenarioCopy.classList.remove('is-swapping-out');
-      heroScenarioCopy.style.minHeight = '0px';
-      var currentHeight = heroScenarioCopy.offsetHeight;
-      if (currentHeight > 0) {
-        heroScenarioCopy.style.minHeight = currentHeight + 'px';
+    function applyHeroScenarioMetrics() {
+      if (heroScenarioMetrics.title) heroScenarioTitle.style.minHeight = heroScenarioMetrics.title + 'px';
+      if (heroScenarioMetrics.description) heroScenarioDescription.style.minHeight = heroScenarioMetrics.description + 'px';
+      if (heroScenarioMetrics.copy) heroScenarioCopy.style.minHeight = heroScenarioMetrics.copy + 'px';
+      if (heroProcess && heroScenarioMetrics.processSteps.length) {
+        heroProcess.querySelectorAll('.hero-proc-step').forEach(function(step, index) {
+          if (heroScenarioMetrics.processSteps[index]) {
+            step.style.minHeight = heroScenarioMetrics.processSteps[index] + 'px';
+          }
+        });
       }
+    }
+
+    function applyHeroScenarioContent(key) {
+      renderHeroScenarioContent(key);
+      applyHeroScenarioMetrics();
+      drawHeroHighlight();
+    }
+
+    function drawHeroHighlight() {
+      var highlight = heroScenarioTitle.querySelector('.highlight');
+      if (!highlight || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      highlight.classList.remove('is-drawn');
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          highlight.classList.add('is-drawn');
+        });
+      });
+    }
+
+    function measureHeroScenarioHeight() {
+      var activeButton = document.querySelector('.hero-scenario.is-active');
+      var activeKey = currentHeroScenario || (activeButton ? activeButton.getAttribute('data-scenario') : 'task');
+      var copyVisibility = heroScenarioCopy.style.visibility;
+      var processVisibility = heroProcess ? heroProcess.style.visibility : '';
+
+      heroScenarioCopy.classList.remove('is-swapping-out');
+      heroScenarioCopy.style.visibility = 'hidden';
+      heroScenarioCopy.style.minHeight = '0px';
+      heroScenarioTitle.style.minHeight = '0px';
+      heroScenarioDescription.style.minHeight = '0px';
+      if (heroProcess) heroProcess.style.visibility = 'hidden';
+
+      var nextMetrics = {
+        title: 0,
+        description: 0,
+        copy: 0,
+        processSteps: []
+      };
+
+      Object.keys(heroScenarios).forEach(function(key) {
+        renderHeroScenarioContent(key);
+        nextMetrics.title = Math.max(nextMetrics.title, Math.ceil(heroScenarioTitle.offsetHeight));
+        nextMetrics.description = Math.max(nextMetrics.description, Math.ceil(heroScenarioDescription.offsetHeight));
+        if (heroProcess) {
+          heroProcess.querySelectorAll('.hero-proc-step').forEach(function(step, index) {
+            nextMetrics.processSteps[index] = Math.max(nextMetrics.processSteps[index] || 0, Math.ceil(step.offsetHeight));
+          });
+        }
+      });
+
+      heroScenarioMetrics = nextMetrics;
+      renderHeroScenarioContent(activeKey);
+      applyHeroScenarioMetrics();
+      heroScenarioCopy.style.minHeight = '0px';
+      heroScenarioMetrics.copy = Math.ceil(heroScenarioCopy.offsetHeight);
+      heroScenarioCopy.style.minHeight = heroScenarioMetrics.copy + 'px';
+      heroScenarioCopy.style.visibility = copyVisibility;
+      if (heroProcess) {
+        heroProcess.style.visibility = processVisibility;
+      }
+      drawHeroHighlight();
     }
 
     function setHeroScenario(key, immediate) {
@@ -510,6 +495,7 @@
       if (currentHeroScenario === key && !immediate) return;
 
       updateHeroScenarioButtons(key);
+      if (window.__livingFractureApply) window.__livingFractureApply(key);
 
       if (heroScenarioSwapTimer) clearTimeout(heroScenarioSwapTimer);
 
@@ -517,6 +503,7 @@
         heroScenarioCopy.classList.remove('is-swapping-out');
         applyHeroScenarioContent(key);
         currentHeroScenario = key;
+        if (window.__livingFractureApply) window.__livingFractureApply(key);
         return;
       }
 
@@ -528,6 +515,7 @@
         currentHeroScenario = key;
         heroScenarioCopy.classList.remove('is-swapping-out');
         if (heroProcess) heroProcess.style.opacity = '1';
+        if (window.__livingFractureApply) window.__livingFractureApply(key);
       }, 200);
     }
 
@@ -538,8 +526,10 @@
     });
 
     var initialHeroScenario = document.querySelector('.hero-scenario.is-active');
+    window.__heroScenarioSelect = setHeroScenario;
     setHeroScenario(initialHeroScenario ? initialHeroScenario.getAttribute('data-scenario') : 'task', true);
 
+    measureHeroScenarioHeight();
     requestAnimationFrame(measureHeroScenarioHeight);
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(measureHeroScenarioHeight);
@@ -549,6 +539,57 @@
       heroScenarioResizeTimer = setTimeout(measureHeroScenarioHeight, 120);
     });
   }
+
+  // === REQUEST PATH: site -> AI -> 1C scroll thread ===
+  (function() {
+    var path = document.querySelector('[data-request-path]');
+    if (!path) return;
+    var rail = path.querySelector('[data-request-rail]');
+    var packet = path.querySelector('[data-request-packet]');
+    var nodes = path.querySelectorAll('[data-request-node]');
+    if (!rail || !packet || !nodes.length) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var length = 0;
+
+    function clamp(value, min, max) {
+      return value < min ? min : (value > max ? max : value);
+    }
+
+    function measure() {
+      length = rail.getTotalLength();
+      path.style.setProperty('--request-path-length', length);
+      if (reduced) {
+        rail.style.strokeDashoffset = '0';
+        var end = rail.getPointAtLength(length);
+        packet.setAttribute('cx', end.x);
+        packet.setAttribute('cy', end.y);
+        nodes.forEach(function(node) { node.classList.add('is-on'); });
+      } else {
+        update();
+      }
+    }
+
+    function update() {
+      if (!length || reduced) return;
+      var rect = path.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var progress = clamp((vh - rect.top) / (vh + rect.height * 0.7), 0, 1);
+      var eased = progress * progress * (3 - 2 * progress);
+      var offset = length * (1 - eased);
+      rail.style.strokeDashoffset = offset;
+      var point = rail.getPointAtLength(length * eased);
+      packet.setAttribute('cx', point.x);
+      packet.setAttribute('cy', point.y);
+      nodes.forEach(function(node, index) {
+        var threshold = index === 0 ? 0.04 : (index === 1 ? 0.48 : 0.88);
+        node.classList.toggle('is-on', eased >= threshold);
+      });
+    }
+
+    measure();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', debounce(measure, 120), { passive: true });
+  })();
 
   // === FORM VALIDATION ===
   const form = document.getElementById('contactForm');
