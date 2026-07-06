@@ -39,6 +39,7 @@
   window.toggleMenu = function () {
     const isActive = mobileMenu.classList.toggle('active');
     document.body.style.overflow = isActive ? 'hidden' : '';
+    document.body.classList.toggle('mobile-menu-open', isActive);
     if (menuBtn) {
       menuBtn.setAttribute('aria-expanded', isActive);
       menuBtn.setAttribute('aria-label', isActive ? 'Закрыть меню' : 'Открыть меню');
@@ -786,6 +787,43 @@
     scrollTopBtn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  var stickyContact = document.getElementById('stickyContact');
+  if (stickyContact) {
+    var stickyBlockers = new Map();
+    var stickyBlocked = false;
+
+    function updateStickyContact() {
+      var menuOpen = document.body.classList.contains('mobile-menu-open');
+      var shouldShow = window.scrollY > 640 && !stickyBlocked && !menuOpen;
+      stickyContact.classList.toggle('is-visible', shouldShow);
+      stickyContact.classList.toggle('is-hidden', stickyBlocked || menuOpen);
+    }
+
+    var handleStickyContact = debounce(updateStickyContact, 50);
+    window.addEventListener('scroll', handleStickyContact, { passive: true });
+    window.addEventListener('resize', handleStickyContact, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      var stickyObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          stickyBlockers.set(entry.target, entry.isIntersecting);
+        });
+        stickyBlocked = Array.from(stickyBlockers.values()).some(Boolean);
+        updateStickyContact();
+      }, { threshold: 0.08, rootMargin: '0px 0px -10% 0px' });
+
+      ['#contact', 'footer'].forEach(function(selector) {
+        var el = document.querySelector(selector);
+        if (el) {
+          stickyBlockers.set(el, false);
+          stickyObserver.observe(el);
+        }
+      });
+    }
+
+    updateStickyContact();
   }
 
   // === ACTIVE NAV LINK (highlight current section) ===
