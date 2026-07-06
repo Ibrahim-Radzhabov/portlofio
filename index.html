@@ -321,7 +321,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260707-work-filters">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20260707-product-polish">
   <meta name="yandex-verification" content="1e2895c9cc7530b7" />
 </head>
 <body>
@@ -578,6 +578,14 @@
       <button type="button" class="work-filter" data-work-filter="one-c" aria-pressed="false" data-analytics="project_filter_used">1С</button>
     </div>
 
+    <div class="work-recommend reveal" data-work-recommend data-work-filter-item="site ai telegram one-c">
+      <div>
+        <div class="work-recommend-kicker">Рекомендую смотреть</div>
+        <p data-work-recommend-copy>Если задача пока общая — начните с сайта и формы заявки, а потом решите, нужен ли AI или 1С.</p>
+      </div>
+      <button type="button" class="work-recommend-action" data-work-recommend-action data-work-filter-target="site" data-analytics="personalized_case_click">Показать сайты</button>
+    </div>
+
     <div class="request-path reveal" data-request-path aria-label="Путь заявки от сайта через AI в 1С">
       <div class="request-path-copy">
         <div class="request-path-kicker">Путь заявки</div>
@@ -763,6 +771,53 @@
       </div>
     </article>
 
+    <div class="tg-shop-demo reveal" data-tg-shop data-work-filter-item="telegram ai" aria-label="Мини-демо Telegram-магазина GlowDecor">
+      <div class="tg-shop-copy">
+        <div class="tg-shop-kicker">Живой сценарий mini app</div>
+        <h3>Как выглядит заказ внутри Telegram.</h3>
+        <p data-tg-shop-copy>Клиент выбирает товар, добавляет в корзину и пишет владельцу без выхода из Telegram.</p>
+        <a class="tg-shop-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть GlowDecor ↗</a>
+      </div>
+      <div class="tg-shop-phone" aria-live="polite">
+        <div class="tg-shop-topbar">
+          <span>GlowDecor</span>
+          <b data-tg-shop-total>0 ₽</b>
+        </div>
+        <div class="tg-shop-stage">
+          <div class="tg-shop-screen is-active" data-tg-shop-screen="catalog">
+            <button type="button" class="tg-shop-item" data-tg-shop-step="cart" data-analytics="telegram_demo_step">
+              <span class="tg-shop-thumb"></span>
+              <span><b>Свеча Citrus</b><small>Декор · 1 900 ₽</small></span>
+              <i>+</i>
+            </button>
+            <button type="button" class="tg-shop-item" data-tg-shop-step="cart" data-analytics="telegram_demo_step">
+              <span class="tg-shop-thumb is-alt"></span>
+              <span><b>Ваза Stone</b><small>Интерьер · 2 400 ₽</small></span>
+              <i>+</i>
+            </button>
+          </div>
+          <div class="tg-shop-screen" data-tg-shop-screen="cart">
+            <div class="tg-shop-cart-row"><span>Свеча Citrus</span><b>1 900 ₽</b></div>
+            <div class="tg-shop-cart-row"><span>Доставка</span><b>уточнить</b></div>
+            <button type="button" class="tg-shop-primary" data-tg-shop-step="owner" data-analytics="telegram_demo_step">Написать владельцу</button>
+          </div>
+          <div class="tg-shop-screen" data-tg-shop-screen="owner">
+            <div class="tg-shop-message">
+              <span>Новое сообщение</span>
+              <p>Хочу свечу Citrus. Подскажите, есть ли в наличии?</p>
+            </div>
+            <div class="tg-shop-owner">Контакт клиента скрыт, владелец отвечает через бота.</div>
+            <button type="button" class="tg-shop-primary" data-tg-shop-step="catalog" data-analytics="telegram_demo_step">Собрать ещё заказ</button>
+          </div>
+        </div>
+        <div class="tg-shop-steps" aria-hidden="true">
+          <span class="is-active" data-tg-shop-dot="catalog">Каталог</span>
+          <span data-tg-shop-dot="cart">Корзина</span>
+          <span data-tg-shop-dot="owner">Сообщение</span>
+        </div>
+      </div>
+    </div>
+
     <article class="case-card reveal" data-work-filter-item="ai">
       <div class="case-media">
         <div class="frame-win">
@@ -821,6 +876,27 @@
         </div>
       </div>
     </article>
+
+    <div class="before-after reveal" data-before-after data-work-filter-item="one-c ai telegram" aria-label="Сравнение до и после связки">
+      <div class="before-after-copy">
+        <div class="before-after-kicker">До / после</div>
+        <h3>Хаос заявок или понятный маршрут.</h3>
+        <p>Сдвиньте линию: слева ручной перенос между сайтом, перепиской и 1С; справа один маршрут с уведомлением и фиксацией.</p>
+      </div>
+      <div class="before-after-stage" style="--before-after-pos: 50%;">
+        <div class="before-after-side before-after-after">
+          <span>Связка</span>
+          <b>Сайт → AI/Telegram → 1С</b>
+          <p>Заявка идёт по маршруту, владелец видит уведомление, учёт не живёт отдельно.</p>
+        </div>
+        <div class="before-after-side before-after-before">
+          <span>Хаос</span>
+          <b>Форма · чат · таблица · 1С</b>
+          <p>Данные переносят руками, часть контекста остаётся в переписках.</p>
+        </div>
+        <input class="before-after-range" type="range" min="12" max="88" value="50" aria-label="Показать до или после связки" data-before-after-range data-analytics="before_after_drag">
+      </div>
+    </div>
 
     <div class="work-footer reveal" data-work-filter-item="one-c">
       <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку: сайт → 1С → уведомление или AI. Есть сайт или магазин и учёт в 1С. Нужно понять, что передавать без ручного переноса: заказы, остатки, цены или статусы.">Разобрать похожую связку →</a>
@@ -1456,7 +1532,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/home.js?v=20260707-work-filters" defer></script>
+<script src="/assets/js/home.js?v=20260707-product-polish" defer></script>
 <script src="/assets/js/hero3d.js?v=20260705-wow3" defer></script>
 
 

@@ -407,6 +407,7 @@
         heroCta.setAttribute('data-contact-scenario', key);
         heroCta.setAttribute('data-contact-message', heroScenarios[key].contactMessage || '');
       }
+      document.dispatchEvent(new CustomEvent('hero-scenario-change', { detail: { key: key } }));
     }
 
     function buildHeroProcessHtml(steps) {
@@ -937,12 +938,108 @@
       });
     }
 
+    window.__workFilterApply = applyWorkFilter;
+
     filterButtons.forEach(function(button) {
       button.addEventListener('click', function() {
         applyWorkFilter(button.getAttribute('data-work-filter') || 'all');
       });
     });
+
+    document.querySelectorAll('[data-work-filter-target]').forEach(function(trigger) {
+      trigger.addEventListener('click', function() {
+        var filter = trigger.getAttribute('data-work-filter-target') || 'all';
+        applyWorkFilter(filter);
+        var work = document.getElementById('work');
+        if (work) work.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
   }
+
+  // === PERSONALIZED WORK RECOMMENDATION ===
+  var workRecommend = document.querySelector('[data-work-recommend]');
+  if (workRecommend) {
+    var workRecommendCopy = workRecommend.querySelector('[data-work-recommend-copy]');
+    var workRecommendAction = workRecommend.querySelector('[data-work-recommend-action]');
+    var workRecommendMap = {
+      layout: {
+        copy: 'Вы выбрали сайт или магазин. Ближе всего будут PDR Atelier, Flora Noire, АвтоМаг и другие сайты, где главный результат — понятная заявка.',
+        filter: 'site',
+        label: 'Показать сайты'
+      },
+      raw: {
+        copy: 'Вы выбрали AI. Смотрите MyServerAgentAI и GlowDecor: там видно, как бот помогает отвечать, уведомлять и не терять контекст.',
+        filter: 'ai',
+        label: 'Показать AI'
+      },
+      task: {
+        copy: 'Вы выбрали связку. Смотрите Dag Sport и GlowDecor: заявка не застревает в переписке, а уходит в понятный маршрут.',
+        filter: 'one-c',
+        label: 'Показать 1С'
+      }
+    };
+
+    function updateWorkRecommend(key) {
+      var item = workRecommendMap[key] || workRecommendMap.layout;
+      if (workRecommendCopy) workRecommendCopy.textContent = item.copy;
+      if (workRecommendAction) {
+        workRecommendAction.textContent = item.label;
+        workRecommendAction.setAttribute('data-work-filter-target', item.filter);
+      }
+    }
+
+    document.addEventListener('hero-scenario-change', function(event) {
+      updateWorkRecommend(event.detail && event.detail.key);
+    });
+
+    updateWorkRecommend(document.querySelector('.hero-scenario.is-active')?.getAttribute('data-scenario') || 'layout');
+  }
+
+  // === TELEGRAM SHOP MINI DEMO ===
+  var tgShop = document.querySelector('[data-tg-shop]');
+  if (tgShop) {
+    var tgShopCopy = tgShop.querySelector('[data-tg-shop-copy]');
+    var tgShopTotal = tgShop.querySelector('[data-tg-shop-total]');
+    var tgShopTexts = {
+      catalog: 'Клиент выбирает товар, добавляет в корзину и пишет владельцу без выхода из Telegram.',
+      cart: 'Корзина собирает выбранное в один заказ. Дальше бот переводит клиента к сообщению владельцу.',
+      owner: 'Владелец получает понятный запрос, а личный контакт клиента не раскрывается напрямую.'
+    };
+    var tgShopTotals = {
+      catalog: '0 ₽',
+      cart: '1 900 ₽',
+      owner: 'запрос'
+    };
+
+    function setTgShopStep(step) {
+      tgShop.querySelectorAll('[data-tg-shop-screen]').forEach(function(screen) {
+        screen.classList.toggle('is-active', screen.getAttribute('data-tg-shop-screen') === step);
+      });
+      tgShop.querySelectorAll('[data-tg-shop-dot]').forEach(function(dot) {
+        dot.classList.toggle('is-active', dot.getAttribute('data-tg-shop-dot') === step);
+      });
+      if (tgShopCopy) tgShopCopy.textContent = tgShopTexts[step] || tgShopTexts.catalog;
+      if (tgShopTotal) tgShopTotal.textContent = tgShopTotals[step] || tgShopTotals.catalog;
+    }
+
+    tgShop.querySelectorAll('[data-tg-shop-step]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        setTgShopStep(button.getAttribute('data-tg-shop-step') || 'catalog');
+      });
+    });
+  }
+
+  // === BEFORE / AFTER CASE SLIDER ===
+  document.querySelectorAll('[data-before-after]').forEach(function(block) {
+    var stage = block.querySelector('.before-after-stage');
+    var range = block.querySelector('[data-before-after-range]');
+    if (!stage || !range) return;
+    function updateBeforeAfter() {
+      stage.style.setProperty('--before-after-pos', range.value + '%');
+    }
+    range.addEventListener('input', updateBeforeAfter);
+    updateBeforeAfter();
+  });
 
   // === PROJECT DETAIL SHEET ===
   var projectSheet = document.getElementById('projectSheet');
