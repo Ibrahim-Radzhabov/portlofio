@@ -796,6 +796,59 @@ section {
   filter: drop-shadow(0 0 12px rgba(181, 98, 60, 0.28));
 }
 
+.request-path-loss {
+  position: absolute;
+  top: 42%;
+  left: 31%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 190px;
+  padding: 6px 9px;
+  border: 1px solid rgba(168, 68, 59, 0.16);
+  border-radius: 999px;
+  background: rgba(251, 248, 243, 0.78);
+  color: var(--color-error);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 34px rgba(168, 68, 59, 0.1);
+  transform: translate3d(-50%, -50%, 0);
+  pointer-events: none;
+}
+
+.request-path-loss-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--color-error);
+}
+
+.request-path-loss-dot::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: inherit;
+  border: 1px solid rgba(168, 68, 59, 0.26);
+  animation: lossPulse 1.9s var(--ease-out-expo) infinite;
+}
+
+@keyframes lossPulse {
+  0% {
+    opacity: 0.92;
+    transform: scale(0.58);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
 .request-path-labels {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2583,6 +2636,13 @@ footer .footer-inner {
   .request-path-labels {
     font-size: 10px;
   }
+  .request-path-loss {
+    top: 34%;
+    left: 34%;
+    max-width: 142px;
+    padding: 5px 7px;
+    font-size: 8.5px;
+  }
   
   footer .footer-inner,
   .footer-right,
@@ -3361,6 +3421,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .request-path-rail { stroke-dashoffset: 0 !important; }
   .request-path-node { fill: var(--text-primary); }
   .request-path-node-b { fill: var(--accent-warm); }
+  .request-path-loss-dot::after { animation: none; opacity: 0.55; transform: scale(1); }
   .reveal { opacity: 1; transform: none; transition: none; }
   .cursor-glow, .cursor-follower { display: none; }
   body, a, button, .btn-primary, .btn-secondary, .work-card, .hero-fracture-stage, .nav-links a, .mobile-menu a, .faq-item summary, .scroll-top-btn, .sticky-contact-primary, .sticky-contact-telegram, .skip-nav { cursor: auto; }
