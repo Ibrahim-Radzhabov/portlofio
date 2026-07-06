@@ -600,6 +600,96 @@
     window.addEventListener('resize', debounce(measure, 120), { passive: true });
   })();
 
+  // === BUNDLE CHECK: lightweight two-step route preview ===
+  (function() {
+    var sim = document.querySelector('[data-bundle-sim]');
+    if (!sim) return;
+
+    var state = { situation: 'site', state: 'form' };
+    var title = sim.querySelector('[data-bundle-title]');
+    var copy = sim.querySelector('[data-bundle-copy]');
+    var ai = sim.querySelector('[data-bundle-ai]');
+    var loss = sim.querySelector('[data-bundle-loss]');
+    var mvp = sim.querySelector('[data-bundle-mvp]');
+    var cta = sim.querySelector('[data-bundle-cta]');
+    var nodeInput = sim.querySelector('[data-bundle-node="input"]');
+    var nodeMiddle = sim.querySelector('[data-bundle-node="middle"]');
+    var nodeOutput = sim.querySelector('[data-bundle-node="output"]');
+
+    var situations = {
+      site: {
+        title: 'Контекст теряется до ответа',
+        copy: 'Первый шаг — собрать заявку так, чтобы владелец сразу видел, что нужно клиенту и куда это попадает дальше.',
+        ai: '«Уточню задачу и передам человеку, если нужен расчёт или решение».',
+        loss: 'Потери обычно не в количестве заявок, а в ручном сборе деталей из разных мест.',
+        mvp: 'Форма → Telegram-карточка → понятный следующий шаг.',
+        scenario: 'layout'
+      },
+      reply: {
+        title: 'Ответ приходит слишком поздно',
+        copy: 'Первый шаг — закрыть типовые вопросы и быстро передавать человеку только те обращения, где нужно решение.',
+        ai: '«Отвечу на частый вопрос, уточню детали и передам владельцу, если нужен расчёт».',
+        loss: 'Ориентир потерь — ожидание клиента и повторные уточнения, а не “магический рост продаж”.',
+        mvp: 'Мессенджер → AI-уточнение → Telegram человеку.',
+        scenario: 'raw'
+      },
+      accounting: {
+        title: 'Данные живут отдельно от учёта',
+        copy: 'Первый шаг — определить, какие поля реально нужно передавать в 1С или таблицу, без лишней системы.',
+        ai: '«Соберу недостающие вводные и передам заказ в рабочий маршрут».',
+        loss: 'Ориентир потерь — ручной перенос, ошибки в деталях и повторная сверка.',
+        mvp: 'Заказ → уведомление → запись в 1С или таблице.',
+        scenario: 'task'
+      }
+    };
+
+    var states = {
+      form: { input: 'Форма', middle: 'AI', output: 'Telegram' },
+      chat: { input: 'Чат', middle: 'AI', output: 'Человек' },
+      'one-c': { input: 'Заявка', middle: '1С', output: 'Отчёт' }
+    };
+
+    function render(completed) {
+      var current = situations[state.situation];
+      var flow = states[state.state];
+      if (!current || !flow) return;
+      if (title) title.textContent = current.title;
+      if (copy) copy.textContent = current.copy;
+      if (ai) ai.textContent = current.ai;
+      if (loss) loss.textContent = current.loss;
+      if (mvp) mvp.textContent = current.mvp;
+      if (nodeInput) nodeInput.textContent = flow.input;
+      if (nodeMiddle) nodeMiddle.textContent = flow.middle;
+      if (nodeOutput) nodeOutput.textContent = flow.output;
+      if (cta) {
+        cta.setAttribute('data-contact-scenario', current.scenario);
+        cta.setAttribute('data-contact-message', 'Хочу разобрать связку. Ситуация: ' + current.title.toLowerCase() + '. Что уже есть: ' + flow.input + ' → ' + flow.middle + ' → ' + flow.output + '. Первый MVP: ' + current.mvp);
+      }
+      if (completed) __reach('simulator_completed');
+    }
+
+    sim.querySelectorAll('[data-bundle-step]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var step = btn.getAttribute('data-bundle-step');
+        var value = btn.getAttribute('data-bundle-value');
+        if (!step || !value) return;
+        state[step] = value;
+        sim.querySelectorAll('[data-bundle-step="' + step + '"]').forEach(function(option) {
+          var active = option === btn;
+          option.classList.toggle('is-active', active);
+          option.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        __reach('simulator_started');
+        render(true);
+      });
+    });
+
+    sim.querySelectorAll('[data-bundle-step]').forEach(function(btn) {
+      btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
+    });
+    render(false);
+  })();
+
   // === FORM VALIDATION ===
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
@@ -814,7 +904,7 @@
         updateStickyContact();
       }, { threshold: 0.08, rootMargin: '0px 0px -10% 0px' });
 
-      ['#contact', 'footer'].forEach(function(selector) {
+      ['#bundle-check', '#contact', 'footer'].forEach(function(selector) {
         var el = document.querySelector(selector);
         if (el) {
           stickyBlockers.set(el, false);
