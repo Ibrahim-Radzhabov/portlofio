@@ -461,9 +461,9 @@
           ОТКРЫТ К ПРОЕКТАМ · 1–2 СЛОТА В МЕСЯЦ
         </div>
         <div class="hero-scenarios hero-anim hero-anim-2" role="group" aria-label="Сценарии задачи">
-          <button type="button" class="hero-scenario" data-scenario="layout" aria-pressed="false">Сайт или магазин</button>
-          <button type="button" class="hero-scenario" data-scenario="raw" aria-pressed="false">AI-ассистент</button>
-          <button type="button" class="hero-scenario is-active" data-scenario="task" aria-pressed="true">Сайт + AI + 1С</button>
+          <button type="button" class="hero-scenario" data-scenario="layout" data-analytics="hero_path_run" aria-pressed="false">Сайт или магазин</button>
+          <button type="button" class="hero-scenario" data-scenario="raw" data-analytics="hero_path_run" aria-pressed="false">AI-ассистент</button>
+          <button type="button" class="hero-scenario is-active" data-scenario="task" data-analytics="hero_path_run" aria-pressed="true">Сайт + AI + 1С</button>
         </div>
         <div class="hero-copy hero-anim hero-anim-3" id="heroScenarioCopy" aria-live="polite">
           <h1 id="heroScenarioTitle">
@@ -622,35 +622,35 @@
           <line x1="34" y1="18" x2="100" y2="-6" stroke="rgba(245,240,232,0.36)" stroke-width="0.15"/>
         </svg>
         <div class="work-discovery-rail" aria-hidden="true">
-          <a class="work-discovery-card is-active" data-work-card tabindex="-1" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card is-active" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener">
             <img src="assets/work/pdr.webp" loading="lazy" decoding="async" alt="PDR Atelier — сайт для автосервиса">
             <span><b>PDR Atelier</b><small>Автосервис</small></span>
           </a>
-          <a class="work-discovery-card" data-work-card tabindex="-1" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener">
             <img src="assets/work/flora.webp" loading="lazy" decoding="async" alt="Flora Noire — флористика">
             <span><b>Flora Noire</b><small>Флористика</small></span>
           </a>
-          <a class="work-discovery-card" data-work-card tabindex="-1" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener">
             <img src="assets/work/avtozap.webp" loading="lazy" decoding="async" alt="АвтоМаг — автозапчасти">
             <span><b>АвтоМаг</b><small>Автозапчасти</small></span>
           </a>
-          <a class="work-discovery-card" data-work-card tabindex="-1" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener">
             <img src="assets/work/barber.webp" loading="lazy" decoding="async" alt="THRONE — барбершоп">
             <span><b>THRONE</b><small>Барбершоп</small></span>
           </a>
-          <a class="work-discovery-card" data-work-card tabindex="-1" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener">
             <img src="assets/work/rihau.webp" loading="lazy" decoding="async" alt="Rihau — окна и монтаж">
             <span><b>Rihau</b><small>Окна</small></span>
           </a>
-          <a class="work-discovery-card" data-work-card tabindex="-1" href="https://baby-massage05.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://baby-massage05.ru/" target="_blank" rel="noopener">
             <img src="assets/work/baby-massage.webp" loading="lazy" decoding="async" alt="Кроха и Я — детский массаж">
             <span><b>Кроха и Я</b><small>Детский массаж</small></span>
           </a>
-          <a class="work-discovery-card" data-work-card tabindex="-1" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener">
             <img src="assets/work/qlean.webp" loading="lazy" decoding="async" alt="Qlean — клининг">
             <span><b>Qlean</b><small>Клининг</small></span>
           </a>
-          <a class="work-discovery-card" data-work-card tabindex="-1" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener">
+          <a class="work-discovery-card" data-work-card data-analytics="project_card_click" tabindex="-1" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener">
             <img src="assets/work/fixlab.webp" loading="lazy" decoding="async" alt="FixLab — сервисный центр">
             <span><b>FixLab</b><small>Сервис</small></span>
           </a>
@@ -660,7 +660,7 @@
     </div>
 
     <ul class="work-index reveal">
-      <li><a class="work-index-item" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">PDR Atelier</span>
           <span class="work-index-out">Удаление вмятин без покраски — услуги и заявка с первого экрана</span>
@@ -668,7 +668,7 @@
         <span class="work-index-niche">Автосервис</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
       </a></li>
-      <li><a class="work-index-item" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Flora Noire</span>
           <span class="work-index-out">Витрина букетов и состав, заявка на доставку</span>
@@ -676,7 +676,7 @@
         <span class="work-index-niche">Флористика</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
       </a></li>
-      <li><a class="work-index-item" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">АвтоМаг</span>
           <span class="work-index-out">Каталог с подбором запчастей и заявкой</span>
@@ -684,7 +684,7 @@
         <span class="work-index-niche">Автозапчасти</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
       </a></li>
-      <li><a class="work-index-item" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">THRONE</span>
           <span class="work-index-out">Услуги, мастера и онлайн-запись</span>
@@ -692,7 +692,7 @@
         <span class="work-index-niche">Барбершоп</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
       </a></li>
-      <li><a class="work-index-item" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Rihau</span>
           <span class="work-index-out">Заявка на замер и расчёт окон</span>
@@ -700,7 +700,7 @@
         <span class="work-index-niche">Окна и монтаж</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
       </a></li>
-      <li><a class="work-index-item" href="https://baby-massage05.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://baby-massage05.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Кроха и Я</span>
           <span class="work-index-out">Услуги и запись; есть развёрнутый кейс</span>
@@ -708,7 +708,7 @@
         <span class="work-index-niche">Детский массаж</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
       </a></li>
-      <li><a class="work-index-item" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Qlean</span>
           <span class="work-index-out">Услуги уборки — расчёт и заявка</span>
@@ -716,7 +716,7 @@
         <span class="work-index-niche">Клининг</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
       </a></li>
-      <li><a class="work-index-item" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener">
+      <li><a class="work-index-item" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">FixLab</span>
           <span class="work-index-out">Ремонт техники — заявка на диагностику</span>
@@ -744,7 +744,7 @@
         <h3 class="case-title">GlowDecor — декор и свечи</h3>
         <p class="case-text">Каталог, категории и корзина прямо в Telegram. Поддержка с <b>анонимной переадресацией</b>: клиент пишет боту — сообщение уходит владельцу, личный контакт скрыт.</p>
         <div class="case-foot">
-          <a class="case-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener">Открыть бота ↗</a>
+          <a class="case-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть бота ↗</a>
           <span class="case-metric">десктоп + мобайл</span>
         </div>
       </div>
@@ -801,15 +801,15 @@
         <h3 class="case-title">dag-sport.ru — спорттовары</h3>
         <p class="case-text"><b>Было:</b> заказы переносили в 1С вручную, теряли время. <b>Стало:</b> заказ с сайта сам падает в 1С УТ документом, владелец сразу получает уведомление в Telegram.</p>
         <div class="case-foot">
-          <a class="case-link" href="https://dag-sport.ru" target="_blank" rel="noopener">dag-sport.ru ↗</a>
-          <a class="case-link" href="/cases/dag-sport.html">Разбор кейса →</a>
+          <a class="case-link" href="https://dag-sport.ru" target="_blank" rel="noopener" data-analytics="case_cta_click">dag-sport.ru ↗</a>
+          <a class="case-link" href="/cases/dag-sport.html" data-analytics="case_cta_click">Разбор кейса →</a>
         </div>
       </div>
     </article>
 
     <div class="work-footer reveal">
       <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку: сайт → 1С → уведомление или AI. Есть сайт или магазин и учёт в 1С. Нужно понять, что передавать без ручного переноса: заказы, остатки, цены или статусы.">Разобрать похожую связку →</a>
-      <a class="work-footer-link" href="/cases/baby-massage.html">
+      <a class="work-footer-link" href="/cases/baby-massage.html" data-analytics="case_cta_click">
         <span class="link-text">Смотреть кейс «Кроха и Я»</span>
         <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M7 17L17 7M17 7H7M17 7v10"/>
@@ -885,10 +885,10 @@
     </div>
 
     <div class="services-links reveal">
-      <a href="/services/landing.html">Лендинг и сайты</a>
-      <a href="/services/telegram-bot.html">Telegram-бот</a>
-      <a href="/services/ai-assistant.html">AI-ассистент</a>
-      <a href="/services/integraciya-1c.html">Интеграция с 1С</a>
+      <a href="/services/landing.html" data-analytics="service_link_click">Лендинг и сайты</a>
+      <a href="/services/telegram-bot.html" data-analytics="service_link_click">Telegram-бот</a>
+      <a href="/services/ai-assistant.html" data-analytics="service_link_click">AI-ассистент</a>
+      <a href="/services/integraciya-1c.html" data-analytics="service_link_click">Интеграция с 1С</a>
     </div>
   </div>
 </section>
@@ -1270,7 +1270,7 @@
           </div>
           <div>
             <div class="contact-info-label">Telegram</div>
-            <div class="contact-info-value"><a href="https://t.me/rdvigm" target="_blank" rel="noopener">@rdvigm</a></div>
+            <div class="contact-info-value"><a href="https://t.me/rdvigm" target="_blank" rel="noopener" data-analytics="contact_telegram_click">@rdvigm</a></div>
           </div>
         </div>
         <div class="contact-info-item" style="margin-top: 16px;">
@@ -1356,7 +1356,7 @@
           <li><a href="#contact">Контакты</a></li>
         </ul>
         <div class="footer-links">
-          <a href="https://t.me/rdvigm" aria-label="Telegram" target="_blank" rel="me noopener">
+          <a href="https://t.me/rdvigm" aria-label="Telegram" target="_blank" rel="me noopener" data-analytics="footer_telegram_click">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.36 8.627-.168.9-.5 1.201-.82 1.23-.696.065-1.226-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472z"/></svg>
           </a>
           <a href="https://github.com/Ibrahim-Radzhabov" aria-label="GitHub" target="_blank" rel="me noopener">
@@ -1370,7 +1370,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/home.js?v=20260706-sticky-contact" defer></script>
+<script src="/assets/js/home.js?v=20260707-analytics" defer></script>
 <script src="/assets/js/hero3d.js?v=20260705-wow3" defer></script>
 
 

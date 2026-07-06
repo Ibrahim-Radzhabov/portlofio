@@ -868,7 +868,7 @@
     }
   }
 
-  // === Метрика: клики по Telegram CTA + .btn-primary CTA ===
+  // === Метрика: клики по Telegram CTA + CTA + продуктовым интерактивам ===
   document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){
     a.addEventListener('click', function(){ __reach('telegram_click'); });
   });
@@ -881,6 +881,11 @@
       if (goal) __reach(goal);
     });
   });
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.addEventListener('toggle', function() {
+      if (item.open) __reach('faq_open');
+    });
+  });
 
 })();
 
@@ -891,7 +896,7 @@
   function close() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); im.removeAttribute('src'); }
   document.addEventListener('click', function (e) {
     var z = e.target.closest('[data-zoom]');
-    if (z) { im.src = z.getAttribute('src'); im.alt = z.getAttribute('alt') || ''; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); return; }
+    if (z) { try { if (typeof ym === 'function') ym(110282088, 'reachGoal', 'project_modal_open'); } catch (err) {} im.src = z.getAttribute('src'); im.alt = z.getAttribute('alt') || ''; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); return; }
     if (e.target === lb || e.target === im) close();
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
