@@ -457,12 +457,13 @@
         </div>
         <div class="hero-actions hero-anim hero-anim-4">
           <div class="magnetic-wrap" id="magneticBtn">
-            <a href="#contact" class="btn-primary" id="heroCta">
-              Обсудить задачу
+            <a href="#contact" class="btn-primary" id="heroCta" data-contact-source="hero" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу разобрать путь заявки: сайт, AI и 1С. Сейчас есть сайт, таблица, 1С или переписка. Нужно понять, где теряется заявка и что можно связать без ручного переноса.">
+              Разобрать путь заявки
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
+            <p class="hero-cta-note">Отвечаю в течение дня · 1–2 слота в месяц</p>
           </div>
         </div>
       </div>
@@ -756,7 +757,7 @@
       <div class="case-pilot">AI-продавец на Avito <i>скоро</i></div>
     </div>
 
-    <a class="case-cta reveal" href="#contact">Нужен бот или AI-агент? Обсудить задачу →</a>
+    <a class="case-cta reveal" href="#contact" data-contact-source="work_ai" data-contact-scenario="raw" data-analytics="razbor_ask_click" data-contact-message="Интересует AI-ассистент. Хочу понять, какие вопросы клиентов можно закрыть автоматически, а где лучше передавать человеку. Сейчас обращения приходят через сайт, Telegram, WhatsApp, Avito или другой канал.">Нужен бот или AI-агент? Разобрать путь заявки →</a>
 
     <div class="work-strand">1С</div>
 
@@ -788,7 +789,7 @@
     </article>
 
     <div class="work-footer reveal">
-      <a class="btn-primary" href="#contact">Обсудить похожую задачу →</a>
+      <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку: сайт → 1С → уведомление или AI. Есть сайт или магазин и учёт в 1С. Нужно понять, что передавать без ручного переноса: заказы, остатки, цены или статусы.">Разобрать похожую связку →</a>
       <a class="work-footer-link" href="/cases/baby-massage.html">
         <span class="link-text">Смотреть кейс «Кроха и Я»</span>
         <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -817,7 +818,7 @@
           <li class="bento-scenario">Уже есть сайт? Смотрю, что мешает — структура, тексты, скорость, форма — и довожу до рабочего вида.</li>
           <li class="bento-scenario">Если нужно, заявки с сайта сразу уходят в AI-ответ или в 1С, без ручного переноса.</li>
         </ul>
-        <a class="bento-link" href="#contact">
+        <a class="bento-link" href="#contact" data-contact-source="service_site" data-contact-scenario="layout" data-analytics="razbor_ask_click" data-contact-message="Интересует сайт или магазин. Нужно понять структуру, форму заявки и путь клиента. Сейчас может быть ссылка, макет или только идея. Цель — заявки, заказы, запись или каталог.">
           <span class="link-text">Обсудить сайт</span>
           <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -834,7 +835,7 @@
           <li class="bento-scenario">Он уточняет, что нужно человеку, и передает заявку вам уже с деталями — или дальше в работу.</li>
           <li class="bento-scenario">Это не замена вам, а способ не терять тех, кто написал первым и ждет ответа.</li>
         </ul>
-        <a class="bento-link" href="#contact">
+        <a class="bento-link" href="#contact" data-contact-source="service_ai" data-contact-scenario="raw" data-analytics="razbor_ask_click" data-contact-message="Интересует AI-ассистент. Нужно разобрать, какие вопросы он может закрывать и когда должен передавать человеку. Клиенты пишут через сайт, Telegram, WhatsApp или другой канал.">
           <span class="link-text">Обсудить AI</span>
           <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -851,7 +852,7 @@
           <li class="bento-scenario">Делаю так, чтобы рутина шла сама — отчеты, печатные формы, повторяющиеся операции без ручного труда.</li>
           <li class="bento-scenario">Подключаю 1С к сайту, магазину или маркетплейсам: заказы попадают в систему сами, без таблиц и ручного переноса.</li>
         </ul>
-        <a class="bento-link" href="#contact">
+        <a class="bento-link" href="#contact" data-contact-source="service_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Интересует 1С или связка сайта с 1С. Уже есть Розница, УТ или другая конфигурация. Нужно убрать ручной перенос заказов, остатков, цен, документов или отчётов.">
           <span class="link-text">Обсудить 1С</span>
           <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -915,6 +916,36 @@
         <div class="process-info">Сайт готов к запуску, 1С работает в вашем процессе. Всё остаётся у вас: доступы, логика, без зависимости от меня.</div>
       </li>
     </ol>
+  </div>
+</section>
+
+<!-- LIMITS -->
+<section id="limits" class="limits-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Честный разбор</div>
+      <h2 class="section-title">Что я не обещаю<br><span>и что делаю вместо.</span></h2>
+    </div>
+    <div class="limits-grid">
+      <article class="limit-card reveal">
+        <div class="limit-kicker">Не обещаю</div>
+        <h3>AI вместо человека</h3>
+        <p>AI не должен выдумывать ответы или брать на себя решения, где нужен владелец или менеджер.</p>
+        <div class="limit-instead">Делаю так: ассистент отвечает на типовые вопросы, уточняет вводные и передаёт человеку, когда нужна ответственность.</div>
+      </article>
+      <article class="limit-card reveal reveal-delay-1">
+        <div class="limit-kicker">Не обещаю</div>
+        <h3>Рост заявок без контекста</h3>
+        <p>Нельзя честно гарантировать продажи только после редизайна, интеграции или подключения бота.</p>
+        <div class="limit-instead">Делаю так: смотрю путь заявки, убираю потери и фиксирую, где реально можно повлиять на конверсию.</div>
+      </article>
+      <article class="limit-card reveal reveal-delay-2">
+        <div class="limit-kicker">Не обещаю</div>
+        <h3>Большую систему с первого дня</h3>
+        <p>Если задачу можно решить формой, уведомлением или простым обменом, не раздуваю проект.</p>
+        <div class="limit-instead">Делаю так: начинаю с минимальной рабочей связки, которую можно проверить и развивать дальше.</div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1095,8 +1126,8 @@
   <div class="container">
     <div class="contact-grid">
       <div class="contact-copy reveal">
-        <div class="section-tag">Показать задачу</div>
-        <h2 class="contact-heading">Можно начать<br>с короткого <span>описания задачи.</span></h2>
+        <div class="section-tag">Разбор пути заявки</div>
+        <h2 class="contact-heading">Можно начать<br>с короткого <span>описания связки.</span></h2>
         <div class="contact-info-item" style="margin-bottom: 16px;">
           <div class="contact-info-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1133,7 +1164,9 @@
       </div>
       
       <form class="contact-form reveal reveal-delay-1" id="contactForm" novalidate>
-        <p class="contact-form-intro">Если задача пока сырая — это нормально. Опишите, что есть сейчас: сайт, магазин, AI-ассистент, 1С, таблицы, обращения или просто что не работает.</p>
+        <p class="contact-form-intro">Если задача пока сырая — это нормально. Опишите, что есть сейчас: сайт, магазин, AI-ассистент, 1С, таблицы, обращения или просто что не работает. Этот сайт собран по тому же принципу: форма передаёт мне контекст, а дальше я разбираю путь заявки вручную.</p>
+        <input type="hidden" id="contactSource" name="source_block" value="">
+        <input type="hidden" id="contactScenario" name="scenario" value="">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Имя</label>
@@ -1161,7 +1194,8 @@
           <span class="btn-loader"><span></span><span></span><span></span></span>
         </button>
         <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-          <p class="contact-note" style="margin-top: 0; font-size: 14.5px; line-height: 1.45; color: var(--text-secondary);">Обычно отвечаю в течение дня — после того как разберусь в задаче. Конфиденциальные данные лучше не отправлять в первом сообщении.</p>
+          <p class="contact-note" style="margin-top: 0; font-size: 14.5px; line-height: 1.45; color: var(--text-secondary);">Обычно отвечаю в течение дня. Если AI или 1С не нужны, скажу прямо — иногда достаточно нормальной формы, уведомления и понятного маршрута заявки.</p>
+          <p class="contact-note" style="margin-top: 0; font-size: 13.5px; line-height: 1.45; color: var(--text-tertiary);">Конфиденциальные данные лучше не отправлять в первом сообщении.</p>
         </div>
       </form>
     </div>

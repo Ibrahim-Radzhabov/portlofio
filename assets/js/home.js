@@ -351,12 +351,14 @@
   var heroScenarioDescription = document.getElementById('heroScenarioDescription');
   var heroScenarioCopy = document.getElementById('heroScenarioCopy');
   var heroProcess = document.querySelector('.hero-process');
+  var heroCta = document.getElementById('heroCta');
 
   if (heroScenarioButtons.length && heroScenarioTitle && heroScenarioDescription && heroScenarioCopy) {
     var heroScenarios = {
       layout: {
         title: 'Сайт или магазин,<br><span class="highlight"><span class="highlight-line">который продаёт.</span></span>',
         description: 'Соберу лендинг, сайт или магазин, понятный клиенту: легко найти нужное и оставить заявку или заказ.',
+        contactMessage: 'Хочу разобрать путь заявки на сайте или в магазине. Сейчас может быть ссылка, макет или только идея. Цель — заявки, заказы, запись или каталог. Нужно понять, что мешает сейчас.',
         process: [
           { num: '01', title: 'Понимаю задачу', desc: 'Смотрю, зачем человек пришёл: оставить заявку, выбрать товар, оформить заказ или задать вопрос.' },
           { num: '02', title: 'Собираю структуру', desc: 'Продумываю первый экран, каталог или услуги, доверие, контакты и понятный следующий шаг.' },
@@ -366,6 +368,7 @@
       raw: {
         title: 'AI-ассистент,<br><span class="highlight"><span class="highlight-line">всегда на связи.</span></span>',
         description: 'Настраиваю AI-помощника: отвечает клиентам на частые вопросы и передаёт заявку вам — даже ночью и в выходные.',
+        contactMessage: 'Хочу разобрать AI-ассистента. Нужно понять, какие вопросы он может закрывать, что уточнять у клиента и когда передавать человеку. Канал — сайт, Telegram, WhatsApp или другой.',
         process: [
           { num: '01', title: 'Разбираю вопросы', desc: 'Смотрю, что спрашивают чаще всего, что нужно уточнять и когда подключать человека.' },
           { num: '02', title: 'Настраиваю ответы', desc: 'Логика ответов, границы и передача заявки вам или сразу в работу.' },
@@ -375,6 +378,7 @@
       task: {
         title: 'Сайт, AI и 1С<br><span class="highlight"><span class="highlight-line">в одной системе.</span></span>',
         description: 'Связываю сайт, AI и 1С: заявка с сайта уходит в ответ клиенту и в 1С — без ручного переноса и потерь.',
+        contactMessage: 'Хочу разобрать путь заявки: сайт, AI и 1С. Сейчас есть сайт, таблица, 1С или переписка. Нужно понять, где теряется заявка и что можно связать без ручного переноса.',
         process: [
           { num: '01', title: 'Смотрю путь заявки', desc: 'Разбираю, что происходит от формы или сообщения до ответа клиенту и записи в 1С.' },
           { num: '02', title: 'Собираю связку', desc: 'Соединяю сайт, AI-ответы и 1С в один поток, без ручного переноса.' },
@@ -398,6 +402,10 @@
         btn.classList.toggle('is-active', isActive);
         btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
+      if (heroCta && heroScenarios[key]) {
+        heroCta.setAttribute('data-contact-scenario', key);
+        heroCta.setAttribute('data-contact-message', heroScenarios[key].contactMessage || '');
+      }
     }
 
     function buildHeroProcessHtml(steps) {
@@ -596,6 +604,53 @@
   const submitBtn = document.getElementById('submitBtn');
 
   if (form) {
+    var messageField = form.querySelector('#message');
+    var contactSource = form.querySelector('#contactSource');
+    var contactScenario = form.querySelector('#contactScenario');
+
+    function setContactContext(trigger) {
+      if (!trigger || !messageField) return;
+      var source = trigger.getAttribute('data-contact-source') || '';
+      var scenario = trigger.getAttribute('data-contact-scenario') || '';
+      var preset = trigger.getAttribute('data-contact-message') || '';
+      if (contactSource) contactSource.value = source;
+      if (contactScenario) contactScenario.value = scenario;
+      if (preset && !messageField.value.trim()) {
+        messageField.value = preset;
+        messageField.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+
+    document.querySelectorAll('[data-contact-message], [data-contact-source], [data-contact-scenario]').forEach(function(trigger) {
+      trigger.addEventListener('click', function() {
+        setContactContext(trigger);
+      });
+    });
+
+    var contactPresets = {
+      'dag-sport': {
+        source: 'case_dag_sport',
+        scenario: 'task',
+        message: 'Хочу похожую связку для сайта и 1С. Сейчас есть сайт или магазин и учёт в 1С. Нужно понять, какие данные передавать автоматически и где теряются заявки или заказы.'
+      }
+    };
+
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var presetKey = params.get('contact');
+      var preset = presetKey ? contactPresets[presetKey] : null;
+      if (preset) {
+        if (contactSource) contactSource.value = preset.source;
+        if (contactScenario) contactScenario.value = preset.scenario;
+        if (messageField && !messageField.value.trim()) {
+          messageField.value = preset.message;
+          messageField.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
+    } catch (err) {
+      // URLSearchParams can fail in unusual embedded contexts; form stays usable.
+    }
+
     function validateEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
@@ -781,6 +836,12 @@
   });
   document.querySelectorAll('.btn-primary:not([type=submit]):not(#submitBtn)').forEach(function(a){
     a.addEventListener('click', function(){ __reach('cta_click'); });
+  });
+  document.querySelectorAll('[data-analytics]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var goal = el.getAttribute('data-analytics');
+      if (goal) __reach(goal);
+    });
   });
 
 })();
