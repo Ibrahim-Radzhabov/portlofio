@@ -321,7 +321,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260707-bundle-sim">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20260707-work-filters">
   <meta name="yandex-verification" content="1e2895c9cc7530b7" />
 </head>
 <body>
@@ -570,6 +570,14 @@
       <p class="section-subtitle">Сайты, AI-ассистенты и связки с 1С — рабочие проекты в разных нишах, которые можно открыть и проверить.</p>
     </div>
 
+    <div class="work-filters reveal" data-work-filters aria-label="Фильтр работ">
+      <button type="button" class="work-filter is-active" data-work-filter="all" aria-pressed="true" data-analytics="project_filter_used">Все</button>
+      <button type="button" class="work-filter" data-work-filter="site" aria-pressed="false" data-analytics="project_filter_used">Сайты</button>
+      <button type="button" class="work-filter" data-work-filter="ai" aria-pressed="false" data-analytics="project_filter_used">AI</button>
+      <button type="button" class="work-filter" data-work-filter="telegram" aria-pressed="false" data-analytics="project_filter_used">Telegram</button>
+      <button type="button" class="work-filter" data-work-filter="one-c" aria-pressed="false" data-analytics="project_filter_used">1С</button>
+    </div>
+
     <div class="request-path reveal" data-request-path aria-label="Путь заявки от сайта через AI в 1С">
       <div class="request-path-copy">
         <div class="request-path-kicker">Путь заявки</div>
@@ -596,9 +604,9 @@
       </div>
     </div>
 
-    <div class="work-strand">Сайты</div>
+    <div class="work-strand" data-work-filter-item="site">Сайты</div>
 
-    <div class="work-feature" data-work-feature>
+    <div class="work-feature" data-work-feature data-work-filter-item="site">
       <div class="work-feature-sticky">
         <div class="work-discovery-intro" data-work-intro aria-hidden="true">
           <div class="work-discovery-intro-copy" data-work-intro-copy>
@@ -663,7 +671,7 @@
       </div>
     </div>
 
-    <ul class="work-index reveal">
+    <ul class="work-index reveal" data-work-filter-item="site">
       <li><a class="work-index-item" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">PDR Atelier</span>
@@ -671,7 +679,7 @@
         </span>
         <span class="work-index-niche">Автосервис</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="pdr" data-analytics="project_modal_open">Разбор</button></li>
       <li><a class="work-index-item" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Flora Noire</span>
@@ -679,7 +687,7 @@
         </span>
         <span class="work-index-niche">Флористика</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="flora" data-analytics="project_modal_open">Разбор</button></li>
       <li><a class="work-index-item" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">АвтоМаг</span>
@@ -687,7 +695,7 @@
         </span>
         <span class="work-index-niche">Автозапчасти</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="avtozap" data-analytics="project_modal_open">Разбор</button></li>
       <li><a class="work-index-item" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">THRONE</span>
@@ -695,7 +703,7 @@
         </span>
         <span class="work-index-niche">Барбершоп</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="barber" data-analytics="project_modal_open">Разбор</button></li>
       <li><a class="work-index-item" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Rihau</span>
@@ -703,7 +711,7 @@
         </span>
         <span class="work-index-niche">Окна и монтаж</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="rihau" data-analytics="project_modal_open">Разбор</button></li>
       <li><a class="work-index-item" href="https://baby-massage05.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Кроха и Я</span>
@@ -711,7 +719,7 @@
         </span>
         <span class="work-index-niche">Детский массаж</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="baby" data-analytics="project_modal_open">Разбор</button></li>
       <li><a class="work-index-item" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Qlean</span>
@@ -719,7 +727,7 @@
         </span>
         <span class="work-index-niche">Клининг</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="qlean" data-analytics="project_modal_open">Разбор</button></li>
       <li><a class="work-index-item" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">FixLab</span>
@@ -727,12 +735,12 @@
         </span>
         <span class="work-index-niche">Сервисный центр</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="fixlab" data-analytics="project_modal_open">Разбор</button></li>
     </ul>
 
-    <div class="work-strand">AI и автоматизация</div>
+    <div class="work-strand" data-work-filter-item="ai telegram">AI и автоматизация</div>
 
-    <article class="case-card reveal">
+    <article class="case-card reveal" data-work-filter-item="ai telegram">
       <div class="case-media">
         <div class="frame-phone">
           <img class="case-shot" src="assets/work/decor-mob-catalog.webp" width="720" height="1558" loading="lazy" decoding="async" data-zoom alt="GlowDecor — каталог магазина декора и свечей в Telegram, мобильная версия">
@@ -749,12 +757,13 @@
         <p class="case-text">Каталог, категории и корзина прямо в Telegram. Поддержка с <b>анонимной переадресацией</b>: клиент пишет боту — сообщение уходит владельцу, личный контакт скрыт.</p>
         <div class="case-foot">
           <a class="case-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть бота ↗</a>
+          <button type="button" class="case-link case-detail-btn" data-project-detail="decor" data-analytics="project_modal_open">Разбор →</button>
           <span class="case-metric">десктоп + мобайл</span>
         </div>
       </div>
     </article>
 
-    <article class="case-card reveal">
+    <article class="case-card reveal" data-work-filter-item="ai">
       <div class="case-media">
         <div class="frame-win">
           <div class="frame-win-bar"><i></i><i></i><i></i></div>
@@ -770,21 +779,22 @@
         <h3 class="case-title">MyServerAgentAI</h3>
         <p class="case-text">Спрашиваю на русском — проверяет 8 сайтов, сервер, Caddy, SSL и логи, шлёт суточные сводки, может перезапустить сервис. Сайт упал — <b>предупредит раньше клиента</b>. Работает 24/7.</p>
         <div class="case-foot">
+          <button type="button" class="case-link case-detail-btn" data-project-detail="monitor" data-analytics="project_modal_open">Разбор →</button>
           <span class="case-metric">8/8 онлайн · ответ ~350 мс · аптайм 3 недели</span>
         </div>
       </div>
     </article>
 
-    <div class="case-pilots reveal">
+    <div class="case-pilots reveal" data-work-filter-item="ai telegram">
       <div class="case-pilot">AI-ассистент · Telegram + WhatsApp <i>пилот</i></div>
       <div class="case-pilot">AI-продавец на Avito <i>скоро</i></div>
     </div>
 
-    <a class="case-cta reveal" href="#contact" data-contact-source="work_ai" data-contact-scenario="raw" data-analytics="razbor_ask_click" data-contact-message="Интересует AI-ассистент. Хочу понять, какие вопросы клиентов можно закрыть автоматически, а где лучше передавать человеку. Сейчас обращения приходят через сайт, Telegram, WhatsApp, Avito или другой канал.">Нужен бот или AI-агент? Разобрать путь заявки →</a>
+    <a class="case-cta reveal" href="#contact" data-work-filter-item="ai telegram" data-contact-source="work_ai" data-contact-scenario="raw" data-analytics="razbor_ask_click" data-contact-message="Интересует AI-ассистент. Хочу понять, какие вопросы клиентов можно закрыть автоматически, а где лучше передавать человеку. Сейчас обращения приходят через сайт, Telegram, WhatsApp, Avito или другой канал.">Нужен бот или AI-агент? Разобрать путь заявки →</a>
 
-    <div class="work-strand">1С</div>
+    <div class="work-strand" data-work-filter-item="one-c">1С</div>
 
-    <article class="case-card reveal">
+    <article class="case-card reveal" data-work-filter-item="one-c">
       <div class="case-media">
         <svg class="case-flow" viewBox="0 0 210 150" role="img" aria-label="Схема: заказ с сайта на Битрикс попадает в 1С УТ документом и шлёт уведомление в Telegram">
           <line x1="40" y1="22" x2="40" y2="66" stroke="#141210" stroke-width="2"/>
@@ -807,11 +817,12 @@
         <div class="case-foot">
           <a class="case-link" href="https://dag-sport.ru" target="_blank" rel="noopener" data-analytics="case_cta_click">dag-sport.ru ↗</a>
           <a class="case-link" href="/cases/dag-sport.html" data-analytics="case_cta_click">Разбор кейса →</a>
+          <button type="button" class="case-link case-detail-btn" data-project-detail="dag" data-analytics="project_modal_open">Коротко →</button>
         </div>
       </div>
     </article>
 
-    <div class="work-footer reveal">
+    <div class="work-footer reveal" data-work-filter-item="one-c">
       <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку: сайт → 1С → уведомление или AI. Есть сайт или магазин и учёт в 1С. Нужно понять, что передавать без ручного переноса: заказы, остатки, цены или статусы.">Разобрать похожую связку →</a>
       <a class="work-footer-link" href="/cases/baby-massage.html" data-analytics="case_cta_click">
         <span class="link-text">Смотреть кейс «Кроха и Я»</span>
@@ -1445,11 +1456,39 @@
   </div>
 </footer>
 
-<script src="/assets/js/home.js?v=20260707-bundle-sim" defer></script>
+<script src="/assets/js/home.js?v=20260707-work-filters" defer></script>
 <script src="/assets/js/hero3d.js?v=20260705-wow3" defer></script>
 
 
 <!-- WORK lightbox (zoom case screenshots) -->
+<div class="project-sheet" id="projectSheet" aria-hidden="true">
+  <div class="project-sheet-backdrop" data-project-close></div>
+  <section class="project-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="projectSheetTitle">
+    <button type="button" class="project-sheet-close" data-project-close aria-label="Закрыть разбор">×</button>
+    <div class="project-sheet-kicker" id="projectSheetKicker">Проект</div>
+    <h2 id="projectSheetTitle">Разбор проекта</h2>
+    <p class="project-sheet-lead" id="projectSheetLead"></p>
+    <div class="project-sheet-grid">
+      <div>
+        <span>Задача</span>
+        <p id="projectSheetTask"></p>
+      </div>
+      <div>
+        <span>Маршрут</span>
+        <p id="projectSheetRoute"></p>
+      </div>
+      <div>
+        <span>Что можно повторить</span>
+        <p id="projectSheetRepeat"></p>
+      </div>
+    </div>
+    <div class="project-sheet-actions">
+      <a class="project-sheet-link" id="projectSheetLink" href="#" target="_blank" rel="noopener">Открыть проект ↗</a>
+      <a class="project-sheet-cta" href="#contact" data-project-sheet-cta data-contact-source="project_sheet" data-contact-scenario="task" data-analytics="case_cta_click">Обсудить похожее</a>
+    </div>
+  </section>
+</div>
+
 <div class="lb" id="lb" aria-hidden="true"><img id="lb-img" alt=""></div>
 
 

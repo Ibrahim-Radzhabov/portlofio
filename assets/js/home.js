@@ -916,6 +916,228 @@
     updateStickyContact();
   }
 
+  // === WORK FILTERS ===
+  var workFilters = document.querySelector('[data-work-filters]');
+  var workFilterItems = document.querySelectorAll('[data-work-filter-item]');
+  if (workFilters && workFilterItems.length) {
+    var filterButtons = workFilters.querySelectorAll('[data-work-filter]');
+
+    function applyWorkFilter(filter) {
+      filterButtons.forEach(function(button) {
+        var active = button.getAttribute('data-work-filter') === filter;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+
+      workFilterItems.forEach(function(item) {
+        var raw = item.getAttribute('data-work-filter-item') || '';
+        var groups = raw.split(/\s+/).filter(Boolean);
+        var visible = filter === 'all' || groups.indexOf(filter) !== -1;
+        item.classList.toggle('is-filter-hidden', !visible);
+      });
+    }
+
+    filterButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        applyWorkFilter(button.getAttribute('data-work-filter') || 'all');
+      });
+    });
+  }
+
+  // === PROJECT DETAIL SHEET ===
+  var projectSheet = document.getElementById('projectSheet');
+  if (projectSheet) {
+    var projectSheetTitle = document.getElementById('projectSheetTitle');
+    var projectSheetKicker = document.getElementById('projectSheetKicker');
+    var projectSheetLead = document.getElementById('projectSheetLead');
+    var projectSheetTask = document.getElementById('projectSheetTask');
+    var projectSheetRoute = document.getElementById('projectSheetRoute');
+    var projectSheetRepeat = document.getElementById('projectSheetRepeat');
+    var projectSheetLink = document.getElementById('projectSheetLink');
+    var projectSheetCta = projectSheet.querySelector('[data-project-sheet-cta]');
+    var projectSheetClose = projectSheet.querySelector('.project-sheet-close');
+    var projectLastFocus = null;
+
+    var projectDetails = {
+      pdr: {
+        kicker: 'Сайт · автосервис',
+        title: 'PDR Atelier',
+        lead: 'Услуга удаления вмятин без покраски: человеку нужно быстро понять метод, доверие и следующий шаг.',
+        task: 'Собрать страницу, где услуга объясняется без перегруза и ведёт к заявке с первого экрана.',
+        route: 'Первый экран → услуги → преимущества → заявка.',
+        repeat: 'Подходит для локальной услуги, где важно быстро снять сомнение и привести к обращению.',
+        link: 'https://pdr.radzhabov-dev.ru/',
+        scenario: 'site'
+      },
+      flora: {
+        kicker: 'Сайт · флористика',
+        title: 'Flora Noire',
+        lead: 'Витрина букетов с акцентом на состав, настроение и быстрый запрос доставки.',
+        task: 'Показать ассортимент так, чтобы выбор не превращался в каталог ради каталога.',
+        route: 'Витрина → карточка букета → детали → заявка на доставку.',
+        repeat: 'Хорошо работает для небольшого магазина, которому нужен аккуратный каталог и входящая заявка.',
+        link: 'https://flora.radzhabov-dev.ru/',
+        scenario: 'site'
+      },
+      avtozap: {
+        kicker: 'Сайт · автозапчасти',
+        title: 'АвтоМаг',
+        lead: 'Каталог с подбором запчастей, где главный сценарий — оставить понятную заявку на нужную деталь.',
+        task: 'Свести подбор, категории и контакт в один короткий путь.',
+        route: 'Категории → подбор → описание запроса → заявка.',
+        repeat: 'Подходит для магазина, где наличие и совместимость лучше уточнять через заявку.',
+        link: 'https://avtozap.radzhabov-dev.ru/',
+        scenario: 'site'
+      },
+      barber: {
+        kicker: 'Сайт · запись',
+        title: 'THRONE',
+        lead: 'Страница барбершопа: услуги, мастера и онлайн-запись без лишних переходов.',
+        task: 'Дать посетителю быстро выбрать услугу и перейти к записи.',
+        route: 'Услуги → мастера → запись.',
+        repeat: 'Подходит для услуг по расписанию, где клиенту важны стиль, цена и свободный слот.',
+        link: 'https://barber.radzhabov-dev.ru/',
+        scenario: 'site'
+      },
+      rihau: {
+        kicker: 'Сайт · окна',
+        title: 'Rihau',
+        lead: 'Заявка на замер и расчёт окон, где нужно быстро объяснить продукт и следующий шаг.',
+        task: 'Собрать путь от интереса к заявке на расчёт без тяжёлого конфигуратора.',
+        route: 'Предложение → типы работ → преимущества → заявка на замер.',
+        repeat: 'Подходит для монтажных услуг, где точная цена появляется после вводных.',
+        link: 'https://rihau.radzhabov-dev.ru/',
+        scenario: 'site'
+      },
+      baby: {
+        kicker: 'Сайт · детский массаж',
+        title: 'Кроха и Я',
+        lead: 'Сайт услуги с отдельным кейсом: человеку важно понять доверие, формат и как записаться.',
+        task: 'Упаковать услугу спокойно и понятно, без агрессивной продажи.',
+        route: 'Услуги → доверие → ответы → запись.',
+        repeat: 'Подходит для личной практики, где решение принимают внимательно и не с первого взгляда.',
+        link: 'https://baby-massage05.ru/',
+        scenario: 'site'
+      },
+      qlean: {
+        kicker: 'Сайт · клининг',
+        title: 'Qlean',
+        lead: 'Услуги уборки с быстрым расчётом и заявкой на понятный объём работ.',
+        task: 'Показать набор услуг и привести к обращению без длинной анкеты.',
+        route: 'Тип уборки → условия → расчёт → заявка.',
+        repeat: 'Подходит для сервисов, где клиенту нужно быстро сравнить варианты и оставить запрос.',
+        link: 'https://qlean.radzhabov-dev.ru/',
+        scenario: 'site'
+      },
+      fixlab: {
+        kicker: 'Сайт · сервисный центр',
+        title: 'FixLab',
+        lead: 'Заявка на диагностику техники: важны категории, симптом проблемы и контакт.',
+        task: 'Сделать маршрут от поломки к заявке на диагностику.',
+        route: 'Категория техники → проблема → условия → заявка.',
+        repeat: 'Подходит для ремонта и сервиса, где точная стоимость зависит от диагностики.',
+        link: 'https://fixlab.radzhabov-dev.ru/',
+        scenario: 'site'
+      },
+      decor: {
+        kicker: 'Telegram · каталог',
+        title: 'GlowDecor',
+        lead: 'Telegram mini app для декора: каталог, корзина и сообщение владельцу в одном канале.',
+        task: 'Собрать короткий путь заказа без отдельного сайта и тяжёлого личного кабинета.',
+        route: 'Mini app → каталог → корзина → сообщение владельцу.',
+        repeat: 'Подходит для малого каталога, где Telegram уже является основным каналом общения.',
+        link: 'https://t.me/DecorApp_bot',
+        scenario: 'telegram'
+      },
+      monitor: {
+        kicker: 'AI · мониторинг',
+        title: 'MyServer AI',
+        lead: 'AI-слой для мониторинга сервера: смотрит состояние, объясняет сигналы и помогает не пропустить проблему.',
+        task: 'Перевести технические события в понятный статус и следующий шаг.',
+        route: 'Событие → AI-разбор → приоритет → действие.',
+        repeat: 'Подходит для внутренних инструментов, где важно быстро понять, что требует внимания.',
+        link: '',
+        scenario: 'ai'
+      },
+      dag: {
+        kicker: '1С · интеграция',
+        title: 'Dag Sport',
+        lead: 'Связка заявки и учёта: сайт не мой, задача была в интеграции с 1С УТ и AI-консультантом.',
+        task: 'Передавать данные заказа в учёт и снизить ручной перенос между каналами.',
+        route: 'Сайт → 1С УТ → Telegram-уведомление → обработка.',
+        repeat: 'Подходит, когда сайт уже есть, но заявки живут отдельно от учёта и переписок.',
+        link: '/cases/dag-sport.html',
+        scenario: 'one-c'
+      }
+    };
+
+    function setProjectSheetContent(detail) {
+      projectSheetKicker.textContent = detail.kicker;
+      projectSheetTitle.textContent = detail.title;
+      projectSheetLead.textContent = detail.lead;
+      projectSheetTask.textContent = detail.task;
+      projectSheetRoute.textContent = detail.route;
+      projectSheetRepeat.textContent = detail.repeat;
+
+      if (projectSheetLink) {
+        if (detail.link) {
+          projectSheetLink.hidden = false;
+          projectSheetLink.href = detail.link;
+          projectSheetLink.textContent = detail.link.indexOf('/cases/') === 0 ? 'Открыть кейс ↗' : 'Открыть проект ↗';
+        } else {
+          projectSheetLink.hidden = true;
+          projectSheetLink.removeAttribute('href');
+        }
+      }
+
+      if (projectSheetCta) {
+        projectSheetCta.setAttribute('data-contact-scenario', detail.scenario || 'task');
+        projectSheetCta.setAttribute('data-contact-message', 'Хочу обсудить похожую задачу. Ориентир: ' + detail.title + '. Что нужно разобрать: ' + detail.task);
+      }
+    }
+
+    function openProjectSheet(key, trigger) {
+      var detail = projectDetails[key];
+      if (!detail) return;
+      projectLastFocus = trigger || document.activeElement;
+      setProjectSheetContent(detail);
+      projectSheet.classList.add('open');
+      projectSheet.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (projectSheetClose) projectSheetClose.focus({ preventScroll: true });
+    }
+
+    function closeProjectSheet() {
+      if (!projectSheet.classList.contains('open')) return;
+      projectSheet.classList.remove('open');
+      projectSheet.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (projectLastFocus && typeof projectLastFocus.focus === 'function') {
+        projectLastFocus.focus({ preventScroll: true });
+      }
+    }
+
+    document.querySelectorAll('[data-project-detail]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        openProjectSheet(button.getAttribute('data-project-detail'), button);
+      });
+    });
+
+    projectSheet.querySelectorAll('[data-project-close]').forEach(function(button) {
+      button.addEventListener('click', closeProjectSheet);
+    });
+
+    if (projectSheetCta) {
+      projectSheetCta.addEventListener('click', function() {
+        closeProjectSheet();
+      });
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') closeProjectSheet();
+    });
+  }
+
   // === ACTIVE NAV LINK (highlight current section) ===
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   var sections = Array.from(navLinks).map(function(a) {
