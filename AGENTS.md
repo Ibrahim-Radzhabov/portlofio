@@ -37,6 +37,7 @@
 3. **Дождаться данных** GSC/Вебмастера (2–4 недели): смотреть показы по городам/статьям, масштабировать только то, что даёт клики/заявки. Кандидаты на расширение: 4-я статья (Telegram-бот), ниши под остальные демо (rihau/fixlab/avtozap).
 4. **Факт-вопросы владельцу (не блокируют):** dag-sport и baby-massage — клиенты из Дагестана? (если да — можно честно усилить страницу Махачкалы); фото для «Обо мне»; шрифты для og-image.
 5. **Опционально:** вычистить из публичного репо старую апрельскую seo-серию `git rm --cached` (сейчас она видна на GitHub); микро-CRO услуг проверен 2026-07-02 — «для кого/что входит/сроки/CTA» уже есть на всех 4 услугах, ничего добавлять не потребовалось.
+6. **Дизайн-«вау» (прототип утверждён 2026-07-04, интеграция за исполнителем):** `_proto/hero.html` — «Живой Излом»: 3D-узлы = селектор сценария (обёртка над `.hero-scenario`), скролл-док знака в лого шапки, «путь заявки» (спина страницы), курсор-узел, настроенный поток (`#B5623C`→`#D1743F` у AI-ядра). **Владельцем принят.** Интеграция в главную по `marketing/EXECUTOR-BRIEF-DesignWow.md` + `marketing/DESIGN-DIRECTION-v2.md`: WebGL-поле **заменяет** `hero-mesh-blob`+`#dotGrid`, с fallback-матрицей (mobile / reduced-motion / нет WebGL → статичный знак), LCP/CWV не роняем. Владелец разрешил **GSAP/Three.js только для этой задачи**. `_proto/` не деплоить.
 
 ## Жёсткие правила (нарушение = брак)
 - **Не выдумывать** отзывы, клиентов, цифры, офисы, регион, гарантии. Ниши — только под реальное демо (стоматология/салон красоты — нет примера, не делать).
@@ -54,5 +55,5 @@ tag-balance (`html.parser` → 0/0) · JSON-LD `json.loads` валиден · г
 GitHub Pages workflow (`.github/workflows/jekyll-gh-pages.yml`) собирает артефакт по этому же whitelist (2026-07-02 добавлены `cities/`, `blog/`, `legal/` — legal раньше отсутствовал в артефакте). Внутренние доки и `marketing/` дополнительно закрыты через `.gitignore` (репозиторий публичный).
 
 ## Карта доков: актуальные vs устаревшие
-**Актуальные (доверять):** `CLAUDE.md`, `AGENT-HANDOFF.md`, `AGENTS.md` (этот), `marketing/GROWTH-PLAN-v4-reality-grounded.md`, `marketing/EXECUTOR-BRIEF-*.md`, `seo-webmaster-setup.md`, `llms.txt`, `sitemap.xml`, `robots.txt`.
+**Актуальные (доверять):** `CLAUDE.md`, `AGENT-HANDOFF.md`, `AGENTS.md` (этот), `marketing/GROWTH-PLAN-v4-reality-grounded.md`, `marketing/EXECUTOR-BRIEF-*.md`, `marketing/DESIGN-DIRECTION-v2.md`, `_proto/hero.html` (утверждённый дизайн-эталон, не для прода), `seo-webmaster-setup.md`, `llms.txt`, `sitemap.xml`, `robots.txt`.
 **Устаревшие / исторические (НЕ использовать как источник истины):** вся серия `seo-*-2026-04-05/06*.md`, `seo-geo-roadmap.md`, `homepage-solo-structure-*.md`, `claude-code-final-prompt.md`, `DEPLOY_AGENT_BRIEF-*.md`, `tz/*`, `preloader-spec-v2.md` (только референс), `marketing/MOCKUP-BRIEF.md`. Это следы более ранних фаз и старого тёмного дизайна — они противоречат текущему состоянию.
