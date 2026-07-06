@@ -130,6 +130,21 @@
     /* Flow diagram */
     .flow{display:flex;justify-content:center;margin:30px 0 8px;}
     .flow svg{width:100%;max-width:300px;height:auto;}
+    /* Evidence route */
+    .handoff{max-width:900px;margin:0 auto;}
+    .handoff-map{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:10px;overflow:hidden;scroll-margin-top:90px;}
+    .handoff-map::before{content:'';position:absolute;left:44px;right:44px;top:92px;height:2px;background:linear-gradient(90deg,rgba(20,18,16,0.12),rgba(181,98,60,0.65),rgba(20,18,16,0.12));}
+    .handoff-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;list-style:none;}
+    .content .handoff-item{display:block;min-width:0;padding:0;color:inherit;}
+    .content .handoff-item::before{content:none;}
+    .handoff-node{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin-bottom:18px;background:var(--bg-primary);border:1px solid rgba(26,58,42,0.22);color:var(--accent);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;position:relative;z-index:1;box-shadow:0 0 0 8px var(--bg-card);}
+    .handoff-item:nth-child(2) .handoff-node,.handoff-item:nth-child(3) .handoff-node{border-color:rgba(181,98,60,0.35);color:var(--accent-warm);}
+    .handoff-item:last-child .handoff-node{background:var(--text-primary);border-color:var(--text-primary);color:var(--bg-primary);}
+    .handoff-card{min-height:190px;background:rgba(245,240,232,0.58);border:1px solid rgba(20,18,16,0.08);border-radius:16px;padding:18px 16px;}
+    .handoff-kicker{display:block;margin-bottom:9px;font-family:var(--font-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--text-tertiary);}
+    .handoff-card h3{font-family:var(--font-display);font-size:19px;font-weight:600;line-height:1.16;margin-bottom:9px;color:var(--text-primary);}
+    .handoff-card p{font-size:14px;line-height:1.62;color:var(--text-secondary);margin:0;}
+    .handoff-note{margin-top:16px;padding:14px 16px;border-radius:14px;background:rgba(181,98,60,0.075);border:1px solid rgba(181,98,60,0.18);font-size:14px;line-height:1.65;color:var(--text-secondary);}
     /* Steps */
     .steps{display:grid;gap:14px;margin-top:8px;counter-reset:s;}
     .step{display:flex;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
@@ -166,7 +181,14 @@
     .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:14px;color:var(--text-tertiary);}
     .foot a{color:var(--text-secondary);text-decoration:none;}
     .foot a:hover{color:var(--accent);}
-    @media(max-width:680px){ .shots{grid-template-columns:1fr;} .hero{padding:120px 0 40px;} }
+    @media(max-width:860px){
+      .handoff-map::before{left:49px;right:auto;top:42px;bottom:42px;width:2px;height:auto;background:linear-gradient(180deg,rgba(20,18,16,0.12),rgba(181,98,60,0.65),rgba(20,18,16,0.12));}
+      .handoff-grid{grid-template-columns:1fr;gap:14px;}
+      .content .handoff-item{display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;align-items:start;}
+      .handoff-node{margin-bottom:0;}
+      .handoff-card{min-height:0;}
+    }
+    @media(max-width:680px){ .shots{grid-template-columns:1fr;} .hero{padding:120px 0 40px;} .handoff-map{padding:20px 16px;border-radius:18px;} .handoff-map::before{left:37px;} .handoff-card{padding:16px 15px;} .handoff-card h3{font-size:18px;} }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -231,6 +253,50 @@
           <text x="64" y="122" font-family="'JetBrains Mono',monospace" font-size="11" fill="#141210">Telegram</text>
           <text x="64" y="134" font-family="'JetBrains Mono',monospace" font-size="9" fill="#A39E98">уведомление владельцу</text>
         </svg>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container handoff content">
+      <span class="label">Маршрут</span>
+      <h2>Что происходит с заказом без ручного переноса</h2>
+      <div class="handoff-map" aria-label="Маршрут заказа: сайт, документ в 1С УТ, Telegram-уведомление, AI-консультант">
+        <ol class="handoff-grid">
+          <li class="handoff-item">
+            <div class="handoff-node">01</div>
+            <div class="handoff-card">
+              <span class="handoff-kicker">1С-Битрикс</span>
+              <h3>Заказ оформлен на сайте</h3>
+              <p>Покупатель выбирает товар и отправляет заказ через уже существующий интернет-магазин.</p>
+            </div>
+          </li>
+          <li class="handoff-item">
+            <div class="handoff-node">02</div>
+            <div class="handoff-card">
+              <span class="handoff-kicker">1С УТ</span>
+              <h3>Создаётся документ в учёте</h3>
+              <p>Данные заказа передаются в 1С: Управление Торговлей без копирования из админки сайта.</p>
+            </div>
+          </li>
+          <li class="handoff-item">
+            <div class="handoff-node">03</div>
+            <div class="handoff-card">
+              <span class="handoff-kicker">Telegram</span>
+              <h3>Владелец видит уведомление</h3>
+              <p>После оформления приходит короткое сообщение о новом заказе, чтобы не ждать ручной проверки.</p>
+            </div>
+          </li>
+          <li class="handoff-item">
+            <div class="handoff-node">04</div>
+            <div class="handoff-card">
+              <span class="handoff-kicker">AI-консультант</span>
+              <h3>Покупатель получает помощь</h3>
+              <p>AI отвечает по подбору беговой дорожки и помогает довести человека до понятного выбора.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="handoff-note">AI здесь не заменяет продавца и не пишет данные в 1С сам по себе: он помогает покупателю до заказа, а учётная связка фиксирует оформленный заказ.</div>
       </div>
     </div>
   </section>
