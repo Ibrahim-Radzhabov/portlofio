@@ -377,8 +377,8 @@
         ]
       },
       task: {
-        title: 'Сайт, AI и 1С<br><span class="highlight"><span class="highlight-line">в одной системе.</span></span>',
-        description: 'Связываю сайт, AI и 1С: заявка с сайта уходит в ответ клиенту и в 1С — без ручного переноса и потерь.',
+        title: 'Сайт, AI и&nbsp;1С<br><span class="highlight"><span class="highlight-line">в&nbsp;одной системе.</span></span>',
+        description: 'Связываю сайт, AI и\u00a01С: заявка с\u00a0сайта уходит в\u00a0ответ клиенту и\u00a0в\u00a01С — без ручного переноса и\u00a0потерь.',
         contactMessage: 'Хочу разобрать путь заявки: сайт, AI и 1С. Сейчас есть сайт, таблица, 1С или переписка. Нужно понять, где теряется заявка и что можно связать без ручного переноса.',
         process: [
           { num: '01', title: 'Смотрю путь заявки', desc: 'Разбираю, что происходит от формы или сообщения до ответа клиенту и записи в 1С.' },
@@ -755,6 +755,34 @@
       });
     }
 
+    function toastIcon() {
+      return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="currentColor"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="currentColor"/></svg>';
+    }
+
+    function showFormToast(type, title, text) {
+      var stack = document.querySelector('.form-toast-stack');
+      if (!stack) {
+        stack = document.createElement('div');
+        stack.className = 'form-toast-stack';
+        stack.setAttribute('role', 'status');
+        stack.setAttribute('aria-live', 'polite');
+        stack.setAttribute('aria-atomic', 'true');
+        document.body.appendChild(stack);
+      }
+      stack.innerHTML = '<div class="form-toast ' + (type === 'error' ? 'is-error' : 'is-success') + '"><span class="form-toast-icon">' + toastIcon() + '</span><span><strong class="form-toast-title"></strong><span class="form-toast-text"></span></span></div>';
+      var toast = stack.querySelector('.form-toast');
+      toast.querySelector('.form-toast-title').textContent = title;
+      toast.querySelector('.form-toast-text').textContent = text;
+      var formStatus = document.getElementById('form-status');
+      if (formStatus) formStatus.textContent = title + '. ' + text;
+      requestAnimationFrame(function() { toast.classList.add('is-visible'); });
+      clearTimeout(stack._hideTimer);
+      stack._hideTimer = setTimeout(function() {
+        toast.classList.remove('is-visible');
+        setTimeout(function() { stack.innerHTML = ''; }, 320);
+      }, 5000);
+    }
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       clearErrors();
@@ -790,8 +818,7 @@
 
       var consent = form.querySelector('.consent input[type="checkbox"]');
       if (consent && !consent.checked) {
-        submitBtn.querySelector('.btn-text').textContent = 'Отметьте согласие на обработку данных';
-        setTimeout(function(){ submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow; }, 3000);
+        showFormToast('error', 'Нужно согласие', 'Отметьте чекбокс обработки персональных данных.');
         return;
       }
 
@@ -803,10 +830,7 @@
         submitBtn.classList.add('loading');
         setTimeout(function() {
           submitBtn.classList.remove('loading');
-          submitBtn.querySelector('.btn-text').textContent = 'Форма временно не подключена';
-          setTimeout(function() {
-            submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow;
-          }, 4000);
+          showFormToast('error', 'Форма временно не подключена', 'Напишите в Telegram, если нужно связаться сейчас.');
         }, 600);
         return;
       }
@@ -824,36 +848,24 @@
         submitBtn.classList.remove('loading');
 
         if (response.ok) {
-          // Успешная отправка
           __reach('form_submit');
-          submitBtn.classList.add('success');
-          submitBtn.querySelector('.btn-text').textContent = 'Задача отправлена ✓';
           form.reset();
-
-          setTimeout(function() {
-            submitBtn.classList.remove('success');
-            submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow;
-          }, 4000);
+          submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow;
+          showFormToast('success', 'Заявка отправлена ✓', 'Отвечу в течение дня.');
         } else {
-          // Ошибка сервера (неверный ID формы, лимит и т.д.)
           return response.json().then(function(data) {
             var msg = (data && data.errors && data.errors[0] && data.errors[0].message)
               ? data.errors[0].message
-              : 'Ошибка отправки. Попробуйте ещё раз.';
-            submitBtn.querySelector('.btn-text').innerHTML = msg;
-            setTimeout(function() {
-              submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow;
-            }, 4000);
+              : 'Попробуйте ещё раз или напишите в Telegram.';
+            submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow;
+            showFormToast('error', 'Ошибка отправки', msg);
           });
         }
       })
       .catch(function() {
-        // Ошибка сети
         submitBtn.classList.remove('loading');
-        submitBtn.querySelector('.btn-text').textContent = 'Нет соединения. Попробуйте позже.';
-        setTimeout(function() {
-          submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow;
-        }, 4000);
+        submitBtn.querySelector('.btn-text').innerHTML = 'Отправить задачу ' + sendArrow;
+        showFormToast('error', 'Нет соединения', 'Попробуйте позже или напишите в Telegram.');
       });
     });
 
@@ -905,7 +917,7 @@
         updateStickyContact();
       }, { threshold: 0.08, rootMargin: '0px 0px -10% 0px' });
 
-      ['#bundle-check', '#contact', 'footer'].forEach(function(selector) {
+      ['#order-demo', '#bundle-check', '#contact', 'footer'].forEach(function(selector) {
         var el = document.querySelector(selector);
         if (el) {
           stickyBlockers.set(el, false);

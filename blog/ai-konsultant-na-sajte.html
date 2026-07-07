@@ -17,12 +17,12 @@
   <meta property="og:description" content="Отвечает покупателям ночью, помогает выбрать, снимает типовые вопросы. Когда AI на сайте оправдан, а когда нет — без хайпа, из практики.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html">
-  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/blog-ai-konsultant.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI-консультант на сайте: когда нужен и что умеет">
   <meta name="twitter:description" content="Без хайпа: что AI на сайте делает хорошо, где его ограничения, когда хватит FAQ.">
-  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/blog-ai-konsultant.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -70,7 +70,7 @@
       --border-hover: rgba(20, 18, 16, 0.15);
       --text-primary: #141210;
       --text-secondary: #7A7570;
-      --text-tertiary: #A39E98;
+      --text-tertiary: #6E6861;
       --accent: #1A3A2A;
       --accent-dim: #2D5A45;
       --accent-glow: rgba(26, 58, 42, 0.12);
@@ -120,14 +120,18 @@
     .article-body strong { color:var(--text-primary); font-weight:600; }
     .article-body a { color:var(--accent); }
     .article-body ul, .article-body ol { list-style:none; margin:16px 0 24px; }
-    .article-body li { padding:8px 0; color:var(--text-secondary); font-size:15.5px; line-height:1.7; display:flex; align-items:flex-start; gap:12px; }
-    .article-body ul li::before { content:'—'; color:var(--accent); font-weight:700; flex-shrink:0; }
+    .article-body li { position:relative; padding:8px 0 8px 28px; color:var(--text-secondary); font-size:15.5px; line-height:1.7; display:block; overflow-wrap:break-word; }
+    .article-body ul li::before { content:'—'; position:absolute; left:0; top:8px; color:var(--accent); font-weight:700; }
     .article-body ol { counter-reset:item; }
-    .article-body ol li::before { counter-increment:item; content:counter(item); font-family:var(--font-mono); color:var(--accent); font-weight:700; flex-shrink:0; min-width:20px; }
+    .article-body ol li::before { counter-increment:item; content:counter(item); position:absolute; left:0; top:8px; font-family:var(--font-mono); color:var(--accent); font-weight:700; min-width:20px; }
     .article-body blockquote { border-left:3px solid var(--accent-warm); padding:12px 20px; margin:24px 0; background:var(--bg-card); border-radius:0 12px 12px 0; color:var(--text-secondary); font-size:15.5px; }
     .callout { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:24px 28px; margin:32px 0; }
     .callout .label { font-family:var(--font-mono); font-size:11px; color:var(--accent-warm); text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:10px; }
     .callout p { margin-bottom:0; }
+    .article-flow { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:22px; margin:28px 0 34px; overflow:hidden; }
+    .article-flow svg { display:block; width:100%; height:auto; overflow:hidden; }
+    .article-flow-mobile { display:none; }
+    @media(max-width:640px){ .article-flow { padding:18px 14px; } .article-flow-desktop { display:none !important; } .article-flow-mobile { display:block; } }
 
     .cta-box { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:36px; margin:48px 0 0; text-align:center; position:relative; overflow:hidden; }
     .cta-box::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
@@ -212,9 +216,20 @@
 
   <header class="article-hero">
     <div class="article-wrap">
+      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/blog/" style="color:var(--text-tertiary);text-decoration:none;">Блог</a> / <span style="color:var(--text-primary);">AI-консультант на сайте</span></nav>
       <div class="article-meta reveal">Блог · AI и автоматизация <span>· 2 июля 2026 · ~6 минут</span></div>
       <h1 class="reveal">AI-консультант на сайте: когда он нужен и что реально умеет</h1>
       <p class="article-lead reveal">Вокруг AI много обещаний «заменит отдел продаж». Я внедряю AI-ассистентов в реальный малый бизнес и расскажу без хайпа: что консультант на сайте делает хорошо, где его пределы и в каких случаях он вам пока не нужен.</p>
+      <div class="tldr reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin:24px 0 0;">
+        <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:10px;">Коротко</span>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> AI-консультант отвечает по вашим материалам и каталогу — не выдумывает «от себя».</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Хорошо справляется с выбором, типовыми вопросами и первичной консультацией.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Не замена человеку: в спорных случаях передаёт диалог менеджеру.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Имеет смысл, когда есть реальные обращения, которые закроет бот, а не «потому что модно».</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Может тянуть данные из каталога/1С — тогда отвечает по реальным ценам и наличию.</li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -223,6 +238,30 @@
       <h2>Что такое AI-консультант на сайте</h2>
       <p>Это окно диалога на странице, за которым стоит языковая модель, ограниченная вашими данными: каталогом, ценами, правилами, частыми вопросами. Посетитель пишет обычным языком — «посоветуйте дорожку для дома, вес 90 кг, потолки низкие» — и получает осмысленный ответ по вашему ассортименту, а не ссылку на раздел каталога.</p>
       <p>Ключевое отличие от чат-ботов прошлого поколения — не нужно угадывать «правильную» кнопку. Человек спрашивает как умеет, консультант понимает и ведёт к выбору.</p>
+      <figure class="article-flow" aria-label="Схема работы AI-консультанта на сайте">
+        <svg class="article-flow-desktop" viewBox="0 0 680 190" role="img" aria-label="Вопрос гостя проходит через AI с каталогом и правилами, затем возвращается ответ или передача человеку">
+          <defs><marker id="flowArrowAi" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#B5623C"/></marker></defs>
+          <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#141210">
+            <rect x="10" y="58" width="138" height="74" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="38" y="90">Вопрос</text><text x="42" y="112" fill="#6E6861">гостя</text>
+            <path d="M162 95 H240" stroke="#B5623C" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrowAi)"/>
+            <rect x="254" y="32" width="172" height="126" rx="22" fill="#FBF8F3" stroke="#DDD5C8"/><circle cx="340" cy="72" r="20" fill="#B5623C"/><text x="327" y="77" fill="#FBF8F3">AI</text><text x="290" y="116">каталог</text><text x="292" y="138" fill="#6E6861">+ правила</text>
+            <path d="M440 76 H520" stroke="#B5623C" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrowAi)"/>
+            <path d="M440 124 H520" stroke="#B5623C" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrowAi)"/>
+            <rect x="534" y="36" width="130" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="572" y="69">Ответ</text>
+            <rect x="534" y="106" width="130" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="558" y="139">Человеку</text>
+          </g>
+        </svg>
+        <svg class="article-flow-mobile" viewBox="0 0 320 360" role="img" aria-label="Вопрос гостя проходит через AI с каталогом и правилами, затем возвращается ответ или передача человеку">
+          <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#141210">
+            <rect x="52" y="8" width="216" height="56" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="118" y="32">Вопрос</text><text x="124" y="51" fill="#6E6861">гостя</text>
+            <path d="M160 72 V112" stroke="#B5623C" stroke-width="3" stroke-linecap="round"/>
+            <rect x="52" y="120" width="216" height="100" rx="22" fill="#FBF8F3" stroke="#DDD5C8"/><circle cx="160" cy="152" r="18" fill="#B5623C"/><text x="148" y="157" fill="#FBF8F3">AI</text><text x="112" y="190">каталог</text><text x="114" y="209" fill="#6E6861">+ правила</text>
+            <path d="M160 228 V264" stroke="#B5623C" stroke-width="3" stroke-linecap="round"/>
+            <rect x="52" y="272" width="96" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="73" y="304">Ответ</text>
+            <rect x="172" y="272" width="96" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="187" y="304">Человек</text>
+          </g>
+        </svg>
+      </figure>
 
       <h2>Что он делает хорошо</h2>
       <ul>

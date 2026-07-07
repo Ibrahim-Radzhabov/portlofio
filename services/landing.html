@@ -18,12 +18,12 @@
   <meta property="og:description" content="Разработка лендингов для частных специалистов и малого бизнеса. Базовая ставка от 25 000 ₽. Срок — от 7 дней.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://radzhabov-dev.ru/services/landing.html">
-  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/service-landing.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Лендинг под ключ — от проектирования до запуска">
   <meta name="twitter:description" content="Разработка лендингов для частных специалистов и малого бизнеса. Базовая ставка от 25 000 ₽.">
-  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/service-landing.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +46,17 @@
         "description": "Разработка лендингов для частных специалистов и малого бизнеса. Figma → HTML, адаптив, формы, анимации."
       },
       {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Сколько времени занимает разработка лендинга?", "acceptedAnswer": {"@type": "Answer", "text": "Минимальный срок — 7 дней. Это включает вёрстку, адаптив, формы и базовые анимации. Если проект сложнее (больше блоков, кастомные анимации, интеграции) — до 14–21 дня. Срочные проекты — обсуждаем отдельно."}},
+          {"@type": "Question", "name": "Что нужно от меня для старта?", "acceptedAnswer": {"@type": "Answer", "text": "Идеально — готовый макет в Figma и тексты. Если макета нет, помогу спроектировать структуру. Если текстов нет — подскажу, что писать в каждом блоке. Минимум: понимание, кому и что вы продаёте."}},
+          {"@type": "Question", "name": "Вы работаете с конструкторами (Tilda, Webflow)?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Только ручная вёрстка — HTML, CSS, JS. Это даёт полный контроль над скоростью, SEO и уникальностью дизайна. Без платных подписок на конструкторы и ограничений шаблонов."}},
+          {"@type": "Question", "name": "Как происходит оплата?", "acceptedAnswer": {"@type": "Answer", "text": "50% предоплата перед началом работы, 50% — после сдачи и вашего одобрения. Работаю по договору (при необходимости) или устной договорённости с фиксацией в переписке."}},
+          {"@type": "Question", "name": "Сколько правок включено?", "acceptedAnswer": {"@type": "Answer", "text": "В базовую стоимость включён 1 раунд правок после сдачи. Правки — это корректировки по вёрстке (цвета, отступы, шрифты), не изменение структуры. Дополнительные правки — почасово или по договорённости."}},
+          {"@type": "Question", "name": "Можно ли доработать существующий сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Переверстаю старый сайт, добавлю новые блоки, подключу формы, ускорю загрузку. Сначала оценю текущее состояние — бесплатный аудит."}}
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov-dev.ru/" },
@@ -65,7 +76,7 @@
       --border-hover: rgba(20, 18, 16, 0.15);
       --text-primary: #141210;
       --text-secondary: #7A7570;
-      --text-tertiary: #A39E98;
+      --text-tertiary: #6E6861;
       --accent: #1A3A2A;
       --accent-dim: #2D5A45;
       --accent-glow: rgba(26, 58, 42, 0.12);
@@ -249,6 +260,16 @@
     @media (prefers-reduced-motion:reduce) {
       .reveal { opacity:1; transform:none; transition:none; }
     }
+
+    .form-toast-stack { position:fixed; right:clamp(16px,4vw,34px); bottom:clamp(16px,4vw,34px); z-index:10050; display:grid; gap:10px; width:min(360px, calc(100vw - 32px)); pointer-events:none; }
+    .form-toast { display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:center; padding:14px 16px; border:1px solid var(--border); border-radius:16px; background:rgba(251,248,243,0.96); box-shadow:0 18px 55px rgba(20,18,16,0.14); color:var(--text-primary); opacity:0; transform:translateY(12px); transition:opacity .28s ease, transform .28s ease; }
+    .form-toast.is-visible { opacity:1; transform:none; }
+    .form-toast-icon { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; color:var(--accent); background:var(--accent-glow); }
+    .form-toast-icon svg { width:24px; height:24px; }
+    .form-toast.is-error .form-toast-icon { color:var(--color-error,#A8443B); background:rgba(168,68,59,0.10); }
+    .form-toast-title { font-family:var(--font-display); font-size:17px; font-weight:700; line-height:1.15; }
+    .form-toast-text { margin-top:3px; color:var(--text-secondary); font-size:13px; line-height:1.45; }
+    @media(max-width:640px){ .form-toast-stack { left:16px; right:16px; bottom:16px; width:auto; } }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -287,9 +308,10 @@
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/#services" style="color:var(--text-tertiary);text-decoration:none;">Услуги</a> / <span style="color:var(--text-primary);">Лендинг под ключ</span></nav>
       <span class="hero-label reveal">Услуга</span>
       <h1 class="reveal">Лендинг под ключ — <span class="accent">от проектирования до запуска</span></h1>
-      <p class="hero-subtitle reveal">Разработка продающих одностраничных сайтов для частных специалистов и малого бизнеса. Figma → HTML, адаптив под все устройства, рабочие формы заявок, анимации без лагов.</p>
+      <p class="hero-subtitle reveal">Разработка продающих одностраничных сайтов для частных специалистов и&nbsp;малого бизнеса. Figma → HTML, адаптив под все устройства, рабочие формы заявок, анимации без лагов.</p>
       <div class="hero-cta reveal">
         <a href="#contact" class="btn-primary">Обсудить проект</a>
         <a href="/tools/kalkulyator-lendinga.html" class="btn-secondary">Рассчитать стоимость</a>
@@ -322,12 +344,12 @@
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">✉</div>
-          <h3>Формы и заявки</h3>
+          <h3>Формы и&nbsp;заявки</h3>
           <p>Подключение форм обратной связи (Formspree, Telegram-бот, email). Валидация полей, маски телефонов, сообщения об успехе/ошибке.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">⟳</div>
-          <h3>Анимации и микро-взаимодействия</h3>
+          <h3>Анимации и&nbsp;микро-взаимодействия</h3>
           <p>Плавные появления, hover-эффекты, лоадеры, прогресс-бары. Без тяжёлых библиотек — чистый CSS и лёгкий JS. 60 FPS.</p>
         </div>
         <div class="feature-card reveal">
@@ -404,12 +426,12 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Пример работы</span>
-        <h2>Посмотрите, как это выглядит в деле</h2>
+        <h2>Посмотрите, как это выглядит в&nbsp;деле</h2>
       </div>
       <div class="case-preview reveal">
         <div class="case-preview-content">
           <span class="tag">Лендинг для массажиста</span>
-          <h3>«Кроха и Я» — детский массаж</h3>
+          <h3>«Кроха и&nbsp;Я» — детский массаж</h3>
           <p>Лендинг для частного специалиста по детскому массажу. 6 экранов, адаптив, форма записи, анимации, SEO-база. Запущен и индексируется поисковыми системами.</p>
           <a href="/cases/baby-massage.html" class="btn-secondary">Подробнее о проекте</a>
         </div>
@@ -424,7 +446,7 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">FAQ</span>
-        <h2>Вопросы и ответы</h2>
+        <h2>Вопросы и&nbsp;ответы</h2>
       </div>
       <div class="faq-list">
         <details class="reveal">
@@ -476,6 +498,7 @@
           <textarea id="message" name="message" placeholder="Что нужно сделать? Есть ли макет и тексты? Какие сроки?" required></textarea>
         </div>
         <label class="consent" style="display:block;margin:16px 0 0;font-size:12px;line-height:1.5;color:var(--text-secondary);"><input type="checkbox" required style="margin-right:8px;vertical-align:middle;"> Я согласен на <a href="/legal/privacy.html" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">обработку персональных данных</a></label>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
           <span>Отправить заявку</span>
         </button>
@@ -581,8 +604,32 @@
       var form = document.getElementById('contactForm');
       var btn = document.getElementById('submitBtn');
       function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      function toastIcon(){
+        return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="currentColor"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="currentColor"/></svg>';
+      }
+      function showFormToast(type, title, text){
+        var stack = document.querySelector('.form-toast-stack');
+        if (!stack) {
+          stack = document.createElement('div');
+          stack.className = 'form-toast-stack';
+          stack.setAttribute('role','status');
+          stack.setAttribute('aria-live','polite');
+          stack.setAttribute('aria-atomic','true');
+          document.body.appendChild(stack);
+        }
+        stack.innerHTML = '<div class="form-toast '+(type === 'error' ? 'is-error' : 'is-success')+'"><span class="form-toast-icon">'+toastIcon()+'</span><span><strong class="form-toast-title"></strong><span class="form-toast-text"></span></span></div>';
+        var toast = stack.querySelector('.form-toast');
+        toast.querySelector('.form-toast-title').textContent = title;
+        toast.querySelector('.form-toast-text').textContent = text;
+        requestAnimationFrame(function(){ toast.classList.add('is-visible'); });
+        clearTimeout(stack._hideTimer);
+        stack._hideTimer = setTimeout(function(){
+          toast.classList.remove('is-visible');
+          setTimeout(function(){ stack.innerHTML = ''; }, 320);
+        }, 5000);
+      }
       var ORIG_TEXT = 'Отправить заявку';
-      if (form) {
+      if (form && btn) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
           var name = document.getElementById('name').value.trim();
@@ -591,37 +638,36 @@
           if (!name || !email || !msg) return;
           var consent = form.querySelector('.consent input[type="checkbox"]');
           if (consent && !consent.checked) {
-            btn.textContent = 'Отметьте согласие на обработку данных';
-            setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 3000);
+            showFormToast('error', 'Нужно согласие', 'Отметьте чекбокс обработки персональных данных.');
             return;
           }
-          btn.textContent = 'Отправка…';
+          btn.disabled = true;
+          btn.textContent = 'Отправка...';
           fetch('https://formspree.io/f/mkolvvep', {
             method: 'POST',
             body: new FormData(form),
             headers: { 'Accept': 'application/json' }
           })
           .then(function(response){
+            btn.disabled = false;
+            btn.textContent = ORIG_TEXT;
             if (response.ok) {
               __reach('form_submit');
-              btn.textContent = 'Заявка отправлена ✓';
-              btn.style.background = 'var(--accent)';
               form.reset();
-              setTimeout(function(){ btn.textContent = ORIG_TEXT; btn.style.background = ''; }, 4000);
+              showFormToast('success', 'Заявка отправлена ✓', 'Отвечу в течение дня.');
             } else {
               return response.json().then(function(d){
-                var m = (d && d.errors && d.errors[0] && d.errors[0].message) ? d.errors[0].message : 'Ошибка отправки. Попробуйте ещё раз.';
-                btn.textContent = m;
-                setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+                var m = (d && d.errors && d.errors[0] && d.errors[0].message) ? d.errors[0].message : 'Попробуйте ещё раз или напишите в Telegram.';
+                showFormToast('error', 'Ошибка отправки', m);
               }).catch(function(){
-                btn.textContent = 'Ошибка отправки. Попробуйте ещё раз.';
-                setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+                showFormToast('error', 'Ошибка отправки', 'Попробуйте ещё раз или напишите в Telegram.');
               });
             }
           })
           .catch(function(){
-            btn.textContent = 'Нет соединения. Попробуйте позже.';
-            setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+            btn.disabled = false;
+            btn.textContent = ORIG_TEXT;
+            showFormToast('error', 'Нет соединения', 'Попробуйте позже или напишите в Telegram.');
           });
         });
       }

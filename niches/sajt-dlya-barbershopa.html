@@ -18,12 +18,12 @@
   <meta property="og:description" content="Разработка сайтов для барбершопов: онлайн-запись по мастеру, прайс, портфолио, отзывы. Пример — THRONE. От 25 000 ₽.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://radzhabov-dev.ru/niches/sajt-dlya-barbershopa.html">
-  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/niche-barbershop.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Сайт для барбершопа — онлайн-запись и витрина мастеров">
   <meta name="twitter:description" content="Разработка сайтов для барбершопов: онлайн-запись, прайс, портфолио, отзывы. Пример — THRONE.">
-  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/niche-barbershop.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,7 +80,7 @@
       --border-hover: rgba(20, 18, 16, 0.15);
       --text-primary: #141210;
       --text-secondary: #7A7570;
-      --text-tertiary: #A39E98;
+      --text-tertiary: #6E6861;
       --accent: #1A3A2A;
       --accent-dim: #2D5A45;
       --accent-glow: rgba(26, 58, 42, 0.12);
@@ -165,7 +165,9 @@
     .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
     .feature-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; transition:all .4s; }
     .feature-card:hover { border-color:var(--border-hover); background:var(--bg-card-hover); transform:translateY(-4px); }
-    .feature-icon { width:48px; height:48px; border-radius:12px; background:var(--accent-glow); display:flex; align-items:center; justify-content:center; margin-bottom:20px; color:var(--accent); font-size:20px; }
+    .feature-icon { width:48px; height:48px; border-radius:12px; background:var(--accent-glow); display:flex; align-items:center; justify-content:center; margin-bottom:20px; color:var(--accent); }
+    .feature-icon svg { width:27px; height:27px; display:block; stroke:currentColor; stroke-width:1.5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .feature-icon .icon-dot { fill:var(--accent-warm,#B5623C); stroke:none; }
     .feature-card h3 { font-family:var(--font-display); font-size:18px; font-weight:600; margin-bottom:10px; }
     .feature-card p { color:var(--text-secondary); font-size:14px; line-height:1.6; }
 
@@ -257,6 +259,24 @@
     @media (prefers-reduced-motion:reduce) {
       .reveal { opacity:1; transform:none; transition:none; }
     }
+
+    .browser-frame { position:relative; overflow:hidden; border:1px solid var(--border); border-radius:16px; background:var(--bg-card); box-shadow:0 18px 55px rgba(20,18,16,0.08); }
+    .browser-frame::before { content:''; position:absolute; top:0; left:0; right:0; height:30px; background:linear-gradient(180deg, rgba(255,253,249,0.92), rgba(237,232,223,0.88)); border-bottom:1px solid var(--border); z-index:2; }
+    .browser-frame::after { content:''; position:absolute; top:11px; left:14px; width:7px; height:7px; border-radius:50%; background:var(--accent-warm,#B5623C); box-shadow:14px 0 0 rgba(26,58,42,0.45),28px 0 0 rgba(20,18,16,0.18); z-index:3; }
+    .browser-frame > img[style*="position:absolute"] { top:30px !important; height:calc(100% - 30px) !important; }
+    figure.browser-frame > img, .shot.browser-frame > img { margin-top:30px; }
+    .screenshot.browser-frame, .shot.browser-frame { padding-top:30px; }
+    .screenshot.browser-frame > span, .shot.browser-frame > span { position:relative; z-index:1; }
+
+    .form-toast-stack { position:fixed; right:clamp(16px,4vw,34px); bottom:clamp(16px,4vw,34px); z-index:10050; display:grid; gap:10px; width:min(360px, calc(100vw - 32px)); pointer-events:none; }
+    .form-toast { display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:center; padding:14px 16px; border:1px solid var(--border); border-radius:16px; background:rgba(251,248,243,0.96); box-shadow:0 18px 55px rgba(20,18,16,0.14); color:var(--text-primary); opacity:0; transform:translateY(12px); transition:opacity .28s ease, transform .28s ease; }
+    .form-toast.is-visible { opacity:1; transform:none; }
+    .form-toast-icon { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; color:var(--accent); background:var(--accent-glow); }
+    .form-toast-icon svg { width:24px; height:24px; }
+    .form-toast.is-error .form-toast-icon { color:var(--color-error,#A8443B); background:rgba(168,68,59,0.10); }
+    .form-toast-title { font-family:var(--font-display); font-size:17px; font-weight:700; line-height:1.15; }
+    .form-toast-text { margin-top:3px; color:var(--text-secondary); font-size:13px; line-height:1.45; }
+    @media(max-width:640px){ .form-toast-stack { left:16px; right:16px; bottom:16px; width:auto; } }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -295,6 +315,7 @@
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <span style="color:var(--text-primary);">Сайт для барбершопа</span></nav>
       <span class="hero-label reveal">Нишевое решение</span>
       <h1 class="reveal">Сайт для барбершопа — <span class="accent">онлайн-запись и витрина мастеров</span></h1>
       <p class="hero-subtitle reveal">Разработка сайтов для барбершопов и мужских парикмахерских. Онлайн-запись по мастеру и времени, прозрачный прайс, портфолио работ и отзывы, напоминания в Telegram. Реальный пример — THRONE.</p>
@@ -340,32 +361,32 @@
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
-          <div class="feature-icon">1</div>
+          <div class="feature-icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="6" y="7" width="20" height="15" rx="3"/><path d="M11 26h10M16 22v4"/><circle class="icon-dot" cx="23" cy="10" r="2.2"/></svg></div>
           <h3>Главный экран</h3>
           <p>Название, услуга, атмосфера и кнопка записи. Сразу понятно, что это мужская парикмахерская, а не общий салон.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">2</div>
+          <div class="feature-icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="11" r="4.5"/><path d="M8 26c1.8-5 5-7 8-7s6.2 2 8 7"/><circle class="icon-dot" cx="23" cy="9" r="2.2"/></svg></div>
           <h3>Мастера</h3>
           <p>Карточки барберов с фото, специализацией и опытом. У каждого — свои слоты и портфолио работ.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">3</div>
+          <div class="feature-icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 12h17l-2 9H11l-2-9Z"/><path d="M9 12 8 8H5"/><circle cx="12" cy="25" r="1.6"/><circle cx="23" cy="25" r="1.6"/><circle class="icon-dot" cx="21" cy="15" r="2.2"/></svg></div>
           <h3>Услуги и цены</h3>
           <p>Стрижка, борода, камуфляж, отец и сын, детская стрижка — с ценами и длительностью. Снимает половину вопросов по телефону.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">4</div>
+          <div class="feature-icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="7" y="6" width="18" height="20" rx="3"/><path d="M11 12h8M11 17h10M11 22h5"/><circle class="icon-dot" cx="23" cy="22" r="2.2"/></svg></div>
           <h3>Портфолио работ</h3>
           <p>Реальные фото до/после: стрижки, бороды, укладки. Главный аргумент доверия в мужской нише.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">5</div>
+          <div class="feature-icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="7" y="6" width="18" height="20" rx="3"/><path d="M11 12h8M11 17h10M11 22h5"/><circle class="icon-dot" cx="23" cy="22" r="2.2"/></svg></div>
           <h3>Онлайн-запись</h3>
           <p>Выбор мастера, услуги и времени из свободных слотов. Подтверждение и напоминание в Telegram.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">6</div>
+          <div class="feature-icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 26s8-5.5 8-13a8 8 0 1 0-16 0c0 7.5 8 13 8 13Z"/><circle cx="16" cy="13" r="2.8"/><circle class="icon-dot" cx="22" cy="9" r="2.2"/></svg></div>
           <h3>Отзывы и контакты</h3>
           <p>Реальные отзывы клиентов, адрес, режим работы, как добраться. Доверие и последний шаг перед записью.</p>
         </div>
@@ -388,7 +409,7 @@
           <p style="font-size:14px; color:var(--text-tertiary); margin-bottom:24px;">Пример моей работы в нише барбершопов. Сайт собран на чистом коде, адаптивен и индексируется поисковиками; коммерческие метрики — на стороне владельца.</p>
           <a href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener" class="btn-secondary">Открыть сайт →</a>
         </div>
-        <div class="case-block-image">
+        <div class="case-block-image browser-frame">
           <img src="/assets/work/barber.webp" alt="THRONE — сайт барбершопа с онлайн-записью и витриной мастеров" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         </div>
       </div>
@@ -475,6 +496,7 @@
           <textarea id="message" name="message" placeholder="Сколько мастеров? Какие услуги и цены? Нужно ли портфолио и онлайн-запись?" required></textarea>
         </div>
         <label class="consent" style="display:block;margin:16px 0 0;font-size:12px;line-height:1.5;color:var(--text-secondary);"><input type="checkbox" required style="margin-right:8px;vertical-align:middle;"> Я согласен на <a href="/legal/privacy.html" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">обработку персональных данных</a></label>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
           <span>Отправить заявку</span>
         </button>
@@ -566,8 +588,33 @@
       document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
       var form = document.getElementById('contactForm');
       var btn = document.getElementById('submitBtn');
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      function toastIcon(){
+        return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="currentColor"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="currentColor"/></svg>';
+      }
+      function showFormToast(type, title, text){
+        var stack = document.querySelector('.form-toast-stack');
+        if (!stack) {
+          stack = document.createElement('div');
+          stack.className = 'form-toast-stack';
+          stack.setAttribute('role','status');
+          stack.setAttribute('aria-live','polite');
+          stack.setAttribute('aria-atomic','true');
+          document.body.appendChild(stack);
+        }
+        stack.innerHTML = '<div class="form-toast '+(type === 'error' ? 'is-error' : 'is-success')+'"><span class="form-toast-icon">'+toastIcon()+'</span><span><strong class="form-toast-title"></strong><span class="form-toast-text"></span></span></div>';
+        var toast = stack.querySelector('.form-toast');
+        toast.querySelector('.form-toast-title').textContent = title;
+        toast.querySelector('.form-toast-text').textContent = text;
+        requestAnimationFrame(function(){ toast.classList.add('is-visible'); });
+        clearTimeout(stack._hideTimer);
+        stack._hideTimer = setTimeout(function(){
+          toast.classList.remove('is-visible');
+          setTimeout(function(){ stack.innerHTML = ''; }, 320);
+        }, 5000);
+      }
       var ORIG_TEXT = 'Отправить заявку';
-      if (form) {
+      if (form && btn) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
           var name = document.getElementById('name').value.trim();
@@ -576,37 +623,36 @@
           if (!name || !email || !msg) return;
           var consent = form.querySelector('.consent input[type="checkbox"]');
           if (consent && !consent.checked) {
-            btn.textContent = 'Отметьте согласие на обработку данных';
-            setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 3000);
+            showFormToast('error', 'Нужно согласие', 'Отметьте чекбокс обработки персональных данных.');
             return;
           }
-          btn.textContent = 'Отправка…';
+          btn.disabled = true;
+          btn.textContent = 'Отправка...';
           fetch('https://formspree.io/f/mkolvvep', {
             method: 'POST',
             body: new FormData(form),
             headers: { 'Accept': 'application/json' }
           })
           .then(function(response){
+            btn.disabled = false;
+            btn.textContent = ORIG_TEXT;
             if (response.ok) {
               __reach('form_submit');
-              btn.textContent = 'Заявка отправлена ✓';
-              btn.style.background = 'var(--accent)';
               form.reset();
-              setTimeout(function(){ btn.textContent = ORIG_TEXT; btn.style.background = ''; }, 4000);
+              showFormToast('success', 'Заявка отправлена ✓', 'Отвечу в течение дня.');
             } else {
               return response.json().then(function(d){
-                var m = (d && d.errors && d.errors[0] && d.errors[0].message) ? d.errors[0].message : 'Ошибка отправки. Попробуйте ещё раз.';
-                btn.textContent = m;
-                setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+                var m = (d && d.errors && d.errors[0] && d.errors[0].message) ? d.errors[0].message : 'Попробуйте ещё раз или напишите в Telegram.';
+                showFormToast('error', 'Ошибка отправки', m);
               }).catch(function(){
-                btn.textContent = 'Ошибка отправки. Попробуйте ещё раз.';
-                setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+                showFormToast('error', 'Ошибка отправки', 'Попробуйте ещё раз или напишите в Telegram.');
               });
             }
           })
           .catch(function(){
-            btn.textContent = 'Нет соединения. Попробуйте позже.';
-            setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+            btn.disabled = false;
+            btn.textContent = ORIG_TEXT;
+            showFormToast('error', 'Нет соединения', 'Попробуйте позже или напишите в Telegram.');
           });
         });
       }

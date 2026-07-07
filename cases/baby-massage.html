@@ -18,12 +18,12 @@
   <meta property="og:description" content="Разбор проекта baby-massage05.ru. Технологии, структура, процесс. Реальный кейс.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://radzhabov-dev.ru/cases/baby-massage.html">
-  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/case-baby-massage.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Кейс «Кроха и Я» — лендинг для детского массажа">
   <meta name="twitter:description" content="Разбор проекта baby-massage05.ru. Технологии, структура, процесс.">
-  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/case-baby-massage.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,7 +62,7 @@
       --border-hover: rgba(20, 18, 16, 0.15);
       --text-primary: #141210;
       --text-secondary: #7A7570;
-      --text-tertiary: #A39E98;
+      --text-tertiary: #6E6861;
       --accent: #1A3A2A;
       --accent-dim: #2D5A45;
       --accent-glow: rgba(26, 58, 42, 0.12);
@@ -219,6 +219,24 @@
     @media (prefers-reduced-motion:reduce) {
       .reveal { opacity:1; transform:none; transition:none; }
     }
+
+    .browser-frame { position:relative; overflow:hidden; border:1px solid var(--border); border-radius:16px; background:var(--bg-card); box-shadow:0 18px 55px rgba(20,18,16,0.08); }
+    .browser-frame::before { content:''; position:absolute; top:0; left:0; right:0; height:30px; background:linear-gradient(180deg, rgba(255,253,249,0.92), rgba(237,232,223,0.88)); border-bottom:1px solid var(--border); z-index:2; }
+    .browser-frame::after { content:''; position:absolute; top:11px; left:14px; width:7px; height:7px; border-radius:50%; background:var(--accent-warm,#B5623C); box-shadow:14px 0 0 rgba(26,58,42,0.45),28px 0 0 rgba(20,18,16,0.18); z-index:3; }
+    .browser-frame > img[style*="position:absolute"] { top:30px !important; height:calc(100% - 30px) !important; }
+    figure.browser-frame > img, .shot.browser-frame > img { margin-top:30px; }
+    .screenshot.browser-frame, .shot.browser-frame { padding-top:30px; }
+    .screenshot.browser-frame > span, .shot.browser-frame > span { position:relative; z-index:1; }
+
+    .form-toast-stack { position:fixed; right:clamp(16px,4vw,34px); bottom:clamp(16px,4vw,34px); z-index:10050; display:grid; gap:10px; width:min(360px, calc(100vw - 32px)); pointer-events:none; }
+    .form-toast { display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:center; padding:14px 16px; border:1px solid var(--border); border-radius:16px; background:rgba(251,248,243,0.96); box-shadow:0 18px 55px rgba(20,18,16,0.14); color:var(--text-primary); opacity:0; transform:translateY(12px); transition:opacity .28s ease, transform .28s ease; }
+    .form-toast.is-visible { opacity:1; transform:none; }
+    .form-toast-icon { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; color:var(--accent); background:var(--accent-glow); }
+    .form-toast-icon svg { width:24px; height:24px; }
+    .form-toast.is-error .form-toast-icon { color:var(--color-error,#A8443B); background:rgba(168,68,59,0.10); }
+    .form-toast-title { font-family:var(--font-display); font-size:17px; font-weight:700; line-height:1.15; }
+    .form-toast-text { margin-top:3px; color:var(--text-secondary); font-size:13px; line-height:1.45; }
+    @media(max-width:640px){ .form-toast-stack { left:16px; right:16px; bottom:16px; width:auto; } }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -257,6 +275,7 @@
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/#work" style="color:var(--text-tertiary);text-decoration:none;">Кейсы</a> / <span style="color:var(--text-primary);">«Кроха и Я»</span></nav>
       <span class="hero-label reveal">Кейс</span>
       <h1 class="reveal">«Кроха и Я» — <span class="accent">лендинг для детского массажа</span></h1>
       <p class="hero-subtitle reveal">Реальный проект для частного специалиста по детскому массажу. Полный цикл: от структуры до запуска.</p>
@@ -355,10 +374,10 @@
         <h2>Как выглядит сайт</h2>
       </div>
       <div class="screenshot-grid">
-        <div class="screenshot reveal"><span>[ Главный экран ]</span></div>
-        <div class="screenshot reveal"><span>[ Блок услуг ]</span></div>
-        <div class="screenshot reveal"><span>[ Форма записи ]</span></div>
-        <div class="screenshot reveal"><span>[ Мобильная версия ]</span></div>
+        <div class="screenshot browser-frame reveal"><span>[ Главный экран ]</span></div>
+        <div class="screenshot browser-frame reveal"><span>[ Блок услуг ]</span></div>
+        <div class="screenshot browser-frame reveal"><span>[ Форма записи ]</span></div>
+        <div class="screenshot browser-frame reveal"><span>[ Мобильная версия ]</span></div>
       </div>
       <div style="text-align:center; margin-top:32px;" class="reveal">
         <a href="https://baby-massage05.ru/" target="_blank" rel="noopener" class="btn-secondary">Посмотреть живой сайт ↗</a>
@@ -410,6 +429,7 @@
           <textarea id="message" name="message" placeholder="Расскажите, какой сайт вам нужен. Есть ли макет и тексты?" required></textarea>
         </div>
         <label class="consent" style="display:block;margin:16px 0 0;font-size:12px;line-height:1.5;color:var(--text-secondary);"><input type="checkbox" required style="margin-right:8px;vertical-align:middle;"> Я согласен на <a href="/legal/privacy.html" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">обработку персональных данных</a></label>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
           <span>Отправить заявку</span>
         </button>
@@ -485,8 +505,32 @@
       var form = document.getElementById('contactForm');
       var btn = document.getElementById('submitBtn');
       function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      function toastIcon(){
+        return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="currentColor"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="currentColor"/></svg>';
+      }
+      function showFormToast(type, title, text){
+        var stack = document.querySelector('.form-toast-stack');
+        if (!stack) {
+          stack = document.createElement('div');
+          stack.className = 'form-toast-stack';
+          stack.setAttribute('role','status');
+          stack.setAttribute('aria-live','polite');
+          stack.setAttribute('aria-atomic','true');
+          document.body.appendChild(stack);
+        }
+        stack.innerHTML = '<div class="form-toast '+(type === 'error' ? 'is-error' : 'is-success')+'"><span class="form-toast-icon">'+toastIcon()+'</span><span><strong class="form-toast-title"></strong><span class="form-toast-text"></span></span></div>';
+        var toast = stack.querySelector('.form-toast');
+        toast.querySelector('.form-toast-title').textContent = title;
+        toast.querySelector('.form-toast-text').textContent = text;
+        requestAnimationFrame(function(){ toast.classList.add('is-visible'); });
+        clearTimeout(stack._hideTimer);
+        stack._hideTimer = setTimeout(function(){
+          toast.classList.remove('is-visible');
+          setTimeout(function(){ stack.innerHTML = ''; }, 320);
+        }, 5000);
+      }
       var ORIG_TEXT = 'Отправить заявку';
-      if (form) {
+      if (form && btn) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
           var name = document.getElementById('name').value.trim();
@@ -495,37 +539,36 @@
           if (!name || !email || !msg) return;
           var consent = form.querySelector('.consent input[type="checkbox"]');
           if (consent && !consent.checked) {
-            btn.textContent = 'Отметьте согласие на обработку данных';
-            setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 3000);
+            showFormToast('error', 'Нужно согласие', 'Отметьте чекбокс обработки персональных данных.');
             return;
           }
-          btn.textContent = 'Отправка…';
+          btn.disabled = true;
+          btn.textContent = 'Отправка...';
           fetch('https://formspree.io/f/mkolvvep', {
             method: 'POST',
             body: new FormData(form),
             headers: { 'Accept': 'application/json' }
           })
           .then(function(response){
+            btn.disabled = false;
+            btn.textContent = ORIG_TEXT;
             if (response.ok) {
               __reach('form_submit');
-              btn.textContent = 'Заявка отправлена ✓';
-              btn.style.background = 'var(--accent)';
               form.reset();
-              setTimeout(function(){ btn.textContent = ORIG_TEXT; btn.style.background = ''; }, 4000);
+              showFormToast('success', 'Заявка отправлена ✓', 'Отвечу в течение дня.');
             } else {
               return response.json().then(function(d){
-                var m = (d && d.errors && d.errors[0] && d.errors[0].message) ? d.errors[0].message : 'Ошибка отправки. Попробуйте ещё раз.';
-                btn.textContent = m;
-                setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+                var m = (d && d.errors && d.errors[0] && d.errors[0].message) ? d.errors[0].message : 'Попробуйте ещё раз или напишите в Telegram.';
+                showFormToast('error', 'Ошибка отправки', m);
               }).catch(function(){
-                btn.textContent = 'Ошибка отправки. Попробуйте ещё раз.';
-                setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+                showFormToast('error', 'Ошибка отправки', 'Попробуйте ещё раз или напишите в Telegram.');
               });
             }
           })
           .catch(function(){
-            btn.textContent = 'Нет соединения. Попробуйте позже.';
-            setTimeout(function(){ btn.textContent = ORIG_TEXT; }, 4000);
+            btn.disabled = false;
+            btn.textContent = ORIG_TEXT;
+            showFormToast('error', 'Нет соединения', 'Попробуйте позже или напишите в Telegram.');
           });
         });
       }

@@ -23,10 +23,13 @@ All user-facing text is **Russian**. Domain: `radzhabov-dev.ru`.
 
 ### Hard constraints
 - NO framework or build step. Keep the homepage split into the existing `index.html` + versioned `home.css`/`home.js` assets.
-- NO external libraries/frameworks (React, Vue, GSAP, jQuery, Tailwind, …).
+- NO frameworks. Phase 4 has a narrow owner-approved exception for self-hosted motion vendor only: GSAP core + ScrollTrigger, Lenis and Three.js core in `assets/js/vendor/`. No CDN runtime; no React/Vue/jQuery/Tailwind/build step.
+- Motion vendor budget: ≤250 KB gzip total for vendor files. Homepage motion lives in `assets/js/home-motion.js` and is loaded lazily only after `window.load` + idle + `body.pl-done`.
+- Motion loading gate is mandatory: `matchMedia('(min-width: 969px) and (pointer: fine)')` and `prefers-reduced-motion: no-preference`. If the gate fails, vendor files and `home-motion.js` must not be requested.
 - NO CDN/external dependencies, NO Python generators committed to the repo.
 - On the homepage, **Playfair Display, Outfit and JetBrains Mono are self-hosted** as WOFF2 subsets in `assets/fonts/`; do not restore render-blocking Google Fonts links there. Supporting pages may still use Google Fonts. Yandex Metrika is the only external runtime script.
-- Homepage markup/SEO/preloader edits go in `index.html`; visual styles go in `assets/css/home.css`; general interactions go in `assets/js/home.js`. Bump the asset query version after CSS/JS changes.
+- Homepage markup/SEO/preloader edits go in `index.html`; visual styles go in `assets/css/home.css`; general interactions go in `assets/js/home.js`; desktop-only motion interactions go in `assets/js/home-motion.js`. Bump asset query versions after CSS/JS changes.
+- **Phase 5 security (2026-07-07):** all Formspree forms include a honeypot field `_gotcha`; `index.html` carries a tested `<meta http-equiv="Content-Security-Policy">`. Do not modify these without re-running headless-browser CSP and form-submission checks.
 
 ### Files in the directory
 - `index.html` — **the site. Source of truth.**
@@ -59,7 +62,7 @@ Decorative layers that still exist from the template, re-themed:
 | `--border-hover` | `rgba(36,28,20,0.16)` | Hover borders |
 | `--text-primary` | `#141210` | Headings / body (ink) |
 | `--text-secondary` | `#6B655F` | Muted text |
-| `--text-tertiary` | `#8A847D` | Labels/captions |
+| `--text-tertiary` | `#6E6861` | Labels/captions |
 | `--accent` | `#1A3A2A` | Green accent (primary) |
 | `--accent-dim` / `--accent-text` | `#2D5A45` | Darker green |
 | `--accent-warm` | `#B5623C` | **Terracotta** accent (the brand's single warm pop) |
@@ -148,6 +151,8 @@ Two IIFEs, both `'use strict'`:
 1. **Main script** (debounce; section-title stability; nav `.scrolled` on scroll; `toggleMenu()` mobile menu; scroll-reveal `.reveal`→`.visible`; smooth anchor scroll; dot-grid canvas; cursor glow/follower; hero parallax/mesh; marquee; work "discovery" intro; back-to-top `#scrollTopBtn`; **Formspree form**).
 2. **Preloader script** (see above) — last in `<body>`.
 
+Phase 4 adds a separate desktop-only motion layer: `assets/js/home-motion.js` plus self-hosted vendor in `assets/js/vendor/`. It is injected by the inline loader in `index.html` only after the hard gate (`min-width:969px`, `pointer:fine`, no reduced motion), `window.load`, idle and `body.pl-done`. Do not convert it to a normal blocking/defer script tag, and keep reduced/mobile fallbacks as plain HTML/CSS.
+
 `toggleMenu()` is global (`window.toggleMenu`) — used by inline `onclick` in the mobile menu.
 
 ## Brand assets / icons
@@ -195,6 +200,7 @@ legacy moved to `_archive/`; meta titles/descriptions trimmed to SERP limits;
 Phase 0 (legal + consent + Formspree `mkolvvep` + Metrika goals); Phase 1 (5 niches, «Излом» unified);
 Phase 2 (geo line + `/cities/` Махачкала/Каспийск/Дербент + `/blog/` hub + 3 pillar articles, sitemap 22 URLs);
 micro-CRO pass over services verified 2026-07-02 — «для кого / что входит / сроки / CTA» already present, no bloat added.
+Phase 5 design pass (2026-07-07) completed the design-only part of `marketing/EXECUTOR-BRIEF-Phase5-design-security.md`: page-specific OG images in `assets/og/`, browser-frame screenshots, form success/error toast, tertiary contrast fix, 404 broken-thread detail, SVG diagrams in two articles, targeted `&nbsp;` polish, and unified linear SVG icons for niche `feature-icon` cards. Phase 5 security was completed in the same run: honeypot `_gotcha` in every Formspree form and a tested `<meta http-equiv="Content-Security-Policy">` on `index.html` (see §Architecture security note).
 
 ## Common pitfalls
 - Keep the brand mark consistent everywhere (nav `.nlm-*`, preloader `.pl-mk-*`, `favicon.svg`, icons). Core is always terracotta `#B5623C`; rest is `currentColor`/ink.

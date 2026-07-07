@@ -17,12 +17,12 @@
   <meta property="og:description" content="Каталог, категории, корзина и поддержка с анонимной переадресацией — магазин целиком живёт в Telegram, без отдельного сайта.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://radzhabov-dev.ru/cases/decorapp.html">
-  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/case-decorapp.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Кейс GlowDecor — Telegram-магазин (mini app)">
   <meta name="twitter:description" content="Магазин декора и свечей внутри Telegram: каталог, корзина, анонимная поддержка.">
-  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/case-decorapp.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -64,7 +64,7 @@
       --border-hover: rgba(20, 18, 16, 0.15);
       --text-primary: #141210;
       --text-secondary: #7A7570;
-      --text-tertiary: #A39E98;
+      --text-tertiary: #6E6861;
       --accent: #1A3A2A;
       --accent-dim: #2D5A45;
       --accent-glow: rgba(26, 58, 42, 0.12);
@@ -181,6 +181,14 @@
     @media (prefers-reduced-motion:reduce) {
       .reveal { opacity:1; transform:none; transition:none; }
     }
+
+    .browser-frame { position:relative; overflow:hidden; border:1px solid var(--border); border-radius:16px; background:var(--bg-card); box-shadow:0 18px 55px rgba(20,18,16,0.08); }
+    .browser-frame::before { content:''; position:absolute; top:0; left:0; right:0; height:30px; background:linear-gradient(180deg, rgba(255,253,249,0.92), rgba(237,232,223,0.88)); border-bottom:1px solid var(--border); z-index:2; }
+    .browser-frame::after { content:''; position:absolute; top:11px; left:14px; width:7px; height:7px; border-radius:50%; background:var(--accent-warm,#B5623C); box-shadow:14px 0 0 rgba(26,58,42,0.45),28px 0 0 rgba(20,18,16,0.18); z-index:3; }
+    .browser-frame > img[style*="position:absolute"] { top:30px !important; height:calc(100% - 30px) !important; }
+    figure.browser-frame > img, .shot.browser-frame > img { margin-top:30px; }
+    .screenshot.browser-frame, .shot.browser-frame { padding-top:30px; }
+    .screenshot.browser-frame > span, .shot.browser-frame > span { position:relative; z-index:1; }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -219,6 +227,7 @@
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/#work" style="color:var(--text-tertiary);text-decoration:none;">Кейсы</a> / <span style="color:var(--text-primary);">GlowDecor</span></nav>
       <span class="hero-label reveal">Кейс · Telegram mini app</span>
       <h1 class="reveal">GlowDecor — магазин, который целиком живёт <span class="accent">внутри Telegram</span></h1>
       <p class="hero-subtitle reveal">Магазин декора и свечей без отдельного сайта: каталог, категории, корзина и поддержка — всё в mini app, в один тап от чата. Разбор, что внутри и зачем так.</p>
@@ -272,19 +281,19 @@
         <p>Десктопная и мобильная версии mini app — каталог и корзина.</p>
       </div>
       <div class="shots-grid">
-        <figure class="shot reveal">
+        <figure class="shot browser-frame reveal">
           <img src="/assets/work/decor-desk-catalog.webp" alt="GlowDecor — каталог товаров в Telegram mini app, десктоп" loading="lazy" decoding="async">
           <figcaption>Каталог · десктоп</figcaption>
         </figure>
-        <figure class="shot reveal">
+        <figure class="shot browser-frame reveal">
           <img src="/assets/work/decor-desk-cart.webp" alt="GlowDecor — корзина и оформление заказа в Telegram mini app, десктоп" loading="lazy" decoding="async">
           <figcaption>Корзина · десктоп</figcaption>
         </figure>
-        <figure class="shot reveal">
+        <figure class="shot browser-frame reveal">
           <img src="/assets/work/decor-mob-catalog.webp" alt="GlowDecor — каталог в Telegram mini app на телефоне" loading="lazy" decoding="async">
           <figcaption>Каталог · телефон</figcaption>
         </figure>
-        <figure class="shot reveal">
+        <figure class="shot browser-frame reveal">
           <img src="/assets/work/decor-mob-cart.webp" alt="GlowDecor — корзина в Telegram mini app на телефоне" loading="lazy" decoding="async">
           <figcaption>Корзина · телефон</figcaption>
         </figure>
