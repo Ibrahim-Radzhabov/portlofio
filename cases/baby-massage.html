@@ -46,7 +46,8 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov-dev.ru/" },
-          { "@type": "ListItem", "position": 2, "name": "Кейсы", "item": "https://radzhabov-dev.ru/cases/baby-massage.html" }
+          { "@type": "ListItem", "position": 2, "name": "Кейсы", "item": "https://radzhabov-dev.ru/cases/" },
+          { "@type": "ListItem", "position": 3, "name": "«Кроха и Я»", "item": "https://radzhabov-dev.ru/cases/baby-massage.html" }
         ]
       }
     ]
@@ -156,8 +157,12 @@
 
     /* Screenshots */
     .screenshot-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:40px; }
-    .screenshot { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; }
+    .screenshot { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; margin:0; }
     .screenshot span { color:var(--text-tertiary); font-family:var(--font-mono); font-size:14px; }
+    .screenshot img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+    .screenshot.browser-frame img { height:calc(100% - 30px); margin-top:30px; object-position:top center; }
+    .screenshot.is-mobile-shot { max-width:320px; margin-inline:auto; aspect-ratio:9/16; }
+    .screenshot.is-mobile-shot img { object-position:top; }
 
     /* Results */
     .results-block { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:40px; }
@@ -253,7 +258,7 @@
       <ul class="nav-links">
         <li><a href="/">Главная</a></li>
         <li><a href="/services/landing.html">Услуги</a></li>
-        <li><a href="/cases/baby-massage.html" class="active">Кейсы</a></li>
+        <li><a href="/cases/" class="active">Кейсы</a></li>
         <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
         <li><a href="/#contact">Контакты</a></li>
       </ul>
@@ -267,7 +272,7 @@
     <button class="close-menu" onclick="toggleMenu()" aria-label="Закрыть меню">×</button>
     <a href="/" onclick="toggleMenu()">Главная</a>
     <a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
-    <a href="/cases/baby-massage.html" onclick="toggleMenu()">Кейсы</a>
+    <a href="/cases/" onclick="toggleMenu()">Кейсы</a>
     <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Калькулятор</a>
     <a href="/#contact" onclick="toggleMenu()">Контакты</a>
   </div>
@@ -275,7 +280,7 @@
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
-      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/#work" style="color:var(--text-tertiary);text-decoration:none;">Кейсы</a> / <span style="color:var(--text-primary);">«Кроха и Я»</span></nav>
+      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/cases/" style="color:var(--text-tertiary);text-decoration:none;">Кейсы</a> / <span style="color:var(--text-primary);">«Кроха и Я»</span></nav>
       <span class="hero-label reveal">Кейс</span>
       <h1 class="reveal">«Кроха и Я» — <span class="accent">лендинг для детского массажа</span></h1>
       <p class="hero-subtitle reveal">Реальный проект для частного специалиста по детскому массажу. Полный цикл: от структуры до запуска.</p>
@@ -304,7 +309,7 @@
         <ul>
           <li>Простая и понятная структура — за 10 секунд посетитель понимает, кто, что делает и сколько стоит</li>
           <li>Форма записи на массаж с уведомлениями в Telegram</li>
-          <li>Адаптивность — 70% клиентов заходят с телефонов</li>
+          <li>Адаптивность — основной сценарий просмотра с телефона</li>
           <li>Быстрая загрузка — не терять трафик из-за тормозов</li>
           <li>SEO-база — чтобы сайт находили по запросам «детский массаж [город]»</li>
           <li>Возможность самостоятельно менять тексты и фото без программиста</li>
@@ -333,7 +338,7 @@
         <p>Плавные появления блоков при скролле, hover-эффекты на кнопках и карточках. Без тяжёлых библиотек — только CSS transitions и лёгкий JS. Сайт работает плавно даже на бюджетных телефонах.</p>
 
         <h3>5. Форма записи</h3>
-        <p>Простая форма: имя ребёнка, возраст, контакт родителя, выбор услуги. Данные приходят в Telegram-бот и на email. Валидация полей, маска телефона, сообщение об успешной отправке.</p>
+        <p>Простая форма: имя ребёнка, возраст, контакт родителя, выбор услуги. Заявка уходит через Formspree и дублируется в Telegram. Валидация полей, сообщение об успешной отправке.</p>
 
         <h3>6. SEO</h3>
         <p>Правильная структура заголовков (H1-H3), meta description, Open Graph, Schema.org, sitemap.xml. Технически сайт готов к индексации.</p>
@@ -374,10 +379,26 @@
         <h2>Как выглядит сайт</h2>
       </div>
       <div class="screenshot-grid">
-        <div class="screenshot browser-frame reveal"><span>[ Главный экран ]</span></div>
-        <div class="screenshot browser-frame reveal"><span>[ Блок услуг ]</span></div>
-        <div class="screenshot browser-frame reveal"><span>[ Форма записи ]</span></div>
-        <div class="screenshot browser-frame reveal"><span>[ Мобильная версия ]</span></div>
+        <figure class="screenshot browser-frame reveal">
+          <img src="/assets/case-baby-massage/baby-massage-hero.webp"
+               alt="Главный экран сайта «Кроха и Я» — детский массаж в Махачкале"
+               loading="lazy" decoding="async" width="1280" height="870">
+        </figure>
+        <figure class="screenshot browser-frame reveal">
+          <img src="/assets/case-baby-massage/baby-massage-services.webp"
+               alt="Блок услуг и цен на сайте «Кроха и Я»"
+               loading="lazy" decoding="async" width="1280" height="870">
+        </figure>
+        <figure class="screenshot browser-frame reveal">
+          <img src="/assets/case-baby-massage/baby-massage-form.webp"
+               alt="Блок связи для записи на детский массаж — сайт «Кроха и Я»"
+               loading="lazy" decoding="async" width="1280" height="870">
+        </figure>
+        <figure class="screenshot browser-frame is-mobile-shot reveal">
+          <img src="/assets/case-baby-massage/baby-massage-mobile.webp"
+               alt="Мобильная версия сайта «Кроха и Я» на iPhone"
+               loading="lazy" decoding="async" width="390" height="844">
+        </figure>
       </div>
       <div style="text-align:center; margin-top:32px;" class="reveal">
         <a href="https://baby-massage05.ru/" target="_blank" rel="noopener" class="btn-secondary">Посмотреть живой сайт ↗</a>
@@ -394,15 +415,15 @@
       <div class="results-block reveal">
         <h3>Технические результаты</h3>
         <ul>
-          <li>Сайт загружается менее чем за 2 секунды на десктопе</li>
+          <li>Быстрая загрузка — лёгкий HTML/CSS/JS без лишних зависимостей</li>
           <li>Корректное отображение на всех устройствах — от iPhone SE до 27" мониторов</li>
-          <li>Валидная HTML5/CSS3 разметка — проходит валидацию W3C</li>
-          <li>Форма записи работает стабильно, уведомления приходят в Telegram и на email</li>
-          <li>Сайт проиндексирован Google и Яндексом</li>
-          <li>Базовая SEO-оптимизация настроена, sitemap.xml подключён</li>
+          <li>Разметка соответствует стандартам HTML5/CSS3</li>
+          <li>Форма записи работает стабильно, заявки поступают через Formspree</li>
+          <li>Сайт подготовлен к индексации: sitemap.xml, robots.txt, Schema.org, Open Graph</li>
+          <li>Сайт проектировался под быстрый просмотр с телефона: родитель за несколько секунд понимает услуги, цены и как записаться</li>
         </ul>
         <div class="results-note">
-          <strong>Примечание:</strong> Проект запущен недавно, коммерческие результаты (количество заявок, конверсия) ещё накапливаются. Технические показатели — корректная индексация, скорость загрузки, мобильная адаптивность — соответствуют заявленным.
+          <strong>Примечание:</strong> Проект запущен в 2026 году. Коммерческие показатели (заявки, конверсия) ещё накапливаются — публикуем только технические факты.
         </div>
       </div>
     </div>
@@ -451,7 +472,7 @@
             <ul>
               <li><a href="/">Главная</a></li>
               <li><a href="/services/landing.html">Услуги</a></li>
-              <li><a href="/cases/baby-massage.html">Кейсы</a></li>
+              <li><a href="/cases/">Кейсы</a></li>
               <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
             </ul>
           </div>

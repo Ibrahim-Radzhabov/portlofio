@@ -322,7 +322,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260707-phase5-design">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20260709-request-path-callout">
   <meta name="yandex-verification" content="1e2895c9cc7530b7" />
 </head>
 <body>
@@ -430,7 +430,7 @@
     <ul class="nav-links">
       <li><a href="#work">Работы</a></li>
       <li><a href="#services">Услуги</a></li>
-      <li><a href="/cases/baby-massage.html">Кейсы</a></li>
+      <li><a href="/cases/">Кейсы</a></li>
       <li><a href="/tools/kalkulyator-lendinga.html">Стоимость</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
@@ -447,7 +447,7 @@
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Мобильное меню">
   <a href="#work" onclick="toggleMenu()">Работы</a>
   <a href="#services" onclick="toggleMenu()">Услуги</a>
-  <a href="/cases/baby-massage.html" onclick="toggleMenu()">Кейсы</a>
+  <a href="/cases/" onclick="toggleMenu()">Кейсы</a>
   <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Стоимость</a>
   <a href="#contact" onclick="toggleMenu()">Контакты</a>
 </div>
@@ -502,7 +502,7 @@
           </svg>
           <canvas class="hero-fracture-canvas" data-fracture-canvas></canvas>
           <canvas class="hero-motion-three" data-motion-three-canvas aria-hidden="true"></canvas>
-          <span class="hero-fracture-label" data-fracture-label="layout">сайт</span>
+          <span class="hero-fracture-label" data-fracture-label="layout">Сайт</span>
           <span class="hero-fracture-label" data-fracture-label="raw">AI</span>
           <span class="hero-fracture-label" data-fracture-label="task">1С</span>
           <div class="hero-fracture-hint">выберите узел</div>
@@ -569,7 +569,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-tag">Работы</div>
-      <h2 class="section-title">Реальные проекты, а&nbsp;не макеты.</h2>
+      <h2 class="section-title">Клиентские кейсы и&nbsp;рабочие демо.</h2>
       <p class="section-subtitle">Сайты, AI-ассистенты и&nbsp;связки с&nbsp;1С — рабочие проекты в&nbsp;разных нишах, которые можно открыть и&nbsp;проверить.</p>
     </div>
 
@@ -1573,7 +1573,7 @@
         <ul class="footer-nav" aria-label="Навигация в футере">
           <li><a href="#work">Работы</a></li>
           <li><a href="#services">Услуги</a></li>
-          <li><a href="/cases/baby-massage.html">Кейсы</a></li>
+          <li><a href="/cases/">Кейсы</a></li>
           <li><a href="/tools/kalkulyator-lendinga.html">Стоимость</a></li>
           <li><a href="/niches/sajt-dlya-massazhista.html">Сайт для массажиста</a></li>
           <li><a href="/niches/sajt-dlya-avtoservisa.html">Сайт для автосервиса</a></li>
@@ -1659,7 +1659,7 @@
     vendor.reduce(function (chain, src) {
       return chain.then(function () { return loadScript(src, false); });
     }, Promise.resolve()).then(function () {
-      return loadScript('/assets/js/home-motion.js?v=20260707-phase4-motion', true);
+      return loadScript('/assets/js/home-motion.js?v=20260709-izlom-fix', true);
     }).catch(function (err) {
       console.warn('Motion layer skipped:', err);
     });

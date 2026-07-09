@@ -232,7 +232,7 @@
     return { x: mix(a.x, b.x, t), y: mix(a.y, b.y, t), s: mix(a.s, b.s, t) };
   }
 
-  function addNode(node, point, glowVertices, nodeVertices, alpha) {
+  function updateNodeDOMAndHitbox(node, point, alpha) {
     var isAI = node.key === 'raw';
     var isSelected = selected === node.key || selected === 'task';
     var isHover = hoverKey === node.key;
@@ -240,11 +240,6 @@
     if (selected === node.key) scale = isAI ? 1.34 : 1.26;
     if (selected !== 'task' && selected !== node.key) scale = 0.76;
     var radius = node.r * point.s * scale;
-
-    if (isAI || isHover) {
-      pushPoint(glowVertices, point, radius * 3.9, isAI ? [warm[0], warm[1], warm[2], 0.12 * alpha] : [ink[0], ink[1], ink[2], 0.06 * alpha]);
-    }
-    pushPoint(nodeVertices, point, radius * 2, isAI ? [warm[0], warm[1], warm[2], alpha] : [ink[0], ink[1], ink[2], alpha]);
     node.hit = { x: point.x, y: point.y, r: radius + 18 };
 
     if (node.label) {
@@ -252,6 +247,17 @@
       node.label.style.top = (point.y + radius + 18) + 'px';
       node.label.style.opacity = alpha.toFixed(3);
     }
+    return radius;
+  }
+
+  function addNode(node, point, glowVertices, nodeVertices, alpha, radius) {
+    var isAI = node.key === 'raw';
+    var isHover = hoverKey === node.key;
+
+    if (isAI || isHover) {
+      pushPoint(glowVertices, point, radius * 3.9, isAI ? [warm[0], warm[1], warm[2], 0.12 * alpha] : [ink[0], ink[1], ink[2], 0.06 * alpha]);
+    }
+    pushPoint(nodeVertices, point, radius * 2, isAI ? [warm[0], warm[1], warm[2], alpha] : [ink[0], ink[1], ink[2], alpha]);
   }
 
   function fallback() {
@@ -293,9 +299,11 @@
 
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
-    var p0 = project(nodes[0]);
-    var p1 = project(nodes[1]);
-    var p2 = project(nodes[2]);
+    var threeLive = stage.classList.contains('is-three-live');
+    var proj = threeLive && window.__heroProjected;
+    var p0 = proj ? proj.p0 : project(nodes[0]);
+    var p1 = proj ? proj.p1 : project(nodes[1]);
+    var p2 = proj ? proj.p2 : project(nodes[2]);
     var lines = [];
     var glows = [];
     var particleHalos = [];
@@ -312,22 +320,49 @@
       var start = segment === 0 ? p0 : p1;
       var end = segment === 0 ? p1 : p2;
       var point = pointOnSegment(start, end, smooth(raw));
-      point.y += Math.sin(now * 0.002 + particle.wobble) * 5 * point.s;
+
+      /* Wobble perpendicular to the segment direction (feels natural on any angle) */
+      var segDx = end.x - start.x;
+      var segDy = end.y - start.y;
+      var segLen = Math.max(1, Math.sqrt(segDx * segDx + segDy * segDy));
+      var perpX = -segDy / segLen;
+      var perpY =  segDx / segLen;
+      var wobbleAmt = Math.sin(now * 0.0018 + particle.wobble) * 6 * point.s;
+      point.x += perpX * wobbleAmt;
+      point.y += perpY * wobbleAmt;
+
+      /* heat = 1 при mid, 0 на концах; квадрат — нелинейный нарастание */
       var near = segment === 0 ? raw : 1 - raw;
       var heat = near * near;
-      var radius = (3.6 + heat * 4.2) * point.s;
-      pushPoint(particleHalos, point, radius * (4.8 + heat * 1.4), mixColor(warm, hot, heat, (0.08 + heat * 0.08) * alpha));
-      pushPoint(particleCores, point, radius * 2, mixColor(warm, hot, heat, 0.92 * alpha));
+
+      /* radius: маленький вдали, заметно крупнее у центра */
+      var radius = (3.2 + heat * 6.4) * point.s;
+
+      /* halo: мягкое свечение, отчётливое у центра */
+      pushPoint(particleHalos, point, radius * (4.4 + heat * 2.8),
+        mixColor(warm, hot, heat, (0.12 + heat * 0.16) * alpha));
+
+      /* core: полностью непрозрачный, цвет warm -> hot */
+      pushPoint(particleCores, point, radius * 2.2,
+        mixColor(warm, hot, heat, 0.92 * alpha));
     });
 
-    addNode(nodes[0], p0, glows, nodeCores, alpha);
-    addNode(nodes[1], p1, glows, nodeCores, alpha);
-    addNode(nodes[2], p2, glows, nodeCores, alpha);
-    drawBatch(lines, gl.TRIANGLES, false);
-    drawBatch(glows, gl.POINTS, true);
+    var r0 = updateNodeDOMAndHitbox(nodes[0], p0, alpha);
+    var r1 = updateNodeDOMAndHitbox(nodes[1], p1, alpha);
+    var r2 = updateNodeDOMAndHitbox(nodes[2], p2, alpha);
+
+    if (!threeLive) {
+      addNode(nodes[0], p0, glows, nodeCores, alpha, r0);
+      addNode(nodes[1], p1, glows, nodeCores, alpha, r1);
+      addNode(nodes[2], p2, glows, nodeCores, alpha, r2);
+      drawBatch(lines, gl.TRIANGLES, false);
+      drawBatch(glows, gl.POINTS, true);
+    }
     drawBatch(particleHalos, gl.POINTS, true);
     drawBatch(particleCores, gl.POINTS, true);
-    drawBatch(nodeCores, gl.POINTS, true);
+    if (!threeLive) {
+      drawBatch(nodeCores, gl.POINTS, true);
+    }
     raf = requestAnimationFrame(render);
   }
 

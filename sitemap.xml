@@ -147,8 +147,16 @@
   </url>
 
   <url>
+    <loc>https://radzhabov-dev.ru/cases/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cases/"/>
+  </url>
+
+  <url>
     <loc>https://radzhabov-dev.ru/cases/baby-massage.html</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/cases/baby-massage.html"/>

@@ -281,7 +281,7 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
     function cylinderBetween(a, b) {
       var dir = new THREE.Vector3().subVectors(b.position, a.position);
       var len = dir.length();
-      var geo = new THREE.CylinderGeometry(0.08, 0.08, 1, 16);
+      var geo = new THREE.CylinderGeometry(0.08, 0.08, 1, 16, 1, true);
       var mesh = new THREE.Mesh(geo, linkMat);
       mesh.scale.y = len;
       orientCylinder(mesh, a, b);
@@ -290,7 +290,7 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
 
     function orientCylinder(mesh, a, b) {
       var dir = new THREE.Vector3().subVectors(b.position, a.position);
-      var len = dir.length();
+      var len = Math.max(0.001, dir.length());
       mesh.position.copy(a.position).add(b.position).multiplyScalar(0.5);
       mesh.scale.y = len;
       mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.normalize());
@@ -326,6 +326,15 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
       });
     }
 
+    /* Shared projection for hero3d.js particle sync */
+    var _projV = new THREE.Vector3();
+    function screenOf(mesh) {
+      mesh.getWorldPosition(_projV);
+      _projV.project(camera);
+      var w = canvas.clientWidth, h = canvas.clientHeight;
+      return { x: (_projV.x + 1) / 2 * w, y: (1 - _projV.y) / 2 * h, s: 1 };
+    }
+
     function render(now) {
       if (!alive) return;
       var dt = Math.max(1, now - lastTime);
@@ -335,6 +344,12 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
         group.rotation.x += (targetRotX - group.rotation.x) * 0.08;
         group.rotation.z = Math.sin(now * 0.00035) * 0.06;
         renderer.render(scene, camera);
+        /* Expose projected coords so hero3d.js particles stay in sync */
+        window.__heroProjected = {
+          p0: screenOf(top),
+          p1: screenOf(mid),
+          p2: screenOf(bottom)
+        };
         if (frames < 120) {
           frames += 1;
           frameSum += 1000 / dt;
