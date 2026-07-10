@@ -1,12 +1,17 @@
 # CLAUDE.md — Project Instructions for AI Agents
 
-> Source of truth is the **actual `index.html` on disk**. If this file ever
-> disagrees with `index.html`, trust `index.html` and fix this doc.
+> Source of truth for ongoing implementation is the actual `index.html` on disk.
+> Exception: the byte-exact approved **production** state is commit `74018e8` and
+> `PRODUCTION-BASELINE.md`; the dirty worktree must never be mistaken for production.
 > No exact line numbers are used here on purpose (they drift) — search by
 > id / class / string instead.
 
 > **New agent?** Read `AGENT-HANDOFF.md` first — it has the current multi-page state,
 > open TODOs, the honesty constraints, and the verification toolkit for continuing this project.
+
+## Production design lock (owner-approved 2026-07-10)
+
+Before changing the homepage, read **`PRODUCTION-BASELINE.md`**. The owner considers the current production state approved and wants it preserved. The byte-exact baseline is commit **`74018e8`** / release **`20260710Tphase8-74018e8`**, not the dirty local worktree. Live production has 31 HTML files and 30 sitemap URLs; larger counts below describe pending local work. Do not redesign the homepage, import the full Phase 8 prototype, change the «Излом», journey cards, motion, palette, typography or layout without a new explicit owner request naming that scope. Do not update `.github/production-baseline.sha256` merely to silence CI.
 
 ## Project
 **I. Radzhabov — personal portfolio** (Ибрагим Раджабов). Premium, high-conversion,
@@ -33,7 +38,7 @@ All user-facing text is **Russian**. Domain: `radzhabov-dev.ru`.
 
 ### Files in the directory
 - `index.html` — **the site. Source of truth.**
-- **Sub-pages** (each standalone, same inline pattern, all public pages except `404.html` are in `sitemap.xml` — 30 URLs): `services/{landing,telegram-bot,ai-assistant,integraciya-1c,nastrojka-1c,podderzhka-bitrix}.html`, `cases/` (hub + `baby-massage,dag-sport,decorapp`), `niches/{sajt-dlya-avtoservisa,sajt-dlya-massazhista,sajt-dlya-barbershopa,sajt-dlya-cvetochnogo-magazina,sajt-dlya-klininga,sajt-dlya-okonnoj-kompanii,sajt-dlya-servisnogo-centra,sajt-dlya-magazina-avtozapchastej}.html`, `cities/{mahachkala,kaspijsk,derbent}.html`, `blog/` (hub + `kak-svyazat-sajt-s-1c`, `chto-dolzhno-byt-na-lendinge`, `ai-konsultant-na-sajte`, `telegram-bot-vmesto-sajta`), `tools/kalkulyator-lendinga.html`, `legal/{privacy,soglasie}.html`. NB: `services/nastrojka-1c.html` and `services/podderzhka-bitrix.html` deliberately have **no price** («оценка после разбора») — do not add one.
+- **Sub-pages** (each standalone, same inline pattern, all public pages except `404.html` are in `sitemap.xml` — 37 URLs): `services/{landing,telegram-bot,ai-assistant,integraciya-1c,nastrojka-1c,podderzhka-bitrix}.html`, `cases/` (hub + `baby-massage,dag-sport,decorapp`), `niches/{sajt-dlya-avtoservisa,sajt-dlya-massazhista,sajt-dlya-barbershopa,sajt-dlya-cvetochnogo-magazina,sajt-dlya-klininga,sajt-dlya-okonnoj-kompanii,sajt-dlya-servisnogo-centra,sajt-dlya-magazina-avtozapchastej}.html`, `cities/{mahachkala,kaspijsk,derbent}.html`, `blog/` (hub + `kak-svyazat-sajt-s-1c`, `chto-dolzhno-byt-na-lendinge`, `konstruktor-ili-ruchnaya-verstka`, `ai-konsultant-na-sajte`, `telegram-bot-vmesto-sajta`, `podgotovka-sajta-i-1c-k-integracii`, `telegram-mini-app-ili-bot`, `pochemu-dubliruyutsya-zakazy-v-1c`, `podderzhka-sajta-na-1c-bitrix`, `baza-znanij-dlya-ai-konsultanta`, `pochemu-lending-ne-prinosit-zayavki`), `tools/kalkulyator-lendinga.html`, `legal/{privacy,soglasie}.html`. NB: `services/nastrojka-1c.html` and `services/podderzhka-bitrix.html` deliberately have **no price** («оценка после разбора») — do not add one.
 - **Geo (owner-confirmed 2026-07-02):** city = **Махачкала**; hybrid strategy — Webmaster region + «работаю удалённо по всей России» text + `/cities/`. Homepage Person JSON-LD carries `address` (Махачкала, Дагестан). Never claim CLIENT geography (dag-sport / baby-massage) — it is not confirmed.
 - **Agent/owner docs (NOT deployed):** `AGENT-HANDOFF.md` (continuation brief), `seo-webmaster-setup.md` (owner's Вебмастер/GSC guide).
 - `favicon.svg`, `favicon-16/32/48/180.png`, `apple-touch-icon.png`, `favicon.ico`, `og-image.png` — brand icons/share image (see "Brand assets").
@@ -201,7 +206,7 @@ Phase 0 (legal + consent + Formspree `mkolvvep` + Metrika goals); Phase 1 (5 nic
 Phase 2 (geo line + `/cities/` Махачкала/Каспийск/Дербент + `/blog/` hub + 3 pillar articles, sitemap 22 URLs);
 micro-CRO pass over services verified 2026-07-02 — «для кого / что входит / сроки / CTA» already present, no bloat added.
 Phase 5 design pass (2026-07-07) completed the design-only part of `marketing/EXECUTOR-BRIEF-Phase5-design-security.md`: page-specific OG images in `assets/og/`, browser-frame screenshots, form success/error toast, tertiary contrast fix, 404 broken-thread detail, SVG diagrams in two articles, targeted `&nbsp;` polish, and unified linear SVG icons for niche `feature-icon` cards. Phase 5 security was completed in the same run: honeypot `_gotcha` in every Formspree form and a tested `<meta http-equiv="Content-Security-Policy">` on `index.html` (see §Architecture security note).
-Phase 6-lite SEO (2026-07-07) completed the grounded subset of `marketing/EXECUTOR-BRIEF-Phase6-seo-max.md`: `services/podderzhka-bitrix.html`, FAQPage on `services/landing.html`, visible breadcrumbs, TL;DR blocks in 4 articles, HowTo schema in 2 articles, homepage FAQ for payment/contract, `marketing/position-log.md`, backlink-kit expansion, sitemap/llms updates, and the SEO date patch (`lastmod`/`dateModified` = `2026-07-07`). The max-plan leftovers are backlog, not missing bugs: comparison article, `llms-full.txt`, source-code easter egg, and demo-subdomain footers.
+Phase 6-lite SEO (2026-07-07) completed the grounded subset of `marketing/EXECUTOR-BRIEF-Phase6-seo-max.md`: `services/podderzhka-bitrix.html`, FAQPage on `services/landing.html`, visible breadcrumbs, TL;DR blocks in 4 articles, HowTo schema in 2 articles, homepage FAQ for payment/contract, `marketing/position-log.md`, backlink-kit expansion, sitemap/llms updates, and the SEO date patch (`lastmod`/`dateModified` = `2026-07-07`). The comparison article was added on 2026-07-10. The remaining max-plan backlog is not a bug: `llms-full.txt`, source-code easter egg, and demo-subdomain footers.
 
 ## Common pitfalls
 - Keep the brand mark consistent everywhere (nav `.nlm-*`, preloader `.pl-mk-*`, `favicon.svg`, icons). Core is always terracotta `#B5623C`; rest is `currentColor`/ink.

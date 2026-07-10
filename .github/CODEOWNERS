@@ -1,0 +1,12 @@
+# The homepage golden baseline may change only after explicit owner approval.
+/index.html @Ibrahim-Radzhabov
+/assets/css/home.css @Ibrahim-Radzhabov
+/assets/js/home.js @Ibrahim-Radzhabov
+/assets/js/hero3d.js @Ibrahim-Radzhabov
+/assets/js/home-motion.js @Ibrahim-Radzhabov
+/.github/production-baseline.sha256 @Ibrahim-Radzhabov
+/.github/production-release-74018e8.sha256 @Ibrahim-Radzhabov
+/.github/verify-production-baseline.sh @Ibrahim-Radzhabov
+/.github/workflows/production-baseline-guard.yml @Ibrahim-Radzhabov
+/.github/CODEOWNERS @Ibrahim-Radzhabov
+/PRODUCTION-BASELINE.md @Ibrahim-Radzhabov

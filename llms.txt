@@ -29,8 +29,15 @@
 
 - Как связать интернет-магазин с 1С: Управление Торговлей: https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html
 - Что должно быть на лендинге, который приносит заявки: https://radzhabov-dev.ru/blog/chto-dolzhno-byt-na-lendinge.html
+- Конструктор или ручная вёрстка: что выбрать малому бизнесу: https://radzhabov-dev.ru/blog/konstruktor-ili-ruchnaya-verstka.html
 - AI-консультант на сайте: когда нужен и что умеет: https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html
 - Telegram-бот вместо сайта: когда его достаточно, а когда нет: https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html
+- Подготовка сайта и 1С к интеграции: чек-лист до оценки: https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html
+- Telegram Mini App или бот: что выбрать бизнесу: https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html
+- Почему заказы дублируются в 1С при обмене с сайтом: https://radzhabov-dev.ru/blog/pochemu-dubliruyutsya-zakazy-v-1c.html
+- Поддержка сайта на 1С-Битрикс: что проверять: https://radzhabov-dev.ru/blog/podderzhka-sajta-na-1c-bitrix.html
+- База знаний для AI-консультанта: как подготовить: https://radzhabov-dev.ru/blog/baza-znanij-dlya-ai-konsultanta.html
+- Почему лендинг не приносит заявки и что с этим делать: https://radzhabov-dev.ru/blog/pochemu-lending-ne-prinosit-zayavki.html
 
 ## Процесс работы
 

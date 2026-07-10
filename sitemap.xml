@@ -180,7 +180,7 @@
 
   <url>
     <loc>https://radzhabov-dev.ru/blog/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/"/>
@@ -203,6 +203,14 @@
   </url>
 
   <url>
+    <loc>https://radzhabov-dev.ru/blog/konstruktor-ili-ruchnaya-verstka.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/konstruktor-ili-ruchnaya-verstka.html"/>
+  </url>
+
+  <url>
     <loc>https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -216,6 +224,54 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/pochemu-dubliruyutsya-zakazy-v-1c.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/pochemu-dubliruyutsya-zakazy-v-1c.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/podderzhka-sajta-na-1c-bitrix.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/podderzhka-sajta-na-1c-bitrix.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/baza-znanij-dlya-ai-konsultanta.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/baza-znanij-dlya-ai-konsultanta.html"/>
+  </url>
+
+  <url>
+    <loc>https://radzhabov-dev.ru/blog/pochemu-lending-ne-prinosit-zayavki.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://radzhabov-dev.ru/blog/pochemu-lending-ne-prinosit-zayavki.html"/>
   </url>
 
   <url>

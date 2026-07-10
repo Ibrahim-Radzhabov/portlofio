@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Интеграция сайта с 1С: полный чек-лист подготовки</title>
+<meta content="Как подготовить сайт и 1С к интеграции: версии систем, номенклатура, цены, остатки, заказы, статусы, доступы и 8 тестов приёмки." name="description"/>
+<link href="https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180"/>
+<meta content="#F5F0E8" name="theme-color"/>
+<meta content="Интеграция сайта с 1С: полный чек-лист подготовки" property="og:title"/>
+<meta content="Что собрать до оценки обмена сайта с 1С: источники данных, номенклатура, заказы, ошибки, доступы и восемь тестов приёмки." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html" property="og:url"/>
+<meta content="https://radzhabov-dev.ru/assets/og/blog-podgotovka.png" property="og:image"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Интеграция сайта с 1С: чек-лист подготовки" name="twitter:title"/>
+<meta content="Версии систем, товары, цены, остатки, заказы, статусы, ошибки, доступы и тесты до запуска обмена." name="twitter:description"/>
+<meta content="https://radzhabov-dev.ru/assets/og/blog-podgotovka.png" name="twitter:image"/>
+<meta content="Ибрагим Раджабов" name="author"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="I. Radzhabov" property="og:site_name"/><meta content="2026-07-10" property="article:published_time"/><meta content="2026-07-10" property="article:modified_time"/><meta content="Ибрагим Раджабов" property="article:author"/><meta content="1С и интеграции" property="article:section"/><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#article",
+      "headline": "Как подготовить сайт к интеграции с 1С: полный чек-лист до оценки",
+      "description": "Как подготовить сайт и 1С к интеграции: версии систем, номенклатура, цены, остатки, заказы, статусы, доступы и восемь тестов приёмки.",
+      "author": {
+        "@type": "Person",
+        "name": "Ибрагим Раджабов",
+        "url": "https://radzhabov-dev.ru/",
+        "sameAs": [
+          "https://github.com/Ibrahim-Radzhabov",
+          "https://t.me/rdvigm"
+        ]
+      },
+      "datePublished": "2026-07-10",
+      "dateModified": "2026-07-10",
+      "inLanguage": "ru",
+      "mainEntityOfPage": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html",
+      "image": "https://radzhabov-dev.ru/assets/og/blog-podgotovka.png",
+      "publisher": {
+        "@type": "Person",
+        "name": "Ибрагим Раджабов",
+        "url": "https://radzhabov-dev.ru/"
+      },
+      "wordCount": 1952,
+      "articleSection": "1С и интеграции",
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://radzhabov-dev.ru/blog/#blog",
+        "name": "Блог Ибрагима Раджабова — сайты, AI и 1С на практике"
+      },
+      "keywords": [
+        "интеграция сайта с 1С",
+        "обмен сайта с 1С",
+        "синхронизация сайта и 1С",
+        "1С:Управление торговлей",
+        "чек-лист интеграции 1С"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Интеграция сайта с 1С"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "1С:Управление торговлей"
+        },
+        {
+          "@type": "Thing",
+          "name": "Обмен данными интернет-магазина"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "1С-Битрикс: Управление сайтом"
+        },
+        {
+          "@type": "Thing",
+          "name": "API"
+        },
+        {
+          "@type": "Thing",
+          "name": "Синхронизация заказов, цен и остатков"
+        }
+      ],
+      "citation": [
+        "https://radzhabov-dev.ru/cases/dag-sport.html"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://radzhabov-dev.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://radzhabov-dev.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Подготовка к интеграции",
+          "item": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Как подготовить сайт и 1С к интеграции",
+      "description": "Восемь шагов подготовки сайта и 1С к оценке и безопасному запуску обмена данными.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Опишите текущий путь заказа",
+          "text": "Зафиксируйте по шагам, что происходит от оформления заказа на сайте до появления документа в 1С: кто переносит данные, что проверяет и кому отправляет уведомления.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#current-process"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Зафиксируйте состав и версии систем",
+          "text": "Укажите CMS сайта, конфигурацию и редакцию 1С, важные доработки, действующие модули обмена и технические ограничения.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#systems"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Назначьте источник правды для каждого типа данных",
+          "text": "Решите, где редактируются каталог, цены, остатки, заказы и статусы, а затем запишите направление передачи для каждого типа данных.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#source-of-truth"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Проверьте номенклатуру и идентификаторы",
+          "text": "Сверьте артикулы, характеристики, единицы измерения, комплекты и дубли, чтобы заранее понять объём очистки и сопоставления.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#catalog"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Разберите цены, остатки и склады",
+          "text": "Зафиксируйте типы цен, скидки, резервы, количество складов, правила доступности и частоту обновления данных на сайте.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#prices-stock"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Сопоставьте поля заказа и покупателя",
+          "text": "Сравните поля сайта и документа 1С: товары, количество, контакты, доставку, оплату, комментарий, юридические реквизиты и дополнительные свойства.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#order-fields"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Определите статусы, повторы и обработку ошибок",
+          "text": "Опишите, где меняются статусы, как исключаются дубли, что происходит при обрыве связи и где специалист увидит понятную ошибку.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#reliability"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Подготовьте тестовую среду и критерии приёмки",
+          "text": "Соберите безопасные доступы, резервную копию и набор тестовых сценариев, по которым можно однозначно принять результат.",
+          "url": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html#access"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Нужен ли доступ к 1С для предварительной оценки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обычно нет. Для первичного разбора достаточно названий и версий систем, скриншотов нужных разделов, схемы процесса и обезличенных примеров товара и заказа. Доступы нужны после согласования границ работ и способа безопасного подключения."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли настраивать обмен сразу на рабочей базе?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Лучше сначала использовать тестовую копию сайта и базы 1С. Если это невозможно, до запуска нужны резервная копия, ограниченное окно работ, понятный план отката и сценарии, которые не создадут реальные дубли или движения товара."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если артикулы на сайте и в 1С не совпадают?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нужно выбрать устойчивый ключ и подготовить таблицу сопоставления. Перед запуском отдельно разбираются дубли, пустые артикулы, характеристики и товары, которые существуют только в одной системе. Очистка и сопоставление входят в оценку как отдельная часть работы."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Количество товаров сильно влияет на стоимость интеграции?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Не само по себе. Большой, но единообразный каталог может быть проще небольшого каталога с дублями, комплектами, разными единицами и ручными исключениями. Сильнее влияют структура данных, направления обмена и правила обработки ошибок."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Обязательно ли передавать все данные в обе стороны?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Двусторонний обмен нужен только там, где обе системы действительно меняют данные. Чем меньше лишних направлений, тем проще поддержка и ниже риск конфликтов. Для каждого типа данных лучше назначить один источник правды."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "С чего начать, если технического задания ещё нет?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Возьмите один реальный заказ, распишите его путь и приложите обезличенные примеры карточки товара, заказа на сайте и документа в 1С. Этого достаточно, чтобы начать предметный разбор и определить, какие данные нужно собрать дальше."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит интеграция сайта с 1С?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Фиксированную цену нельзя честно назвать только по названиям систем. На оценку влияют доработки сайта и 1С, качество номенклатуры, количество направлений обмена, статусы, возвраты, требования к скорости и обработке ошибок. Сначала нужен короткий технический разбор по примерам данных."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<link href="https://radzhabov-dev.ru/#about" rel="author"/><meta content="интеграция сайта с 1С" property="article:tag"/><meta content="обмен сайта с 1С" property="article:tag"/><meta content="1С:Управление торговлей" property="article:tag"/><style>
+    :root {
+      --bg-primary: #F5F0E8;
+      --bg-secondary: #EDE8DF;
+      --bg-card: #EDE8DF;
+      --bg-card-hover: #E5E0D6;
+      --border: rgba(20, 18, 16, 0.08);
+      --border-hover: rgba(20, 18, 16, 0.15);
+      --text-primary: #141210;
+      --text-secondary: #7A7570;
+      --text-tertiary: #6E6861;
+      --accent: #1A3A2A;
+      --accent-dim: #2D5A45;
+      --accent-glow: rgba(26, 58, 42, 0.12);
+      --accent-glow-strong: rgba(26, 58, 42, 0.25);
+      --accent-warm: #B5623C;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:var(--font-body); background:var(--bg-primary); color:var(--text-primary); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    body::before {
+      content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.025;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+    #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 0; transition:background .4s, backdrop-filter .4s; }
+    #nav.scrolled { background:rgba(245, 240, 232, 0.85); backdrop-filter:blur(20px); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:inline-flex; align-items:center; gap:10px; color:var(--text-primary); text-decoration:none; }
+    .nav-logo svg { width:24px; height:24px; flex-shrink:0; }
+    .nav-logo b { font-family:var(--font-display); font-weight:600; font-size:18px; letter-spacing:-0.3px; }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .3s; position:relative; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text-primary); }
+    .nav-links a.active::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--accent); border-radius:1px; }
+    .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
+    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #mobile-menu.active { opacity:1; pointer-events:all; }
+    #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
+    .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
+
+    .article-hero { padding:160px 0 40px; }
+    .article-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    .article-meta { font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:20px; display:flex; gap:16px; flex-wrap:wrap; }
+    .article-meta span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
+    h1 { font-family:var(--font-display); font-size:clamp(28px, 3.6vw, 40px); font-weight:800; line-height:1.18; letter-spacing:-1px; margin-bottom:20px; }
+    .article-lead { font-size:18px; color:var(--text-secondary); line-height:1.7; }
+
+    .article-body { padding:40px 0 80px; }
+    .article-body h2 { font-family:var(--font-display); font-size:26px; font-weight:700; margin:48px 0 16px; line-height:1.25; }
+    .article-body h3 { font-family:var(--font-display); font-size:20px; font-weight:600; margin:36px 0 12px; }
+    .article-body p { color:var(--text-secondary); margin-bottom:16px; font-size:16px; line-height:1.75; }
+    .article-body strong { color:var(--text-primary); font-weight:600; }
+    .article-body a { color:var(--accent); }
+    .article-body ul, .article-body ol { list-style:none; margin:16px 0 24px; }
+    .article-body li { padding:8px 0; color:var(--text-secondary); font-size:15.5px; line-height:1.7; display:flex; align-items:flex-start; gap:12px; }
+    .article-body ul li::before { content:'—'; color:var(--accent); font-weight:700; flex-shrink:0; }
+    .article-body ol { counter-reset:item; }
+    .article-body ol li::before { counter-increment:item; content:counter(item); font-family:var(--font-mono); color:var(--accent); font-weight:700; flex-shrink:0; min-width:20px; }
+    .article-body blockquote { border-left:3px solid var(--accent-warm); padding:12px 20px; margin:24px 0; background:var(--bg-card); border-radius:0 12px 12px 0; color:var(--text-secondary); font-size:15.5px; }
+
+    .tldr { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:18px 22px; margin:24px 0 0; }
+    .tldr .label { font-family:var(--font-mono); font-size:11px; color:var(--accent-warm); text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:10px; }
+    .tldr ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+    .tldr li { color:var(--text-secondary); font-size:15px; line-height:1.6; display:flex; gap:10px; }
+    .tldr li span { color:var(--accent); flex-shrink:0; }
+
+    .flow-diagram { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:22px; margin:28px 0 34px; }
+    .flow-diagram svg { display:block; width:100%; height:auto; overflow:visible; }
+    .flow-diagram-caption { font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); text-align:center; margin-top:14px; letter-spacing:1px; }
+    @media(max-width:640px){ .flow-diagram { padding:18px 14px; } }
+
+    .checklist { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:28px 32px; margin:28px 0 34px; }
+    .checklist h3 { font-family:var(--font-display); font-size:19px; font-weight:700; margin:0 0 16px; }
+    .checklist ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+    .checklist li { display:flex; align-items:flex-start; gap:12px; color:var(--text-secondary); font-size:15px; line-height:1.6; }
+    .checklist li .box { width:18px; height:18px; border:1.5px solid var(--accent); border-radius:4px; flex-shrink:0; margin-top:2px; display:inline-block; }
+    .checklist-print { display:none; }
+    .howto-steps { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:22px 28px 22px 54px; margin:28px 0 40px; }
+    .howto-steps li { display:list-item; padding:10px 0; color:var(--text-secondary); }
+    .howto-steps li::before { margin-left:-28px; }
+    .howto-steps strong { display:block; color:var(--text-primary); margin-bottom:4px; }
+    .howto-steps p { margin:0; font-size:15px; line-height:1.65; }
+    @media(max-width:640px){ .howto-steps { padding:18px 20px 18px 46px; } }
+    @media print {
+      #nav, .menu-btn, #mobile-menu, .cta-box, .related, footer, .tldr { display:none !important; }
+      body, body::before { background:#fff !important; }
+      .article-hero { padding:20px 0; }
+      .article-body { padding:10px 0; }
+      .checklist { break-inside:avoid; page-break-inside:avoid; }
+      .checklist li { font-size:13px; }
+    }
+
+
+    .decision-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:24px 0 34px; }
+    .decision-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:20px; }
+    .decision-card .num { display:block; font-family:var(--font-mono); color:var(--accent-warm); font-size:11px; letter-spacing:1.5px; margin-bottom:8px; }
+    .decision-card strong { display:block; margin-bottom:6px; }
+    .decision-card p { margin:0; font-size:14.5px; line-height:1.65; }
+    .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:26px 0 34px; border:1px solid var(--border); border-radius:16px; background:var(--bg-card); }
+    .data-table { width:100%; border-collapse:collapse; min-width:640px; }
+    .data-table caption { font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:1.5px; padding:14px 18px; text-align:left; }
+    .data-table th, .data-table td { padding:12px 16px; text-align:left; vertical-align:top; border-bottom:1px solid var(--border); font-size:14px; line-height:1.55; }
+    .data-table th { font-family:var(--font-mono); color:var(--accent); font-size:11px; text-transform:uppercase; letter-spacing:.7px; }
+    .data-table td { color:var(--text-secondary); }
+    .data-table td:first-child { color:var(--text-primary); font-weight:600; }
+    .data-table tr:last-child td { border-bottom:0; }
+    .scenario-list { counter-reset:scenario; margin:18px 0 30px !important; }
+    .scenario-list li { counter-increment:scenario; position:relative; padding:10px 0 10px 42px; display:block; }
+    .scenario-list li::before { content:counter(scenario); position:absolute; left:0; top:9px; width:26px; height:26px; border:1px solid var(--accent-glow-strong); border-radius:50%; display:grid; place-items:center; font-family:var(--font-mono); color:var(--accent); font-size:11px; }
+    .scenario-list strong { display:block; margin-bottom:2px; }
+    .scroll-hint { display:none; font-family:var(--font-mono); font-size:10px; color:var(--text-tertiary); margin:-24px 0 30px; }
+    .security-note { border-left:3px solid var(--accent-warm); background:var(--bg-card); border-radius:0 14px 14px 0; padding:18px 22px; margin:26px 0 32px; }
+    .security-note strong { display:block; margin-bottom:6px; }
+    .security-note p { margin:0; font-size:15px; }
+    @media(max-width:640px){
+      .decision-grid { grid-template-columns:1fr; }
+      .decision-card { padding:18px; }
+      .data-table { min-width:560px; }
+      .scroll-hint { display:block; }
+    }
+
+    .callout { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:24px 28px; margin:32px 0; }
+    .callout .label { font-family:var(--font-mono); font-size:11px; color:var(--accent-warm); text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:10px; }
+    .callout p { margin-bottom:0; }
+
+
+    .faq-section { margin:48px 0 0; }
+    .faq-section h2 { margin-bottom:20px; }
+    .faq-list { max-width:720px; }
+    details { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden; }
+    details[open] { border-color:var(--border-hover); }
+    summary { padding:18px 22px; cursor:pointer; font-family:var(--font-display); font-weight:600; font-size:16px; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; color:var(--text-primary); }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:'+'; font-family:var(--font-mono); color:var(--accent-warm); font-size:18px; transition:transform .3s; flex-shrink:0; }
+    details[open] summary::after { transform:rotate(45deg); }
+    details p { padding:0 22px 20px; color:var(--text-secondary); font-size:15px; line-height:1.7; }
+
+    .cta-box { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:36px; margin:48px 0 0; text-align:center; position:relative; overflow:hidden; }
+    .cta-box::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
+    .cta-box h2 { font-family:var(--font-display); font-size:24px; font-weight:700; margin-bottom:10px; }
+    .cta-box p { color:var(--text-secondary); margin-bottom:22px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#F5F0E8; font-family:var(--font-display); font-weight:600; font-size:15px; padding:15px 30px; border-radius:12px; text-decoration:none; transition:transform .3s,box-shadow .3s; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 36px rgba(26,58,42,0.28); }
+
+    .related { padding:8px 0 64px; }
+    .related-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    .related-label { font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; }
+    .related-links { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:16px; }
+    .related-links a { font-family:var(--font-mono); font-size:13px; color:var(--text-primary); text-decoration:none; border-bottom:1px solid var(--accent-glow-strong); padding-bottom:3px; transition:border-color .2s, color .2s; }
+    .related-links a:hover { color:var(--accent-warm); border-color:var(--accent-warm); }
+
+    footer { padding:60px 0 32px; border-top:1px solid var(--border); margin-top:60px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; }
+    .footer-brand p { color:var(--text-tertiary); font-size:14px; margin-top:8px; }
+    .footer-links { display:flex; gap:48px; flex-wrap:wrap; }
+    .footer-links-col h4 { font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; color:var(--text-primary); }
+    .footer-links-col ul { list-style:none; }
+    .footer-links-col li { margin-bottom:10px; }
+    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:14px; transition:color .3s; }
+    .footer-links-col a:hover { color:var(--accent); }
+    .footer-bottom { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-bottom p { color:var(--text-tertiary); font-size:13px; }
+    .social-links { display:flex; gap:16px; }
+    .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
+    .social-links a:hover { border-color:var(--accent); color:var(--accent); }
+
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    @media (max-width:968px) {
+      .nav-links { display:none; }
+      .menu-btn { display:block; }
+      .footer-inner { flex-direction:column; }
+    }
+    @media (max-width:640px) {
+      .article-hero { padding:120px 0 24px; }
+      .checklist { padding:22px; }
+      .cta-box { padding:28px 22px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+
+
+    /* SEO/GEO readability layer */
+    .article-byline { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:18px; font-family:var(--font-mono); font-size:11.5px; line-height:1.6; color:var(--text-tertiary); }
+    .article-byline a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-glow-strong); }
+    .article-byline time { white-space:nowrap; }
+    .article-toc { margin:22px 0 0; padding:20px 22px; border:1px solid var(--border); border-radius:14px; background:rgba(251,248,243,.7); }
+    .article-toc strong { display:block; margin-bottom:10px; font-family:var(--font-mono); font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent-warm); }
+    .article-toc ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px 22px; margin:0; list-style:none; counter-reset:toc; }
+    .article-toc li { padding:0; display:block; font-size:14px; line-height:1.5; }
+    .article-toc li::before { content:none; }
+    .article-toc a { color:var(--text-secondary); text-decoration:none; }
+    .article-toc a:hover { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+    .method-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:22px 0 30px; }
+    .method-card { padding:18px 20px; border:1px solid var(--border); border-radius:14px; background:var(--bg-card); }
+    .method-card strong { display:block; margin-bottom:6px; font-family:var(--font-display); font-size:17px; }
+    .method-card p { margin:0; font-size:14.5px; line-height:1.65; }
+    .source-box { margin:40px 0 0; padding:20px 22px; border:1px solid var(--border); border-radius:14px; background:var(--bg-card); }
+    .source-box strong { display:block; margin-bottom:8px; font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-warm); }
+    .source-box p, .source-box li { font-size:14px; line-height:1.65; }
+    .source-box ul { margin:8px 0 0; }
+    .source-box li { padding:4px 0; }
+    .source-box li::before { content:'↗'; }
+    @media(max-width:640px){
+      .article-toc ol, .method-grid { grid-template-columns:1fr; }
+      .article-byline { gap:5px 12px; }
+    }
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
+    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+  </script>
+<noscript><div><img alt="" src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<nav aria-label="Главная навигация" id="nav">
+<div class="container nav-inner">
+<a aria-label="I. Radzhabov — на главную" class="nav-logo" href="/"><svg aria-hidden="true" fill="none" viewbox="0 0 48 48"><path d="M17 12 L31 24" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><path d="M31 24 L17 36" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><circle cx="17" cy="12" fill="#141210" r="5.5"></circle><circle cx="31" cy="24" fill="#B5623C" r="6.6"></circle><circle cx="17" cy="36" fill="#141210" r="5.5"></circle></svg><b>I. Radzhabov</b></a>
+<ul class="nav-links">
+<li><a href="/">Главная</a></li>
+<li><a href="/services/landing.html">Услуги</a></li>
+<li><a href="/cases/">Кейсы</a></li>
+<li><a href="/blog/">Блог</a></li>
+<li><a href="/#contact">Контакты</a></li>
+</ul>
+<button aria-expanded="false" aria-label="Открыть меню" class="menu-btn" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div id="mobile-menu">
+<button aria-label="Закрыть меню" class="close-menu" onclick="toggleMenu()">×</button>
+<a href="/" onclick="toggleMenu()">Главная</a>
+<a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
+<a href="/cases/" onclick="toggleMenu()">Кейсы</a>
+<a href="/blog/" onclick="toggleMenu()">Блог</a>
+<a href="/#contact" onclick="toggleMenu()">Контакты</a>
+</div>
+<header class="article-hero">
+<div class="container">
+<div class="article-wrap">
+<nav aria-label="Хлебные крошки" class="crumbs" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/blog/" style="color:var(--text-tertiary);text-decoration:none;">Блог</a> / <span style="color:var(--text-primary);">Подготовка к интеграции</span></nav>
+<div class="article-meta reveal">Блог · 1С и интеграции <span>· 10 июля 2026 · ~10 минут</span></div>
+<h1 class="reveal">Как подготовить сайт к интеграции с 1С: полный чек-лист до оценки</h1>
+<p class="article-lead reveal">Практический чек-лист для интернет-магазинов и сервисов, которым нужен обмен сайта с 1С:УТ, Розницей или другой конфигурацией. Он помогает собрать данные до оценки, определить границы интеграции и проверить запуск без дублей и потери заказов.</p><div aria-label="Автор и дата обновления" class="article-byline reveal">
+<span>Автор: <a href="/#about" rel="author">Ибрагим Раджабов</a></span>
+<span>Практика: <a href="/cases/dag-sport.html">сайт → 1С:УТ → Telegram</a></span>
+<time datetime="2026-07-10">Обновлено 10 июля 2026</time>
+</div>
+<div class="tldr reveal">
+<span class="label">Ответ за 30 секунд</span>
+<ul>
+<li><span>·</span> Сначала опишите процесс и исключения, а не выбирайте технологию обмена.</li>
+<li><span>·</span> Для каждого типа данных назначьте один источник правды: сайт, 1С или внешнюю систему.</li>
+<li><span>·</span> Проверьте не только артикулы, но и характеристики, единицы, комплекты, цены, резервы и склады.</li>
+<li><span>·</span> Заранее решите, как обмен переживает повторную отправку, обрыв связи и ошибку в одной позиции.</li>
+<li><span>·</span> Принимайте работу по тестовым сценариям, а не по формулировке «обмен вроде запустился».</li>
+</ul>
+</div><nav aria-label="Содержание статьи" class="article-toc reveal">
+<strong>Содержание</strong><ol><li><a href="#what-to-decide">Что такое интеграция и что оценивают</a></li><li><a href="#integration-methods">Способы связать сайт и 1С</a></li><li><a href="#eight-steps">Восемь шагов подготовки</a></li><li><a href="#acceptance">Сценарии приёмки</a></li><li><a href="#materials">Что отправить разработчику</a></li><li><a href="#faq">Частые вопросы</a></li></ol>
+</nav>
+</div>
+</div>
+</header>
+<article class="article-body">
+<div class="container">
+<div class="article-wrap">
+<h2 id="what-to-decide">Что такое интеграция сайта с 1С и что оценивают</h2>
+<p>Интеграция — это не один универсальный «мост» между сайтом и 1С. Это набор правил: какие события запускают обмен, какие данные передаются, кто имеет право их менять и что делать, если часть операции не выполнилась.</p>
+<p>До оценки разработчику нужны ответы хотя бы на четыре группы вопросов:</p>
+<div aria-label="Четыре группы вопросов до оценки интеграции" class="decision-grid">
+<div class="decision-card"><span class="num">01 · СИСТЕМЫ</span><strong>Что именно связываем</strong><p>CMS сайта, конфигурация и редакция 1С, доработки, модули, хостинг и ограничения доступа.</p></div>
+<div class="decision-card"><span class="num">02 · ДАННЫЕ</span><strong>Что передаём</strong><p>Каталог, характеристики, цены, остатки, заказы, покупатели, статусы, оплаты и доставка.</p></div>
+<div class="decision-card"><span class="num">03 · ПРАВИЛА</span><strong>Кто главный</strong><p>Где редактируется каждый тип данных, в какую сторону он идёт и что происходит при расхождении.</p></div>
+<div class="decision-card"><span class="num">04 · НАДЁЖНОСТЬ</span><strong>Как переживаем ошибки</strong><p>Повторные отправки, журнал, уведомления, ручной перезапуск, резервная копия и приёмочные тесты.</p></div>
+</div>
+<blockquote><strong>Главная мысль:</strong> сначала фиксируется бизнес-процесс, затем под него выбирается механизм обмена. Обратный порядок обычно приводит к доработкам уже после запуска.</blockquote>
+<h2 id="integration-methods">Какими способами связывают сайт и 1С</h2>
+<p>Слова «интеграция», «обмен» и «синхронизация» часто используют как синонимы, но технический механизм выбирают после описания данных и бизнес-правил. Один проект может сочетать несколько способов.</p>
+<div aria-label="Способы интеграции сайта с 1С" class="method-grid">
+<div class="method-card"><strong>Типовой модуль обмена</strong><p>Подходит, когда CMS и конфигурация 1С поддерживают стандартный каталог, цены, остатки и заказы без большого числа исключений.</p></div>
+<div class="method-card"><strong>API и события</strong><p>Нужны для нестандартных полей, быстрой передачи заказов, сложных статусов, личных кабинетов и интеграций с другими системами.</p></div>
+<div class="method-card"><strong>Файлы и расписание</strong><p>Подходят для пакетного обмена, когда допустима задержка и данные можно безопасно выгружать и загружать по регламенту.</p></div>
+<div class="method-card"><strong>Промежуточный сервис</strong><p>Полезен, когда сайт, 1С, CRM, доставка и уведомления должны работать через единые правила и журнал операций.</p></div>
+</div>
+<blockquote><strong>Не начинайте со способа обмена.</strong> Сначала определите источник правды, поля, частоту, исключения и приёмочные тесты — только потом выбирайте модуль, API или промежуточный слой.</blockquote>
+<h2 id="eight-steps">Восемь шагов подготовки</h2>
+<ol class="howto-steps">
+<li data-howto-step=""><strong>Опишите текущий путь заказа</strong><p>Зафиксируйте по шагам, что происходит от оформления заказа на сайте до появления документа в 1С: кто переносит данные, что проверяет и кому отправляет уведомления.</p></li>
+<li data-howto-step=""><strong>Зафиксируйте состав и версии систем</strong><p>Укажите CMS сайта, конфигурацию и редакцию 1С, важные доработки, действующие модули обмена и технические ограничения.</p></li>
+<li data-howto-step=""><strong>Назначьте источник правды для каждого типа данных</strong><p>Решите, где редактируются каталог, цены, остатки, заказы и статусы, а затем запишите направление передачи для каждого типа данных.</p></li>
+<li data-howto-step=""><strong>Проверьте номенклатуру и идентификаторы</strong><p>Сверьте артикулы, характеристики, единицы измерения, комплекты и дубли, чтобы заранее понять объём очистки и сопоставления.</p></li>
+<li data-howto-step=""><strong>Разберите цены, остатки и склады</strong><p>Зафиксируйте типы цен, скидки, резервы, количество складов, правила доступности и частоту обновления данных на сайте.</p></li>
+<li data-howto-step=""><strong>Сопоставьте поля заказа и покупателя</strong><p>Сравните поля сайта и документа 1С: товары, количество, контакты, доставку, оплату, комментарий, юридические реквизиты и дополнительные свойства.</p></li>
+<li data-howto-step=""><strong>Определите статусы, повторы и обработку ошибок</strong><p>Опишите, где меняются статусы, как исключаются дубли, что происходит при обрыве связи и где специалист увидит понятную ошибку.</p></li>
+<li data-howto-step=""><strong>Подготовьте тестовую среду и критерии приёмки</strong><p>Соберите безопасные доступы, резервную копию и набор тестовых сценариев, по которым можно однозначно принять результат.</p></li>
+</ol>
+<h2 id="current-process">1. Опишите текущий путь заказа</h2>
+<p>Начните не с поля «артикул», а с реального процесса. Возьмите один недавний заказ и распишите его путь: клиент оформил корзину → менеджер получил уведомление → проверил наличие → создал документ → связался с покупателем → изменил статус → передал в доставку.</p>
+<p>Отдельно запишите ручные действия: копирование телефона, поиск товара, пересчёт скидки, сверку оплаты, создание контрагента. Это показывает, где интеграция действительно экономит работу, а где автоматизация просто перенесёт беспорядок из одной системы в другую.</p>
+<p>Кроме обычного сценария нужны исключения:</p>
+<ul>
+<li>покупатель дважды нажал кнопку оформления;</li>
+<li>цена или остаток изменились между корзиной и созданием заказа;</li>
+<li>одна позиция не найдена в 1С;</li>
+<li>соединение оборвалось после частичной передачи;</li>
+<li>заказ отменили, изменили или вернули после создания документа.</li>
+</ul>
+<h2 id="systems">2. Зафиксируйте состав и версии систем</h2>
+<p>Название «1С» само по себе ничего не говорит о конкретной базе. Для первичного разбора укажите:</p>
+<ul>
+<li>CMS и версию сайта, а также используемые модули интернет-магазина;</li>
+<li>конфигурацию, редакцию и версию платформы 1С;</li>
+<li>существенные доработки: дополнительные поля, документы, справочники, расширения;</li>
+<li>есть ли действующий обмен и что именно в нём не устраивает;</li>
+<li>где размещён сайт и можно ли создать тестовую копию;</li>
+<li>есть ли ограничения по расписанию, нагрузке, VPN, белому списку IP или публикации базы.</li>
+</ul>
+<p>На этом этапе не нужно отправлять пароли. Для оценки достаточно описания систем, скриншотов нужных разделов и обезличенных примеров данных.</p>
+<h2 id="source-of-truth">3. Назначьте источник правды</h2>
+<p>Для каждого типа данных должна быть система, в которой его редактируют. Если цену одновременно меняют на сайте и в 1С, обмену придётся угадывать, какая версия правильная.</p>
+<div aria-label="Пример матрицы данных" class="table-wrap" role="region" tabindex="0">
+<table class="data-table">
+<caption>Пример матрицы данных — не универсальная настройка</caption>
+<thead><tr><th scope="col">Данные</th><th scope="col">Где редактируются</th><th scope="col">Направление</th><th scope="col">Что уточнить</th></tr></thead>
+<tbody>
+<tr><td>Номенклатура</td><td>1С</td><td>1С → сайт</td><td>Наименования, характеристики, единицы, изображения</td></tr>
+<tr><td>Маркетинговое описание</td><td>Сайт</td><td>Не перезаписывать</td><td>Какие поля защищены от выгрузки</td></tr>
+<tr><td>Цены</td><td>1С</td><td>1С → сайт</td><td>Тип цены, НДС, скидки, округление</td></tr>
+<tr><td>Остатки</td><td>1С</td><td>1С → сайт</td><td>Склады, резервы, доступность «под заказ»</td></tr>
+<tr><td>Новый заказ</td><td>Сайт</td><td>Сайт → 1С</td><td>Состав документа и правила создания покупателя</td></tr>
+<tr><td>Статус заказа</td><td>1С</td><td>1С → сайт / клиент</td><td>Какие статусы видит клиент и когда отправлять уведомление</td></tr>
+</tbody>
+</table>
+</div>
+<div class="scroll-hint">На телефоне таблица прокручивается по горизонтали →</div>
+<p>В вашем проекте источники могут быть другими. Важно не копировать таблицу, а принять решение по каждой строке.</p>
+<h2 id="catalog">4. Проверьте номенклатуру глубже артикула</h2>
+<p>Артикул — удобный ключ, но редко единственная сложность. До оценки проверьте:</p>
+<ul>
+<li>совпадают ли артикулы и внутренние идентификаторы на сайте и в 1С;</li>
+<li>как представлены размеры, цвета и другие характеристики — отдельными товарами или вариантами;</li>
+<li>есть ли одинаковые товары с разными единицами измерения или упаковками;</li>
+<li>как устроены комплекты, наборы, услуги и товары «под заказ»;</li>
+<li>есть ли дубли, архивные позиции и товары без ключа сопоставления;</li>
+<li>нужно ли передавать штрихкоды, ставки НДС, бренды, категории и изображения.</li>
+</ul>
+<p>Полезно подготовить небольшую выборку: обычный товар, товар с характеристиками, комплект, позицию без остатка и проблемный дубль. По ней быстрее видно реальную сложность каталога.</p>
+<h2 id="prices-stock">5. Разберите цены, остатки, резервы и склады</h2>
+<p>Фраза «выгружать цену и остаток» требует уточнений. Ответьте на вопросы:</p>
+<ul>
+<li>какой тип цены показывается на сайте и для всех ли клиентов он один;</li>
+<li>где рассчитываются скидки, промокоды и персональные условия;</li>
+<li>остаток — это физическое количество, свободный остаток после резервов или просто признак наличия;</li>
+<li>склады объединяются или клиент выбирает конкретную точку;</li>
+<li>можно ли заказать больше доступного количества;</li>
+<li>как часто данные должны обновляться и допустима ли задержка.</li>
+</ul>
+<p>Чем точнее сформулировано правило доступности, тем меньше ситуаций, когда сайт продаёт товар, который уже зарезервирован в учёте.</p>
+<h2 id="order-fields">6. Сопоставьте поля заказа и покупателя</h2>
+<p>Составьте простую таблицу «поле на сайте → реквизит в 1С → обязательность → преобразование». Проверьте товары и количество, имя, телефон, email, адрес, способ доставки, оплату, комментарий, юридические реквизиты и выбранный пункт выдачи.</p>
+<p>Отдельные решения нужны для покупателя:</p>
+<ul>
+<li>создавать нового контрагента на каждый заказ или искать существующего;</li>
+<li>по какому признаку искать — телефон, email, ИНН или внутренний ID;</li>
+<li>как обрабатывать разные форматы телефона и возможные дубли;</li>
+<li>какие персональные данные действительно нужны в учёте.</li>
+</ul>
+<p>Не передавайте «всё на всякий случай». Лишние персональные данные увеличивают риск и усложняют поддержку.</p>
+<h2 id="reliability">7. Определите статусы, повторы и обработку ошибок</h2>
+<p>Надёжность обмена проявляется не в идеальном заказе, а в сбое. Заранее договоритесь:</p>
+<ul>
+<li>какой внешний ID связывает заказ сайта и документ 1С;</li>
+<li>что произойдёт при повторной отправке того же заказа;</li>
+<li>можно ли повторить только неудачную операцию без создания дубля;</li>
+<li>где хранится журнал и достаточно ли текста ошибки для диагностики;</li>
+<li>кто и как узнаёт о сбое;</li>
+<li>что происходит с отменой, изменением состава и возвратом.</li>
+</ul>
+<blockquote><strong>Идемпотентность простыми словами:</strong> повторная обработка одного и того же заказа не должна создавать второй документ. Для боевого обмена это не «дополнительная функция», а базовая защита от дублей.</blockquote>
+<h2 id="access">8. Подготовьте безопасную тестовую среду</h2>
+<p>Для разработки и проверки лучше использовать копию сайта и тестовую базу 1С с обезличенными данными. Перед первым запуском на боевой системе нужна актуальная резервная копия.</p>
+<div class="security-note">
+<strong>Доступы — только после согласования работ</strong>
+<p>Создавайте отдельные учётные записи с минимально необходимыми правами. Не отправляйте пароль администратора и доступ к базе обычным сообщением; используйте согласованный защищённый канал и меняйте временные пароли после завершения.</p>
+</div>
+<p>Заранее уточните, можно ли безопасно повторять тесты: удалять созданные документы, сбрасывать статусы и восстанавливать исходные остатки.</p>
+<h2 id="acceptance">Критерии приёмки: восемь сценариев</h2>
+<p>Фраза «заказ передался» проверяет только один счастливый путь. Минимальный набор приёмочных сценариев:</p>
+<ol class="scenario-list">
+<li><strong>Обычный заказ.</strong> Все позиции, суммы, контакты, доставка и оплата попали в нужный документ.</li>
+<li><strong>Повторная отправка.</strong> Тот же заказ не создал дубль и корректно обновился по правилам проекта.</li>
+<li><strong>Неизвестная позиция.</strong> Обмен остановил или изолировал ошибку, а в журнале видно, какой товар не сопоставлен.</li>
+<li><strong>Изменившаяся цена.</strong> Система применила заранее согласованное правило, а не молча подменила сумму.</li>
+<li><strong>Недостаточный остаток.</strong> Заказ обработан в соответствии с правилами резерва, предзаказа или отказа.</li>
+<li><strong>Обрыв связи.</strong> После восстановления операция повторилась безопасно, без частичных дублей.</li>
+<li><strong>Изменение статуса.</strong> Нужный статус дошёл до сайта или клиента один раз и в правильный момент.</li>
+<li><strong>Отмена или возврат.</strong> Обратный процесс работает, если он входит в согласованный объём.</li>
+</ol>
+<figure aria-label="Схема подготовки к интеграции сайта с 1С" class="flow-diagram">
+<svg aria-label="Процесс подготовки: системы, данные, правила, тесты и готовая оценка" role="img" viewbox="0 0 680 156">
+<defs><marker id="prepArrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10"><path d="M0 0 L10 5 L0 10Z" fill="#B5623C"></path></marker></defs>
+<g fill="#141210" font-family="'JetBrains Mono', monospace" font-size="11">
+<rect fill="#FBF8F3" height="70" rx="15" stroke="#DDD5C8" width="116" x="8" y="42"></rect><text x="30" y="70">Системы</text><text fill="#6E6861" x="24" y="90">и версии</text>
+<path d="M136 77 H170" marker-end="url(#prepArrow)" stroke="#B5623C" stroke-width="2.3"></path>
+<rect fill="#FBF8F3" height="70" rx="15" stroke="#DDD5C8" width="116" x="182" y="42"></rect><text x="208" y="70">Данные</text><text fill="#6E6861" x="202" y="90">и ключи</text>
+<path d="M310 77 H344" marker-end="url(#prepArrow)" stroke="#B5623C" stroke-width="2.3"></path>
+<rect fill="#FBF8F3" height="70" rx="15" stroke="#DDD5C8" width="116" x="356" y="42"></rect><text x="378" y="70">Правила</text><text fill="#6E6861" x="378" y="90">и ошибки</text>
+<path d="M484 77 H518" marker-end="url(#prepArrow)" stroke="#B5623C" stroke-width="2.3"></path>
+<rect fill="none" height="70" rx="15" stroke="#1A3A2A" stroke-width="2" width="142" x="530" y="42"></rect><text fill="#1A3A2A" x="552" y="70">Оценка</text><text fill="#6E6861" x="548" y="90">и тест-план</text>
+</g>
+</svg>
+<div class="flow-diagram-caption">Хорошая оценка начинается не с доступа к базе, а с описанных систем, данных, правил и тестов</div>
+</figure>
+<h2 id="materials">Что отправить разработчику</h2>
+<div class="checklist">
+<h3>Итоговый пакет для первичной оценки</h3>
+<ul>
+<li><span aria-hidden="true" class="box"></span>Названия и версии CMS, конфигурации и редакции 1С.</li>
+<li><span aria-hidden="true" class="box"></span>Краткая схема текущего пути заказа и список ручных операций.</li>
+<li><span aria-hidden="true" class="box"></span>Матрица: какие данные, где редактируются и в какую сторону передаются.</li>
+<li><span aria-hidden="true" class="box"></span>Обезличенные примеры товара, заказа и документа 1С.</li>
+<li><span aria-hidden="true" class="box"></span>Список складов, типов цен, статусов, доставок и оплат.</li>
+<li><span aria-hidden="true" class="box"></span>Описание проблемных случаев: дубли, характеристики, комплекты, возвраты.</li>
+<li><span aria-hidden="true" class="box"></span>Требования к частоте обмена, журналу и уведомлениям об ошибках.</li>
+<li><span aria-hidden="true" class="box"></span>Набор сценариев, по которым работа будет принята.</li>
+</ul>
+</div>
+<h2 id="estimate">Что сильнее всего влияет на оценку</h2>
+<p>Объём работы растёт не из-за количества товаров как такового, а из-за неоднозначных правил и нестандартной структуры. Обычно важнее всего:</p>
+<ul>
+<li>насколько доработаны сайт и конфигурация 1С;</li>
+<li>есть ли стабильные ключи сопоставления;</li>
+<li>сколько направлений и типов данных участвует в обмене;</li>
+<li>нужны ли двусторонние изменения, возвраты и сложные статусы;</li>
+<li>есть ли тестовая среда и возможность повторять сценарии;</li>
+<li>какие требования к скорости, журналу, уведомлениям и восстановлению после сбоя.</li>
+</ul>
+<div class="callout">
+<span class="label">Реальный пример</span>
+<p>В кейсе <a href="/cases/dag-sport.html">dag-sport</a> готовый сайт на 1С-Битрикс был связан с 1С: Управление Торговлей: заказ создаёт документ в учёте и уведомление в Telegram. Сам сайт разрабатывал не я; моя часть — интеграция с 1С УТ и AI-консультант. Этот дисклеймер важен и для оценки: сначала нужно отделить существующую систему от той части, которую действительно предстоит разработать.</p>
+</div>
+<p>О том, как уже подготовленная связка работает после запуска, читайте в статье <a href="/blog/kak-svyazat-sajt-s-1c.html">«Как связать интернет-магазин с 1С»</a>.</p>
+<div class="faq-section" id="faq">
+<h2>Частые вопросы до старта</h2>
+<div class="faq-list">
+<details><summary>Нужен ли доступ к 1С для предварительной оценки?</summary><p>Обычно нет. Для первичного разбора достаточно названий и версий систем, скриншотов нужных разделов, схемы процесса и обезличенных примеров товара и заказа. Доступы нужны после согласования границ работ и способа безопасного подключения.</p></details>
+<details><summary>Можно ли настраивать обмен сразу на рабочей базе?</summary><p>Лучше сначала использовать тестовую копию сайта и базы 1С. Если это невозможно, до запуска нужны резервная копия, ограниченное окно работ, понятный план отката и сценарии, которые не создадут реальные дубли или движения товара.</p></details>
+<details><summary>Что делать, если артикулы на сайте и в 1С не совпадают?</summary><p>Нужно выбрать устойчивый ключ и подготовить таблицу сопоставления. Перед запуском отдельно разбираются дубли, пустые артикулы, характеристики и товары, которые существуют только в одной системе. Очистка и сопоставление входят в оценку как отдельная часть работы.</p></details>
+<details><summary>Количество товаров сильно влияет на стоимость интеграции?</summary><p>Не само по себе. Большой, но единообразный каталог может быть проще небольшого каталога с дублями, комплектами, разными единицами и ручными исключениями. Сильнее влияют структура данных, направления обмена и правила обработки ошибок.</p></details>
+<details><summary>Обязательно ли передавать все данные в обе стороны?</summary><p>Нет. Двусторонний обмен нужен только там, где обе системы действительно меняют данные. Чем меньше лишних направлений, тем проще поддержка и ниже риск конфликтов. Для каждого типа данных лучше назначить один источник правды.</p></details>
+<details><summary>С чего начать, если технического задания ещё нет?</summary><p>Возьмите один реальный заказ, распишите его путь и приложите обезличенные примеры карточки товара, заказа на сайте и документа в 1С. Этого достаточно, чтобы начать предметный разбор и определить, какие данные нужно собрать дальше.</p></details>
+<details><summary>Сколько стоит интеграция сайта с 1С?</summary><p>Фиксированную цену нельзя честно назвать только по названиям систем. На оценку влияют доработки сайта и 1С, качество номенклатуры, количество направлений обмена, статусы, возвраты, требования к скорости и обработке ошибок. Сначала нужен короткий технический разбор по примерам данных.</p></details></div>
+</div>
+<aside aria-label="Об авторе и практической основе статьи" class="source-box">
+<strong>Автор и практическая основа</strong>
+<p>Материал подготовил <a href="/#about" rel="author">Ибрагим Раджабов</a> — разработчик сайтов, AI-ассистентов и интеграций с 1С. Чек-лист основан на практической работе с интернет-магазинами и 1С:Управление торговлей. В <a href="/cases/dag-sport.html">кейсе dag-sport</a> моя часть — интеграция с 1С УТ и AI-консультант; сам сайт разрабатывал не я.</p>
+</aside>
+<div class="cta-box reveal">
+<h2>Нужна оценка интеграции?</h2>
+<p>Пришлите версии систем, схему заказа, направления обмена и два обезличенных примера. Сначала разберу границы задачи, затем скажу, что ещё нужно проверить.</p>
+<a class="btn-primary" href="/services/integraciya-1c.html">Обсудить интеграцию →</a>
+</div>
+</div>
+</div>
+</article>
+<section aria-label="Смотрите также" class="related">
+<div class="related-wrap">
+<span class="related-label">Смотрите также</span>
+<div class="related-links">
+<a href="/services/integraciya-1c.html">Услуга: интеграция с 1С →</a>
+<a href="/services/podderzhka-bitrix.html">Поддержка 1С-Битрикс →</a>
+<a href="/blog/kak-svyazat-sajt-s-1c.html">Как связать сайт с 1С →</a>
+<a href="/cases/dag-sport.html">Кейс dag-sport →</a>
+<a href="/blog/">Все статьи →</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<a aria-label="I. Radzhabov — на главную" class="nav-logo" href="/"><svg aria-hidden="true" fill="none" viewbox="0 0 48 48"><path d="M17 12 L31 24" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><path d="M31 24 L17 36" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><circle cx="17" cy="12" fill="#141210" r="5.5"></circle><circle cx="31" cy="24" fill="#B5623C" r="6.6"></circle><circle cx="17" cy="36" fill="#141210" r="5.5"></circle></svg><b>I. Radzhabov</b></a>
+<p>Сайты, AI-ассистенты и 1С.<br/>Махачкала · удалённо по всей России</p>
+</div>
+<div class="footer-links">
+<div class="footer-links-col">
+<h4>Навигация</h4>
+<ul>
+<li><a href="/">Главная</a></li>
+<li><a href="/services/landing.html">Услуги</a></li>
+<li><a href="/cases/">Кейсы</a></li>
+<li><a href="/blog/">Блог</a></li>
+<li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+</ul>
+</div>
+<div class="footer-links-col">
+<h4>География</h4>
+<ul>
+<li><a href="/cities/mahachkala.html">Сайты в Махачкале</a></li>
+<li><a href="/cities/kaspijsk.html">Сайты в Каспийске</a></li>
+<li><a href="/cities/derbent.html">Сайты в Дербенте</a></li>
+</ul>
+</div>
+<div class="footer-links-col">
+<h4>Контакты</h4>
+<ul>
+<li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
+<li><a href="https://t.me/rdvigm" rel="noopener" target="_blank">Telegram</a></li>
+<li><a href="https://github.com/Ibrahim-Radzhabov" rel="noopener" target="_blank">GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Ибрагим Раджабов. Все права защищены.</p>
+<div class="legal-links" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Политика конфиденциальности</a><span style="color:var(--text-tertiary);">·</span><a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Согласие на обработку ПД</a></div>
+<div class="social-links">
+<a aria-label="GitHub" href="https://github.com/Ibrahim-Radzhabov" rel="noopener" target="_blank">GH</a>
+<a aria-label="Telegram" href="https://t.me/rdvigm" rel="noopener" target="_blank">TG</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    (function() {
+      'use strict';
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      window.toggleMenu = function() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){
+        a.addEventListener('click', function(){ __reach('telegram_click'); });
+      });
+      document.querySelectorAll('.btn-primary:not([type=submit]):not(#submitBtn)').forEach(function(a){
+        a.addEventListener('click', function(){ __reach('cta_click'); });
+      });
+    })();
+  </script>
+</body>
+</html>

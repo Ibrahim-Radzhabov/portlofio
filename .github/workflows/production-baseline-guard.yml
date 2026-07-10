@@ -1,0 +1,27 @@
+name: Production baseline guard
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  protected-homepage:
+    name: Protected homepage matches owner-approved baseline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify locked manifest against approved commit
+        run: bash .github/verify-production-baseline.sh --commit
+
+      - name: Verify protected files
+        run: bash .github/verify-production-baseline.sh --tree
+
+      - name: Verify recoverable production snapshot
+        run: bash .github/verify-production-baseline.sh --release-commit

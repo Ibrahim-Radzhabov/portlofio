@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Telegram Mini App или бот: отличия и выбор для бизнеса</title>
+<meta content="Telegram Mini App или бот: отличия, таблица выбора, каталог, корзина, оплата, безопасность, сайт и сценарии для бизнеса." name="description"/>
+<link href="https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180"/>
+<meta content="#F5F0E8" name="theme-color"/>
+<meta content="Telegram Mini App или бот: отличия и выбор для бизнеса" property="og:title"/>
+<meta content="Сравнение бота, Mini App и связки: задачи, каталог, корзина, уведомления, оплата, безопасность и роль сайта." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html" property="og:url"/>
+<meta content="https://radzhabov-dev.ru/assets/og/blog-miniapp.png" property="og:image"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Telegram Mini App или бот: что выбрать" name="twitter:title"/>
+<meta content="Отличия, таблица задач, архитектура, оплата и пять вопросов для выбора формата." name="twitter:description"/>
+<meta content="https://radzhabov-dev.ru/assets/og/blog-miniapp.png" name="twitter:image"/>
+<meta content="Ибрагим Раджабов" name="author"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="I. Radzhabov" property="og:site_name"/><meta content="2026-07-10" property="article:published_time"/><meta content="2026-07-10" property="article:modified_time"/><meta content="Ибрагим Раджабов" property="article:author"/><meta content="Telegram и боты" property="article:section"/><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html#article",
+      "headline": "Telegram Mini App или бот: что выбрать для бизнеса",
+      "description": "Сравнение Telegram-бота и Mini App: отличия, задачи, каталог, корзина, оплата, безопасность, сайт и архитектура общей связки.",
+      "author": {
+        "@type": "Person",
+        "name": "Ибрагим Раджабов",
+        "url": "https://radzhabov-dev.ru/",
+        "sameAs": [
+          "https://github.com/Ibrahim-Radzhabov",
+          "https://t.me/rdvigm"
+        ]
+      },
+      "datePublished": "2026-07-10",
+      "dateModified": "2026-07-10",
+      "inLanguage": "ru",
+      "mainEntityOfPage": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html",
+      "image": "https://radzhabov-dev.ru/assets/og/blog-miniapp.png",
+      "publisher": {
+        "@type": "Person",
+        "name": "Ибрагим Раджабов",
+        "url": "https://radzhabov-dev.ru/"
+      },
+      "wordCount": 1625,
+      "articleSection": "Telegram и боты",
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://radzhabov-dev.ru/blog/#blog",
+        "name": "Блог Ибрагима Раджабова — сайты, AI и 1С на практике"
+      },
+      "keywords": [
+        "Telegram Mini App или бот",
+        "Telegram Web App",
+        "разработка Telegram-бота",
+        "Mini App для бизнеса",
+        "бот и Mini App отличия"
+      ],
+      "about": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Telegram Mini Apps"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Telegram Bots"
+        },
+        {
+          "@type": "Thing",
+          "name": "Выбор интерфейса для бизнеса"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Thing",
+          "name": "Telegram Web App"
+        },
+        {
+          "@type": "Thing",
+          "name": "Telegram Stars"
+        },
+        {
+          "@type": "Thing",
+          "name": "Telegram Payments"
+        },
+        {
+          "@type": "Thing",
+          "name": "initData"
+        }
+      ],
+      "citation": [
+        "https://core.telegram.org/bots/webapps",
+        "https://core.telegram.org/bots/payments",
+        "https://core.telegram.org/bots/payments-stars"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://radzhabov-dev.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://radzhabov-dev.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mini App или бот",
+          "item": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Можно ли начать с обычного бота и потом добавить Mini App?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Это разумный путь, если сначала нужен короткий сценарий заявок или уведомлений, а каталог и личный кабинет появятся позже. Важно с самого начала хранить данные в одной серверной части и не привязывать бизнес-логику только к текстовым сообщениям бота."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mini App может работать без установки отдельного приложения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Пользователь открывает Mini App внутри Telegram по кнопке, из профиля бота или по прямой ссылке. Скачивать отдельное приложение из магазина не нужно, но технически Mini App остаётся веб-интерфейсом, связанным с Telegram-ботом и серверной частью."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mini App всегда дороже обычного бота?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обычно интерфейс Mini App требует больше работы, чем линейный сценарий из сообщений и кнопок. Но стоимость определяет не название формата, а каталог, роли пользователей, интеграции, оплата, админка и правила обработки заказов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли принимать оплату внутри Telegram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, но правила зависят от товара. Для физических товаров и услуг используются поддерживаемые платёжные провайдеры. Цифровые товары и услуги внутри Telegram должны продаваться за Telegram Stars. Конкретную схему нужно проверять под страну, тип бизнеса и юридические требования."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужен ли сайт, если есть Mini App?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Зависит от источника клиентов. Mini App удобен для аудитории, которая уже пришла в Telegram, но не заменяет открытый индексируемый сайт, когда важны поиск, рекламные посадочные страницы, публичный каталог и ссылки вне мессенджера."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Могут ли сайт, бот и Mini App работать с одной базой?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, и обычно это лучший вариант. Сайт и Mini App используют один API и одну бизнес-логику, а бот отвечает за сообщения и уведомления. Так заказ и статус не расходятся между отдельными системами."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как безопасно получать данные пользователя из Mini App?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Данные, пришедшие из интерфейса, нельзя считать доверенными. Telegram передаёт строку initData, которую сервер должен проверить перед авторизацией пользователя и выполнением чувствительных действий. Проверки цены, прав доступа и состава заказа также выполняются на сервере."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что лучше для интернет-магазина: бот или Mini App?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для каталога с фотографиями, фильтрами, карточками и корзиной удобнее Mini App. Бот лучше оставить для входа, поддержки, подтверждения заказа, статусов и повторных уведомлений. Поэтому для интернет-магазина чаще всего полезна связка с одной базой и API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Telegram Web App и Mini App — это одно и то же?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В большинстве практических задач — да. Название Web App встречается в старых статьях, методах API и коде, а в актуальной документации Telegram продукт называется Mini Apps. Речь идёт о веб-интерфейсе, который открывается внутри Telegram."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли запустить Mini App без отдельного диалога с ботом?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Пользователь может открыть Mini App по прямой ссылке, из меню или профиля бота и не проходить длинный чат-сценарий. Но Mini App всё равно настраивается в экосистеме Telegram-бота и обычно использует серверную часть для проверки пользователя и бизнес-логики."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html#choice",
+      "name": "Как выбрать между Telegram-ботом и Mini App",
+      "description": "Пять вопросов, которые помогают выбрать обычного Telegram-бота, Mini App или их связку.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Нужно ли что-то видеть и сравнивать?",
+          "text": "Фото, карточки, фильтры, расписание и карта — аргументы в пользу Mini App.",
+          "url": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html#decision-question-1"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Можно ли пройти сценарий последовательно?",
+          "text": "Если пользователю достаточно ответить на несколько вопросов, бот обычно проще.",
+          "url": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html#decision-question-2"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Нужны ли возвратные уведомления?",
+          "text": "Статусы, напоминания и поддержка удобнее остаются в боте, даже если заказ оформляется в Mini App.",
+          "url": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html#decision-question-3"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Откуда приходит аудитория?",
+          "text": "Telegram-канал, QR-код и база клиентов подходят для Telegram-сценария; поиск и реклама на публичные страницы требуют сайта.",
+          "url": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html#decision-question-4"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Где хранятся данные?",
+          "text": "Бот, Mini App и сайт должны работать с одним API, базой и правилами заказа.",
+          "url": "https://radzhabov-dev.ru/blog/telegram-mini-app-ili-bot.html#decision-question-5"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<link href="https://radzhabov-dev.ru/#about" rel="author"/><meta content="Telegram Mini App" property="article:tag"/><meta content="Telegram-бот" property="article:tag"/><meta content="Telegram Web App" property="article:tag"/><style>
+    :root {
+      --bg-primary: #F5F0E8;
+      --bg-secondary: #EDE8DF;
+      --bg-card: #EDE8DF;
+      --bg-card-hover: #E5E0D6;
+      --border: rgba(20, 18, 16, 0.08);
+      --border-hover: rgba(20, 18, 16, 0.15);
+      --text-primary: #141210;
+      --text-secondary: #7A7570;
+      --text-tertiary: #6E6861;
+      --accent: #1A3A2A;
+      --accent-dim: #2D5A45;
+      --accent-glow: rgba(26, 58, 42, 0.12);
+      --accent-glow-strong: rgba(26, 58, 42, 0.25);
+      --accent-warm: #B5623C;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:var(--font-body); background:var(--bg-primary); color:var(--text-primary); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    body::before {
+      content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.025;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+    #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 0; transition:background .4s, backdrop-filter .4s; }
+    #nav.scrolled { background:rgba(245, 240, 232, 0.85); backdrop-filter:blur(20px); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:inline-flex; align-items:center; gap:10px; color:var(--text-primary); text-decoration:none; }
+    .nav-logo svg { width:24px; height:24px; flex-shrink:0; }
+    .nav-logo b { font-family:var(--font-display); font-weight:600; font-size:18px; letter-spacing:-0.3px; }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .3s; position:relative; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text-primary); }
+    .nav-links a.active::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--accent); border-radius:1px; }
+    .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
+    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #mobile-menu.active { opacity:1; pointer-events:all; }
+    #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
+    .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
+
+    .article-hero { padding:160px 0 40px; }
+    .article-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    .article-meta { font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:20px; display:flex; gap:16px; flex-wrap:wrap; }
+    .article-meta span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
+    h1 { font-family:var(--font-display); font-size:clamp(28px, 3.6vw, 40px); font-weight:800; line-height:1.18; letter-spacing:-1px; margin-bottom:20px; }
+    .article-lead { font-size:18px; color:var(--text-secondary); line-height:1.7; }
+
+    .article-body { padding:40px 0 80px; }
+    .article-body h2 { font-family:var(--font-display); font-size:26px; font-weight:700; margin:48px 0 16px; line-height:1.25; }
+    .article-body h3 { font-family:var(--font-display); font-size:20px; font-weight:600; margin:36px 0 12px; }
+    .article-body p { color:var(--text-secondary); margin-bottom:16px; font-size:16px; line-height:1.75; }
+    .article-body strong { color:var(--text-primary); font-weight:600; }
+    .article-body a { color:var(--accent); }
+    .article-body ul, .article-body ol { list-style:none; margin:16px 0 24px; }
+    .article-body li { padding:8px 0; color:var(--text-secondary); font-size:15.5px; line-height:1.7; display:flex; align-items:flex-start; gap:12px; }
+    .article-body ul li::before { content:'—'; color:var(--accent); font-weight:700; flex-shrink:0; }
+    .article-body ol { counter-reset:item; }
+    .article-body ol li::before { counter-increment:item; content:counter(item); font-family:var(--font-mono); color:var(--accent); font-weight:700; flex-shrink:0; min-width:20px; }
+    .article-body blockquote { border-left:3px solid var(--accent-warm); padding:12px 20px; margin:24px 0; background:var(--bg-card); border-radius:0 12px 12px 0; color:var(--text-secondary); font-size:15.5px; }
+
+    .tldr { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:18px 22px; margin:24px 0 0; }
+    .tldr .label { font-family:var(--font-mono); font-size:11px; color:var(--accent-warm); text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:10px; }
+    .tldr ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+    .tldr li { color:var(--text-secondary); font-size:15px; line-height:1.6; display:flex; gap:10px; }
+    .tldr li span { color:var(--accent); flex-shrink:0; }
+
+    .compare-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:28px 0 34px; border:1px solid var(--border); border-radius:16px; background:var(--bg-card); }
+    .compare-table { width:100%; border-collapse:collapse; min-width:520px; }
+    .compare-table caption { font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:2px; padding:14px 18px; text-align:left; }
+    .compare-table th, .compare-table td { padding:12px 18px; text-align:left; font-size:14px; line-height:1.55; border-bottom:1px solid var(--border); }
+    .compare-table th { font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--accent); font-weight:600; }
+    .compare-table th:first-child { color:var(--text-tertiary); }
+    .compare-table td:first-child { color:var(--text-primary); font-weight:600; }
+    .compare-table td { color:var(--text-secondary); }
+    .compare-table tr:last-child td { border-bottom:none; }
+    .compare-table .yes { color:var(--accent); font-weight:700; }
+    .compare-table .no { color:var(--text-tertiary); }
+
+    .duo-diagram { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:22px; margin:28px 0 34px; }
+    .duo-diagram svg { display:block; width:100%; height:auto; overflow:visible; }
+    .duo-diagram-caption { font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); text-align:center; margin-top:14px; letter-spacing:1px; }
+    @media(max-width:640px){ .duo-diagram { padding:18px 14px; } }
+
+
+    .article-body code { font-family:var(--font-mono); font-size:.92em; color:var(--accent); background:var(--bg-card); padding:2px 5px; border-radius:5px; }
+    .scroll-hint { display:none; font-family:var(--font-mono); font-size:10px; color:var(--text-tertiary); margin:-24px 0 30px; }
+    .source-note { font-size:13px !important; color:var(--text-tertiary) !important; border-top:1px solid var(--border); padding-top:14px; }
+    .principle-box { background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent-warm); border-radius:0 16px 16px 0; padding:22px 24px; margin:24px 0 34px; }
+    .principle-box strong { display:block; margin-bottom:7px; }
+    .principle-box p { margin:0; }
+    .decision-steps { counter-reset:choice; margin:20px 0 34px !important; }
+    .decision-steps li { counter-increment:choice; position:relative; display:block; padding:10px 0 10px 44px; }
+    .decision-steps li::before { content:counter(choice); position:absolute; left:0; top:9px; width:28px; height:28px; border:1px solid var(--accent-glow-strong); border-radius:50%; display:grid; place-items:center; color:var(--accent); font-family:var(--font-mono); font-size:11px; }
+    .decision-steps strong { display:block; margin-bottom:3px; }
+    .mvp-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:24px 0 34px; }
+    .mvp-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:20px; }
+    .mvp-card .label { font-family:var(--font-mono); font-size:10px; color:var(--accent-warm); text-transform:uppercase; letter-spacing:1.5px; display:block; margin-bottom:8px; }
+    .mvp-card h3 { margin:0 0 8px; font-size:18px; }
+    .mvp-card p { font-size:14px; line-height:1.6; margin:0; }
+    .architecture-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; list-style:none !important; margin:20px 0 30px !important; }
+    .architecture-list li { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:16px; display:block; }
+    .architecture-list li::before { display:none; }
+    .architecture-list strong { display:block; margin-bottom:3px; }
+    .warning-note { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:22px 24px; margin:26px 0 34px; }
+    .warning-note .label { display:block; font-family:var(--font-mono); color:var(--accent-warm); font-size:10px; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px; }
+    .warning-note p:last-child { margin-bottom:0; }
+    @media(max-width:760px){ .mvp-grid { grid-template-columns:1fr; } }
+    @media(max-width:640px){ .architecture-list { grid-template-columns:1fr; } .scroll-hint { display:block; } }
+
+    .callout { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:24px 28px; margin:32px 0; }
+    .callout .label { font-family:var(--font-mono); font-size:11px; color:var(--accent-warm); text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:10px; }
+    .callout p { margin-bottom:0; }
+
+
+    .checklist { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:28px 32px; margin:28px 0 34px; }
+    .checklist h3 { font-family:var(--font-display); font-size:19px; font-weight:700; margin:0 0 16px; }
+    .checklist ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+    .checklist li { display:flex; align-items:flex-start; gap:12px; color:var(--text-secondary); font-size:15px; line-height:1.6; }
+    .checklist li::before { display:none; }
+    .checklist li .box { width:18px; height:18px; border:1.5px solid var(--accent); border-radius:4px; flex-shrink:0; margin-top:2px; display:inline-block; }
+
+    .faq-section { margin:48px 0 0; }
+    .faq-section h2 { margin-bottom:20px; }
+    .faq-list { max-width:720px; }
+    details { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden; }
+    details[open] { border-color:var(--border-hover); }
+    summary { padding:18px 22px; cursor:pointer; font-family:var(--font-display); font-weight:600; font-size:16px; list-style:none; display:flex; justify-content:space-between; align-items:center; color:var(--text-primary); }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:'+'; font-family:var(--font-mono); color:var(--accent-warm); font-size:18px; transition:transform .3s; }
+    details[open] summary::after { transform:rotate(45deg); }
+    details p { padding:0 22px 20px; color:var(--text-secondary); font-size:15px; line-height:1.7; }
+
+    .cta-box { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:36px; margin:48px 0 0; text-align:center; position:relative; overflow:hidden; }
+    .cta-box::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
+    .cta-box h2 { font-family:var(--font-display); font-size:24px; font-weight:700; margin-bottom:10px; }
+    .cta-box p { color:var(--text-secondary); margin-bottom:22px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#F5F0E8; font-family:var(--font-display); font-weight:600; font-size:15px; padding:15px 30px; border-radius:12px; text-decoration:none; transition:transform .3s,box-shadow .3s; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 36px rgba(26,58,42,0.28); }
+
+    .related { padding:8px 0 64px; }
+    .related-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    .related-label { font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; }
+    .related-links { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:16px; }
+    .related-links a { font-family:var(--font-mono); font-size:13px; color:var(--text-primary); text-decoration:none; border-bottom:1px solid var(--accent-glow-strong); padding-bottom:3px; transition:border-color .2s, color .2s; }
+    .related-links a:hover { color:var(--accent-warm); border-color:var(--accent-warm); }
+
+    footer { padding:60px 0 32px; border-top:1px solid var(--border); margin-top:60px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; }
+    .footer-brand p { color:var(--text-tertiary); font-size:14px; margin-top:8px; }
+    .footer-links { display:flex; gap:48px; flex-wrap:wrap; }
+    .footer-links-col h4 { font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; color:var(--text-primary); }
+    .footer-links-col ul { list-style:none; }
+    .footer-links-col li { margin-bottom:10px; }
+    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:14px; transition:color .3s; }
+    .footer-links-col a:hover { color:var(--accent); }
+    .footer-bottom { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-bottom p { color:var(--text-tertiary); font-size:13px; }
+    .social-links { display:flex; gap:16px; }
+    .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
+    .social-links a:hover { border-color:var(--accent); color:var(--accent); }
+
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    @media (max-width:968px) {
+      .nav-links { display:none; }
+      .menu-btn { display:block; }
+      .footer-inner { flex-direction:column; }
+    }
+    @media (max-width:640px) {
+      .article-hero { padding:120px 0 24px; }
+      .cta-box { padding:28px 22px; }
+      .compare-table { min-width:440px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+
+
+    /* SEO/GEO readability layer */
+    .article-byline { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:18px; font-family:var(--font-mono); font-size:11.5px; line-height:1.6; color:var(--text-tertiary); }
+    .article-byline a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-glow-strong); }
+    .article-byline time { white-space:nowrap; }
+    .article-toc { margin:22px 0 0; padding:20px 22px; border:1px solid var(--border); border-radius:14px; background:rgba(251,248,243,.7); }
+    .article-toc strong { display:block; margin-bottom:10px; font-family:var(--font-mono); font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent-warm); }
+    .article-toc ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px 22px; margin:0; list-style:none; counter-reset:toc; }
+    .article-toc li { padding:0; display:block; font-size:14px; line-height:1.5; }
+    .article-toc li::before { content:none; }
+    .article-toc a { color:var(--text-secondary); text-decoration:none; }
+    .article-toc a:hover { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+    .method-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:22px 0 30px; }
+    .method-card { padding:18px 20px; border:1px solid var(--border); border-radius:14px; background:var(--bg-card); }
+    .method-card strong { display:block; margin-bottom:6px; font-family:var(--font-display); font-size:17px; }
+    .method-card p { margin:0; font-size:14.5px; line-height:1.65; }
+    .source-box { margin:40px 0 0; padding:20px 22px; border:1px solid var(--border); border-radius:14px; background:var(--bg-card); }
+    .source-box strong { display:block; margin-bottom:8px; font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-warm); }
+    .source-box p, .source-box li { font-size:14px; line-height:1.65; }
+    .source-box ul { margin:8px 0 0; }
+    .source-box li { padding:4px 0; }
+    .source-box li::before { content:'↗'; }
+    @media(max-width:640px){
+      .article-toc ol, .method-grid { grid-template-columns:1fr; }
+      .article-byline { gap:5px 12px; }
+    }
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
+    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+  </script>
+<noscript><div><img alt="" src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<nav aria-label="Главная навигация" id="nav">
+<div class="container nav-inner">
+<a aria-label="I. Radzhabov — на главную" class="nav-logo" href="/"><svg aria-hidden="true" fill="none" viewbox="0 0 48 48"><path d="M17 12 L31 24" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><path d="M31 24 L17 36" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><circle cx="17" cy="12" fill="#141210" r="5.5"></circle><circle cx="31" cy="24" fill="#B5623C" r="6.6"></circle><circle cx="17" cy="36" fill="#141210" r="5.5"></circle></svg><b>I. Radzhabov</b></a>
+<ul class="nav-links">
+<li><a href="/">Главная</a></li>
+<li><a href="/services/landing.html">Услуги</a></li>
+<li><a href="/cases/">Кейсы</a></li>
+<li><a href="/blog/">Блог</a></li>
+<li><a href="/#contact">Контакты</a></li>
+</ul>
+<button aria-expanded="false" aria-label="Открыть меню" class="menu-btn" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div id="mobile-menu">
+<button aria-label="Закрыть меню" class="close-menu" onclick="toggleMenu()">×</button>
+<a href="/" onclick="toggleMenu()">Главная</a>
+<a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
+<a href="/cases/" onclick="toggleMenu()">Кейсы</a>
+<a href="/blog/" onclick="toggleMenu()">Блог</a>
+<a href="/#contact" onclick="toggleMenu()">Контакты</a>
+</div>
+<header class="article-hero">
+<div class="container">
+<div class="article-wrap">
+<nav aria-label="Хлебные крошки" class="crumbs" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/blog/" style="color:var(--text-tertiary);text-decoration:none;">Блог</a> / <span style="color:var(--text-primary);">Mini App или бот</span></nav>
+<div class="article-meta reveal">Блог · Telegram и боты <span>· 10 июля 2026 · ~9 минут</span></div>
+<h1 class="reveal">Telegram Mini App или бот: что выбрать для бизнеса</h1>
+<p class="article-lead reveal">Telegram-бот удобен для короткого диалога и уведомлений, Mini App — для каталога, корзины и сложного интерфейса. На практике бизнесу часто нужна связка: бот возвращает пользователя сообщениями, а Mini App помогает выбрать и оформить.</p><div aria-label="Автор и дата обновления" class="article-byline reveal">
+<span>Автор: <a href="/#about" rel="author">Ибрагим Раджабов</a></span>
+<span>Практика: <a href="/cases/decorapp.html">магазин GlowDecor в Telegram</a></span>
+<time datetime="2026-07-10">Обновлено 10 июля 2026</time>
+</div>
+<div class="tldr reveal">
+<span class="label">Ответ за 30 секунд</span>
+<ul>
+<li><span>·</span> Бот выбирают для линейного сценария: вопрос → ответ → действие → уведомление.</li>
+<li><span>·</span> Mini App нужен, когда пользователь должен видеть, сравнивать, фильтровать или заполнять сложную форму.</li>
+<li><span>·</span> Часто лучший вариант — бот + Mini App + одна серверная часть, а не два независимых приложения.</li>
+<li><span>·</span> Mini App не создаёт каталог, безопасность и трафик автоматически — всё это всё равно проектируется.</li>
+<li><span>·</span> Сайт нужен отдельно, когда важны поиск, публичные страницы и аудитория вне Telegram.</li>
+</ul>
+</div><nav aria-label="Содержание статьи" class="article-toc reveal">
+<strong>Содержание</strong><ol><li><a href="#not-alternatives">Бот, Mini App и Web App</a></li><li><a href="#comparison">Сравнение по задачам</a></li><li><a href="#decision">Пять вопросов для выбора</a></li><li><a href="#security">Авторизация и безопасность</a></li><li><a href="#payments">Оплата внутри Telegram</a></li><li><a href="#faq">Частые вопросы</a></li></ol>
+</nav>
+</div>
+</div>
+</header>
+<article class="article-body">
+<div class="container">
+<div class="article-wrap">
+<h2 id="not-alternatives">Главная поправка: Mini App — не «бот с дизайном»</h2>
+<p><strong>Telegram-бот</strong> — это программный аккаунт, который получает события, отправляет сообщения, показывает кнопки и запускает действия. <strong>Mini App</strong> — веб-интерфейс, который открывается внутри Telegram: каталог, календарь, карта, личный кабинет или сложная форма.</p>
+<p>Пользователь может запускать Mini App из кнопки, меню или профиля бота, а также по прямой ссылке. После действия интерфейс отправляет данные на сервер, а бот может продолжить сценарий сообщением или уведомлением.</p><p><strong>Telegram Web App и Mini App</strong> — названия одной линии технологии: в старых материалах и коде часто встречается Web App, а актуальная документация Telegram использует название <a href="https://core.telegram.org/bots/webapps" rel="external">Mini Apps</a>.</p>
+<div class="principle-box"><strong>Правильный вопрос не «бот или Mini App?»</strong><p>Спросите: где пользователю удобнее выполнить каждую часть задачи — в диалоге, в интерфейсе или на открытом сайте.</p></div>
+<h2 id="comparison">Сравнение по задачам</h2>
+<div aria-label="Сравнение Telegram-бота, Mini App и связки" class="compare-table-wrap" role="region" tabindex="0">
+<table class="compare-table">
+<caption>Какой формат удобнее для разных сценариев</caption>
+<thead><tr><th scope="col">Задача</th><th scope="col">Бот</th><th scope="col">Mini App</th><th scope="col">Связка</th></tr></thead>
+<tbody>
+<tr><td>Заявка из 3–5 шагов</td><td class="yes">удобно</td><td class="no">часто лишнее</td><td class="no">обычно не нужно</td></tr>
+<tr><td>Ответы и передача менеджеру</td><td class="yes">удобно</td><td class="no">не основная роль</td><td class="yes">удобно</td></tr>
+<tr><td>Каталог, фото, фильтры</td><td class="no">быстро становится громоздко</td><td class="yes">удобно</td><td class="yes">удобно</td></tr>
+<tr><td>Корзина и оформление</td><td class="no">возможно, но тесно</td><td class="yes">удобно</td><td class="yes">лучший баланс</td></tr>
+<tr><td>Календарь, карта, сложная форма</td><td class="no">неудобно</td><td class="yes">удобно</td><td class="yes">удобно</td></tr>
+<tr><td>Статусы и напоминания</td><td class="yes">сильная сторона</td><td class="no">не нужен открытый экран</td><td class="yes">сильная сторона</td></tr>
+<tr><td>Публичные страницы из поиска</td><td class="no">не заменяет сайт</td><td class="no">не заменяет сайт</td><td class="no">нужен сайт</td></tr>
+</tbody>
+</table>
+</div>
+<div class="scroll-hint">На телефоне таблица прокручивается по горизонтали →</div>
+<h2 id="decision">Как выбрать за пять вопросов</h2>
+<ol class="decision-steps">
+<li id="decision-question-1"><strong>Нужно ли что-то видеть и сравнивать?</strong> Фото, карточки, фильтры, расписание и карта — аргументы в пользу Mini App.</li>
+<li id="decision-question-2"><strong>Можно ли пройти сценарий последовательно?</strong> Если пользователю достаточно ответить на несколько вопросов, бот обычно проще.</li>
+<li id="decision-question-3"><strong>Нужны ли возвратные уведомления?</strong> Статусы, напоминания и поддержка удобнее остаются в боте, даже если заказ оформляется в Mini App.</li>
+<li id="decision-question-4"><strong>Откуда приходит аудитория?</strong> Telegram-канал, QR-код и база клиентов подходят для Telegram-сценария; поиск и реклама на публичные страницы требуют сайта.</li>
+<li id="decision-question-5"><strong>Где хранятся данные?</strong> Бот, Mini App и сайт должны работать с одним API, базой и правилами заказа.</li>
+</ol>
+<h2 id="bot">Когда достаточно обычного бота</h2>
+<p>Бот подходит, когда путь линейный и короткий: выбрать услугу, оставить контакт, подтвердить время, получить результат или уведомление. Пользователю не нужно держать перед глазами десятки вариантов и возвращаться между экранами.</p>
+<p>Типовые задачи:</p>
+<ul>
+<li>запись на услугу с несколькими последовательными вопросами;</li>
+<li>приём заявки и сбор контакта;</li>
+<li>FAQ с передачей сложного вопроса человеку;</li>
+<li>проверка статуса заказа или заявки;</li>
+<li>напоминания, служебные уведомления и отчёты.</li>
+</ul>
+<p>Бот перестаёт быть удобным, когда кнопок и веток становится столько, что пользователь теряет контекст и не может быстро вернуться к выбранному товару или шагу.</p>
+<h2 id="miniapp">Когда нужен Mini App</h2>
+<p>Mini App выбирают не ради «современного вида», а когда задача требует интерфейса. Например, пользователю нужно:</p>
+<ul>
+<li>листать каталог и открывать карточки товаров;</li>
+<li>фильтровать по цене, категории или характеристикам;</li>
+<li>редактировать корзину и видеть итоговую сумму;</li>
+<li>выбирать дату в календаре, точку на карте или место на схеме;</li>
+<li>работать с личным кабинетом, историей и повторным заказом;</li>
+<li>заполнять форму, в которой поля зависят друг от друга.</li>
+</ul>
+<p>Это обычное веб-приложение, поэтому ему всё равно нужны адаптивный дизайн, сервер, база, бизнес-логика, обработка ошибок и аналитика.</p>
+<h2 id="together">Когда бот и Mini App работают вместе</h2>
+<p>Для магазина, сервиса бронирования или программы лояльности роли удобно разделить:</p>
+<ul class="architecture-list">
+<li><strong>Бот</strong>Вход в сценарий, вопросы, поддержка, статусы и уведомления.</li>
+<li><strong>Mini App</strong>Каталог, карточки, фильтры, корзина, календарь и личный кабинет.</li>
+<li><strong>Сервер / API</strong>Проверка пользователя, цены, права, бизнес-правила и интеграции.</li>
+<li><strong>Одна база</strong>Товары, заказы, статусы и клиенты без расхождения между интерфейсами.</li>
+</ul>
+<figure aria-label="Архитектура связки Telegram-бота и Mini App" class="duo-diagram">
+<svg aria-label="Бот и Mini App обращаются к одной серверной части, базе и интеграциям" role="img" viewbox="0 0 680 230">
+<defs><marker id="duoArrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10"><path d="M0 0 L10 5 L0 10Z" fill="#B5623C"></path></marker></defs>
+<g fill="#141210" font-family="'JetBrains Mono', monospace" font-size="11">
+<rect fill="#FBF8F3" height="62" rx="14" stroke="#DDD5C8" width="132" x="22" y="28"></rect><text x="64" y="54">Бот</text><text fill="#6E6861" x="42" y="74">диалог, статусы</text>
+<rect fill="#FBF8F3" height="62" rx="14" stroke="#DDD5C8" width="132" x="22" y="140"></rect><text x="54" y="166">Mini App</text><text fill="#6E6861" x="42" y="186">интерфейс</text>
+<path d="M166 59 H274" marker-end="url(#duoArrow)" stroke="#B5623C" stroke-width="2.4"></path><path d="M166 171 H274" marker-end="url(#duoArrow)" stroke="#B5623C" stroke-width="2.4"></path>
+<rect fill="none" height="62" rx="14" stroke="#1A3A2A" stroke-width="2" width="132" x="286" y="84"></rect><text fill="#1A3A2A" x="308" y="110">Сервер / API</text><text fill="#6E6861" x="314" y="130">API и правила</text>
+<path d="M430 115 H492" marker-end="url(#duoArrow)" stroke="#B5623C" stroke-width="2.4"></path>
+<rect fill="#FBF8F3" height="62" rx="14" stroke="#DDD5C8" width="150" x="504" y="36"></rect><text x="544" y="62">База</text><text fill="#6E6861" x="526" y="82">заказы, клиенты</text>
+<rect fill="#FBF8F3" height="62" rx="14" stroke="#DDD5C8" width="150" x="504" y="132"></rect><text x="536" y="158">CRM / 1С</text><text fill="#6E6861" x="526" y="178">учёт, статусы</text>
+<path d="M579 108 V120" marker-end="url(#duoArrow)" stroke="#1A3A2A" stroke-width="2"></path>
+</g>
+</svg>
+<div class="duo-diagram-caption">Интерфейсы разные, но данные и бизнес-правила должны быть общими</div>
+</figure>
+<h2 id="what-it-gives">Что Mini App даёт — и чего не даёт</h2>
+<p>Mini App действительно снижает трение: открывается внутри Telegram, получает тему интерфейса и может использовать подтверждённый Telegram-контекст пользователя. Но он не решает за разработчика остальные части продукта.</p>
+<div class="warning-note">
+<span class="label">Не появляется автоматически</span>
+<p><strong>Каталог.</strong> Нужны источник данных, поиск, категории, изображения и админский процесс обновления.</p>
+<p><strong>Безопасность.</strong> Цены, права и заказ проверяются на сервере; данным из браузерного интерфейса нельзя доверять.</p>
+<p><strong>Поддержка.</strong> Нужны понятные ошибки, связь с человеком и процесс разбора проблемного заказа.</p>
+<p><strong>Трафик.</strong> Сам факт запуска Mini App не приводит новых клиентов.</p>
+</div>
+<h2 id="security">Авторизация и безопасность</h2>
+<p>Telegram передаёт Mini App данные запуска в поле <code>initData</code>. Сервер должен проверить их подлинность до авторизации пользователя. Объект <code>initDataUnsafe</code> и любые значения, присланные интерфейсом, нельзя использовать как доверенный источник.</p>
+<p>На сервере также перепроверяются цена, скидка, состав заказа, доступ к чужим данным и допустимость перехода статуса. Иначе пользователь может изменить запрос в браузере, даже если кнопки интерфейса этого не позволяют.</p>
+<h2 id="payments">Оплата внутри Telegram</h2>
+<p>Оплату можно встроить, но сначала нужно определить тип товара:</p>
+<ul>
+<li><strong>Физические товары и услуги.</strong> Используется Telegram Payments с поддерживаемым платёжным провайдером; доступность зависит от страны и условий провайдера.</li>
+<li><strong>Цифровые товары и услуги внутри Telegram.</strong> Оплата должна проходить в Telegram Stars.</li>
+</ul>
+<p>Даже когда оплата технически возможна, она не всегда нужна в первом релизе. Иногда достаточно сформировать заказ, передать его менеджеру и подключить оплату после проверки основного сценария.</p>
+<p class="source-note">Технические правила сверены с официальной документацией Telegram: <a href="https://core.telegram.org/bots/webapps" rel="noopener noreferrer" target="_blank">Mini Apps</a>, <a href="https://core.telegram.org/bots/payments" rel="noopener noreferrer" target="_blank">оплата физических товаров и услуг</a> и <a href="https://core.telegram.org/bots/payments-stars" rel="noopener noreferrer" target="_blank">оплата цифровых товаров</a>.</p>
+<h2 id="site-and-search">Заменяет ли Mini App сайт</h2>
+<p>Telegram хорошо обслуживает аудиторию, которая уже пришла по ссылке, QR-коду, из канала или базы клиентов. Но внутренний каталог Mini App не стоит считать заменой открытым страницам сайта, когда бизнесу нужны поиск, SEO, рекламные посадочные страницы, публичные условия и ссылки, доступные без мессенджера.</p>
+<p>Практичная связка выглядит так: сайт привлекает и объясняет, Mini App помогает выбрать и оформить, бот возвращает статусы и поддерживает клиента. Подробнее — в <a href="/blog/telegram-bot-vmesto-sajta.html">сравнении Telegram-решения с сайтом</a>.</p>
+<h2 id="mvp">Что включать в первый релиз</h2>
+<div class="mvp-grid">
+<div class="mvp-card"><span class="label">BOT MVP</span><h3>Короткий сценарий</h3><p>Команды и кнопки, сбор заявки, уведомление владельцу, подтверждение клиенту, передача человеку и журнал ошибок.</p></div>
+<div class="mvp-card"><span class="label">MINI APP MVP</span><h3>Один ключевой путь</h3><p>Главный экран, каталог или форма, карточка, действие, серверная проверка, состояние загрузки и понятная ошибка.</p></div>
+<div class="mvp-card"><span class="label">СВЯЗКА MVP</span><h3>Общие данные</h3><p>Mini App создаёт заказ через API, бот подтверждает его и присылает статус, менеджер видит тот же заказ в рабочей системе.</p></div>
+</div>
+<p>Первый релиз не обязан включать программу лояльности, сложную аналитику, все способы оплаты и десятки ролей. Важнее довести до конца один реальный пользовательский путь.</p>
+<h2 id="antipatterns">Пять ошибок при выборе формата</h2>
+<ul>
+<li><strong>Каталог в бесконечной цепочке кнопок.</strong> Пользователь теряет выбранный товар и не видит варианты рядом.</li>
+<li><strong>Mini App ради формы из трёх полей.</strong> Интерфейс увеличивает стоимость, но не делает задачу удобнее.</li>
+<li><strong>Отдельная база у бота и Mini App.</strong> Заказы и статусы начинают расходиться.</li>
+<li><strong>Доверие данным из интерфейса.</strong> Цена, пользователь и права должны проверяться на сервере.</li>
+<li><strong>Отсутствие человека в сложном сценарии.</strong> Клиенту нужен понятный выход из автоматизации, если вопрос не решён.</li>
+</ul>
+<div class="callout">
+<span class="label">Пример</span>
+<p>В <a href="/cases/decorapp.html">кейсе GlowDecor</a> Mini App отвечает за каталог, категории и корзину, а бот — за поддержку с анонимной переадресацией. Клиент пишет в Telegram, сообщение получает владелец, но его личный аккаунт не раскрывается. Это пример разделения ролей, а не попытка поместить весь магазин в чат.</p>
+</div>
+<h2 id="brief">Что подготовить для оценки</h2>
+<div class="checklist">
+<h3>Короткий бриф без технического задания</h3>
+<ul>
+<li><span aria-hidden="true" class="box"></span>Откуда пользователь приходит и какое одно действие должен завершить.</li>
+<li><span aria-hidden="true" class="box"></span>Нужен ли визуальный выбор: каталог, календарь, карта, характеристики.</li>
+<li><span aria-hidden="true" class="box"></span>Где сейчас хранятся товары, цены, клиенты и заказы.</li>
+<li><span aria-hidden="true" class="box"></span>Какие уведомления получает клиент, менеджер и владелец.</li>
+<li><span aria-hidden="true" class="box"></span>Нужны ли оплата, доставка, CRM, 1С или другая интеграция.</li>
+<li><span aria-hidden="true" class="box"></span>Кто редактирует каталог и обрабатывает исключения.</li>
+</ul>
+</div>
+<div class="faq-section" id="faq">
+<h2>Частые вопросы</h2>
+<div class="faq-list">
+<details><summary>Можно ли начать с обычного бота и потом добавить Mini App?</summary><p>Да. Это разумный путь, если сначала нужен короткий сценарий заявок или уведомлений, а каталог и личный кабинет появятся позже. Важно с самого начала хранить данные в одной серверной части и не привязывать бизнес-логику только к текстовым сообщениям бота.</p></details>
+<details><summary>Mini App может работать без установки отдельного приложения?</summary><p>Да. Пользователь открывает Mini App внутри Telegram по кнопке, из профиля бота или по прямой ссылке. Скачивать отдельное приложение из магазина не нужно, но технически Mini App остаётся веб-интерфейсом, связанным с Telegram-ботом и серверной частью.</p></details>
+<details><summary>Mini App всегда дороже обычного бота?</summary><p>Обычно интерфейс Mini App требует больше работы, чем линейный сценарий из сообщений и кнопок. Но стоимость определяет не название формата, а каталог, роли пользователей, интеграции, оплата, админка и правила обработки заказов.</p></details>
+<details><summary>Можно ли принимать оплату внутри Telegram?</summary><p>Да, но правила зависят от товара. Для физических товаров и услуг используются поддерживаемые платёжные провайдеры. Цифровые товары и услуги внутри Telegram должны продаваться за Telegram Stars. Конкретную схему нужно проверять под страну, тип бизнеса и юридические требования.</p></details>
+<details><summary>Нужен ли сайт, если есть Mini App?</summary><p>Зависит от источника клиентов. Mini App удобен для аудитории, которая уже пришла в Telegram, но не заменяет открытый индексируемый сайт, когда важны поиск, рекламные посадочные страницы, публичный каталог и ссылки вне мессенджера.</p></details>
+<details><summary>Могут ли сайт, бот и Mini App работать с одной базой?</summary><p>Да, и обычно это лучший вариант. Сайт и Mini App используют один API и одну бизнес-логику, а бот отвечает за сообщения и уведомления. Так заказ и статус не расходятся между отдельными системами.</p></details>
+<details><summary>Как безопасно получать данные пользователя из Mini App?</summary><p>Данные, пришедшие из интерфейса, нельзя считать доверенными. Telegram передаёт строку initData, которую сервер должен проверить перед авторизацией пользователя и выполнением чувствительных действий. Проверки цены, прав доступа и состава заказа также выполняются на сервере.</p></details>
+<details><summary>Что лучше для интернет-магазина: бот или Mini App?</summary><p>Для каталога с фотографиями, фильтрами, карточками и корзиной удобнее Mini App. Бот лучше оставить для входа, поддержки, подтверждения заказа, статусов и повторных уведомлений. Поэтому для интернет-магазина чаще всего полезна связка с одной базой и API.</p></details><details><summary>Telegram Web App и Mini App — это одно и то же?</summary><p>В большинстве практических задач — да. Название Web App встречается в старых статьях, методах API и коде, а в актуальной документации Telegram продукт называется Mini Apps. Речь идёт о веб-интерфейсе, который открывается внутри Telegram.</p></details><details><summary>Можно ли запустить Mini App без отдельного диалога с ботом?</summary><p>Пользователь может открыть Mini App по прямой ссылке, из меню или профиля бота и не проходить длинный чат-сценарий. Но Mini App всё равно настраивается в экосистеме Telegram-бота и обычно использует серверную часть для проверки пользователя и бизнес-логики.</p></details></div>
+</div>
+
+<aside aria-label="Источники и автор статьи" class="source-box">
+<strong>Первичные источники и автор</strong>
+<p>Технические положения проверены 10 июля 2026 года по официальной документации Telegram:</p>
+<ul>
+<li><a href="https://core.telegram.org/bots/webapps" rel="external">Telegram Mini Apps</a> — запуск, интерфейс и проверка данных пользователя;</li>
+<li><a href="https://core.telegram.org/bots/payments" rel="external">Telegram Payments</a> — физические товары и услуги;</li>
+<li><a href="https://core.telegram.org/bots/payments-stars" rel="external">Telegram Stars</a> — цифровые товары и услуги внутри Telegram.</li>
+</ul>
+<p>Автор — <a href="/#about" rel="author">Ибрагим Раджабов</a>. Практический пример разделения ролей бота и интерфейса — <a href="/cases/decorapp.html">кейс GlowDecor</a>.</p>
+</aside>
+<div class="cta-box reveal">
+<h2>Не уверены, какой формат нужен?</h2>
+<p>Опишите путь клиента и источник данных. Скажу, где достаточно бота, где нужен Mini App, а где задачу лучше начать с сайта.</p>
+<a class="btn-primary" href="/services/telegram-bot.html">Обсудить Telegram-задачу →</a>
+</div>
+</div>
+</div>
+</article>
+<section aria-label="Смотрите также" class="related">
+<div class="related-wrap">
+<span class="related-label">Смотрите также</span>
+<div class="related-links">
+<a href="/services/telegram-bot.html">Услуга: Telegram-бот и mini app →</a>
+<a href="/cases/decorapp.html">Кейс GlowDecor →</a>
+<a href="/blog/telegram-bot-vmesto-sajta.html">Telegram-бот вместо сайта →</a>
+<a href="/blog/">Все статьи →</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<a aria-label="I. Radzhabov — на главную" class="nav-logo" href="/"><svg aria-hidden="true" fill="none" viewbox="0 0 48 48"><path d="M17 12 L31 24" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><path d="M31 24 L17 36" stroke="#141210" stroke-linecap="round" stroke-width="4.5"></path><circle cx="17" cy="12" fill="#141210" r="5.5"></circle><circle cx="31" cy="24" fill="#B5623C" r="6.6"></circle><circle cx="17" cy="36" fill="#141210" r="5.5"></circle></svg><b>I. Radzhabov</b></a>
+<p>Сайты, AI-ассистенты и 1С.<br/>Махачкала · удалённо по всей России</p>
+</div>
+<div class="footer-links">
+<div class="footer-links-col">
+<h4>Навигация</h4>
+<ul>
+<li><a href="/">Главная</a></li>
+<li><a href="/services/landing.html">Услуги</a></li>
+<li><a href="/cases/">Кейсы</a></li>
+<li><a href="/blog/">Блог</a></li>
+<li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
+</ul>
+</div>
+<div class="footer-links-col">
+<h4>География</h4>
+<ul>
+<li><a href="/cities/mahachkala.html">Сайты в Махачкале</a></li>
+<li><a href="/cities/kaspijsk.html">Сайты в Каспийске</a></li>
+<li><a href="/cities/derbent.html">Сайты в Дербенте</a></li>
+</ul>
+</div>
+<div class="footer-links-col">
+<h4>Контакты</h4>
+<ul>
+<li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
+<li><a href="https://t.me/rdvigm" rel="noopener" target="_blank">Telegram</a></li>
+<li><a href="https://github.com/Ibrahim-Radzhabov" rel="noopener" target="_blank">GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Ибрагим Раджабов. Все права защищены.</p>
+<div class="legal-links" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Политика конфиденциальности</a><span style="color:var(--text-tertiary);">·</span><a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Согласие на обработку ПД</a></div>
+<div class="social-links">
+<a aria-label="GitHub" href="https://github.com/Ibrahim-Radzhabov" rel="noopener" target="_blank">GH</a>
+<a aria-label="Telegram" href="https://t.me/rdvigm" rel="noopener" target="_blank">TG</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    (function() {
+      'use strict';
+      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      window.toggleMenu = function() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){
+        a.addEventListener('click', function(){ __reach('telegram_click'); });
+      });
+      document.querySelectorAll('.btn-primary:not([type=submit]):not(#submitBtn)').forEach(function(a){
+        a.addEventListener('click', function(){ __reach('cta_click'); });
+      });
+    })();
+  </script>
+</body>
+</html>
