@@ -557,6 +557,7 @@
     var rail = path.querySelector('[data-request-rail]');
     var packet = path.querySelector('[data-request-packet]');
     var nodes = path.querySelectorAll('[data-request-node]');
+    var cards = path.querySelectorAll('[data-request-card]');
     if (!rail || !packet || !nodes.length) return;
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var length = 0;
@@ -574,6 +575,7 @@
         packet.setAttribute('cx', end.x);
         packet.setAttribute('cy', end.y);
         nodes.forEach(function(node) { node.classList.add('is-on'); });
+        cards.forEach(function(card) { card.classList.add('is-visible'); });
       } else {
         update();
       }
@@ -593,6 +595,12 @@
       nodes.forEach(function(node, index) {
         var threshold = index === 0 ? 0.04 : (index === 1 ? 0.48 : 0.88);
         node.classList.toggle('is-on', eased >= threshold);
+      });
+      cards.forEach(function(card, index) {
+        var threshold = index === 0 ? 0.08 : (index === 1 ? 0.5 : 0.86);
+        var isVisible = eased >= threshold;
+        card.classList.toggle('is-visible', isVisible);
+        card.classList.toggle('is-active', isVisible && eased < threshold + 0.16);
       });
     }
 

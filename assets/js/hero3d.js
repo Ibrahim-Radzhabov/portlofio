@@ -114,12 +114,11 @@
 
   var ink = [20 / 255, 18 / 255, 16 / 255, 1];
   var warm = [181 / 255, 98 / 255, 60 / 255, 1];
-  var hot = [209 / 255, 116 / 255, 63 / 255, 1];
 
   var nodes = [
-    { key: 'layout', x: -0.92, y: -1.18, z: 0.16, r: 17 },
-    { key: 'raw', x: 0.92, y: 0, z: 0.42, r: 22 },
-    { key: 'task', x: -0.92, y: 1.18, z: -0.12, r: 17 }
+    { key: 'layout', x: -1.14, y: -1.75, z: 0.2, r: 22 },
+    { key: 'raw', x: 1.14, y: 0, z: 0, r: 28 },
+    { key: 'task', x: -1.14, y: 1.75, z: -0.2, r: 22 }
   ];
 
   nodes.forEach(function (node) {
@@ -130,8 +129,7 @@
   for (var i = 0; i < 8; i++) {
     particles.push({
       phase: (i / 8) * 2,
-      speed: 0.0042 * (0.88 + Math.random() * 0.24),
-      wobble: Math.random() * Math.PI * 2
+      speed: 0.0042 * (0.88 + Math.random() * 0.24)
     });
   }
 
@@ -146,10 +144,6 @@
 
   function mix(a, b, t) {
     return a + (b - a) * t;
-  }
-
-  function mixColor(a, b, t, alpha) {
-    return [mix(a[0], b[0], t), mix(a[1], b[1], t), mix(a[2], b[2], t), alpha];
   }
 
   function resize() {
@@ -234,10 +228,10 @@
 
   function updateNodeDOMAndHitbox(node, point, alpha) {
     var isAI = node.key === 'raw';
-    var isSelected = selected === node.key || selected === 'task';
+    var isSelected = selected === node.key;
     var isHover = hoverKey === node.key;
     var scale = isHover ? 1.16 : (isSelected ? 1.08 : 0.86);
-    if (selected === node.key) scale = isAI ? 1.34 : 1.26;
+    if (selected === node.key) scale = 1.5;
     if (selected !== 'task' && selected !== node.key) scale = 0.76;
     var radius = node.r * point.s * scale;
     node.hit = { x: point.x, y: point.y, r: radius + 18 };
@@ -306,7 +300,6 @@
     var p2 = proj ? proj.p2 : project(nodes[2]);
     var lines = [];
     var glows = [];
-    var particleHalos = [];
     var particleCores = [];
     var nodeCores = [];
     pushLineQuad(lines, p0, p1, Math.max(3.5, 7 * Math.min(p0.s, p1.s)), [ink[0], ink[1], ink[2], 0.72 * alpha]);
@@ -321,30 +314,11 @@
       var end = segment === 0 ? p1 : p2;
       var point = pointOnSegment(start, end, smooth(raw));
 
-      /* Wobble perpendicular to the segment direction (feels natural on any angle) */
-      var segDx = end.x - start.x;
-      var segDy = end.y - start.y;
-      var segLen = Math.max(1, Math.sqrt(segDx * segDx + segDy * segDy));
-      var perpX = -segDy / segLen;
-      var perpY =  segDx / segLen;
-      var wobbleAmt = Math.sin(now * 0.0018 + particle.wobble) * 6 * point.s;
-      point.x += perpX * wobbleAmt;
-      point.y += perpY * wobbleAmt;
-
-      /* heat = 1 при mid, 0 на концах; квадрат — нелинейный нарастание */
+      /* The Phase 8 particles stay on the connection and grow near the core. */
       var near = segment === 0 ? raw : 1 - raw;
       var heat = near * near;
-
-      /* radius: маленький вдали, заметно крупнее у центра */
-      var radius = (3.2 + heat * 6.4) * point.s;
-
-      /* halo: мягкое свечение, отчётливое у центра */
-      pushPoint(particleHalos, point, radius * (4.4 + heat * 2.8),
-        mixColor(warm, hot, heat, (0.12 + heat * 0.16) * alpha));
-
-      /* core: полностью непрозрачный, цвет warm -> hot */
-      pushPoint(particleCores, point, radius * 2.2,
-        mixColor(warm, hot, heat, 0.92 * alpha));
+      var radius = (4.2 + heat * 2.5) * point.s;
+      pushPoint(particleCores, point, radius * 2.2, [warm[0], warm[1], warm[2], 0.94 * alpha]);
     });
 
     var r0 = updateNodeDOMAndHitbox(nodes[0], p0, alpha);
@@ -358,9 +332,8 @@
       drawBatch(lines, gl.TRIANGLES, false);
       drawBatch(glows, gl.POINTS, true);
     }
-    drawBatch(particleHalos, gl.POINTS, true);
-    drawBatch(particleCores, gl.POINTS, true);
     if (!threeLive) {
+      drawBatch(particleCores, gl.POINTS, true);
       drawBatch(nodeCores, gl.POINTS, true);
     }
     raf = requestAnimationFrame(render);

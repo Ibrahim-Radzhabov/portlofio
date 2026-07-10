@@ -256,32 +256,30 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
     }
 
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-    camera.position.set(0, 0, 7);
+    var camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    camera.position.set(0, 0, 8.3);
     var group = new THREE.Group();
     scene.add(group);
-    scene.add(new THREE.AmbientLight(0xffffff, 1.35));
-    var light = new THREE.DirectionalLight(0xffffff, 1.8);
-    light.position.set(3, 4, 5);
-    scene.add(light);
 
-    var ink = new THREE.MeshStandardMaterial({ color: 0x141210, roughness: 0.78, metalness: 0.05 });
-    var core = new THREE.MeshStandardMaterial({ color: 0xB5623C, emissive: 0x5C1F0D, emissiveIntensity: 0.22, roughness: 0.64, metalness: 0.04 });
-    var linkMat = new THREE.MeshStandardMaterial({ color: 0x5A5650, roughness: 0.82, metalness: 0.02 });
-    var sphereGeo = new THREE.SphereGeometry(0.34, 32, 20);
-    var coreGeo = new THREE.SphereGeometry(0.44, 32, 20);
+    var ink = new THREE.MeshBasicMaterial({ color: 0x141210 });
+    var core = new THREE.MeshBasicMaterial({ color: 0xB5623C });
+    var linkMat = new THREE.MeshBasicMaterial({ color: 0x141210 });
+    var particleMat = new THREE.MeshBasicMaterial({ color: 0xB5623C });
+    var sphereGeo = new THREE.SphereGeometry(0.32, 32, 24);
+    var coreGeo = new THREE.SphereGeometry(0.40, 32, 24);
+    var particleGeo = new THREE.SphereGeometry(0.06, 12, 10);
 
     var top = new THREE.Mesh(sphereGeo, ink);
     var mid = new THREE.Mesh(coreGeo, core);
     var bottom = new THREE.Mesh(sphereGeo, ink);
-    top.position.set(-0.95, 1.15, 0);
-    mid.position.set(0.72, 0, 0);
-    bottom.position.set(-0.95, -1.15, 0);
+    top.position.set(-1.3, 2, 0.2);
+    mid.position.set(1.3, 0, 0);
+    bottom.position.set(-1.3, -2, -0.2);
 
     function cylinderBetween(a, b) {
       var dir = new THREE.Vector3().subVectors(b.position, a.position);
       var len = dir.length();
-      var geo = new THREE.CylinderGeometry(0.08, 0.08, 1, 16, 1, true);
+      var geo = new THREE.CylinderGeometry(0.045, 0.045, 1, 16, 1, true);
       var mesh = new THREE.Mesh(geo, linkMat);
       mesh.scale.y = len;
       orientCylinder(mesh, a, b);
@@ -300,6 +298,16 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
     var linkBottom = cylinderBetween(mid, bottom);
     group.add(linkTop, linkBottom, top, mid, bottom);
 
+    var segments = [[top.position, mid.position], [mid.position, bottom.position]];
+    var particles = [];
+    for (var particleIndex = 0; particleIndex < 8; particleIndex += 1) {
+      var particle = new THREE.Mesh(particleGeo, particleMat);
+      particle.userData.progress = (particleIndex / 8) * 2;
+      particle.userData.speed = 0.005 + Math.random() * 0.002;
+      group.add(particle);
+      particles.push(particle);
+    }
+
     var visible = true;
     var alive = true;
     var frames = 0;
@@ -307,6 +315,31 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
     var lastTime = performance.now();
     var targetRotX = 0;
     var targetRotY = 0;
+    var sceneNodes = { layout: top, raw: mid, task: bottom };
+
+    Object.keys(sceneNodes).forEach(function (key) {
+      var node = sceneNodes[key];
+      node.userData.baseZ = node.position.z;
+      node.userData.targetZ = node.position.z;
+      node.userData.targetScale = 1;
+    });
+
+    function selectNode(key) {
+      Object.keys(sceneNodes).forEach(function (nodeKey) {
+        var node = sceneNodes[nodeKey];
+        var active = nodeKey === key;
+        node.userData.targetScale = active ? 1.5 : 1;
+        node.userData.targetZ = node.userData.baseZ + (active ? 0.8 : 0);
+      });
+    }
+
+    window.__phase8ThreeSelectNode = selectNode;
+    document.addEventListener('hero-scenario-change', function (event) {
+      selectNode(event.detail && event.detail.key ? event.detail.key : 'task');
+    });
+
+    var initialScenario = document.querySelector('.hero-scenario.is-active');
+    selectNode(initialScenario ? initialScenario.getAttribute('data-scenario') : 'task');
 
     function resize() {
       var rect = stage.getBoundingClientRect();
@@ -340,11 +373,30 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
       var dt = Math.max(1, now - lastTime);
       lastTime = now;
       if (visible && !document.hidden) {
-        group.rotation.y += (targetRotY - group.rotation.y) * 0.08;
+        Object.keys(sceneNodes).forEach(function (key) {
+          var node = sceneNodes[key];
+          var scale = node.scale.x + (node.userData.targetScale - node.scale.x) * 0.08;
+          node.scale.setScalar(scale);
+          node.position.z += (node.userData.targetZ - node.position.z) * 0.08;
+        });
+        orientCylinder(linkTop, top, mid);
+        orientCylinder(linkBottom, mid, bottom);
+
+        particles.forEach(function (particle) {
+          particle.userData.progress += particle.userData.speed * (dt / 16.67);
+          if (particle.userData.progress >= 2) particle.userData.progress -= 2;
+          var segmentIndex = particle.userData.progress < 1 ? 0 : 1;
+          var rawProgress = particle.userData.progress % 1;
+          var smoothProgress = rawProgress * rawProgress * (3 - 2 * rawProgress);
+          particle.position.lerpVectors(segments[segmentIndex][0], segments[segmentIndex][1], smoothProgress);
+          var nearCore = segmentIndex === 0 ? rawProgress : 1 - rawProgress;
+          particle.scale.setScalar(1 + nearCore * nearCore * 0.6);
+        });
+
+        group.rotation.y += ((targetRotY + Math.sin(now * 0.0003) * 0.08) - group.rotation.y) * 0.08;
         group.rotation.x += (targetRotX - group.rotation.x) * 0.08;
-        group.rotation.z = Math.sin(now * 0.00035) * 0.06;
         renderer.render(scene, camera);
-        /* Expose projected coords so hero3d.js particles stay in sync */
+        /* Keep the lightweight hit layer and labels aligned with the Three scene. */
         window.__heroProjected = {
           p0: screenOf(top),
           p1: screenOf(mid),
@@ -372,12 +424,6 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
       end: 'bottom top',
       scrub: true,
       onUpdate: function (self) {
-        var spread = self.progress * 0.38;
-        top.position.x = -0.95 - spread;
-        bottom.position.x = -0.95 - spread;
-        mid.position.x = 0.72 + spread * 0.7;
-        orientCylinder(linkTop, top, mid);
-        orientCylinder(linkBottom, mid, bottom);
         canvas.style.opacity = String(1 - self.progress * 1.2);
       }
     });

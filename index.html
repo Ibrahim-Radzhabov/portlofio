@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru wss://mc.yandex.ru https://formspree.io; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com; connect-src 'self' https://mc.yandex.ru wss://mc.yandex.ru https://mc.yandex.com wss://mc.yandex.com https://formspree.io; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I. Radzhabov — сайты, AI-ассистенты и 1С для бизнеса</title>
 <meta name="description" content="Собираю сайты, AI-ассистентов и 1С-связки: обращение или заказ, ответ клиенту и фиксация данных без ручной рутины.">
@@ -322,7 +322,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260709-request-path-callout">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20260710-phase8-fracture">
   <meta name="yandex-verification" content="1e2895c9cc7530b7" />
 </head>
 <body>
@@ -491,14 +491,15 @@
       <div class="hero-visual hero-anim hero-anim-5" aria-hidden="true">
         <div class="hero-fracture-stage" data-fracture-stage>
           <svg class="hero-fracture-poster" viewBox="40 38 160 224" fill="none" aria-hidden="true" focusable="false">
-            <path d="M82 76 L158 150" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-opacity="0.72"/>
-            <path d="M158 150 L82 224" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-opacity="0.72"/>
-            <circle cx="82" cy="76" r="20" fill="currentColor"/>
-            <circle cx="158" cy="150" r="24" fill="#B5623C"/>
-            <circle cx="82" cy="224" r="20" fill="currentColor"/>
-            <circle cx="118" cy="112" r="4" fill="#B5623C" opacity="0.55"/>
-            <circle cx="140" cy="150" r="5" fill="#D1743F" opacity="0.7"/>
-            <circle cx="118" cy="188" r="4" fill="#B5623C" opacity="0.55"/>
+            <path d="M68 70 L172 150" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M172 150 L68 230" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="68" cy="70" r="18" fill="currentColor"/>
+            <circle cx="172" cy="150" r="22" fill="#B5623C"/>
+            <circle cx="68" cy="230" r="18" fill="currentColor"/>
+            <circle cx="110" cy="102" r="4" fill="#B5623C"/>
+            <circle cx="146" cy="130" r="5" fill="#B5623C"/>
+            <circle cx="146" cy="170" r="5" fill="#B5623C"/>
+            <circle cx="110" cy="198" r="4" fill="#B5623C"/>
           </svg>
           <canvas class="hero-fracture-canvas" data-fracture-canvas></canvas>
           <canvas class="hero-motion-three" data-motion-three-canvas aria-hidden="true"></canvas>
@@ -613,6 +614,20 @@
           <span>1С</span>
         </div>
       </div>
+      <ol class="request-path-cards" aria-label="Этапы связки">
+        <li class="request-path-card" data-request-card>
+          <h3><span>01</span>Первый контакт</h3>
+          <p>Клиент отправляет форму на сайте. Данные передаются обработчику вместе с вводными по задаче.</p>
+        </li>
+        <li class="request-path-card" data-request-card>
+          <h3><span>02</span>AI-квалификация</h3>
+          <p>Ассистент отвечает клиенту в мессенджере, уточняет детали и передаёт обращение человеку, когда нужно решение.</p>
+        </li>
+        <li class="request-path-card" data-request-card>
+          <h3><span>03</span>Учёт и склад</h3>
+          <p>Данные фиксируются в учётной системе и формируют черновик заказа для проверки менеджером.</p>
+        </li>
+      </ol>
     </div>
 
     <div class="work-strand" data-work-filter-item="site">Сайты</div>
@@ -1604,8 +1619,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/home.js?v=20260707-phase5-design" defer></script>
-<script src="/assets/js/hero3d.js?v=20260705-wow3" defer></script>
+<script src="/assets/js/home.js?v=20260710-phase8-fracture" defer></script>
+<script src="/assets/js/hero3d.js?v=20260710-phase8-fracture" defer></script>
 <script>
 (function () {
   'use strict';
@@ -1659,7 +1674,7 @@
     vendor.reduce(function (chain, src) {
       return chain.then(function () { return loadScript(src, false); });
     }, Promise.resolve()).then(function () {
-      return loadScript('/assets/js/home-motion.js?v=20260709-izlom-fix', true);
+      return loadScript('/assets/js/home-motion.js?v=20260710-phase8-fracture', true);
     }).catch(function (err) {
       console.warn('Motion layer skipped:', err);
     });
