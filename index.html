@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I. Radzhabov — сайты, AI-ассистенты и 1С для бизнеса</title>
 <meta name="description" content="Собираю сайты, AI-ассистентов и 1С-связки: обращение или заказ, ответ клиенту и фиксация данных без ручной рутины.">
+<link rel="preload" href="/assets/css/home.css?v=20260714-homepage-release" as="style">
 <meta property="og:title" content="I. Radzhabov — сайты, AI-ассистенты и 1С для бизнеса">
 <meta property="og:description" content="Собираю сайты, AI-ассистентов и 1С-связки: обращение или заказ, ответ клиенту и фиксация данных без ручной рутины.">
 <meta property="og:type" content="website">
@@ -41,7 +42,7 @@
   "@graph": [
     {
       "@type": "ProfilePage",
-      "dateModified": "2026-07-03",
+      "dateModified": "2026-07-14",
       "inLanguage": "ru",
       "mainEntity": {"@id": "https://radzhabov-dev.ru/#person"}
     },
@@ -166,7 +167,7 @@
         {"@type": "WebPage", "@id": "https://radzhabov-dev.ru/services/landing.html", "name": "Лендинг под ключ", "url": "https://radzhabov-dev.ru/services/landing.html"},
         {"@type": "WebPage", "@id": "https://radzhabov-dev.ru/niches/sajt-dlya-massazhista.html", "name": "Сайт для массажиста", "url": "https://radzhabov-dev.ru/niches/sajt-dlya-massazhista.html"},
         {"@type": "WebPage", "@id": "https://radzhabov-dev.ru/cases/baby-massage.html", "name": "Кейс «Кроха и Я»", "url": "https://radzhabov-dev.ru/cases/baby-massage.html"},
-        {"@type": "WebPage", "@id": "https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html", "name": "Калькулятор стоимости", "url": "https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html"}
+        {"@type": "WebPage", "@id": "https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html", "name": "Предварительная оценка проекта", "url": "https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html"}
       ]
     },
     {
@@ -187,16 +188,16 @@
     {
       "@type": "CreativeWork",
       "name": "dag-sport.ru — магазин спорттоваров на 1С-Битрикс + 1С УТ",
-      "description": "Интернет-магазин на 1С-Битрикс с интеграцией 1С: Управление Торговлей. Заказ с сайта автоматически создаёт документ в 1С УТ, владелец получает уведомление в Telegram — без ручного переноса.",
-      "creator": {"@id": "https://radzhabov-dev.ru/#person"},
+      "description": "Интернет-магазин на 1С-Битрикс. Роль Ибрагима: интеграция сайта с 1С: Управление Торговлей и AI-консультант; сам сайт он не разрабатывал. Заказ с сайта создаёт документ в 1С УТ, владелец получает уведомление в Telegram.",
+      "contributor": {"@id": "https://radzhabov-dev.ru/#person"},
       "url": "https://dag-sport.ru/",
       "keywords": ["1С", "1С-Битрикс", "1С УТ", "Интеграция", "Интернет-магазин", "Автоматизация"],
-      "genre": "Сайт + 1С"
+      "genre": "Интеграция сайта с 1С"
     },
     {
       "@type": "CreativeWork",
       "name": "GlowDecor — Telegram-магазин (mini app)",
-      "description": "Магазин декора и свечей внутри Telegram: каталог, категории, корзина и поддержка с анонимной переадресацией — клиент пишет боту, сообщение уходит владельцу, личный контакт скрыт.",
+      "description": "Магазин декора и свечей внутри Telegram: каталог, корзина и заказ. Покупатель пишет боту, а владелец отвечает, не раскрывая личный контакт.",
       "creator": {"@id": "https://radzhabov-dev.ru/#person"},
       "url": "https://t.me/DecorApp_bot",
       "keywords": ["Telegram", "Telegram mini app", "Бот", "Магазин", "AI", "Автоматизация"],
@@ -220,7 +221,7 @@
           "name": "Можно ли прийти с уже существующим сайтом, AI-задачей или 1С?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да. Не обязательно начинать с нуля. Можно прийти с текущим сайтом, магазином, задачей по AI-ассистенту, 1С, таблицами, скринами или описанием проблемы. Сначала разбираю, что мешает, потом предлагаю формат работы."
+          "text": "Да. Можно прийти с текущим сайтом, магазином, задачей по AI, 1С, таблицами, скринами или просто описанием проблемы. Сначала разбираю ситуацию, затем предлагаю формат работы."
           }
         },
         {
@@ -228,7 +229,7 @@
           "name": "Вы работаете с 1С:Розница и УТ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да, работаю с 1С:Розница и УТ: настройка, доработки, отчеты, печатные формы, документы, обмены и автоматизация повторяющихся операций."
+          "text": "Да. Настраиваю и дорабатываю Розницу и УТ: документы, отчёты, печатные формы, обмены и повторяющиеся операции."
           }
         },
         {
@@ -236,7 +237,7 @@
           "name": "Можно связать сайт, AI-ассистента и 1С?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да, если это нужно задаче. Например, обращение или заказ с сайта может попасть в AI-обработку, а затем в 1С или понятный рабочий процесс, чтобы не переносить данные вручную и не терять их в таблицах и переписках."
+          "text": "Да, если это нужно задаче. Заявка или заказ с сайта может пройти через AI-уточнение и попасть в 1С или другой рабочий процесс без ручного переноса."
           }
         },
         {
@@ -244,7 +245,7 @@
           "name": "Сколько это стоит?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Стоимость зависит от задачи: сайт, интернет-магазин, AI-ассистент, 1С или связка между ними оцениваются по-разному. После короткого разбора я называю понятный объем работ и стоимость до старта."
+          "text": "Стоимость зависит от задачи. После короткого разбора называю понятный объём работ и стоимость до старта."
           }
         },
         {
@@ -252,31 +253,23 @@
           "name": "Сколько времени занимает работа?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Небольшой сайт или точечная доработка обычно занимают меньше времени, чем связка сайта, AI и 1С или доработка процесса. Срок называю после разбора вводных, чтобы не обещать вслепую."
+          "text": "Точечная доработка обычно занимает меньше времени, чем связка сайта, AI и 1С. Срок называю после разбора вводных."
           }
         },
         {
           "@type": "Question",
-          "name": "Как проходит оплата?",
+          "name": "Как проходят оплата и договорённости?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Обычно работаю по предоплате и финальной оплате после сдачи результата. Для небольших задач формат можно обсудить отдельно."
+          "text": "До старта согласуем состав работ, стоимость и формат оплаты. Обычно это предоплата перед началом и следующий платёж после этапа. При необходимости фиксируем всё договором, иначе — в переписке."
           }
         },
         {
           "@type": "Question",
-          "name": "Как проходят правки?",
+          "name": "Как проходят правки и поддержка после запуска?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Показываю результат по ходу работы, поэтому правки не копятся в один большой список в конце. Фиксируем, что нужно изменить, и доводим до рабочего состояния."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Есть ли поддержка после сдачи?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, можно отдельно договориться о поддержке, мелких доработках или развитии решения после запуска. Особенно если сайт, AI-ассистент или 1С нужно постепенно адаптировать под процесс."
+          "text": "Показываю результат по ходу работы, поэтому правки не копятся к финалу. После запуска можно отдельно договориться о поддержке, мелких доработках или развитии решения."
           }
         },
         {
@@ -284,7 +277,7 @@
           "name": "Вы работаете только в Махачкале?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Нет. Я из Махачкалы, но работаю удалённо с клиентами по всей России: созвон, переписка, доступы — всё решается онлайн. Для бизнеса из Махачкалы и Дагестана возможно обсудить задачу при личной встрече."
+          "text": "Нет. Я из Махачкалы, но работаю удалённо с клиентами по всей России: созвон, переписка и доступы решаются онлайн."
           }
         }
       ]
@@ -322,7 +315,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260710-phase8-fracture">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20260714-homepage-release">
   <meta name="yandex-verification" content="1e2895c9cc7530b7" />
 </head>
 <body>
@@ -440,6 +433,17 @@
       </svg>
     </button>
   </div>
+  <div class="nav-route-wrapper" aria-label="Навигация по разделам страницы">
+    <div class="nav-route" role="list">
+      <span class="nav-route-line" aria-hidden="true"></span>
+      <span class="nav-route-progress" data-nav-route-progress aria-hidden="true"></span>
+      <a class="nav-route-node" href="#main-content" data-nav-route="hero" role="listitem">Начало</a>
+      <a class="nav-route-node" href="#work" data-nav-route="work" role="listitem">Работы</a>
+      <a class="nav-route-node" href="#services" data-nav-route="services" role="listitem">Услуги</a>
+      <a class="nav-route-node" href="#order-demo" data-nav-route="order-demo" role="listitem">Связка</a>
+      <a class="nav-route-node" href="#contact" data-nav-route="contact" role="listitem">Контакты</a>
+    </div>
+  </div>
   <div class="motion-scroll-progress" data-motion-progress aria-hidden="true"></div>
 </nav>
 
@@ -460,7 +464,7 @@
       <div class="hero-content">
         <div class="hero-eyebrow hero-anim hero-anim-1">
           <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-          ОТКРЫТ К ПРОЕКТАМ · 1–2 СЛОТА В МЕСЯЦ
+          Беру 1–2 проекта в месяц · отвечаю в течение дня
         </div>
         <div class="hero-scenarios hero-anim hero-anim-2" role="group" aria-label="Сценарии задачи">
           <button type="button" class="hero-scenario" data-scenario="layout" data-analytics="hero_path_run" aria-pressed="false">Сайт или магазин</button>
@@ -473,18 +477,17 @@
             <span class="highlight"><span class="highlight-line">в&nbsp;одной системе.</span></span>
           </h1>
           <p class="hero-description" id="heroScenarioDescription">
-            Связываю сайт, AI и 1С: заявка с сайта уходит в ответ клиенту и в 1С — без ручного переноса и потерь.
+            Клиент оставляет заявку на сайте, AI отвечает, а данные попадают в 1С. Без ручного переноса.
           </p>
         </div>
         <div class="hero-actions hero-anim hero-anim-4">
           <div class="magnetic-wrap" id="magneticBtn">
-            <a href="#contact" class="btn-primary" id="heroCta" data-contact-source="hero" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу разобрать путь заявки: сайт, AI и 1С. Сейчас есть сайт, таблица, 1С или переписка. Нужно понять, где теряется заявка и что можно связать без ручного переноса.">
-              Разобрать путь заявки
+            <a href="#contact" class="btn-primary" id="heroCta" data-contact-source="hero" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу разобрать задачу: сайт, AI и 1С. Сейчас есть сайт, таблица, 1С или переписка. Хочу понять, что можно связать без ручного переноса.">
+              Разобрать вашу задачу
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
-            <p class="hero-cta-note">Отвечаю в течение дня · 1–2 слота в месяц</p>
           </div>
         </div>
       </div>
@@ -509,27 +512,27 @@
           <div class="hero-fracture-hint">выберите узел</div>
         </div>
       </div>
-      <aside class="hero-anchor hero-anim hero-anim-5" aria-label="Как проходит работа">
+      <aside class="hero-anchor hero-anim hero-anim-5" aria-label="Что происходит после заявки">
         <div class="hero-process">
           <div class="hero-proc-step">
             <div class="hero-proc-num">01</div>
             <div>
-              <div class="hero-proc-title">Пишете напрямую</div>
-              <div class="hero-proc-desc">Без длинных брифов и форм — описываете задачу, как есть.</div>
+              <div class="hero-proc-title">Проверяю, что происходит после заявки</div>
+              <div class="hero-proc-desc">От формы или сообщения до ответа клиенту и записи в 1С.</div>
             </div>
           </div>
           <div class="hero-proc-step">
             <div class="hero-proc-num">02</div>
             <div>
-              <div class="hero-proc-title">Разбираюсь в задаче</div>
-              <div class="hero-proc-desc">Смотрю цель, текущие материалы и ограничения: сайт, AI, 1С или связку между ними.</div>
+              <div class="hero-proc-title">Настраиваю работу вместе</div>
+              <div class="hero-proc-desc">Сайт, AI и 1С работают как один процесс.</div>
             </div>
           </div>
           <div class="hero-proc-step">
             <div class="hero-proc-num">03</div>
             <div>
-              <div class="hero-proc-title">Сдаю рабочий результат</div>
-              <div class="hero-proc-desc">Не черновик, а решение, которое можно запускать, использовать и развивать дальше.</div>
+              <div class="hero-proc-title">Чтобы заявки не терялись</div>
+              <div class="hero-proc-desc">Они не остаются в переписках и таблицах.</div>
             </div>
           </div>
         </div>
@@ -570,30 +573,29 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-tag">Работы</div>
-      <h2 class="section-title">Клиентские кейсы и&nbsp;рабочие демо.</h2>
-      <p class="section-subtitle">Сайты, AI-ассистенты и&nbsp;связки с&nbsp;1С — рабочие проекты в&nbsp;разных нишах, которые можно открыть и&nbsp;проверить.</p>
+      <h2 class="section-title">Кейсы и&nbsp;демо, которые можно открыть.</h2>
+      <p class="section-subtitle">Сайты, AI и&nbsp;1С-связки, которые можно посмотреть в&nbsp;работе.</p>
     </div>
 
     <div class="work-filters reveal" data-work-filters aria-label="Фильтр работ">
-      <button type="button" class="work-filter is-active" data-work-filter="all" aria-pressed="true" data-analytics="project_filter_used">Все</button>
+      <button type="button" class="work-filter is-active" data-work-filter="all" aria-pressed="true" data-analytics="project_filter_used">Все работы</button>
       <button type="button" class="work-filter" data-work-filter="site" aria-pressed="false" data-analytics="project_filter_used">Сайты</button>
       <button type="button" class="work-filter" data-work-filter="ai" aria-pressed="false" data-analytics="project_filter_used">AI</button>
       <button type="button" class="work-filter" data-work-filter="telegram" aria-pressed="false" data-analytics="project_filter_used">Telegram</button>
       <button type="button" class="work-filter" data-work-filter="one-c" aria-pressed="false" data-analytics="project_filter_used">1С</button>
     </div>
 
-    <div class="work-recommend reveal" data-work-recommend data-work-filter-item="site ai telegram one-c">
+    <div class="work-recommend reveal" data-work-recommend hidden>
       <div>
-        <div class="work-recommend-kicker">Рекомендую смотреть</div>
-        <p data-work-recommend-copy>Если задача пока общая — начните с сайта и формы заявки, а потом решите, нужен ли AI или 1С.</p>
+        <div class="work-recommend-kicker">Смотреть в&nbsp;первую очередь</div>
+        <p data-work-recommend-copy></p>
       </div>
-      <button type="button" class="work-recommend-action" data-work-recommend-action data-work-filter-target="site" data-analytics="personalized_case_click">Показать сайты</button>
     </div>
 
     <div class="request-path reveal" data-request-path aria-label="Путь заявки от сайта через AI в 1С">
       <div class="request-path-copy">
         <div class="request-path-kicker">Путь заявки</div>
-        <p>Одна нить соединяет то, что обычно живёт отдельно: первый контакт, быстрый ответ и фиксацию в учёте.</p>
+        <p>Показываю, как заявка проходит путь от первого сообщения до ответа клиенту и записи в системе.</p>
       </div>
       <div class="request-path-map" aria-hidden="true">
         <svg viewBox="0 0 760 140" fill="none" role="img">
@@ -616,16 +618,16 @@
       </div>
       <ol class="request-path-cards" aria-label="Этапы связки">
         <li class="request-path-card" data-request-card>
-          <h3><span>01</span>Первый контакт</h3>
-          <p>Клиент отправляет форму на сайте. Данные передаются обработчику вместе с вводными по задаче.</p>
+          <h3><span>01</span>Заявка с сайта</h3>
+          <p>Клиент оставляет заявку. Она приходит вам вместе с тем, что он указал в форме.</p>
         </li>
         <li class="request-path-card" data-request-card>
-          <h3><span>02</span>AI-квалификация</h3>
-          <p>Ассистент отвечает клиенту в мессенджере, уточняет детали и передаёт обращение человеку, когда нужно решение.</p>
+          <h3><span>02</span>AI уточняет детали</h3>
+          <p>Ассистент отвечает на частые вопросы, уточняет важное и подключает вас, когда нужен человек.</p>
         </li>
         <li class="request-path-card" data-request-card>
-          <h3><span>03</span>Учёт и склад</h3>
-          <p>Данные фиксируются в учётной системе и формируют черновик заказа для проверки менеджером.</p>
+          <h3><span>03</span>Заявка в учёте</h3>
+          <p>Данные попадают в вашу систему. Если нужен заказ, менеджер получает черновик для проверки.</p>
         </li>
       </ol>
     </div>
@@ -641,17 +643,23 @@
               <span class="work-discovery-intro-phrase" data-work-intro-right>можно открыть</span>
             </div>
           </div>
-          <img class="work-discovery-intro-image" data-work-intro-image src="assets/work/pdr.webp" alt="" loading="eager" decoding="async">
+          <picture>
+            <source media="(max-width: 520px)" srcset="assets/work/pdr-mobile.webp">
+            <img class="work-discovery-intro-image" data-work-intro-image data-desktop-src="assets/work/pdr.webp" data-mobile-src="assets/work/pdr-mobile.webp" src="assets/work/pdr.webp" alt="" loading="eager" decoding="async">
+          </picture>
         </div>
         <div class="work-discovery-bg" aria-hidden="true">
-          <img class="is-active" data-work-bg src="assets/work/pdr.webp" alt="" loading="eager" decoding="async">
-          <img data-work-bg src="assets/work/flora.webp" alt="" loading="eager" decoding="async">
-          <img data-work-bg src="assets/work/avtozap.webp" alt="" loading="lazy" decoding="async">
-          <img data-work-bg src="assets/work/barber.webp" alt="" loading="lazy" decoding="async">
-          <img data-work-bg src="assets/work/rihau.webp" alt="" loading="lazy" decoding="async">
-          <img data-work-bg src="assets/work/baby-massage.webp" alt="" loading="lazy" decoding="async">
-          <img data-work-bg src="assets/work/qlean.webp" alt="" loading="lazy" decoding="async">
-          <img data-work-bg src="assets/work/fixlab.webp" alt="" loading="lazy" decoding="async">
+          <picture>
+            <source media="(max-width: 520px)" srcset="assets/work/pdr-mobile.webp">
+            <img class="is-active" data-work-bg data-desktop-src="assets/work/pdr.webp" data-mobile-src="assets/work/pdr-mobile.webp" src="assets/work/pdr.webp" alt="" loading="eager" decoding="async">
+          </picture>
+          <img data-work-bg data-src="assets/work/flora.webp" data-desktop-src="assets/work/flora.webp" data-mobile-src="assets/work/flora-mobile.webp" alt="" loading="lazy" decoding="async">
+          <img data-work-bg data-src="assets/work/avtozap.webp" data-desktop-src="assets/work/avtozap.webp" data-mobile-src="assets/work/avtozap-mobile.webp" alt="" loading="lazy" decoding="async">
+          <img data-work-bg data-src="assets/work/barber.webp" data-desktop-src="assets/work/barber.webp" data-mobile-src="assets/work/barber-mobile.webp" alt="" loading="lazy" decoding="async">
+          <img data-work-bg data-src="assets/work/rihau.webp" data-desktop-src="assets/work/rihau.webp" data-mobile-src="assets/work/rihau-mobile.webp" alt="" loading="lazy" decoding="async">
+          <img data-work-bg data-src="assets/work/baby-massage.webp" data-desktop-src="assets/work/baby-massage.webp" data-mobile-src="assets/work/baby-massage-mobile.webp" alt="" loading="lazy" decoding="async">
+          <img data-work-bg data-src="assets/work/qlean.webp" data-desktop-src="assets/work/qlean.webp" data-mobile-src="assets/work/qlean-mobile.webp" alt="" loading="lazy" decoding="async">
+          <img data-work-bg data-src="assets/work/fixlab.webp" data-desktop-src="assets/work/fixlab.webp" data-mobile-src="assets/work/fixlab-mobile.webp" alt="" loading="lazy" decoding="async">
         </div>
         <div class="work-discovery-shade" aria-hidden="true"></div>
         <svg class="work-discovery-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -693,7 +701,6 @@
             <span><b>FixLab</b><small>Сервис</small></span>
           </a>
         </div>
-        <div class="work-discovery-caption" aria-hidden="true">Смотреть / работы</div>
       </div>
     </div>
 
@@ -701,27 +708,27 @@
       <li><a class="work-index-item" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">PDR Atelier</span>
-          <span class="work-index-out">Удаление вмятин без покраски — услуги и заявка с первого экрана</span>
+          <span class="work-index-out">Услуги и запись на удаление вмятин</span>
         </span>
         <span class="work-index-niche">Автосервис</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="pdr" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="pdr" data-analytics="project_modal_open">Подробнее</button></li>
       <li><a class="work-index-item" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Flora Noire</span>
-          <span class="work-index-out">Витрина букетов и состав, заявка на доставку</span>
+          <span class="work-index-out">Букеты, состав и заявка на доставку</span>
         </span>
         <span class="work-index-niche">Флористика</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="flora" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="flora" data-analytics="project_modal_open">Подробнее</button></li>
       <li><a class="work-index-item" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">АвтоМаг</span>
-          <span class="work-index-out">Каталог с подбором запчастей и заявкой</span>
+          <span class="work-index-out">Подбор запчастей и заявка</span>
         </span>
         <span class="work-index-niche">Автозапчасти</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="avtozap" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="avtozap" data-analytics="project_modal_open">Подробнее</button></li>
       <li><a class="work-index-item" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">THRONE</span>
@@ -729,39 +736,39 @@
         </span>
         <span class="work-index-niche">Барбершоп</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="barber" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="barber" data-analytics="project_modal_open">Подробнее</button></li>
       <li><a class="work-index-item" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Rihau</span>
-          <span class="work-index-out">Заявка на замер и расчёт окон</span>
+          <span class="work-index-out">Замер окон и расчёт</span>
         </span>
         <span class="work-index-niche">Окна и монтаж</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="rihau" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="rihau" data-analytics="project_modal_open">Подробнее</button></li>
       <li><a class="work-index-item" href="https://baby-massage05.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Кроха и Я</span>
-          <span class="work-index-out">Услуги и запись; есть развёрнутый кейс</span>
+          <span class="work-index-out">Услуги и запись на массаж</span>
         </span>
         <span class="work-index-niche">Детский массаж</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="baby" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="baby" data-analytics="project_modal_open">Подробнее</button></li>
       <li><a class="work-index-item" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">Qlean</span>
-          <span class="work-index-out">Услуги уборки — расчёт и заявка</span>
+          <span class="work-index-out">Расчёт уборки и заявка</span>
         </span>
         <span class="work-index-niche">Клининг</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="qlean" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="qlean" data-analytics="project_modal_open">Подробнее</button></li>
       <li><a class="work-index-item" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener" data-analytics="project_card_click">
         <span class="work-index-text">
           <span class="work-index-name">FixLab</span>
-          <span class="work-index-out">Ремонт техники — заявка на диагностику</span>
+          <span class="work-index-out">Ремонт техники и заявка на диагностику</span>
         </span>
         <span class="work-index-niche">Сервисный центр</span>
         <span class="work-index-arrow" aria-hidden="true">↗</span>
-      </a><button type="button" class="work-detail-btn" data-project-detail="fixlab" data-analytics="project_modal_open">Разбор</button></li>
+      </a><button type="button" class="work-detail-btn" data-project-detail="fixlab" data-analytics="project_modal_open">Подробнее</button></li>
     </ul>
 
     <div class="work-strand" data-work-filter-item="ai telegram">AI и автоматизация</div>
@@ -778,23 +785,22 @@
         </div>
       </div>
       <div class="case-body">
-        <div class="case-kicker">Telegram-магазин · mini app <span class="case-status live">в проде · клиент</span></div>
+        <div class="case-kicker">Telegram-магазин · Mini App <span class="case-status live">Запущен у клиента</span></div>
         <h3 class="case-title">GlowDecor — декор и&nbsp;свечи</h3>
-        <p class="case-text">Каталог, категории и корзина прямо в Telegram. Поддержка с <b>анонимной переадресацией</b>: клиент пишет боту — сообщение уходит владельцу, личный контакт скрыт.</p>
+        <p class="case-text">Каталог, корзина и заказ — прямо в Telegram. Покупатель пишет боту, а владелец отвечает, не раскрывая личный контакт.</p>
         <div class="case-foot">
-          <a class="case-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть бота ↗</a>
-          <button type="button" class="case-link case-detail-btn" data-project-detail="decor" data-analytics="project_modal_open">Разбор →</button>
-          <span class="case-metric">десктоп + мобайл</span>
+          <a class="case-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть магазин ↗</a>
+          <button type="button" class="case-link case-detail-btn" data-project-detail="decor" data-analytics="project_modal_open">Подробнее</button>
         </div>
       </div>
     </article>
 
     <div class="tg-shop-demo reveal" data-tg-shop data-work-filter-item="telegram ai" aria-label="Мини-демо Telegram-магазина GlowDecor">
       <div class="tg-shop-copy">
-        <div class="tg-shop-kicker">Живой сценарий mini app</div>
-        <h3>Как выглядит заказ внутри Telegram.</h3>
-        <p data-tg-shop-copy>Клиент выбирает товар, добавляет в корзину и пишет владельцу без выхода из Telegram.</p>
-        <a class="tg-shop-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть GlowDecor ↗</a>
+        <div class="tg-shop-kicker">Заказ в Telegram</div>
+        <h3>Как клиент оформляет заказ в Telegram.</h3>
+        <p data-tg-shop-copy>Покупатель выбирает товар, добавляет его в корзину и связывается с владельцем — без выхода из Telegram.</p>
+        <a class="tg-shop-link" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть магазин ↗</a>
       </div>
       <div class="tg-shop-phone" aria-live="polite">
         <div class="tg-shop-topbar">
@@ -848,49 +854,52 @@
         </div>
       </div>
       <div class="case-body">
-        <div class="case-kicker">AI-агент мониторинга · LLM <span class="case-status live">в проде · мой сервер</span></div>
+        <div class="case-kicker">Мониторинг сайтов и сервера <span class="case-status live">Работает на моём сервере</span></div>
         <h3 class="case-title">MyServerAgentAI</h3>
-        <p class="case-text">Спрашиваю на русском — проверяет 8 сайтов, сервер, Caddy, SSL и логи, шлёт суточные сводки, может перезапустить сервис. Сайт упал — <b>предупредит раньше клиента</b>. Работает 24/7.</p>
+        <p class="case-text">Проверяет сайты и сервер, присылает сводки и сообщает о сбоях до того, как их заметит клиент. На вопросы отвечает по-русски и может перезапустить сервис.</p>
         <div class="case-foot">
-          <button type="button" class="case-link case-detail-btn" data-project-detail="monitor" data-analytics="project_modal_open">Разбор →</button>
-          <span class="case-metric">8/8 онлайн · ответ ~350 мс · аптайм 3 недели</span>
+          <button type="button" class="case-link case-detail-btn" data-project-detail="monitor" data-analytics="project_modal_open">Подробнее</button>
+          <span class="case-metric">8 сайтов под наблюдением · уведомления в Telegram · перезапуск сервиса</span>
         </div>
       </div>
     </article>
 
     <div class="case-pilots reveal" data-work-filter-item="ai telegram">
-      <div class="case-pilot">AI-ассистент · Telegram + WhatsApp <i>пилот</i></div>
+      <div class="case-pilot">AI-ассистент · Telegram + WhatsApp <i>тестируется</i></div>
       <div class="case-pilot">AI-продавец на Avito <i>скоро</i></div>
     </div>
 
-    <a class="case-cta reveal" href="#contact" data-work-filter-item="ai telegram" data-contact-source="work_ai" data-contact-scenario="raw" data-analytics="razbor_ask_click" data-contact-message="Интересует AI-ассистент. Хочу понять, какие вопросы клиентов можно закрыть автоматически, а где лучше передавать человеку. Сейчас обращения приходят через сайт, Telegram, WhatsApp, Avito или другой канал.">Нужен бот или AI-агент? Разобрать путь заявки →</a>
+    <div class="case-cta reveal" data-work-filter-item="ai telegram">
+      <p class="case-cta-prompt">Нужно отвечать клиентам быстрее?</p>
+      <a class="case-cta-link" href="#contact" data-contact-source="work_ai" data-contact-scenario="raw" data-analytics="razbor_ask_click" data-contact-message="Интересует AI-ассистент. Хочу понять, какие вопросы клиентов можно закрыть автоматически, а где лучше передавать человеку. Сейчас обращения приходят через сайт, Telegram, WhatsApp, Avito или другой канал.">Обсудим AI-ассистента <span aria-hidden="true">→</span></a>
+    </div>
 
     <div class="work-strand" data-work-filter-item="one-c">1С</div>
 
     <article class="case-card reveal" data-work-filter-item="one-c">
       <div class="case-media">
-        <svg class="case-flow" viewBox="0 0 210 150" role="img" aria-label="Схема: заказ с сайта на Битрикс попадает в 1С УТ документом и шлёт уведомление в Telegram">
+        <svg class="case-flow" viewBox="0 0 210 150" role="img" aria-label="Схема: заказ с сайта создаёт документ в 1С УТ и отправляет уведомление в Telegram">
           <line x1="40" y1="22" x2="40" y2="66" stroke="#141210" stroke-width="2"/>
           <line x1="40" y1="84" x2="40" y2="120" stroke="#B5623C" stroke-width="2"/>
           <circle cx="40" cy="20" r="6.5" fill="#141210"/>
           <circle cx="40" cy="75" r="8.5" fill="#B5623C"/>
           <circle cx="40" cy="122" r="6.5" fill="#141210"/>
-          <text x="58" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">Заказ на сайте</text>
-          <text x="58" y="29" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">Битрикс</text>
-          <text x="58" y="72" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">1С УТ — документ</text>
-          <text x="58" y="84" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">создан автоматически</text>
+          <text x="58" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">Заказ с сайта</text>
+          <text x="58" y="29" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">1С-Битрикс</text>
+          <text x="58" y="72" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">Документ в 1С УТ</text>
+          <text x="58" y="84" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">создаётся автоматически</text>
           <text x="58" y="119" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">Telegram</text>
           <text x="58" y="131" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">уведомление владельцу</text>
         </svg>
       </div>
       <div class="case-body">
-        <div class="case-kicker">Сайт ↔ 1С · Битрикс + УТ <span class="case-status live">в проде · клиент</span></div>
-        <h3 class="case-title">dag-sport.ru — спорттовары</h3>
-        <p class="case-text"><b>Было:</b> заказы переносили в 1С вручную, теряли время. <b>Стало:</b> заказ с сайта сам падает в 1С УТ документом, владелец сразу получает уведомление в Telegram.</p>
+        <div class="case-kicker">Интеграция сайта с 1С УТ <span class="case-status live">Запущено у клиента</span></div>
+        <h3 class="case-title">Dag Sport — заказы из сайта в 1С</h3>
+        <p class="case-text">Сайт уже работал. Моя часть — связать заказы с 1С УТ: вместо ручного переноса документ создаётся автоматически, а владелец получает уведомление в Telegram.</p>
         <div class="case-foot">
-          <a class="case-link" href="https://dag-sport.ru" target="_blank" rel="noopener" data-analytics="case_cta_click">dag-sport.ru ↗</a>
-          <a class="case-link" href="/cases/dag-sport.html" data-analytics="case_cta_click">Разбор кейса →</a>
-          <button type="button" class="case-link case-detail-btn" data-project-detail="dag" data-analytics="project_modal_open">Коротко →</button>
+          <a class="case-link" href="https://dag-sport.ru" target="_blank" rel="noopener" data-analytics="case_cta_click">Открыть сайт ↗</a>
+          <a class="case-link" href="/cases/dag-sport.html" data-analytics="case_cta_click">Кейс Dag Sport →</a>
+          <button type="button" class="case-link case-detail-btn" data-project-detail="dag" data-analytics="project_modal_open">Что сделано →</button>
         </div>
       </div>
     </article>
@@ -899,31 +908,25 @@
       <div class="before-after-copy">
         <div class="before-after-kicker">До / после</div>
         <h3>Хаос заявок или понятный маршрут.</h3>
-        <p>Сдвиньте линию: слева ручной перенос между сайтом, перепиской и 1С; справа один маршрут с уведомлением и фиксацией.</p>
+        <p>Сдвиньте линию: слева данные переносят вручную. Справа заявка идёт по одному маршруту.</p>
       </div>
       <div class="before-after-stage" style="--before-after-pos: 50%;">
         <div class="before-after-side before-after-after">
           <span>Связка</span>
-          <b>Сайт → AI/Telegram → 1С</b>
-          <p>Заявка идёт по маршруту, владелец видит уведомление, учёт не живёт отдельно.</p>
+          <b>Сайт → Telegram/AI → 1С</b>
+          <p>Заявка идёт по одному маршруту: владелец получает уведомление, а данные попадают в 1С.</p>
         </div>
         <div class="before-after-side before-after-before">
           <span>Хаос</span>
           <b>Форма · чат · таблица · 1С</b>
-          <p>Данные переносят руками, часть контекста остаётся в переписках.</p>
+          <p>Данные переносят руками, а часть деталей остаётся в переписках.</p>
         </div>
         <input class="before-after-range" type="range" min="12" max="88" value="50" aria-label="Показать до или после связки" data-before-after-range data-analytics="before_after_drag">
       </div>
     </div>
 
     <div class="work-footer reveal" data-work-filter-item="one-c">
-      <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку: сайт → 1С → уведомление или AI. Есть сайт или магазин и учёт в 1С. Нужно понять, что передавать без ручного переноса: заказы, остатки, цены или статусы.">Разобрать похожую связку →</a>
-      <a class="work-footer-link" href="/cases/baby-massage.html" data-analytics="case_cta_click">
-        <span class="link-text">Смотреть кейс «Кроха и Я»</span>
-        <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M7 17L17 7M17 7H7M17 7v10"/>
-        </svg>
-      </a>
+      <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку: сайт → 1С → уведомление или AI. Есть сайт или магазин и учёт в 1С. Нужно понять, что передавать без ручного переноса: заказы, остатки, цены или статусы.">Разобрать свою связку →</a>
     </div>
   </div>
 </section>
@@ -940,11 +943,10 @@
       <div class="bento-card reveal">
         <div class="bento-number">01</div>
         <div class="bento-label">САЙТЫ И МАГАЗИНЫ</div>
-        <h3 class="bento-title">Сайт под заявки<br>и&nbsp;заказы.</h3>
-        <ul class="bento-scenarios">
-          <li class="bento-scenario">Собираю лендинг, сайт или интернет-магазин, где клиенту легко разобраться и оставить заявку или заказ.</li>
-          <li class="bento-scenario">Уже есть сайт? Смотрю, что мешает — структура, тексты, скорость, форма — и довожу до рабочего вида.</li>
-          <li class="bento-scenario">Если нужно, заявки с сайта сразу уходят в AI-ответ или в 1С, без ручного переноса.</li>
+      <h3 class="bento-title">Сайт для заявок<br>и&nbsp;заказов.</h3>
+      <ul class="bento-scenarios">
+          <li class="bento-scenario">Собираю сайт или магазин, где клиент быстро понимает предложение и оставляет заявку или заказ.</li>
+          <li class="bento-scenario">Дорабатываю существующие сайты: структуру, тексты, скорость и форму заявки.</li>
         </ul>
         <a class="bento-link" href="#contact" data-contact-source="service_site" data-contact-scenario="layout" data-analytics="razbor_ask_click" data-contact-message="Интересует сайт или магазин. Нужно понять структуру, форму заявки и путь клиента. Сейчас может быть ссылка, макет или только идея. Цель — заявки, заказы, запись или каталог.">
           <span class="link-text">Обсудить сайт</span>
@@ -957,11 +959,10 @@
       <div class="bento-card reveal reveal-delay-1">
         <div class="bento-number">02</div>
         <div class="bento-label">AI-АССИСТЕНТЫ</div>
-        <h3 class="bento-title">Клиент получает<br>ответ сразу.</h3>
+        <h3 class="bento-title">Клиент получает<br>первый ответ.</h3>
         <ul class="bento-scenarios">
-          <li class="bento-scenario">Настраиваю AI-помощника, который отвечает клиентам на частые вопросы — даже ночью и в выходные.</li>
-          <li class="bento-scenario">Он уточняет, что нужно человеку, и передает заявку вам уже с деталями — или дальше в работу.</li>
-          <li class="bento-scenario">Это не замена вам, а способ не терять тех, кто написал первым и ждет ответа.</li>
+          <li class="bento-scenario">Ассистент отвечает на частые вопросы и уточняет, что нужно клиенту.</li>
+          <li class="bento-scenario">Передаёт обращение вам с деталями, когда нужен человек.</li>
         </ul>
         <a class="bento-link" href="#contact" data-contact-source="service_ai" data-contact-scenario="raw" data-analytics="razbor_ask_click" data-contact-message="Интересует AI-ассистент. Нужно разобрать, какие вопросы он может закрывать и когда должен передавать человеку. Клиенты пишут через сайт, Telegram, WhatsApp или другой канал.">
           <span class="link-text">Обсудить AI</span>
@@ -974,11 +975,10 @@
       <div class="bento-card reveal reveal-delay-2">
         <div class="bento-number">03</div>
         <div class="bento-label">1С-АВТОМАТИЗАЦИЯ</div>
-        <h3 class="bento-title">Данные сами<br>попадают в&nbsp;1С.</h3>
+        <h3 class="bento-title">Заказы и&nbsp;данные в&nbsp;1С<br>без ручного переноса.</h3>
         <ul class="bento-scenarios">
-          <li class="bento-scenario">Настраиваю 1С:Розница и Управление торговлей (УТ) под вашу работу: убираю лишние шаги, налаживаю учет, документы и отчеты.</li>
-          <li class="bento-scenario">Делаю так, чтобы рутина шла сама — отчеты, печатные формы, повторяющиеся операции без ручного труда.</li>
-          <li class="bento-scenario">Подключаю 1С к сайту, магазину или маркетплейсам: заказы попадают в систему сами, без таблиц и ручного переноса.</li>
+          <li class="bento-scenario">Настраиваю 1С:Розница и УТ: документы, отчёты и повторяющиеся операции.</li>
+          <li class="bento-scenario">Связываю 1С с сайтом или магазином, чтобы заказы попадали в систему автоматически.</li>
         </ul>
         <a class="bento-link" href="#contact" data-contact-source="service_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Интересует 1С или связка сайта с 1С. Уже есть Розница, УТ или другая конфигурация. Нужно убрать ручной перенос заказов, остатков, цен, документов или отчётов.">
           <span class="link-text">Обсудить 1С</span>
@@ -1008,8 +1008,8 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-tag">Демо</div>
-      <h2 class="section-title">Как это работает — вживую.</h2>
-      <p class="section-subtitle">Один короткий прогон: заявка появляется, AI уточняет контекст, документ создаётся в&nbsp;1С, а&nbsp;владельцу приходит уведомление.</p>
+      <h2 class="section-title">Как проходит заявка.</h2>
+      <p class="section-subtitle">Заявка приходит с&nbsp;сайта, AI уточняет задачу, данные попадают в&nbsp;1С, а&nbsp;владелец получает уведомление.</p>
     </div>
 
     <div class="order-demo-shell reveal" aria-label="Демонстрация пути заказа: заявка, AI, 1С и Telegram">
@@ -1028,25 +1028,25 @@
         <article class="order-demo-card order-demo-card-ai" data-order-demo-scene="ai">
           <span>AI-ассистент</span>
           <p class="order-demo-bubble">Уточню: нужен каталог, форма заявки или заказ?</p>
-          <p class="order-demo-bubble is-answer">Каталог и заявка, чтобы потом создать заказ в 1С.</p>
+          <p class="order-demo-bubble is-answer">Каталог и заявка, чтобы подготовить черновик заказа в 1С.</p>
         </article>
 
         <article class="order-demo-card order-demo-card-onec" data-order-demo-scene="onec">
-          <span>Документ 1С</span>
-          <h3>Заказ клиента №0001</h3>
-          <p>создан автоматически</p>
+          <span>Черновик в 1С</span>
+          <h3>Черновик заказа №0001</h3>
+          <p>после уточнения задачи</p>
         </article>
 
         <article class="order-demo-card order-demo-card-telegram" data-order-demo-scene="telegram">
           <span>Telegram</span>
-          <h3>Новый заказ №0001 ✓</h3>
+          <h3>Новый черновик №0001 ✓</h3>
           <p>Контекст уже в сообщении владельцу.</p>
         </article>
       </div>
 
       <div class="order-demo-controls">
-        <button type="button" class="order-demo-play" data-order-demo-play data-analytics="demo_play" aria-label="Показать путь заказа">Показать путь заказа</button>
-        <p>Демонстрация схемы работы связки, данные условные.</p>
+        <button type="button" class="order-demo-play" data-order-demo-play data-analytics="demo_play" aria-label="Показать путь заявки">Показать путь заявки</button>
+        <p>Пример сценария. Данные условные.</p>
       </div>
     </div>
   </div>
@@ -1058,10 +1058,10 @@
     <div class="journey-shell reveal">
       <div class="journey-copy">
         <div class="section-tag">Путь заявки</div>
-        <h2 class="journey-title">Что происходит<br>после первого касания.</h2>
-        <p class="journey-lead">Заявка не должна жить отдельно в&nbsp;форме, мессенджере, таблице и&nbsp;1С. Я собираю маршрут так, чтобы контекст дошёл до человека и&nbsp;учёта без ручного переноса.</p>
+        <h2 class="journey-title">Что происходит<br>после заявки.</h2>
+        <p class="journey-lead">Собираю один путь: заявка, ответ клиенту и&nbsp;запись в&nbsp;системе без ручного переноса.</p>
         <a class="journey-cta" href="#contact" data-contact-source="journey" data-contact-scenario="task" data-analytics="journey_cta_click" data-contact-message="Хочу разобрать путь заявки. Сейчас клиент оставляет обращение через сайт, мессенджер, звонок или таблицу. Нужно понять, кто отвечает, куда попадают данные и где сейчас теряется контекст.">
-          <span class="link-text">Разобрать мой маршрут</span>
+          <span class="link-text">Разобрать мой путь заявки</span>
           <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
@@ -1074,41 +1074,41 @@
           <li class="journey-step">
             <div class="journey-node">01</div>
             <div class="journey-card">
-              <span>Форма / сообщение</span>
-              <h3>Клиент оставляет заявку</h3>
-              <p>Сайт, Telegram, WhatsApp или другой канал собирает не просто контакт, а вводные по задаче.</p>
+              <span>Форма или сообщение</span>
+              <h3>Клиент обращается</h3>
+              <p>Сайт, Telegram или WhatsApp собирают контакт и&nbsp;вводные.</p>
             </div>
           </li>
           <li class="journey-step">
             <div class="journey-node journey-node-warm">02</div>
             <div class="journey-card">
-              <span>AI-уточнение</span>
-              <h3>Ассистент разбирает обращение</h3>
-              <p>Отвечает на типовые вопросы, уточняет детали и не берёт на себя решения, где нужен человек.</p>
+              <span>AI-ассистент</span>
+              <h3>Уточняет детали</h3>
+              <p>Отвечает на частые вопросы и&nbsp;подключает вас, когда нужен человек.</p>
             </div>
           </li>
           <li class="journey-step">
             <div class="journey-node">03</div>
             <div class="journey-card">
               <span>Уведомление</span>
-              <h3>Вы видите контекст сразу</h3>
-              <p>В Telegram или почте приходит краткая карточка: кто написал, что нужно и какой следующий шаг.</p>
+              <h3>Вы получаете контекст</h3>
+              <p>В Telegram или почте видно, кто написал, что нужно и&nbsp;какой следующий шаг.</p>
             </div>
           </li>
           <li class="journey-step">
             <div class="journey-node">04</div>
             <div class="journey-card">
               <span>Учёт / 1С</span>
-              <h3>Данные фиксируются в&nbsp;системе</h3>
-              <p>Заказ, заявка или документ создаётся там, где вы уже работаете: в 1С, CRM или таблице.</p>
+              <h3>Данные попадают в&nbsp;систему</h3>
+              <p>Заявка или заказ создаются в&nbsp;1С, CRM или таблице.</p>
             </div>
           </li>
           <li class="journey-step">
             <div class="journey-node journey-node-dark">05</div>
             <div class="journey-card">
               <span>Человек</span>
-              <h3>Решение остаётся за вами</h3>
-              <p>Вы получаете не сырой текст из формы, а понятный маршрут: что ответить и что делать дальше.</p>
+              <h3>Решение за вами</h3>
+              <p>Вы отвечаете по существу, а&nbsp;не собираете детали из разных каналов.</p>
             </div>
           </li>
         </ol>
@@ -1117,16 +1117,16 @@
       <div class="journey-proof" aria-label="Что меняется в заявке">
         <div class="journey-proof-card">
           <div class="journey-proof-kicker">Было</div>
-          <p>Заявка в форме, вопросы в мессенджере, заказ в 1С — всё отдельно, часть контекста переносится руками.</p>
+          <p>Данные живут в форме, переписке и&nbsp;1С отдельно. Часть приходится переносить вручную.</p>
         </div>
         <div class="journey-proof-card journey-proof-card-active">
           <div class="journey-proof-kicker">Становится</div>
-          <p>Клиент получает ответ, вы получаете контекст, а данные попадают в рабочую систему без лишних копирований.</p>
+          <p>Заявка, контекст и&nbsp;запись в&nbsp;системе собраны в&nbsp;один маршрут.</p>
         </div>
         <div class="journey-artifact" aria-label="Пример Telegram-уведомления о заявке">
           <div class="journey-artifact-top">
             <span class="journey-artifact-dot" aria-hidden="true"></span>
-            <span>У вас в Telegram</span>
+            <span>Уведомление в Telegram</span>
             <span>пример</span>
           </div>
           <div class="journey-message">
@@ -1136,19 +1136,19 @@
             </div>
             <dl class="journey-message-list">
               <div>
-                <dt>Клиент</dt>
-                <dd>Хочет связать форму, AI-ответ и 1С</dd>
+                <dt>Задача</dt>
+                <dd>Связать форму, AI-ответ и&nbsp;1С</dd>
               </div>
               <div>
-                <dt>Понятно</dt>
-                <dd>Нужен ответ клиенту и запись заявки в учёт</dd>
+                <dt>Цель</dt>
+                <dd>Ответить клиенту и&nbsp;записать заявку в&nbsp;систему</dd>
               </div>
               <div>
-                <dt>Шаг</dt>
-                <dd>Уточнить, где сейчас теряются обращения</dd>
+                <dt>Дальше</dt>
+                <dd>Понять, где теряются обращения</dd>
               </div>
             </dl>
-            <p class="journey-message-note">Смысл — сразу видеть контекст, а не собирать детали из формы, чата и таблицы.</p>
+            <p class="journey-message-note">В сообщении уже есть контекст, а&nbsp;не только контакт.</p>
           </div>
         </div>
       </div>
@@ -1163,12 +1163,13 @@
       <div class="bundle-intro">
         <div class="section-tag">Разбор связки</div>
         <h2 class="bundle-title">Проверьте маршрут<br>за минуту.</h2>
-        <p class="bundle-lead">Это не калькулятор продаж и&nbsp;не обещание результата. Быстрый способ понять, какой первый рабочий шаг нужен: форма, уведомление, AI-уточнение или связь с&nbsp;учётом.</p>
+        <p class="bundle-lead">Это не прогноз продаж. Здесь можно понять, с&nbsp;чего начать: собрать заявку, прислать уведомление, подключить AI или связать данные с&nbsp;учётом.</p>
       </div>
 
       <div class="bundle-controls" aria-label="Мини-разбор связки">
         <div class="bundle-choice">
-          <div class="bundle-choice-label">Ситуация</div>
+          <div class="bundle-choice-label">Где сейчас проблема?</div>
+          <p class="bundle-choice-help">Выберите один вариант.</p>
           <div class="bundle-choice-grid" role="group" aria-label="Выберите ситуацию">
             <button type="button" class="bundle-option is-active" data-bundle-step="situation" data-bundle-value="site">Сайт есть, заявки теряются</button>
             <button type="button" class="bundle-option" data-bundle-step="situation" data-bundle-value="reply">Клиенты ждут ответа</button>
@@ -1176,47 +1177,47 @@
           </div>
         </div>
         <div class="bundle-choice">
-          <div class="bundle-choice-label">Что уже есть</div>
-          <div class="bundle-choice-grid" role="group" aria-label="Выберите текущий рабочий процесс">
-            <button type="button" class="bundle-option is-active" data-bundle-step="state" data-bundle-value="form">Форма или сайт</button>
-            <button type="button" class="bundle-option" data-bundle-step="state" data-bundle-value="chat">Telegram / WhatsApp</button>
-            <button type="button" class="bundle-option" data-bundle-step="state" data-bundle-value="one-c">1С или таблица</button>
+          <div class="bundle-choice-label">Что уже используется?</div>
+          <p class="bundle-choice-help">Отметьте всё подходящее.</p>
+          <div class="bundle-choice-grid" role="group" aria-label="Выберите все подходящие точки процесса">
+            <button type="button" class="bundle-option is-active" data-bundle-step="available" data-bundle-value="form" aria-pressed="true">Форма или сайт</button>
+            <button type="button" class="bundle-option" data-bundle-step="available" data-bundle-value="chat" aria-pressed="false">Telegram / WhatsApp</button>
+            <button type="button" class="bundle-option" data-bundle-step="available" data-bundle-value="one-c" aria-pressed="false">1С или таблица</button>
           </div>
         </div>
       </div>
 
       <div class="bundle-result" aria-live="polite">
-        <div class="bundle-path" aria-hidden="true">
-          <span data-bundle-node="input">Форма</span>
+        <div class="bundle-path" data-bundle-path aria-label="Ваш первый рабочий маршрут">
+          <span>Форма</span>
           <i></i>
-          <span class="is-warm" data-bundle-node="middle">AI</span>
+          <span class="is-warm">AI</span>
           <i></i>
-          <span data-bundle-node="output">Telegram</span>
+          <span>Человек</span>
         </div>
         <div class="bundle-result-grid">
           <article class="bundle-result-card">
-            <div class="bundle-result-kicker">Слабое место</div>
-            <h3 data-bundle-title>Контекст теряется до ответа</h3>
-            <p data-bundle-copy>Первый шаг — собрать заявку так, чтобы владелец сразу видел, что нужно клиенту и куда это попадает дальше.</p>
+            <div class="bundle-result-kicker">С чего начать</div>
+            <h3 data-bundle-title>Детали теряются до ответа</h3>
+            <p data-bundle-copy>Сначала соберите заявку так, чтобы сразу было видно, что нужно клиенту и&nbsp;куда она должна попасть.</p>
           </article>
           <article class="bundle-result-card">
-            <div class="bundle-result-kicker">AI-фрагмент</div>
+            <div class="bundle-result-kicker">Как помогает AI</div>
             <p class="bundle-ai-line" data-bundle-ai>«Уточню задачу и передам человеку, если нужен расчёт или решение».</p>
-            <p class="bundle-note">AI не закрывает всё сам: он уточняет и передаёт, когда нужна ответственность.</p>
+            <p class="bundle-note" data-bundle-ai-note>AI отвечает на типовые вопросы, а&nbsp;сложные передаёт человеку.</p>
           </article>
           <article class="bundle-result-card">
-            <div class="bundle-result-kicker">Ориентир</div>
-            <p data-bundle-loss>Потери обычно не в количестве заявок, а в ручном сборе деталей из разных мест.</p>
-            <p class="bundle-note">Это ориентир, не прогноз и не гарантия роста.</p>
+            <div class="bundle-result-kicker">Что это даст</div>
+            <p data-bundle-benefit>Владелец сразу увидит задачу и&nbsp;следующий шаг, а&nbsp;не только контакт.</p>
           </article>
         </div>
         <div class="bundle-footer">
           <div>
-            <div class="bundle-result-kicker">Первый MVP</div>
-            <p data-bundle-mvp>Форма → Telegram-карточка → понятный следующий шаг.</p>
+            <div class="bundle-result-kicker">Ваш первый маршрут</div>
+            <p data-bundle-mvp>Форма → AI → Человек.</p>
           </div>
-          <a class="bundle-cta" href="#contact" data-bundle-cta data-contact-source="bundle_check" data-contact-scenario="task" data-analytics="simulator_cta" data-contact-message="Хочу разобрать связку. Сейчас есть сайт или форма, но контекст заявки теряется до ответа. Нужно понять первый MVP: форма, уведомление, AI-уточнение или связь с учётом.">
-            Обсудить такую связку
+          <a class="bundle-cta" href="#contact" data-bundle-cta data-contact-source="bundle_check" data-contact-scenario="task" data-analytics="simulator_cta" data-contact-message="Хочу разобрать связку. Сейчас есть сайт или форма, но контекст заявки теряется до ответа. Нужно понять первый шаг: форма, уведомление, AI-уточнение или связь с учётом.">
+            Разобрать мою связку
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -1232,7 +1233,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-tag">Как проходит работа</div>
-      <h2 class="section-title">Понятная работа —<br>без агентств и&nbsp;посредников.</h2>
+      <h2 class="section-title">Работаем напрямую<br>и&nbsp;по шагам.</h2>
     </div>
     
     <ol class="process-grid reveal">
@@ -1242,15 +1243,15 @@
           <div class="process-number">01</div>
         </div>
         <div class="process-name">Вы присылаете задачу</div>
-        <div class="process-info">Сайт, макет, описание задачи, скрин из 1С или пара слов о проблеме — достаточно, чтобы начать.</div>
+        <div class="process-info">Ссылка, макет, скрин или пара слов о проблеме — этого достаточно, чтобы начать разбор.</div>
       </li>
       <li class="process-step">
         <div class="process-step-head">
           <div class="process-step-tag">РАЗБОР</div>
           <div class="process-number">02</div>
         </div>
-        <div class="process-name">Разбираю вашу задачу</div>
-        <div class="process-info">Смотрю, что уже есть и что нужно сделать, и сразу прикидываю объём — чтобы потом не переделывать.</div>
+        <div class="process-name">Разбираю задачу</div>
+        <div class="process-info">Смотрю, что уже есть, и предлагаю понятный объём, порядок работ и ориентир по срокам.</div>
       </li>
       <li class="process-step">
         <div class="process-step-head">
@@ -1258,15 +1259,15 @@
           <div class="process-number">03</div>
         </div>
         <div class="process-name">Делаю и показываю по ходу</div>
-        <div class="process-info">Двигаюсь небольшими шагами: показываю результат по ходу и сразу вношу правки — без долгой тишины.</div>
+        <div class="process-info">Показываю результат по мере работы, собираю обратную связь и вношу правки.</div>
       </li>
       <li class="process-step">
         <div class="process-step-head">
           <div class="process-step-tag">ФИНИШ</div>
           <div class="process-number">04</div>
         </div>
-        <div class="process-name">Сдаю и передаю управление</div>
-        <div class="process-info">Сайт готов к запуску, 1С работает в вашем процессе. Всё остаётся у вас: доступы, логика, без зависимости от меня.</div>
+        <div class="process-name">Передаю готовое решение</div>
+        <div class="process-info">Решение готово к запуску, а доступы и логика остаются у вас.</div>
       </li>
     </ol>
   </div>
@@ -1277,26 +1278,23 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-tag">Честный разбор</div>
-      <h2 class="section-title">Что я не обещаю<br><span>и&nbsp;что делаю вместо.</span></h2>
+      <h2 class="section-title">Без громких обещаний.<br><span>Только понятный результат.</span></h2>
     </div>
     <div class="limits-grid">
       <article class="limit-card reveal">
-        <div class="limit-kicker">Не обещаю</div>
-        <h3>AI вместо человека</h3>
-        <p>AI не должен выдумывать ответы или брать на себя решения, где нужен владелец или менеджер.</p>
-        <div class="limit-instead">Делаю так: ассистент отвечает на типовые вопросы, уточняет вводные и передаёт человеку, когда нужна ответственность.</div>
+        <div class="limit-kicker">Как работаю</div>
+        <h3>AI не заменяет человека</h3>
+        <p>Ассистент отвечает на частые вопросы, уточняет задачу и&nbsp;передаёт разговор вам, когда нужно решение.</p>
       </article>
       <article class="limit-card reveal reveal-delay-1">
-        <div class="limit-kicker">Не обещаю</div>
-        <h3>Рост заявок без контекста</h3>
-        <p>Нельзя честно гарантировать продажи только после редизайна, интеграции или подключения бота.</p>
-        <div class="limit-instead">Делаю так: смотрю путь заявки, убираю потери и фиксирую, где реально можно повлиять на конверсию.</div>
+        <div class="limit-kicker">Как работаю</div>
+        <h3>Не обещаю заявки только за&nbsp;счёт сайта</h3>
+        <p>Сначала смотрю путь клиента: где он теряется, чего не&nbsp;хватает в&nbsp;форме или ответе и&nbsp;что можно исправить.</p>
       </article>
       <article class="limit-card reveal reveal-delay-2">
-        <div class="limit-kicker">Не обещаю</div>
-        <h3>Большую систему с&nbsp;первого дня</h3>
-        <p>Если задачу можно решить формой, уведомлением или простым обменом, не раздуваю проект.</p>
-        <div class="limit-instead">Делаю так: начинаю с минимальной рабочей связки, которую можно проверить и развивать дальше.</div>
+        <div class="limit-kicker">Как работаю</div>
+        <h3>Не строю лишнюю систему</h3>
+        <p>Начинаю с&nbsp;простого рабочего шага: формы, уведомления или обмена данными. Дальше развиваем только то, что действительно нужно.</p>
       </article>
     </div>
   </div>
@@ -1307,39 +1305,39 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-tag">Формат работы</div>
-      <h2 class="section-title">Один человек — от задачи<br>до результата.</h2>
+      <h2 class="section-title">Работаем напрямую<br>и&nbsp;по шагам.</h2>
     </div>
     <div class="testimonials-track">
       <div class="testimonial-card reveal">
         <div class="format-card-kicker">Контакт</div>
-        <p class="testimonial-text">Вы пишете напрямую тому, кто делает работу — контекст не теряется в цепочке из менеджера, дизайнера и разработчика.</p>
+        <p class="testimonial-text">Вы общаетесь сразу со&nbsp;мной, без передачи задачи между менеджером, дизайнером и&nbsp;разработчиком.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar" aria-hidden="true">01</div>
           <div>
             <div class="testimonial-name">Без посредников</div>
-            <div class="testimonial-role">Меньше шума, быстрее решения</div>
+            <div class="testimonial-role">Один контакт и&nbsp;быстрые решения</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-1">
         <div class="format-card-kicker">Подход</div>
-        <p class="testimonial-text">Не всегда нужен редизайн или большая разработка. Часто хватает починить слабые места — структуру, форму заявок, AI или 1С — и не раздувать проект.</p>
+        <p class="testimonial-text">Не всегда нужен большой проект. Часто хватает привести в&nbsp;порядок структуру, форму заявки, настроить AI или связать сайт с&nbsp;1С.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar" aria-hidden="true">02</div>
           <div>
-            <div class="testimonial-name">Без лишней тяжести</div>
-            <div class="testimonial-role">Сначала исправляем главное, потом развиваем</div>
+            <div class="testimonial-name">Начинаем с&nbsp;главного</div>
+            <div class="testimonial-role">Потом развиваем то, что уже работает</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-2">
         <div class="format-card-kicker">Результат</div>
-        <p class="testimonial-text">После сдачи всё остаётся у вас: доступы, файлы и логика решения. Никаких закрытых «чёрных ящиков» и привязки ко мне.</p>
+        <p class="testimonial-text">После сдачи у&nbsp;вас остаются доступы, файлы и&nbsp;логика решения. Его можно передать другому специалисту без потери доступа и&nbsp;логики.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar" aria-hidden="true">03</div>
           <div>
-            <div class="testimonial-name">Без привязки</div>
-            <div class="testimonial-role">Доступы и контроль — у вас</div>
+            <div class="testimonial-name">Всё под вашим контролем</div>
+            <div class="testimonial-role">Без закрытых систем и&nbsp;зависимости от исполнителя</div>
           </div>
         </div>
       </div>
@@ -1361,20 +1359,19 @@
       </div>
       <div class="about-content reveal">
         <div class="section-tag">Обо мне</div>
-        <h2>Разбираю задачу<br>целиком: от сайта<br><span>до AI и&nbsp;1С.</span></h2>
+        <h2>Собираю сайт, AI и&nbsp;1С<br><span>в&nbsp;один рабочий процесс.</span></h2>
         <p class="about-text">
-          Меня зовут Ибрагим. Начинал с 1С — настраивал Розницу и УТ в малом бизнесе. Потом освоил веб, и оказалось, что это редкое сочетание: большинство разработчиков не знают 1С изнутри.
+          Меня зовут Ибрагим. Начинал с&nbsp;1С: настраивал Розницу и&nbsp;Управление торговлей для малого бизнеса. Затем занялся веб-разработкой, поэтому могу смотреть на&nbsp;задачу и&nbsp;со&nbsp;стороны сайта, и&nbsp;со&nbsp;стороны учёта.
         </p>
         <p class="about-text">
-          Работаю напрямую и веду проект сам: сначала смотрю, где теряются заявки, время или деньги, потом собираю решение и сдаю так, чтобы им можно было сразу пользоваться. Сам из Махачкалы, работаю удалённо с клиентами по всей России.
+          Работаю напрямую и&nbsp;веду проект сам. Разбираюсь, как сейчас проходит заявка или заказ, собираю решение и&nbsp;передаю его в&nbsp;работу. Я&nbsp;из&nbsp;Махачкалы, работаю удалённо с&nbsp;клиентами по&nbsp;всей России.
         </p>
         <div class="about-stack">
-          <span>HTML / CSS / JavaScript</span>
-          <span>React / Next.js</span>
-          <span>1С:Розница / УТ</span>
-          <span>TypeScript</span>
+          <span>Сайты и&nbsp;магазины</span>
           <span>AI-ассистенты</span>
-          <span>Сайт + AI + 1С</span>
+          <span>1С:Розница / УТ</span>
+          <span>Интеграции сайта с&nbsp;1С</span>
+          <span>Telegram и&nbsp;Mini App</span>
         </div>
       </div>
     </div>
@@ -1386,7 +1383,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-tag">Частые вопросы</div>
-      <h2 class="section-title">Что обычно<br>спрашивают.</h2>
+      <h2 class="section-title">Что уточняют<br>перед стартом.</h2>
     </div>
     <div class="faq-list reveal">
       <details class="faq-item" open>
@@ -1395,7 +1392,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Да. Не обязательно начинать с нуля. Можно прийти с текущим сайтом, магазином, задачей по AI-ассистенту, 1С, таблицами, скринами или описанием проблемы. Сначала разбираю, что мешает, потом предлагаю формат работы.</p>
+          <p>Да. Можно прийти с текущим сайтом, магазином, задачей по AI, 1С, таблицами, скринами или просто описанием проблемы. Сначала разбираю ситуацию, затем предлагаю формат работы.</p>
         </div>
       </details>
       <details class="faq-item">
@@ -1404,7 +1401,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Да, работаю с 1С:Розница и УТ: настройка, доработки, отчеты, печатные формы, документы, обмены и автоматизация повторяющихся операций.</p>
+          <p>Да. Настраиваю и дорабатываю Розницу и УТ: документы, отчёты, печатные формы, обмены и повторяющиеся операции.</p>
         </div>
       </details>
       <details class="faq-item">
@@ -1413,7 +1410,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Да, если это нужно задаче. Например, обращение или заказ с сайта может попасть в AI-обработку, а затем в 1С или понятный рабочий процесс, чтобы не переносить данные вручную и не терять их в таблицах и переписках.</p>
+          <p>Да, если это нужно задаче. Заявка или заказ с сайта может пройти через AI-уточнение и попасть в 1С или другой рабочий процесс без ручного переноса.</p>
         </div>
       </details>
       <details class="faq-item">
@@ -1422,7 +1419,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Стоимость зависит от задачи: сайт, интернет-магазин, AI-ассистент, 1С или связка между ними оцениваются по-разному. После короткого разбора я называю понятный объем работ и стоимость до старта.</p>
+          <p>Стоимость зависит от задачи. После короткого разбора называю понятный объём работ и стоимость до старта.</p>
         </div>
       </details>
       <details class="faq-item">
@@ -1431,34 +1428,25 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Небольшой сайт или точечная доработка обычно занимают меньше времени, чем связка сайта, AI и 1С или доработка процесса. Срок называю после разбора вводных, чтобы не обещать вслепую.</p>
+          <p>Точечная доработка обычно занимает меньше времени, чем связка сайта, AI и 1С. Срок называю после разбора вводных.</p>
         </div>
       </details>
       <details class="faq-item">
         <summary>
-          <span>Как проходит оплата?</span>
+          <span>Как проходят оплата и договорённости?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Обычно работаю по предоплате и финальной оплате после сдачи результата. Для небольших задач формат можно обсудить отдельно.</p>
+          <p>До старта согласуем состав работ, стоимость и формат оплаты. Обычно это предоплата перед началом и следующий платёж после этапа. При необходимости фиксируем всё договором, иначе — в переписке.</p>
         </div>
       </details>
       <details class="faq-item">
         <summary>
-          <span>Как проходят правки?</span>
+          <span>Как проходят правки и поддержка после запуска?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Показываю результат по ходу работы, поэтому правки не копятся в один большой список в конце. Фиксируем, что нужно изменить, и доводим до рабочего состояния.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>
-          <span>Есть ли поддержка после сдачи?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p>Да, можно отдельно договориться о поддержке, мелких доработках или развитии решения после запуска. Особенно если сайт, AI-ассистент или 1С нужно постепенно адаптировать под процесс.</p>
+          <p>Показываю результат по ходу работы, поэтому правки не копятся к финалу. После запуска можно отдельно договориться о поддержке, мелких доработках или развитии решения.</p>
         </div>
       </details>
       <details class="faq-item">
@@ -1467,25 +1455,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Нет. Я из Махачкалы, но работаю удалённо с клиентами по всей России: созвон, переписка, доступы — всё решается онлайн. Для бизнеса из Махачкалы и Дагестана возможно обсудить задачу при личной встрече.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>
-          <span>Как проходит оплата и фиксируется работа?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p>Сначала короткий разбор задачи — без оплаты. По результату называю понятный объём работ и стоимость до старта. Дальше работаю поэтапно: предоплата перед началом, следующий платёж после сдачи этапа и вашего одобрения. Состав работ фиксирую письменно — договором при необходимости или устной договорённостью с фиксацией в переписке.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>
-          <span>Нужен ли договор?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p>По желанию. Работаю и по договору, и по устной договорённости с фиксацией в переписке. В обоих случаях объём и стоимость согласуются до старта, без сюрпризов в процессе.</p>
+          <p>Нет. Я из Махачкалы, но работаю удалённо с клиентами по всей России: созвон, переписка и доступы решаются онлайн.</p>
         </div>
       </details>
     </div>
@@ -1497,8 +1467,8 @@
   <div class="container">
     <div class="contact-grid">
       <div class="contact-copy reveal">
-        <div class="section-tag">Разбор пути заявки</div>
-        <h2 class="contact-heading">Можно начать<br>с&nbsp;короткого <span>описания связки.</span></h2>
+        <div class="section-tag">Разбор задачи</div>
+        <h2 class="contact-heading">Опишите задачу<br><span>как есть.</span></h2>
         <div class="contact-info-item" style="margin-bottom: 16px;">
           <div class="contact-info-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1535,7 +1505,7 @@
       </div>
       
       <form class="contact-form reveal reveal-delay-1" id="contactForm" novalidate>
-        <p class="contact-form-intro">Если задача пока сырая — это нормально. Опишите, что есть сейчас: сайт, магазин, AI-ассистент, 1С, таблицы, обращения или просто что не работает. Этот сайт собран по тому же принципу: форма передаёт мне контекст, а&nbsp;дальше я разбираю путь заявки вручную.</p>
+        <p class="contact-form-intro">Не нужно заранее всё подробно описывать. Пришлите ссылку, скриншот или пару слов: что уже есть, где возникла проблема и&nbsp;какой результат нужен. Я&nbsp;разберу, с&nbsp;чего разумно начать.</p>
         <input type="hidden" id="contactSource" name="source_block" value="">
         <input type="hidden" id="contactScenario" name="scenario" value="">
         <div class="form-row">
@@ -1551,8 +1521,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="materials">Ссылка / материалы</label>
-          <input type="text" id="materials" name="materials" placeholder="Сайт, Figma, таблица, скрин из 1С, Notion или Loom">
+          <label for="materials">Ссылка или материалы, если есть</label>
+          <input type="text" id="materials" name="materials" placeholder="Ссылка на сайт, скриншот, таблица или другой материал">
         </div>
         <div class="form-group">
           <label for="message">Коротко о задаче</label>
@@ -1566,8 +1536,8 @@
           <span class="btn-loader"><span></span><span></span><span></span></span>
         </button>
         <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-          <p class="contact-note" style="margin-top: 0; font-size: 14.5px; line-height: 1.45; color: var(--text-secondary);">Обычно отвечаю в течение дня. Если AI или 1С не нужны, скажу прямо — иногда достаточно нормальной формы, уведомления и понятного маршрута заявки.</p>
-          <p class="contact-note" style="margin-top: 0; font-size: 13.5px; line-height: 1.45; color: var(--text-tertiary);">Конфиденциальные данные лучше не отправлять в первом сообщении.</p>
+          <p class="contact-note" style="margin-top: 0; font-size: 14.5px; line-height: 1.45; color: var(--text-secondary);">Отвечаю в&nbsp;течение дня. Сначала предложу самый простой рабочий вариант.</p>
+          <p class="contact-note" style="margin-top: 0; font-size: 13.5px; line-height: 1.45; color: var(--text-tertiary);">Для первого разбора конфиденциальные данные не&nbsp;нужны.</p>
         </div>
       </form>
     </div>
@@ -1580,7 +1550,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-left">
-        <div class="footer-text">&copy; <span id="footer-year">2026</span> Ибрагим Раджабов. Собрано вручную, без шаблона.</div>
+        <div class="footer-text">&copy; <span id="footer-year">2026</span> Ибрагим Раджабов</div>
         <div class="footer-text" style="margin-top:4px;font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);">Махачкала · работаю удалённо по всей России</div>
         <div class="footer-legal" style="margin-top:6px;font-family:var(--font-mono);font-size:12px;"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;">Политика конфиденциальности</a> · <a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;">Согласие на обработку ПД</a></div>
       </div>
@@ -1589,7 +1559,8 @@
           <li><a href="#work">Работы</a></li>
           <li><a href="#services">Услуги</a></li>
           <li><a href="/cases/">Кейсы</a></li>
-          <li><a href="/tools/kalkulyator-lendinga.html">Стоимость</a></li>
+          <li><a href="/cases/baby-massage.html">Кейс «Кроха и Я»</a></li>
+          <li><a href="/tools/kalkulyator-lendinga.html">Оценка проекта</a></li>
           <li><a href="/niches/sajt-dlya-massazhista.html">Сайт для массажиста</a></li>
           <li><a href="/niches/sajt-dlya-avtoservisa.html">Сайт для автосервиса</a></li>
           <li><a href="/niches/sajt-dlya-barbershopa.html">Сайт для барбершопа</a></li>
@@ -1619,7 +1590,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/home.js?v=20260710-phase8-fracture" defer></script>
+<script src="/assets/js/home.js?v=20260714-homepage-release" defer></script>
 <script src="/assets/js/hero3d.js?v=20260710-phase8-fracture" defer></script>
 <script>
 (function () {

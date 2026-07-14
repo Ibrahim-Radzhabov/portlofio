@@ -30,6 +30,48 @@
   window.addEventListener('scroll', handleScroll, { passive: true });
   nav.classList.toggle('scrolled', window.scrollY > 50);
 
+  // === SCROLLSPY ROUTE ===
+  const routeNodes = Array.from(document.querySelectorAll('[data-nav-route]'));
+  const routeProgress = document.querySelector('[data-nav-route-progress]');
+  const routeSections = routeNodes.map((node) => {
+    const selector = node.dataset.navRoute === 'hero' ? '.hero' : `#${node.dataset.navRoute}`;
+    return document.querySelector(selector);
+  });
+  let routeFrame = 0;
+
+  function updateScrollRoute() {
+    routeFrame = 0;
+    if (!routeNodes.length) return;
+
+    const threshold = Math.min(220, window.innerHeight * 0.32);
+    let activeIndex = 0;
+    routeSections.forEach((section, index) => {
+      if (section && section.getBoundingClientRect().top <= threshold) activeIndex = index;
+    });
+
+    routeNodes.forEach((node, index) => {
+      const active = index === activeIndex;
+      node.classList.toggle('is-active', active);
+      if (active) node.setAttribute('aria-current', 'location');
+      else node.removeAttribute('aria-current');
+    });
+
+    if (routeProgress) {
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+      routeProgress.style.width = `${progress * document.documentElement.clientWidth}px`;
+    }
+  }
+
+  function requestScrollRouteUpdate() {
+    if (routeFrame) return;
+    routeFrame = window.requestAnimationFrame(updateScrollRoute);
+  }
+
+  window.addEventListener('scroll', requestScrollRouteUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollRouteUpdate, { passive: true });
+  updateScrollRoute();
+
   // === MOBILE MENU ===
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -127,6 +169,7 @@
     var running = false;
     var targetProgress = 0;
     var renderedProgress = 0;
+    var workMediaReady = false;
     var mobileQuery = window.matchMedia('(max-width: 520px)');
 
     function measureProgress() {
@@ -140,9 +183,32 @@
       return clamped * clamped * (3 - 2 * clamped);
     }
 
+    function getWorkImageSource(image) {
+      if (mobileQuery.matches && image.dataset.mobileSrc) return image.dataset.mobileSrc;
+      return image.dataset.desktopSrc || image.dataset.src || image.getAttribute('src');
+    }
+
+    function hydrateWorkImage(index) {
+      if (!workMediaReady) return;
+      var image = backgrounds[index];
+      var source = image && getWorkImageSource(image);
+      if (source && image.getAttribute('src') !== source) {
+        image.src = source;
+      }
+    }
+
+    function hydrateWorkIntroImage() {
+      var source = introImage && getWorkImageSource(introImage);
+      if (source && introImage.getAttribute('src') !== source) {
+        introImage.src = source;
+      }
+    }
+
     function setActiveWork(index) {
       if (index === activeIndex || index < 0 || index >= itemCount) return;
       activeIndex = index;
+      hydrateWorkImage(index);
+      hydrateWorkImage(index + 1);
       backgrounds.forEach(function(bg, bgIndex) {
         bg.classList.toggle('is-active', bgIndex === index);
       });
@@ -164,7 +230,16 @@
       var bgShift = isMobile ? -6 : -10;
       var bgBaseScale = isMobile ? 1.055 : 1.08;
       var bgActiveScale = isMobile ? 0.026 : 0.045;
-      var introScale = isMobile ? 8.8 : 13.2;
+      // Match the opening PDR preview to the full-screen work frames. Desktop
+      // derives a cover-scale from the viewport instead of a fixed multiplier.
+      var introScale = isMobile ? 6.2 : 10.2;
+      if (!isMobile && introImage) {
+        var introMaxScale = Math.max(
+          window.innerHeight / introImage.offsetHeight,
+          window.innerWidth / introImage.offsetWidth
+        );
+        introScale = Math.max(0, introMaxScale - 0.32);
+      }
       var imageIn = smoothStep((progress - 0.026) / (introEnd * 0.32));
       var imageScaleProgress = smoothStep((progress - 0.05) / (introEnd * 0.68));
       var splitProgress = smoothStep((progress - 0.03) / (introEnd * 0.72));
@@ -190,7 +265,9 @@
       });
 
       if (introImage) {
-        introImage.style.borderRadius = (2 + imageScaleProgress * 18).toFixed(2) + 'px';
+        // The image becomes a full-bleed frame at the end of the intro, so
+        // its radius must resolve to zero instead of exposing the cream layer.
+        introImage.style.borderRadius = (2 * (1 - imageScaleProgress)).toFixed(2) + 'px';
         introImage.style.boxShadow = '0 ' + (22 + imageScaleProgress * 30).toFixed(2) + 'px ' + (70 + imageScaleProgress * 80).toFixed(2) + 'px rgba(20, 18, 16, ' + (0.16 + imageScaleProgress * 0.18).toFixed(3) + ')';
         introImage.style.opacity = imageIn.toFixed(3);
         introImage.style.transform = 'translate3d(-50%, -50%, 0) scale(' + (0.32 + imageScaleProgress * introScale).toFixed(4) + ')';
@@ -250,10 +327,46 @@
     }
 
     window.addEventListener('scroll', requestWorkFeatureUpdate, { passive: true });
-    window.addEventListener('resize', requestWorkFeatureUpdate);
+    window.addEventListener('resize', function() {
+      hydrateWorkIntroImage();
+      hydrateWorkImage(activeIndex);
+      hydrateWorkImage(activeIndex + 1);
+      requestWorkFeatureUpdate();
+    });
     targetProgress = measureProgress();
     renderedProgress = targetProgress;
     renderWorkFeature(renderedProgress);
+
+    // === WORK IMAGE LAZY HYDRATION ===
+    // Hydrate the first few background images when #work approaches (300px margin).
+    // The rest are hydrated dynamically on scroll in setActiveWork() to prevent
+    // an initial bulk load of all 7 images.
+    (function() {
+      var workSection = document.getElementById('work');
+      if (!workSection) return;
+
+      function hydrateWorkLead() {
+        workMediaReady = true;
+        hydrateWorkIntroImage();
+        hydrateWorkImage(activeIndex);
+        hydrateWorkImage(activeIndex + 1);
+        hydrateWorkImage(0);
+        hydrateWorkImage(1);
+      }
+
+      if ('IntersectionObserver' in window) {
+        var workObserver = new IntersectionObserver(function(entries, obs) {
+          if (entries[0].isIntersecting) {
+            hydrateWorkLead();
+            obs.disconnect();
+          }
+        }, { rootMargin: '300px' });
+        workObserver.observe(workSection);
+      } else {
+        // Fallback: hydrate first lead images after page load
+        window.addEventListener('load', hydrateWorkLead, { once: true });
+      }
+    })();
   })();
 
   // === RIPPLE EFFECT ===
@@ -357,33 +470,36 @@
   if (heroScenarioButtons.length && heroScenarioTitle && heroScenarioDescription && heroScenarioCopy) {
     var heroScenarios = {
       layout: {
-        title: 'Сайт или магазин,<br><span class="highlight"><span class="highlight-line">который продаёт.</span></span>',
-        description: 'Соберу лендинг, сайт или магазин, понятный клиенту: легко найти нужное и оставить заявку или заказ.',
+        title: 'Сайт или магазин,<br><span class="highlight"><span class="highlight-line">который ведёт к заявке.</span></span>',
+        description: 'Соберу сайт или магазин, где клиент быстро понимает предложение, находит нужное и оставляет заявку или заказ.',
         contactMessage: 'Хочу разобрать путь заявки на сайте или в магазине. Сейчас может быть ссылка, макет или только идея. Цель — заявки, заказы, запись или каталог. Нужно понять, что мешает сейчас.',
+        labels: { layout: 'Клиент', raw: 'Сайт', task: 'Заявка' },
         process: [
-          { num: '01', title: 'Понимаю задачу', desc: 'Смотрю, зачем человек пришёл: оставить заявку, выбрать товар, оформить заказ или задать вопрос.' },
-          { num: '02', title: 'Собираю структуру', desc: 'Продумываю первый экран, каталог или услуги, доверие, контакты и понятный следующий шаг.' },
-          { num: '03', title: 'Готовлю к запуску', desc: 'Собираю аккуратный сайт или магазин, который можно сразу показать клиентам и развивать дальше.' }
+          { num: '01', title: 'Понимаю, зачем клиент приходит', desc: 'Заявка, заказ, запись или вопрос: от этого зависит, что будет на сайте.' },
+          { num: '02', title: 'Собираю путь к заявке', desc: 'Показываю главное, помогаю выбрать услугу или товар и оставляю понятный следующий шаг.' },
+          { num: '03', title: 'Готовлю к запуску', desc: 'Проверяю сайт на реальных сценариях, чтобы его можно было сразу показать клиентам.' }
         ]
       },
       raw: {
-        title: 'AI-ассистент,<br><span class="highlight"><span class="highlight-line">всегда на связи.</span></span>',
-        description: 'Настраиваю AI-помощника: отвечает клиентам на частые вопросы и передаёт заявку вам — даже ночью и в выходные.',
+        title: 'AI-ассистент,<br><span class="highlight"><span class="highlight-line">который отвечает первым.</span></span>',
+        description: 'Отвечает на частые вопросы, уточняет задачу и передаёт вам готовую заявку.',
         contactMessage: 'Хочу разобрать AI-ассистента. Нужно понять, какие вопросы он может закрывать, что уточнять у клиента и когда передавать человеку. Канал — сайт, Telegram, WhatsApp или другой.',
+        labels: { layout: 'Клиент', raw: 'AI', task: 'Вы' },
         process: [
-          { num: '01', title: 'Разбираю вопросы', desc: 'Смотрю, что спрашивают чаще всего, что нужно уточнять и когда подключать человека.' },
-          { num: '02', title: 'Настраиваю ответы', desc: 'Логика ответов, границы и передача заявки вам или сразу в работу.' },
-          { num: '03', title: 'Проверяю в работе', desc: 'Довожу до состояния, где ассистент помогает, а не мешает: отвечает спокойно и не обещает лишнего.' }
+          { num: '01', title: 'Разбираю, что спрашивают', desc: 'Выделяю частые вопросы и моменты, где нужен человек.' },
+          { num: '02', title: 'Настраиваю ответы', desc: 'Ассистент отвечает сам, а сложные вопросы передаёт вам.' },
+          { num: '03', title: 'Проверяю перед запуском', desc: 'Тестирую реальные сценарии и корректирую ответы.' }
         ]
       },
       task: {
         title: 'Сайт, AI и&nbsp;1С<br><span class="highlight"><span class="highlight-line">в&nbsp;одной системе.</span></span>',
-        description: 'Связываю сайт, AI и\u00a01С: заявка с\u00a0сайта уходит в\u00a0ответ клиенту и\u00a0в\u00a01С — без ручного переноса и\u00a0потерь.',
-        contactMessage: 'Хочу разобрать путь заявки: сайт, AI и 1С. Сейчас есть сайт, таблица, 1С или переписка. Нужно понять, где теряется заявка и что можно связать без ручного переноса.',
+        description: 'Клиент оставляет заявку на сайте, AI отвечает, а данные попадают в 1С. Без ручного переноса.',
+        contactMessage: 'Хочу разобрать задачу: сайт, AI и 1С. Сейчас есть сайт, таблица, 1С или переписка. Хочу понять, что можно связать без ручного переноса.',
+        labels: { layout: 'Сайт', raw: 'AI', task: '1С' },
         process: [
-          { num: '01', title: 'Смотрю путь заявки', desc: 'Разбираю, что происходит от формы или сообщения до ответа клиенту и записи в 1С.' },
-          { num: '02', title: 'Собираю связку', desc: 'Соединяю сайт, AI-ответы и 1С в один поток, без ручного переноса.' },
-          { num: '03', title: 'Убираю потери', desc: 'Заявки не теряются в переписках и таблицах, а идут по понятному маршруту.' }
+          { num: '01', title: 'Проверяю, что происходит после заявки', desc: 'От формы или сообщения до ответа клиенту и записи в 1С.' },
+          { num: '02', title: 'Настраиваю работу вместе', desc: 'Сайт, AI и 1С работают как один процесс.' },
+          { num: '03', title: 'Чтобы заявки не терялись', desc: 'Они не остаются в переписках и таблицах.' }
         ]
       }
     };
@@ -407,7 +523,17 @@
         heroCta.setAttribute('data-contact-scenario', key);
         heroCta.setAttribute('data-contact-message', heroScenarios[key].contactMessage || '');
       }
+      updateHeroFractureLabels(key);
       document.dispatchEvent(new CustomEvent('hero-scenario-change', { detail: { key: key } }));
+    }
+
+    function updateHeroFractureLabels(key) {
+      var labels = heroScenarios[key] && heroScenarios[key].labels;
+      if (!labels) return;
+      Object.keys(labels).forEach(function(nodeKey) {
+        var label = document.querySelector('[data-fracture-label="' + nodeKey + '"]');
+        if (label) label.textContent = labels[nodeKey];
+      });
     }
 
     function buildHeroProcessHtml(steps) {
@@ -502,12 +628,25 @@
 
     function setHeroScenario(key, immediate) {
       if (!heroScenarios[key]) return;
-      if (currentHeroScenario === key && !immediate) return;
+
+      // Cancel a pending copy swap before comparing with the rendered state.
+      // Without this, a quick layout → task click can leave the task button
+      // selected while the delayed layout copy is still applied 200ms later.
+      if (heroScenarioSwapTimer) {
+        clearTimeout(heroScenarioSwapTimer);
+        heroScenarioSwapTimer = null;
+      }
+
+      if (currentHeroScenario === key && !immediate) {
+        updateHeroScenarioButtons(key);
+        heroScenarioCopy.classList.remove('is-swapping-out');
+        if (heroProcess) heroProcess.style.opacity = '1';
+        if (window.__livingFractureApply) window.__livingFractureApply(key);
+        return;
+      }
 
       updateHeroScenarioButtons(key);
       if (window.__livingFractureApply) window.__livingFractureApply(key);
-
-      if (heroScenarioSwapTimer) clearTimeout(heroScenarioSwapTimer);
 
       if (immediate) {
         heroScenarioCopy.classList.remove('is-swapping-out');
@@ -521,6 +660,7 @@
       if (heroProcess) heroProcess.style.opacity = '0';
 
       heroScenarioSwapTimer = setTimeout(function() {
+        heroScenarioSwapTimer = null;
         applyHeroScenarioContent(key);
         currentHeroScenario = key;
         heroScenarioCopy.classList.remove('is-swapping-out');
@@ -539,11 +679,23 @@
     window.__heroScenarioSelect = setHeroScenario;
     setHeroScenario(initialHeroScenario ? initialHeroScenario.getAttribute('data-scenario') : 'task', true);
 
-    measureHeroScenarioHeight();
-    requestAnimationFrame(measureHeroScenarioHeight);
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(measureHeroScenarioHeight);
+    function scheduleHeroScenarioMetrics() {
+      if (window.matchMedia('(max-width: 640px)').matches) {
+        var runWhenIdle = window.requestIdleCallback || function(callback) {
+          return window.setTimeout(callback, 180);
+        };
+        runWhenIdle(measureHeroScenarioHeight, { timeout: 1200 });
+        return;
+      }
+
+      measureHeroScenarioHeight();
+      requestAnimationFrame(measureHeroScenarioHeight);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(measureHeroScenarioHeight);
+      }
     }
+
+    scheduleHeroScenarioMetrics();
     window.addEventListener('resize', function() {
       clearTimeout(heroScenarioResizeTimer);
       heroScenarioResizeTimer = setTimeout(measureHeroScenarioHeight, 120);
@@ -614,65 +766,124 @@
     var sim = document.querySelector('[data-bundle-sim]');
     if (!sim) return;
 
-    var state = { situation: 'site', state: 'form' };
+    var state = {
+      situation: 'site',
+      available: { form: true, chat: false, 'one-c': false }
+    };
     var title = sim.querySelector('[data-bundle-title]');
     var copy = sim.querySelector('[data-bundle-copy]');
     var ai = sim.querySelector('[data-bundle-ai]');
-    var loss = sim.querySelector('[data-bundle-loss]');
+    var aiNote = sim.querySelector('[data-bundle-ai-note]');
+    var benefit = sim.querySelector('[data-bundle-benefit]');
     var mvp = sim.querySelector('[data-bundle-mvp]');
     var cta = sim.querySelector('[data-bundle-cta]');
-    var nodeInput = sim.querySelector('[data-bundle-node="input"]');
-    var nodeMiddle = sim.querySelector('[data-bundle-node="middle"]');
-    var nodeOutput = sim.querySelector('[data-bundle-node="output"]');
+    var path = sim.querySelector('[data-bundle-path]');
 
     var situations = {
       site: {
-        title: 'Контекст теряется до ответа',
-        copy: 'Первый шаг — собрать заявку так, чтобы владелец сразу видел, что нужно клиенту и куда это попадает дальше.',
+        title: 'Соберите понятную заявку',
+        steps: {
+          form: 'Добавьте в форму поля, которые нужны для первого ответа.',
+          chat: 'Соберите сообщения в одну карточку с задачей и контактами.',
+          'one-c': 'Определите, какие данные из заявки должны попадать в учёт.'
+        },
         ai: '«Уточню задачу и передам человеку, если нужен расчёт или решение».',
-        loss: 'Потери обычно не в количестве заявок, а в ручном сборе деталей из разных мест.',
-        mvp: 'Форма → Telegram-карточка → понятный следующий шаг.',
+        aiNote: 'AI уточняет детали и передаёт человеку обращения, где нужно решение.',
+        benefit: 'Владелец сразу увидит задачу и следующий шаг, а не только контакт.',
         scenario: 'layout'
       },
       reply: {
-        title: 'Ответ приходит слишком поздно',
-        copy: 'Первый шаг — закрыть типовые вопросы и быстро передавать человеку только те обращения, где нужно решение.',
+        title: 'Настройте первый ответ',
+        steps: {
+          form: 'Передавайте заявки с сайта в AI-уточнение до ответа человека.',
+          chat: 'Настройте ответы на частые вопросы в мессенджере.',
+          'one-c': 'Определите, какие обращения требуют ответа до записи в учёт.'
+        },
         ai: '«Отвечу на частый вопрос, уточню детали и передам владельцу, если нужен расчёт».',
-        loss: 'Ориентир потерь — ожидание клиента и повторные уточнения, а не “магический рост продаж”.',
-        mvp: 'Мессенджер → AI-уточнение → Telegram человеку.',
+        aiNote: 'AI отвечает на типовые вопросы, а сложные передаёт человеку.',
+        benefit: 'Клиент получает первый ответ без ожидания, а вы — обращения с контекстом.',
         scenario: 'raw'
       },
       accounting: {
-        title: 'Данные живут отдельно от учёта',
-        copy: 'Первый шаг — определить, какие поля реально нужно передавать в 1С или таблицу, без лишней системы.',
+        title: 'Свяжите данные с учётом',
+        steps: {
+          form: 'Определите, какие данные из формы должны попадать в учёт.',
+          chat: 'Передавайте согласованные данные из чата в учётную систему.',
+          'one-c': 'Сопоставьте поля заявки и учётной системы, затем настройте передачу.'
+        },
         ai: '«Соберу недостающие вводные и передам заказ в рабочий маршрут».',
-        loss: 'Ориентир потерь — ручной перенос, ошибки в деталях и повторная сверка.',
-        mvp: 'Заказ → уведомление → запись в 1С или таблице.',
+        aiNote: 'AI может собрать недостающие детали перед записью заказа.',
+        benefit: 'Заказ и детали попадут в систему без повторного ввода.',
         scenario: 'task'
       }
     };
 
-    var states = {
-      form: { input: 'Форма', middle: 'AI', output: 'Telegram' },
-      chat: { input: 'Чат', middle: 'AI', output: 'Человек' },
-      'one-c': { input: 'Заявка', middle: '1С', output: 'Отчёт' }
-    };
+    function activePoints() {
+      return Object.keys(state.available).filter(function(key) {
+        return state.available[key];
+      });
+    }
+
+    function activePointLabels() {
+      var labels = {
+        form: 'сайт или форма',
+        chat: 'Telegram / WhatsApp',
+        'one-c': '1С или таблица'
+      };
+      return activePoints().map(function(key) {
+        return labels[key];
+      });
+    }
+
+    function firstRelevantPoint() {
+      var points = state.available;
+      if (state.situation === 'reply') return points.chat ? 'chat' : (points.form ? 'form' : 'one-c');
+      if (state.situation === 'accounting') return points['one-c'] ? 'one-c' : (points.form ? 'form' : 'chat');
+      return points.form ? 'form' : (points.chat ? 'chat' : 'one-c');
+    }
+
+    function buildRoute() {
+      var points = state.available;
+      var route = [];
+      var onlyAccounting = points['one-c'] && !points.form && !points.chat && state.situation === 'accounting';
+
+      if (onlyAccounting) return ['Заявка', '1С', 'Отчёт'];
+
+      route.push(points.form ? 'Форма' : (points.chat ? 'Чат' : 'Заявка'));
+      route.push('AI');
+      if (points.chat && points.form) route.push('Telegram');
+      if (points['one-c']) route.push('1С');
+      else route.push(points.chat && !points.form ? 'Человек' : (points.chat ? 'Telegram' : 'Человек'));
+      return route;
+    }
+
+    function renderRoute(route) {
+      if (!path) return;
+      path.textContent = '';
+      route.forEach(function(label, index) {
+        var node = document.createElement('span');
+        node.textContent = label;
+        if (label === 'AI' || (label === '1С' && route.indexOf('AI') === -1)) node.className = 'is-warm';
+        path.appendChild(node);
+        if (index < route.length - 1) path.appendChild(document.createElement('i'));
+      });
+    }
 
     function render(completed) {
       var current = situations[state.situation];
-      var flow = states[state.state];
-      if (!current || !flow) return;
+      var point = firstRelevantPoint();
+      var route = buildRoute();
+      if (!current || !point) return;
       if (title) title.textContent = current.title;
-      if (copy) copy.textContent = current.copy;
+      if (copy) copy.textContent = current.steps[point];
       if (ai) ai.textContent = current.ai;
-      if (loss) loss.textContent = current.loss;
-      if (mvp) mvp.textContent = current.mvp;
-      if (nodeInput) nodeInput.textContent = flow.input;
-      if (nodeMiddle) nodeMiddle.textContent = flow.middle;
-      if (nodeOutput) nodeOutput.textContent = flow.output;
+      if (aiNote) aiNote.textContent = current.aiNote;
+      if (benefit) benefit.textContent = current.benefit;
+      if (mvp) mvp.textContent = route.join(' → ') + '.';
+      renderRoute(route);
       if (cta) {
         cta.setAttribute('data-contact-scenario', current.scenario);
-        cta.setAttribute('data-contact-message', 'Хочу разобрать связку. Ситуация: ' + current.title.toLowerCase() + '. Что уже есть: ' + flow.input + ' → ' + flow.middle + ' → ' + flow.output + '. Первый MVP: ' + current.mvp);
+        cta.setAttribute('data-contact-message', 'Хочу разобрать связку. Ситуация: ' + current.title.toLowerCase() + '. Что уже есть: ' + activePointLabels().join(', ') + '. Маршрут: ' + route.join(' → ') + '.');
       }
       if (completed) __reach('simulator_completed');
     }
@@ -682,19 +893,30 @@
         var step = btn.getAttribute('data-bundle-step');
         var value = btn.getAttribute('data-bundle-value');
         if (!step || !value) return;
-        state[step] = value;
-        sim.querySelectorAll('[data-bundle-step="' + step + '"]').forEach(function(option) {
-          var active = option === btn;
-          option.classList.toggle('is-active', active);
-          option.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
+        if (step === 'situation') {
+          state.situation = value;
+          sim.querySelectorAll('[data-bundle-step="situation"]').forEach(function(option) {
+            var active = option === btn;
+            option.classList.toggle('is-active', active);
+            option.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+        } else if (step === 'available') {
+          var nextValue = !state.available[value];
+          if (!nextValue && activePoints().length === 1) return;
+          state.available[value] = nextValue;
+          btn.classList.toggle('is-active', nextValue);
+          btn.setAttribute('aria-pressed', nextValue ? 'true' : 'false');
+        }
         __reach('simulator_started');
         render(true);
       });
     });
 
     sim.querySelectorAll('[data-bundle-step]').forEach(function(btn) {
-      btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
+      var step = btn.getAttribute('data-bundle-step');
+      var value = btn.getAttribute('data-bundle-value');
+      var active = step === 'available' ? state.available[value] : btn.classList.contains('is-active');
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
     render(false);
   })();
@@ -879,7 +1101,8 @@
 
     form.querySelectorAll('input, textarea').forEach(function(input) {
       input.addEventListener('input', function() {
-        this.closest('.form-group').classList.remove('error');
+        var group = this.closest('.form-group');
+        if (group) group.classList.remove('error');
         this.setAttribute('aria-invalid', 'false');
       });
     });
@@ -962,7 +1185,9 @@
 
     filterButtons.forEach(function(button) {
       button.addEventListener('click', function() {
-        applyWorkFilter(button.getAttribute('data-work-filter') || 'all');
+        var filter = button.getAttribute('data-work-filter') || 'all';
+        applyWorkFilter(filter);
+        document.dispatchEvent(new CustomEvent('work-filter-change', { detail: { filter: filter } }));
       });
     });
 
@@ -980,39 +1205,30 @@
   var workRecommend = document.querySelector('[data-work-recommend]');
   if (workRecommend) {
     var workRecommendCopy = workRecommend.querySelector('[data-work-recommend-copy]');
-    var workRecommendAction = workRecommend.querySelector('[data-work-recommend-action]');
     var workRecommendMap = {
-      layout: {
-        copy: 'Вы выбрали сайт или магазин. Ближе всего будут PDR Atelier, Flora Noire, АвтоМаг и другие сайты, где главный результат — понятная заявка.',
-        filter: 'site',
-        label: 'Показать сайты'
+      site: {
+        copy: 'Сайты: PDR Atelier, Flora Noire и АвтоМаг. Посмотрите, как устроены услуги, каталог и форма заявки.'
       },
-      raw: {
-        copy: 'Вы выбрали AI. Смотрите MyServerAgentAI и GlowDecor: там видно, как бот помогает отвечать, уведомлять и не терять контекст.',
-        filter: 'ai',
-        label: 'Показать AI'
+      ai: {
+        copy: 'AI-проекты: MyServerAgentAI и GlowDecor. Посмотрите, как бот отвечает клиенту и передаёт контекст.'
       },
-      task: {
-        copy: 'Вы выбрали связку. Смотрите Dag Sport и GlowDecor: заявка не застревает в переписке, а уходит в понятный маршрут.',
-        filter: 'one-c',
-        label: 'Показать 1С'
+      telegram: {
+        copy: 'Telegram: GlowDecor. Посмотрите, как выглядит каталог и оформление заказа прямо в мессенджере.'
+      },
+      'one-c': {
+        copy: '1С-связка: Dag Sport. Заказ с сайта попадает в учёт без ручного переноса.'
       }
     };
 
-    function updateWorkRecommend(key) {
-      var item = workRecommendMap[key] || workRecommendMap.layout;
-      if (workRecommendCopy) workRecommendCopy.textContent = item.copy;
-      if (workRecommendAction) {
-        workRecommendAction.textContent = item.label;
-        workRecommendAction.setAttribute('data-work-filter-target', item.filter);
-      }
+    function updateWorkRecommend(filter) {
+      var item = workRecommendMap[filter];
+      workRecommend.hidden = !item;
+      if (item && workRecommendCopy) workRecommendCopy.textContent = item.copy;
     }
 
-    document.addEventListener('hero-scenario-change', function(event) {
-      updateWorkRecommend(event.detail && event.detail.key);
+    document.addEventListener('work-filter-change', function(event) {
+      updateWorkRecommend(event.detail && event.detail.filter);
     });
-
-    updateWorkRecommend(document.querySelector('.hero-scenario.is-active')?.getAttribute('data-scenario') || 'layout');
   }
 
   // === TELEGRAM SHOP MINI DEMO ===
@@ -1021,7 +1237,7 @@
     var tgShopCopy = tgShop.querySelector('[data-tg-shop-copy]');
     var tgShopTotal = tgShop.querySelector('[data-tg-shop-total]');
     var tgShopTexts = {
-      catalog: 'Клиент выбирает товар, добавляет в корзину и пишет владельцу без выхода из Telegram.',
+      catalog: 'Покупатель выбирает товар, добавляет его в корзину и связывается с владельцем — без выхода из Telegram.',
       cart: 'Корзина собирает выбранное в один заказ. Дальше бот переводит клиента к сообщению владельцу.',
       owner: 'Владелец получает понятный запрос, а личный контакт клиента не раскрывается напрямую.'
     };
