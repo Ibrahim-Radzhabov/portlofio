@@ -3,35 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Калькулятор стоимости лендинга | Ибрагим Раджабов</title>
-  <meta name="description" content="Рассчитайте стоимость лендинга онлайн. 7 параметров, мгновенный результат. Базовая ставка от 25 000 ₽.">
-  <meta name="keywords" content="калькулятор лендинга, стоимость лендинга, сколько стоит сайт, расчет сайта">
+  <title>Оценка проекта: сайт, AI и 1С | Ибрагим Раджабов</title>
+  <meta name="description" content="Ответьте на несколько вопросов: получите примерную стоимость лендинга или поймёте, с чего начать сайт, Telegram, AI или задачу по 1С.">
+  <meta name="keywords" content="оценка проекта, калькулятор лендинга, стоимость сайта, Telegram Mini App, AI-ассистент, интеграция 1С">
   <link rel="canonical" href="https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#F5F0E8">
-  <meta property="og:title" content="Калькулятор стоимости лендинга">
-  <meta property="og:description" content="Рассчитайте стоимость лендинга онлайн. 7 параметров, мгновенный результат.">
+  <meta property="og:title" content="Предварительная оценка проекта: сайт, AI и 1С">
+  <meta property="og:description" content="Примерная стоимость лендинга и понятный первый шаг для сайта, Telegram, AI или задачи по 1С.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html">
-  <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/tool-kalkulyator-lendinga.png">
+  <meta property="og:image" content="https://radzhabov-dev.ru/og-image.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Калькулятор стоимости лендинга">
-  <meta name="twitter:description" content="Рассчитайте стоимость лендинга онлайн. 7 параметров, мгновенный результат.">
-  <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/tool-kalkulyator-lendinga.png">
+  <meta name="twitter:title" content="Предварительная оценка проекта: сайт, AI и 1С">
+  <meta name="twitter:description" content="Примерная стоимость лендинга и понятный первый шаг для сайта, Telegram, AI или задачи по 1С.">
+  <meta name="twitter:image" content="https://radzhabov-dev.ru/og-image.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Калькулятор стоимости лендинга",
-        "applicationCategory": "WebApplication",
+        "name": "Предварительная оценка проекта",
+        "description": "Несколько вопросов, чтобы оценить обычный лендинг или понять первый шаг для сайта, Telegram, AI и задачи по 1С.",
+        "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
         "url": "https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html",
         "creator": {
@@ -44,560 +42,1705 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://radzhabov-dev.ru/" },
-          { "@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html" }
+          { "@type": "ListItem", "position": 2, "name": "Оценка проекта", "item": "https://radzhabov-dev.ru/tools/kalkulyator-lendinga.html" }
         ]
       }
     ]
   }
   </script>
   <style>
+    @font-face { font-family:'Playfair Display'; src:url('/assets/fonts/playfair-display-cyrillic.woff2') format('woff2'); font-weight:500 700; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Playfair Display'; src:url('/assets/fonts/playfair-display-latin.woff2') format('woff2'); font-weight:500 700; font-style:normal; font-display:swap; unicode-range:U+0000-00FF; }
+    @font-face { font-family:'Outfit'; src:url('/assets/fonts/outfit-latin.woff2') format('woff2'); font-weight:400 600; font-style:normal; font-display:swap; unicode-range:U+0000-00FF; }
+    @font-face { font-family:'JetBrains Mono'; src:url('/assets/fonts/jetbrains-mono-cyrillic.woff2') format('woff2'); font-weight:400 500; font-style:normal; font-display:swap; }
+    @font-face { font-family:'JetBrains Mono'; src:url('/assets/fonts/jetbrains-mono-latin.woff2') format('woff2'); font-weight:400 500; font-style:normal; font-display:swap; unicode-range:U+0000-00FF; }
     :root {
-      --bg-primary: #F5F0E8;
-      --bg-secondary: #EDE8DF;
-      --bg-card: #EDE8DF;
-      --bg-card-hover: #E5E0D6;
-      --border: rgba(20, 18, 16, 0.08);
-      --border-hover: rgba(20, 18, 16, 0.15);
-      --text-primary: #141210;
-      --text-secondary: #7A7570;
-      --text-tertiary: #6E6861;
-      --accent: #1A3A2A;
-      --accent-dim: #2D5A45;
-      --accent-glow: rgba(26, 58, 42, 0.12);
-      --accent-glow-strong: rgba(26, 58, 42, 0.25);
-      --font-display: 'Playfair Display', serif;
-      --font-body: 'Outfit', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --bg-primary:#F5F0E8;
+      --bg-secondary:#EAE4D8;
+      --bg-card:#FBF8F3;
+      --bg-card-hover:#FFFDF9;
+      --border:rgba(20,18,16,.09);
+      --border-hover:rgba(20,18,16,.18);
+      --text-primary:#141210;
+      --text-secondary:#6B655F;
+      --text-tertiary:#6E6861;
+      --accent:#1A3A2A;
+      --accent-dim:#2D5A45;
+      --accent-warm:#B5623C;
+      --accent-glow:rgba(26,58,42,.1);
+      --warm-glow:rgba(181,98,60,.08);
+      --error:#A8443B;
+      --font-display:'Playfair Display',Georgia,serif;
+      --font-body:'Outfit',Arial,sans-serif;
+      --font-mono:'JetBrains Mono',monospace;
+      --ease:cubic-bezier(.16,1,.3,1);
     }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden;
-    }
-    body::before {
-      content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      opacity:0.025;
-    }
-    .container { max-width:900px; margin:0 auto; padding:0 24px; }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { min-width:320px; overflow-x:hidden; background:var(--bg-primary); color:var(--text-primary); font-family:var(--font-body); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    body::before { content:''; position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:.022; background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    a { color:inherit; }
+    button,input,textarea { font:inherit; }
+    button { border-radius:0; }
+    .container { width:min(100% - 48px,1120px); margin-inline:auto; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    .skip-link { position:fixed; top:10px; left:10px; z-index:10020; transform:translateY(-160%); background:var(--accent); color:var(--bg-primary); padding:10px 14px; text-decoration:none; }
+    .skip-link:focus { transform:none; }
+    :focus-visible { outline:2px solid var(--accent-warm); outline-offset:3px; }
 
-    /* Nav */
-    #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 0; transition:background .4s, backdrop-filter .4s; }
-    #nav.scrolled { background:rgba(245, 240, 232, 0.85); backdrop-filter:blur(20px); }
-    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    #nav { position:fixed; inset:0 0 auto; z-index:1000; padding:18px 0; transition:background .3s,backdrop-filter .3s; }
+    #nav.scrolled { background:rgba(245,240,232,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:24px; }
     .nav-logo { display:inline-flex; align-items:center; gap:10px; color:var(--text-primary); text-decoration:none; }
-    .nav-logo svg { width:24px; height:24px; flex-shrink:0; }
-    .nav-logo b { font-family:var(--font-display); font-weight:600; font-size:18px; letter-spacing:-0.3px; }
-    .nav-links { display:flex; gap:32px; list-style:none; }
-    .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .3s; position:relative; }
-    .nav-links a:hover, .nav-links a.active { color:var(--text-primary); }
-    .nav-links a.active::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--accent); border-radius:1px; }
-    .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
-    .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
-    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
-    #mobile-menu.active { opacity:1; pointer-events:all; }
-    #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
-    .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
+    .nav-logo svg { width:24px; height:24px; flex:none; }
+    .nav-logo b { font:600 18px/1 var(--font-display); letter-spacing:-.02em; }
+    .nav-links { display:flex; gap:30px; list-style:none; }
+    .nav-links a { position:relative; color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; }
+    .nav-links a:hover,.nav-links a.active { color:var(--text-primary); }
+    .nav-links a.active::after { content:''; position:absolute; left:0; right:0; bottom:-7px; height:2px; background:var(--accent); }
+    .menu-btn { display:none; width:44px; height:44px; border:0; background:transparent; cursor:pointer; }
+    .menu-btn span { display:block; width:24px; height:2px; margin:5px auto; background:var(--text-primary); }
+    #mobile-menu { position:fixed; inset:0; z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px; opacity:0; visibility:hidden; pointer-events:none; background:rgba(245,240,232,.98); transition:opacity .25s,visibility .25s; }
+    #mobile-menu.active { opacity:1; visibility:visible; pointer-events:auto; }
+    #mobile-menu a { font:600 25px/1.2 var(--font-display); text-decoration:none; }
+    .close-menu { position:absolute; top:20px; right:20px; width:44px; height:44px; border:0; background:transparent; color:var(--text-primary); font-size:32px; cursor:pointer; }
 
-    /* Hero */
-    .hero { padding:140px 0 60px; position:relative; }
-    .hero-bg { position:absolute; inset:0; z-index:0; pointer-events:none; }
-    .hero-bg::before { content:''; position:absolute; top:-10%; right:-5%; width:500px; height:500px; background:radial-gradient(circle, rgba(26, 58, 42, 0.08), transparent 70%); border-radius:50%; filter:blur(80px); }
-    .hero .container { position:relative; z-index:1; }
-    .hero-label { display:inline-block; font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:24px; border:1px solid var(--accent-glow-strong); padding:8px 16px; border-radius:8px; background:var(--accent-glow); }
-    .hero h1 { font-family:var(--font-display); font-size:clamp(32px, 4.5vw, 52px); font-weight:800; line-height:1.1; letter-spacing:-2px; margin-bottom:16px; }
-    .hero h1 .accent { color:var(--accent); }
-    .hero-subtitle { font-size:17px; color:var(--text-secondary); max-width:520px; line-height:1.7; }
+    .hero { position:relative; overflow:hidden; padding:92px 0 18px; }
+    .hero::before { content:''; position:absolute; top:-150px; right:-140px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle,rgba(26,58,42,.08),transparent 68%); filter:blur(45px); pointer-events:none; }
+    .hero .container { position:relative; }
+    .crumbs { margin-bottom:15px; color:var(--text-tertiary); font:12px/1.5 var(--font-mono); }
+    .crumbs a { color:var(--text-tertiary); text-decoration:none; }
+    .hero-label,.section-label { display:inline-block; color:var(--accent-warm); font:11px/1 var(--font-mono); letter-spacing:.13em; text-transform:uppercase; }
+    .hero-label { margin-bottom:17px; padding:8px 13px; border:1px solid rgba(181,98,60,.3); background:var(--warm-glow); }
+    .hero h1 { max-width:800px; font:600 clamp(39px,6vw,68px)/.99 var(--font-display); letter-spacing:-.05em; }
+    .hero h1 .accent { color:var(--accent-warm); }
+    .hero-subtitle { max-width:760px; margin-top:19px; color:var(--text-secondary); font-size:17px; line-height:1.65; }
 
-    /* Calculator */
-    .calculator { padding:40px 0 100px; }
-    .calc-form { display:flex; flex-direction:column; gap:24px; }
-    .calc-group { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:28px; transition:border-color .3s; }
-    .calc-group:hover { border-color:var(--border-hover); }
-    .calc-group-label { font-family:var(--font-display); font-size:16px; font-weight:600; margin-bottom:16px; display:block; }
-    .calc-options { display:flex; flex-wrap:wrap; gap:10px; }
-    .calc-option {
-      position:relative; cursor:pointer;
-    }
-    .calc-option input { position:absolute; opacity:0; }
-    .calc-option span {
-      display:inline-block; padding:10px 18px; background:var(--bg-secondary); border:1px solid var(--border);
-      border-radius:10px; font-size:14px; color:var(--text-secondary); transition:all .3s; cursor:pointer;
-    }
-    .calc-option input:checked + span {
-      background:var(--accent-glow); border-color:var(--accent); color:var(--text-primary);
-    }
-    .calc-option:hover span { border-color:var(--border-hover); color:var(--text-primary); }
+    .calculator { padding:28px 0 88px; }
+    .calculator-grid { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(300px,.78fr); gap:clamp(30px,5vw,66px); align-items:start; }
+    .calc-panel { min-width:0; }
+    .calculator-grid.is-choosing { grid-template-columns:1fr; }
+    .calculator-grid.is-choosing .calc-scene { display:none; }
+    .calculator-grid.is-choosing .calc-panel { grid-column:1 / -1; max-width:860px; margin-inline:auto; }
+    .calc-intro { padding-bottom:18px; border-bottom:1px solid var(--border); }
+    .calc-intro-kicker,.calc-step-kicker,.scene-kicker,.result-kicker,.example-tag { color:var(--text-tertiary); font:10px/1.3 var(--font-mono); letter-spacing:.13em; text-transform:uppercase; }
+    .calc-intro p { max-width:680px; margin-top:8px; color:var(--text-secondary); font-size:14px; }
+    .calc-progress-mobile { display:none; }
+    .estimator { min-height:430px; margin-top:18px; }
+    .calc-group { min-inline-size:0; padding:23px 24px; border:1px solid var(--border); background:var(--bg-card); }
+    .calc-group:focus-within { border-color:rgba(181,98,60,.62); }
+    .calc-group legend { display:block; float:left; width:100%; max-inline-size:100%; margin:0; padding:0; }
+    .calc-group legend + * { clear:both; }
+    .calc-group-label { display:block; margin:5px 0 18px; font:600 clamp(21px,2.2vw,27px)/1.13 var(--font-display); letter-spacing:-.025em; overflow-wrap:anywhere; scroll-margin-top:110px; }
+    .direction-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .direction-stack { position:relative; display:flex; flex-direction:column; gap:7px; padding:12px 16px 18px; perspective:900px; transform-style:preserve-3d; pointer-events:none; }
+    .direction-stack::before { content:''; position:absolute; inset:5% 8% 2% 12%; border-left:1px solid rgba(20,18,16,.12); border-bottom:1px solid rgba(20,18,16,.08); transform:translateZ(-54px) skewY(-3deg); pointer-events:none; }
+    .direction-stack .direction-card { --dx:0px; --dy:0px; --dz:0px; --card-width:94%; position:relative; width:var(--card-width); min-height:82px; padding:14px 24px 14px 18px; border:1px solid var(--border); background:var(--bg-card); color:var(--text-primary); text-align:left; cursor:pointer; pointer-events:auto; transition:transform .2s var(--ease), border-color .2s, box-shadow .2s, background .2s; transform:translate3d(var(--dx),var(--dy),var(--dz)); transform-style:preserve-3d; box-shadow:0 2px 4px rgba(20,18,16,.06), 8px 9px 0 rgba(20,18,16,.035); }
+    .direction-stack .direction-card::before { content:''; position:absolute; top:5px; right:-8px; bottom:-8px; width:8px; background:rgba(20,18,16,.12); clip-path:polygon(0 0,100% 8px,100% 100%,0 calc(100% - 8px)); pointer-events:none; }
+    .direction-stack .direction-card::after { content:''; position:absolute; right:-8px; bottom:-8px; left:8px; height:8px; background:rgba(20,18,16,.07); clip-path:polygon(0 0,calc(100% - 8px) 0,100% 100%,8px 100%); pointer-events:none; }
+    .direction-stack .direction-card:nth-child(1) { --dx:2%; --dy:-5px; --dz:44px; --card-width:91%; z-index:6; }
+    .direction-stack .direction-card:nth-child(2) { --dx:8%; --dy:1px; --dz:28px; --card-width:90%; z-index:5; }
+    .direction-stack .direction-card:nth-child(3) { --dx:-1%; --dy:7px; --dz:10px; --card-width:96%; z-index:4; }
+    .direction-stack .direction-card:nth-child(4) { --dx:6%; --dy:13px; --dz:-8px; --card-width:92%; z-index:3; }
+    .direction-stack .direction-card:nth-child(5) { --dx:1%; --dy:19px; --dz:-25px; --card-width:94%; z-index:2; }
+    .direction-stack .direction-card:nth-child(6) { --dx:10%; --dy:25px; --dz:-42px; --card-width:87%; z-index:1; }
+    .direction-stack .direction-card:hover,
+    .direction-stack .direction-card:focus-visible { border-color:var(--accent-warm); background:var(--bg-card-hover); transform:translate3d(var(--dx),calc(var(--dy) - 9px),calc(var(--dz) + 12px)); box-shadow:0 16px 36px rgba(20,18,16,.16), 9px 10px 0 rgba(181,98,60,.08); z-index:7; }
+    .direction-stack .direction-card .direction-index { display:block; margin-bottom:6px; color:var(--accent-warm); font:10px/1 var(--font-mono); letter-spacing:.1em; }
+    .direction-stack .direction-card .direction-title { display:block; font:600 17px/1.08 var(--font-display); letter-spacing:-.02em; }
+    .direction-stack .direction-card .direction-copy { display:block; margin-top:5px; color:var(--text-secondary); font-size:12px; line-height:1.35; }
+    .direction-card { position:relative; min-height:126px; padding:19px; border:1px solid var(--border); background:transparent; color:var(--text-primary); text-align:left; cursor:pointer; transition:border-color .2s,background .2s,transform .2s; }
+    .direction-card:hover { border-color:var(--accent-warm); background:var(--bg-card-hover); transform:translateY(-1px); }
+    .direction-index { display:block; margin-bottom:17px; color:var(--accent-warm); font:10px/1 var(--font-mono); letter-spacing:.1em; }
+    .direction-title { display:block; font:600 20px/1.08 var(--font-display); letter-spacing:-.025em; }
+    .direction-copy { display:block; margin-top:8px; color:var(--text-secondary); font-size:13px; line-height:1.42; }
+    .estimator-head { display:flex; align-items:center; justify-content:space-between; gap:16px; margin:20px 0 12px; }
+    .question-progress { color:var(--accent-warm); font:11px/1.4 var(--font-mono); letter-spacing:.08em; text-transform:uppercase; }
+    .text-button,.result-edit { padding:3px 0; border:0; border-bottom:1px solid currentColor; background:transparent; color:var(--accent); font-size:13px; font-weight:500; cursor:pointer; }
+    .calc-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+    .calc-option { position:relative; min-height:48px; cursor:pointer; }
+    .calc-option input { position:absolute; width:1px; height:1px; opacity:0; }
+    .calc-option span { display:flex; align-items:center; min-height:48px; height:100%; padding:11px 13px; border:1px solid var(--border); color:var(--text-secondary); font-size:14px; line-height:1.3; transition:border-color .2s,background .2s,color .2s; }
+    .calc-option span::before { content:''; display:grid; place-items:center; width:16px; height:16px; margin-right:9px; flex:none; border:1px solid currentColor; border-radius:50%; color:var(--bg-card); font:11px/1 var(--font-body); }
+    .calc-option.is-check span::before { border-radius:2px; }
+    .calc-option input:checked + span { border-color:var(--accent-warm); background:var(--warm-glow); color:var(--text-primary); font-weight:500; }
+    .calc-option input:checked + span::before { border-color:var(--accent-warm); background:var(--accent-warm); box-shadow:inset 0 0 0 3px var(--bg-card); }
+    .calc-option.is-check input:checked + span::before { content:'✓'; box-shadow:none; }
+    .calc-option input:focus-visible + span { outline:2px solid var(--accent-warm); outline-offset:3px; }
+    .question-impact { min-height:44px; margin-top:14px; padding:11px 13px; border-left:2px solid var(--accent-warm); background:var(--warm-glow); color:var(--text-secondary); font-size:13px; line-height:1.45; }
+    .question-impact b { color:var(--text-primary); font-weight:500; }
+    .question-error { margin-top:12px; color:var(--error); font-size:13px; }
+    .question-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:14px; }
+    .question-actions button { min-height:49px; padding:11px 18px; border:1px solid var(--accent); background:var(--accent); color:var(--bg-primary); font-size:14px; font-weight:500; cursor:pointer; }
+    .question-actions .secondary { margin-right:auto; border-color:var(--border-hover); background:transparent; color:var(--accent); }
 
-    /* Result */
-    .calc-result {
-      background:var(--bg-card); border:1px solid var(--accent-glow-strong); border-radius:20px;
-      padding:40px; text-align:center; position:sticky; top:100px; margin-top:32px;
-    }
-    .calc-result::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
-    .calc-result-label { font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:2px; margin-bottom:12px; }
-    .calc-result-price { font-family:var(--font-display); font-size:clamp(36px, 5vw, 56px); font-weight:800; color:var(--accent); line-height:1; }
-    .calc-result-period { font-size:16px; color:var(--text-secondary); margin-top:12px; }
-    .calc-result-breakdown { margin-top:24px; padding-top:24px; border-top:1px solid var(--border); text-align:left; }
-    .calc-result-breakdown p { font-size:13px; color:var(--text-tertiary); margin-bottom:6px; display:flex; justify-content:space-between; }
-    .calc-result-breakdown p span { color:var(--text-secondary); }
+    .calc-scene { position:sticky; top:94px; min-height:500px; padding:26px; overflow:hidden; border:1px solid var(--border); background:var(--bg-secondary); }
+    .calc-scene::after { content:''; position:absolute; right:-20%; bottom:-28%; width:90%; height:48%; background:radial-gradient(ellipse,rgba(181,98,60,.1),transparent 68%); pointer-events:none; }
+    .scene-heading { position:relative; z-index:1; display:flex; align-items:start; justify-content:space-between; gap:16px; }
+    .scene-heading strong { display:block; margin-top:6px; font:600 25px/1.05 var(--font-display); letter-spacing:-.035em; }
+    .scene-step { padding-top:4px; color:var(--accent-warm); font:500 11px/1 var(--font-mono); white-space:nowrap; }
+    .cost-path { position:relative; z-index:1; display:block; width:100%; height:auto; margin:16px 0 8px; aspect-ratio:440/230; }
+    .cost-segment { fill:none; stroke:var(--text-primary); stroke-width:2; stroke-linecap:round; transition:opacity .25s,stroke .25s; }
+    .cost-segment.is-future { opacity:.15; }
+    .cost-segment.is-active { stroke:var(--accent-warm); }
+    .cost-node { fill:var(--bg-secondary); stroke:rgba(20,18,16,.25); stroke-width:1.5; transition:fill .25s,stroke .25s,r .25s; }
+    .cost-node.is-complete { fill:var(--text-primary); stroke:var(--text-primary); }
+    .cost-node.is-active { fill:var(--accent-warm); stroke:var(--accent-warm); }
+    .scene-labels { position:relative; z-index:1; display:grid; gap:3px; }
+    .scene-labels span { overflow:hidden; color:var(--text-tertiary); font:9px/1.2 var(--font-mono); text-align:center; text-overflow:ellipsis; }
+    .scene-labels span.is-active { color:var(--accent-warm); }
+    .scene-copy { position:relative; z-index:1; margin-top:33px; padding-top:18px; border-top:1px solid var(--border); }
+    .scene-copy strong { display:block; margin-top:6px; font:600 21px/1.13 var(--font-display); letter-spacing:-.025em; }
+    .scene-copy p { margin-top:8px; color:var(--text-secondary); font-size:13px; line-height:1.5; }
+    .scene-estimate { position:relative; z-index:1; display:grid; grid-template-columns:1.1fr .9fr; gap:14px; margin-top:20px; }
+    .scene-estimate span { color:var(--text-tertiary); font:10px/1.3 var(--font-mono); letter-spacing:.08em; text-transform:uppercase; }
+    .scene-estimate strong { display:block; margin-top:5px; color:var(--accent); font:600 24px/1.05 var(--font-display); letter-spacing:-.03em; overflow-wrap:anywhere; }
 
-    .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#F5F0E8; font-family:var(--font-display); font-weight:700; font-size:15px; padding:16px 32px; border-radius:12px; text-decoration:none; transition:transform .3s, box-shadow .3s; border:none; cursor:pointer; margin-top:24px; width:100%; justify-content:center; }
-    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(26, 58, 42, 0.3); }
+    /* 2.5D project cut — editorial 5-layer spatial model (much stronger depth per brief) */
+    .cut-container { position:relative; z-index:1; margin:8px 0 4px; height:410px; perspective:980px; perspective-origin:50% 36%; }
+    .cut-model { position:absolute; inset:0; transform-style:preserve-3d; background: rgba(234,228,216,0.4); border:1px solid rgba(20,18,16,0.06); }
+    .layer-plane { position:absolute; left:4%; right:4%; height:64px; border:1px solid var(--border); background:var(--bg-card); transform-style:preserve-3d; transition:transform .28s var(--ease), background .2s, border-color .2s, opacity .2s; box-shadow:0 3px 0 rgba(20,18,16,.05), 0 12px 28px rgba(20,18,16,.09); display:flex; align-items:center; padding:0 12px; }
+    .layer-plane .layer-label { font:600 13px/1.05 var(--font-display); letter-spacing:-.01em; color:var(--text-primary); }
+    .layer-plane .layer-sub { margin-top:3px; font:10px/1 var(--font-mono); color:var(--text-tertiary); letter-spacing:.02em; }
+    .layer-plane.future { opacity:.22; background:transparent; border:1px dashed var(--border); box-shadow:none; }
+    .layer-plane.confirmed { background:#FBF8F3; border-color:#3a2f24; }
+    .layer-plane.unknown { background:transparent; border:1px dashed var(--accent-warm); opacity:.6; }
+    .layer-plane .layer-face { position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.55), transparent 35%); pointer-events:none; }
+    /* side edges for 2.5D thickness */
+    .layer-plane::after { content:''; position:absolute; top:3px; bottom:3px; right:-1px; width:7px; background:rgba(20,18,16,.12); transform:rotateY(70deg) translateX(3px); transform-origin:right; }
+    .slice-plane { position:absolute; left:2%; right:2%; height:68px; background:var(--accent-warm); color:#fff; border:1px solid #8c4a2e; transform-style:preserve-3d; z-index:12; display:flex; align-items:center; padding:0 10px; box-shadow:0 6px 22px rgba(181,98,60,.35); transition:transform .32s var(--ease), opacity .2s; pointer-events:none; }
+    .slice-plane::before { content:''; position:absolute; top:0; bottom:0; left:-6px; width:6px; background:rgba(0,0,0,.25); transform:rotateY(-65deg); }
+    .slice-plane .slice-label { font:700 11px/1 var(--font-mono); letter-spacing:.1em; text-transform:uppercase; }
+    .slice-plane.final-sweep { top:0; opacity:.92; transform:translateZ(84px) translateY(-88px) rotateX(7deg); transition:transform 620ms var(--ease),opacity 180ms; }
+    .slice-plane.final-sweep.is-sweeping { transform:translateZ(84px) translateY(378px) rotateX(7deg); }
+    .slice-plane.final-sweep.is-leaving { opacity:0; }
+    .connector { position:absolute; left:50%; width:3px; background:var(--accent-warm); opacity:.6; z-index:4; pointer-events:none; transform:translateX(-1.5px); }
+    .cut-legend { position:relative; z-index:1; margin-top:10px; display:flex; gap:12px; flex-wrap:wrap; font:10px/1 var(--font-mono); color:var(--text-tertiary); }
+    .cut-legend span { display:inline-flex; align-items:center; gap:5px; }
+    .cut-legend i { display:inline-block; width:12px; height:3px; background:var(--border); }
+    .cut-legend i.conf { background:var(--text-primary); }
+    .cut-legend i.unk { background:transparent; border:1px dashed var(--accent-warm); height:1px; }
+    .cut-legend i.act { background:var(--accent-warm); }
+    .cut-model.assembled .layer-plane.confirmed { border-color:var(--text-primary); box-shadow:0 4px 0 rgba(20,18,16,.08),0 16px 32px rgba(20,18,16,.12); }
+    .cut-model.assembled .layer-plane.future { opacity:.14; }
+    .cut-model.assembled .connector { opacity:.75; }
+    .calc-scene .cost-path, .calc-scene .scene-labels { display:none; }
+    .calc-scene.has-cut .scene-copy,
+    .calc-scene.has-cut .scene-estimate { display: none !important; }
+    @media (min-width:969px) { .mobile-result-cut { display:none; } }
 
-    /* Examples */
-    .examples { padding:60px 0; }
-    .examples-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:32px; }
-    .example-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:28px; }
-    .example-card h3 { font-family:var(--font-display); font-size:18px; font-weight:600; margin-bottom:8px; }
-    .example-card p { color:var(--text-secondary); font-size:14px; margin-bottom:12px; }
-    .example-card .price { font-family:var(--font-display); font-size:24px; font-weight:700; color:var(--accent); }
-    .example-card .period { font-size:13px; color:var(--text-tertiary); }
+    .calc-result { padding:clamp(24px,4vw,38px); border:1px solid rgba(181,98,60,.42); background:var(--bg-card); }
+    .calc-result h2 { margin-top:8px; font:600 clamp(30px,4vw,45px)/1.02 var(--font-display); letter-spacing:-.045em; outline:none; scroll-margin-top:110px; }
+    .result-outcome { margin-top:22px; padding:21px; border-left:3px solid var(--accent-warm); background:var(--warm-glow); }
+    .result-outcome span { color:var(--text-tertiary); font:10px/1.3 var(--font-mono); letter-spacing:.1em; text-transform:uppercase; }
+    .result-outcome strong { display:block; margin-top:7px; color:var(--accent); font:600 clamp(30px,5vw,53px)/1.02 var(--font-display); letter-spacing:-.04em; overflow-wrap:anywhere; }
+    .result-outcome p { max-width:680px; margin-top:9px; color:var(--text-secondary); font-size:14px; }
+    .result-route { display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
+    .result-route span { padding:6px 9px; border:1px solid var(--border); color:var(--text-tertiary); font:10px/1.2 var(--font-mono); }
+    .result-route span:not(:last-child)::after { content:'→'; margin-left:9px; color:var(--accent-warm); }
+    .result-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:20px; }
+    .result-panel { padding:18px; border:1px solid var(--border); background:rgba(255,255,255,.2); }
+    .result-panel.is-wide { grid-column:1/-1; }
+    .result-panel h3 { font:600 19px/1.2 var(--font-display); letter-spacing:-.02em; }
+    .result-panel p { margin-top:8px; color:var(--text-secondary); font-size:14px; }
+    .result-panel ul { display:grid; gap:7px; margin-top:10px; list-style:none; }
+    .result-panel li { position:relative; padding-left:15px; color:var(--text-secondary); font-size:13px; line-height:1.45; }
+    .result-panel li::before { content:''; position:absolute; left:0; top:.62em; width:5px; height:5px; border-radius:50%; background:var(--accent-warm); }
+    .result-boundary { margin-top:16px; color:var(--text-tertiary); font-size:13px; line-height:1.5; }
+    .result-service { display:inline-flex; margin-top:12px; color:var(--accent); font-size:13px; font-weight:500; text-decoration:underline; text-underline-offset:3px; }
+    .result-summary { margin-top:22px; padding-top:18px; border-top:1px solid var(--border); }
+    .result-summary h3 { font:600 19px/1.2 var(--font-display); }
+    .answer-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:11px; list-style:none; }
+    .answer-list button { display:flex; align-items:start; justify-content:space-between; gap:12px; width:100%; min-height:64px; padding:11px 12px; border:1px solid var(--border); background:transparent; color:var(--text-primary); text-align:left; cursor:pointer; }
+    .answer-list button:hover { border-color:var(--accent-warm); }
+    .answer-list b { display:block; font-size:12px; font-weight:500; }
+    .answer-list small { display:block; margin-top:4px; color:var(--text-secondary); font-size:12px; line-height:1.35; }
+    .answer-list em { color:var(--accent); font:10px/1.3 var(--font-mono); font-style:normal; white-space:nowrap; }
+    .result-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:22px; }
+    .result-action,.telegram-result { display:flex; align-items:center; justify-content:center; min-height:50px; padding:11px 14px; border:1px solid var(--accent); background:var(--accent); color:var(--bg-primary); text-align:center; text-decoration:none; font-size:14px; font-weight:500; cursor:pointer; }
+    .telegram-result { background:transparent; color:var(--accent); }
+    .result-edit { margin-top:15px; color:var(--text-secondary); }
+    .mobile-result-cut { position:relative; width:100%; margin:14px 0 6px; aspect-ratio:16/7; min-height:138px; overflow:hidden; border:1px solid var(--border); background:var(--bg-secondary); contain:layout paint; }
+    .mobile-cut-layer { position:absolute; left:8%; right:8%; height:15.5%; border:1px solid var(--border); background:var(--bg-card); }
+    .mobile-cut-layer:nth-child(1) { top:8%; }
+    .mobile-cut-layer:nth-child(2) { top:27%; }
+    .mobile-cut-layer:nth-child(3) { top:46%; }
+    .mobile-cut-layer:nth-child(4) { top:65%; }
+    .mobile-cut-layer:nth-child(5) { top:84%; height:10%; }
+    .mobile-cut-layer.is-future { border-style:dashed; background:transparent; opacity:.35; }
+    .mobile-cut-layer.is-core { border-color:var(--accent-warm); background:var(--warm-glow); }
 
-    /* Form */
-    .form-group { margin-bottom:20px; }
-    .form-group label { display:block; font-size:13px; color:var(--text-tertiary); margin-bottom:8px; font-weight:500; }
-    .form-group input, .form-group textarea {
-      width:100%; background:var(--bg-secondary); border:1px solid var(--border); border-radius:10px;
-      padding:14px 16px; color:var(--text-primary); font-family:var(--font-body); font-size:15px;
-      transition:border-color .3s; outline:none;
-    }
-    .form-group input:focus, .form-group textarea:focus { border-color:var(--accent); }
-    .form-group textarea { min-height:120px; resize:vertical; }
-    .form-note { font-size:12px; color:var(--text-tertiary); margin-top:8px; }
+    .methodology { padding:82px 0; border-top:1px solid var(--border); }
+    .methodology-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; margin-top:30px; border:1px solid var(--border); background:var(--border); }
+    .methodology-card { min-width:0; padding:24px; background:var(--bg-card); }
+    .methodology-index { color:var(--accent-warm); font:10px/1 var(--font-mono); letter-spacing:.1em; }
+    .methodology-card h3 { margin-top:14px; font:600 21px/1.12 var(--font-display); letter-spacing:-.025em; }
+    .methodology-card p { margin-top:9px; color:var(--text-secondary); font-size:14px; line-height:1.55; }
+    .methodology-callout { display:grid; grid-template-columns:minmax(180px,.55fr) minmax(0,1.45fr); gap:24px; margin-top:14px; padding:24px; border:1px solid rgba(181,98,60,.32); background:var(--warm-glow); }
+    .methodology-callout strong { font:600 22px/1.12 var(--font-display); letter-spacing:-.025em; }
+    .methodology-callout p { color:var(--text-secondary); font-size:14px; line-height:1.55; }
 
-    /* Footer */
-    footer { padding:60px 0 32px; border-top:1px solid var(--border); }
-    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; }
-    .footer-brand p { color:var(--text-tertiary); font-size:14px; margin-top:8px; }
-    .footer-links { display:flex; gap:48px; }
-    .footer-links-col h4 { font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; }
+    .examples { padding:82px 0; background:var(--bg-secondary); }
+    .section-header { max-width:730px; }
+    .section-header h2 { margin-top:9px; font:600 clamp(31px,4.5vw,49px)/1.05 var(--font-display); letter-spacing:-.04em; }
+    .section-header p { margin-top:11px; color:var(--text-secondary); font-size:15px; }
+    .examples-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:30px; }
+    .example-card { min-width:0; border:1px solid var(--border); background:var(--bg-card); }
+    .example-link { display:flex; flex-direction:column; min-height:100%; padding:24px; text-decoration:none; transition:border-color .2s,transform .2s,background .2s; }
+    .example-link:hover { background:var(--bg-card-hover); transform:translateY(-2px); }
+    .example-tag { color:var(--accent-warm); }
+    .example-card h3 { margin-top:15px; font:600 21px/1.12 var(--font-display); letter-spacing:-.025em; }
+    .example-card p { margin-top:9px; color:var(--text-secondary); font-size:13px; line-height:1.5; }
+    .example-cta { margin-top:auto; padding-top:18px; color:var(--accent); font-size:13px; font-weight:500; }
+
+    .contact { padding:92px 0; }
+    .contact .container { width:min(100% - 48px,660px); }
+    .contact-form { margin-top:28px; padding:36px; border:1px solid var(--border); background:var(--bg-card); }
+    .contact-summary { display:none; max-height:320px; overflow:auto; white-space:pre-wrap; margin-bottom:22px; padding:16px; border-left:2px solid var(--accent-warm); background:var(--warm-glow); color:var(--text-secondary); font:12px/1.55 var(--font-mono); }
+    .contact-summary.is-visible { display:block; }
+    .form-group { margin-bottom:19px; }
+    .form-group label { display:block; margin-bottom:7px; color:var(--text-tertiary); font-size:13px; font-weight:500; }
+    .form-group input,.form-group textarea { width:100%; padding:14px 15px; border:1px solid var(--border); border-radius:0; outline:0; background:var(--bg-secondary); color:var(--text-primary); font-size:15px; }
+    .form-group input:focus,.form-group textarea:focus { border-color:var(--accent); }
+    .form-group textarea { min-height:126px; resize:vertical; }
+    .consent { display:flex; align-items:flex-start; gap:9px; margin-top:4px; color:var(--text-secondary); font-size:12px; line-height:1.5; }
+    .consent input { width:18px; height:18px; margin-top:1px; accent-color:var(--accent); flex:none; }
+    .consent a { color:var(--accent); }
+    .btn-primary { display:flex; align-items:center; justify-content:center; width:100%; min-height:52px; margin-top:20px; padding:12px 20px; border:0; background:var(--accent); color:var(--bg-primary); font-weight:600; cursor:pointer; transition:background .2s,transform .2s; }
+    .btn-primary:hover { background:var(--accent-dim); transform:translateY(-1px); }
+    .btn-primary:disabled { opacity:.6; cursor:wait; }
+    .form-note { margin-top:12px; color:var(--text-tertiary); font-size:12px; }
+    .form-note a { color:var(--accent); }
+
+    footer { padding:58px 0 30px; border-top:1px solid var(--border); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:flex-start; gap:42px; }
+    .footer-brand p { margin-top:10px; color:var(--text-tertiary); font-size:13px; }
+    .footer-links { display:flex; gap:44px; }
+    .footer-links-col h4 { margin-bottom:13px; font:600 14px/1.2 var(--font-display); }
     .footer-links-col ul { list-style:none; }
-    .footer-links-col li { margin-bottom:10px; }
-    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:14px; transition:color .3s; }
+    .footer-links-col li { margin-bottom:8px; }
+    .footer-links-col a { color:var(--text-secondary); text-decoration:none; font-size:13px; }
     .footer-links-col a:hover { color:var(--accent); }
-    .footer-bottom { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-    .footer-bottom p { color:var(--text-tertiary); font-size:13px; }
-    .social-links { display:flex; gap:16px; }
-    .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
-    .social-links a:hover { border-color:var(--accent); color:var(--accent); }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:43px; padding-top:22px; border-top:1px solid var(--border); }
+    .footer-bottom p,.legal-links a { color:var(--text-tertiary); font-size:12px; }
+    .legal-links { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+    .legal-links a { text-decoration:none; }
+    .social-links { display:flex; gap:10px; }
+    .social-links a { display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--border); color:var(--text-secondary); text-decoration:none; font:11px/1 var(--font-mono); }
 
-    /* Reveal */
-    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .form-toast-stack { position:fixed; right:clamp(16px,4vw,34px); bottom:clamp(16px,4vw,34px); z-index:10050; width:min(360px,calc(100vw - 32px)); pointer-events:none; }
+    .form-toast { display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:center; padding:14px 16px; border:1px solid var(--border); background:rgba(251,248,243,.97); box-shadow:0 18px 55px rgba(20,18,16,.14); opacity:0; transform:translateY(12px); transition:opacity .25s,transform .25s; }
+    .form-toast.is-visible { opacity:1; transform:none; }
+    .form-toast-icon { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--accent-glow); color:var(--accent); }
+    .form-toast-icon svg { width:24px; height:24px; }
+    .form-toast.is-error .form-toast-icon { background:rgba(168,68,59,.1); color:var(--error); }
+    .form-toast-title { display:block; font:600 17px/1.15 var(--font-display); }
+    .form-toast-text { display:block; margin-top:3px; color:var(--text-secondary); font-size:13px; line-height:1.4; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .55s var(--ease),transform .55s var(--ease); }
     .reveal.visible { opacity:1; transform:none; }
 
-    /* Responsive */
     @media (max-width:968px) {
       .nav-links { display:none; }
       .menu-btn { display:block; }
-      .examples-grid { grid-template-columns:1fr; }
+      .calculator-grid { grid-template-columns:1fr; }
+      .calc-scene { display:none; }
+      .direction-stack { padding-inline:0; perspective:none; transform-style:flat; }
+      .direction-stack::before,
+      .direction-stack .direction-card::before,
+      .direction-stack .direction-card::after { display:none; }
+      .direction-stack .direction-card:nth-child(n),
+      .direction-stack .direction-card:hover,
+      .direction-stack .direction-card:focus-visible { width:calc(100% - 18px); transform:none; box-shadow:0 2px 0 rgba(20,18,16,.06); }
+      .direction-stack .direction-card:nth-child(odd) { margin-right:18px; }
+      .direction-stack .direction-card:nth-child(even) { margin-left:18px; }
+      .calc-progress-mobile { display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px solid var(--border); color:var(--text-secondary); font-size:12px; }
+      .calc-progress-mobile span:first-child { color:var(--accent-warm); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.07em; }
+      .methodology-grid,.methodology-callout { grid-template-columns:1fr; }
       .footer-inner { flex-direction:column; }
-      .footer-links { flex-wrap:wrap; }
+      .footer-links { width:100%; justify-content:space-between; }
+      .footer-bottom { align-items:flex-start; flex-direction:column; }
     }
     @media (max-width:640px) {
-      .hero { padding:120px 0 40px; }
-      .calc-group { padding:20px; }
-      .calc-result { padding:32px 24px; position:static; }
-      .calc-options { gap:8px; }
-      .calc-option span { padding:8px 14px; font-size:13px; }
+      .container,.contact .container { width:min(100% - 36px,1120px); }
+      .hero { padding:108px 0 28px; }
+      .hero h1 { font-size:clamp(37px,12vw,51px); }
+      .hero-subtitle { font-size:15px; }
+      .calculator { padding-top:18px; }
+      .estimator { min-height:520px; }
+      .direction-grid,.calc-options,.result-grid,.answer-list,.result-actions { grid-template-columns:1fr; }
+      .direction-stack .direction-card { min-height:64px; padding:12px 14px; }
+      .direction-stack .direction-card:nth-child(n),
+      .direction-stack .direction-card:hover,
+      .direction-stack .direction-card:focus-visible { width:100%; margin-inline:0; transform:none; box-shadow:none; }
+      .direction-card { min-height:0; }
+      .calc-group { padding:19px 17px; }
+      .estimator-head { align-items:flex-start; }
+      .question-actions { flex-direction:column-reverse; }
+      .question-actions button,.question-actions .secondary { width:100%; margin:0; }
+      .calc-result { padding:23px 17px; }
+      .result-outcome { padding:18px 15px; }
+      .result-route span:not(:last-child)::after { content:''; margin:0; }
+      .methodology { padding:66px 0; }
+      .methodology-card,.methodology-callout { padding:20px; }
+      .examples { padding:66px 0; }
+      .contact { padding:72px 0; }
+      .contact-form { padding:24px 18px; }
+      .footer-links { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+      .form-toast-stack { left:16px; right:16px; bottom:16px; width:auto; }
     }
     @media (prefers-reduced-motion:reduce) {
-      .reveal { opacity:1; transform:none; transition:none; }
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+      .reveal { opacity:1; transform:none; }
+      .layer-plane, .slice-plane, .cut-model { transition:none !important; transform:none !important; }
+      .direction-stack { perspective:none; transform-style:flat; }
+      .direction-stack::before,
+      .direction-stack .direction-card::before,
+      .direction-stack .direction-card::after { display:none; }
+      .direction-stack .direction-card { transform:none !important; box-shadow:none !important; }
     }
-
-    .form-toast-stack { position:fixed; right:clamp(16px,4vw,34px); bottom:clamp(16px,4vw,34px); z-index:10050; display:grid; gap:10px; width:min(360px, calc(100vw - 32px)); pointer-events:none; }
-    .form-toast { display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:center; padding:14px 16px; border:1px solid var(--border); border-radius:16px; background:rgba(251,248,243,0.96); box-shadow:0 18px 55px rgba(20,18,16,0.14); color:var(--text-primary); opacity:0; transform:translateY(12px); transition:opacity .28s ease, transform .28s ease; }
-    .form-toast.is-visible { opacity:1; transform:none; }
-    .form-toast-icon { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; color:var(--accent); background:var(--accent-glow); }
-    .form-toast-icon svg { width:24px; height:24px; }
-    .form-toast.is-error .form-toast-icon { color:var(--color-error,#A8443B); background:rgba(168,68,59,0.10); }
-    .form-toast-title { font-family:var(--font-display); font-size:17px; font-weight:700; line-height:1.15; }
-    .form-toast-text { margin-top:3px; color:var(--text-secondary); font-size:13px; line-height:1.45; }
-    @media(max-width:640px){ .form-toast-stack { left:16px; right:16px; bottom:16px; width:auto; } }
+    @media (min-width:969px) and (pointer:coarse) {
+      .direction-stack { perspective:none; transform-style:flat; }
+      .direction-stack .direction-card,
+      .direction-stack .direction-card:hover,
+      .direction-stack .direction-card:focus-visible { transform:none; }
+    }
   </style>
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
+  <script>
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
-    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+    ym(110282088,'init',{ssr:true,webvisor:false,clickmap:true,accurateTrackBounce:true,trackLinks:true});
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
+  <a class="skip-link" href="#estimator">К оценке проекта</a>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+
   <nav id="nav" aria-label="Главная навигация">
     <div class="container nav-inner">
-      <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg><b>I. Radzhabov</b></a>
+      <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg>
+        <b>I. Radzhabov</b>
+      </a>
       <ul class="nav-links">
         <li><a href="/">Главная</a></li>
-        <li><a href="/services/landing.html">Услуги</a></li>
+        <li><a href="/#services">Услуги</a></li>
         <li><a href="/cases/">Кейсы</a></li>
-        <li><a href="/tools/kalkulyator-lendinga.html" class="active">Калькулятор</a></li>
+        <li><a href="/tools/kalkulyator-lendinga.html" class="active">Оценка проекта</a></li>
         <li><a href="/#contact">Контакты</a></li>
       </ul>
-      <button class="menu-btn" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false">
+      <button class="menu-btn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div id="mobile-menu">
-    <button class="close-menu" onclick="toggleMenu()" aria-label="Закрыть меню">×</button>
-    <a href="/" onclick="toggleMenu()">Главная</a>
-    <a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
-    <a href="/cases/" onclick="toggleMenu()">Кейсы</a>
-    <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Калькулятор</a>
-    <a href="/#contact" onclick="toggleMenu()">Контакты</a>
+  <div id="mobile-menu" aria-hidden="true">
+    <button class="close-menu" type="button" aria-label="Закрыть меню">×</button>
+    <a href="/">Главная</a>
+    <a href="/#services">Услуги</a>
+    <a href="/cases/">Кейсы</a>
+    <a href="/tools/kalkulyator-lendinga.html">Оценка проекта</a>
+    <a href="/#contact">Контакты</a>
   </div>
 
   <header class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
-      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <span style="color:var(--text-primary);">Калькулятор стоимости лендинга</span></nav>
-      <span class="hero-label reveal">Инструмент</span>
-      <h1 class="reveal">Калькулятор стоимости <span class="accent">лендинга</span></h1>
-      <p class="hero-subtitle reveal">Ответьте на 7 вопросов — получите примерную стоимость и срок. Без регистрации и звонков.</p>
+      <nav class="crumbs" aria-label="Хлебные крошки"><a href="/">Главная</a> / <span>Оценка проекта</span></nav>
+      <span class="hero-label reveal">Оценка проекта</span>
+      <h1 class="reveal">Ответьте на несколько вопросов — и станет ясно, <span class="accent">что делать дальше.</span></h1>
+      <p class="hero-subtitle reveal">Для обычного лендинга покажу примерную цену и срок. Для сайта посложнее, Telegram, AI и 1С подскажу первый этап и то, что нужно уточнить.</p>
     </div>
   </header>
 
-  <section class="calculator">
-    <div class="container">
-      <form id="calcForm" class="calc-form">
-        <div class="calc-group reveal">
-          <label class="calc-group-label">1. Тип сайта</label>
-          <div class="calc-options">
-            <label class="calc-option"><input type="radio" name="type" value="1" checked><span>Лендинг (1 страница)</span></label>
-            <label class="calc-option"><input type="radio" name="type" value="1.5"><span>Многостраничник</span></label>
+  <main>
+    <section class="calculator" aria-labelledby="calculatorTitle">
+      <div class="container">
+        <div class="calculator-grid">
+          <div class="calc-panel">
+            <div class="calc-intro">
+              <div class="calc-intro-kicker">Короткий разбор</div>
+              <p id="calculatorTitle">Выберите задачу. Я задам несколько коротких вопросов и покажу, что делать дальше.</p>
+            </div>
+            <div class="calc-progress-mobile" aria-hidden="true"><span id="mobileStep">Выбор направления</span><span id="mobileImpact">Шаг 0</span></div>
+            <div id="estimator" class="estimator" tabindex="-1"></div>
+            <p id="estimatorStatus" class="sr-only" role="status" aria-live="polite"></p>
+            <noscript><p style="margin-top:18px;color:var(--text-secondary);">Без JavaScript вопросы не появятся. Но задачу можно описать в форме ниже или отправить в Telegram.</p></noscript>
           </div>
-        </div>
-        <div class="calc-group reveal">
-          <label class="calc-group-label">2. Есть ли готовый дизайн?</label>
-          <div class="calc-options">
-            <label class="calc-option"><input type="radio" name="design" value="1" checked><span>Да, макет в Figma</span></label>
-            <label class="calc-option"><input type="radio" name="design" value="1.3"><span>Нет, нужна структура</span></label>
-          </div>
-        </div>
-        <div class="calc-group reveal">
-          <label class="calc-group-label">3. Сколько блоков/экранов?</label>
-          <div class="calc-options">
-            <label class="calc-option"><input type="radio" name="blocks" value="0.8"><span>1–3</span></label>
-            <label class="calc-option"><input type="radio" name="blocks" value="1" checked><span>4–7</span></label>
-            <label class="calc-option"><input type="radio" name="blocks" value="1.4"><span>8–12</span></label>
-            <label class="calc-option"><input type="radio" name="blocks" value="1.8"><span>13+</span></label>
-          </div>
-        </div>
-        <div class="calc-group reveal">
-          <label class="calc-group-label">4. Формы и интеграции</label>
-          <div class="calc-options">
-            <label class="calc-option"><input type="radio" name="forms" value="0.9"><span>Нет форм</span></label>
-            <label class="calc-option"><input type="radio" name="forms" value="1" checked><span>Простая форма (email)</span></label>
-            <label class="calc-option"><input type="radio" name="forms" value="1.25"><span>Сложная (Telegram, CRM)</span></label>
-          </div>
-        </div>
-        <div class="calc-group reveal">
-          <label class="calc-group-label">5. Тексты</label>
-          <div class="calc-options">
-            <label class="calc-option"><input type="radio" name="texts" value="1" checked><span>Готовы</span></label>
-            <label class="calc-option"><input type="radio" name="texts" value="1.15"><span>Нужно написать / отредактировать</span></label>
-          </div>
-        </div>
-        <div class="calc-group reveal">
-          <label class="calc-group-label">6. Анимации</label>
-          <div class="calc-options">
-            <label class="calc-option"><input type="radio" name="animations" value="0.9"><span>Минимум (появления)</span></label>
-            <label class="calc-option"><input type="radio" name="animations" value="1" checked><span>Средние (hover, параллакс)</span></label>
-            <label class="calc-option"><input type="radio" name="animations" value="1.3"><span>Сложные (3D, canvas)</span></label>
-          </div>
-        </div>
-        <div class="calc-group reveal">
-          <label class="calc-group-label">7. Срочность</label>
-          <div class="calc-options">
-            <label class="calc-option"><input type="radio" name="urgency" value="1" checked><span>Стандарт (7–14 дней)</span></label>
-            <label class="calc-option"><input type="radio" name="urgency" value="1.3"><span>Срочно (3–5 дней, +30%)</span></label>
-          </div>
-        </div>
-      </form>
 
-      <div class="calc-result reveal">
-        <div class="calc-result-label">Примерная стоимость</div>
-        <div class="calc-result-price" id="resultPrice">25 000 ₽</div>
-        <div class="calc-result-period" id="resultPeriod">Срок: 7–10 дней</div>
-        <div class="calc-result-breakdown" id="resultBreakdown">
-          <p>Базовая ставка <span>25 000 ₽</span></p>
-          <p>Множители <span>× 1.00</span></p>
+          <aside class="calc-scene" aria-hidden="true">
+            <div class="scene-heading">
+              <div><div class="scene-kicker">Ваш проект</div><strong id="sceneTitle">Выберите задачу</strong></div>
+              <span class="scene-step" id="sceneStep">00</span>
+            </div>
+            <svg class="cost-path" viewBox="0 0 440 230" aria-hidden="true" focusable="false"><g id="costPaths"></g><g id="costNodes"></g></svg>
+            <div class="scene-labels" id="sceneLabels" aria-hidden="true"></div>
+            <div class="scene-copy">
+              <div class="scene-kicker">Текущий шаг</div>
+              <strong id="sceneChoice">Что хотите сделать</strong>
+              <p id="sceneImpact">Ответы помогут понять, что стоит сделать первым.</p>
+            </div>
+            <div class="scene-estimate">
+              <div><span>Что получите</span><strong id="scenePrice">После ответов</strong></div>
+              <div><span>Статус</span><strong id="scenePeriod">Не начато</strong></div>
+            </div>
+          </aside>
         </div>
-        <a href="#contact" class="btn-primary">Заказать по этой цене</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="examples" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Примеры</span>
-        <h2>Типовые варианты</h2>
-        <p>Реальные расчёты для популярных сценариев</p>
-      </div>
-      <div class="examples-grid">
-        <div class="example-card reveal">
-          <h3>Простой лендинг</h3>
-          <p>4–5 экранов, готовый дизайн, простая форма, минимальные анимации</p>
-          <div class="price">25 000 ₽</div>
-          <div class="period">7 дней</div>
+    <section class="methodology" aria-labelledby="methodologyTitle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Как это работает</span>
+          <h2 id="methodologyTitle">Когда есть ориентир по цене, а когда нужен разбор</h2>
+          <p>Для обычного лендинга достаточно нескольких ответов, чтобы назвать ориентир. Если есть магазин, Telegram, AI, 1С или сложные подключения, сначала нужно посмотреть задачу.</p>
         </div>
-        <div class="example-card reveal">
-          <h3>Бизнес-лендинг</h3>
-          <p>6–8 экранов, структура от меня, форма + Telegram, средние анимации</p>
-          <div class="price">45 000 ₽</div>
-          <div class="period">12 дней</div>
+        <div class="methodology-grid">
+          <article class="methodology-card">
+            <span class="methodology-index">01</span>
+            <h3>Что влияет на цену</h3>
+            <p>Количество страниц и блоков, готовность макета и текстов, форма заявки, подключения, анимация и сроки.</p>
+          </article>
+          <article class="methodology-card">
+            <span class="methodology-index">02</span>
+            <h3>Почему это только ориентир</h3>
+            <p>Без макета, текстов и доступов нельзя назвать точную сумму. После просмотра я подтвержу цену и срок.</p>
+          </article>
+          <article class="methodology-card">
+            <span class="methodology-index">03</span>
+            <h3>Когда сначала нужен разбор</h3>
+            <p>Если нужен сайт с несколькими страницами, магазин, быстрый запуск, корзина, оплата или сложное подключение.</p>
+          </article>
         </div>
-        <div class="example-card reveal">
-          <h3>Премиум-лендинг</h3>
-          <p>10+ экранов, сложные анимации, интеграции, тексты от меня</p>
-          <div class="price">75 000 ₽</div>
-          <div class="period">18 дней</div>
-        </div>
-        <div class="example-card reveal">
-          <h3>Срочный запуск</h3>
-          <p>Базовый лендинг + ускоренные сроки. Всё то же самое, но быстрее.</p>
-          <div class="price">32 500 ₽</div>
-          <div class="period">3–5 дней</div>
+        <div class="methodology-callout">
+          <strong>Для сложной задачи — сначала разбор</strong>
+          <p>У AI-ассистента, Telegram-бота, Mini App, 1С и Битрикса цена зависит от данных, доступов и подключений. Калькулятор соберёт ответы и покажет, что нужно проверить перед оценкой.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container" style="max-width:600px;">
-      <div class="section-header reveal">
-        <span class="section-label">Контакты</span>
-        <h2>Заказать лендинг</h2>
-        <p>Укажите рассчитанную стоимость в сообщении — я подтвержу и уточню детали.</p>
+    <section class="examples" aria-labelledby="examplesTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Примеры</span>
+          <h2 id="examplesTitle">Как это выглядит в реальных проектах</h2>
+          <p id="examplesIntro">Три проекта и только та работа, которую я действительно делал.</p>
+        </div>
+        <div class="examples-grid" id="examplesGrid">
+          <article class="example-card"><a class="example-link" href="/cases/baby-massage.html"><span class="example-tag">Сайт</span><h3>«Кроха и Я»</h3><p>Лендинг частного специалиста: структура, адаптив, форма записи и запуск.</p><span class="example-cta">Смотреть кейс →</span></a></article>
+          <article class="example-card"><a class="example-link" href="/cases/decorapp.html"><span class="example-tag">Telegram</span><h3>GlowDecor / DecorApp</h3><p>Mini App с каталогом, категориями, корзиной и поддержкой.</p><span class="example-cta">Смотреть кейс →</span></a></article>
+          <article class="example-card"><a class="example-link" href="/cases/dag-sport.html"><span class="example-tag">1С + AI</span><h3>dag-sport</h3><p>Моя часть — интеграция готового сайта с 1С УТ и AI-консультант; сам сайт разрабатывал не я.</p><span class="example-cta">Смотреть кейс →</span></a></article>
+        </div>
       </div>
-      <form id="contactForm" class="reveal" style="background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:40px;">
-        <div class="form-group">
-          <label for="name">Имя</label>
-          <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Можно обсудить</span>
+          <h2>Отправьте результат — я посмотрю задачу</h2>
+          <p>Добавьте ссылки и пару слов о задаче. После просмотра подтвержу стоимость и срок.</p>
         </div>
-        <div class="form-group">
-          <label for="email">Email или Telegram</label>
-          <input type="text" id="email" name="email" placeholder="example@mail.ru или @username" required>
-        </div>
-        <div class="form-group">
-          <label for="message">О проекте</label>
-          <textarea id="message" name="message" placeholder="Опишите проект. Укажите примерную стоимость из калькулятора." required></textarea>
-        </div>
-        <label class="consent" style="display:block;margin:16px 0 0;font-size:12px;line-height:1.5;color:var(--text-secondary);"><input type="checkbox" required style="margin-right:8px;vertical-align:middle;"> Я согласен на <a href="/legal/privacy.html" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">обработку персональных данных</a></label>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
-          <span>Отправить заявку</span>
-        </button>
-        <p class="form-note">Или напишите напрямую: <a href="mailto:1cworkac@mail.ru" style="color:var(--accent);">1cworkac@mail.ru</a> / <a href="https://t.me/rdvigm" target="_blank" rel="noopener" style="color:var(--accent);">@rdvigm</a></p>
-      </form>
-    </div>
-  </section>
+        <form id="contactForm" class="contact-form reveal" action="https://formspree.io/f/mkolvvep" method="POST">
+          <div class="contact-summary" id="contactSummary" aria-live="polite"></div>
+          <input type="hidden" name="source_block" value="project_estimator">
+          <input type="hidden" name="project_direction" id="projectDirection">
+          <input type="hidden" name="project_result" id="projectResult">
+          <input type="hidden" name="project_mvp" id="projectMvp">
+          <input type="hidden" name="project_summary" id="projectSummary">
+          <input type="hidden" name="calculator_price" id="calculatorPrice">
+          <input type="hidden" name="calculator_period" id="calculatorPeriod">
+          <input type="hidden" name="calculator_choices" id="calculatorChoices">
+          <div class="form-group">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email или Telegram</label>
+            <input type="text" id="email" name="email" placeholder="example@mail.ru или @username" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">О проекте</label>
+            <textarea id="message" name="message" placeholder="Коротко опишите задачу. Можно добавить ссылки." required></textarea>
+          </div>
+          <label class="consent"><input type="checkbox" name="consent" required> <span>Я согласен на <a href="/legal/privacy.html" target="_blank" rel="noopener">обработку персональных данных</a></span></label>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="btn-primary" id="submitBtn">Отправить на оценку</button>
+          <p class="form-note">Или напрямую: <a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a> / <a href="https://t.me/rdvigm" target="_blank" rel="noopener">@rdvigm</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg><b>I. Radzhabov</b></a>
-          <p>Соло-разработчик для частных специалистов<br>и малого бизнеса</p>
+          <a href="/" class="nav-logo" aria-label="I. Radzhabov — на главную">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="#141210" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="#141210"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="#141210"/></svg>
+            <b>I. Radzhabov</b>
+          </a>
+          <p>Сайты, AI-ассистенты и 1С<br>для малого бизнеса</p>
         </div>
         <div class="footer-links">
-          <div class="footer-links-col">
-            <h4>Навигация</h4>
-            <ul>
-              <li><a href="/">Главная</a></li>
-              <li><a href="/services/landing.html">Услуги</a></li>
-              <li><a href="/cases/">Кейсы</a></li>
-              <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Ресурсы</h4>
-            <ul>
-              <li><a href="/niches/sajt-dlya-massazhista.html">Сайт для массажиста</a></li>
-              <li><a href="/niches/sajt-dlya-avtoservisa.html">Сайт для автосервиса</a></li>
-              <li><a href="/#faq">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Контакты</h4>
-            <ul>
-              <li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
-              <li><a href="https://t.me/rdvigm" target="_blank" rel="noopener">Telegram</a></li>
-              <li><a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener">GitHub</a></li>
-            </ul>
-          </div>
+          <div class="footer-links-col"><h4>Навигация</h4><ul><li><a href="/">Главная</a></li><li><a href="/#services">Услуги</a></li><li><a href="/cases/">Кейсы</a></li><li><a href="/tools/kalkulyator-lendinga.html">Оценка проекта</a></li></ul></div>
+          <div class="footer-links-col"><h4>Услуги</h4><ul><li><a href="/services/landing.html">Сайты</a></li><li><a href="/services/ai-assistant.html">AI-ассистенты</a></li><li><a href="/services/nastrojka-1c.html">Настройка 1С</a></li><li><a href="/services/podderzhka-bitrix.html">Поддержка Битрикс</a></li></ul></div>
+          <div class="footer-links-col"><h4>Контакты</h4><ul><li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li><li><a href="https://t.me/rdvigm" target="_blank" rel="noopener">Telegram</a></li><li><a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener">GitHub</a></li></ul></div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Ибрагим Раджабов. Все права защищены.</p>
-        <div class="legal-links" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;"><a href="/legal/privacy.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Политика конфиденциальности</a><span style="color:var(--text-tertiary);">·</span><a href="/legal/soglasie.html" style="color:var(--text-tertiary);text-decoration:none;font-size:12px;font-family:var(--font-mono);">Согласие на обработку ПД</a></div>
-        <div class="social-links">
-          <a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-          <a href="https://t.me/rdvigm" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
-        </div>
+        <div class="legal-links"><a href="/legal/privacy.html">Политика конфиденциальности</a><span>·</span><a href="/legal/soglasie.html">Согласие на обработку ПД</a></div>
+        <div class="social-links"><a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener" aria-label="GitHub">GH</a><a href="https://t.me/rdvigm" target="_blank" rel="noopener" aria-label="Telegram">TG</a></div>
       </div>
     </div>
   </footer>
 
   <script>
-    (function() {
+    (function () {
       'use strict';
 
-      // Nav
+      var COUNTER_ID = 110282088;
+      var BASE = 25000;
       var nav = document.getElementById('nav');
-      window.addEventListener('scroll', function() {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
+      var menu = document.getElementById('mobile-menu');
+      var menuButton = document.querySelector('.menu-btn');
+      var closeMenuButton = document.querySelector('.close-menu');
+      var estimator = document.getElementById('estimator');
+      var status = document.getElementById('estimatorStatus');
+      var sceneLabels = document.getElementById('sceneLabels');
+      var sceneTitle = document.getElementById('sceneTitle');
+      var sceneStep = document.getElementById('sceneStep');
+      var sceneChoice = document.getElementById('sceneChoice');
+      var sceneImpact = document.getElementById('sceneImpact');
+      var scenePrice = document.getElementById('scenePrice');
+      var scenePeriod = document.getElementById('scenePeriod');
+      var mobileStep = document.getElementById('mobileStep');
+      var mobileImpact = document.getElementById('mobileImpact');
+      var pathGroup = document.getElementById('costPaths');
+      var nodeGroup = document.getElementById('costNodes');
+      var contactSummary = document.getElementById('contactSummary');
+      var form = document.getElementById('contactForm');
+      var submitButton = document.getElementById('submitBtn');
+      var state = { direction:'', step:0, answers:{}, resultValid:false, started:false };
+      var sceneAnimationTimers = [];
+      var sceneAnimationFrame = 0;
+      var ENHANCED_MQL = window.matchMedia('(min-width: 969px) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+      var isEnhanced = ENHANCED_MQL.matches;
+      ENHANCED_MQL.addEventListener('change', function (ev) {
+        isEnhanced = ev.matches;
+        cancelContourAssembly();
+        if (!state.direction) return;
+        var resultOpen = state.resultValid && !!document.getElementById('resultTitle');
+        renderProjectCut(deriveSceneModel(resultOpen));
+        if (resultOpen && isEnhanced) scheduleSceneTimer(triggerContourAssembly,60);
       });
 
-      // Mobile menu
-      window.toggleMenu = function() {
-        var menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('active');
-        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      function reach(name) {
+        try { if (typeof window.ym === 'function') window.ym(COUNTER_ID,'reachGoal',name); } catch (error) {}
+      }
+
+      function setMenu(open) {
+        menu.classList.toggle('active',open);
+        menu.setAttribute('aria-hidden',String(!open));
+        menuButton.setAttribute('aria-expanded',String(open));
+        menuButton.setAttribute('aria-label',open ? 'Закрыть меню' : 'Открыть меню');
+        document.body.style.overflow = open ? 'hidden' : '';
+        if (open) closeMenuButton.focus();
+      }
+
+      window.addEventListener('scroll',function () { nav.classList.toggle('scrolled',window.scrollY > 40); },{ passive:true });
+      menuButton.addEventListener('click',function () { setMenu(!menu.classList.contains('active')); });
+      closeMenuButton.addEventListener('click',function () { setMenu(false); menuButton.focus(); });
+      menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click',function () { setMenu(false); }); });
+      document.addEventListener('keydown',function (event) { if (event.key === 'Escape' && menu.classList.contains('active')) { setMenu(false); menuButton.focus(); } });
+
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        },{ threshold:.08 });
+        reveals.forEach(function (element) { observer.observe(element); });
+      } else {
+        reveals.forEach(function (element) { element.classList.add('visible'); });
+      }
+
+      function escapeHtml(value) {
+        var node = document.createElement('div');
+        node.textContent = value == null ? '' : String(value);
+        return node.innerHTML;
+      }
+
+      function q(id,label,title,options,config) {
+        var question = { id:id,label:label,title:title,options:options,type:'radio',note:'',when:null,exclusive:'',impact:null };
+        config = config || {};
+        Object.keys(config).forEach(function (key) { question[key] = config[key]; });
+        return question;
+      }
+
+      function branchAnswers() {
+        if (!state.answers[state.direction]) state.answers[state.direction] = {};
+        return state.answers[state.direction];
+      }
+
+      function values(id) {
+        var value = branchAnswers()[id];
+        return Array.isArray(value) ? value : value ? [value] : [];
+      }
+
+      function has(id,value) { return values(id).indexOf(value) !== -1; }
+      function first(id) { return values(id)[0] || ''; }
+      function joined(id) { return values(id).join(', '); }
+      function lower(value) { return String(value || '').toLowerCase(); }
+
+      var flows = {
+        site:{
+          name:'Сайт или интернет-магазин',
+          short:'Сайт',
+          questions:[
+            q('format','Формат','Какой сайт нужен?',['Лендинг','Многостраничный сайт','Интернет-магазин'],{
+              note:'Примерную цену здесь можно посчитать только для обычного лендинга. Сайт с несколькими страницами и магазин сначала нужно посмотреть.',
+              impact:{
+                'Лендинг':'Все основные шаги клиента помещаются на одной странице.',
+                'Многостраничный сайт':'Нужно понять, какие страницы нужны и как человек будет между ними переходить.',
+                'Интернет-магазин':'Сначала нужно разобрать каталог, корзину, оплату и обмен данными.'
+              }
+            }),
+            q('design','Дизайн','Что уже есть для сайта?',['Готовый макет','Есть референсы — структуру нужно собрать','Нужны структура и дизайн'],{
+              note:'С готовым макетом можно быстрее начать вёрстку. Референсы помогают выбрать стиль, но структуру всё равно нужно продумать.',
+              impact:{
+                'Готовый макет':'Можно сразу проверить макет и перейти к адаптивной вёрстке.',
+                'Есть референсы — структуру нужно собрать':'Сначала соберём структуру страницы и выберем визуальное направление.',
+                'Нужны структура и дизайн':'Начнём со структуры, прототипа и дизайна.'
+              }
+            }),
+            q('volume','Объём','Какой объём работы планируется?',function () {
+              if (has('format','Лендинг')) return ['1–3 блока','4–7 блоков','8–12 блоков','13 и более'];
+              if (has('format','Многостраничный сайт')) return ['2–5 страниц','6–10 страниц','Больше 10 страниц','Пока неизвестно'];
+              return ['Небольшой каталог','Каталог с категориями','Большой каталог или много фильтров','Пока неизвестно'];
+            },{
+              note:'Для лендинга считаем блоки. Для сайта и магазина объём помогает понять размер работы, но цена появится только после просмотра задачи.',
+              impact:function (selected) {
+                if (!selected.length) return 'Чем больше страниц или блоков, тем больше времени уйдёт на дизайн, вёрстку и проверку.';
+                if (has('format','Лендинг')) return 'От количества блоков зависит объём дизайна, вёрстки и адаптации.';
+                return 'Для такого сайта не показываю цену автоматически — сначала нужно уточнить объём.';
+              }
+            }),
+            q('lead','Заявка','Что должно произойти после нажатия кнопки?',['Без формы','Простая форма на email','Уведомление в Telegram','Передача в CRM','Корзина или оплата'],{
+              note:'Форма на email проще. Telegram, CRM, корзина и оплата требуют дополнительной настройки и проверки.',
+              impact:{
+                'Без формы':'Главное — понятно показать предложение и привести человека к прямому контакту.',
+                'Простая форма на email':'Нужно настроить форму, согласие и сообщения об успешной или неудачной отправке.',
+                'Уведомление в Telegram':'Форма отправит уведомление в Telegram; доставку проверим на тестовой заявке.',
+                'Передача в CRM':'Нужно определить поля, получить тестовый доступ к CRM и отправить пробную заявку.',
+                'Корзина или оплата':'Корзину и оплату нужно разбирать отдельно — это уже не обычная форма.'
+              }
+            }),
+            q('texts','Тексты','Готовы ли тексты?',['Готовы','Нужно отредактировать или подготовить'],{
+              note:'Если материалов нет, сначала соберём факты и подготовим тексты.',
+              impact:{
+                'Готовы':'Проверю, удобно ли читать тексты и хорошо ли они выглядят на телефоне.',
+                'Нужно отредактировать или подготовить':'До дизайна соберём факты и разложим текст по будущим блокам.'
+              }
+            }),
+            q('motion','Анимация','Сколько анимации нужно?',['Минимум — появления','Средние интеракции','Сложная анимация'],{
+              note:'Чем сложнее анимация, тем больше времени нужно на разработку и проверку — особенно на телефонах и в режиме без анимации.',
+              impact:{
+                'Минимум — появления':'Добавим спокойные появления и переходы без тяжёлых эффектов.',
+                'Средние интеракции':'Понадобятся дополнительные интерактивные состояния и тесты.',
+                'Сложная анимация':'Анимацию нужно отдельно оптимизировать и упростить для слабых устройств.'
+              }
+            }),
+            q('deadline','Срок','Насколько срочно нужен запуск?',['Обычный график','Нужно быстрее — обсудить отдельно'],{
+              note:'Если нужен быстрый запуск, сначала посмотрю объём, материалы и свободные даты. Срок не обещаю вслепую.',
+              impact:{
+                'Обычный график':'Можно спокойно продумать страницу, собрать её и всё проверить.',
+                'Нужно быстрее — обсудить отдельно':'Сначала отделим обязательное к запуску от того, что можно сделать позже.'
+              }
+            })
+          ]
+        },
+        telegram:{
+          name:'Telegram-бот или Mini App',
+          short:'Telegram',
+          questions:[
+            q('goal','Задача','Что нужно сделать в Telegram?',['Принимать заявки','Отвечать на вопросы','Показывать каталог','Оформлять заказ','Давать личный кабинет','Решать внутреннюю задачу бизнеса'],{ type:'checkbox',note:'Можно выбрать несколько вариантов. В конце покажу, с чего лучше начать.' }),
+            q('ui','Интерфейс','Какой формат вам ближе?',['Предпочитаю обычный бот','Предпочитаю Mini App','Нужна рекомендация'],{ note:'Для каталога, корзины и личного кабинета обычно удобнее Mini App. Для заявок и уведомлений часто хватает обычного бота.' }),
+            q('catalog','Каталог','Нужны ли каталог и корзина?',['Нет','Только каталог','Каталог и корзина'],{ note:'Нужно понять, где хранятся товары и как они будут обновляться.' }),
+            q('payment','Оплата','Нужно ли принимать оплату?',['Нет','Да','Пока неизвестно'],{ when:function () { return !has('catalog','Нет') || has('goal','Оформлять заказ'); },note:'Сначала нужно решить, как принимать платёж, что показывать после него и как менять статус заказа.' }),
+            q('data','Данные','Откуда брать данные?',['Вручную','Таблица','CMS','API','1С'],{ note:'От ответа зависит, будете вы обновлять каталог вручную или он будет получать данные из другой системы.' }),
+            q('delivery','Передача','Куда отправлять заявку или заказ?',['Telegram владельца','Email','CRM','1С'],{ note:'Важно заранее понять, кому и куда должна прийти заявка или заказ.' }),
+            q('content','Готовность','Готовы ли структура и тексты?',['Да','Частично','Нет, нужно определить'],{ note:'Если пока ничего не описано, сначала соберём список экранов, кнопок и возможных ошибок.' })
+          ]
+        },
+        ai:{
+          name:'AI-ассистент',
+          short:'AI',
+          questions:[
+            q('channel','Канал','Где AI будет отвечать?',['Сайт','Telegram','WhatsApp','Несколько каналов'],{ note:'Лучше сначала запустить AI в одном канале, проверить ответы, а потом подключать остальные.' }),
+            q('requests','Обращения','На какие вопросы AI должен отвечать?',['Частые вопросы','Первичный запрос','Подбор услуги или товара','Несколько типов обращений'],{ type:'checkbox',note:'Сразу определим, на какие вопросы AI отвечает сам, а где нужен сотрудник.' }),
+            q('knowledge','Знания','Откуда AI будет брать информацию?',['Готовые документы','Сайт','Таблица или каталог','База знаний ещё не готова'],{ note:'AI должен отвечать по вашим материалам, а не придумывать факты.' }),
+            q('actions','Действия','Что AI должен уметь сначала?',['Отвечать на частые вопросы','Уточнять заявку','Подбирать услугу или товар','Передавать человеку'],{ type:'checkbox',note:'Для начала лучше выбрать одно понятное действие и проверить его на реальных вопросах.' }),
+            q('human','Передача','Когда подключается человек?',['После уточнения запроса','При нестандартном вопросе','Перед оплатой или договором','Нужно определить вместе'],{ note:'Нужно заранее решить, в каких случаях AI зовёт сотрудника.' }),
+            q('integration','Интеграции','К чему нужно подключить AI?',['Не нужны','Telegram','CRM','Каталог','1С'],{ type:'checkbox',exclusive:'Не нужны',note:'Подключение имеет смысл, только если понятно, откуда брать данные и куда отправлять результат.' }),
+            q('dialogs','Материалы','Есть ли примеры реальных диалогов?',['Да','Частично','Нет'],{ note:'По примерам проще настроить тон, частые ответы и ситуации, в которых нужен сотрудник.' })
+          ]
+        },
+        onec:{
+          name:'1С и 1С-Битрикс',
+          short:'1С / Битрикс',
+          questions:[
+            q('area','Направление','Что нужно сделать?',['Настройка или доработка 1С','Интеграция сайта с 1С','Поддержка сайта на 1С-Битрикс','Пока не уверен'],{ note:'Настройка 1С, обмен с сайтом и доработка Битрикса — разные задачи. Сначала выберем одну.' }),
+            q('config','Конфигурация','Какая конфигурация 1С используется?',['1С:Розница','1С:Управление Торговлей','Другая конфигурация','Пока неизвестно'],{ when:function () { return !has('area','Поддержка сайта на 1С-Битрикс'); },note:'С Розницей и УТ я работаю. По другой конфигурации сначала посмотрю задачу и скажу, смогу ли помочь.' }),
+            q('onecTask','Работа','Что нужно сделать в 1С?',['Настроить процесс','Печатная форма','Отчёт','Документ','Автоматизировать рутину','Найти причину ошибки'],{ type:'checkbox',when:function () { return has('area','Настройка или доработка 1С') || has('area','Пока не уверен'); },note:'Можно выбрать несколько пунктов, но начинать лучше с одной задачи, которую можно повторить и проверить.' }),
+            q('manual','Процесс','Что сейчас приходится делать вручную?',['Не знаю — опишу позже','Вводить заказы','Переносить данные','Проверять остатки или цены','Готовить документы'],{ when:function () { return has('area','Настройка или доработка 1С') || has('area','Пока не уверен'); },note:'Так станет понятно, какую ручную работу стоит убрать первой.' }),
+            q('exchange','Обмен','Какие данные должны передаваться?',['Заказы: сайт → 1С','Каталог, цены и остатки: 1С → сайт','Двусторонний обмен'],{ when:function () { return has('area','Интеграция сайта с 1С'); },note:'Сначала нужно понять, какие данные куда идут и как часто обновляются.' }),
+            q('sitePlatform','Сайт','На чём работает сайт?',['1С-Битрикс','Другая CMS','Пока неизвестно'],{ when:function () { return has('area','Интеграция сайта с 1С'); },note:'От платформы сайта и доступных API зависит способ подключения к 1С.' }),
+            q('bitrixTask','Битрикс','Что не работает или требует доработки?',['Формы и заявки','Карточки товаров','Компоненты или страницы','Статусы заказов','Обмен с 1С','Нужен аудит'],{ type:'checkbox',when:function () { return has('area','Поддержка сайта на 1С-Битрикс'); },note:'Сначала повторю проблему и найду причину, после этого назову стоимость.' }),
+            q('bitrixExchange','Связка','Связан ли сайт на Битриксе с 1С?',['Да','Нет','Пока неизвестно'],{ when:function () { return has('area','Поддержка сайта на 1С-Битрикс'); },note:'Доработка сайта и обмен с 1С могут быть связаны, но это разные части работы.' }),
+            q('data','Данные','Какие данные участвуют?',['Товары','Остатки','Цены','Заказы','Клиенты','Документы'],{ type:'checkbox',when:function () { return !has('area','Поддержка сайта на 1С-Битрикс'); },note:'Этот список нужен, чтобы собрать тестовый пример и проверить результат.' }),
+            q('access','Доступ','Что уже можно показать?',['Тестовая база или копия','Описание процесса','Есть часть вводных','Нужно подготовить'],{ note:'Для начала хватит тестовой копии базы или понятного описания процесса. Рабочие данные в форму отправлять не нужно.' }),
+            q('urgent','Приоритет','Насколько срочная задача?',['Обычный приоритет','Нужно начать в ближайшее время','Ошибка мешает работе'],{ note:'При срочной ошибке сначала нужна диагностика; срок назову после доступа и повторения проблемы.' })
+          ]
+        },
+        stack:{
+          name:'Связать сайт, AI и 1С',
+          short:'Связка',
+          questions:[
+            q('existing','Системы','Что уже есть?',['Сайт','Мессенджер','AI','1С','CRM','Таблицы'],{ type:'checkbox',note:'Сохраним то, что уже работает, и найдём место, где процесс ломается.' }),
+            q('source','Источник','Откуда приходит обращение?',['Сайт','Telegram','WhatsApp','Звонок или вручную','Несколько каналов'],{ note:'Нужно понять, где начинается заявка и какая информация приходит вместе с ней.' }),
+            q('loss','Разрыв','Где сейчас теряются данные или детали заявки?',['В переписках','Между сайтом и CRM','Между заявкой и 1С','В ручных таблицах','Нужно разобрать'],{ note:'Сначала исправим один участок, а не будем автоматизировать всё сразу.' }),
+            q('auto','AI / уведомление','Что происходит после обращения?',['AI уточняет типовой запрос','Только уведомление сотруднику','Сразу маршрут для человека','Нужно определить'],{ note:'AI нужен только для повторяющихся вопросов. В сложном случае решение должен принимать человек.' }),
+            q('destination','Получатель','Куда должны попадать данные?',['Telegram','CRM','1С','Таблица'],{ type:'checkbox',note:'Не нужно отправлять одни и те же данные во все системы: так легче избежать расхождений.' }),
+            q('person','Решение','Кто принимает итоговое решение?',['Владелец','Менеджер','Оператор','Несколько сотрудников'],{ note:'Система собирает информацию, но решение всё равно принимает человек.' }),
+            q('priority','Первый шаг','Что исправить в первую очередь?',['Собрать обращения','Ускорить первый ответ','Передавать данные без ручного копирования','Сверять заказы и остатки'],{ note:'От ответа зависит, что войдёт в первый этап и как проверить результат.' })
+          ]
+        },
+        unsure:{
+          name:'Определить первый шаг',
+          short:'Первый шаг',
+          questions:[
+            q('problem','Проблема','Что сейчас мешает сильнее всего?',['Клиенты не понимают предложение','Обращения теряются','Клиенты долго ждут ответа','Данные переносятся вручную','Не сходятся остатки или заказы','Нужен запуск нового продукта','Есть другая проблема'],{ note:'Сначала разберём проблему, а потом выберем подходящий инструмент.' }),
+            q('contact','Канал','Откуда чаще приходят обращения?',['Сайт','Мессенджеры','Звонки','Пока нет стабильного канала'],{ note:'Так станет понятно, где улучшение будет заметно быстрее всего.' }),
+            q('data','Данные','Где хранится информация?',['В голове или переписках','Таблица','Сайт или CMS','1С','CRM'],{ note:'Если данные хранятся в голове или переписках, сначала стоит навести порядок там.' }),
+            q('first','Приоритет','Что важнее получить первым?',['Понятное предложение','Сбор заявок','Быстрый ответ на типовые вопросы','Порядок в данных','Разобрать процесс вручную'],{ note:'Выберем один небольшой результат, который можно быстро проверить.' })
+          ]
+        }
       };
 
-      // Scroll reveal
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
+      var directions = [
+        { id:'site',title:'Сайт или интернет-магазин',copy:'Лендинг, сайт с несколькими страницами или магазин' },
+        { id:'telegram',title:'Telegram-бот или Mini App',copy:'Заявки, каталог, заказы или внутренняя задача' },
+        { id:'ai',title:'AI-ассистент',copy:'Ответы на вопросы, подбор и работа с вашими данными' },
+        { id:'onec',title:'1С и 1С-Битрикс',copy:'Настроить 1С, связать её с сайтом или найти ошибку' },
+        { id:'stack',title:'Связать системы',copy:'Передавать заявку и данные между сервисами' },
+        { id:'unsure',title:'Помогите выбрать',copy:'Опишите проблему — подскажу, с чего начать' }
+      ];
+
+      /* Внутренние значения остаются прежними для ветвления; здесь меняется только подпись для человека. */
+      var OPTION_LABELS = {
+        site:{ motion:{ 'Средние интеракции':'Немного интерактива' } },
+        telegram:{ goal:{ 'Решать внутреннюю задачу бизнеса':'Помогать сотрудникам внутри компании' } },
+        ai:{ actions:{ 'Передавать человеку':'Звать сотрудника' } },
+        onec:{ access:{ 'Есть часть вводных':'Есть часть информации' } },
+        stack:{ auto:{ 'Сразу маршрут для человека':'Сразу передать сотруднику' } }
+      };
+
+      function optionLabel(question,value) {
+        var directionLabels = OPTION_LABELS[state.direction] || {};
+        var questionLabels = directionLabels[question.id] || {};
+        return questionLabels[value] || value;
+      }
+
+      /* === 2.5D Разрез: конфигурация слоёв (точно по брифу, без выдумок) === */
+      var LAYER_DEFS = [
+        { key:'source', label:'Откуда начинается' },
+        { key:'interface', label:'Где работает' },
+        { key:'logic', label:'Что делает' },
+        { key:'data', label:'Откуда берёт данные' },
+        { key:'human', label:'Кто отвечает' }
+      ];
+
+      var QUESTION_TO_LAYER = {
+        site: { format:'interface', design:'interface', volume:'interface', motion:'interface', texts:'source', lead:'logic', deadline:'logic' },
+        telegram: { goal:'logic', payment:'logic', ui:'interface', catalog:'data', data:'data', delivery:'human', content:'source' },
+        ai: { channel:'interface', requests:'source', dialogs:'source', knowledge:'data', integration:'data', actions:'logic', human:'human' },
+        onec: { area:'interface', config:'interface', sitePlatform:'interface', onecTask:'logic', manual:'logic', bitrixTask:'logic', urgent:'logic', exchange:'data', bitrixExchange:'data', data:'data', access:'source' },
+        stack: { source:'source', loss:'logic', auto:'logic', priority:'logic', existing:'data', destination:'data', person:'human' },
+        unsure: { problem:'source', contact:'interface', data:'data', first:'logic' }
+      };
+
+      var UNKNOWN_VALUES = {
+        site: { volume:['Пока неизвестно'] },
+        telegram: { ui:['Нужна рекомендация'], payment:['Пока неизвестно'], content:['Нет, нужно определить'] },
+        ai: { knowledge:['База знаний ещё не готова'], human:['Нужно определить вместе'], dialogs:['Нет'] },
+        onec: { area:['Пока не уверен'], config:['Пока неизвестно'], manual:['Не знаю — опишу позже'], sitePlatform:['Пока неизвестно'], bitrixExchange:['Пока неизвестно'], access:['Нужно подготовить'] },
+        stack: { loss:['Нужно разобрать'], auto:['Нужно определить'] }
+      };
+
+      var FUTURE_VALUES = {
+        unsure: { contact:['Пока нет стабильного канала'] }
+      };
+
+      var CONNECT_TRIGGERS = {
+        site: function() { return !!first('lead') && !has('lead','Без формы'); },
+        telegram: function() { return (['Таблица','CMS','API','1С'].indexOf(first('data')) !== -1) || !!first('delivery'); },
+        ai: function() { return (values('integration').filter(function(v){return v!=='Не нужны';}).length > 0) || (first('human') && first('human') !== 'Нужно определить вместе'); },
+        onec: function() { return has('area','Интеграция сайта с 1С') || !!first('exchange') || first('bitrixExchange') === 'Да'; },
+        stack: function() { return !!first('destination') && !!first('person'); },
+        unsure: function() { return false; }
+      };
+
+      var LAYER_LABELS = {
+        site: { source:'Посетитель', interface:'Страница / каталог', logic:'Заявка / заказ', data:'Email, CRM, оплата', human:'Кто получает' },
+        telegram: { source:'Обращение', interface:'Бот / Mini App', logic:'Диалог / заказ', data:'Таблица, CMS, 1С', human:'Кто получает' },
+        ai: { source:'Вопрос клиента', interface:'Диалог', logic:'Ответ / подбор', data:'Материалы и системы', human:'Когда нужен сотрудник' },
+        onec: { source:'Задача / ошибка', interface:'1С / сайт', logic:'Что нужно сделать', data:'Данные и обмен', human:'Кто проверяет' },
+        stack: { source:'Обращение', interface:'Сайт / мессенджер', logic:'Передача / уведомление', data:'CRM / 1С / таблица', human:'Кто отвечает' },
+        unsure: { source:'Проблема', interface:'Где она возникает', logic:'Что исправить первым', data:'Где лежат данные', human:'Кто проверяет' }
+      };
+
+      var proofs = {
+        all:[
+          { tag:'Сайт',title:'«Кроха и Я»',text:'Лендинг частного специалиста: структура, адаптив, форма записи и запуск.',href:'/cases/baby-massage.html',cta:'Смотреть кейс →' },
+          { tag:'Telegram',title:'GlowDecor / DecorApp',text:'Mini App с каталогом, категориями, корзиной и поддержкой.',href:'/cases/decorapp.html',cta:'Смотреть кейс →' },
+          { tag:'1С + AI',title:'dag-sport',text:'Моя часть — интеграция готового сайта с 1С УТ и AI-консультант; сам сайт разрабатывал не я.',href:'/cases/dag-sport.html',cta:'Смотреть кейс →' }
+        ],
+        site:[
+          { tag:'Лендинг',title:'«Кроха и Я»',text:'Реальный пример одностраничного сайта: структура, адаптив, форма записи и запуск.',href:'/cases/baby-massage.html',cta:'Смотреть кейс →' },
+          { tag:'Подход',title:'Как строится лендинг',text:'Что входит в работу, сколько она занимает и когда можно назвать цену.',href:'/services/landing.html',cta:'Открыть услугу →' }
+        ],
+        telegram:[
+          { tag:'Mini App',title:'GlowDecor / DecorApp',text:'Каталог, категории, корзина и поддержка внутри Telegram.',href:'/cases/decorapp.html',cta:'Смотреть кейс →' },
+          { tag:'Выбор формата',title:'Mini App или обычный бот',text:'Когда нужен интерфейс с каталогом, а когда достаточно сообщений и кнопок.',href:'/blog/telegram-mini-app-ili-bot.html',cta:'Читать разбор →' }
+        ],
+        ai:[
+          { tag:'AI-консультант',title:'dag-sport',text:'AI помогает подобрать товар, а точное наличие предлагает уточнить у менеджера. В этом кейсе я также отвечал за интеграцию с 1С.',href:'/cases/dag-sport.html',cta:'Смотреть кейс →' },
+          { tag:'AI в работе',title:'AI-ассистенты',text:'Действующие проекты, пилоты и примеры с понятным статусом.',href:'/services/ai-assistant.html',cta:'Смотреть примеры →' }
+        ],
+        onec:[
+          { tag:'1С УТ + Битрикс',title:'dag-sport',text:'Заказ с готового сайта становится документом в 1С УТ; моя роль — интеграция и AI, не разработка сайта.',href:'/cases/dag-sport.html',cta:'Смотреть кейс →' },
+          { tag:'Разница услуг',title:'1С или поддержка Битрикса',text:'Настройка 1С, обмен с сайтом и поддержка Битрикса — три разные задачи. Для каждой нужен свой первый шаг.',href:'/services/podderzhka-bitrix.html',cta:'О поддержке Битрикса →' }
+        ],
+        stack:[
+          { tag:'Связка',title:'Сайт → 1С → Telegram',text:'В dag-sport заказ с готового сайта попадает в 1С УТ, а затем приходит уведомление. AI помогает клиенту до оформления заказа.',href:'/cases/dag-sport.html',cta:'Смотреть кейс →' },
+          { tag:'Практика',title:'Как связать сайт с 1С',text:'Какие данные передавать в каждую сторону и что проверить до запуска.',href:'/blog/kak-svyazat-sajt-s-1c.html',cta:'Читать разбор →' }
+        ],
+        unsure:[
+          { tag:'Сайт',title:'«Кроха и Я»',text:'Понятная страница и форма обращения для частного специалиста.',href:'/cases/baby-massage.html',cta:'Смотреть кейс →' },
+          { tag:'Telegram',title:'GlowDecor / DecorApp',text:'Каталог и оформление заказа внутри Telegram.',href:'/cases/decorapp.html',cta:'Смотреть кейс →' },
+          { tag:'1С + AI',title:'dag-sport',text:'Передача заказов в 1С и ответы на типовые вопросы покупателей.',href:'/cases/dag-sport.html',cta:'Смотреть кейс →' }
+        ]
+      };
+
+      function questionVisible(question) { return typeof question.when !== 'function' || question.when(); }
+      function questions() { return state.direction ? flows[state.direction].questions.filter(questionVisible) : []; }
+      function optionList(question) { return typeof question.options === 'function' ? question.options() : question.options; }
+      function titleFor(question) { return typeof question.title === 'function' ? question.title() : question.title; }
+      function noteFor(question) { return typeof question.note === 'function' ? question.note() : question.note; }
+
+      function impactFor(question,selected) {
+        if (!selected.length) return noteFor(question);
+        if (typeof question.impact === 'function') return question.impact(selected);
+        if (question.impact && question.impact[selected[0]]) return question.impact[selected[0]];
+        return noteFor(question);
+      }
+
+      function pruneAnswers() {
+        if (!state.direction) return;
+        var active = {};
+        questions().forEach(function (question) {
+          active[question.id] = true;
+          var allowed = optionList(question);
+          var valid = values(question.id).filter(function (value) { return allowed.indexOf(value) !== -1; });
+          if (valid.length) branchAnswers()[question.id] = valid;
+          else delete branchAnswers()[question.id];
         });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
-
-      // Calculator
-      var BASE = 25000;
-      var inputs = document.querySelectorAll('#calcForm input[type="radio"]');
-      var priceEl = document.getElementById('resultPrice');
-      var periodEl = document.getElementById('resultPeriod');
-      var breakdownEl = document.getElementById('resultBreakdown');
-
-      function formatPrice(n) {
-        return Math.round(n).toLocaleString('ru-RU') + ' ₽';
+        Object.keys(branchAnswers()).forEach(function (id) { if (!active[id]) delete branchAnswers()[id]; });
       }
 
-      function getPeriod(total) {
-        var baseDays = 7;
-        if (total > 35000) baseDays = 10;
-        if (total > 50000) baseDays = 14;
-        if (total > 70000) baseDays = 18;
-        if (total > 90000) baseDays = 25;
-        var urgency = document.querySelector('input[name="urgency"]:checked');
-        if (urgency && urgency.value === '1.3') return '3–5 дней';
-        return baseDays + '–' + (baseDays + 4) + ' дней';
+      function clearContactPayload() {
+        ['projectDirection','projectResult','projectMvp','projectSummary','calculatorPrice','calculatorPeriod','calculatorChoices'].forEach(function (id) {
+          document.getElementById(id).value = '';
+        });
+        contactSummary.textContent = '';
+        contactSummary.classList.remove('is-visible');
+        state.resultValid = false;
       }
 
-      function calc() {
-        var mult = 1;
-        var breakdown = '<p>Базовая ставка <span>' + formatPrice(BASE) + '</span></p>';
-        ['type','design','blocks','forms','texts','animations','urgency'].forEach(function(name) {
-          var el = document.querySelector('input[name="' + name + '"]:checked');
-          if (el) {
-            var v = parseFloat(el.value);
-            mult *= v;
-            if (v !== 1) {
-              var label = el.parentElement.querySelector('span').textContent;
-              breakdown += '<p>' + label + ' <span>× ' + v.toFixed(2) + '</span></p>';
-            }
+      function invalidateResult() { clearContactPayload(); }
+
+      function cancelContourAssembly() {
+        sceneAnimationTimers.forEach(function (timer) { window.clearTimeout(timer); });
+        sceneAnimationTimers = [];
+        if (sceneAnimationFrame) {
+          window.cancelAnimationFrame(sceneAnimationFrame);
+          sceneAnimationFrame = 0;
+        }
+      }
+
+      function scheduleSceneTimer(callback,delay) {
+        var timer = window.setTimeout(function () {
+          sceneAnimationTimers = sceneAnimationTimers.filter(function (item) { return item !== timer; });
+          callback();
+        },delay);
+        sceneAnimationTimers.push(timer);
+        return timer;
+      }
+
+      function drawScene(count,isResult) {
+        var ns = 'http://www.w3.org/2000/svg';
+        var points = [];
+        var active = isResult ? count : state.step;
+        pathGroup.textContent = '';
+        nodeGroup.textContent = '';
+        for (var i = 0; i < count; i++) {
+          var x = count === 1 ? 220 : 28 + (384 / (count - 1)) * i;
+          var y = isResult ? 114 : 114 + (i % 2 ? -31 : 31);
+          points.push([x,y]);
+        }
+        points.forEach(function (point,index) {
+          if (index) {
+            var path = document.createElementNS(ns,'path');
+            path.setAttribute('d','M '+points[index-1][0]+' '+points[index-1][1]+' L '+point[0]+' '+point[1]);
+            path.setAttribute('class','cost-segment '+(isResult || index - 1 < state.step ? 'is-complete' : index - 1 === state.step ? 'is-active' : 'is-future'));
+            pathGroup.appendChild(path);
+          }
+          var circle = document.createElementNS(ns,'circle');
+          circle.setAttribute('cx',String(point[0]));
+          circle.setAttribute('cy',String(point[1]));
+          circle.setAttribute('r',String(!isResult && index === state.step ? 8 : 5.5));
+          circle.setAttribute('class','cost-node '+(isResult || index < active ? 'is-complete' : index === active ? 'is-active' : ''));
+          nodeGroup.appendChild(circle);
+        });
+      }
+
+      function deriveSceneModel(isResult) {
+        if (!state.direction) return null;
+        var list = questions();
+        var model = {
+          direction: state.direction,
+          layers: LAYER_DEFS.map(function (l) { return { key: l.key, label: l.label, status: 'future', sub: '', connected: false }; }),
+          activeLayerKey: null,
+          connectors: [],
+          isResult: !!isResult
+        };
+        var qmap = QUESTION_TO_LAYER[state.direction] || {};
+        var unkMap = UNKNOWN_VALUES[state.direction] || {};
+        var futureMap = FUTURE_VALUES[state.direction] || {};
+        var currentQ = list[state.step];
+        if (currentQ && qmap[currentQ.id]) {
+          model.activeLayerKey = qmap[currentQ.id];
+        }
+        var statusPriority = { future:0, confirmed:1, unknown:2 };
+        Object.keys(qmap).forEach(function (qid) {
+          var lkey = qmap[qid];
+          var idx = LAYER_DEFS.findIndex(function (l) { return l.key === lkey; });
+          if (idx < 0) return;
+          var layer = model.layers[idx];
+          var vals = values(qid);
+          var unkList = unkMap[qid] || [];
+          var futureList = futureMap[qid] || [];
+          var nextStatus = vals.reduce(function (status,value) {
+            var valueStatus = unkList.indexOf(value) !== -1 ? 'unknown' : futureList.indexOf(value) !== -1 ? 'future' : 'confirmed';
+            return statusPriority[valueStatus] > statusPriority[status] ? valueStatus : status;
+          },'future');
+          if (statusPriority[nextStatus] > statusPriority[layer.status]) layer.status = nextStatus;
+          var subs = LAYER_LABELS[state.direction] || {};
+          if (vals.length && nextStatus !== 'future' && subs[lkey]) layer.sub = subs[lkey];
+        });
+        // connectors from triggers (one connector for simplicity per brief)
+        var trigFn = CONNECT_TRIGGERS[state.direction];
+        if (trigFn && trigFn()) {
+          if (state.direction === 'site') model.connectors = [{ from: 'logic', to: 'data' }];
+          else if (state.direction === 'telegram') model.connectors = [{ from: 'data', to: 'human' }];
+          else if (state.direction === 'ai') model.connectors = [{ from: 'data', to: 'human' }];
+          else if (state.direction === 'onec') model.connectors = [{ from: 'interface', to: 'data' }];
+          else if (state.direction === 'stack') model.connectors = [{ from: 'logic', to: 'data' }];
+        }
+        return model;
+      }
+
+      function applyFinalAssembly(modelEl,instant) {
+        if (!modelEl) return;
+        var confirmed = Array.prototype.slice.call(modelEl.querySelectorAll('.layer-plane.confirmed'));
+        var startTop = 142 - Math.max(0,(confirmed.length - 1) * 6);
+        var targetByLayer = {};
+        modelEl.classList.add('assembled');
+        confirmed.forEach(function (plane,index) {
+          var targetTop = startTop + index * 12;
+          var baseTop = Number(plane.getAttribute('data-base-top')) || 0;
+          targetByLayer[plane.getAttribute('data-layer-key')] = targetTop;
+          if (instant) {
+            plane.style.transition = 'none';
+            plane.style.top = targetTop + 'px';
+            plane.style.transform = 'none';
+          } else {
+            plane.style.transition = 'transform 420ms var(--ease), opacity 300ms, box-shadow 300ms';
+            plane.style.transform = 'translate3d(0,' + (targetTop - baseTop) + 'px,' + (28 - index * 4) + 'px) rotateX(2deg)';
           }
         });
-        var total = BASE * mult;
-        priceEl.textContent = formatPrice(total);
-        periodEl.textContent = 'Срок: ' + getPeriod(total);
-        breakdownEl.innerHTML = breakdown + '<p style="border-top:1px solid var(--border);padding-top:8px;margin-top:8px;"><strong>Итого</strong> <strong style="color:var(--accent);">' + formatPrice(total) + '</strong></p>';
+        modelEl.querySelectorAll('.connector').forEach(function (connector) {
+          var fromTop = targetByLayer[connector.getAttribute('data-from')];
+          var toTop = targetByLayer[connector.getAttribute('data-to')];
+          if (typeof fromTop === 'number' && typeof toTop === 'number') {
+            connector.style.transition = instant ? 'none' : 'top 420ms var(--ease),height 420ms var(--ease),opacity 300ms';
+            connector.style.top = (Math.min(fromTop,toTop) + 31) + 'px';
+            connector.style.height = Math.max(3,Math.abs(toTop - fromTop)) + 'px';
+          } else {
+            connector.style.opacity = '.18';
+          }
+        });
       }
 
-      inputs.forEach(function(input) {
-        input.addEventListener('change', calc);
-      });
-      calc();
+      function renderProjectCut(model) {
+        if (!model) return;
+        var scene = document.querySelector('.calc-scene');
+        if (!scene) return;
+        cancelContourAssembly();
+        scene.classList.remove('has-cut');
+        var oldPath = scene.querySelector('.cost-path');
+        var oldLabels = scene.querySelector('.scene-labels');
+        if (oldPath) oldPath.style.display = 'none';
+        if (oldLabels) oldLabels.style.display = 'none';
+        var prev = scene.querySelector('.cut-container');
+        if (prev) prev.parentNode.removeChild(prev);
+        var prevLegend = scene.querySelector('.cut-legend');
+        if (prevLegend) prevLegend.parentNode.removeChild(prevLegend);
 
-      // Form
-      var form = document.getElementById('contactForm');
-      var btn = document.getElementById('submitBtn');
-      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
-      function toastIcon(){
+        var container = document.createElement('div');
+        container.className = 'cut-container';
+        container.setAttribute('aria-hidden','true');
+
+        var modelEl = document.createElement('div');
+        modelEl.className = 'cut-model';
+
+        var baseY = 28;
+        var stepY = 62;
+        var tilt = 9;
+
+        model.layers.forEach(function (layer,i) {
+          var plane = document.createElement('div');
+          var planeTop = baseY + i * stepY;
+          plane.className = 'layer-plane ' + layer.status;
+          plane.style.top = planeTop + 'px';
+          plane.setAttribute('data-base-top',String(planeTop));
+          plane.setAttribute('data-layer-key',layer.key);
+          var z = (4 - i) * 18;
+          var rot = (i - 2) * 1.5;
+          plane.style.transform = 'translateZ(' + z + 'px) translateY(' + (i * 2) + 'px) rotateX(' + tilt + 'deg) rotateY(' + rot + 'deg)';
+          plane.innerHTML = '<div><div class="layer-label">' + escapeHtml(layer.label) + '</div><div class="layer-sub">' + escapeHtml(layer.sub || '') + '</div></div><div class="layer-face"></div>';
+          modelEl.appendChild(plane);
+        });
+
+        if (model.isResult && isEnhanced) {
+          var finalSlice = document.createElement('div');
+          finalSlice.className = 'slice-plane final-sweep';
+          finalSlice.innerHTML = '<span class="slice-label">Собираем итог</span>';
+          modelEl.appendChild(finalSlice);
+        } else if (model.activeLayerKey && !model.isResult) {
+          var actIdx = LAYER_DEFS.findIndex(function (l) { return l.key === model.activeLayerKey; });
+          if (actIdx >= 0) {
+            var slice = document.createElement('div');
+            slice.className = 'slice-plane';
+            slice.style.top = (baseY + actIdx * stepY - 2) + 'px';
+            var sz = (4 - actIdx) * 18;
+            slice.style.transform = 'translateZ(' + (sz + 28) + 'px) rotateX(' + tilt + 'deg)';
+            slice.innerHTML = '<span class="slice-label">Текущий вопрос</span>';
+            modelEl.appendChild(slice);
+          }
+        }
+
+        model.connectors.forEach(function (connectorModel) {
+          var fromIdx = LAYER_DEFS.findIndex(function (l) { return l.key === connectorModel.from; });
+          var toIdx = LAYER_DEFS.findIndex(function (l) { return l.key === connectorModel.to; });
+          if (fromIdx >= 0 && toIdx >= 0) {
+            var connector = document.createElement('div');
+            var y1 = baseY + fromIdx * stepY + 29;
+            var y2 = baseY + toIdx * stepY + 29;
+            connector.className = 'connector';
+            connector.setAttribute('data-from',connectorModel.from);
+            connector.setAttribute('data-to',connectorModel.to);
+            connector.style.top = Math.min(y1,y2) + 'px';
+            connector.style.height = Math.abs(y2 - y1) + 'px';
+            connector.style.left = '62%';
+            modelEl.appendChild(connector);
+          }
+        });
+
+        container.appendChild(modelEl);
+        var heading = scene.querySelector('.scene-heading');
+        if (heading && heading.nextSibling) heading.parentNode.insertBefore(container,heading.nextSibling);
+        else scene.appendChild(container);
+        scene.classList.add('has-cut');
+
+        if (model.isResult && !isEnhanced) applyFinalAssembly(modelEl,true);
+
+        var legend = document.createElement('div');
+        legend.className = 'cut-legend';
+        legend.innerHTML = '<span><i class="conf"></i> готово</span><span><i class="unk"></i> нужно уточнить</span>' + (model.isResult ? '' : '<span><i class="act"></i> текущий вопрос</span>');
+        scene.appendChild(legend);
+      }
+
+      function updateScene(question,selected,isResult,recommendation) {
+        var list = questions();
+        sceneLabels.style.gridTemplateColumns = 'repeat('+Math.max(1,list.length)+',minmax(0,1fr))';
+        sceneLabels.innerHTML = list.map(function (item,index) {
+          return '<span class="'+(!isResult && index === state.step ? 'is-active' : '')+'">'+escapeHtml(item.label)+'</span>';
+        }).join('');
+        sceneTitle.textContent = isResult ? 'С чего начать' : question ? question.label : 'Выберите задачу';
+        sceneStep.textContent = state.direction ? String(isResult ? list.length : state.step + 1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0') : '00';
+        sceneChoice.textContent = isResult ? recommendation.outcome : question ? (selected.length ? selected.map(function (value) { return optionLabel(question,value); }).join(', ') : titleFor(question)) : 'Что хотите сделать';
+        sceneImpact.textContent = isResult ? recommendation.reason : question ? impactFor(question,selected) : 'Выберите задачу — следующие вопросы подстроятся под неё.';
+        scenePrice.textContent = isResult ? (recommendation.price || 'Первый шаг') : 'После ответов';
+        scenePeriod.textContent = isResult ? (recommendation.period || 'После просмотра') : state.direction ? 'Вопрос '+(state.step+1) : 'Не начато';
+        mobileStep.textContent = state.direction ? flows[state.direction].short+' · '+(isResult ? 'результат' : 'шаг '+(state.step+1)+' из '+list.length) : 'Выбор направления';
+        mobileImpact.textContent = isResult ? 'Результат' : question ? question.label : 'Шаг 0';
+        // Простой путь остаётся запасным визуальным слоем, пока работает объёмная сцена.
+        drawScene(list.length || 6,isResult);
+        // new 2.5D cut
+        var model = deriveSceneModel(isResult);
+        renderProjectCut(model);
+      }
+
+      function renderExamples() {
+        var data = proofs[state.direction] || proofs.all;
+        var titles = {
+          site:['Примеры сайтов','Реальный лендинг и понятное описание работы.'],
+          telegram:['Примеры для Telegram','Работающий Mini App и простой разбор форматов.'],
+          ai:['Примеры AI-ассистентов','Реальные проекты с понятным описанием моей роли.'],
+          onec:['Примеры для 1С и Битрикса','Интеграция, поддержка сайта и то, что именно я делал.'],
+          stack:['Как связаны системы','Реальный путь заказа и разбор обмена с 1С.'],
+          unsure:['Посмотрите разные варианты','Так проще понять, что ближе к вашей задаче.']
+        };
+        var copy = titles[state.direction] || ['Как это выглядит в реальных проектах','Три проекта и только та работа, которую я действительно делал.'];
+        document.getElementById('examplesTitle').textContent = copy[0];
+        document.getElementById('examplesIntro').textContent = copy[1];
+        document.getElementById('examplesGrid').innerHTML = data.map(function (item) {
+          return '<article class="example-card"><a class="example-link" href="'+escapeHtml(item.href)+'"><span class="example-tag">'+escapeHtml(item.tag)+'</span><h3>'+escapeHtml(item.title)+'</h3><p>'+escapeHtml(item.text)+'</p><span class="example-cta">'+escapeHtml(item.cta)+'</span></a></article>';
+        }).join('');
+      }
+
+      function renderDirections(focusFirst) {
+        cancelContourAssembly();
+        state.direction = '';
+        state.step = 0;
+        invalidateResult();
+        var grid = document.querySelector('.calculator-grid');
+        if (grid) grid.classList.add('is-choosing');
+        // clear any previous cut visuals
+        var scene = document.querySelector('.calc-scene');
+        if (scene) {
+          var oldCut = scene.querySelector('.cut-container');
+          if (oldCut) oldCut.parentNode.removeChild(oldCut);
+          var oldL = scene.querySelector('.cut-legend');
+          if (oldL) oldL.parentNode.removeChild(oldL);
+          scene.classList.remove('has-cut');
+          var p = scene.querySelector('.cost-path'); if (p) p.style.display = '';
+          var sl = scene.querySelector('.scene-labels'); if (sl) sl.style.display = '';
+        }
+        estimator.innerHTML = '<fieldset class="calc-group"><legend><span class="calc-step-kicker">Шаг 0</span><span class="calc-group-label">Что вы хотите сделать?</span></legend><div class="direction-stack">'+directions.map(function (item,index) {
+          return '<button type="button" class="direction-card" data-direction="'+item.id+'"><span class="direction-index">'+String(index+1).padStart(2,'0')+'</span><strong class="direction-title">'+escapeHtml(item.title)+'</strong><span class="direction-copy">'+escapeHtml(item.copy)+'</span></button>';
+        }).join('')+'</div></fieldset>';
+        estimator.querySelectorAll('[data-direction]').forEach(function (button) {
+          button.addEventListener('click',function () {
+            if (!state.started) { state.started = true; reach('calculator_open'); }
+            var grid2 = document.querySelector('.calculator-grid');
+            if (grid2) grid2.classList.remove('is-choosing');
+            state.direction = button.getAttribute('data-direction');
+            state.step = 0;
+            branchAnswers();
+            invalidateResult();
+            reach('estimator_direction_selected');
+            renderExamples();
+            renderQuestion(true);
+          });
+        });
+        renderExamples();
+        updateScene(null,[],false,null);
+        status.textContent = 'Выберите задачу.';
+        if (focusFirst) estimator.querySelector('.direction-card').focus();
+      }
+
+      function storeCurrentAnswer(formElement,question,eventTarget) {
+        if (question.type === 'checkbox' && question.exclusive) {
+          var exclusive = Array.prototype.find.call(formElement.querySelectorAll('input[type="checkbox"]'),function (input) { return input.value === question.exclusive; });
+          if (eventTarget.value === question.exclusive && eventTarget.checked) {
+            formElement.querySelectorAll('input[type="checkbox"]').forEach(function (input) { if (input !== eventTarget) input.checked = false; });
+          } else if (eventTarget.checked && exclusive) {
+            exclusive.checked = false;
+          }
+        }
+        var selected = Array.prototype.map.call(formElement.querySelectorAll('input:checked'),function (input) { return input.value; });
+        if (selected.length) branchAnswers()[question.id] = selected;
+        else delete branchAnswers()[question.id];
+        pruneAnswers();
+        return values(question.id);
+      }
+
+      function renderQuestion(moveFocus) {
+        pruneAnswers();
+        var grid = document.querySelector('.calculator-grid');
+        if (grid) grid.classList.remove('is-choosing');
+        var list = questions();
+        state.step = Math.max(0,Math.min(state.step,list.length-1));
+        var question = list[state.step];
+        var options = optionList(question);
+        var selected = values(question.id).filter(function (value) { return options.indexOf(value) !== -1; });
+        if (selected.length !== values(question.id).length) {
+          if (selected.length) branchAnswers()[question.id] = selected;
+          else delete branchAnswers()[question.id];
+        }
+        var optionHtml = options.map(function (option,index) {
+          var checked = selected.indexOf(option) !== -1;
+          var id = 'option-'+state.direction+'-'+question.id+'-'+index;
+          return '<label class="calc-option '+(question.type === 'checkbox' ? 'is-check' : '')+'" for="'+id+'"><input id="'+id+'" type="'+question.type+'" name="'+escapeHtml(question.id)+'" value="'+escapeHtml(option)+'"'+(checked ? ' checked' : '')+'><span>'+escapeHtml(optionLabel(question,option))+'</span></label>';
+        }).join('');
+        estimator.innerHTML = '<div class="estimator-head"><span class="question-progress">'+escapeHtml(flows[state.direction].short)+' · шаг '+(state.step+1)+' из '+list.length+'</span><button type="button" class="text-button" id="changeDirection">Выбрать другую задачу</button></div><form id="estimatorForm" aria-labelledby="questionTitle"><fieldset class="calc-group"><legend><span class="calc-step-kicker">Вопрос '+(state.step+1)+'</span><span class="calc-group-label" id="questionTitle" tabindex="-1">'+escapeHtml(titleFor(question))+'</span></legend><div class="calc-options">'+optionHtml+'</div><p class="question-impact" id="questionImpact"><b>Зачем это нужно:</b> '+escapeHtml(impactFor(question,selected))+'</p><p class="question-error" id="questionError" role="alert" hidden>Выберите хотя бы один вариант.</p></fieldset><div class="question-actions">'+(state.step ? '<button type="button" class="secondary" id="previousQuestion">← Назад</button>' : '')+'<button type="submit">'+(state.step === list.length-1 ? 'Показать результат' : 'Продолжить →')+'</button></div></form>';
+        document.getElementById('changeDirection').addEventListener('click',function () { renderDirections(true); });
+        var questionForm = document.getElementById('estimatorForm');
+        questionForm.addEventListener('change',function (event) {
+          var nowSelected = storeCurrentAnswer(questionForm,question,event.target);
+          invalidateResult();
+          document.getElementById('questionError').hidden = true;
+          document.getElementById('questionImpact').innerHTML = '<b>Зачем это нужно:</b> '+escapeHtml(impactFor(question,nowSelected));
+          updateScene(question,nowSelected,false,null);
+        });
+        var previous = document.getElementById('previousQuestion');
+        if (previous) previous.addEventListener('click',function () { state.step -= 1; invalidateResult(); renderQuestion(true); });
+        questionForm.addEventListener('submit',function (event) {
+          event.preventDefault();
+          var checked = questionForm.querySelectorAll('input:checked');
+          if (!checked.length) {
+            var error = document.getElementById('questionError');
+            error.hidden = false;
+            questionForm.querySelector('input').focus();
+            status.textContent = 'Нужно выбрать вариант в вопросе «'+titleFor(question)+'».';
+            return;
+          }
+          storeCurrentAnswer(questionForm,question,checked[0]);
+          reach('estimator_step_completed');
+          var freshList = questions();
+          if (state.step < freshList.length-1) {
+            state.step += 1;
+            renderQuestion(true);
+          } else {
+            renderResult();
+          }
+        });
+        updateScene(question,selected,false,null);
+        status.textContent = 'Вопрос '+(state.step+1)+' из '+list.length+': '+titleFor(question)+'.';
+        if (moveFocus) document.getElementById('questionTitle').focus();
+      }
+
+      function formatPrice(number) { return Math.round(number).toLocaleString('ru-RU')+' ₽'; }
+      function roundThousand(number) { return Math.round(number/1000)*1000; }
+
+      function siteEstimate() {
+        var design = has('design','Готовый макет') ? 1 : 1.3;
+        var volume = has('volume','1–3 блока') ? .8 : has('volume','8–12 блоков') ? 1.4 : has('volume','13 и более') ? 1.8 : 1;
+        var lead = has('lead','Без формы') ? .9 : (has('lead','Уведомление в Telegram') || has('lead','Передача в CRM')) ? 1.25 : 1;
+        var texts = has('texts','Нужно отредактировать или подготовить') ? 1.15 : 1;
+        var motion = has('motion','Минимум — появления') ? .9 : has('motion','Сложная анимация') ? 1.3 : 1;
+        var raw = Math.max(BASE,BASE*design*volume*lead*texts*motion);
+        return { raw:raw,total:roundThousand(raw),period:raw <= 50000 ? '7–14 дней' : '14–21 день' };
+      }
+
+      function siteRecommendation() {
+        var estimate = siteEstimate();
+        var format = first('format');
+        var quoteReason = '';
+        if (format === 'Многостраничный сайт') quoteReason = 'Для сайта с несколькими страницами сначала нужно уточнить их количество и тип.';
+        if (format === 'Интернет-магазин') quoteReason = 'Магазин нужно посмотреть отдельно: важны каталог, корзина, оплата и обмен данными.';
+        if (has('lead','Корзина или оплата')) quoteReason = 'Корзина и оплата требуют отдельной оценки.';
+        if (has('deadline','Нужно быстрее — обсудить отдельно')) quoteReason = 'Чтобы назвать срок быстрого запуска, нужно сначала посмотреть объём, материалы и свободные даты.';
+        if (!quoteReason && estimate.raw > 100000) quoteReason = 'Для такого объёма лучше сначала разделить работу на этапы.';
+        var needs = [];
+        if (!has('design','Готовый макет')) needs.push('Примеры сайтов, которые вам нравятся, и материалы о продукте.');
+        if (has('texts','Нужно отредактировать или подготовить')) needs.push('Факты о продукте: услуги, условия и важные ограничения.');
+        if (has('lead','Передача в CRM')) needs.push('Название CRM, нужные поля и безопасный тестовый доступ.');
+        if (has('lead','Корзина или оплата')) needs.push('Состав каталога и правила заказа, оплаты и смены статусов.');
+        if (!needs.length) needs.push(has('lead','Без формы') ? 'Готовый макет, тексты и актуальные контакты.' : 'Готовый макет, тексты и адрес, куда должна приходить заявка.');
+        var risks = ['Финальную стоимость назову после просмотра материалов и требований к мобильной версии.'];
+        if (has('motion','Сложная анимация')) risks.push('Сложную анимацию нужно отдельно проверить на телефонах и в режиме без анимации.');
+        if (quoteReason) {
+          return {
+            outcome:format === 'Интернет-магазин' ? 'Сначала разобрать каталог и путь заказа' : format === 'Многостраничный сайт' ? 'Сначала собрать карту страниц' : 'Сначала посмотреть задачу',
+            reason:quoteReason,
+            mvp:format === 'Интернет-магазин' ? 'Сначала разберём каталог, корзину, оплату и обмен данными.' : 'Соберём список страниц, их задачи и то, что обязательно должно попасть в первый запуск.',
+            needs:needs,
+            risks:risks,
+            boundary:'Цена в калькуляторе считается только для обычного лендинга. Остальные варианты оцениваю после просмотра задачи.',
+            price:'',
+            period:'После разбора',
+            serviceHref:'/services/landing.html',
+            serviceLabel:'Как устроена разработка сайта →'
+          };
+        }
+        return {
+          outcome:'≈ '+formatPrice(estimate.total),
+          reason:'Примерный срок — '+estimate.period+'. Сумма округлена: точную цену назову после просмотра материалов.',
+          mvp:'Соберём лендинг: '+(has('design','Готовый макет') ? 'адаптивную вёрстку по готовому макету' : 'структуру и дизайн')+'. Затем подготовим материалы и проверим, как приходит заявка: «'+lower(first('lead'))+'».',
+          needs:needs,
+          risks:risks,
+          boundary:'Это ориентир, а не готовая смета. Точную стоимость и срок назову после просмотра задачи.',
+          price:'≈ '+formatPrice(estimate.total),
+          period:estimate.period,
+          serviceHref:'/services/landing.html',
+          serviceLabel:'Состав услуги по лендингу →'
+        };
+      }
+
+      function telegramRecommendation() {
+        var goals = values('goal');
+        var complex = !has('catalog','Нет') || has('payment','Да') || has('goal','Показывать каталог') || has('goal','Оформлять заказ') || has('goal','Давать личный кабинет');
+        var mini = has('ui','Предпочитаю Mini App') || complex;
+        var format = mini ? 'Telegram Mini App' : 'Telegram-бот';
+        var formatAfterFrom = mini ? 'Telegram Mini App' : 'Telegram-бота';
+        var needs = ['Выбрать одну главную задачу для первой версии: '+lower(goals[0] || 'приём обращения')+'.','Уточнить, откуда брать данные и куда отправлять результат.'];
+        if (has('content','Нет, нужно определить')) needs.push('Составить список экранов, кнопок, ошибок и пустых состояний.');
+        if (has('content','Частично')) needs.push('Дополнить тексты и понять, каких данных пока не хватает.');
+        if (has('payment','Да')) needs.push('Уточнить способ оплаты, подтверждение и статус после платежа.');
+        var risks = [];
+        if (['API','1С','CMS'].indexOf(first('data')) !== -1) risks.push('Нужно проверить API, структуру данных и частоту обновления.');
+        if (has('payment','Пока неизвестно')) risks.push('Оплату лучше оставить на потом, пока не понятен путь заказа.');
+        if (has('ui','Предпочитаю обычный бот') && complex) risks.push('Для каталога, корзины или кабинета Mini App может быть удобнее обычного бота. Это проверим на простом прототипе.');
+        if (!risks.length) risks.push('Сначала запускаем одну основную функцию. Остальные добавим после теста.');
+        return {
+          outcome:'Начать с '+formatAfterFrom,
+          reason:mini ? 'Для каталога, корзины, заказа или личного кабинета удобнее полноценный интерфейс внутри Telegram.' : 'Для заявок, типовых ответов и уведомлений обычно хватает сообщений и кнопок.',
+          mvp:'В первой версии '+format+' будет решать задачи: '+goals.map(lower).join(', ')+'. Данные берём из «'+lower(first('data'))+'», результат отправляем в «'+lower(first('delivery'))+'».',
+          needs:needs,
+          risks:risks,
+          boundary:'Стоимость и срок назову после уточнения интерфейса, каталога, оплаты и подключений.',
+          price:'',
+          period:'После разбора',
+          serviceHref:'/services/telegram-bot.html',
+          serviceLabel:'Подробнее о ботах и Mini App →'
+        };
+      }
+
+      function aiRecommendation() {
+        var knowledgeMissing = has('knowledge','База знаний ещё не готова');
+        var integrations = values('integration').filter(function (item) { return item !== 'Не нужны'; });
+        var needs = ['Подготовить источник, по которому AI будет отвечать: '+lower(first('knowledge'))+'.','Уточнить, когда AI должен звать сотрудника: '+lower(first('human'))+'.'];
+        if (has('dialogs','Нет')) needs.push('Собрать реальные примеры вопросов и желаемых ответов.');
+        if (has('dialogs','Частично')) needs.push('Дополнить примеры нестандартными и спорными диалогами.');
+        if (integrations.length) needs.push('Проверить доступы и способ подключения: '+integrations.join(', ')+'.');
+        var risks = ['AI должен отвечать только по вашим материалам и направлять сложные вопросы сотруднику.'];
+        if (has('channel','Несколько каналов')) risks.push('Сначала лучше запустить AI в одном канале и проверить ответы, затем добавить остальные.');
+        if (knowledgeMissing) risks.push('Без базы знаний нельзя проверить, верны ли ответы.');
+        return {
+          outcome:knowledgeMissing ? 'Сначала подготовить базу знаний и правила ответов' : 'Первая версия AI-ассистента в канале «'+first('channel')+'»',
+          reason:knowledgeMissing ? 'Сначала нужны материалы, по которым AI будет отвечать, и правила для сложных вопросов. Интерфейс можно подключить позже.' : 'Вы уже выбрали канал, тип вопросов и действия. Можно собрать первую версию и проверить её на реальных обращениях.',
+          mvp:'Ассистент будет работать с запросами «'+joined('requests')+'». В первой версии он должен: '+lower(joined('actions'))+'. Ответы берёт из ваших материалов.',
+          needs:needs,
+          risks:risks,
+          boundary:'AI не заменяет сотрудника. Он не должен придумывать товары, цены, условия или другие факты, которых нет в ваших материалах.',
+          price:'',
+          period:'После разбора',
+          serviceHref:'/services/ai-assistant.html',
+          serviceLabel:'Как устроена работа над AI-ассистентом →'
+        };
+      }
+
+      function onecRecommendation() {
+        var area = first('area');
+        var needs = ['Подготовить тестовую копию базы или понятное описание процесса: '+lower(first('access'))+'.'];
+        var risks = [];
+        var outcome;
+        var reason;
+        var mvp;
+        var serviceHref;
+        var serviceLabel;
+        if (area === 'Поддержка сайта на 1С-Битрикс') {
+          outcome = 'Начать с короткого аудита сайта на 1С-Битрикс';
+          reason = 'Сначала повторю проблему и пойму, находится она в сайте или в обмене с 1С.';
+          mvp = 'Проверить «'+lower(joined('bitrixTask'))+'», связку с 1С — «'+lower(first('bitrixExchange'))+'», затем назвать объём доработки.';
+          needs.push('URL страницы, описание симптома и шаги, на которых он повторяется.');
+          risks.push('Без воспроизведения проблемы нельзя обещать срок или стоимость исправления.');
+          serviceHref = '/services/podderzhka-bitrix.html';
+          serviceLabel = 'О поддержке 1С-Битрикс →';
+        } else if (area === 'Интеграция сайта с 1С') {
+          outcome = 'Сначала понять, какие данные идут с сайта в 1С и обратно';
+          reason = 'Способ подключения зависит от данных, платформы сайта и конфигурации 1С.';
+          mvp = '«'+first('exchange')+'» для данных «'+lower(joined('data'))+'»; сайт — '+lower(first('sitePlatform'))+', 1С — '+first('config')+'.';
+          needs.push('Описание объектов сайта и 1С, примеры заказа или карточки товара.');
+          risks.push('Двусторонний обмен нужно разобрать по направлениям. Одной типовой настройки здесь нет.');
+          serviceHref = '/services/integraciya-1c.html';
+          serviceLabel = 'Подробнее об интеграции сайта с 1С →';
+        } else {
+          outcome = area === 'Пока не уверен' ? 'Сначала вместе определить: задача в 1С, обмене или Битриксе' : 'Сначала посмотреть процесс в '+first('config');
+          reason = 'Стоимость можно назвать после того, как задача повторится на конкретной конфигурации и примере данных.';
+          mvp = lower(joined('onecTask') || 'Уточнить тип задачи')+'; ручной шаг — '+lower(first('manual'))+'; объекты — '+lower(joined('data'))+'.';
+          needs.push('Один пример операции до и после желаемого изменения.');
+          if (has('config','Другая конфигурация')) risks.push('По другой конфигурации сначала посмотрю задачу и скажу, смогу ли помочь.');
+          serviceHref = '/services/nastrojka-1c.html';
+          serviceLabel = 'О настройке и доработке 1С →';
+        }
+        if (has('urgent','Ошибка мешает работе')) risks.push('Сначала найду причину и безопасный способ проверить исправление, затем согласуем порядок работ.');
+        if (!risks.length) risks.push('Перед изменениями нужна копия базы, тест и понятный способ проверить результат.');
+        return {
+          outcome:outcome,
+          reason:reason,
+          mvp:mvp,
+          needs:needs,
+          risks:risks,
+          boundary:'Стоимость настройки 1С, интеграции или доработки Битрикса назову после просмотра задачи.',
+          price:'',
+          period:'После разбора',
+          serviceHref:serviceHref,
+          serviceLabel:serviceLabel
+        };
+      }
+
+      function stackRecommendation() {
+        var middle = first('auto') === 'AI уточняет типовой запрос' ? ['AI-уточнение'] : first('auto') === 'Только уведомление сотруднику' ? ['уведомление'] : [];
+        var route = [first('source')].concat(middle).concat(values('destination')).concat([first('person')]).filter(Boolean);
+        return {
+          outcome:'Собрать путь: '+route.join(' → '),
+          reason:'Сначала исправим место, где теряются данные, и один важный процесс.',
+          mvp:'Настроим процесс «'+lower(first('priority'))+'» и один переход между системами. То, что уже работает — «'+joined('existing')+'», — не трогаем.',
+          needs:['Покажите, как заявка сейчас проходит от источника до ответственного сотрудника.','Перечислите системы, нужные поля и уведомления. Рабочие пароли в форму отправлять не нужно.'],
+          risks:['Не автоматизируем всю цепочку сразу: сначала проверим один участок.','Если используется AI, заранее решим, на что он отвечает и когда нужен человек.'],
+          boundary:'Стоимость назову после проверки систем, доступов и данных.',
+          price:'',
+          period:'После разбора',
+          serviceHref:'/services/integraciya-1c.html',
+          serviceLabel:'Как связать системы →'
+        };
+      }
+
+      function unsureRecommendation() {
+        var priority = first('first');
+        var problem = first('problem');
+        var outcome = 'Сначала вместе разобрать, как всё работает сейчас';
+        var serviceHref = '/#services';
+        var serviceLabel = 'Смотреть направления работы →';
+        if (priority === 'Понятное предложение' || problem === 'Клиенты не понимают предложение' || problem === 'Нужен запуск нового продукта') {
+          outcome = 'Сначала объяснить предложение и собрать под него сайт';
+          serviceHref = '/services/landing.html';
+          serviceLabel = 'О разработке сайта →';
+        } else if (priority === 'Сбор заявок' || problem === 'Обращения теряются') {
+          outcome = 'Собрать все обращения в одном месте';
+          serviceHref = '/services/telegram-bot.html';
+          serviceLabel = 'Как собирать заявки в Telegram →';
+        } else if (priority === 'Быстрый ответ на типовые вопросы' || problem === 'Клиенты долго ждут ответа') {
+          outcome = 'Проверить AI-ассистента на реальных вопросах';
+          serviceHref = '/services/ai-assistant.html';
+          serviceLabel = 'Об AI-ассистентах →';
+        } else if (priority === 'Порядок в данных' || problem === 'Данные переносятся вручную' || problem === 'Не сходятся остатки или заказы') {
+          outcome = has('data','1С') ? 'Разобрать процесс и данные в 1С' : 'Сначала определить единый источник данных';
+          serviceHref = '/services/nastrojka-1c.html';
+          serviceLabel = 'О задачах по 1С →';
+        }
+        return {
+          outcome:outcome,
+          reason:'По вашим ответам сначала стоит решить проблему «'+lower(problem)+'». Сейчас обращения идут через «'+lower(first('contact'))+'», а важнее всего — «'+lower(priority)+'».',
+          mvp:'Возьмём один реальный пример и исправим самый проблемный шаг, не перестраивая всё сразу.',
+          needs:['Один пример потерянного обращения, ручной операции или непонятного шага.','Где сейчас хранится информация: '+lower(first('data'))+'.'],
+          risks:['Сначала нужно понять, какой результат проверяем, и только потом выбирать технологию.'],
+          boundary:'Это рекомендация, с чего начать. Точный план и стоимость появятся после уточнения задачи.',
+          price:'',
+          period:'После разбора',
+          serviceHref:serviceHref,
+          serviceLabel:serviceLabel
+        };
+      }
+
+      function recommendation() {
+        if (state.direction === 'site') return siteRecommendation();
+        if (state.direction === 'telegram') return telegramRecommendation();
+        if (state.direction === 'ai') return aiRecommendation();
+        if (state.direction === 'onec') return onecRecommendation();
+        if (state.direction === 'stack') return stackRecommendation();
+        return unsureRecommendation();
+      }
+
+      function answerList() {
+        return questions().map(function (question,index) {
+          return { id:question.id,index:index,label:titleFor(question),value:values(question.id).map(function (value) { return optionLabel(question,value); }).join(', ') };
+        });
+      }
+
+      function buildText(rec) {
+        var rows = ['Предварительная оценка проекта','Задача: '+flows[state.direction].name,'С чего начать: '+rec.outcome,rec.reason,'','Что сделать сначала: '+rec.mvp,'','Что подготовить:'];
+        rec.needs.forEach(function (item) { rows.push('— '+item); });
+        rows.push('','Что важно учесть:');
+        rec.risks.forEach(function (item) { rows.push('— '+item); });
+        rows.push('— '+rec.boundary,'','Ответы:');
+        answerList().forEach(function (item) { rows.push('— '+item.label+': '+item.value); });
+        return rows.join('\n');
+      }
+
+      function prepareContact(rec) {
+        var text = buildText(rec);
+        document.getElementById('projectDirection').value = flows[state.direction].name;
+        document.getElementById('projectResult').value = rec.outcome;
+        document.getElementById('projectMvp').value = rec.mvp;
+        document.getElementById('projectSummary').value = text;
+        document.getElementById('calculatorPrice').value = rec.price || '';
+        document.getElementById('calculatorPeriod').value = rec.period || '';
+        document.getElementById('calculatorChoices').value = answerList().map(function (item) { return item.label+': '+item.value; }).join('; ');
+        contactSummary.textContent = text;
+        contactSummary.classList.add('is-visible');
+        state.resultValid = true;
+        return text;
+      }
+
+      function listPanel(title,items,wide) {
+        return '<section class="result-panel '+(wide ? 'is-wide' : '')+'"><h3>'+escapeHtml(title)+'</h3><ul>'+items.map(function (item) { return '<li>'+escapeHtml(item)+'</li>'; }).join('')+'</ul></section>';
+      }
+
+      function renderResult() {
+        var rec = recommendation();
+        var answers = answerList();
+        var route = questions().map(function (question) { return '<span>'+escapeHtml(question.label)+'</span>'; }).join('');
+        var resultName = state.direction === 'site' ? first('format') : state.direction === 'onec' ? first('area') : flows[state.direction].name;
+        var grid = document.querySelector('.calculator-grid');
+        if (grid) grid.classList.remove('is-choosing');
+        var mobileCut = '<div class="mobile-result-cut" aria-hidden="true"><div class="mobile-cut-layer is-future"></div><div class="mobile-cut-layer"></div><div class="mobile-cut-layer is-core"></div><div class="mobile-cut-layer"></div><div class="mobile-cut-layer is-future"></div></div>';
+        estimator.innerHTML = '<section class="calc-result" aria-labelledby="resultTitle"><div class="result-kicker">Результат</div><div style="color:var(--text-tertiary);font:11px/1 var(--font-mono);letter-spacing:.08em;margin-top:4px;">Это первый этап, а не весь проект.</div><h2 id="resultTitle" tabindex="-1">С чего начать: '+escapeHtml(resultName)+'</h2><div class="result-outcome"><span>Что советую</span><strong>'+escapeHtml(rec.outcome)+'</strong><p>'+escapeHtml(rec.reason)+'</p></div>'+mobileCut+'<div class="result-route" aria-label="Пройденные вопросы">'+route+'</div><div class="result-grid"><section class="result-panel is-wide"><h3>Что сделать сначала</h3><p>'+escapeHtml(rec.mvp)+'</p></section>'+listPanel('Что нужно подготовить',rec.needs,false)+listPanel('Что важно учесть',rec.risks,false)+'</div><p class="result-boundary">'+escapeHtml(rec.boundary)+'</p><a class="result-service" href="'+escapeHtml(rec.serviceHref)+'">'+escapeHtml(rec.serviceLabel)+'</a><div class="result-summary"><h3>Ваши ответы</h3><ul class="answer-list">'+answers.map(function (item) { return '<li><button type="button" data-edit-question="'+escapeHtml(item.id)+'"><span><b>'+escapeHtml(item.label)+'</b><small>'+escapeHtml(item.value)+'</small></span><em>Изменить</em></button></li>'; }).join('')+'</ul></div><div class="result-actions"><a href="#contact" class="result-action" id="sendEstimate">Отправить результат для оценки</a><button type="button" class="telegram-result" id="telegramEstimate">Скопировать и открыть Telegram</button></div><button type="button" class="result-edit" id="editEstimate">Изменить ответы с начала</button></section>';
+        state.resultValid = true;
+        prepareContact(rec);
+        updateScene(null,[],true,rec);
+        if (isEnhanced) scheduleSceneTimer(triggerContourAssembly,60);
+        reach('estimator_result_open');
+        status.textContent = 'Предварительный результат готов: '+rec.outcome+'.';
+        document.getElementById('resultTitle').focus();
+        estimator.querySelectorAll('[data-edit-question]').forEach(function (button) {
+          button.addEventListener('click',function () {
+            var id = button.getAttribute('data-edit-question');
+            var index = questions().findIndex(function (question) { return question.id === id; });
+            state.step = index < 0 ? 0 : index;
+            invalidateResult();
+            reach('estimator_edit_answers');
+            renderQuestion(true);
+          });
+        });
+        document.getElementById('editEstimate').addEventListener('click',function () {
+          state.step = 0;
+          invalidateResult();
+          reach('estimator_edit_answers');
+          renderQuestion(true);
+        });
+        document.getElementById('sendEstimate').addEventListener('click',function () {
+          prepareContact(rec);
+          reach('estimator_form_click');
+          reach('cta_click');
+        });
+        document.getElementById('telegramEstimate').addEventListener('click',function () {
+          var button = this;
+          var text = buildText(rec);
+          window.open('https://t.me/rdvigm','_blank','noopener');
+          copyText(text,function (success) {
+            button.textContent = success ? 'Результат скопирован' : 'Telegram открыт. Скопируйте результат из формы ниже.';
+            reach('estimator_telegram_click');
+            reach('telegram_click');
+            window.setTimeout(function () { button.textContent = 'Скопировать и открыть Telegram'; },3000);
+          });
+        });
+      }
+
+      function triggerContourAssembly() {
+        var cut = document.querySelector('.cut-container');
+        if (!cut) return;
+        var modelEl = cut.querySelector('.cut-model');
+        if (!modelEl) return;
+        if (modelEl.getAttribute('data-assembly-started') === 'true') return;
+        modelEl.setAttribute('data-assembly-started','true');
+        var slice = cut.querySelector('.slice-plane');
+        if (!isEnhanced || document.hidden) {
+          if (slice && slice.parentNode) slice.parentNode.removeChild(slice);
+          applyFinalAssembly(modelEl,true);
+          return;
+        }
+        sceneAnimationFrame = window.requestAnimationFrame(function () {
+          sceneAnimationFrame = 0;
+          if (slice && slice.parentNode) slice.classList.add('is-sweeping');
+        });
+        scheduleSceneTimer(function () { applyFinalAssembly(modelEl,false); },150);
+        scheduleSceneTimer(function () {
+          if (slice && slice.parentNode) slice.classList.add('is-leaving');
+        },540);
+        scheduleSceneTimer(function () {
+          if (slice && slice.parentNode) slice.parentNode.removeChild(slice);
+        },630);
+      }
+
+      function copyText(text,done) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { done(true); }).catch(function () { fallbackCopy(text,done); });
+        } else {
+          fallbackCopy(text,done);
+        }
+      }
+
+      function fallbackCopy(text,done) {
+        var area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly','');
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        var success = false;
+        try { success = document.execCommand('copy'); } catch (error) {}
+        area.remove();
+        done(success);
+      }
+
+      function toastIcon() {
         return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="currentColor"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="currentColor"/></svg>';
       }
-      function showFormToast(type, title, text){
+
+      function showToast(type,title,text) {
         var stack = document.querySelector('.form-toast-stack');
         if (!stack) {
           stack = document.createElement('div');
           stack.className = 'form-toast-stack';
           stack.setAttribute('role','status');
           stack.setAttribute('aria-live','polite');
-          stack.setAttribute('aria-atomic','true');
           document.body.appendChild(stack);
         }
-        stack.innerHTML = '<div class="form-toast '+(type === 'error' ? 'is-error' : 'is-success')+'"><span class="form-toast-icon">'+toastIcon()+'</span><span><strong class="form-toast-title"></strong><span class="form-toast-text"></span></span></div>';
+        stack.innerHTML = '<div class="form-toast '+(type === 'error' ? 'is-error' : '')+'"><span class="form-toast-icon">'+toastIcon()+'</span><span><strong class="form-toast-title"></strong><span class="form-toast-text"></span></span></div>';
         var toast = stack.querySelector('.form-toast');
         toast.querySelector('.form-toast-title').textContent = title;
         toast.querySelector('.form-toast-text').textContent = text;
-        requestAnimationFrame(function(){ toast.classList.add('is-visible'); });
-        clearTimeout(stack._hideTimer);
-        stack._hideTimer = setTimeout(function(){
-          toast.classList.remove('is-visible');
-          setTimeout(function(){ stack.innerHTML = ''; }, 320);
-        }, 5000);
+        requestAnimationFrame(function () { toast.classList.add('is-visible'); });
+        clearTimeout(stack._timer);
+        stack._timer = setTimeout(function () { toast.classList.remove('is-visible'); setTimeout(function () { stack.innerHTML = ''; },280); },5000);
       }
-      var ORIG_TEXT = 'Отправить заявку';
-      if (form && btn) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var name = document.getElementById('name').value.trim();
-          var email = document.getElementById('email').value.trim();
-          var msg = document.getElementById('message').value.trim();
-          if (!name || !email || !msg) return;
-          var consent = form.querySelector('.consent input[type="checkbox"]');
-          if (consent && !consent.checked) {
-            showFormToast('error', 'Нужно согласие', 'Отметьте чекбокс обработки персональных данных.');
-            return;
-          }
-          btn.disabled = true;
-          btn.textContent = 'Отправка...';
-          fetch('https://formspree.io/f/mkolvvep', {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
+
+      form.addEventListener('submit',function (event) {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Отправка…';
+        fetch(form.action,{ method:'POST',body:new FormData(form),headers:{ Accept:'application/json' } })
+          .then(function (response) {
+            if (!response.ok) throw new Error('formspree');
+            reach('form_submit');
+            form.reset();
+            contactSummary.textContent = '';
+            contactSummary.classList.remove('is-visible');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Отправить на оценку';
+            showToast('success','Заявка отправлена','Спасибо! Посмотрю задачу и отвечу по указанному контакту.');
           })
-          .then(function(response){
-            btn.disabled = false;
-            btn.textContent = ORIG_TEXT;
-            if (response.ok) {
-              __reach('form_submit');
-              form.reset();
-              showFormToast('success', 'Заявка отправлена ✓', 'Отвечу в течение дня.');
-            } else {
-              return response.json().then(function(d){
-                var m = (d && d.errors && d.errors[0] && d.errors[0].message) ? d.errors[0].message : 'Попробуйте ещё раз или напишите в Telegram.';
-                showFormToast('error', 'Ошибка отправки', m);
-              }).catch(function(){
-                showFormToast('error', 'Ошибка отправки', 'Попробуйте ещё раз или напишите в Telegram.');
-              });
-            }
-          })
-          .catch(function(){
-            btn.disabled = false;
-            btn.textContent = ORIG_TEXT;
-            showFormToast('error', 'Нет соединения', 'Попробуйте позже или напишите в Telegram.');
+          .catch(function () {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Отправить на оценку';
+            showToast('error','Не получилось отправить','Попробуйте ещё раз или напишите напрямую в Telegram.');
           });
-        });
-      }
-      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function(a){
-        a.addEventListener('click', function(){ __reach('telegram_click'); });
       });
-      document.querySelectorAll('.btn-primary:not([type=submit]):not(#submitBtn)').forEach(function(a){
-        a.addEventListener('click', function(){ __reach('cta_click'); });
+
+      document.querySelectorAll('a[href*="t.me/rdvigm"]').forEach(function (link) {
+        link.addEventListener('click',function () { reach('telegram_click'); });
       });
-    })();
+
+      renderDirections(false);
+    }());
   </script>
 </body>
 </html>
