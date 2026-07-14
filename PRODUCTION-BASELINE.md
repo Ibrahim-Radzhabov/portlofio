@@ -2,86 +2,78 @@
 
 > **OWNER-APPROVED STATE. DO NOT REDESIGN OR "IMPROVE" WITHOUT AN EXPLICIT NEW OWNER REQUEST.**
 >
-> Fixed on: **2026-07-10**
-> Git commit: **`74018e8c1f894eafebd02459f9dbdeae68007b0c`** (`Ship Phase 8 fracture and journey cards`)
-> RU-edge release: **`20260710Tphase8-74018e8`**
+> Fixed on: **2026-07-14**
+> Git release commit: **`07ef32578e381f30b206a04fc97ad43c35ff888f`** (`Release redesigned homepage`)
+> RU-edge release: **`20260714Thomepage-07ef325`**
 > Public URL: **`https://radzhabov-dev.ru/`**
 
-This document defines the current production homepage as the **golden visual and behavioral baseline**. It overrides old Phase 8 prototype briefs and subjective improvement suggestions. The owner explicitly considers this production state very good and wants it preserved.
+This document defines the owner-approved visual, content and behavioral baseline of the homepage. On 2026-07-14 the owner explicitly instructed the agent to publish the fully reworked local homepage. This baseline replaces the Phase 8 baseline at commit `74018e8`; that commit remains available as a historical rollback point.
 
 ## Critical distinction: production is not the dirty worktree
 
-The local worktree contains several layers of unrelated, uncommitted work. **Do not treat the current files on disk as an exact copy of production and do not stage them wholesale.** The byte-exact production source is commit `74018e8`.
+The local worktree contains unrelated uncommitted layers. **Do not treat the current files on disk as an exact copy of production and do not stage them wholesale.** The byte-exact source of this baseline is release commit `07ef32578e381f30b206a04fc97ad43c35ff888f`.
 
 Use these commands when exact comparison is required:
 
 ```bash
-git show 74018e8:index.html
-git diff 74018e8 -- index.html assets/css/home.css assets/js/home.js assets/js/hero3d.js assets/js/home-motion.js
+git show 07ef325:index.html
+git diff 07ef325 -- index.html assets/css/home.css assets/js/home.js assets/js/hero3d.js assets/js/home-motion.js
 bash .github/verify-production-baseline.sh --commit
 bash .github/verify-production-baseline.sh --production
 bash .github/verify-production-baseline.sh --release-commit
 ```
 
-The deployed release contains **126 files**, including **31 HTML files**; `sitemap.xml` contains **30 URLs**. The lower inventories in `AGENTS.md` / `CLAUDE.md` may describe pending, uncommitted pages and must not be mistaken for live production.
+The deployed whitelist artifact contains **144 files**, including **38 HTML files**; `sitemap.xml` contains **37 URLs**. Its byte-exact inventory is `.github/production-release-07ef325.sha256`.
 
 ## What is approved on the homepage
 
-### 1. Existing homepage composition stays intact
+### 1. Visual system and composition
 
 - Light editorial/premium theme: cream background, ink text, dark green primary actions, terracotta `#B5623C` as the only warm accent.
-- Playfair Display / Outfit / JetBrains Mono typography and current sizing/weights.
-- Current header, hero copy, three offer switches, CTA, right-side three-step explanation, preloader, «Работы», discovery carousel, services, cases, about, FAQ, contacts and sticky contact.
-- The full `_proto/phase8-izlom-system.html` layout is **not approved for production**. It is only an idea source. Do not copy its navigation, page grid, X-ray section or other composition.
+- Playfair Display / Outfit / JetBrains Mono typography and the current spacing, sizing, card treatment and responsive behavior.
+- Current header, hero, scenario switcher, request path, works, services, journey, bundle simulator, about, FAQ, contact form, footer and sticky contact.
+- The current composition is the approved page. `_proto/` remains an idea/archive area and must not be deployed or copied wholesale.
 
-### 2. Approved Phase 8 «Излом» only
+### 2. Hero and three task scenarios
 
-The hero keeps the production layout but uses the Phase 8 fracture treatment:
+- The three switches are approved: «Сайт или магазин», «AI-ассистент», «Сайт + AI + 1С».
+- Each switch updates the H1 copy, description, three process steps, CTA payload and fracture labels as one coherent state.
+- A rapid sequence of switch clicks must never leave the selected button and delayed copy out of sync.
+- Desktop keeps the interactive fracture; mobile hides the heavy visual and shows a compact readable hero.
 
-- two black outer nodes on the left and one terracotta central node on the right;
-- two thin, visually uniform black segments converging into the central node;
-- exactly eight small terracotta particles moving along the two segments on desktop;
-- particles move along the path without random lateral wobble, halos or duplicated render layers;
-- a restrained soft elliptical shadow below the lower part of the mark;
-- Three.js is the enhanced desktop layer; lightweight WebGL and static SVG remain valid fallbacks;
-- static fallback geometry must visually match the enhanced geometry;
-- no thick-at-start connector bug, no duplicate «Излом», no duplicated particles.
+### 3. «Излом» and motion layer
 
-Protected implementation: `index.html`, `assets/css/home.css`, `assets/js/hero3d.js`, `assets/js/home-motion.js`.
+- Two black outer nodes converge into one terracotta central node through two thin black segments.
+- Exactly eight small terracotta particles move along the two segments on enhanced desktop.
+- Three.js is the enhanced layer; lightweight WebGL and static SVG remain valid fallbacks.
+- Static and enhanced geometry must remain visually consistent; no duplicated particles or render layers.
+- The motion layer stays gated to capable desktop devices and must never become a mobile requirement.
 
-### 3. Approved cards in «Связка»
+### 4. Navigation and «Работы»
 
-Three cards appear progressively with the existing request-path scroll progress:
+- Desktop starts with the normal navigation and changes after scroll to the five-node route: «Начало → Работы → Услуги → Связка → Контакты» with scroll progress and one active node.
+- Mobile/tablet use the regular menu and must not show the desktop route.
+- Work filters «Все работы / Сайты / AI / Telegram / 1С» keep at least one relevant result and the contextual recommendation.
+- The nonlinear works discovery is approved, including the eight project frames and the dedicated 430×932 mobile assets.
+- Reduced-motion users receive the readable project index instead of the nonlinear scroll scene.
+- Project detail sheet, Telegram mini-demo and before/after control remain usable with keyboard and touch.
 
-1. **Первый контакт** — form data and task context.
-2. **AI-квалификация** — assistant clarifies the request and hands it to a person when needed.
-3. **Учёт и склад** — data is fixed in the accounting system as an order draft.
+### 5. Request route and bundle simulator
 
-Desktop: three equal columns. Mobile: one column. The current stage receives a thin terracotta border; inactive cards remain quiet. With `prefers-reduced-motion: reduce`, all cards are immediately visible and do not animate.
+- The visible request route explains the sequence from first contact through AI clarification to accounting.
+- The bundle simulator supports three situations and every non-empty combination of «Форма или сайт / Telegram or WhatsApp / 1С или таблица».
+- It must never allow an empty selection; route, explanation and contact CTA payload must stay synchronized.
+- Claims and examples must follow the project honesty rules, especially the limited authorship of the Dag Sport case.
 
-Protected implementation: `index.html`, `assets/css/home.css`, `assets/js/home.js`.
+### 6. Form and measurement
 
-## Runtime invariants
+- Formspree endpoint `mkolvvep`, consent gate, honeypot `_gotcha`, status/toast feedback and hidden source/scenario payload remain intact.
+- Yandex Metrika ID `110282088` and the existing conversion/product goals remain intact.
+- Telegram is `t.me/rdvigm`, email is `1cworkac@mail.ru`, and the canonical domain is `radzhabov-dev.ru`.
 
-- Motion gate: desktop only, `min-width: 969px`, `pointer: fine`, and `prefers-reduced-motion: no-preference`.
-- Mobile and reduced-motion modes must not request GSAP/Three/home-motion vendor scripts.
-- No horizontal overflow at 390x844, 768px or 1440x900.
-- No console errors, uncaught page errors or CSP violations.
-- Meta-CSP must continue to allow the tested Yandex Metrika endpoints, including `mc.yandex.com` and `wss://mc.yandex.com`.
-- Formspree, honeypot `_gotcha`, consent gates and Metrika goals must remain intact.
-- Asset cache versions must be bumped when protected CSS/JS really changes.
+## Protected implementation
 
-## Visual references
-
-These captures are evidence of the accepted production state, not new design targets:
-
-- `docs/production-baseline/2026-07-10-desktop-hero.webp`
-- `docs/production-baseline/2026-07-10-desktop-cards.webp`
-- `docs/production-baseline/2026-07-10-mobile-cards.webp`
-
-## Protected-file hashes
-
-The canonical SHA-256 manifest is `.github/production-baseline.sha256`. It covers:
+The canonical protected-file manifest is `.github/production-baseline.sha256`. It covers:
 
 - `index.html`
 - `assets/css/home.css`
@@ -89,20 +81,41 @@ The canonical SHA-256 manifest is `.github/production-baseline.sha256`. It cover
 - `assets/js/hero3d.js`
 - `assets/js/home-motion.js`
 
-The production bytes and commit `74018e8` were verified to match all five hashes on 2026-07-10.
+The complete whitelist release is recorded in `.github/production-release-07ef325.sha256` (144 files). Historical manifests remain recovery snapshots and are not the active baseline.
 
-The byte-exact inventory of the complete deployed artifact is stored in `.github/production-release-74018e8.sha256` (126 files). It is a recovery/audit snapshot, not a ban on future owner-approved content releases.
+## Runtime invariants
+
+- Motion gate: desktop only, `min-width: 969px`, `pointer: fine`, and `prefers-reduced-motion: no-preference`.
+- Mobile, tablet/coarse-pointer and reduced-motion modes must not request GSAP or `home-motion.js`.
+- No horizontal overflow at 390×844, 768×1024 or 1440×900.
+- No console errors, uncaught page errors, local 4xx/5xx responses or CSP violations.
+- Meta-CSP must allow the tested Yandex Metrika endpoints, including `mc.yandex.com` and `wss://mc.yandex.com`.
+- Formspree, consent, honeypot and Metrika goals must remain intact.
+- Cache query versions must change whenever protected CSS or JavaScript bytes change.
+- One H1, valid JSON-LD, valid internal links/assets and sitemap consistency remain mandatory.
+
+## Acceptance evidence
+
+The release passed 71/71 automated browser checks plus a separate final tablet visual check on 2026-07-14:
+
+- desktop 1440×900, including all hero scenarios, route navigation, filters, 21 simulator states, modal, demo, slider and mocked form;
+- mobile 390×844, including menu, all eight mobile work frames and motion-network gate;
+- tablet 768×1024 after the entrance animation;
+- desktop reduced motion;
+- mobile without JavaScript.
+
+Local screenshots and the machine-readable report are stored under `output/playwright/homepage-release-20260714/`. They are QA evidence and are intentionally excluded from the deploy artifact.
 
 ## Mandatory protocol for any future change
 
-1. Obtain an explicit owner request naming the exact homepage element to change. A generic request such as «улучши дизайн» is not permission to replace the page composition.
+1. Obtain an explicit owner request naming the homepage element to change. A generic request such as «улучши дизайн» is not permission to replace the page composition.
 2. Read this file, `AGENTS.md`, `CLAUDE.md` and `AGENT-HANDOFF.md` before editing.
-3. Start comparison from commit `74018e8`, not from an assumed clean local tree.
-4. Keep the diff surgical. Do not import the full Phase 8 prototype.
+3. Start byte-exact comparison from commit `07ef325`, not from an assumed clean local tree.
+4. Keep the diff surgical; preserve unrelated dirty worktree layers.
 5. Do not update `.github/production-baseline.sha256` merely to make CI green. Updating it means the owner explicitly accepted a new golden baseline.
-6. Before deploy, show the owner local screenshots and receive approval.
-7. Run desktop 1440x900, mobile 390x844 and reduced-motion browser QA; verify console, CSP, overflow and script-loading gates.
+6. Before deploy, show the owner local evidence and obtain an explicit release instruction.
+7. Run desktop, mobile, tablet and reduced-motion browser QA; verify console, CSP, overflow and script-loading gates.
 8. Stage only named files. Never use `git add .` in this repository.
-9. Deploy as a new atomic release and preserve the previous release for rollback.
+9. Deploy from an exact commit as a new atomic release and preserve the previous release for rollback.
 
 If a requested change conflicts with this baseline or its scope is unclear: **stop and ask; do not improvise.**

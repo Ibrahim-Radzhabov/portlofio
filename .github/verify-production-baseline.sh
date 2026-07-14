@@ -3,8 +3,8 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MANIFEST="$ROOT/.github/production-baseline.sha256"
-RELEASE_MANIFEST="$ROOT/.github/production-release-74018e8.sha256"
-BASELINE_COMMIT="74018e8c1f894eafebd02459f9dbdeae68007b0c"
+RELEASE_MANIFEST="$ROOT/.github/production-release-07ef325.sha256"
+BASELINE_COMMIT="07ef32578e381f30b206a04fc97ad43c35ff888f"
 PRODUCTION_ORIGIN="https://radzhabov-dev.ru"
 MODE="${1:---commit}"
 
