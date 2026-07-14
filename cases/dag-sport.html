@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Кейс: сайт на 1С-Битрикс + 1С УТ и AI — dag-sport.ru</title>
-  <meta name="description" content="Как я связал готовый магазин спорттоваров на 1С-Битрикс с 1С: Управление Торговлей и добавил AI-консультанта. Заказ с сайта сразу создаёт документ в 1С УТ.">
+  <meta name="description" content="Готовый магазин на 1С-Битрикс: оформленный заказ автоматически передаётся в 1С УТ, владелец получает Telegram-уведомление. Плюс AI-консультант.">
   <meta name="keywords" content="интеграция сайта с 1С, 1С-Битрикс 1С УТ обмен, выгрузка заказов с сайта в 1С, интернет-магазин 1С Управление Торговлей, AI-консультант для интернет-магазина, автоматизация заказов 1С Telegram">
   <link rel="canonical" href="https://radzhabov-dev.ru/cases/dag-sport.html">
   <meta name="robots" content="index, follow">
@@ -16,13 +16,13 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#F5F0E8">
   <meta property="og:title" content="Кейс: связка сайта на 1С-Битрикс с 1С УТ и AI-консультант — dag-sport.ru">
-  <meta property="og:description" content="Заказ с сайта автоматически создаёт документ в 1С УТ и уведомление в Telegram. Плюс AI-консультант по выбору беговой дорожки.">
+  <meta property="og:description" content="После оформления заказ автоматически передаётся в 1С УТ, а владелец получает уведомление в Telegram. Плюс AI-консультант по выбору дорожки.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://radzhabov-dev.ru/cases/dag-sport.html">
   <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/case-dag-sport.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Кейс: 1С-Битрикс ↔ 1С УТ и AI-консультант — dag-sport.ru">
+  <meta name="twitter:title" content="Кейс: 1С-Битрикс + 1С УТ и AI-консультант — dag-sport.ru">
   <meta name="twitter:description" content="Интеграция готового магазина на Битрикс с 1С УТ + AI-консультант.">
   <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/case-dag-sport.png">
   <script type="application/ld+json">
@@ -42,30 +42,19 @@
           "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
         },
         "about": "Интеграция интернет-магазина на 1С-Битрикс с 1С: Управление Торговлей и AI-консультант для покупателей",
-        "description": "Готовый интернет-магазин спорттоваров на 1С-Битрикс подключён к 1С: Управление Торговлей. Заказ с сайта автоматически создаёт документ в 1С УТ и уведомление в Telegram. Дополнительно — AI-консультант, который помогает выбрать беговую дорожку. Сам сайт разрабатывал не я; моя часть — интеграция с 1С и AI.",
+        "description": "Существующий интернет-магазин спорттоваров работает на 1С-Битрикс. После оформления заказ автоматически передаётся в 1С: Управление Торговлей, где создаётся документ. Отдельно владелец получает уведомление в Telegram. AI-консультант помогает выбрать беговую дорожку по данным каталога. Сам сайт разрабатывал не я; моя часть — интеграция с 1С УТ и AI-консультант.",
         "keywords": ["1С", "1С-Битрикс", "1С Управление Торговлей", "интеграция сайта с 1С", "AI-консультант", "интернет-магазин", "автоматизация"],
         "inLanguage": "ru",
         "genre": "Сайт + 1С + AI"
       },
       {
-        "@type": "HowTo",
-        "name": "Как работает связка сайта на 1С-Битрикс с 1С УТ",
-        "description": "Путь заказа от оформления на сайте до документа в 1С: Управление Торговлей и уведомления в Telegram.",
-        "step": [
-          {"@type": "HowToStep", "position": 1, "name": "Заказ на сайте", "text": "Клиент оформляет заказ в интернет-магазине на 1С-Битрикс."},
-          {"@type": "HowToStep", "position": 2, "name": "Документ в 1С УТ", "text": "Заказ автоматически выгружается в 1С: Управление Торговлей и создаётся документ — без ручного переноса."},
-          {"@type": "HowToStep", "position": 3, "name": "Уведомление в Telegram", "text": "Владелец сразу получает уведомление о новом заказе в Telegram."},
-          {"@type": "HowToStep", "position": 4, "name": "AI-консультант", "text": "AI-консультант на сайте помогает покупателю выбрать подходящую беговую дорожку."}
-        ]
-      },
-      {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "Что значит «связать сайт с 1С»?", "acceptedAnswer": {"@type": "Answer", "text": "Это настройка автоматического обмена данными между сайтом и учётной системой 1С: заказы, остатки, цены и статусы передаются без ручного копирования. Для магазина на 1С-Битрикс заказ с сайта сам становится документом в 1С: Управление Торговлей."}},
-          {"@type": "Question", "name": "Чем 1С-Битрикс отличается от 1С: Управление Торговлей?", "acceptedAnswer": {"@type": "Answer", "text": "1С-Битрикс — это платформа для сайта и интернет-магазина (витрина, корзина, заказы). 1С: Управление Торговлей (УТ) — учётная система для товаров, остатков, продаж и документов. Связка между ними передаёт заказы с сайта в учёт автоматически."}},
-          {"@type": "Question", "name": "Какие данные синхронизируются между сайтом и 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего — заказы с сайта в 1С (создание документа), а также каталог, цены и остатки из 1С на сайт. В этом проекте заказ с сайта автоматически создаёт документ в 1С УТ и присылает уведомление в Telegram."}},
-          {"@type": "Question", "name": "Можно ли подключить к 1С уже готовый сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Сайт не обязательно делать с нуля — если он работает на 1С-Битрикс, к нему можно настроить обмен с 1С: Управление Торговлей. Именно так и было в этом проекте: сайт уже существовал, я подключил интеграцию и AI-консультанта."}},
-          {"@type": "Question", "name": "Зачем интернет-магазину AI-консультант?", "acceptedAnswer": {"@type": "Answer", "text": "AI-консультант отвечает покупателю и помогает выбрать товар по параметрам — для магазина спорттоваров это подбор беговой дорожки. Он снимает часть вопросов с продавца и помогает клиенту быстрее дойти до заказа."}}
+          {"@type": "Question", "name": "Что значит «связать сайт с 1С»?", "acceptedAnswer": {"@type": "Answer", "text": "Это настройка передачи согласованных данных между сайтом и учётной системой. Существующий сайт dag-sport.ru работает на 1С-Битрикс. После оформления заказ автоматически передаётся в 1С УТ, где создаётся документ."}},
+          {"@type": "Question", "name": "Чем 1С-Битрикс отличается от 1С: Управление Торговлей?", "acceptedAnswer": {"@type": "Answer", "text": "1С-Битрикс — платформа существующего сайта и интернет-магазина. 1С: Управление Торговлей (УТ) — учётная система. В этом проекте оформленный заказ с сайта автоматически передаётся в 1С УТ."}},
+          {"@type": "Question", "name": "Какие данные синхронизируются между сайтом и 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Для dag-sport настроена передача оформленного заказа в 1С УТ, где создаётся документ. Другие направления обмена зависят от конкретной задачи."}},
+          {"@type": "Question", "name": "Можно ли подключить к 1С уже готовый сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Возможность и состав интеграции зависят от систем и задачи. В этом проекте сайт уже существовал на 1С-Битрикс; я подключил интеграцию с 1С УТ и AI-консультанта, но сам сайт не разрабатывал."}},
+          {"@type": "Question", "name": "Что умеет AI-консультант в этом проекте?", "acceptedAnswer": {"@type": "Answer", "text": "Консультант опирается на каталог canonical_products.json из 169 беговых дорожек с реальными характеристиками и ориентировочными ценами. Он подбирает и сравнивает модели по весу пользователя, бюджету, типу тренировки, для дома или зала, компактности и складной конструкции, отвечает по характеристикам и находит похожие модели по названию. Если нужной информации нет в каталоге, он не должен придумывать ответ. Фактическое наличие предлагает уточнить у менеджера; автоматическая передача диалога менеджеру не настроена."}}
         ]
       },
       {
@@ -127,42 +116,26 @@
     .content ul{list-style:none;margin:14px 0;}
     .content li{padding:7px 0;color:var(--text-secondary);font-size:15.5px;display:flex;gap:12px;}
     .content li::before{content:'—';color:var(--accent);font-weight:600;flex-shrink:0;}
-    /* Flow diagram */
-    .flow{display:flex;justify-content:center;margin:30px 0 8px;}
-    .flow svg{width:100%;max-width:300px;height:auto;}
-    /* Evidence route */
+    /* Two honest branches */
     .handoff{max-width:900px;margin:0 auto;}
     .handoff-map{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:10px;overflow:hidden;scroll-margin-top:90px;}
-    .handoff-map::before{content:'';position:absolute;left:44px;right:44px;top:92px;height:2px;background:linear-gradient(90deg,rgba(20,18,16,0.12),rgba(181,98,60,0.65),rgba(20,18,16,0.12));}
-    .handoff-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;list-style:none;}
-    .content .handoff-item{display:block;min-width:0;padding:0;color:inherit;}
-    .content .handoff-item::before{content:none;}
-    .handoff-node{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin-bottom:18px;background:var(--bg-primary);border:1px solid rgba(26,58,42,0.22);color:var(--accent);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;position:relative;z-index:1;box-shadow:0 0 0 8px var(--bg-card);}
-    .handoff-item:nth-child(2) .handoff-node,.handoff-item:nth-child(3) .handoff-node{border-color:rgba(181,98,60,0.35);color:var(--accent-warm);}
-    .handoff-item:last-child .handoff-node{background:var(--text-primary);border-color:var(--text-primary);color:var(--bg-primary);}
-    .handoff-card{min-height:190px;background:rgba(245,240,232,0.58);border:1px solid rgba(20,18,16,0.08);border-radius:16px;padding:18px 16px;}
+    .branch-group+.branch-group{margin-top:24px;padding-top:24px;border-top:1px solid var(--border);}
+    .branch-title{display:block;margin-bottom:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-warm);}
+    .branch-track{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1fr);gap:10px;align-items:stretch;}
+    .branch-track--post{grid-template-columns:minmax(0,1fr) 34px minmax(0,2fr);}
+    .branch-arrow{display:grid;place-items:center;color:var(--accent-warm);font-family:var(--font-mono);font-size:22px;}
+    .branch-outcomes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+    .handoff-card{min-height:0;background:rgba(245,240,232,0.58);border:1px solid rgba(20,18,16,0.08);border-radius:16px;padding:18px 16px;}
     .handoff-kicker{display:block;margin-bottom:9px;font-family:var(--font-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--text-tertiary);}
     .handoff-card h3{font-family:var(--font-display);font-size:19px;font-weight:600;line-height:1.16;margin-bottom:9px;color:var(--text-primary);}
     .handoff-card p{font-size:14px;line-height:1.62;color:var(--text-secondary);margin:0;}
     .handoff-note{margin-top:16px;padding:14px 16px;border-radius:14px;background:rgba(181,98,60,0.075);border:1px solid rgba(181,98,60,0.18);font-size:14px;line-height:1.65;color:var(--text-secondary);}
-    /* Steps */
-    .steps{display:grid;gap:14px;margin-top:8px;counter-reset:s;}
-    .step{display:flex;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
-    .step-n{counter-increment:s;font-family:var(--font-mono);font-size:13px;color:var(--accent-warm);flex-shrink:0;}
-    .step-n::before{content:'0' counter(s);}
-    .step-t b{display:block;font-family:var(--font-display);font-weight:600;font-size:16px;margin-bottom:3px;color:var(--text-primary);}
-    .step-t span{font-size:14.5px;color:var(--text-secondary);}
-    /* Results / placeholders */
+    /* Results */
     .results{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:30px;}
     .results ul{list-style:none;}
     .results li{padding:9px 0;color:var(--text-secondary);font-size:15.5px;display:flex;gap:12px;border-bottom:1px solid var(--border);}
     .results li:last-child{border-bottom:none;}
     .results li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;}
-    .ph{color:var(--accent-warm);font-family:var(--font-mono);font-size:13px;background:var(--warm-glow);border:1px dashed rgba(181,98,60,0.3);border-radius:6px;padding:1px 7px;}
-    /* Screenshots */
-    .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px;}
-    .shot{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;}
-    .shot span{color:var(--text-tertiary);font-family:var(--font-mono);font-size:13px;}
     /* FAQ */
     .faq details{border-bottom:1px solid var(--border);padding:6px 0;}
     .faq summary{font-family:var(--font-display);font-weight:600;font-size:17px;padding:14px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;}
@@ -181,14 +154,16 @@
     .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:14px;color:var(--text-tertiary);}
     .foot a{color:var(--text-secondary);text-decoration:none;}
     .foot a:hover{color:var(--accent);}
-    @media(max-width:860px){
-      .handoff-map::before{left:49px;right:auto;top:42px;bottom:42px;width:2px;height:auto;background:linear-gradient(180deg,rgba(20,18,16,0.12),rgba(181,98,60,0.65),rgba(20,18,16,0.12));}
-      .handoff-grid{grid-template-columns:1fr;gap:14px;}
-      .content .handoff-item{display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;align-items:start;}
-      .handoff-node{margin-bottom:0;}
-      .handoff-card{min-height:0;}
+    @media(max-width:680px){
+      .hero{padding:120px 0 40px;}
+      .handoff-map{padding:20px 16px;border-radius:18px;}
+      .branch-track,.branch-track--post{grid-template-columns:1fr;}
+      .branch-arrow{transform:rotate(90deg);min-height:24px;}
+      .branch-outcomes{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .handoff-card{padding:16px 14px;}
+      .handoff-card h3{font-size:17px;}
+      .handoff-card p{font-size:13px;}
     }
-    @media(max-width:680px){ .shots{grid-template-columns:1fr;} .hero{padding:120px 0 40px;} .handoff-map{padding:20px 16px;border-radius:18px;} .handoff-map::before{left:37px;} .handoff-card{padding:16px 15px;} .handoff-card h3{font-size:18px;} }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -214,7 +189,7 @@
       <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/cases/" style="color:var(--text-tertiary);text-decoration:none;">Кейсы</a> / <span style="color:var(--text-primary);">dag-sport</span></nav>
       <span class="hero-label">Кейс · Сайт + 1С + AI</span>
       <h1>Связка сайта на 1С-Битрикс с <span class="accent">1С УТ</span> и AI-консультант для магазина спорттоваров</h1>
-      <p class="hero-sub">Готовый интернет-магазин dag-sport.ru работал на 1С-Битрикс, но заказы переносили в учёт руками. Я подключил автоматический обмен с 1С: Управление Торговлей и добавил AI-консультанта по выбору беговой дорожки.</p>
+      <p class="hero-sub">Готовый интернет-магазин dag-sport.ru работал на 1С-Битрикс, но заказы переносили в учёт руками. Я настроил автоматическую передачу оформленного заказа в 1С УТ и добавил AI-консультанта по выбору беговой дорожки.</p>
       <div class="hero-meta">
         <div class="hero-meta-item"><span class="hero-meta-v">Спорттовары</span><span class="hero-meta-l">Ниша</span></div>
         <div class="hero-meta-item"><span class="hero-meta-v">1С-Битрикс · 1С УТ · AI</span><span class="hero-meta-l">Стек</span></div>
@@ -222,95 +197,55 @@
       </div>
     </div>
     <div class="scope container">
-      <b>Сразу по-честному:</b> сам сайт dag-sport.ru разрабатывал не я — он уже работал на 1С-Битрикс. Моя часть в этом проекте — <b>интеграция с 1С: Управление Торговлей</b> и <b>AI-консультант</b> для покупателей.
+      <b>По-честному:</b> сам сайт dag-sport.ru разрабатывал не я — он уже работал на 1С-Битрикс. Моя часть в этом проекте — <b>интеграция с 1С: Управление Торговлей</b> и <b>AI-консультант</b> для покупателей.
     </div>
   </header>
 
   <section>
     <div class="container-sm content">
       <span class="label">Задача</span>
-      <h2>Заказы терялись между сайтом и учётом</h2>
-      <p>Магазин уже принимал заказы на сайте, но каждый заказ продавец <strong>вручную переносил в 1С</strong>: открыть сайт, скопировать состав и контакты, создать документ. Это время, ошибки и риск пропустить заказ в загруженный день.</p>
-      <p>Вторая задача — помочь покупателю <strong>выбрать беговую дорожку</strong>: люди не всегда понимают разницу в характеристиках, и часть уходит, не дойдя до заказа.</p>
+      <h2>Заказы переносили с сайта в 1С вручную</h2>
+      <p>Магазин уже принимал заказы на сайте, но для создания документа в 1С оформленный заказ приходилось переносить между системами вручную.</p>
+      <p>Отдельная задача — помочь покупателю <strong>сравнить характеристики и выбрать беговую дорожку</strong> до оформления заказа.</p>
     </div>
   </section>
 
   <section>
     <div class="container-sm content">
       <span class="label">Что я сделал</span>
-      <h2>Связал сайт с 1С УТ и добавил AI</h2>
-      <p>Настроил автоматический обмен между сайтом на 1С-Битрикс и <strong>1С: Управление Торговлей</strong>. Теперь заказ с сайта сам становится документом в 1С, а владелец сразу видит его в Telegram. Поверх — <strong>AI-консультант</strong>, который отвечает покупателю и помогает подобрать беговую дорожку.</p>
-      <div class="flow">
-        <svg viewBox="0 0 230 150" role="img" aria-label="Схема: заказ с сайта на Битрикс попадает в 1С УТ документом и шлёт уведомление в Telegram">
-          <line x1="46" y1="24" x2="46" y2="64" stroke="#141210" stroke-width="2"/>
-          <line x1="46" y1="86" x2="46" y2="122" stroke="#B5623C" stroke-width="2"/>
-          <circle cx="46" cy="22" r="6.5" fill="#141210"/>
-          <circle cx="46" cy="75" r="8.5" fill="#B5623C"/>
-          <circle cx="46" cy="124" r="6.5" fill="#141210"/>
-          <text x="64" y="20" font-family="'JetBrains Mono',monospace" font-size="11" fill="#141210">Заказ на сайте</text>
-          <text x="64" y="32" font-family="'JetBrains Mono',monospace" font-size="9" fill="#6E6861">1С-Битрикс</text>
-          <text x="64" y="73" font-family="'JetBrains Mono',monospace" font-size="11" fill="#141210">1С УТ — документ</text>
-          <text x="64" y="85" font-family="'JetBrains Mono',monospace" font-size="9" fill="#6E6861">создан автоматически</text>
-          <text x="64" y="122" font-family="'JetBrains Mono',monospace" font-size="11" fill="#141210">Telegram</text>
-          <text x="64" y="134" font-family="'JetBrains Mono',monospace" font-size="9" fill="#6E6861">уведомление владельцу</text>
-        </svg>
-      </div>
+      <h2>Настроил передачу заказа в 1С УТ и добавил AI</h2>
+      <p>Существующий сайт работает на <strong>1С-Битрикс</strong>. После оформления заказ автоматически передаётся в <strong>1С: Управление Торговлей</strong>, где создаётся документ. Отдельно владелец получает уведомление в Telegram.</p>
+      <p>До оформления заказа AI-консультант помогает покупателю подобрать и сравнить беговые дорожки по данным каталога.</p>
     </div>
   </section>
 
   <section>
     <div class="container handoff content">
-      <span class="label">Маршрут</span>
-      <h2>Что происходит с заказом без ручного переноса</h2>
-      <div class="handoff-map" aria-label="Маршрут заказа: сайт, документ в 1С УТ, Telegram-уведомление, AI-консультант">
-        <ol class="handoff-grid">
-          <li class="handoff-item">
-            <div class="handoff-node">01</div>
-            <div class="handoff-card">
-              <span class="handoff-kicker">1С-Битрикс</span>
-              <h3>Заказ оформлен на сайте</h3>
-              <p>Покупатель выбирает товар и отправляет заказ через уже существующий интернет-магазин.</p>
+      <span class="label">Два маршрута</span>
+      <h2>AI помогает до заказа, учётная ветка начинается после оформления</h2>
+      <div class="handoff-map" aria-label="Две ветки: покупатель получает AI-помощь до оформления; оформленный заказ создаёт документ в 1С УТ, отдельно владелец получает Telegram-уведомление">
+        <div class="branch-group">
+          <span class="branch-title">Ветка 1 · до заказа</span>
+          <div class="branch-track">
+            <div class="handoff-card"><span class="handoff-kicker">Покупатель</span><h3>Формулирует задачу</h3><p>Указывает вес, бюджет, тип тренировки и требования к модели для дома или зала.</p></div>
+            <span class="branch-arrow" aria-hidden="true">→</span>
+            <div class="handoff-card"><span class="handoff-kicker">AI-помощь</span><h3>Подбирает модели</h3><p>Сравнивает беговые дорожки по каталогу из 169 моделей.</p></div>
+            <span class="branch-arrow" aria-hidden="true">→</span>
+            <div class="handoff-card"><span class="handoff-kicker">Сайт</span><h3>Оформление заказа</h3><p>Покупатель оформляет заказ в существующем магазине.</p></div>
+          </div>
+        </div>
+        <div class="branch-group">
+          <span class="branch-title">Ветка 2 · после оформления</span>
+          <div class="branch-track branch-track--post">
+            <div class="handoff-card"><span class="handoff-kicker">1С-Битрикс</span><h3>Оформленный заказ</h3><p>Заказ создан на существующем сайте.</p></div>
+            <span class="branch-arrow" aria-hidden="true">→</span>
+            <div class="branch-outcomes" aria-label="Два отдельных результата после оформления заказа">
+              <div class="handoff-card"><span class="handoff-kicker">1С УТ</span><h3>Документ в учёте</h3><p>Заказ автоматически передаётся в 1С УТ, где создаётся документ.</p></div>
+              <div class="handoff-card"><span class="handoff-kicker">Telegram</span><h3>Уведомление владельцу</h3><p>Владелец получает сообщение о заказе.</p></div>
             </div>
-          </li>
-          <li class="handoff-item">
-            <div class="handoff-node">02</div>
-            <div class="handoff-card">
-              <span class="handoff-kicker">1С УТ</span>
-              <h3>Создаётся документ в учёте</h3>
-              <p>Данные заказа передаются в 1С: Управление Торговлей без копирования из админки сайта.</p>
-            </div>
-          </li>
-          <li class="handoff-item">
-            <div class="handoff-node">03</div>
-            <div class="handoff-card">
-              <span class="handoff-kicker">Telegram</span>
-              <h3>Владелец видит уведомление</h3>
-              <p>После оформления приходит короткое сообщение о новом заказе, чтобы не ждать ручной проверки.</p>
-            </div>
-          </li>
-          <li class="handoff-item">
-            <div class="handoff-node">04</div>
-            <div class="handoff-card">
-              <span class="handoff-kicker">AI-консультант</span>
-              <h3>Покупатель получает помощь</h3>
-              <p>AI отвечает по подбору беговой дорожки и помогает довести человека до понятного выбора.</p>
-            </div>
-          </li>
-        </ol>
-        <div class="handoff-note">AI здесь не заменяет продавца и не пишет данные в 1С сам по себе: он помогает покупателю до заказа, а учётная связка фиксирует оформленный заказ.</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container-sm content">
-      <span class="label">Как это устроено</span>
-      <h2>Путь заказа — от сайта до 1С</h2>
-      <div class="steps">
-        <div class="step"><span class="step-n"></span><span class="step-t"><b>Заказ на сайте</b><span>Клиент оформляет заказ в магазине на 1С-Битрикс.</span></span></div>
-        <div class="step"><span class="step-n"></span><span class="step-t"><b>Документ в 1С УТ</b><span>Заказ автоматически выгружается в 1С: Управление Торговлей и создаётся документ — без ручного переноса.</span></span></div>
-        <div class="step"><span class="step-n"></span><span class="step-t"><b>Уведомление в Telegram</b><span>Владелец сразу получает сообщение о новом заказе.</span></span></div>
-        <div class="step"><span class="step-n"></span><span class="step-t"><b>AI-консультант</b><span>На сайте помогает покупателю выбрать беговую дорожку по запросу.</span></span></div>
+          </div>
+        </div>
+        <div class="handoff-note">AI-консультант работает до оформления заказа. Если требуется подтвердить наличие, он предлагает обратиться к менеджеру; автоматическая передача диалога менеджеру пока не настроена.</div>
       </div>
     </div>
   </section>
@@ -318,27 +253,13 @@
   <section>
     <div class="container-sm content">
       <span class="label">Результат</span>
-      <h2>Меньше ручной работы</h2>
+      <h2>Что работает сейчас</h2>
       <div class="results">
         <ul>
-          <li>Заказы попадают в 1С без ручного переноса — продавец не копирует данные с сайта в учёт.</li>
-          <li>Новый заказ виден сразу — уведомление в Telegram в момент оформления.</li>
-          <li>AI-консультант снимает часть вопросов по выбору дорожки с продавца.</li>
-          <li>Коммерческие метрики по заказам и экономии времени отдельно не фиксировались — на странице показываю только подтверждённый технический результат.</li>
+          <li>Оформленный заказ автоматически создаёт документ в 1С УТ — прежний ручной перенос для этого маршрута больше не требуется.</li>
+          <li>Владелец получает Telegram-уведомление о заказе.</li>
+          <li>AI-консультант подбирает и сравнивает беговые дорожки по данным каталога, а фактическое наличие предлагает уточнить у менеджера.</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container-sm content">
-      <span class="label">Артефакты</span>
-      <h2>Что можно проверить без приватных данных</h2>
-      <div class="shots">
-        <div class="shot"><span>Заказ с сайта создаёт документ в 1С УТ. Скрин не публикую: внутри клиентские данные и номенклатура.</span></div>
-        <div class="shot"><span>Telegram-уведомление приходит владельцу после оформления заказа. Приватные данные скрыты.</span></div>
-        <div class="shot"><span>AI-консультант помогает выбрать беговую дорожку по параметрам и не обещает то, чего нет в настройке.</span></div>
-        <div class="shot"><span>Публичная часть магазина доступна на dag-sport.ru; моя зона — интеграция 1С и AI, не разработка сайта.</span></div>
       </div>
     </div>
   </section>
@@ -347,11 +268,11 @@
     <div class="container-sm content">
       <span class="label">Частые вопросы</span>
       <h2>Про связку сайта и 1С</h2>
-      <details><summary>Что значит «связать сайт с 1С»?</summary><p>Это настройка автоматического обмена данными между сайтом и учётной системой 1С: заказы, остатки, цены и статусы передаются без ручного копирования. Для магазина на 1С-Битрикс заказ с сайта сам становится документом в 1С: Управление Торговлей.</p></details>
-      <details><summary>Чем 1С-Битрикс отличается от 1С: Управление Торговлей?</summary><p>1С-Битрикс — платформа для сайта и интернет-магазина (витрина, корзина, заказы). 1С: Управление Торговлей (УТ) — учётная система для товаров, остатков, продаж и документов. Связка между ними передаёт заказы с сайта в учёт автоматически.</p></details>
-      <details><summary>Какие данные синхронизируются между сайтом и 1С?</summary><p>Чаще всего — заказы с сайта в 1С (создание документа), а также каталог, цены и остатки из 1С на сайт. В этом проекте заказ с сайта автоматически создаёт документ в 1С УТ и присылает уведомление в Telegram.</p></details>
-      <details><summary>Можно ли подключить к 1С уже готовый сайт?</summary><p>Да. Сайт не обязательно делать с нуля — если он работает на 1С-Битрикс, к нему можно настроить обмен с 1С: Управление Торговлей. Именно так было здесь: сайт уже существовал, я подключил интеграцию и AI-консультанта.</p></details>
-      <details><summary>Зачем интернет-магазину AI-консультант?</summary><p>AI-консультант отвечает покупателю и помогает выбрать товар по параметрам — для магазина спорттоваров это подбор беговой дорожки. Он снимает часть вопросов с продавца и помогает клиенту быстрее дойти до заказа.</p></details>
+      <details><summary>Что значит «связать сайт с 1С»?</summary><p>Это настройка передачи согласованных данных между сайтом и учётной системой. Существующий сайт dag-sport.ru работает на 1С-Битрикс. После оформления заказ автоматически передаётся в 1С УТ, где создаётся документ.</p></details>
+      <details><summary>Чем 1С-Битрикс отличается от 1С: Управление Торговлей?</summary><p>1С-Битрикс — платформа существующего сайта и интернет-магазина. 1С: Управление Торговлей (УТ) — учётная система. В этом проекте оформленный заказ с сайта автоматически передаётся в 1С УТ.</p></details>
+      <details><summary>Какие данные синхронизируются между сайтом и 1С?</summary><p>Для dag-sport настроена передача оформленного заказа в 1С УТ, где создаётся документ. Другие направления обмена зависят от конкретной задачи.</p></details>
+      <details><summary>Можно ли подключить к 1С уже готовый сайт?</summary><p>Возможность и состав интеграции зависят от систем и задачи. В этом проекте сайт уже существовал на 1С-Битрикс; я подключил интеграцию с 1С УТ и AI-консультанта, но сам сайт не разрабатывал.</p></details>
+      <details><summary>Что умеет AI-консультант в этом проекте?</summary><p>Консультант опирается на каталог canonical_products.json из 169 беговых дорожек с реальными характеристиками и ориентировочными ценами. Он подбирает и сравнивает модели по весу пользователя, бюджету, типу тренировки, для дома или зала, компактности и складной конструкции, отвечает по характеристикам и находит похожие модели по названию. Если нужной информации нет в каталоге, он не должен придумывать ответ. Фактическое наличие предлагает уточнить у менеджера; автоматическая передача диалога менеджеру не настроена.</p></details>
     </div>
   </section>
 
@@ -372,6 +293,8 @@
         <a href="/services/integraciya-1c.html">Интеграция сайта с 1С →</a>
         <a href="/services/ai-assistant.html">AI-ассистент для бизнеса →</a>
         <a href="/services/telegram-bot.html">Telegram-бот и mini app →</a>
+        <a href="/blog/kak-svyazat-sajt-s-1c.html">Как связать сайт с 1С →</a>
+        <a href="/blog/pochemu-dubliruyutsya-zakazy-v-1c.html">Почему дублируются заказы →</a>
       </div>
     </div>
   </section>

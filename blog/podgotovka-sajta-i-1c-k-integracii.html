@@ -24,7 +24,7 @@
 <meta content="Интеграция сайта с 1С: чек-лист подготовки" name="twitter:title"/>
 <meta content="Версии систем, товары, цены, остатки, заказы, статусы, ошибки, доступы и тесты до запуска обмена." name="twitter:description"/>
 <meta content="https://radzhabov-dev.ru/assets/og/blog-podgotovka.png" name="twitter:image"/>
-<meta content="Ибрагим Раджабов" name="author"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="I. Radzhabov" property="og:site_name"/><meta content="2026-07-10" property="article:published_time"/><meta content="2026-07-10" property="article:modified_time"/><meta content="Ибрагим Раджабов" property="article:author"/><meta content="1С и интеграции" property="article:section"/><script type="application/ld+json">
+<meta content="Ибрагим Раджабов" name="author"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="I. Radzhabov" property="og:site_name"/><meta content="2026-07-10" property="article:published_time"/><meta content="2026-07-14" property="article:modified_time"/><meta content="Ибрагим Раджабов" property="article:author"/><meta content="1С и интеграции" property="article:section"/><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -43,7 +43,7 @@
         ]
       },
       "datePublished": "2026-07-10",
-      "dateModified": "2026-07-10",
+      "dateModified": "2026-07-14",
       "inLanguage": "ru",
       "mainEntityOfPage": "https://radzhabov-dev.ru/blog/podgotovka-sajta-i-1c-k-integracii.html",
       "image": "https://radzhabov-dev.ru/assets/og/blog-podgotovka.png",
@@ -52,7 +52,7 @@
         "name": "Ибрагим Раджабов",
         "url": "https://radzhabov-dev.ru/"
       },
-      "wordCount": 1952,
+      "wordCount": 1983,
       "articleSection": "1С и интеграции",
       "isPartOf": {
         "@type": "Blog",
@@ -95,7 +95,10 @@
         }
       ],
       "citation": [
-        "https://radzhabov-dev.ru/cases/dag-sport.html"
+        "https://radzhabov-dev.ru/cases/dag-sport.html",
+        "https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=131&INDEX=Y",
+        "https://v8.1c.ru/platforma/obmen-dannymi/",
+        "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
       ]
     },
     {
@@ -495,10 +498,10 @@
 <nav aria-label="Хлебные крошки" class="crumbs" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/blog/" style="color:var(--text-tertiary);text-decoration:none;">Блог</a> / <span style="color:var(--text-primary);">Подготовка к интеграции</span></nav>
 <div class="article-meta reveal">Блог · 1С и интеграции <span>· 10 июля 2026 · ~10 минут</span></div>
 <h1 class="reveal">Как подготовить сайт к интеграции с 1С: полный чек-лист до оценки</h1>
-<p class="article-lead reveal">Практический чек-лист для интернет-магазинов и сервисов, которым нужен обмен сайта с 1С:УТ, Розницей или другой конфигурацией. Он помогает собрать данные до оценки, определить границы интеграции и проверить запуск без дублей и потери заказов.</p><div aria-label="Автор и дата обновления" class="article-byline reveal">
+<p class="article-lead reveal">Практический чек-лист для интернет-магазинов и сервисов, которым нужен обмен сайта с 1С:УТ, Розницей или другой конфигурацией. Он помогает собрать данные до оценки, определить границы интеграции и заранее согласовать риски и критерии проверки.</p><div aria-label="Автор и дата обновления" class="article-byline reveal">
 <span>Автор: <a href="/#about" rel="author">Ибрагим Раджабов</a></span>
-<span>Практика: <a href="/cases/dag-sport.html">сайт → 1С:УТ → Telegram</a></span>
-<time datetime="2026-07-10">Обновлено 10 июля 2026</time>
+<span>Связанный кейс: <a href="/cases/dag-sport.html">сайт → 1С УТ; Telegram-уведомление</a></span>
+<time datetime="2026-07-14">Обновлено 14 июля 2026</time>
 </div>
 <div class="tldr reveal">
 <span class="label">Ответ за 30 секунд</span>
@@ -518,6 +521,7 @@
 <article class="article-body">
 <div class="container">
 <div class="article-wrap">
+<div class="callout"><span class="label">Граница материала</span><p>Далее описаны общие инженерные рекомендации, а не внутренняя архитектура проекта dag-sport.</p></div>
 <h2 id="what-to-decide">Что такое интеграция сайта с 1С и что оценивают</h2>
 <p>Интеграция — это не один универсальный «мост» между сайтом и 1С. Это набор правил: какие события запускают обмен, какие данные передаются, кто имеет право их менять и что делать, если часть операции не выполнилась.</p>
 <p>До оценки разработчику нужны ответы хотя бы на четыре группы вопросов:</p>
@@ -691,7 +695,7 @@
 </ul>
 <div class="callout">
 <span class="label">Реальный пример</span>
-<p>В кейсе <a href="/cases/dag-sport.html">dag-sport</a> готовый сайт на 1С-Битрикс был связан с 1С: Управление Торговлей: заказ создаёт документ в учёте и уведомление в Telegram. Сам сайт разрабатывал не я; моя часть — интеграция с 1С УТ и AI-консультант. Этот дисклеймер важен и для оценки: сначала нужно отделить существующую систему от той части, которую действительно предстоит разработать.</p>
+<p>В кейсе <a href="/cases/dag-sport.html">dag-sport</a> существующий сайт работает на 1С-Битрикс. После оформления заказ автоматически передаётся в 1С УТ, где создаётся документ. Отдельно владелец получает уведомление в Telegram. Сам сайт разрабатывал не я; моя часть — интеграция с 1С УТ и AI-консультант. Этот дисклеймер важен и для оценки: сначала нужно отделить существующую систему от той части, которую действительно предстоит разработать.</p>
 </div>
 <p>О том, как уже подготовленная связка работает после запуска, читайте в статье <a href="/blog/kak-svyazat-sajt-s-1c.html">«Как связать интернет-магазин с 1С»</a>.</p>
 <div class="faq-section" id="faq">
@@ -707,7 +711,12 @@
 </div>
 <aside aria-label="Об авторе и практической основе статьи" class="source-box">
 <strong>Автор и практическая основа</strong>
-<p>Материал подготовил <a href="/#about" rel="author">Ибрагим Раджабов</a> — разработчик сайтов, AI-ассистентов и интеграций с 1С. Чек-лист основан на практической работе с интернет-магазинами и 1С:Управление торговлей. В <a href="/cases/dag-sport.html">кейсе dag-sport</a> моя часть — интеграция с 1С УТ и AI-консультант; сам сайт разрабатывал не я.</p>
+<p>Материал подготовил <a href="/#about" rel="author">Ибрагим Раджабов</a> — разработчик сайтов, AI-ассистентов и интеграций с 1С. Технические разделы — общий чек-лист подготовки. В <a href="/cases/dag-sport.html">кейсе dag-sport</a> моя часть — интеграция с 1С УТ и AI-консультант; сам сайт разрабатывал не я.</p>
+<ul>
+<li><a href="https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=131&amp;INDEX=Y">1С-Битрикс: официальный курс по интеграции с 1С</a></li>
+<li><a href="https://v8.1c.ru/platforma/obmen-dannymi/">1С: официальный обзор механизма обмена данными</a></li>
+<li><a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">AWS Builders’ Library: безопасные повторы и идемпотентные API</a></li>
+</ul>
 </aside>
 <div class="cta-box reveal">
 <h2>Нужна оценка интеграции?</h2>
