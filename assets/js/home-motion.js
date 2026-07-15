@@ -78,6 +78,7 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
     var length = 0;
     var pulseRaf = 0;
     var trigger = null;
+    var workFilterRaf = 0;
 
     function pointFor(el, index) {
       var rect = el.getBoundingClientRect();
@@ -148,6 +149,16 @@ import * as THREE from './vendor/three.module.js?v=0.160.0';
     rebuild();
     animatePulse(0);
     window.addEventListener('resize', debounce(rebuild, 180), { passive: true });
+    document.addEventListener('work-filter-change', function () {
+      if (workFilterRaf) return;
+      workFilterRaf = window.requestAnimationFrame(function () {
+        var scrollY = window.scrollY;
+        workFilterRaf = 0;
+        rebuild();
+        if (window.scrollY !== scrollY) window.scrollTo(0, scrollY);
+        ScrollTrigger.update();
+      });
+    });
     document.addEventListener('visibilitychange', function () {
       if (document.hidden && pulseRaf) {
         window.cancelAnimationFrame(pulseRaf);

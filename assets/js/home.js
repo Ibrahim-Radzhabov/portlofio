@@ -131,6 +131,166 @@
     observer.observe(el);
   });
 
+  // === JOURNEY STICKY NARRATIVE (desktop enhancement only) ===
+  (function() {
+    var section = document.getElementById('request-journey');
+    if (!section) return;
+
+    var steps = Array.from(section.querySelectorAll('.journey-step'));
+    if (!steps.length) return;
+
+    var copy = section.querySelector('.journey-copy');
+    var stage = section.querySelector('.journey-stage');
+    if (!copy || !stage) return;
+
+    var progressCount = section.querySelector('[data-journey-progress-count]');
+    var progressLabel = section.querySelector('[data-journey-progress-label]');
+    var stepTitles = steps.map(function(step) {
+      var title = step.querySelector('.journey-card h3');
+      return title ? title.textContent.trim() : '';
+    });
+    var media = window.matchMedia('(min-width: 969px) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    var activeIndex = -1;
+    var frame = 0;
+    var measureFrame = 0;
+    var active = false;
+    var stepCenters = [];
+    var stickyStart = Infinity;
+    var stickyEnd = -Infinity;
+    var stageResizeObserver = null;
+
+    function setActive(index) {
+      if (index === activeIndex) return;
+      activeIndex = index;
+      var progress = (index + 1) / steps.length;
+
+      section.style.setProperty('--journey-progress', progress.toFixed(2));
+      section.classList.toggle('is-complete', index === steps.length - 1);
+      if (progressCount) {
+        progressCount.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(steps.length).padStart(2, '0');
+      }
+      if (progressLabel) {
+        progressLabel.textContent = stepTitles[index];
+      }
+
+      steps.forEach(function(step, stepIndex) {
+        var isActive = stepIndex === index;
+        step.classList.toggle('is-active', isActive);
+        if (isActive) step.setAttribute('aria-current', 'step');
+        else step.removeAttribute('aria-current');
+      });
+    }
+
+    function update() {
+      frame = 0;
+      if (!active || !stepCenters.length) return;
+
+      var scrollY = window.scrollY;
+      var controlLine = scrollY + Math.min(window.innerHeight * 0.5, 330);
+      var closestIndex = 0;
+      var closestDistance = Infinity;
+
+      stepCenters.forEach(function(center, index) {
+        var distance = Math.abs(center - controlLine);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      section.classList.toggle('is-stuck', scrollY >= stickyStart && scrollY < stickyEnd);
+      setActive(closestIndex);
+    }
+
+    function measure() {
+      measureFrame = 0;
+      if (!active) return;
+
+      var scrollY = window.scrollY;
+      var stageRect = stage.getBoundingClientRect();
+      var stageTop = scrollY + stageRect.top;
+      var copyHeight = copy.offsetHeight;
+
+      stepCenters = steps.map(function(step) {
+        var rect = step.getBoundingClientRect();
+        return scrollY + rect.top + rect.height * 0.5;
+      });
+      stickyStart = stageTop - 82;
+      stickyEnd = stageTop + stageRect.height - copyHeight - 82;
+      update();
+    }
+
+    function requestUpdate() {
+      if (!active || frame) return;
+      frame = window.requestAnimationFrame(update);
+    }
+
+    function requestMeasure() {
+      if (!active || measureFrame) return;
+      measureFrame = window.requestAnimationFrame(measure);
+    }
+
+    function start() {
+      if (active) return;
+      active = true;
+      section.classList.add('is-sticky-ready');
+      setActive(0);
+      requestMeasure();
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestMeasure, { passive: true });
+      window.addEventListener('pageshow', requestMeasure);
+      window.addEventListener('load', requestMeasure);
+      document.addEventListener('work-filter-change', requestMeasure);
+
+      if ('ResizeObserver' in window) {
+        stageResizeObserver = new ResizeObserver(requestMeasure);
+        stageResizeObserver.observe(stage);
+      }
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(requestMeasure);
+      }
+    }
+
+    function stop() {
+      if (!active) return;
+      active = false;
+      if (frame) window.cancelAnimationFrame(frame);
+      if (measureFrame) window.cancelAnimationFrame(measureFrame);
+      frame = 0;
+      measureFrame = 0;
+      activeIndex = -1;
+      stepCenters = [];
+      stickyStart = Infinity;
+      stickyEnd = -Infinity;
+      section.classList.remove('is-sticky-ready', 'is-stuck', 'is-complete');
+      section.style.removeProperty('--journey-progress');
+      if (progressCount) progressCount.textContent = '01 / ' + String(steps.length).padStart(2, '0');
+      if (progressLabel) progressLabel.textContent = '';
+      steps.forEach(function(step) {
+        step.classList.remove('is-active');
+        step.removeAttribute('aria-current');
+      });
+      window.removeEventListener('scroll', requestUpdate);
+      window.removeEventListener('resize', requestMeasure);
+      window.removeEventListener('pageshow', requestMeasure);
+      window.removeEventListener('load', requestMeasure);
+      document.removeEventListener('work-filter-change', requestMeasure);
+      if (stageResizeObserver) {
+        stageResizeObserver.disconnect();
+        stageResizeObserver = null;
+      }
+    }
+
+    function sync() {
+      if (media.matches) start();
+      else stop();
+    }
+
+    if (media.addEventListener) media.addEventListener('change', sync);
+    else media.addListener(sync);
+    sync();
+  })();
+
   // === SMOOTH ANCHOR SCROLLING ===
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
@@ -1179,6 +1339,8 @@
         var visible = filter === 'all' || groups.indexOf(filter) !== -1;
         item.classList.toggle('is-filter-hidden', !visible);
       });
+
+      document.dispatchEvent(new CustomEvent('work-filter-change', { detail: { filter: filter } }));
     }
 
     window.__workFilterApply = applyWorkFilter;
@@ -1187,7 +1349,6 @@
       button.addEventListener('click', function() {
         var filter = button.getAttribute('data-work-filter') || 'all';
         applyWorkFilter(filter);
-        document.dispatchEvent(new CustomEvent('work-filter-change', { detail: { filter: filter } }));
       });
     });
 
@@ -1269,12 +1430,36 @@
   document.querySelectorAll('[data-before-after]').forEach(function(block) {
     var stage = block.querySelector('.before-after-stage');
     var range = block.querySelector('[data-before-after-range]');
+    var interactionTracked = false;
     if (!stage || !range) return;
-    function updateBeforeAfter() {
-      stage.style.setProperty('--before-after-pos', range.value + '%');
+    function trackBeforeAfterInteraction() {
+      if (interactionTracked) return;
+      interactionTracked = true;
+      __reach('before_after_drag');
     }
-    range.addEventListener('input', updateBeforeAfter);
+    function updateBeforeAfter() {
+      var rawValue = Number(range.value);
+      var value = Number.isFinite(rawValue) ? Math.max(0, Math.min(100, rawValue)) : 50;
+      var before = Math.round(value);
+      var after = 100 - before;
+      var valueText = 'До: ' + before + '%, после: ' + after + '%';
+
+      if (before === 0) valueText = 'Полностью после: документ в 1С УТ и отдельное Telegram-уведомление';
+      if (before === 50) valueText = 'До и после поровну';
+      if (before === 100) valueText = 'Полностью до: ручной перенос в 1С УТ';
+
+      range.value = String(before);
+      range.setAttribute('aria-valuenow', String(before));
+      range.setAttribute('aria-valuetext', valueText);
+      stage.style.setProperty('--before-after-pos', before + '%');
+    }
+    range.addEventListener('input', function() {
+      updateBeforeAfter();
+      // Native range input covers pointer, touch and keyboard changes once.
+      trackBeforeAfterInteraction();
+    });
     updateBeforeAfter();
+    range.disabled = false;
   });
 
   // === PROJECT DETAIL SHEET ===
@@ -1397,7 +1582,7 @@
         title: 'Dag Sport',
         lead: 'Связка заявки и учёта: сайт не мой, задача была в интеграции с 1С УТ и AI-консультантом.',
         task: 'Передавать данные заказа в учёт и снизить ручной перенос между каналами.',
-        route: 'Сайт → 1С УТ → Telegram-уведомление → обработка.',
+        route: 'После интеграции оформленный заказ автоматически передаётся в 1С УТ; отдельно владелец получает Telegram-уведомление.',
         repeat: 'Подходит, когда сайт уже есть, но заявки живут отдельно от учёта и переписок.',
         link: '/cases/dag-sport.html',
         scenario: 'one-c'
@@ -1521,6 +1706,7 @@
     a.addEventListener('click', function(){ __reach('cta_click'); });
   });
   document.querySelectorAll('[data-analytics]').forEach(function(el) {
+    if (el.matches('[data-before-after-range]')) return;
     el.addEventListener('click', function() {
       var goal = el.getAttribute('data-analytics');
       if (goal) __reach(goal);

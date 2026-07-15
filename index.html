@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I. Radzhabov — сайты, AI-ассистенты и 1С для бизнеса</title>
 <meta name="description" content="Собираю сайты, AI-ассистентов и 1С-связки: обращение или заказ, ответ клиенту и фиксация данных без ручной рутины.">
-<link rel="preload" href="/assets/css/home.css?v=20260714-homepage-release" as="style">
+<link rel="preload" href="/assets/css/home.css?v=20260715-sticky-journey-v4-before-after-correction" as="style">
 <meta property="og:title" content="I. Radzhabov — сайты, AI-ассистенты и 1С для бизнеса">
 <meta property="og:description" content="Собираю сайты, AI-ассистентов и 1С-связки: обращение или заказ, ответ клиенту и фиксация данных без ручной рутины.">
 <meta property="og:type" content="website">
@@ -315,7 +315,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260714-homepage-release">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20260715-sticky-journey-v4-before-after-correction">
   <meta name="yandex-verification" content="1e2895c9cc7530b7" />
 </head>
 <body>
@@ -878,18 +878,22 @@
 
     <article class="case-card reveal" data-work-filter-item="one-c">
       <div class="case-media">
-        <svg class="case-flow" viewBox="0 0 210 150" role="img" aria-label="Схема: заказ с сайта создаёт документ в 1С УТ и отправляет уведомление в Telegram">
-          <line x1="40" y1="22" x2="40" y2="66" stroke="#141210" stroke-width="2"/>
-          <line x1="40" y1="84" x2="40" y2="120" stroke="#B5623C" stroke-width="2"/>
-          <circle cx="40" cy="20" r="6.5" fill="#141210"/>
-          <circle cx="40" cy="75" r="8.5" fill="#B5623C"/>
-          <circle cx="40" cy="122" r="6.5" fill="#141210"/>
-          <text x="58" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">Заказ с сайта</text>
-          <text x="58" y="29" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">1С-Битрикс</text>
-          <text x="58" y="72" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">Документ в 1С УТ</text>
-          <text x="58" y="84" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">создаётся автоматически</text>
-          <text x="58" y="119" font-family="'JetBrains Mono', monospace" font-size="11" fill="#141210">Telegram</text>
-          <text x="58" y="131" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6E6861">уведомление владельцу</text>
+        <svg class="case-flow" viewBox="0 0 210 150" role="img" aria-label="Схема: оформленный заказ автоматически передаётся в 1С УТ, где создаётся документ; отдельно владелец получает Telegram-уведомление.">
+          <line x1="30" y1="75" x2="78" y2="75" stroke="#141210" stroke-width="2"/>
+          <line x1="88" y1="69" x2="128" y2="40" stroke="#B5623C" stroke-width="2"/>
+          <line x1="88" y1="81" x2="128" y2="110" stroke="#B5623C" stroke-width="2"/>
+          <circle cx="24" cy="75" r="6.5" fill="#141210"/>
+          <circle cx="83" cy="75" r="8.5" fill="#B5623C"/>
+          <circle cx="133" cy="37" r="6.5" fill="#141210"/>
+          <circle cx="133" cy="113" r="6.5" fill="#141210"/>
+          <text x="12" y="55" font-family="'JetBrains Mono', monospace" font-size="10" fill="#141210">Заказ</text>
+          <text x="12" y="67" font-family="'JetBrains Mono', monospace" font-size="10" fill="#141210">с сайта</text>
+          <text x="140" y="34" font-family="'JetBrains Mono', monospace" font-size="10" fill="#141210">1С УТ</text>
+          <text x="140" y="46" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#6E6861">документ</text>
+          <text x="140" y="56" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#6E6861">создан</text>
+          <text x="140" y="107" font-family="'JetBrains Mono', monospace" font-size="10" fill="#141210">Telegram</text>
+          <text x="140" y="119" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#6E6861">уведомление</text>
+          <text x="140" y="129" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#6E6861">владельцу</text>
         </svg>
       </div>
       <div class="case-body">
@@ -904,29 +908,29 @@
       </div>
     </article>
 
-    <div class="before-after reveal" data-before-after data-work-filter-item="one-c ai telegram" aria-label="Сравнение до и после связки">
+    <div class="before-after reveal" data-before-after data-work-filter-item="one-c" role="group" aria-labelledby="before-after-title">
       <div class="before-after-copy">
         <div class="before-after-kicker">До / после</div>
-        <h3>Хаос заявок или понятный маршрут.</h3>
-        <p>Сдвиньте линию: слева данные переносят вручную. Справа заявка идёт по одному маршруту.</p>
+        <h3 id="before-after-title">Ручной перенос или автоматическая передача.</h3>
+        <p id="before-after-instructions">Потяните линию: слева — как было до связки, справа — результаты после интеграции.</p>
       </div>
       <div class="before-after-stage" style="--before-after-pos: 50%;">
-        <div class="before-after-side before-after-after">
-          <span>Связка</span>
-          <b>Сайт → Telegram/AI → 1С</b>
-          <p>Заявка идёт по одному маршруту: владелец получает уведомление, а данные попадают в 1С.</p>
-        </div>
         <div class="before-after-side before-after-before">
-          <span>Хаос</span>
-          <b>Форма · чат · таблица · 1С</b>
-          <p>Данные переносят руками, а часть деталей остаётся в переписках.</p>
+          <span>До связки</span>
+          <b>Заказ переносили вручную</b>
+          <p>Оформленный заказ с существующего сайта вручную переносили в 1С УТ.</p>
         </div>
-        <input class="before-after-range" type="range" min="12" max="88" value="50" aria-label="Показать до или после связки" data-before-after-range data-analytics="before_after_drag">
+        <div class="before-after-side before-after-after">
+          <span>После связки</span>
+          <b>Документ создаётся в 1С УТ</b>
+          <p>Оформленный заказ автоматически передаётся в 1С УТ, где создаётся документ. Отдельно владелец получает уведомление в Telegram.</p>
+        </div>
+        <input class="before-after-range" type="range" min="0" max="100" value="50" step="1" aria-label="Показать до или после связки" aria-describedby="before-after-instructions" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="До и после поровну" data-before-after-range data-analytics="before_after_drag" disabled>
       </div>
     </div>
 
     <div class="work-footer reveal" data-work-filter-item="one-c">
-      <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку: сайт → 1С → уведомление или AI. Есть сайт или магазин и учёт в 1С. Нужно понять, что передавать без ручного переноса: заказы, остатки, цены или статусы.">Разобрать свою связку →</a>
+      <a class="btn-primary" href="#contact" data-contact-source="work_1c" data-contact-scenario="task" data-analytics="razbor_ask_click" data-contact-message="Хочу похожую связку сайта с 1С. Есть сайт или магазин и учёт в 1С. Нужно понять, как передавать оформленный заказ в 1С без ручного переноса и настроить отдельное уведомление владельцу. AI-задачи до оформления заказа можно обсудить отдельно.">Разобрать свою связку →</a>
     </div>
   </div>
 </section>
@@ -1056,19 +1060,25 @@
 <section id="request-journey" class="journey-section">
   <div class="container">
     <div class="journey-shell reveal">
-      <div class="journey-copy">
-        <div class="section-tag">Путь заявки</div>
-        <h2 class="journey-title">Что происходит<br>после заявки.</h2>
-        <p class="journey-lead">Собираю один путь: заявка, ответ клиенту и&nbsp;запись в&nbsp;системе без ручного переноса.</p>
-        <a class="journey-cta" href="#contact" data-contact-source="journey" data-contact-scenario="task" data-analytics="journey_cta_click" data-contact-message="Хочу разобрать путь заявки. Сейчас клиент оставляет обращение через сайт, мессенджер, звонок или таблицу. Нужно понять, кто отвечает, куда попадают данные и где сейчас теряется контекст.">
-          <span class="link-text">Разобрать мой путь заявки</span>
-          <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
+      <div class="journey-stage">
+        <div class="journey-copy">
+          <div class="section-tag">Путь заявки</div>
+          <h2 class="journey-title">Что происходит<br>после заявки.</h2>
+          <p class="journey-lead">Собираю один путь: заявка, ответ клиенту и&nbsp;запись в&nbsp;системе без ручного переноса.</p>
+          <div class="journey-progress" data-journey-progress aria-hidden="true">
+            <span class="journey-progress-count" data-journey-progress-count>01 / 05</span>
+            <span class="journey-progress-label" data-journey-progress-label></span>
+            <span class="journey-progress-track"><span></span></span>
+          </div>
+          <a class="journey-cta" href="#contact" data-contact-source="journey" data-contact-scenario="task" data-analytics="journey_cta_click" data-contact-message="Хочу разобрать путь заявки. Сейчас клиент оставляет обращение через сайт, мессенджер, звонок или таблицу. Нужно понять, кто отвечает, куда попадают данные и где сейчас теряется контекст.">
+            <span class="link-text">Разобрать мой путь заявки</span>
+            <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
 
-      <div class="journey-map" aria-label="Маршрут заявки: форма, AI, уведомление, учет, человек">
+        <div class="journey-map" aria-label="Маршрут заявки: форма, AI, уведомление, учет, человек">
         <div class="journey-rail" aria-hidden="true"></div>
         <ol class="journey-steps">
           <li class="journey-step">
@@ -1111,7 +1121,8 @@
               <p>Вы отвечаете по существу, а&nbsp;не собираете детали из разных каналов.</p>
             </div>
           </li>
-        </ol>
+          </ol>
+        </div>
       </div>
 
       <div class="journey-proof" aria-label="Что меняется в заявке">
@@ -1590,7 +1601,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/home.js?v=20260714-homepage-release" defer></script>
+<script src="/assets/js/home.js?v=20260715-before-after-a11y-v6" defer></script>
 <script src="/assets/js/hero3d.js?v=20260710-phase8-fracture" defer></script>
 <script>
 (function () {
@@ -1645,7 +1656,7 @@
     vendor.reduce(function (chain, src) {
       return chain.then(function () { return loadScript(src, false); });
     }, Promise.resolve()).then(function () {
-      return loadScript('/assets/js/home-motion.js?v=20260710-phase8-fracture', true);
+      return loadScript('/assets/js/home-motion.js?v=20260715-before-after-fix', true);
     }).catch(function (err) {
       console.warn('Motion layer skipped:', err);
     });
