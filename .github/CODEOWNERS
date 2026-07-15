@@ -7,6 +7,7 @@
 /.github/production-baseline.sha256 @Ibrahim-Radzhabov
 /.github/production-release-74018e8.sha256 @Ibrahim-Radzhabov
 /.github/production-release-07ef325.sha256 @Ibrahim-Radzhabov
+/.github/production-release-308518e.sha256 @Ibrahim-Radzhabov
 /.github/verify-production-baseline.sh @Ibrahim-Radzhabov
 /.github/workflows/production-baseline-guard.yml @Ibrahim-Radzhabov
 /.github/CODEOWNERS @Ibrahim-Radzhabov

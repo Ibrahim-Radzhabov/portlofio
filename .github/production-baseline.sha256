@@ -1,7 +1,7 @@
-# Golden production homepage, commit 07ef325, approved 2026-07-14.
+# Golden production homepage, commit 308518e, approved 2026-07-15.
 # Change these hashes only after explicit owner approval of a new baseline.
-449bcb97f64f3c7b7b0203edaf56465c0d0408eaed52a99c348144b2254f86a0  index.html
-b97692833d33c857042c20380d3203f0173939c05c953fe1fc5a8f4f3c8a890e  assets/css/home.css
-f0e6f2d7c070a45ebf206e85df611a6b37fcbceb31eb2b3888c1b45b20cf1556  assets/js/home.js
+59aee0839db82c2004157a1b359cf5c62388907bed125332e802e2362b36f31b  index.html
+1d812a73ff3e44335dbcf6debc4b604b9515c61dc21ee5d8b8c678d9bfbc49a4  assets/css/home.css
+e448641dfbc01f21f1f658338a7d4378a37f951c18d07c672f3e8c750b42d32e  assets/js/home.js
 c49506ef1c45eb8c0fc98123284fe2426ed720f9df8dd0c76a5a3bb2101b1390  assets/js/hero3d.js
-6449de2dfd753f2ee41f64c4bdcb83cdf0ec7c0e83ade88076c512c6256504b6  assets/js/home-motion.js
+70d66460d073501d13179c3958ba65a3d640ba27f6c0c4bd0b0cba0209d8101c  assets/js/home-motion.js
