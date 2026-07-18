@@ -37,26 +37,37 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# === AI-краулеры (GEO) =======================================================
+# === AI-поиск, пользовательский fetch и обучение ============================
 
-# OpenAI — ChatGPT Search, Browsing, Shopping
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
+# OpenAI Search — обнаружение и цитирование в ChatGPT Search
 User-agent: OAI-SearchBot
 Allow: /
 
-# Anthropic — Claude
+# OpenAI — загрузка страницы по действию пользователя
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI — обучение моделей; на поисковую видимость напрямую не влияет
+User-agent: GPTBot
+Allow: /
+
+# Anthropic Search — обнаружение и цитирование
+User-agent: Claude-SearchBot
+Allow: /
+
+# Anthropic — загрузка страницы по действию пользователя
+User-agent: Claude-User
+Allow: /
+
+# Anthropic — обучение моделей
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-# Google — Gemini, AI Overviews
+# Google-Extended управляет отдельными сценариями обучения/grounding.
+# За Google Search, AI Overviews и AI Mode отвечает обычный Googlebot выше.
 User-agent: Google-Extended
 Allow: /
 
@@ -67,8 +78,12 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
-# Perplexity AI
+# Perplexity Search
 User-agent: PerplexityBot
+Allow: /
+
+# Perplexity — загрузка страницы по действию пользователя
+User-agent: Perplexity-User
 Allow: /
 
 # Apple

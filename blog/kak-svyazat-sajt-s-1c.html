@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Как связать сайт на Битрикс с 1С: УТ | Блог И. Раджабова</title>
-  <meta name="description" content="Опыт интеграции магазина на 1С-Битрикс с 1С: Управление Торговлей: как заказ сам становится документом, где грабли и что проверить до старта.">
+  <meta name="description" content="Как подготовить интеграцию магазина на 1С-Битрикс с 1С УТ: определить данные, направления обмена и проверки до запуска.">
   <link rel="canonical" href="https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +14,14 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#F5F0E8">
   <meta property="og:title" content="Как связать интернет-магазин с 1С: Управление Торговлей">
-  <meta property="og:description" content="После оформления заказ создаёт документ в 1С УТ, отдельно владелец получает Telegram-уведомление. Разбор кейса и общих инженерных рекомендаций.">
+  <meta property="og:description" content="Что определить до интеграции магазина на 1С-Битрикс с 1С УТ: данные, направления и проверки. Подтверждённые границы кейса Dag Sport.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html">
   <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/blog-sajt-1c.png">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Как связать сайт на Битрикс с 1С: УТ">
-  <meta name="twitter:description" content="После оформления: автоматическое создание документа в 1С УТ и уведомление владельца в Telegram.">
+  <meta name="twitter:description" content="Данные, направления и проверки до интеграции магазина на 1С-Битрикс с 1С УТ.">
   <meta name="twitter:image" content="https://radzhabov-dev.ru/assets/og/blog-sajt-1c.png">
   <script type="application/ld+json">
   {
@@ -31,7 +31,7 @@
         "@type": "Article",
         "@id": "https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html#article",
         "headline": "Как связать интернет-магазин с 1С: Управление Торговлей — и перестать переносить заказы руками",
-        "description": "Опыт интеграции магазина на 1С-Битрикс с 1С: УТ: автоматическое создание документов из заказов, уведомления в Telegram, типовые грабли.",
+        "description": "Как подготовить интеграцию магазина на 1С-Битрикс с 1С УТ: определить данные, направления обмена и проверки до запуска.",
         "author": {
           "@type": "Person",
           "name": "Ибрагим Раджабов",
@@ -39,10 +39,10 @@
           "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
         },
         "datePublished": "2026-07-02",
-        "dateModified": "2026-07-14",
+        "dateModified": "2026-07-18",
         "inLanguage": "ru",
         "mainEntityOfPage": "https://radzhabov-dev.ru/blog/kak-svyazat-sajt-s-1c.html",
-        "image": "https://radzhabov-dev.ru/og-image.png",
+        "image": "https://radzhabov-dev.ru/assets/og/blog-sajt-1c.png",
         "publisher": {
           "@type": "Person",
           "name": "Ибрагим Раджабов",
@@ -60,12 +60,12 @@
       {
         "@type": "HowTo",
         "name": "Как связать сайт на 1С-Битрикс с 1С: Управление Торговлей",
-        "description": "Порядок действий, чтобы заказы с сайта сами попадали в 1С, без ручного переноса.",
+        "description": "Порядок подготовки интеграции: описать текущий процесс, согласовать данные и направления, а затем проверить сценарии обмена.",
         "step": [
           {"@type": "HowToStep", "name": "Зафиксируйте текущий путь заказа", "text": "Опишите, кто и что делает руками от «оформил на сайте» до «документ в 1С». Часто уже этот список — весомый аргумент."},
           {"@type": "HowToStep", "name": "Проверьте каталог", "text": "Совпадают ли артикулы на сайте и в 1С, есть ли дубли."},
           {"@type": "HowToStep", "name": "Решите, где живут статусы и уведомления", "text": "Определите, где хранятся статусы заказов и кто получает уведомления."},
-          {"@type": "HowToStep", "name": "Запустите обмен и сверяйте", "text": "Включите обмен и первое время сверяйте: каждый заказ с сайта = ровно один документ в 1С."}
+          {"@type": "HowToStep", "name": "Запустите тестовый обмен", "text": "Проверьте согласованные сценарии, повторы, ошибки и расхождения до боевого запуска."}
         ]
       }
     ]
@@ -121,6 +121,7 @@
     .article-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
     .article-meta { font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:20px; display:flex; gap:16px; flex-wrap:wrap; }
     .article-meta span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
+    .article-meta a { color:inherit; text-decoration:none; border-bottom:1px solid var(--border-hover); }
     h1 { font-family:var(--font-display); font-size:clamp(30px, 4vw, 44px); font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:20px; }
     .article-lead { font-size:18px; color:var(--text-secondary); line-height:1.7; }
 
@@ -141,8 +142,8 @@
     .callout p { margin-bottom:0; }
     .article-flow { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:22px; margin:28px 0 34px; }
     .article-flow svg { display:block; width:100%; height:auto; overflow:visible; }
-    .article-flow-mobile { display:none; }
-    @media(max-width:640px){ .article-flow { padding:18px 14px; } .article-flow-desktop { display:none !important; } .article-flow-mobile { display:block; } }
+    .article-flow svg.article-flow-mobile { display:none; }
+    @media(max-width:640px){ .article-flow { padding:18px 14px; } .article-flow-desktop { display:none !important; } .article-flow svg.article-flow-mobile { display:block; } }
 
     .cta-box { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:36px; margin:48px 0 0; text-align:center; position:relative; overflow:hidden; }
     .cta-box::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
@@ -228,17 +229,17 @@
   <header class="article-hero">
     <div class="article-wrap">
       <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/blog/" style="color:var(--text-tertiary);text-decoration:none;">Блог</a> / <span style="color:var(--text-primary);">Как связать сайт с 1С</span></nav>
-      <div class="article-meta reveal">Блог · 1С и интеграции <span>· Автор: Ибрагим Раджабов · 2 июля 2026 · обновлено 14 июля 2026 · ~7 минут</span></div>
+      <div class="article-meta reveal">Блог · 1С и интеграции <span>· Автор: Ибрагим Раджабов · 2 июля 2026 · обновлено 18 июля 2026 · ~7 минут</span></div>
       <h1 class="reveal">Как связать интернет-магазин с 1С: Управление Торговлей — и перестать переносить заказы руками</h1>
-      <p class="article-lead reveal">На примере dag-sport показываю, как заменить ручной перенос оформленного заказа в 1С УТ. Отдельно разбираю общие инженерные рекомендации для подобных интеграций.</p>
+      <p class="article-lead reveal">Разбираю, какие данные и направления нужно согласовать до интеграции сайта с 1С, как проверять обмен и где возникают расхождения. Dag Sport — подтверждённый пример самой связки, но точный механизм и направления обмена без проверки не заявляются.</p>
       <div class="tldr reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin:24px 0 0;">
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:10px;">Коротко</span>
         <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
-          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Заказ с сайта сам становится документом в 1С: УТ — без ручного переноса.</li>
-          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Обмен настраивается на 1С-Битрикс и 1С: УТ; каталог, цены и остатки можно тянуть из учёта на сайт.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Одна из возможных целей интеграции — убрать ручной перенос; конкретная схема зависит от процесса и систем.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Для 1С-Битрикс и 1С УТ заранее фиксируют, какие данные передаются, в какую сторону и где находится источник истины.</li>
           <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> При проектировании обмена важно учесть рассинхрон данных, повторную обработку и ручной ввод.</li>
           <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> До старта важно определить, что и в какую сторону передаём — набор данных настраивается под процесс.</li>
-          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Живой пример — dag-sport: сайт работает на 1С-Битрикс; оформленный заказ создаёт документ в 1С УТ, отдельно владелец получает Telegram-уведомление.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> В Dag Sport существующий сайт на 1С-Битрикс интегрирован с 1С УТ; сам сайт разрабатывал не я. По словам владельца, заказы не теряются; точный механизм и направления обмена требуют проверки.</li>
         </ul>
       </div>
     </div>
@@ -254,40 +255,40 @@
         <li><strong>Ошибки ввода.</strong> Повторный ввод данных создаёт риск опечаток и расхождений, но их фактическую частоту нужно измерять в конкретном процессе.</li>
         <li><strong>Скорость реакции.</strong> Ручной маршрут требует регулярно проверять новые заказы; его реальная задержка зависит от организации работы.</li>
       </ul>
-      <p>В проекте <a href="/cases/dag-sport.html">dag-sport.ru</a> до интеграции оформленные заказы переносили в 1С вручную. Существующий сайт работает на 1С-Битрикс. После оформления заказ автоматически передаётся в 1С УТ, где создаётся документ. Отдельно владелец получает Telegram-уведомление. Сам сайт разрабатывал не я; моя часть — интеграция с 1С УТ и AI-консультант.</p>
+      <p>В проекте <a href="/cases/dag-sport.html">dag-sport.ru</a> существующий сайт работает на 1С-Битрикс. Моя часть — интеграция с 1С УТ и AI-консультант; сам сайт разрабатывал не я. По словам владельца, заказы не теряются. Как именно устроен обмен, какие данные и в каком направлении передаются, без дополнительной проверки не утверждаю.</p>
 
-      <h2>Целевая схема: заказ проходит путь сам</h2>
-      <p>Клиент оформляет заказ на существующем сайте. После этого работают два отдельных результата:</p>
+      <h2>Как проектировать связку</h2>
+      <p>Сначала фиксируют не технологию, а границы задачи: какие системы участвуют, какие данные должны между ними проходить, в каком направлении и по каким сценариям проверяют результат.</p>
       <ul>
-        <li><strong>1С УТ.</strong> Оформленный заказ автоматически передаётся в учётную систему, где создаётся документ.</li>
-        <li><strong>Telegram.</strong> Владелец получает уведомление о заказе.</li>
+        <li><strong>Системы и данные.</strong> Опишите сайт, конфигурацию 1С, справочники и документы, которые действительно входят в обмен.</li>
+        <li><strong>Направления и проверки.</strong> Для каждого потока задайте источник истины, событие запуска, реакцию на ошибку и критерий приёмки.</li>
       </ul>
-      <figure class="article-flow" aria-label="Схема пути заказа от сайта до 1С и Telegram">
-        <svg class="article-flow-desktop" viewBox="0 0 680 176" role="img" aria-label="После оформления заказ передаётся в 1С УТ, а владелец получает отдельное уведомление в Telegram">
+      <figure class="article-flow" aria-label="Общая схема проектирования интеграции сайта с 1С">
+        <svg class="article-flow-desktop" viewBox="0 0 680 176" role="img" aria-label="Системы и данные переходят в согласованные сценарии и проверки">
           <defs><marker id="flowArrow1c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#B5623C"/></marker></defs>
           <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#141210">
-            <rect x="8" y="42" width="132" height="92" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="30" y="82">Заказ</text><text x="30" y="104" fill="#6E6861">на сайте</text>
+            <rect x="8" y="42" width="132" height="92" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="30" y="82">Системы</text><text x="30" y="104" fill="#6E6861">сайт + 1С</text>
             <path d="M154 88 H232" stroke="#B5623C" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrow1c)"/>
-            <rect x="246" y="42" width="132" height="92" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="270" y="82">Передача</text><text x="281" y="104" fill="#6E6861">заказа</text>
+            <rect x="246" y="42" width="132" height="92" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="270" y="82">Данные</text><text x="263" y="104" fill="#6E6861">направления</text>
             <path d="M392 88 H446 V52 H470" stroke="#B5623C" stroke-width="3" stroke-linecap="round" fill="none" marker-end="url(#flowArrow1c)"/>
             <path d="M446 88 V130 H470" stroke="#B5623C" stroke-width="3" stroke-linecap="round" fill="none" marker-end="url(#flowArrow1c)"/>
-            <rect x="484" y="20" width="164" height="64" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="520" y="58">Документ 1С УТ</text>
-            <rect x="484" y="104" width="164" height="52" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="518" y="136">Telegram</text>
+            <rect x="484" y="20" width="164" height="64" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="522" y="58">Сценарии</text>
+            <rect x="484" y="104" width="164" height="52" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="522" y="136">Проверки</text>
           </g>
         </svg>
-        <svg class="article-flow-mobile" viewBox="0 0 320 320" role="img" aria-label="После оформления заказ передаётся в 1С УТ, а владелец получает отдельное уведомление в Telegram">
+        <svg class="article-flow-mobile" viewBox="0 0 320 320" role="img" aria-label="Системы и данные переходят в согласованные сценарии и проверки">
           <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#141210">
-            <rect x="50" y="8" width="220" height="62" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="110" y="36">Заказ</text><text x="101" y="55" fill="#6E6861">на сайте</text>
+            <rect x="50" y="8" width="220" height="62" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="124" y="36">Системы</text><text x="124" y="55" fill="#6E6861">сайт + 1С</text>
             <path d="M160 78 V118" stroke="#B5623C" stroke-width="3" stroke-linecap="round"/>
-            <rect x="50" y="126" width="220" height="62" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="112" y="154">Передача</text><text x="121" y="173" fill="#6E6861">заказа</text>
+            <rect x="50" y="126" width="220" height="62" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="132" y="154">Данные</text><text x="116" y="173" fill="#6E6861">направления</text>
             <path d="M160 196 V220 H80 V236" stroke="#B5623C" stroke-width="3" stroke-linecap="round" fill="none"/>
             <path d="M160 220 H240 V236" stroke="#B5623C" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <rect x="8" y="244" width="144" height="64" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="43" y="272">Документ</text><text x="59" y="291" fill="#6E6861">1С УТ</text>
-            <rect x="168" y="244" width="144" height="64" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="204" y="282">Telegram</text>
+            <rect x="8" y="244" width="144" height="64" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="42" y="282">Сценарии</text>
+            <rect x="168" y="244" width="144" height="64" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="202" y="282">Проверки</text>
           </g>
         </svg>
       </figure>
-      <p>В dag-sport прежний ручной перенос для этого маршрута больше не требуется: оформленный заказ создаёт документ в 1С УТ автоматически, а владелец отдельно получает Telegram-уведомление.</p>
+      <p>В Dag Sport подтверждён сам факт интеграции существующего сайта на 1С-Битрикс с 1С УТ. По словам владельца, заказы не теряются. Точный механизм, направления, состав данных, событие запуска и каналы уведомлений без дополнительной проверки не заявляются.</p>
       <div class="callout">
         <span class="label">Принцип</span>
         <p>Количество промежуточных компонентов выбирают под конкретную схему. Каждый компонент добавляет отдельную точку отказа и требования к сопровождению, поэтому его роль должна быть обоснована.</p>
@@ -304,22 +305,22 @@
       <h3>4. Уведомления без спама</h3>
       <p>Для уведомлений заранее определяют событие, состав сообщения и получателя. Это позволяет отделить рабочий сигнал от технических сообщений и не приписывать уведомлению данные, которых нет в согласованном маршруте.</p>
 
-      <h2>Что работает в&nbsp;dag-sport</h2>
+      <h2>Что подтверждено по&nbsp;Dag Sport</h2>
       <ul>
-        <li>После оформления заказ автоматически создаёт документ в 1С УТ.</li>
-        <li>Прежний ручной перенос заказа между сайтом и 1С для этого маршрута больше не требуется.</li>
-        <li>Владелец получает Telegram-уведомление о заказе.</li>
+        <li>Сайт на 1С-Битрикс уже существовал; его разрабатывал не Ибрагим.</li>
+        <li>Моя часть проекта — интеграция с 1С УТ и AI-консультант.</li>
+        <li>По словам владельца, заказы не теряются; внутренняя схема обмена требует отдельной проверки.</li>
       </ul>
-      <p>Отдельной веткой до оформления заказа работает AI-консультант: он помогает выбрать беговую дорожку по каталогу из 169 моделей. Автоматическая передача диалога менеджеру пока не настроена. Про формат AI-помощи есть <a href="/blog/ai-konsultant-na-sajte.html">отдельный разбор</a>.</p>
+      <p>AI-консультант работает с файлом <code>canonical_products.json</code>: в нём 169 беговых дорожек с реальными характеристиками и ориентировочными ценами. Он подбирает и сравнивает модели, но не подтверждает точный остаток и предлагает уточнить его у менеджера. Автоматическая передача диалога человеку сейчас не настроена. Про этот формат AI-помощи есть <a href="/blog/ai-konsultant-na-sajte.html">отдельный разбор</a>.</p>
 
       <h2>С чего начать у себя</h2>
       <ol>
         <li>Зафиксируйте текущий путь заказа: кто и что делает руками от «оформил на сайте» до «документ в 1С». Часто уже этот список — весомый аргумент.</li>
         <li>Проверьте каталог: совпадают ли артикулы на сайте и в 1С, есть ли дубли.</li>
         <li>Решите, где живут статусы и кто получает уведомления.</li>
-        <li>Запускайте обмен и первое время сверяйте: каждый заказ с сайта = ровно один документ в 1С.</li>
+        <li>До запуска согласуйте тесты: обычный сценарий, повтор, ошибка и восстановление после сбоя.</li>
       </ol>
-      <p>Если у вас магазин на Битриксе и учёт в УТ или Рознице, а заказы всё ещё переносят руками, можно оценить подходящую схему автоматизации. Подробности по услуге: <a href="/services/integraciya-1c.html">интеграция сайта с 1С</a>; живой пример: <a href="/cases/dag-sport.html">кейс dag-sport</a>. А если магазин у вас в Дагестане — <a href="/cities/mahachkala.html">я как раз из Махачкалы</a>.</p>
+      <p>Если у вас магазин на Битриксе и учёт в УТ или Рознице, а заказы всё ещё переносят руками, можно оценить подходящую схему автоматизации. Подробности есть на странице услуги <a href="/services/integraciya-1c.html">«Интеграция сайта с 1С»</a>. Отдельно посмотрите <a href="/cases/dag-sport.html">кейс Dag Sport</a>: он подтверждает интеграцию существующего сайта, но не конкретный маршрут обмена. А если магазин у вас в Дагестане — <a href="/cities/mahachkala.html">я как раз из Махачкалы</a>.</p>
 
       <h2>Первичные источники по&nbsp;общим рекомендациям</h2>
       <ul>
@@ -328,9 +329,14 @@
         <li><a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">AWS Builders’ Library: безопасные повторы и идемпотентные API</a> — общие принципы повторной обработки запросов.</li>
       </ul>
 
+      <aside class="callout" aria-label="Об авторе и границах материала">
+        <span class="label">Автор и границы материала</span>
+        <p>Материал подготовил <a href="/#about" rel="author">Ибрагим Раджабов</a>. Инженерные рекомендации выше описывают возможный подход к обмену, но не приписываются автоматически кейсу Dag Sport: по нему подтверждены интеграция существующего сайта с 1С УТ и AI-консультант, а точная внутренняя схема требует отдельной проверки.</p>
+      </aside>
+
       <div class="cta-box reveal">
         <h2>Заказы всё ещё переносятся руками?</h2>
-        <p>Опишите, что за сайт и какая 1С — скажу, как связать и что это займёт.</p>
+        <p>Опишите сайт, конфигурацию 1С и нужные данные — обозначу границы задачи и что потребуется для оценки.</p>
         <a href="/#contact" class="btn-primary">Описать задачу</a>
         <a href="https://t.me/rdvigm" target="_blank" rel="noopener" class="btn-secondary">Написать в Telegram</a>
       </div>

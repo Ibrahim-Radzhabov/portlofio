@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-консультант на сайте: когда нужен и что умеет | Блог</title>
-  <meta name="description" content="Что реально делает AI-консультант на сайте, когда он окупается, а когда хватит FAQ. Опыт внедрения на живом магазине и честные ограничения.">
+  <meta name="description" content="Что делает AI-консультант на сайте, когда он нужен и где его границы. Пример: каталог Dag Sport из 169 беговых дорожек.">
   <link rel="canonical" href="https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#F5F0E8">
   <meta property="og:title" content="AI-консультант на сайте: когда нужен и что умеет">
-  <meta property="og:description" content="Отвечает покупателям ночью, помогает выбрать, снимает типовые вопросы. Когда AI на сайте оправдан, а когда нет — без хайпа, из практики.">
+  <meta property="og:description" content="Помощь в выборе по подготовленным данным, границы ответов и честный разбор кейса Dag Sport.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html">
   <meta property="og:image" content="https://radzhabov-dev.ru/assets/og/blog-ai-konsultant.png">
@@ -31,7 +31,7 @@
         "@type": "Article",
         "@id": "https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html#article",
         "headline": "AI-консультант на сайте: когда он нужен и что реально умеет",
-        "description": "Что делает AI-консультант на сайте: помощь в выборе, ответы на типовые вопросы 24/7, квалификация обращений. Когда он оправдан, ограничения и честные ожидания.",
+        "description": "Что делает AI-консультант на сайте: помогает выбирать по подготовленным данным, отвечает в заданных границах и не должен подтверждать неизвестные данные. Подтверждённый пример — Dag Sport с каталогом из 169 беговых дорожек.",
         "author": {
           "@type": "Person",
           "name": "Ибрагим Раджабов",
@@ -39,10 +39,10 @@
           "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
         },
         "datePublished": "2026-07-02",
-        "dateModified": "2026-07-07",
+        "dateModified": "2026-07-18",
         "inLanguage": "ru",
         "mainEntityOfPage": "https://radzhabov-dev.ru/blog/ai-konsultant-na-sajte.html",
-        "image": "https://radzhabov-dev.ru/og-image.png",
+        "image": "https://radzhabov-dev.ru/assets/og/blog-ai-konsultant.png",
         "publisher": {
           "@type": "Person",
           "name": "Ибрагим Раджабов",
@@ -110,6 +110,7 @@
     .article-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
     .article-meta { font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:20px; display:flex; gap:16px; flex-wrap:wrap; }
     .article-meta span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
+    .article-meta a { color:inherit; text-decoration:none; border-bottom:1px solid var(--border-hover); }
     h1 { font-family:var(--font-display); font-size:clamp(30px, 4vw, 44px); font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:20px; }
     .article-lead { font-size:18px; color:var(--text-secondary); line-height:1.7; }
 
@@ -130,8 +131,8 @@
     .callout p { margin-bottom:0; }
     .article-flow { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:22px; margin:28px 0 34px; overflow:hidden; }
     .article-flow svg { display:block; width:100%; height:auto; overflow:hidden; }
-    .article-flow-mobile { display:none; }
-    @media(max-width:640px){ .article-flow { padding:18px 14px; } .article-flow-desktop { display:none !important; } .article-flow-mobile { display:block; } }
+    .article-flow svg.article-flow-mobile { display:none; }
+    @media(max-width:640px){ .article-flow { padding:18px 14px; } .article-flow-desktop { display:none !important; } .article-flow svg.article-flow-mobile { display:block; } }
 
     .cta-box { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:36px; margin:48px 0 0; text-align:center; position:relative; overflow:hidden; }
     .cta-box::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--accent), transparent); }
@@ -217,17 +218,17 @@
   <header class="article-hero">
     <div class="article-wrap">
       <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/blog/" style="color:var(--text-tertiary);text-decoration:none;">Блог</a> / <span style="color:var(--text-primary);">AI-консультант на сайте</span></nav>
-      <div class="article-meta reveal">Блог · AI и автоматизация <span>· 2 июля 2026 · обновлено 7 июля 2026 · ~6 минут</span></div>
+      <div class="article-meta reveal">Блог · AI и автоматизация <span>· Автор: <a href="/#about" rel="author">Ибрагим Раджабов</a> · 2 июля 2026 · обновлено 18 июля 2026 · ~6 минут</span></div>
       <h1 class="reveal">AI-консультант на сайте: когда он нужен и что реально умеет</h1>
       <p class="article-lead reveal">Вокруг AI много обещаний «заменит отдел продаж». Я внедряю AI-ассистентов в реальный малый бизнес и расскажу без хайпа: что консультант на сайте делает хорошо, где его пределы и в каких случаях он вам пока не нужен.</p>
       <div class="tldr reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin:24px 0 0;">
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:10px;">Коротко</span>
         <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
-          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> AI-консультант отвечает по вашим материалам и каталогу — не выдумывает «от себя».</li>
-          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Хорошо справляется с выбором, типовыми вопросами и первичной консультацией.</li>
-          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Не замена человеку: в спорных случаях передаёт диалог менеджеру.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> AI-консультант работает по подготовленным материалам и правилам; неизвестные данные не должен подтверждать.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> В Dag Sport он подбирает и сравнивает 169 беговых дорожек по каталогу с реальными характеристиками и ориентировочными ценами.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Точное наличие он не подтверждает; автоматическая передача диалога менеджеру сейчас не настроена.</li>
           <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Имеет смысл, когда есть реальные обращения, которые закроет бот, а не «потому что модно».</li>
-          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Может тянуть данные из каталога/1С — тогда отвечает по реальным ценам и наличию.</li>
+          <li style="color:var(--text-secondary);font-size:15px;line-height:1.6;display:flex;gap:10px;"><span style="color:var(--accent);flex-shrink:0;">·</span> Динамические цены и остатки можно подтверждать только при отдельно настроенном актуальном источнике.</li>
         </ul>
       </div>
     </div>
@@ -236,10 +237,10 @@
   <article class="article-body">
     <div class="article-wrap">
       <h2>Что такое AI-консультант на сайте</h2>
-      <p>Это окно диалога на странице, за которым стоит языковая модель, ограниченная вашими данными: каталогом, ценами, правилами, частыми вопросами. Посетитель пишет обычным языком — «посоветуйте дорожку для дома, вес 90 кг, потолки низкие» — и получает осмысленный ответ по вашему ассортименту, а не ссылку на раздел каталога.</p>
+      <p>Это окно диалога на странице, за которым стоит языковая модель, ограниченная вашими данными: каталогом, ценами, правилами, частыми вопросами. Посетитель пишет обычным языком — «подберите складную дорожку для дома, вес пользователя 90 кг, бюджет такой-то» — и получает ответ по данным каталога.</p>
       <p>Ключевое отличие от чат-ботов прошлого поколения — не нужно угадывать «правильную» кнопку. Человек спрашивает как умеет, консультант понимает и ведёт к выбору.</p>
-      <figure class="article-flow" aria-label="Схема работы AI-консультанта на сайте">
-        <svg class="article-flow-desktop" viewBox="0 0 680 190" role="img" aria-label="Вопрос гостя проходит через AI с каталогом и правилами, затем возвращается ответ или передача человеку">
+      <figure class="article-flow" aria-label="Схема работы AI-консультанта по каталогу и правилам">
+        <svg class="article-flow-desktop" viewBox="0 0 680 190" role="img" aria-label="Вопрос обрабатывается по каталогу и правилам; консультант отвечает по известным данным или предлагает уточнить информацию у менеджера; автоматической передачи диалога нет">
           <defs><marker id="flowArrowAi" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#B5623C"/></marker></defs>
           <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#141210">
             <rect x="10" y="58" width="138" height="74" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="38" y="90">Вопрос</text><text x="42" y="112" fill="#6E6861">гостя</text>
@@ -247,34 +248,35 @@
             <rect x="254" y="32" width="172" height="126" rx="22" fill="#FBF8F3" stroke="#DDD5C8"/><circle cx="340" cy="72" r="20" fill="#B5623C"/><text x="327" y="77" fill="#FBF8F3">AI</text><text x="290" y="116">каталог</text><text x="292" y="138" fill="#6E6861">+ правила</text>
             <path d="M440 76 H520" stroke="#B5623C" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrowAi)"/>
             <path d="M440 124 H520" stroke="#B5623C" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrowAi)"/>
-            <rect x="534" y="36" width="130" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="572" y="69">Ответ</text>
-            <rect x="534" y="106" width="130" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="558" y="139">Человеку</text>
+            <rect x="534" y="36" width="130" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="550" y="69">Ответ по данным</text>
+            <rect x="534" y="106" width="130" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="558" y="132">Уточнить</text><text x="550" y="148" fill="#6E6861">у менеджера</text>
           </g>
         </svg>
-        <svg class="article-flow-mobile" viewBox="0 0 320 360" role="img" aria-label="Вопрос гостя проходит через AI с каталогом и правилами, затем возвращается ответ или передача человеку">
+        <svg class="article-flow-mobile" viewBox="0 0 320 360" role="img" aria-label="Вопрос обрабатывается по каталогу и правилам; консультант отвечает по известным данным или предлагает уточнить информацию у менеджера; автоматической передачи диалога нет">
           <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#141210">
             <rect x="52" y="8" width="216" height="56" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="118" y="32">Вопрос</text><text x="124" y="51" fill="#6E6861">гостя</text>
             <path d="M160 72 V112" stroke="#B5623C" stroke-width="3" stroke-linecap="round"/>
             <rect x="52" y="120" width="216" height="100" rx="22" fill="#FBF8F3" stroke="#DDD5C8"/><circle cx="160" cy="152" r="18" fill="#B5623C"/><text x="148" y="157" fill="#FBF8F3">AI</text><text x="112" y="190">каталог</text><text x="114" y="209" fill="#6E6861">+ правила</text>
             <path d="M160 228 V264" stroke="#B5623C" stroke-width="3" stroke-linecap="round"/>
-            <rect x="52" y="272" width="96" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="73" y="304">Ответ</text>
-            <rect x="172" y="272" width="96" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="187" y="304">Человек</text>
+            <rect x="52" y="272" width="96" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="73" y="296">Ответ</text><text x="70" y="313" fill="#6E6861">по данным</text>
+            <rect x="172" y="272" width="96" height="54" rx="18" fill="#FBF8F3" stroke="#DDD5C8"/><text x="187" y="296">Уточнить</text><text x="188" y="313" fill="#6E6861">у менеджера</text>
           </g>
         </svg>
       </figure>
+      <p>В Dag Sport точное наличие предлагается уточнить у менеджера. Сам диалог менеджеру автоматически не передаётся.</p>
 
       <h2>Что он делает хорошо</h2>
       <ul>
-        <li><strong>Помогает выбрать.</strong> Товары, которые сложно выбрать без консультации (техника, услуги с вариантами), — главный сценарий. В <a href="/cases/dag-sport.html">проекте dag-sport</a> консультант помогает подобрать беговую дорожку по параметрам: мощность, полотно, вес пользователя, складная или нет. Покупатель раньше «уходил подумать» — теперь получает подбор сразу.</li>
-        <li><strong>Отвечает ночью и в выходные.</strong> Треть вопросов приходит, когда никого нет на месте. Консультант отвечает всегда — а утром вы видите уже тёплого клиента.</li>
+        <li><strong>Помогает выбрать.</strong> В <a href="/cases/dag-sport.html">проекте Dag Sport</a> консультант работает по <code>canonical_products.json</code>: 169 беговых дорожек с реальными характеристиками и ориентировочными ценами. Он подбирает модели по весу, бюджету, типу тренировки, для дома или зала, компактности и складной конструкции; сравнивает характеристики и находит похожие модели по названию.</li>
+        <li><strong>Может отвечать, когда сотрудник не на связи.</strong> Доступность зависит от работы сервиса и актуальности источника данных; измеренных цифр по доле таких вопросов пока нет.</li>
         <li><strong>Снимает типовые вопросы.</strong> «Есть ли доставка», «что входит», «какие сроки» — всё, что вы устали печатать в личку, консультант отвечает сам, по вашим же правилам.</li>
-        <li><strong>Квалифицирует обращения.</strong> Может собрать вводные (что нужно, бюджет, сроки) и передать вам уже структурированную заявку — в почту, Telegram или сразу в рабочий процесс.</li>
+        <li><strong>Может собрать вводные.</strong> При отдельно настроенной интеграции итог можно передать в почту, Telegram или рабочий процесс. В Dag Sport автоматическая передача диалога менеджеру не настроена.</li>
       </ul>
 
       <h2>Честно про ограничения</h2>
       <ul>
         <li><strong>Он знает только то, что вы ему дали.</strong> Консультант отвечает по каталогу и правилам, которые в него заложены. Устаревшие цены в источнике — устаревшие ответы. Данные надо поддерживать.</li>
-        <li><strong>Он не должен обещать лишнего.</strong> Правильно настроенный консультант на вопрос вне своей зоны отвечает «уточню у специалиста» и передаёт контакт человеку, а не сочиняет. Это вопрос настройки границ, и это обязательная часть работы.</li>
+        <li><strong>Он не должен обещать лишнего.</strong> На вопрос вне заданной зоны консультант должен сообщить об ограничении и предложить уточнить данные у специалиста. Передача диалога человеку работает только при отдельно настроенном канале.</li>
         <li><strong>Он не заменит эксперта в сложной продаже.</strong> Его работа — довести человека до диалога с вами подготовленным, а не закрыть сделку на миллион.</li>
       </ul>
       <blockquote>Хороший AI-консультант — это вежливый администратор, который никогда не спит и не устаёт от одинаковых вопросов. Не «искусственный продавец», а фильтр и помощник перед живым человеком.</blockquote>
@@ -287,8 +289,8 @@
         <li>Если каталог и цены нигде не оцифрованы — консультанту не из чего отвечать. Сначала порядок в данных (иногда это значит — в 1С), потом AI поверх.</li>
       </ul>
 
-      <h2>AI + сайт + 1С: связка, а не игрушка</h2>
-      <p>Самое интересное начинается, когда консультант — не изолированный виджет, а часть цепочки. В dag-sport это выглядит так: AI помогает выбрать товар → покупатель оформляет заказ → заказ автоматически становится документом в 1С: УТ → владелец получает уведомление в Telegram. Каждое звено усиливает остальные: подробнее про учётную часть — в статье <a href="/blog/kak-svyazat-sajt-s-1c.html">про связку сайта с 1С</a>.</p>
+      <h2>AI и интеграция с 1С — две части проекта</h2>
+      <p>В Dag Sport сосуществуют два подтверждённых контура: AI-консультант помогает выбрать товар по <code>canonical_products.json</code>, а существующий сайт на 1С-Битрикс интегрирован с 1С:УТ. По словам владельца, заказы не теряются. Точный механизм и направления обмена без проверки не заявляются. Консультант не подтверждает фактическое наличие и предлагает уточнить его у менеджера; автоматическая передача диалога не настроена. Подробнее про учётную часть — в статье <a href="/blog/kak-svyazat-sajt-s-1c.html">про связку сайта с 1С</a>.</p>
       <div class="callout">
         <span class="label">Из практики</span>
         <p>AI-агенты работают не только с покупателями. У меня в проде агент MyServerAgentAI — он мониторит серверы и сайты, проверяет SSL и логи и пишет сводки на русском в Telegram. А Telegram-магазин GlowDecor использует ассистента в поддержке с анонимной переадресацией. Формат подбирается под задачу — консультант на сайте лишь один из вариантов.</p>
@@ -302,6 +304,11 @@
         <li>Запускайте на одном сценарии (например, подбор товара) и расширяйте по мере пользы.</li>
       </ol>
       <p>Как я это делаю и что входит в работу — на странице услуги: <a href="/services/ai-assistant.html">AI-ассистент для бизнеса</a>. Если ваш формат — Telegram, посмотрите <a href="/services/telegram-bot.html">ботов и mini apps</a>.</p>
+
+      <aside class="callout" aria-label="Об авторе и источниках">
+        <span class="label">Автор и основа материала</span>
+        <p>Материал подготовил <a href="/#about" rel="author">Ибрагим Раджабов</a>. Практический пример — <a href="/cases/dag-sport.html">AI-консультант Dag Sport</a>; технический ориентир по семантическому поиску и извлечению фрагментов — <a href="https://developers.openai.com/api/docs/guides/retrieval">официальное руководство OpenAI по Retrieval</a>. Возможности конкретного консультанта зависят от источников данных и отдельно настроенных интеграций.</p>
+      </aside>
 
       <div class="cta-box reveal">
         <h2>Думаете, приживётся ли AI у вас?</h2>

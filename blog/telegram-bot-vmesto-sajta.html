@@ -39,7 +39,7 @@
           "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
         },
         "datePublished": "2026-07-02",
-        "dateModified": "2026-07-07",
+        "dateModified": "2026-07-18",
         "inLanguage": "ru",
         "mainEntityOfPage": "https://radzhabov-dev.ru/blog/telegram-bot-vmesto-sajta.html",
         "image": "https://radzhabov-dev.ru/og-image.png",
@@ -110,6 +110,7 @@
     .article-wrap { max-width:720px; margin:0 auto; padding:0 24px; }
     .article-meta { font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:20px; display:flex; gap:16px; flex-wrap:wrap; }
     .article-meta span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
+    .article-meta a { color:inherit; text-decoration:none; border-bottom:1px solid var(--border-hover); }
     h1 { font-family:var(--font-display); font-size:clamp(30px, 4vw, 44px); font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:20px; }
     .article-lead { font-size:18px; color:var(--text-secondary); line-height:1.7; }
 
@@ -213,7 +214,7 @@
   <header class="article-hero">
     <div class="article-wrap">
       <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/blog/" style="color:var(--text-tertiary);text-decoration:none;">Блог</a> / <span style="color:var(--text-primary);">Telegram-бот вместо сайта</span></nav>
-      <div class="article-meta reveal">Блог · Telegram и боты <span>· 2 июля 2026 · обновлено 7 июля 2026 · ~6 минут</span></div>
+      <div class="article-meta reveal">Блог · Telegram и боты <span>· Автор: <a href="/#about" rel="author">Ибрагим Раджабов</a> · 2 июля 2026 · обновлено 18 июля 2026 · ~6 минут</span></div>
       <h1 class="reveal">Telegram-бот вместо сайта: когда его достаточно, а когда нет</h1>
       <p class="article-lead reveal">Мне одинаково платят и за ботов, и за сайты, поэтому мне незачем продавать вам лишнее. Разберу честно: в каких случаях бизнесу хватит бота или mini app, когда без сайта никуда, и почему чаще всего лучший ответ — связка.</p>
       <div class="tldr reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin:24px 0 0;">
@@ -261,6 +262,11 @@
 
       <h2>Про деньги и сроки</h2>
       <p>Бот с типовыми сценариями обычно быстрее и дешевле лендинга; mini app с каталогом — сопоставим с сайтом-витриной; связка — это два инструмента, но строятся они поэтапно, а не разом. Точные цифры зависят от задачи: скажу после короткого разбора, до старта. Что входит и как устроено — на странице <a href="/services/telegram-bot.html">услуги Telegram-ботов и mini apps</a>.</p>
+
+      <aside class="callout" aria-label="Об авторе и источниках">
+        <span class="label">Автор и основа материала</span>
+        <p>Материал подготовил <a href="/#about" rel="author">Ибрагим Раджабов</a>. Практический пример — <a href="/cases/decorapp.html">Telegram Mini App GlowDecor</a>; возможности платформы сверены с официальными материалами Telegram: <a href="https://core.telegram.org/bots/api">Bot API</a> и <a href="https://core.telegram.org/bots/webapps">Mini Apps</a>. Выбор формата зависит от канала привлечения и сценария пользователя.</p>
+      </aside>
 
       <div class="cta-box reveal">
         <h2>Не уверены, что вам нужно?</h2>
