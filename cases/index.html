@@ -69,6 +69,48 @@
             "position": 3,
             "name": "DecorApp — каталог декора и корзина",
             "url": "https://radzhabov-dev.ru/cases/decorapp.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "PDR Atelier — сайт автосервиса",
+            "url": "https://pdr.radzhabov-dev.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Flora Noire — сайт цветочного магазина",
+            "url": "https://flora.radzhabov-dev.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "АвтоМаг — сайт магазина автозапчастей",
+            "url": "https://avtozap.radzhabov-dev.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "THRONE — сайт барбершопа",
+            "url": "https://barber.radzhabov-dev.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "Rihau — сайт оконной компании",
+            "url": "https://rihau.radzhabov-dev.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "name": "Qlean — сайт клининговой компании",
+            "url": "https://qlean.radzhabov-dev.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "name": "FixLab — сайт сервисного центра",
+            "url": "https://fixlab.radzhabov-dev.ru/"
           }
         ]
       }
@@ -122,13 +164,17 @@
     #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
     .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
 
-    .hero { padding:160px 0 40px; }
+    .hero { padding:140px 0 24px; }
     .hero-label { display:inline-block; font-family:var(--font-mono); font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:24px; border:1px solid var(--accent-glow-strong); padding:8px 16px; border-radius:8px; background:var(--accent-glow); }
     h1 { font-family:var(--font-display); font-size:clamp(32px, 4.5vw, 52px); font-weight:800; line-height:1.12; letter-spacing:-1.5px; margin-bottom:20px; max-width:780px; }
     h1 .accent { color:var(--accent); }
     .hero-subtitle { font-size:18px; color:var(--text-secondary); max-width:580px; line-height:1.7; }
 
-    .cases { padding:48px 0 32px; }
+    .cases { padding:32px 0 32px; }
+    .section-heading { max-width:720px; margin-bottom:28px; }
+    .section-kicker { margin-bottom:10px; color:var(--accent); font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:1.8px; text-transform:uppercase; }
+    .section-heading h2 { font-family:var(--font-display); font-size:clamp(28px, 3.6vw, 42px); font-weight:700; line-height:1.18; letter-spacing:-0.8px; }
+    .section-heading > p:last-child { max-width:650px; margin-top:14px; color:var(--text-secondary); font-size:16px; line-height:1.7; }
     .case-list { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; max-width:980px; }
     .case-card { display:flex; flex-direction:column; background:var(--bg-card); border:1px solid var(--border); border-radius:20px; overflow:hidden; transition:all .4s; }
     .case-card:hover { border-color:var(--border-hover); background:var(--bg-card-hover); transform:translateY(-3px); }
@@ -136,15 +182,36 @@
     .case-thumb { display:block; width:100%; aspect-ratio:16/10; background:var(--bg-primary); overflow:hidden; }
     .case-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
     .case-body { padding:28px 30px 32px; display:flex; flex-direction:column; gap:12px; flex:1; }
+    .case-status { align-self:flex-start; padding:5px 8px; border:1px solid var(--accent-glow-strong); border-radius:999px; background:var(--accent-glow); color:var(--accent); font-family:var(--font-mono); font-size:10px; font-weight:500; line-height:1; letter-spacing:1.1px; text-transform:uppercase; }
     .case-tag { font-family:var(--font-mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; display:flex; gap:8px; flex-wrap:wrap; }
     .case-tag span { color:var(--text-tertiary); text-transform:none; letter-spacing:0; }
-    .case-card h2 { font-family:var(--font-display); font-size:23px; font-weight:700; line-height:1.3; color:var(--text-primary); }
+    .case-card h3 { font-family:var(--font-display); font-size:23px; font-weight:700; line-height:1.3; color:var(--text-primary); }
     .case-card p { color:var(--text-secondary); font-size:15px; line-height:1.7; margin:0; }
     .case-meta { margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:6px; }
     .case-more { font-family:var(--font-mono); font-size:13px; color:var(--accent); border-bottom:1px solid var(--accent-glow-strong); padding-bottom:3px; transition:color .2s, border-color .2s; }
     .case-card:hover .case-more { color:var(--accent-warm); border-color:var(--accent-warm); }
     .case-live { font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); text-decoration:none; border-bottom:1px solid var(--border); padding-bottom:3px; }
     .case-live:hover { color:var(--accent); }
+
+    .demo-works { padding:64px 0 72px; border-top:1px solid var(--border); }
+    .demo-grid { display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:18px; }
+    .demo-card { display:flex; min-width:0; grid-column:span 3; flex-direction:column; overflow:hidden; border:1px solid var(--border); border-radius:18px; background:rgba(237, 232, 223, 0.66); transition:transform .3s, border-color .3s, background .3s; }
+    .demo-card:nth-last-child(-n+3) { grid-column:span 4; }
+    .demo-card:hover { transform:translateY(-3px); border-color:var(--border-hover); background:var(--bg-card); }
+    .demo-preview { display:block; overflow:hidden; aspect-ratio:16/10; background:var(--bg-secondary); }
+    .demo-preview img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s; }
+    .demo-card:hover .demo-preview img { transform:scale(1.025); }
+    .demo-body { display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:22px; }
+    .demo-status { margin-bottom:12px; padding:5px 8px; border:1px solid var(--border); border-radius:999px; color:var(--text-tertiary); font-family:var(--font-mono); font-size:9px; line-height:1; letter-spacing:1px; text-transform:uppercase; }
+    .demo-card h3 { font-family:var(--font-display); font-size:21px; font-weight:700; line-height:1.25; }
+    .demo-card p { margin-top:8px; color:var(--text-secondary); font-size:14px; line-height:1.6; }
+    .demo-niche { display:block; margin-top:6px; color:var(--text-tertiary); font-family:var(--font-mono); font-size:10px; letter-spacing:1px; text-transform:uppercase; }
+    .demo-actions { display:flex; align-items:center; flex-wrap:wrap; gap:10px 16px; margin-top:auto; padding-top:20px; }
+    .demo-details, .demo-live { font-family:var(--font-mono); font-size:11px; text-decoration:none; }
+    .demo-details { color:var(--accent); border-bottom:1px solid var(--accent-glow-strong); }
+    .demo-live { color:var(--text-tertiary); border-bottom:1px solid var(--border); }
+    .demo-details:hover, .demo-live:hover { color:var(--accent-warm); border-color:var(--accent-warm); }
+    .demo-preview:focus-visible, .demo-details:focus-visible, .demo-live:focus-visible { outline:2px solid var(--accent-warm); outline-offset:3px; }
 
     .note { padding:24px 0 80px; }
     .note-box { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:28px 32px; max-width:760px; }
@@ -173,6 +240,10 @@
     .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
     .reveal.visible { opacity:1; transform:none; }
 
+    @media (max-width:1100px) {
+      .demo-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+      .demo-card, .demo-card:nth-last-child(-n+3) { grid-column:span 1; }
+    }
     @media (max-width:968px) {
       .nav-links { display:none; }
       .menu-btn { display:block; }
@@ -181,6 +252,8 @@
     @media (max-width:640px) {
       .hero { padding:120px 0 24px; }
       .case-body { padding:22px 22px 26px; }
+      .demo-works { padding:48px 0 56px; }
+      .demo-grid { grid-template-columns:1fr; }
       .note-box { padding:22px; }
     }
     @media (prefers-reduced-motion:reduce) {
@@ -226,19 +299,25 @@
       <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <span style="color:var(--text-primary);">Кейсы</span></nav>
       <span class="hero-label reveal">Кейсы</span>
       <h1 class="reveal">Клиентские кейсы и <span class="accent">рабочие демо</span></h1>
-      <p class="hero-subtitle reveal">Собрал проекты, где можно посмотреть структуру, интерфейс и техническую часть: лендинги, AI-сценарии, 1С и&nbsp;e-commerce. Каждый можно открыть и разобрать.</p>
+      <p class="hero-subtitle reveal">Здесь собраны клиентские проекты и&nbsp;рабочие демо. В&nbsp;карточках — живые примеры и&nbsp;разборы того, что именно было сделано: структура, интерфейс, AI-сценарии, 1С и&nbsp;e-commerce.</p>
     </div>
   </header>
 
   <section class="cases">
     <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Подробные кейсы</p>
+        <h2>Проекты с разбором задачи и&nbsp;моей роли</h2>
+        <p>Здесь можно посмотреть не только результат, но и&nbsp;контекст: что требовалось сделать, за&nbsp;какую часть отвечал я и&nbsp;как устроено решение.</p>
+      </div>
       <div class="case-list">
         <article class="case-card reveal">
           <a class="case-link" href="/cases/baby-massage.html">
             <span class="case-thumb"><img src="/assets/work/baby-massage.webp" alt="Сайт для детского массажа «Кроха и Я»" loading="lazy" width="640" height="400"></span>
             <span class="case-body">
+              <span class="case-status">Клиентский проект</span>
               <span class="case-tag">Лендинг <span>·</span> Mobile-first <span>·</span> Форма записи</span>
-              <h2>«Кроха и Я» — лендинг для детского массажа</h2>
+              <h3>«Кроха и Я» — лендинг для детского массажа</h3>
               <p>Структура, адаптив, форма записи и SEO-база для частного специалиста. Спокойная подача услуг, расписание и быстрый контакт.</p>
               <span class="case-meta">
                 <span class="case-more">Разбор кейса →</span>
@@ -254,8 +333,9 @@
           <a class="case-link" href="/cases/dag-sport.html">
             <span class="case-thumb"><img src="/assets/work/monitor-desk-status.webp" alt="dag-sport.ru — связка 1С-Битрикс и 1С УТ" loading="lazy" width="640" height="400"></span>
             <span class="case-body">
+              <span class="case-status">Клиентская интеграция</span>
               <span class="case-tag">1С <span>·</span> AI <span>·</span> Интеграция</span>
-              <h2>Dag Sport — 1С и AI-консультант</h2>
+              <h3>Dag Sport — 1С и AI-консультант</h3>
               <p>Связка сайта, 1С УТ и AI-консультанта для обработки обращений. Сам сайт делал не я — моя часть интеграция 1С и&nbsp;AI-консультант.</p>
               <span class="case-meta">
                 <span class="case-more">Разбор кейса →</span>
@@ -268,8 +348,9 @@
           <a class="case-link" href="/cases/decorapp.html">
             <span class="case-thumb"><img src="/assets/work/decor-desk-catalog.webp" alt="DecorApp — каталог декора и корзина" loading="lazy" width="640" height="400"></span>
             <span class="case-body">
+              <span class="case-status">Рабочее демо</span>
               <span class="case-tag">E-commerce <span>·</span> Каталог <span>·</span> Корзина</span>
-              <h2>DecorApp — каталог декора и корзина</h2>
+              <h3>DecorApp — каталог декора и корзина</h3>
               <p>Демо e-commerce интерфейса: каталог, карточка товара, корзина и мобильные сценарии. Магазин целиком живёт внутри Telegram.</p>
               <span class="case-meta">
                 <span class="case-more">Разбор кейса →</span>
@@ -279,6 +360,130 @@
           <span class="case-meta" style="padding:0 30px 28px;">
             <a class="case-live" href="https://t.me/DecorApp_bot" target="_blank" rel="noopener">Открыть бота ↗</a>
           </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-works" aria-labelledby="demo-works-title">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Ещё семь работ</p>
+        <h2 id="demo-works-title">Другие работы и&nbsp;живые демо</h2>
+        <p>Это не&nbsp;подробные кейсы с&nbsp;метриками и&nbsp;историей клиента. Здесь можно открыть рабочий интерфейс и&nbsp;оценить структуру, визуальную подачу и&nbsp;адаптивность решения.</p>
+      </div>
+
+      <div class="demo-grid">
+        <article class="demo-card reveal">
+          <a class="demo-preview" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener" aria-label="Открыть демо PDR Atelier">
+            <img src="/assets/work/pdr.webp" alt="PDR Atelier — сайт услуг по удалению вмятин" loading="lazy" width="640" height="400">
+          </a>
+          <div class="demo-body">
+            <span class="demo-status">Рабочее демо</span>
+            <h3>PDR Atelier</h3>
+            <span class="demo-niche">Автосервис</span>
+            <p>Услуги и&nbsp;запись на удаление вмятин без покраски.</p>
+            <div class="demo-actions">
+              <a class="demo-details" href="/niches/sajt-dlya-avtoservisa.html">О решении →</a>
+              <a class="demo-live" href="https://pdr.radzhabov-dev.ru/" target="_blank" rel="noopener">Открыть демо ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="demo-card reveal">
+          <a class="demo-preview" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener" aria-label="Открыть демо Flora Noire">
+            <img src="/assets/work/flora.webp" alt="Flora Noire — сайт цветочного магазина" loading="lazy" width="640" height="400">
+          </a>
+          <div class="demo-body">
+            <span class="demo-status">Рабочее демо</span>
+            <h3>Flora Noire</h3>
+            <span class="demo-niche">Флористика</span>
+            <p>Букеты, состав заказа и&nbsp;заявка на доставку.</p>
+            <div class="demo-actions">
+              <a class="demo-details" href="/niches/sajt-dlya-cvetochnogo-magazina.html">О решении →</a>
+              <a class="demo-live" href="https://flora.radzhabov-dev.ru/" target="_blank" rel="noopener">Открыть демо ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="demo-card reveal">
+          <a class="demo-preview" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener" aria-label="Открыть демо АвтоМаг">
+            <img src="/assets/work/avtozap.webp" alt="АвтоМаг — сайт магазина автозапчастей" loading="lazy" width="640" height="400">
+          </a>
+          <div class="demo-body">
+            <span class="demo-status">Рабочее демо</span>
+            <h3>АвтоМаг</h3>
+            <span class="demo-niche">Автозапчасти</span>
+            <p>Подбор запчастей и&nbsp;быстрая заявка на нужную деталь.</p>
+            <div class="demo-actions">
+              <a class="demo-details" href="/niches/sajt-dlya-magazina-avtozapchastej.html">О решении →</a>
+              <a class="demo-live" href="https://avtozap.radzhabov-dev.ru/" target="_blank" rel="noopener">Открыть демо ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="demo-card reveal">
+          <a class="demo-preview" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener" aria-label="Открыть демо THRONE">
+            <img src="/assets/work/barber.webp" alt="THRONE — сайт барбершопа" loading="lazy" width="640" height="400">
+          </a>
+          <div class="demo-body">
+            <span class="demo-status">Рабочее демо</span>
+            <h3>THRONE</h3>
+            <span class="demo-niche">Барбершоп</span>
+            <p>Услуги, мастера и&nbsp;сценарий онлайн-записи.</p>
+            <div class="demo-actions">
+              <a class="demo-details" href="/niches/sajt-dlya-barbershopa.html">О решении →</a>
+              <a class="demo-live" href="https://barber.radzhabov-dev.ru/" target="_blank" rel="noopener">Открыть демо ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="demo-card reveal">
+          <a class="demo-preview" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener" aria-label="Открыть демо Rihau">
+            <img src="/assets/work/rihau.webp" alt="Rihau — сайт оконной компании" loading="lazy" width="640" height="400">
+          </a>
+          <div class="demo-body">
+            <span class="demo-status">Рабочее демо</span>
+            <h3>Rihau</h3>
+            <span class="demo-niche">Окна и монтаж</span>
+            <p>Виды окон, вызов замерщика и&nbsp;предварительный расчёт.</p>
+            <div class="demo-actions">
+              <a class="demo-details" href="/niches/sajt-dlya-okonnoj-kompanii.html">О решении →</a>
+              <a class="demo-live" href="https://rihau.radzhabov-dev.ru/" target="_blank" rel="noopener">Открыть демо ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="demo-card reveal">
+          <a class="demo-preview" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener" aria-label="Открыть демо Qlean">
+            <img src="/assets/work/qlean.webp" alt="Qlean — сайт клининговой компании" loading="lazy" width="640" height="400">
+          </a>
+          <div class="demo-body">
+            <span class="demo-status">Рабочее демо</span>
+            <h3>Qlean</h3>
+            <span class="demo-niche">Клининг</span>
+            <p>Расчёт уборки и&nbsp;заявка без длинной формы.</p>
+            <div class="demo-actions">
+              <a class="demo-details" href="/niches/sajt-dlya-klininga.html">О решении →</a>
+              <a class="demo-live" href="https://qlean.radzhabov-dev.ru/" target="_blank" rel="noopener">Открыть демо ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="demo-card reveal">
+          <a class="demo-preview" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener" aria-label="Открыть демо FixLab">
+            <img src="/assets/work/fixlab.webp" alt="FixLab — сайт сервисного центра" loading="lazy" width="640" height="400">
+          </a>
+          <div class="demo-body">
+            <span class="demo-status">Рабочее демо</span>
+            <h3>FixLab</h3>
+            <span class="demo-niche">Сервисный центр</span>
+            <p>Ремонт техники и&nbsp;заявка на диагностику.</p>
+            <div class="demo-actions">
+              <a class="demo-details" href="/niches/sajt-dlya-servisnogo-centra.html">О решении →</a>
+              <a class="demo-live" href="https://fixlab.radzhabov-dev.ru/" target="_blank" rel="noopener">Открыть демо ↗</a>
+            </div>
+          </div>
         </article>
       </div>
     </div>
