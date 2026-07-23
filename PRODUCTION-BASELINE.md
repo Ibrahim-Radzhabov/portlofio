@@ -70,7 +70,8 @@ The deployed whitelist artifact contains **144 files**, including **38 HTML file
 
 - Formspree endpoint `mkolvvep`, consent gate, honeypot `_gotcha`, status/toast feedback and hidden source/scenario payload remain intact.
 - Yandex Metrika ID `110282088` and the existing conversion/product goals remain intact.
-- Telegram is `t.me/rdvigm`, email is `1cworkac@mail.ru`, and the canonical domain is `radzhabov-dev.ru`.
+- Telegram is `t.me/rdvigm`, and the canonical domain is `radzhabov-dev.ru`.
+- Historical note: commit `74018e8` contained the former public email `1cworkac@mail.ru`. The owner replaced it with `work@radzhabov-dev.ru` on 2026-07-23; use the new address for current site changes even when comparing against this baseline.
 
 ## Protected implementation
 

@@ -180,7 +180,7 @@ skip-nav + ARIA live region for the form.
 - Russian `<title>` + keyword-rich `<meta name="description">`; Open Graph + Twitter `summary_large_image`.
 - JSON-LD `@graph` (Person/ProfilePage/WebSite/services/FAQ). **Already on-brand and three-pillar** —
   jobTitle «Соло-разработчик сайтов, AI-ассистентов и 1С-связок», 5 `makesOffer` services.
-- **Real contacts already in JSON-LD** (don't invent/replace): email `1cworkac@mail.ru`,
+- **Real contacts already in JSON-LD** (don't invent/replace): email `work@radzhabov-dev.ru`,
   `sameAs` = `github.com/Ibrahim-Radzhabov`, `t.me/rdvigm`. Keep on-page text and structured data consistent.
 
 ## Development

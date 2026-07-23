@@ -56,12 +56,12 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "Можно ли обсудить задачу при личной встрече в Махачкале?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Я живу в Махачкале, поэтому для местного бизнеса возможна личная встреча — разобрать задачу на месте. Дальше большая часть работы всё равно идёт онлайн: показываю результат по ходу, правки не копятся."}},
-          {"@type": "Question", "name": "Вы работаете только с Махачкалой?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Работаю удалённо с клиентами по всей России — созвон, переписка, доступы решаются онлайн. Для бизнеса из Махачкалы и Дагестана просто добавляется возможность встретиться лично."}},
-          {"@type": "Question", "name": "Сколько стоит сайт в Махачкале?", "acceptedAnswer": {"@type": "Answer", "text": "Лендинг под заявки — от 25 000 ₽, срок от 7 дней. Интернет-магазин, Telegram-бот, AI-ассистент или связка с 1С оцениваются после короткого разбора задачи: точную сумму называю до старта. Цена не зависит от города — она зависит от объёма работы."}},
-          {"@type": "Question", "name": "У меня страница в соцсетях — зачем ещё сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Соцсети остаются: сайт их не заменяет, а добавляет то, чего в них нет. Вас находят в Яндексе те, кто ищет услугу прямо сейчас; цена и список услуг видны заранее; заявка приходит в форму, а не тонет в директе. И сайт принадлежит вам — он не зависит от алгоритмов и блокировок."}},
-          {"@type": "Question", "name": "Делаете сайты с подключением к 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Да, это моя специализация. Начинал с 1С — настраивал Розницу и УТ в малом бизнесе, потом освоил веб. Могу связать сайт или интернет-магазин с 1С так, чтобы заказ с сайта сам становился документом в учёте, без ручного переноса. Реальный пример — кейс dag-sport."}},
-          {"@type": "Question", "name": "С чего начать?", "acceptedAnswer": {"@type": "Answer", "text": "Напишите в Telegram или через форму: что за бизнес, что уже есть — соцсети, сайт, 1С — и что не устраивает. Разберу вводные и предложу формат работы с оценкой сроков и стоимости. Это ни к чему не обязывает."}}
+          {"@type": "Question", "name": "Можно встретиться и обсудить проект лично?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Я в Махачкале, поэтому можем встретиться и спокойно разобрать задачу. Если удобнее, проведём созвон — на сроки и качество работы формат общения не влияет."}},
+          {"@type": "Question", "name": "Берёте проекты из других городов?", "acceptedAnswer": {"@type": "Answer", "text": "Да, работаю с клиентами по всей России. Обсуждение, показ промежуточных версий, правки и передача проекта проходят онлайн. Личная встреча в Махачкале — дополнительная возможность, а не обязательное условие."}},
+          {"@type": "Question", "name": "Сколько стоит сайт и сколько занимает разработка?", "acceptedAnswer": {"@type": "Answer", "text": "Лендинг стоит от 25 000 ₽ и занимает от 7 дней. Интернет-магазин, AI-консультант, Telegram-бот или интеграцию с 1С оцениваю после разбора задачи. Стоимость и срок называю до начала работы. Предварительную оценку можно получить в калькуляторе на сайте."}},
+          {"@type": "Question", "name": "Есть соцсети — сайт всё равно нужен?", "acceptedAnswer": {"@type": "Answer", "text": "Соцсети приводят и удерживают аудиторию, а сайт помогает довести человека до обращения. На нём в одном месте находятся услуги, цены или ориентиры, примеры работ и форма заявки. Кроме того, сайт можно продвигать в поиске, и он принадлежит вам. Обычно сайт и соцсети работают вместе."}},
+          {"@type": "Question", "name": "Можно подключить сайт к 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Могу связать новый или уже работающий сайт с 1С: Управление Торговлей или Розницей. Сначала определим, какие данные нужно передавать: например, заказы, товары, цены или статусы. Затем согласуем схему и проверки. Пример такой работы — проект Dag Sport."}},
+          {"@type": "Question", "name": "Что нужно прислать для оценки?", "acceptedAnswer": {"@type": "Answer", "text": "Достаточно написать, чем занимается бизнес, что уже есть — соцсети, сайт, 1С — и какой результат нужен. После короткого разбора предложу формат работы, назову стоимость и срок. Готовое техническое задание для первого обращения не требуется."}}
         ]
       },
       {
@@ -74,6 +74,7 @@
     ]
   }
   </script>
+  <script>document.documentElement.classList.add('js');</script>
   <style>
     :root {
       --bg-primary: #F5F0E8;
@@ -126,7 +127,7 @@
     .nav-links a.active::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--accent); border-radius:1px; }
     .menu-btn { display:none; background:none; border:none; cursor:pointer; padding:4px; }
     .menu-btn span { display:block; width:24px; height:2px; background:var(--text-primary); margin:5px 0; transition:.3s; border-radius:1px; }
-    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #mobile-menu { position:fixed; inset:0; background:rgba(245, 240, 232, 0.98); z-index:1001; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .4s; }
     #mobile-menu.active { opacity:1; pointer-events:all; }
     #mobile-menu a { font-family:var(--font-display); font-size:24px; color:var(--text-primary); text-decoration:none; font-weight:600; }
     .close-menu { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--text-primary); font-size:32px; cursor:pointer; }
@@ -162,13 +163,15 @@
     .content-block h3 { font-family:var(--font-display); font-size:22px; font-weight:700; margin:48px 0 16px; }
     .content-block p { color:var(--text-secondary); margin-bottom:16px; font-size:16px; line-height:1.7; }
     .content-block ul { list-style:none; margin:16px 0; }
-    .content-block li { padding:8px 0; color:var(--text-secondary); font-size:15px; display:flex; align-items:flex-start; gap:12px; }
-    .content-block li::before { content:'—'; color:var(--accent); font-weight:700; flex-shrink:0; }
+    .content-block li { padding:10px 0; color:var(--text-secondary); font-size:15px; display:grid; grid-template-columns:18px 210px minmax(0,1fr); align-items:start; gap:12px; }
+    .content-block li::before { content:'—'; color:var(--accent); font-weight:700; grid-column:1; }
+    .content-block li strong { grid-column:2; color:var(--text-secondary); }
+    .content-block li span { grid-column:3; }
     .content-block a { color:var(--accent); }
 
     /* Features */
     .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-    .feature-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; transition:all .4s; }
+    .feature-card { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; transition:all .4s; display:flex; flex-direction:column; }
     .feature-card:hover { border-color:var(--border-hover); background:var(--bg-card-hover); transform:translateY(-4px); }
     .feature-icon { width:48px; height:48px; border-radius:12px; background:var(--accent-glow); display:flex; align-items:center; justify-content:center; margin-bottom:20px; color:var(--accent); font-size:20px; font-family:var(--font-mono); }
     .feature-card h3 { font-family:var(--font-display); font-size:18px; font-weight:600; margin-bottom:10px; }
@@ -177,14 +180,43 @@
     .feature-card a:hover { color:var(--accent-warm); border-color:var(--accent-warm); }
 
     /* Case block */
-    .case-block { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; overflow:hidden; display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:48px; }
+    .case-block { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; overflow:hidden; display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:0; margin-top:48px; }
     .case-block-content { padding:48px; display:flex; flex-direction:column; justify-content:center; }
     .case-block-content .tag { display:inline-block; font-family:var(--font-mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:1px; border:1px solid var(--accent-glow-strong); padding:6px 12px; border-radius:6px; background:var(--accent-glow); margin-bottom:16px; width:fit-content; }
     .case-block-content h3 { font-family:var(--font-display); font-size:24px; font-weight:700; margin-bottom:12px; }
     .case-block-content p { color:var(--text-secondary); margin-bottom:24px; line-height:1.6; }
+    .case-facts { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:4px 0 22px; }
+    .case-fact { padding:13px 14px; border-left:2px solid var(--accent); background:var(--accent-glow); border-radius:0 10px 10px 0; }
+    .case-fact strong { display:block; color:var(--text-primary); font-family:var(--font-display); font-size:17px; line-height:1.2; margin-bottom:4px; }
+    .case-fact span { display:block; color:var(--text-tertiary); font-size:12px; line-height:1.45; }
+    .case-note { font-size:13px; color:var(--text-tertiary) !important; margin-bottom:24px !important; }
     .case-block-image { background:var(--bg-secondary); display:flex; align-items:center; justify-content:center; min-height:300px; position:relative; }
     .case-placeholder { color:var(--text-tertiary); font-family:var(--font-mono); font-size:14px; text-align:center; line-height:2; padding:24px; }
     .case-placeholder b { color:var(--accent); }
+    .case-proof { min-height:580px; padding:0; overflow:hidden; isolation:isolate; }
+    .case-proof::after { content:''; position:absolute; inset:0; z-index:0; background:linear-gradient(135deg, rgba(245,240,232,.58), rgba(237,232,223,.2)); pointer-events:none; }
+    .case-proof-site { position:absolute; inset:36px 24px 28px; z-index:-1; width:calc(100% - 48px); height:calc(100% - 64px); object-fit:cover; object-position:top; opacity:.2; filter:saturate(.65); border:1px solid rgba(20,18,16,.12); border-radius:16px; }
+    .case-proof-shot { position:absolute; z-index:2; width:53%; margin:0; padding:8px 8px 10px; overflow:hidden; background:rgba(251,248,243,.96); border:1px solid rgba(20,18,16,.14); border-radius:18px; box-shadow:0 22px 55px rgba(20,18,16,.2); }
+    .case-proof-request { top:34px; left:5%; transform:rotate(-1.2deg); }
+    .case-proof-results { right:5%; bottom:30px; z-index:3; transform:rotate(1.2deg); }
+    .case-proof-crop { overflow:hidden; aspect-ratio:.73; border-radius:12px; background:#f4f6f9; }
+    .case-proof-crop img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
+    .case-proof-shot figcaption { padding:9px 6px 1px; color:var(--accent); font-family:var(--font-mono); font-size:10px; line-height:1.3; letter-spacing:.8px; text-transform:uppercase; }
+
+    /* More work */
+    .more-work { margin-top:64px; }
+    .more-work-head { text-align:center; margin-bottom:28px; }
+    .more-work-head h3 { font-family:var(--font-display); font-size:clamp(24px,3vw,34px); line-height:1.2; margin-top:8px; }
+    .more-work-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .more-work-card { overflow:hidden; display:flex; flex-direction:column; min-width:0; background:var(--bg-card); border:1px solid var(--border); border-radius:16px; color:var(--text-primary); text-decoration:none; transition:transform .35s, border-color .35s, box-shadow .35s; }
+    .more-work-card:hover { transform:translateY(-4px); border-color:var(--border-hover); box-shadow:0 18px 42px rgba(20,18,16,.1); }
+    .more-work-media { display:block; aspect-ratio:16/10; overflow:hidden; background:var(--bg-secondary); }
+    .more-work-media img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .5s var(--ease-out-expo); }
+    .more-work-card:hover .more-work-media img { transform:scale(1.025); }
+    .more-work-body { display:flex; flex-direction:column; flex:1; padding:20px; }
+    .more-work-type { font-family:var(--font-mono); font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--accent); margin-bottom:9px; }
+    .more-work-title { font-family:var(--font-display); font-size:19px; font-weight:700; line-height:1.25; }
+    .more-work-cta { margin-top:16px; color:var(--accent); font-family:var(--font-mono); font-size:12px; }
 
     /* FAQ */
     .faq-list { max-width:720px; margin:0 auto; }
@@ -232,9 +264,10 @@
     .social-links a { width:36px; height:36px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); transition:all .3s; text-decoration:none; font-family:var(--font-mono); font-size:12px; }
     .social-links a:hover { border-color:var(--accent); color:var(--accent); }
 
-    /* Reveal */
-    .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
-    .reveal.visible { opacity:1; transform:none; }
+    /* Reveal: content stays visible without JavaScript */
+    .reveal { opacity:1; transform:none; }
+    .js .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+    .js .reveal.visible { opacity:1; transform:none; }
 
     /* Responsive */
     @media (max-width:968px) {
@@ -243,16 +276,30 @@
       .features-grid { grid-template-columns:1fr; }
       .case-block { grid-template-columns:1fr; }
       .case-block-image { min-height:220px; }
+      .more-work-grid { grid-template-columns:1fr; }
       .footer-inner { flex-direction:column; }
       .footer-links { flex-wrap:wrap; }
     }
     @media (max-width:640px) {
       .hero { padding:120px 0 60px; }
       section { padding:60px 0; }
+      .content-block li { grid-template-columns:18px minmax(0,1fr); gap:4px 8px; padding:14px 0; }
+      .content-block li::before { grid-column:1; grid-row:1 / span 2; }
+      .content-block li strong { grid-column:2; }
+      .content-block li span { grid-column:2; }
       .case-block-content { padding:32px 24px; }
+      .case-facts { grid-template-columns:1fr; }
+      .case-proof { min-height:0; display:grid; padding:20px 16px 24px; gap:16px; }
+      .case-proof::after { display:none; }
+      .case-proof-site { display:none; }
+      .case-proof-shot { position:relative; inset:auto; width:100%; transform:none; }
+      .case-proof-crop { aspect-ratio:.82; }
+      .more-work { margin-top:52px; }
+      .more-work-grid { gap:16px; }
     }
     @media (prefers-reduced-motion:reduce) {
-      .reveal { opacity:1; transform:none; transition:none; }
+      .js .reveal { opacity:1; transform:none; transition:none; }
+      .more-work-card, .more-work-media img { transition:none; }
     }
 
     .browser-frame { position:relative; overflow:hidden; border:1px solid var(--border); border-radius:16px; background:var(--bg-card); box-shadow:0 18px 55px rgba(20,18,16,0.08); }
@@ -276,7 +323,7 @@
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110282088','ym');
-    ym(110282088,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+    ym(110282088,'init',{ssr:true,webvisor:false,clickmap:true,accurateTrackBounce:true,trackLinks:true});
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110282088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
@@ -292,36 +339,36 @@
         <li><a href="/tools/kalkulyator-lendinga.html">Калькулятор</a></li>
         <li><a href="/#contact">Контакты</a></li>
       </ul>
-      <button class="menu-btn" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false">
+      <button class="menu-btn" onclick="toggleMenu(true)" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div id="mobile-menu">
-    <button class="close-menu" onclick="toggleMenu()" aria-label="Закрыть меню">×</button>
-    <a href="/" onclick="toggleMenu()">Главная</a>
-    <a href="/services/landing.html" onclick="toggleMenu()">Услуги</a>
-    <a href="/cases/" onclick="toggleMenu()">Кейсы</a>
-    <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu()">Калькулятор</a>
-    <a href="/#contact" onclick="toggleMenu()">Контакты</a>
+  <div id="mobile-menu" aria-hidden="true">
+    <button class="close-menu" onclick="toggleMenu(false)" aria-label="Закрыть меню">×</button>
+    <a href="/" onclick="toggleMenu(false)">Главная</a>
+    <a href="/services/landing.html" onclick="toggleMenu(false)">Услуги</a>
+    <a href="/cases/" onclick="toggleMenu(false)">Кейсы</a>
+    <a href="/tools/kalkulyator-lendinga.html" onclick="toggleMenu(false)">Калькулятор</a>
+    <a href="/#contact" onclick="toggleMenu(false)">Контакты</a>
   </div>
 
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
-      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <span style="color:var(--text-primary);">Сайты в Махачкале</span></nav>
+      <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <span style="color:var(--text-primary);">Создание сайтов в Махачкале</span></nav>
       <span class="hero-label reveal">Махачкала · я отсюда</span>
-      <h1 class="reveal">Сайты, AI-ассистенты и 1С для бизнеса <span class="accent">в Махачкале</span></h1>
-      <p class="hero-subtitle reveal">Я Ибрагим Раджабов, соло-разработчик из Махачкалы. Делаю сайты, Telegram-ботов, AI-ассистентов и связки с 1С — напрямую, без агентства и посредников. Задачу можно обсудить лично или онлайн.</p>
+      <h1 class="reveal">Создаю сайты для бизнеса в&nbsp;Махачкале —<br><span class="accent">и&nbsp;связываю их с&nbsp;AI и&nbsp;1С.</span></h1>
+      <p class="hero-subtitle reveal">От лендинга до интернет-магазина: разбираю задачу, собираю сайт и&nbsp;подключаю нужные сервисы. Весь проект веду сам — можно встретиться лично или работать онлайн.</p>
       <div class="hero-cta reveal">
-        <a href="#contact" class="btn-primary">Обсудить задачу</a>
-        <a href="/#work" class="btn-secondary">Посмотреть работы</a>
+        <a href="#contact" class="btn-primary">Разобрать задачу</a>
+        <a href="#case" class="btn-secondary">Посмотреть кейс</a>
       </div>
       <div class="hero-meta reveal">
         <div class="hero-meta-item"><span class="hero-meta-value">от 25 000 ₽</span><span class="hero-meta-label">лендинг под заявки</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-value">7+ дней</span><span class="hero-meta-label">срок запуска</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-value">лично</span><span class="hero-meta-label">или онлайн — как удобнее</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-value">от 7 дней</span><span class="hero-meta-label">срок запуска</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-value">напрямую</span><span class="hero-meta-label">без менеджеров и&nbsp;посредников</span></div>
       </div>
     </div>
   </header>
@@ -329,20 +376,17 @@
   <section id="why">
     <div class="container container-sm">
       <div class="section-header reveal">
-        <span class="section-label">Зачем</span>
-        <h2>Что это даёт бизнесу в Махачкале</h2>
+        <span class="section-label">Зачем сайт</span>
+        <h2>Клиенту — понятный путь.<br>Вам — заявка с&nbsp;нужными данными.</h2>
       </div>
       <div class="content-block reveal">
-        <p>Много местного бизнеса живёт в соцсетях и мессенджерах: запись в личке, прайс в сторис, заказы в переписке. Это работает, пока поток небольшой. Когда клиентов становится больше, начинается другое: сообщения теряются, одинаковые вопросы съедают день, а тех, кто ищет услугу в Яндексе, вы просто не видите.</p>
-        <ul>
-          <li><strong>Заявки в одном месте.</strong> Сайт с формой и бот собирают обращения туда, где они не теряются: почта, Telegram, при необходимости — сразу 1С.</li>
-          <li><strong>Поиск работает на вас.</strong> Яндекс и карты приводят людей, которые ищут услугу прямо сейчас, а не листают ленту.</li>
-          <li><strong>Цена и услуги видны заранее.</strong> Меньше одинаковых вопросов в переписке — клиент приходит уже подготовленным.</li>
-          <li><strong>Учёт не расходится с продажами.</strong> Если вы ведёте 1С, заказы с сайта могут сразу становиться документами — без ручного переноса.</li>
-          <li><strong>Один исполнитель за всё.</strong> Сайт, бот, AI и 1С не нужно заказывать у трёх разных подрядчиков и потом «дружить» их между собой.</li>
-        </ul>
-        <h3>Почему со мной удобно, если вы в Махачкале</h3>
-        <p>Я здесь живу. Можно созвониться или встретиться и разобрать задачу на месте — без формальностей, по делу. При этом весь процесс выстроен удалённо: показываю результат по ходу работы, поэтому с таким же успехом веду проекты для клиентов из других городов России.</p>
+          <p>Клиент может прийти из&nbsp;поиска, карт, Telegram, WhatsApp или по&nbsp;рекомендации. Сайт встречает его одним понятным предложением: что вы&nbsp;делаете, сколько это стоит или от&nbsp;чего зависит цена, какие есть примеры и&nbsp;как оставить обращение.</p>
+          <ul>
+            <li><strong>Главное видно сразу.</strong><span>Услуги, цены или ориентиры, условия и&nbsp;примеры работ находятся в&nbsp;одном месте.</span></li>
+            <li><strong>Заявка приходит с&nbsp;контекстом.</strong><span>Форма собирает сведения, которые нужны для первого ответа, и&nbsp;отправляет их в&nbsp;выбранный канал.</span></li>
+            <li><strong>Под разные услуги можно сделать отдельные страницы.</strong><span>Так клиент попадает сразу на&nbsp;нужное предложение, а&nbsp;поисковая система получает точный ответ на&nbsp;конкретный запрос.</span></li>
+            <li><strong>Сайт можно встроить в&nbsp;рабочий процесс.</strong><span>После разбора к&nbsp;нему можно подключить Telegram, AI или 1С и&nbsp;передавать только согласованные данные.</span></li>
+          </ul>
       </div>
     </div>
   </section>
@@ -351,28 +395,28 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Услуги</span>
-        <h2>Чем могу быть полезен</h2>
-        <p>Три направления, которые работают по отдельности или вместе</p>
+        <h2>От&nbsp;первого клика до&nbsp;заявки — без лишних шагов</h2>
+        <p>Сайт объясняет предложение, AI помогает с&nbsp;выбором, Telegram принимает обращения, а&nbsp;1С — данные для дальнейшей работы. Соберу только ту связку, которая нужна вашему бизнесу.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
           <div class="feature-icon">01</div>
-          <h3>Сайты</h3>
-          <p>Лендинг под запись или заявки, витрина услуг, интернет-магазин. Ручная вёрстка без конструкторов, адаптив, SEO-база. Лендинг — от 25 000 ₽.</p>
-          <p style="margin-top:12px;"><a href="/services/landing.html">Подробнее о лендингах →</a></p>
+          <h3>Сайт превращает интерес в&nbsp;заявку</h3>
+          <p>Клиент сразу видит, что вы предлагаете, кому это подходит и&nbsp;как обратиться. Соберу лендинг, витрину или интернет-магазин с&nbsp;понятной структурой, ценами или ориентирами и&nbsp;удобной формой. Лендинг — от&nbsp;25&nbsp;000&nbsp;₽.</p>
+          <p style="margin-top:12px;"><a href="/services/landing.html">Разработка сайтов →</a></p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">02</div>
-          <h3>AI и боты</h3>
-          <p>Telegram-бот для записи и заказов, AI-консультант на сайт, который отвечает клиентам и помогает выбрать. Работает и ночью, когда вы не в сети.</p>
-          <p style="margin-top:12px;"><a href="/services/ai-assistant.html">Подробнее об AI-ассистентах →</a></p>
-          <p style="margin-top:8px;"><a href="/services/telegram-bot.html">Telegram-боты для бизнеса →</a></p>
+          <h3>AI помогает выбрать, Telegram — оставить заявку</h3>
+          <p>AI-консультант отвечает по&nbsp;подготовленным данным, сравнивает варианты и&nbsp;помогает клиенту принять решение. Telegram-бот собирает обращения, записывает клиентов и&nbsp;забирает на&nbsp;себя повторяющиеся шаги.</p>
+          <p style="margin-top:12px;"><a href="/services/ai-assistant.html">AI-консультанты →</a></p>
+          <p style="margin-top:8px;"><a href="/services/telegram-bot.html">Telegram-боты →</a></p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">03</div>
-          <h3>1С</h3>
-          <p>Интеграция сайта с 1С: Управление Торговлей и Розница. Заказ с сайта сам становится документом в учёте, остатки и цены не расходятся.</p>
-          <p style="margin-top:12px;"><a href="/services/integraciya-1c.html">Подробнее об интеграции →</a></p>
+          <h3>Сайт и&nbsp;1С работают как одна система</h3>
+          <p>Заказ не&nbsp;нужно переносить из&nbsp;сайта в&nbsp;1С вручную. Настрою обмен с&nbsp;1С:УТ или Розницей по&nbsp;согласованной схеме: заказы, товары, цены или статусы будут передаваться между системами.</p>
+          <p style="margin-top:12px;"><a href="/services/integraciya-1c.html">Интеграция с&nbsp;1С →</a></p>
           <p style="margin-top:8px;"><a href="/services/podderzhka-bitrix.html">Поддержка 1С-Битрикс →</a></p>
         </div>
       </div>
@@ -383,23 +427,52 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Реальная работа</span>
-        <h2>Пример: сайт, 1С и AI в одной связке</h2>
-        <p>Так выглядит «системы, которые работают вместе» на живом проекте.</p>
+        <h2>Связал готовый магазин с&nbsp;1С и&nbsp;добавил AI-консультанта</h2>
+        <p>Dag Sport — интернет-магазин спорттоваров на&nbsp;1С-Битрикс. Моя часть проекта: интеграция с&nbsp;1С:УТ и&nbsp;AI-консультант для выбора беговых дорожек.</p>
       </div>
       <div class="case-block reveal">
         <div class="case-block-content">
-          <span class="tag">Кейс · 1С + AI</span>
-          <h3>dag-sport.ru — магазин спорттоваров</h3>
-          <p>Заказы с интернет-магазина на 1С-Битрикс переносились в учёт вручную. Я связал сайт с 1С: Управление Торговлей — заказ сам становится документом, а владелец сразу получает уведомление в Telegram. Плюс AI-консультант, который помогает покупателю выбрать беговую дорожку.</p>
-          <p style="font-size:14px; color:var(--text-tertiary); margin-bottom:24px;">Честно: сам сайт разрабатывал не я — моя часть здесь интеграция с 1С и AI-консультант.</p>
-          <a href="/cases/dag-sport.html" class="btn-secondary">Разбор кейса →</a>
+          <span class="tag">Dag Sport · 1С + AI</span>
+          <h3>AI помогает выбрать подходящую дорожку из&nbsp;169 моделей</h3>
+          <p>Покупатель описывает задачу — вес, бюджет, тип тренировки и&nbsp;место установки. AI сужает выбор, показывает подходящие дорожки и&nbsp;объясняет, чем они отличаются.</p>
+          <div class="case-facts">
+            <div class="case-fact"><strong>Подбор под запрос</strong><span>AI учитывает вес, бюджет и&nbsp;тип тренировок, чтобы покупатель сразу увидел подходящие модели.</span></div>
+            <div class="case-fact"><strong>Сайт связан с&nbsp;1С:УТ</strong><span>Интеграция уже работает. Владелец подтверждает, что заказы не&nbsp;теряются.</span></div>
+          </div>
+          <p class="case-note">Остаток и&nbsp;актуальную цену подтверждает менеджер — консультант сразу предупреждает об&nbsp;этом.</p>
+          <a href="/cases/dag-sport.html" class="btn-secondary">Разобрать кейс Dag Sport →</a>
         </div>
-        <div class="case-block-image browser-frame" aria-hidden="true">
-          <div class="case-placeholder">заказ на сайте<br>↓<br><b>документ в 1С УТ</b><br>↓<br>уведомление в Telegram</div>
+        <div class="case-block-image case-proof">
+          <img class="case-proof-site" src="/assets/case-dag-sport/dag-sport-storefront.webp" alt="" aria-hidden="true" loading="lazy" width="1280" height="720">
+          <figure class="case-proof-shot case-proof-request">
+            <div class="case-proof-crop"><img src="/assets/case-dag-sport/dag-sport-ai-request.webp" alt="Запрос покупателя и объяснение выбора беговой дорожки AI-консультантом Dag Sport" loading="lazy" width="566" height="872"></div>
+            <figcaption>01 · запрос и&nbsp;логика подбора</figcaption>
+          </figure>
+          <figure class="case-proof-shot case-proof-results">
+            <div class="case-proof-crop"><img src="/assets/case-dag-sport/dag-sport-ai-results.webp" alt="Подобранные AI-консультантом модели беговых дорожек с ценами и характеристиками" loading="lazy" width="580" height="870"></div>
+            <figcaption>02 · конкретные модели</figcaption>
+          </figure>
         </div>
       </div>
-      <div class="content-block reveal" style="margin-top:48px;">
-        <p>Ещё примеры: <a href="/cases/baby-massage.html">лендинг для специалиста по детскому массажу</a>, демо-сайты в нишах <a href="/niches/sajt-dlya-avtoservisa.html">автосервиса</a>, <a href="/niches/sajt-dlya-barbershopa.html">барбершопа</a>, <a href="/niches/sajt-dlya-cvetochnogo-magazina.html">флористики</a> и <a href="/niches/sajt-dlya-klininga.html">клининга</a> — каждый можно открыть и посмотреть вживую.</p>
+      <div class="more-work reveal">
+        <div class="more-work-head">
+          <span class="section-label">Ещё работы</span>
+          <h3>Можно открыть и&nbsp;посмотреть</h3>
+        </div>
+        <div class="more-work-grid">
+          <a class="more-work-card" href="/cases/baby-massage.html">
+            <span class="more-work-media"><img src="/assets/work/baby-massage.webp" alt="Лендинг специалиста по детскому массажу «Кроха и Я»" loading="lazy" width="1440" height="1100"></span>
+            <span class="more-work-body"><span class="more-work-type">Клиентский проект</span><span class="more-work-title">Лендинг «Кроха и&nbsp;Я»</span><span class="more-work-cta">Посмотреть кейс →</span></span>
+          </a>
+          <a class="more-work-card" href="/niches/sajt-dlya-avtoservisa.html">
+            <span class="more-work-media"><img src="/assets/work/pdr.webp" alt="Демо-сайт для автосервиса PDR Atelier" loading="lazy" width="1440" height="1100"></span>
+            <span class="more-work-body"><span class="more-work-type">Демо · автосервис</span><span class="more-work-title">Сайт для кузовного ремонта</span><span class="more-work-cta">Открыть пример →</span></span>
+          </a>
+          <a class="more-work-card" href="/niches/sajt-dlya-cvetochnogo-magazina.html">
+            <span class="more-work-media"><img src="/assets/work/flora.webp" alt="Демо-сайт цветочного магазина Flora Noire" loading="lazy" width="1440" height="1100"></span>
+            <span class="more-work-body"><span class="more-work-type">Демо · флористика</span><span class="more-work-title">Сайт цветочного магазина</span><span class="more-work-cta">Открыть пример →</span></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -407,33 +480,33 @@
   <section id="faq" style="background:var(--bg-secondary);">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">FAQ</span>
-        <h2>Вопросы про работу в Махачкале</h2>
+        <span class="section-label">Вопросы и ответы</span>
+        <h2>Перед началом работы</h2>
       </div>
       <div class="faq-list">
         <details class="reveal">
-          <summary>Можно ли обсудить задачу при личной встрече в Махачкале?</summary>
-          <p>Да. Я живу в Махачкале, поэтому для местного бизнеса возможна личная встреча — разобрать задачу на месте. Дальше большая часть работы всё равно идёт онлайн: показываю результат по ходу, правки не копятся.</p>
+          <summary>Можно встретиться и обсудить проект лично?</summary>
+          <p>Да. Я в&nbsp;Махачкале, поэтому можем встретиться и&nbsp;спокойно разобрать задачу. Если удобнее, проведём созвон — на&nbsp;сроки и&nbsp;качество работы формат общения не&nbsp;влияет.</p>
         </details>
         <details class="reveal">
-          <summary>Вы работаете только с Махачкалой?</summary>
-          <p>Нет. Работаю удалённо с клиентами по всей России — созвон, переписка, доступы решаются онлайн. Для бизнеса из Махачкалы и Дагестана просто добавляется возможность встретиться лично.</p>
+          <summary>Берёте проекты из других городов?</summary>
+          <p>Да, работаю с&nbsp;клиентами по&nbsp;всей России. Обсуждение, показ промежуточных версий, правки и&nbsp;передача проекта проходят онлайн. Личная встреча в&nbsp;Махачкале — дополнительная возможность, а&nbsp;не обязательное условие.</p>
         </details>
         <details class="reveal">
-          <summary>Сколько стоит сайт в Махачкале?</summary>
-          <p>Лендинг под заявки — от 25 000 ₽, срок от 7 дней. Интернет-магазин, Telegram-бот, AI-ассистент или связка с 1С оцениваются после короткого разбора задачи: точную сумму называю до старта. Цена не зависит от города — она зависит от объёма работы. Прикинуть самостоятельно можно в <a href="/tools/kalkulyator-lendinga.html">калькуляторе</a>.</p>
+          <summary>Сколько стоит сайт и&nbsp;сколько занимает разработка?</summary>
+          <p>Лендинг стоит от&nbsp;25&nbsp;000&nbsp;₽ и&nbsp;занимает от&nbsp;7&nbsp;дней. Интернет-магазин, AI-консультант, Telegram-бот или интеграцию с&nbsp;1С оцениваю после разбора задачи. Стоимость и&nbsp;срок называю до&nbsp;начала работы. Предварительную оценку можно получить в&nbsp;<a href="/tools/kalkulyator-lendinga.html">калькуляторе на&nbsp;сайте</a>.</p>
         </details>
         <details class="reveal">
-          <summary>У меня страница в соцсетях — зачем ещё сайт?</summary>
-          <p>Соцсети остаются: сайт их не заменяет, а добавляет то, чего в них нет. Вас находят в Яндексе те, кто ищет услугу прямо сейчас; цена и список услуг видны заранее; заявка приходит в форму, а не тонет в директе. И сайт принадлежит вам — он не зависит от алгоритмов и блокировок.</p>
+          <summary>Есть соцсети — сайт всё равно нужен?</summary>
+          <p>Соцсети приводят и&nbsp;удерживают аудиторию, а&nbsp;сайт помогает довести человека до&nbsp;обращения. На&nbsp;нём в&nbsp;одном месте находятся услуги, цены или ориентиры, примеры работ и&nbsp;форма заявки. Кроме того, сайт можно продвигать в&nbsp;поиске, и&nbsp;он принадлежит вам. Обычно сайт и&nbsp;соцсети работают вместе.</p>
         </details>
         <details class="reveal">
-          <summary>Делаете сайты с подключением к 1С?</summary>
-          <p>Да, это моя специализация. Начинал с 1С — настраивал Розницу и УТ в малом бизнесе, потом освоил веб. Могу связать сайт или интернет-магазин с 1С так, чтобы заказ с сайта сам становился документом в учёте, без ручного переноса. Реальный пример — <a href="/cases/dag-sport.html">кейс dag-sport</a>.</p>
+          <summary>Можно подключить сайт к&nbsp;1С?</summary>
+          <p>Да. Могу связать новый или уже работающий сайт с&nbsp;1С: Управление Торговлей или Розницей. Сначала определим, какие данные нужно передавать: например, заказы, товары, цены или статусы. Затем согласуем схему и&nbsp;проверки. Пример такой работы — проект <a href="/cases/dag-sport.html">Dag Sport</a>.</p>
         </details>
         <details class="reveal">
-          <summary>С чего начать?</summary>
-          <p>Напишите в Telegram или через форму: что за бизнес, что уже есть — соцсети, сайт, 1С — и что не устраивает. Разберу вводные и предложу формат работы с оценкой сроков и стоимости. Это ни к чему не обязывает.</p>
+          <summary>Что нужно прислать для оценки?</summary>
+          <p>Достаточно написать, чем занимается бизнес, что уже есть — соцсети, сайт, 1С — и&nbsp;какой результат нужен. После короткого разбора предложу формат работы, назову стоимость и&nbsp;срок. Готовое техническое задание для первого обращения не&nbsp;требуется.</p>
         </details>
       </div>
     </div>
@@ -443,28 +516,28 @@
     <div class="container container-sm">
       <div class="section-header reveal">
         <span class="section-label">Контакты</span>
-        <h2>Обсудить задачу</h2>
-        <p>Опишите бизнес и что сейчас не устраивает. Отвечу в течение дня — с форматом работы и оценкой.</p>
+        <h2>Расскажите о&nbsp;задаче</h2>
+        <p>Готовое техническое задание не&nbsp;нужно. Коротко опишите бизнес и&nbsp;желаемый результат. Я&nbsp;отвечу в&nbsp;течение дня, уточню детали и&nbsp;подготовлю предварительную оценку.</p>
       </div>
       <form id="contactForm" class="reveal" style="background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:40px;">
         <div class="form-group">
-          <label for="name">Имя</label>
+          <label for="name">Как к&nbsp;вам обращаться</label>
           <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
         </div>
         <div class="form-group">
-          <label for="email">Email или Telegram</label>
-          <input type="text" id="email" name="email" placeholder="example@mail.ru или @username" required>
+          <label for="email">Куда ответить</label>
+          <input type="text" id="email" name="email" placeholder="Email или @username в Telegram" required>
         </div>
         <div class="form-group">
-          <label for="message">О задаче</label>
-          <textarea id="message" name="message" placeholder="Что за бизнес? Что уже есть — соцсети, сайт, 1С? Что хочется получить?" required></textarea>
+          <label for="message">Что хотите сделать</label>
+          <textarea id="message" name="message" placeholder="Например: нужен сайт для автосервиса. Есть логотип и соцсети, хочу получать заявки из поиска." required></textarea>
         </div>
         <label class="consent" style="display:block;margin:16px 0 0;font-size:12px;line-height:1.5;color:var(--text-secondary);"><input type="checkbox" required style="margin-right:8px;vertical-align:middle;"> Я согласен на <a href="/legal/privacy.html" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">обработку персональных данных</a></label>
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:16px;" id="submitBtn">
-          <span>Отправить заявку</span>
+          <span>Получить предварительную оценку</span>
         </button>
-        <p class="form-note">Или напишите напрямую: <a href="mailto:1cworkac@mail.ru" style="color:var(--accent);">1cworkac@mail.ru</a> / <a href="https://t.me/rdvigm" target="_blank" rel="noopener" style="color:var(--accent);">@rdvigm</a></p>
+        <p class="form-note">Или напишите напрямую: <a href="mailto:work@radzhabov-dev.ru" style="color:var(--accent);">work@radzhabov-dev.ru</a> / <a href="https://t.me/rdvigm" target="_blank" rel="noopener" style="color:var(--accent);">@rdvigm</a></p>
       </form>
     </div>
   </section>
@@ -512,7 +585,7 @@
           <div class="footer-links-col">
             <h4>Контакты</h4>
             <ul>
-              <li><a href="mailto:1cworkac@mail.ru">1cworkac@mail.ru</a></li>
+              <li><a href="mailto:work@radzhabov-dev.ru">work@radzhabov-dev.ru</a></li>
               <li><a href="https://t.me/rdvigm" target="_blank" rel="noopener">Telegram</a></li>
               <li><a href="https://github.com/Ibrahim-Radzhabov" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
@@ -538,20 +611,38 @@
       window.addEventListener('scroll', function() {
         nav.classList.toggle('scrolled', window.scrollY > 50);
       });
-      window.toggleMenu = function() {
-        var menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('active');
-        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      var menu = document.getElementById('mobile-menu');
+      var menuButton = document.querySelector('.menu-btn');
+      var closeButton = document.querySelector('.close-menu');
+      window.toggleMenu = function(forceOpen) {
+        var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !menu.classList.contains('active');
+        menu.classList.toggle('active', shouldOpen);
+        menu.setAttribute('aria-hidden', String(!shouldOpen));
+        menuButton.setAttribute('aria-expanded', String(shouldOpen));
+        document.body.style.overflow = shouldOpen ? 'hidden' : '';
+        if (shouldOpen) closeButton.focus();
+        else if (menu.contains(document.activeElement)) menuButton.focus();
       };
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && menu.classList.contains('active')) toggleMenu(false);
+      });
+      var revealItems = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        try {
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+          }, { threshold: 0.1 });
+          revealItems.forEach(function(el) { observer.observe(el); });
+        } catch (e) {
+          revealItems.forEach(function(el) { el.classList.add('visible'); });
+        }
+      } else {
+        revealItems.forEach(function(el) { el.classList.add('visible'); });
+      }
       var form = document.getElementById('contactForm');
       var btn = document.getElementById('submitBtn');
-      function __reach(n){ try{ if(typeof ym==='function') ym(110282088,'reachGoal',n); }catch(e){} }
       function toastIcon(){
         return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M17 12 L31 24" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><path d="M31 24 L17 36" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="17" cy="12" r="5.5" fill="currentColor"/><circle cx="31" cy="24" r="6.6" fill="#B5623C"/><circle cx="17" cy="36" r="5.5" fill="currentColor"/></svg>';
       }
@@ -576,7 +667,7 @@
           setTimeout(function(){ stack.innerHTML = ''; }, 320);
         }, 5000);
       }
-      var ORIG_TEXT = 'Отправить заявку';
+      var ORIG_TEXT = 'Получить предварительную оценку';
       if (form && btn) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();

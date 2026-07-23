@@ -1,6 +1,6 @@
 # AGENTS.md — точка входа для ИИ-агентов (radzhabov-dev.ru)
 
-> **Старт здесь.** Этот файл — карта проекта и маршрутизатор к остальным докам. Прочитай его целиком, затем документы из раздела «Что читать», затем смотри сами файлы на диске. Обновлён: 2026-07-10 (production golden baseline после Phase 8).
+> **Старт здесь.** Этот файл — карта проекта и маршрутизатор к остальным докам. Прочитай его целиком, затем документы из раздела «Что читать», затем смотри сами файлы на диске. Обновлён: 2026-07-23 (корпоративная почта назначена основным публичным email; production golden baseline после Phase 8).
 
 ## PRODUCTION LOCK — обязательное правило
 
@@ -20,6 +20,7 @@
 4. **`marketing/GROWTH-PLAN-v4-reality-grounded.md`** — базовая SEO-стратегия и порядок фаз (заменяет старые апрельские роадмапы). `marketing/GROWTH-PLAN-v5-max.md` — backlog/max-план: часть уже закрыта в Phase6-lite, не исполнять целиком без отдельного решения.
 5. **`seo-webmaster-setup.md`** — подключение Вебмастера/GSC.
 6. Наряды-история (что и как уже делалось): `marketing/EXECUTOR-BRIEF-Phase0.md`, `EXECUTOR-BRIEF-Phase1.md`, `EXECUTOR-BRIEF-reindex.md`.
+7. **`marketing/INFRA-INVENTORY-PRIVATE-2026-07-14.md`** — приватная топология и подтверждённая схема корпоративной почты; не деплоить и не переносить секреты в публичные файлы.
 
 ## Pending-состояние worktree (не считать задеплоенным)
 **Страницы (38 HTML):** `/` (index) · `/404.html` · услуги `/services/{landing,telegram-bot,ai-assistant,integraciya-1c,nastrojka-1c,podderzhka-bitrix}.html` · кейсы `/cases/` (hub + `/cases/{baby-massage,dag-sport,decorapp}.html`) · ниши `/niches/{sajt-dlya-avtoservisa,sajt-dlya-massazhista,sajt-dlya-barbershopa,sajt-dlya-cvetochnogo-magazina,sajt-dlya-klininga,sajt-dlya-okonnoj-kompanii,sajt-dlya-servisnogo-centra,sajt-dlya-magazina-avtozapchastej}.html` · города `/cities/{mahachkala,kaspijsk,derbent}.html` · блог `/blog/` + 11 статей (`kak-svyazat-sajt-s-1c`, `chto-dolzhno-byt-na-lendinge`, `konstruktor-ili-ruchnaya-verstka`, `ai-konsultant-na-sajte`, `telegram-bot-vmesto-sajta`, `podgotovka-sajta-i-1c-k-integracii`, `telegram-mini-app-ili-bot`, `pochemu-dubliruyutsya-zakazy-v-1c`, `podderzhka-sajta-na-1c-bitrix`, `baza-znanij-dlya-ai-konsultanta`, `pochemu-lending-ne-prinosit-zayavki`) · инструмент `/tools/kalkulyator-lendinga.html` · legal `/legal/{privacy,soglasie}.html`.
@@ -38,10 +39,12 @@
 
 **Демо-проекты (реальные примеры, на них ссылаются ниши и блок «Работы»):** `pdr / flora / barber / qlean / rihau / fixlab / avtozap`.radzhabov-dev.ru + `baby-massage05.ru`. Это копии боевых клиентских сайтов (напр. barber → throne-barbershop.ru). Хостятся на отдельном Foreign VPS (был сбой, восстановлен — если демо отдают 502, это инфра, не контент).
 
-**Контакты (не выдумывать, не заменять):** email `1cworkac@mail.ru`, Telegram `t.me/rdvigm`, GitHub `github.com/Ibrahim-Radzhabov`.
+**Публичные контакты текущего сайта (не выдумывать, не заменять без отдельной команды):** email `work@radzhabov-dev.ru`, Telegram `t.me/rdvigm`, GitHub `github.com/Ibrahim-Radzhabov`.
+
+**Корпоративная почта:** `work@radzhabov-dev.ru` принимает письма через ImprovMX и отправляет через Gmail + Brevo SMTP; настройка протестирована. 2026-07-23 владелец назначил её основной публичной почтой сайта: использовать в видимом тексте, `mailto`, JSON-LD, legal и новых материалах. Получатель формы Formspree настраивается отдельно в кабинете Formspree и не определяется HTML-кодом сайта. Операционная схема и правила: `marketing/INFRA-INVENTORY-PRIVATE-2026-07-14.md` § «Corporate email».
 
 ## Что открыто (после Phase 6-lite)
-1. **Владелец: Вебмастер/GSC после деплоя.** Сайт задеплоен на RU-edge. В Яндекс.Вебмастере включить регион **Махачкала** (если ещё не включён), отправить sitemap и точечно переобходить только новые/существенно изменённые URL. В GSC: отправить sitemap, затем Request indexing для `/`, `services/podderzhka-bitrix.html`, `/blog/` и 4 статей после date patch.
+1. **Вебмастер/GSC: ожидание данных.** На 2026-07-13 владелец подтвердил: хаб `/blog/` и семь новых статей от 2026-07-10 отправлены на индексацию в GSC и в переобход Яндекс.Вебмастера. Не переотправлять их без существенных изменений. Регион **Махачкала** включить в Вебмастере, если настройка станет доступна.
 2. **Бэклинки (владелец, материалы готовы):** `marketing/backlink-kit.md` — тексты bio для профилей, строка для подвалов клиентов, чек-лист публикации. Habr/VC-статья ждёт 4 реальных факта от владельца (плейсхолдеры в `marketing/article-dag-sport-habr.md`).
 3. **Дождаться данных** GSC/Вебмастера (2–4 недели): смотреть показы по городам/статьям/Bitrix-услуге, масштабировать только то, что даёт клики/заявки. Кандидаты на расширение: `llms-full.txt`, новые материалы только по данным.
 4. **Факт-вопросы владельцу (не блокируют):** dag-sport и baby-massage — клиенты из Дагестана? (если да — можно честно усилить страницу Махачкалы); фото для «Обо мне»; шрифты для og-image.
@@ -59,7 +62,7 @@
 - Спрашивать до крупной/неоднозначной работы; не «чинить» регрессы вслепую — докладывать.
 
 ## Верификация после правок (всегда)
-tag-balance (`html.parser` → 0/0) · JSON-LD `json.loads` валиден · граф внутренних ссылок без сирот/битых · title ≤60, description ≤155 · все ассеты резолвятся · консистентность (`radzhabov-dev.ru`/`rdvigm`/`1cworkac@mail.ru`, нет старого домена) · локально `python3 -m http.server 8000`, проверить 375/768/desktop.
+tag-balance (`html.parser` → 0/0) · JSON-LD `json.loads` валиден · граф внутренних ссылок без сирот/битых · title ≤60, description ≤155 · все ассеты резолвятся · консистентность (`radzhabov-dev.ru`/`rdvigm`/`work@radzhabov-dev.ru`, нет старого домена и старой почты) · локально `python3 -m http.server 8000`, проверить 375/768/desktop.
 
 ## Деплой
 Деплоить только боевой сайт: `index.html`, `404.html`, `services/`, `cases/`, `niches/`, `cities/`, `blog/`, `tools/`, `legal/`, `assets/`, фавиконки, `og-image.png`, `robots.txt`, `sitemap.xml`, `llms.txt`. IndexNow key-файл `7b0ac3a0284c609d4a87150540ffc2c8a7aebb4d39819252.txt` тоже включать в deploy artifact. **НЕ деплоить:** `_archive/`, `marketing/`, `output/`, `scripts/`, `tz/`, все `.md`-доки.
