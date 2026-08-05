@@ -42,7 +42,8 @@
           "sameAs": ["https://github.com/Ibrahim-Radzhabov", "https://t.me/rdvigm"]
         },
         "about": "Интеграция интернет-магазина на 1С-Битрикс с 1С: Управление Торговлей и AI-консультант для покупателей",
-        "description": "В dag-sport подтверждена интеграция существующего сайта на 1С-Битрикс с 1С:УТ. Моя часть — интеграция с 1С и AI-консультант по каталогу из 169 беговых дорожек; сам сайт разрабатывал не я. Точный механизм и направления обмена не заявляются без дополнительного подтверждения.",
+        "description": "Работа Ибрагима Раджабова в Dag Sport: интеграция существующего интернет-магазина на 1С-Битрикс с 1С:УТ и AI-консультант по каталогу из 169 беговых дорожек.",
+        "dateModified": "2026-08-04",
         "keywords": ["1С", "1С-Битрикс", "1С Управление Торговлей", "интеграция сайта с 1С", "AI-консультант", "интернет-магазин", "автоматизация"],
         "inLanguage": "ru",
         "genre": "Сайт + 1С + AI"
@@ -50,10 +51,10 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "Что значит «связать сайт с 1С»?", "acceptedAnswer": {"@type": "Answer", "text": "Это настройка согласованного взаимодействия между сайтом и учётной системой. В dag-sport подтверждена интеграция существующего сайта на 1С-Битрикс с 1С:УТ, но точный технический механизм без дополнительной проверки не заявляется."}},
-          {"@type": "Question", "name": "Чем 1С-Битрикс отличается от 1С: Управление Торговлей?", "acceptedAnswer": {"@type": "Answer", "text": "1С-Битрикс — CMS существующего сайта и интернет-магазина. 1С: Управление Торговлей (УТ) — учётная система. В проекте используются обе системы; конкретные направления передачи данных требуют подтверждения."}},
-          {"@type": "Question", "name": "Какие данные синхронизируются между сайтом и 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Публично подтверждён сам факт интеграции сайта на 1С-Битрикс с 1С:УТ. Точный состав данных, направления и механизм обмена нужно проверить до их публикации."}},
-          {"@type": "Question", "name": "Можно ли подключить к 1С уже готовый сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Возможность и состав интеграции зависят от систем и задачи. В этом проекте сайт уже существовал на 1С-Битрикс; я подключил интеграцию с 1С УТ и AI-консультанта, но сам сайт не разрабатывал."}},
+          {"@type": "Question", "name": "Что значит «связать сайт с 1С»?", "acceptedAnswer": {"@type": "Answer", "text": "Это настройка взаимодействия между сайтом и учётной системой. В Dag Sport существующий магазин на 1С-Битрикс интегрирован с 1С:УТ; конкретный состав данных зависит от задачи и конфигурации."}},
+          {"@type": "Question", "name": "Чем 1С-Битрикс отличается от 1С: Управление Торговлей?", "acceptedAnswer": {"@type": "Answer", "text": "1С-Битрикс управляет существующим сайтом и интернет-магазином, а 1С:УТ используется для учёта. В проекте работают обе системы."}},
+          {"@type": "Question", "name": "Какие данные синхронизируются между сайтом и 1С?", "acceptedAnswer": {"@type": "Answer", "text": "В Dag Sport подтверждён сам факт интеграции сайта с 1С:УТ. Точный состав и направления обмена в публичном кейсе не раскрываются, поскольку их нужно сверять с рабочей конфигурацией."}},
+          {"@type": "Question", "name": "Можно ли подключить к 1С уже готовый сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Да, если используемые системы допускают интеграцию. В Dag Sport решение было подключено к существующему интернет-магазину на 1С-Битрикс; состав работ зависит от конфигурации сайта и 1С."}},
           {"@type": "Question", "name": "Что умеет AI-консультант в этом проекте?", "acceptedAnswer": {"@type": "Answer", "text": "Консультант опирается на каталог canonical_products.json из 169 беговых дорожек с реальными характеристиками и ориентировочными ценами. Он подбирает и сравнивает модели по весу пользователя, бюджету, типу тренировки, для дома или зала, компактности и складной конструкции, отвечает по характеристикам и находит похожие модели по названию. Если нужной информации нет в каталоге, он не должен придумывать ответ. Фактическое наличие предлагает уточнить у менеджера; автоматическая передача диалога менеджеру не настроена."}}
         ]
       },
@@ -104,9 +105,6 @@
     .hero-meta-item{display:flex;flex-direction:column;gap:3px;}
     .hero-meta-v{font-family:var(--font-mono);font-size:14px;color:var(--accent);}
     .hero-meta-l{font-size:12px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:1px;}
-    /* Scope callout — honesty */
-    .scope{max-width:760px;margin:30px auto 0;background:var(--warm-glow);border:1px solid rgba(181,98,60,0.25);border-radius:14px;padding:18px 22px;font-size:15px;color:var(--text-secondary);}
-    .scope b{color:var(--accent-warm);}
     /* Sections */
     section{padding:48px 0;}
     .label{display:inline-block;font-family:var(--font-mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;}
@@ -116,20 +114,23 @@
     .content ul{list-style:none;margin:14px 0;}
     .content li{padding:7px 0;color:var(--text-secondary);font-size:15.5px;display:flex;gap:12px;}
     .content li::before{content:'—';color:var(--accent);font-weight:600;flex-shrink:0;}
-    /* Two honest branches */
-    .handoff{max-width:900px;margin:0 auto;}
-    .handoff-map{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:10px;overflow:hidden;scroll-margin-top:90px;}
-    .branch-group+.branch-group{margin-top:24px;padding-top:24px;border-top:1px solid var(--border);}
-    .branch-title{display:block;margin-bottom:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-warm);}
-    .branch-track{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1fr);gap:10px;align-items:stretch;}
-    .branch-track--post{grid-template-columns:minmax(0,1fr) 34px minmax(0,2fr);}
-    .branch-arrow{display:grid;place-items:center;color:var(--accent-warm);font-family:var(--font-mono);font-size:22px;}
-    .branch-outcomes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-    .handoff-card{min-height:0;background:rgba(245,240,232,0.58);border:1px solid rgba(20,18,16,0.08);border-radius:16px;padding:18px 16px;}
-    .handoff-kicker{display:block;margin-bottom:9px;font-family:var(--font-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--text-tertiary);}
-    .handoff-card h3{font-family:var(--font-display);font-size:19px;font-weight:600;line-height:1.16;margin-bottom:9px;color:var(--text-primary);}
-    .handoff-card p{font-size:14px;line-height:1.62;color:var(--text-secondary);margin:0;}
-    .handoff-note{margin-top:16px;padding:14px 16px;border-radius:14px;background:rgba(181,98,60,0.075);border:1px solid rgba(181,98,60,0.18);font-size:14px;line-height:1.65;color:var(--text-secondary);}
+    /* Real product proof */
+    .hero-proof{max-width:1080px;margin:34px auto 0;padding:0 24px;}
+    .hero-proof figure{overflow:hidden;border:1px solid var(--border);border-radius:22px;background:#fff;box-shadow:0 24px 70px rgba(20,18,16,.08);}
+    .hero-proof img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+    .hero-proof figcaption,.proof-card figcaption{font-family:var(--font-mono);font-size:11px;line-height:1.55;letter-spacing:.04em;color:var(--text-tertiary);padding:12px 16px;background:var(--bg-card);}
+    .proof-layout{display:grid;grid-template-columns:minmax(250px,.82fr) minmax(0,1.18fr);gap:42px;align-items:start;}
+    .proof-copy{position:sticky;top:104px;}
+    .proof-copy ol{list-style:none;counter-reset:proof;margin-top:24px;}
+    .proof-copy li{counter-increment:proof;display:grid;grid-template-columns:34px 1fr;gap:13px;padding:15px 0;border-top:1px solid var(--border);color:var(--text-secondary);}
+    .proof-copy li::before{content:counter(proof,decimal-leading-zero);font-family:var(--font-mono);font-size:11px;color:var(--accent-warm);padding-top:3px;}
+    .proof-copy li strong{display:block;font-family:var(--font-display);font-size:18px;line-height:1.2;color:var(--text-primary);margin-bottom:4px;}
+    .proof-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start;}
+    .proof-card{overflow:hidden;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:0 18px 48px rgba(20,18,16,.07);}
+    .proof-card:nth-child(2){margin-top:64px;}
+    .proof-card img{display:block;width:100%;height:auto;}
+    .integration-note{margin-top:20px;padding:18px 20px;border-radius:14px;background:var(--warm-glow);border:1px solid rgba(181,98,60,.22);color:var(--text-secondary);font-size:14px;line-height:1.65;}
+    .integration-note strong{color:var(--text-primary);}
     /* Results */
     .results{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:30px;}
     .results ul{list-style:none;}
@@ -156,13 +157,15 @@
     .foot a:hover{color:var(--accent);}
     @media(max-width:680px){
       .hero{padding:120px 0 40px;}
-      .handoff-map{padding:20px 16px;border-radius:18px;}
-      .branch-track,.branch-track--post{grid-template-columns:1fr;}
-      .branch-arrow{transform:rotate(90deg);min-height:24px;}
-      .branch-outcomes{grid-template-columns:repeat(2,minmax(0,1fr));}
-      .handoff-card{padding:16px 14px;}
-      .handoff-card h3{font-size:17px;}
-      .handoff-card p{font-size:13px;}
+      .hero-proof{padding:0 16px;margin-top:26px;}
+      .hero-proof figure{border-radius:16px;}
+      .hero-proof img{aspect-ratio:4/3;object-position:58% center;}
+      .proof-layout{grid-template-columns:1fr;gap:28px;}
+      .proof-copy{position:static;}
+      .proof-gallery{grid-template-columns:1fr;gap:14px;}
+      .proof-card{border-radius:14px;}
+      .proof-card:nth-child(2){margin-top:0;}
+      .proof-card figcaption{font-size:10px;padding:11px 12px;}
     }
   </style>
   <!-- Yandex.Metrika counter -->
@@ -188,64 +191,63 @@
     <div class="container">
       <nav class="crumbs" aria-label="Хлебные крошки" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);margin-bottom:16px;line-height:1.4;"><a href="/" style="color:var(--text-tertiary);text-decoration:none;">Главная</a> / <a href="/cases/" style="color:var(--text-tertiary);text-decoration:none;">Кейсы</a> / <span style="color:var(--text-primary);">dag-sport</span></nav>
       <span class="hero-label">Кейс · Сайт + 1С + AI</span>
-      <h1>Связка сайта на 1С-Битрикс с <span class="accent">1С УТ</span> и AI-консультант для магазина спорттоваров</h1>
-      <p class="hero-sub">Интернет-магазин dag-sport.ru уже работал на 1С-Битрикс. Я связал его с 1С:УТ и добавил AI-консультанта по каталогу беговых дорожек; точный технический маршрут обмена требует отдельной проверки.</p>
+      <h1>AI-подбор беговых дорожек и интеграция магазина с <span class="accent">1С:УТ</span></h1>
+      <p class="hero-sub">Покупатель описывает задачу — консультант выбирает подходящие модели из каталога 169 дорожек, сравнивает характеристики и показывает ориентировочные цены. Интернет-магазин также интегрирован с 1С:УТ.</p>
       <div class="hero-meta">
-        <div class="hero-meta-item"><span class="hero-meta-v">Спорттовары</span><span class="hero-meta-l">Ниша</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-v">1С-Битрикс · 1С УТ · AI</span><span class="hero-meta-l">Стек</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-v">Интеграция + AI</span><span class="hero-meta-l">Моя роль</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-v">169 моделей</span><span class="hero-meta-l">Каталог AI</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-v">Вес · бюджет · тренировки</span><span class="hero-meta-l">Критерии подбора</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-v">1С:УТ + AI</span><span class="hero-meta-l">Реализовано</span></div>
       </div>
     </div>
-    <div class="scope container">
-      <b>По-честному:</b> сам сайт dag-sport.ru разрабатывал не я — он уже работал на 1С-Битрикс. Моя часть в этом проекте — <b>интеграция с 1С: Управление Торговлей</b> и <b>AI-консультант</b> для покупателей.
+    <div class="hero-proof">
+      <figure>
+        <img src="/assets/work/dag-sport-ai-card.webp" alt="Сайт Dag Sport с открытым AI-консультантом по подбору беговой дорожки" width="1280" height="800" decoding="async">
+        <figcaption>Реальный интерфейс: существующий магазин Dag Sport и встроенный AI-консультант</figcaption>
+      </figure>
     </div>
   </header>
 
   <section>
     <div class="container-sm content">
       <span class="label">Задача</span>
-      <h2>Заказы переносили с сайта в 1С вручную</h2>
-      <p>Магазин уже принимал заказы на сайте, а часть работы между сайтом и учётной системой выполнялась вручную. Точный прежний маршрут здесь не описываю без дополнительного подтверждения.</p>
-      <p>Отдельная задача — помочь покупателю <strong>сравнить характеристики и выбрать беговую дорожку</strong> до оформления заказа.</p>
+      <h2>Помочь покупателю выбрать модель, а магазину — связать сайт с учётом</h2>
+      <p>В каталоге много похожих дорожек. Покупателю приходится сравнивать вес пользователя, мощность, скорость, размер полотна, складную конструкцию и цену — без подсказки легко потеряться.</p>
+      <p>Вторая задача проекта — убрать ручной разрыв между уже работающим интернет-магазином и <strong>1С:УТ</strong>.</p>
     </div>
   </section>
 
   <section>
     <div class="container-sm content">
       <span class="label">Что я сделал</span>
-      <h2>Связал существующий сайт с 1С:УТ и добавил AI</h2>
-      <p>Существующий сайт работает на <strong>1С-Битрикс</strong>, а в проекте подтверждена интеграция с <strong>1С: Управление Торговлей</strong>. Точный механизм и направления обмена не заявляю, пока они не подтверждены.</p>
-      <p>До оформления заказа AI-консультант помогает покупателю подобрать и сравнить беговые дорожки по данным каталога.</p>
+      <h2>Подбор начинается с задачи, а не с длинного списка товаров</h2>
+      <p>AI-консультант работает по файлу <strong>canonical_products.json</strong>: в нём 169 беговых дорожек с реальными характеристиками и ориентировочными ценами.</p>
+      <p>Он уточняет вес пользователя, бюджет, тип тренировок, место установки и требования к компактности. Затем предлагает несколько моделей, сравнивает их и объясняет, чем они подходят.</p>
     </div>
   </section>
 
   <section>
-    <div class="container handoff content">
-      <span class="label">Границы фактов</span>
-      <h2>AI-сценарий подтверждён, технический маршрут обмена требует проверки</h2>
-      <div class="handoff-map" aria-label="Подтверждённый AI-сценарий и подтверждённая интеграция 1С-Битрикс с 1С УТ без заявления точного направления данных">
-        <div class="branch-group">
-          <span class="branch-title">Ветка 1 · до заказа</span>
-          <div class="branch-track">
-            <div class="handoff-card"><span class="handoff-kicker">Покупатель</span><h3>Формулирует задачу</h3><p>Указывает вес, бюджет, тип тренировки и требования к модели для дома или зала.</p></div>
-            <span class="branch-arrow" aria-hidden="true">→</span>
-            <div class="handoff-card"><span class="handoff-kicker">AI-помощь</span><h3>Подбирает модели</h3><p>Сравнивает беговые дорожки по каталогу из 169 моделей.</p></div>
-            <span class="branch-arrow" aria-hidden="true">→</span>
-            <div class="handoff-card"><span class="handoff-kicker">Сайт</span><h3>Оформление заказа</h3><p>Покупатель оформляет заказ в существующем магазине.</p></div>
-          </div>
+    <div class="container proof-layout content">
+      <div class="proof-copy">
+        <span class="label">Как это работает</span>
+        <h2>Из запроса — в понятный список моделей</h2>
+        <ol>
+          <li><span><strong>Покупатель описывает задачу</strong>Например: три складные дорожки до 100 000 ₽, вес пользователя 110 кг, тренировки дома.</span></li>
+          <li><span><strong>AI проверяет каталог</strong>Отбирает модели по характеристикам и не подменяет отсутствующие данные догадками.</span></li>
+          <li><span><strong>Показывает конкретные варианты</strong>Даёт характеристики, ориентировочную цену и объясняет сильные стороны каждой модели.</span></li>
+        </ol>
+      </div>
+      <div>
+        <div class="proof-gallery">
+          <figure class="proof-card">
+            <img src="/assets/case-dag-sport/dag-sport-ai-request.webp" alt="Запрос покупателя AI-консультанту Dag Sport и начало подбора" width="566" height="868" decoding="async">
+            <figcaption>01 · Запрос и логика подбора</figcaption>
+          </figure>
+          <figure class="proof-card">
+            <img src="/assets/case-dag-sport/dag-sport-ai-results.webp" alt="Карточки беговых дорожек, подобранных AI-консультантом Dag Sport" width="566" height="868" decoding="async">
+            <figcaption>02 · Конкретные модели и характеристики</figcaption>
+          </figure>
         </div>
-        <div class="branch-group">
-          <span class="branch-title">Контур интеграции · без неподтверждённых деталей</span>
-          <div class="branch-track branch-track--post">
-            <div class="handoff-card"><span class="handoff-kicker">1С-Битрикс</span><h3>Существующий сайт</h3><p>Интернет-магазин уже работал на этой CMS; сам сайт разрабатывал не я.</p></div>
-            <span class="branch-arrow" aria-hidden="true">+</span>
-            <div class="branch-outcomes" aria-label="Подтверждённые границы интеграционной части">
-              <div class="handoff-card"><span class="handoff-kicker">1С УТ</span><h3>Связанная учётная система</h3><p>Факт интеграции подтверждён; состав данных и направление нужно проверить.</p></div>
-              <div class="handoff-card"><span class="handoff-kicker">Моя роль</span><h3>Интеграция</h3><p>Отвечал за связку с 1С и AI-консультанта, но не за разработку сайта.</p></div>
-            </div>
-          </div>
-        </div>
-        <div class="handoff-note">AI-консультант работает до оформления заказа. Если требуется подтвердить наличие, он предлагает обратиться к менеджеру; автоматическая передача диалога менеджеру пока не настроена.</div>
+        <p class="integration-note"><strong>Про 1С:</strong> существующий сайт на 1С-Битрикс интегрирован с 1С:УТ. По словам владельца, заказы не теряются. Точный состав и направления обмена здесь не перечисляю — их нужно сверять с рабочей конфигурацией.</p>
       </div>
     </div>
   </section>
@@ -253,12 +255,13 @@
   <section>
     <div class="container-sm content">
       <span class="label">Результат</span>
-      <h2>Что работает сейчас</h2>
+      <h2>Что получает покупатель</h2>
       <div class="results">
         <ul>
-          <li>Подтверждена интеграция существующего сайта на 1С-Битрикс с 1С:УТ; точный маршрут требует отдельной проверки.</li>
-          <li>По словам владельца, заказы не теряются. Технический механизм этого результата здесь не заявляется без подтверждения.</li>
-          <li>AI-консультант подбирает и сравнивает беговые дорожки по данным каталога, а фактическое наличие предлагает уточнить у менеджера.</li>
+          <li>Подбор по весу, бюджету, типу тренировки, дому или залу, компактности и складной конструкции.</li>
+          <li>Сравнение моделей и ответы по характеристикам из каталога.</li>
+          <li>Поиск похожих вариантов по названию модели.</li>
+          <li>Товары, характеристики и цены не придумываются. Точное наличие консультант предлагает уточнить у менеджера.</li>
         </ul>
       </div>
     </div>
@@ -268,10 +271,10 @@
     <div class="container-sm content">
       <span class="label">Частые вопросы</span>
       <h2>Про связку сайта и 1С</h2>
-      <details><summary>Что значит «связать сайт с 1С»?</summary><p>Это настройка согласованного взаимодействия между сайтом и учётной системой. В dag-sport подтверждена интеграция существующего сайта на 1С-Битрикс с 1С:УТ, но точный технический механизм без дополнительной проверки не заявляется.</p></details>
-      <details><summary>Чем 1С-Битрикс отличается от 1С: Управление Торговлей?</summary><p>1С-Битрикс — CMS существующего сайта и интернет-магазина. 1С: Управление Торговлей (УТ) — учётная система. В проекте используются обе системы; конкретные направления передачи данных требуют подтверждения.</p></details>
-      <details><summary>Какие данные синхронизируются между сайтом и 1С?</summary><p>Публично подтверждён сам факт интеграции сайта на 1С-Битрикс с 1С:УТ. Точный состав данных, направления и механизм обмена нужно проверить до их публикации.</p></details>
-      <details><summary>Можно ли подключить к 1С уже готовый сайт?</summary><p>Возможность и состав интеграции зависят от систем и задачи. В этом проекте сайт уже существовал на 1С-Битрикс; я подключил интеграцию с 1С УТ и AI-консультанта, но сам сайт не разрабатывал.</p></details>
+      <details><summary>Что значит «связать сайт с 1С»?</summary><p>Это настроить взаимодействие сайта и учётной системы. В Dag Sport существующий магазин на 1С-Битрикс интегрирован с 1С:УТ; конкретный состав данных зависит от задачи и конфигурации.</p></details>
+      <details><summary>Чем 1С-Битрикс отличается от 1С: Управление Торговлей?</summary><p>1С-Битрикс управляет существующим сайтом и интернет-магазином, а 1С:УТ используется для учёта. В проекте работают обе системы.</p></details>
+      <details><summary>Какие данные синхронизируются между сайтом и 1С?</summary><p>В Dag Sport подтверждён сам факт интеграции сайта с 1С:УТ. Точный состав и направления обмена в публичном кейсе не раскрываются, поскольку их нужно сверять с рабочей конфигурацией.</p></details>
+      <details><summary>Можно ли подключить к 1С уже готовый сайт?</summary><p>Да, если используемые системы допускают интеграцию. В Dag Sport решение было подключено к существующему интернет-магазину на 1С-Битрикс; состав работ зависит от конфигурации сайта и 1С.</p></details>
       <details><summary>Что умеет AI-консультант в этом проекте?</summary><p>Консультант опирается на каталог canonical_products.json из 169 беговых дорожек с реальными характеристиками и ориентировочными ценами. Он подбирает и сравнивает модели по весу пользователя, бюджету, типу тренировки, для дома или зала, компактности и складной конструкции, отвечает по характеристикам и находит похожие модели по названию. Если нужной информации нет в каталоге, он не должен придумывать ответ. Фактическое наличие предлагает уточнить у менеджера; автоматическая передача диалога менеджеру не настроена.</p></details>
     </div>
   </section>
